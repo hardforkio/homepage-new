@@ -31,9 +31,9 @@ collections:
           - {label: "Body", name: "body", widget: "markdown"}
           - {label: "Meta Title", name: "meta_title", widget: "string"}
           - {label: "Meta Description", name: "meta_description", widget: "text"}
-      - file: "src/pages/pricing/index.md"
-        label: "Pricing Page"
-        name: "pricing"
+      - file: "src/pages/jobs/index.md"
+        label: "Jobs Page"
+        name: "jobs"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "pricing-page"}
           - {label: Title, name: title, widget: string}
