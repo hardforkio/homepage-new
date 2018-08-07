@@ -25,6 +25,9 @@ const NavBar = () => {
           <Link className="navbar-item" to="/jobs">
             Jobs
           </Link>
+          <Link className="navbar-item" to="/jobs">
+            Imprint
+          </Link>
         </div>
         <div className="navbar-end">
           <div className="navbar-item">
