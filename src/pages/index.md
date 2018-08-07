@@ -1,7 +1,7 @@
 ---
 templateKey: home-page
 title: Hardfork
-heading: Ihr Technologiepartner für Blockchain
+heading: Ihr Technologiepartner für Blockchain und anderes
 description: >-
   Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
   adipisci velit...
