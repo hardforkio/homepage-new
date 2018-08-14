@@ -1,8 +1,5 @@
-/**
- * Created by vaibhav on 31/3/18
- */
-import React from "react";
-import Link from "gatsby-link";
+import React from "react"
+import Link from "gatsby-link"
 
 const NavBar = () => {
   return (
@@ -21,6 +18,9 @@ const NavBar = () => {
         <div className="navbar-start">
           <Link className="navbar-item" to="/about">
             About
+          </Link>
+          <Link className="navbar-item" to="/pricing">
+            Pricing
           </Link>
           <Link className="navbar-item" to="/jobs">
             Jobs
