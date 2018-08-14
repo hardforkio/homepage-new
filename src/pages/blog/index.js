@@ -10,6 +10,7 @@ import PostCard from '../../components/PostCard'
 export default class BlogPage extends Component {
   render () {
     const {data} = this.props
+    console.log(this.props)
     const {edges: posts} = data.allMarkdownRemark
 
     return (

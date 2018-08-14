@@ -3,10 +3,10 @@
  */
 import React from 'react'
 import PropTypes from 'prop-types'
-import {JobsTemplate} from '../../templates/jobs-page'
+import {JobTemplate} from '../../templates/job-page'
 
-const JobsPreview = ({entry, widgetFor}) => (
-  <JobsTemplate
+const JobPreview = ({entry, widgetFor}) => (
+  <JobTemplate
     content={widgetFor('body')}
     meta_title={entry.getIn(['data', 'meta_title'])}
     meta_desc={entry.getIn(['data', 'meta_description'])}
@@ -15,11 +15,11 @@ const JobsPreview = ({entry, widgetFor}) => (
   />
 )
 
-JobsPreview.propTypes = {
+JobPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   widgetFor: PropTypes.func,
 }
 
-export default JobsPreview
+export default JobPreview
