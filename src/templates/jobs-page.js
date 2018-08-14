@@ -1,6 +1,3 @@
-/**
- * Created by vaibhav on 31/3/18
- */
 import React from 'react'
 import PropTypes from 'prop-types'
 import {kebabCase} from 'lodash'
@@ -15,7 +12,6 @@ export const JobsTemplate = ({
   contentComponent,
   meta_title,
   meta_desc,
-  tags,
   title,
   slug,
 }) => {
@@ -36,18 +32,6 @@ export const JobsTemplate = ({
               {title}
             </h1>
             <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{marginTop: `4rem`}}>
-                <h4>Tags</h4>
-                <ul className='taglist'>
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
             <hr />
             <Share
               title={title}
@@ -83,7 +67,6 @@ const JobsPage = ({data}) => {
       contentComponent={HTMLContent}
       meta_title={post.frontmatter.meta_title}
       meta_desc={post.frontmatter.meta_description}
-      tags={post.frontmatter.tags}
       title={post.frontmatter.title}
       slug={post.fields.slug}
     />
@@ -111,7 +94,6 @@ export const pageQuery = graphql`
         title
         meta_title
         meta_description
-        tags
       }
     }
   }
