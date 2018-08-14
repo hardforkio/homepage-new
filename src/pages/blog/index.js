@@ -1,6 +1,3 @@
-/**
- * Created by vaibhav on 31/3/18
- */
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
@@ -33,7 +30,7 @@ export default class BlogPage extends Component {
           </div>
         </section>
         <section className='section'>
-          <PostCard posts={posts} />
+          <PostCard posts={posts} articleType='article-page' />
         </section>
       </div>
     )

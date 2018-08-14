@@ -4,11 +4,11 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const PostCard = ({posts}) => {
+const PostCard = ({posts, articleType}) => {
   return (
     <div className='container'>
       {posts
-        .filter(post => post.node.frontmatter.templateKey === 'article-page')
+        .filter(post => post.node.frontmatter.templateKey === articleType)
         .map(({node: post}) => (
           <div
             className='content'
