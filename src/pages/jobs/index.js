@@ -21,7 +21,7 @@ export default class JobsPage extends Component {
                 <div className='column is-10 is-offset-1'>
                   <div className='section'>
                     <h1 className='title'>
-                                            Jobs
+                       Jobs
                     </h1>
                   </div>
                 </div>
@@ -30,7 +30,7 @@ export default class JobsPage extends Component {
           </div>
         </section>
         <section className='section'>
-          <PostCard posts={posts} />
+          <PostCard posts={posts} articleType='job-page' />
         </section>
       </div>
     )
