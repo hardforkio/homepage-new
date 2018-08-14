@@ -32,9 +32,9 @@ collections:
           - {label: "Body", name: "body", widget: "markdown"}
           - {label: "Meta Title", name: "meta_title", widget: "string"}
           - {label: "Meta Description", name: "meta_description", widget: "text"}
-      - file: "src/pages/jobs/index.md"
-        label: "Jobs Page"
-        name: "jobs"
+      - file: "src/pages/pricing/index.md"
+        label: "Pricing Page"
+        name: "pricing"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "pricing-page"}
           - {label: Title, name: title, widget: string}
@@ -65,5 +65,18 @@ collections:
       - {label: "Cover", name: "cover", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Meta Title", name: "meta_title", widget: "string"}
+      - {label: "Meta Description", name: "meta_description", widget: "text"}
+  - name: "jobs"
+    label: "Jobs"
+    folder: "src/pages/jobs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "jobs-page"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Meta Title", name: "meta_title", widget: "string"}
       - {label: "Meta Description", name: "meta_description", widget: "text"}
