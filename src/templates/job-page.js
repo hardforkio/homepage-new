@@ -7,7 +7,7 @@ import SE0 from '../components/SEO'
 import Disqus from '../components/Disqus'
 import Share from '../components/Share'
 
-export const JobsTemplate = ({
+export const JobTemplate = ({
   content,
   contentComponent,
   meta_title,
@@ -50,7 +50,7 @@ export const JobsTemplate = ({
   )
 }
 
-JobsTemplate.propTypes = {
+JobTemplate.propTypes = {
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
   meta_title: PropTypes.string,
@@ -59,10 +59,10 @@ JobsTemplate.propTypes = {
   slug: PropTypes.string,
 }
 
-const JobsPage = ({data}) => {
+const JobPage = ({data}) => {
   const {markdownRemark: post} = data
   return (
-    <JobsTemplate
+    <JobTemplate
       content={post.html}
       contentComponent={HTMLContent}
       meta_title={post.frontmatter.meta_title}
@@ -73,16 +73,16 @@ const JobsPage = ({data}) => {
   )
 }
 
-JobsPage.propTypes = {
+JobPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 }
 
-export default JobsPage
+export default JobPage
 
 export const pageQuery = graphql`
-  query JobsByID($id: String!) {
+  query JobByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html

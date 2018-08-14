@@ -1,5 +1,5 @@
 ---
-templateKey: jobs-page
+templateKey: job-page
 title: Test Job
 slug: ich-test
 date: 2018-03-29T03:55:49.370Z
