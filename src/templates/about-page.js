@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Content, {HTMLContent} from '../components/Content'
 
-export const AboutPageTemplate = ({title, content, contentComponent}) => {
+export const AboutPageTemplate = ({title, subtitle, content, contentComponent}) => {
   const PageContent = contentComponent || Content
 
   return (
@@ -20,6 +20,9 @@ export const AboutPageTemplate = ({title, content, contentComponent}) => {
                   <h1 className='title'>
                     {title}
                   </h1>
+                  <h2 className='subtitle'>
+                    {subtitle}
+                  </h2>
                 </div>
               </div>
             </div>
@@ -43,6 +46,7 @@ export const AboutPageTemplate = ({title, content, contentComponent}) => {
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
 }
@@ -59,6 +63,7 @@ const AboutPage = ({data}) => {
       <AboutPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
+        subtitle={post.frontmatter.subtitle}
         content={post.html}
       />
     </div>
@@ -77,6 +82,7 @@ export const aboutPageQuery = graphql`
       html
       frontmatter {
         title
+        subtitle
         meta_title
         meta_description
       }
