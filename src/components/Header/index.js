@@ -17,11 +17,14 @@ const PageHeader = styled.header`
   top: 0;
   width: 100%;
 `
-const LogoLink = styled.a`
+const LogoLink = styled(Link)`
+  border: none;
+  color: #ffffff;
   font-weight: 800;
   left: 1.25em;
   letter-spacing: 0.225em;
   position: absolute;
+  text-decoration: none;
   top: 0;
 `
 const MenuWrap = styled.div`
@@ -90,7 +93,7 @@ const MenuWrap = styled.div`
         text-transform: uppercase;
         
         ${media.greaterThan('medium')`
-          line-height: 1.65em;
+          line-height: 2.05em;
         `}
       }
       
@@ -107,22 +110,44 @@ const MenuWrap = styled.div`
   }
 `
 
-const Header = () => {
-  return (
-    <PageHeader>
-      <LogoLink>HARDFORK</LogoLink>
-      <MenuWrap>
-        <Menu right width={'20em'}>
-          <ul>
-            <li><Link to='/' title='Startseite'>Startseite</Link></li>
-            <li><Link to='/about' title='Über uns'>Über uns</Link></li>
-            <li><Link to='/jobs' title='Jobs'>Jobs</Link></li>
-            <li><Link to='/#contact' title='Kontakt'>Kontakt</Link></li>
-          </ul>
-        </Menu>
-      </MenuWrap>
-    </PageHeader>
-  )
+class Header extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      menuOpen: false,
+    }
+  }
+
+  handleStateChange (state) {
+    this.setState({menuOpen: state.isOpen})
+  }
+
+  closeMenu () {
+    this.setState({menuOpen: false})
+  }
+
+  render () {
+    return (
+      <PageHeader>
+        <LogoLink to='/' title='HARDFORK'>HARDFORK</LogoLink>
+        <MenuWrap>
+          <Menu
+            right
+            width={'20em'}
+            isOpen={this.state.menuOpen}
+            onStateChange={(state) => this.handleStateChange(state)}
+          >
+            <ul>
+              <li><Link onClick={() => this.closeMenu()} to='/' title='Startseite'>Startseite</Link></li>
+              <li><Link onClick={() => this.closeMenu()} to='/about' title='Über uns'>Über uns</Link></li>
+              <li><Link onClick={() => this.closeMenu()} to='/jobs' title='Jobs'>Jobs</Link></li>
+              <li><Link onClick={() => this.closeMenu()} to='/#contact' title='Kontakt'>Kontakt</Link></li>
+            </ul>
+          </Menu>
+        </MenuWrap>
+      </PageHeader>
+    )
+  }
 }
 
 export default Header
