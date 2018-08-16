@@ -18,6 +18,12 @@ injectGlobal`
     -moz-osx-font-smoothing: grayscale;
   }
   
+  *, .row, :after, :before {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
   body {
     background: rgb(46, 56, 66);
     color: #ffffff;
