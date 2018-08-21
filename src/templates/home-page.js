@@ -235,7 +235,7 @@ class HomePageTemplate extends React.Component {
                 in={this.state.startSecondAnimation}
               >
                 <IntroText>{this.props.heading}</IntroText>
-                <Button to='/#contact' title='Kontakt'>Kontakt</Button>
+                <Button to='/#contact' title='Kontakt' onClick={() => scrollToComponent(this.contact, scrollConfig)}>Kontakt</Button>
               </FadeIn>
             </IntroWrap>
           </div>
@@ -250,6 +250,9 @@ class HomePageTemplate extends React.Component {
         </Intro>
         <section id='offerings' ref={(div) => { this.offerings = div }}>
           <Offerings offerings={this.props.offerings.blurbs} />
+        </section>
+        <section id='contact' ref={(div) => { this.contact = div }}>
+          Contact section
         </section>
       </div>
     )
