@@ -37,8 +37,9 @@ const LogoLink = styled(Link)`
 export default class Logo extends React.Component {
   render () {
     let scrollCorrection = 60
+    let positionToShowLogo = (typeof window !== 'undefined' && window.innerHeight) ? window.innerHeight - scrollCorrection : 0
     return (
-      <LogoWrap mountOnEnter unmountOnExit timeout={300} in={(!this.props.isHome) || (this.props.scrollPositionY > (window.innerHeight - scrollCorrection))}>
+      <LogoWrap mountOnEnter unmountOnExit timeout={300} in={(!this.props.isHome) || (this.props.scrollPositionY > positionToShowLogo)}>
         <LogoLink to='/' title='HARDFORK'>HARDFORK</LogoLink>
       </LogoWrap>
     )
