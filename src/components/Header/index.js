@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 import Link from 'gatsby-link'
 import { slide as Menu } from 'react-burger-menu'
+import Logo from '../Logo'
 
 const PageHeader = styled.header` 
   -moz-transition: background-color 0.2s ease;
@@ -17,16 +18,6 @@ const PageHeader = styled.header`
   top: 0;
   width: 100%;
   z-index: 10;
-`
-const LogoLink = styled(Link)`
-  border: none;
-  color: #ffffff;
-  font-weight: 800;
-  left: 1.25em;
-  letter-spacing: 0.225em;
-  position: absolute;
-  text-decoration: none;
-  top: 0;
 `
 const MenuWrap = styled.div`
   line-height: 1.65em;
@@ -130,7 +121,7 @@ class Header extends React.Component {
   render () {
     return (
       <PageHeader>
-        <LogoLink to='/' title='HARDFORK'>HARDFORK</LogoLink>
+        <Logo isHome={this.props.isHome} />
         <MenuWrap>
           <Menu
             right

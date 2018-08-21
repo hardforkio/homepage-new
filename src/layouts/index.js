@@ -49,23 +49,27 @@ const hardforkTheme = {
   defaultBg: 'rgb(46, 56, 66)',
 }
 
-const TemplateWrapper = ({children}) => (
-  <div>
-    <Helmet>
-      <title>{config.siteTitle}</title>
-      <meta name='description' content={config.siteDescription} />
-    </Helmet>
-    <ThemeProvider theme={hardforkTheme}>
-      <Header />
-    </ThemeProvider>
-    <ThemeProvider theme={hardforkTheme}>
-      {children()}
-    </ThemeProvider>
-    <ThemeProvider theme={hardforkTheme}>
-      <Footer />
-    </ThemeProvider>
-  </div>
-)
+class TemplateWrapper extends React.Component {
+  render () {
+    return (
+      <div>
+        <Helmet>
+          <title>{config.siteTitle}</title>
+          <meta name='description' content={config.siteDescription} />
+        </Helmet>
+        <ThemeProvider theme={hardforkTheme}>
+          <Header isHome={(this.props.location.pathname === '/')} />
+        </ThemeProvider>
+        <ThemeProvider theme={hardforkTheme}>
+          {this.props.children()}
+        </ThemeProvider>
+        <ThemeProvider theme={hardforkTheme}>
+          <Footer />
+        </ThemeProvider>
+      </div>
+    )
+  }
+}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,

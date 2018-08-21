@@ -8,6 +8,7 @@ import Offerings from '../components/Offerings'
 import Testimonials from '../components/Testimonials'
 import transition from 'styled-transition-group'
 import arrow from '../img/arrow.svg'
+import scrollToComponent from 'react-scroll-to-component'
 
 const Intro = styled.section`
   display: -moz-flex;
@@ -36,7 +37,7 @@ const IntroHeadline = transition.h1`
   font-weight: 800;
   letter-spacing: .225em;
   line-height: 1.75em;
-  margin: 0 0 1em;
+  margin: 0 0 1em 0;
   opacity: 1;
   padding: .35em 1em;
   position: relative;
@@ -91,19 +92,27 @@ const IntroHeadline = transition.h1`
     }
     
   }
-  &:exit {
-    opacity: 1;
-    
-    &::after,
-    &::before {
-      width: 100%;
-    }
-  }
+`
+const IntroWrap = styled.div`
+  margin: 2em 0 0 0;
+  height: 110px;
 `
 const IntroText = styled.p`
   letter-spacing: 0.225em;
-  margin: 2em 0 2em 0;
-  text-transform: uppercase;
+  margin: 0 0 2em 0;
+  min-height: 1.75em;
+  text-transform: uppercase;  
+`
+const FadeIn = transition.div`
+  opacity: 1;
+  
+  &:enter {
+    opacity: 0;
+  }
+  &:enter-active {
+    opacity: 1;
+    transition: opacity 3.5s ease;
+  }
 `
 const Button = styled(Link)`
   -moz-appearance: none;
@@ -123,36 +132,21 @@ const Button = styled(Link)`
   display: inline-block;
   font-size: 0.8em;
   font-weight: 600;
-  height: 3.125em;
+  height: 2.8rem;
   letter-spacing: .225em;
-  line-height: 3.125em;
+  line-height: 2.8rem;
   padding: 0 2.75em;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
   
   &:hover {
     background-color: #ef5e4a !important;
   }
 `
-const MoreLink = styled(Link).attrs({
-  'data-arrow': props => props['data-arrow'] || '',
-})`
-  -moz-transition: -moz-transform 0.75s ease,opacity 0.75s ease;
-  -webkit-transition: -webkit-transform 0.75s ease,opacity 0.75s ease;
-  -ms-transition: -ms-transform 0.75s ease,opacity 0.75s ease;
-  transition: transform 0.75s ease,opacity 0.75s ease;
-  -moz-transition-delay: 3.5s;
-  -webkit-transition-delay: 3.5s;
-  -ms-transition-delay: 3.5s;
-  transition-delay: 3.5s;
-  -moz-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
+const MoreLink = transition.a`
   border: none;
   bottom: 0;
   color: inherit;
@@ -170,7 +164,7 @@ const MoreLink = styled(Link).attrs({
   text-transform: uppercase;
   width: 16em;
   z-index: 1;
-  
+    
   &::after {
     background-image: url(${props => props['data-arrow']});
     background-position: center;
@@ -185,6 +179,19 @@ const MoreLink = styled(Link).attrs({
     position: absolute;
     width: 1.5em;
   }
+  
+  &:enter {
+    opacity: 0;
+    transform: translateY(8.5em);
+  }
+  &:enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.75s ease, opacity 0.75s ease;
+  }
+`
+const Services = styled.div`
+  
 `
 
 class HomePageTemplate extends React.Component {
@@ -192,14 +199,21 @@ class HomePageTemplate extends React.Component {
     super(props)
     this.state = {
       startAnimation: false,
+      startSecondAnimation: false,
+      startThirdAnimation: false,
     }
   }
 
   componentDidMount () {
+    let that = this;
     this.setState({startAnimation: true})
+    setTimeout(function () {
+      that.setState({startThirdAnimation: true})
+    }, 2000)
   }
 
   render () {
+    let scrollConfig = { offset: -20, align: 'top', duration: 700 }
     return (
       <div>
         <Helmet>
@@ -208,14 +222,51 @@ class HomePageTemplate extends React.Component {
         </Helmet>
         <Intro>
           <div>
-            <IntroHeadline unmountOnExit timeout={1000} in={this.state.startAnimation}>
+            <IntroHeadline
+              unmountOnExit
+              timeout={1000}
+              in={this.state.startAnimation}
+              onEntered={() => {
+                this.setState({startSecondAnimation: true})
+              }}
+            >
               {this.props.title}
             </IntroHeadline>
-            <IntroText>{this.props.heading}</IntroText>
-            <Button to='/#contact' title='Kontakt'>Kontakt</Button>
+            <IntroWrap>
+              <FadeIn
+                mountOnEnter
+                timeout={3500}
+                in={this.state.startSecondAnimation}
+              >
+                <IntroText>{this.props.heading}</IntroText>
+                <Button to='/#contact' title='Kontakt'>Kontakt</Button>
+              </FadeIn>
+            </IntroWrap>
           </div>
-          <MoreLink to='/#one' data-arrow={arrow}>Mehr</MoreLink>
+          <MoreLink
+            href='#services'
+            data-arrow={arrow}
+            onClick={() => scrollToComponent(this.services, scrollConfig)}
+            mountOnEnter
+            timeout={750}
+            in={this.state.startThirdAnimation}
+          >Mehr</MoreLink>
         </Intro>
+        <Services id='services' ref={(div) => { this.services = div; }}>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </Services>
       </div>
     )
   }
