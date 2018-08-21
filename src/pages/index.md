@@ -15,7 +15,7 @@ offerings:
         Aufwand für Ihre Organisations zu bekommen. Dabei werfen wir auch einen
         kritischen Blick auf das Konzept und analysieren, ob die Blockchain
         überhaupt der richtige Lösungsansatz ist.
-    - image: /img/pic01.jpg
+    - image: /img/pic02.jpg
       text: >-
         Sie haben Software-Entwickler im Haus, aber keine Experten in Blockchain
         und Ethereum? Wir führen Schulungen durch, bei denen Ihre Entwickler die
