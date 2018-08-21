@@ -5,6 +5,23 @@ const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
+// Fixes an issue with react-scroll-to plugin
+// See https://github.com/component/scroll-to/issues/9 for more
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  if (stage === 'develop-html') {
+    config.loader('null', {
+      test: /scroll-to/,
+      loader: 'null-loader',
+    })
+  }
+  if (stage === 'build-html') {
+    config.loader('null', {
+      test: /scroll-to/,
+      loader: 'null-loader',
+    })
+  }
+}
+
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
 
