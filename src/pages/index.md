@@ -7,7 +7,8 @@ description: >-
   adipisci velit...
 offerings:
   blurbs:
-    - image: /img/pic01.jpg
+    - headline: MACHBARKEITSSTUDIEN
+      image: /img/pic01.jpg
       text: >-
         Sie haben einen Usecase für den Sie eine Lösung auf Basis der Blockchain
         entwickeln möchten? Wir helfen Ihnen die Umsetzung zu planen, mögliche
@@ -15,13 +16,15 @@ offerings:
         Aufwand für Ihre Organisations zu bekommen. Dabei werfen wir auch einen
         kritischen Blick auf das Konzept und analysieren, ob die Blockchain
         überhaupt der richtige Lösungsansatz ist.
-    - image: /img/pic02.jpg
+    - headline: FORTBILDUNGEN
+      image: /img/pic02.jpg
       text: >-
         Sie haben Software-Entwickler im Haus, aber keine Experten in Blockchain
         und Ethereum? Wir führen Schulungen durch, bei denen Ihre Entwickler die
         grundlegenden Konzepte der Entwicklung von Blockchain Prototypen und
         Protokollen erlernen und so das Portfolio Ihres Unternehmens erweitern.
-    - image: /img/pic01.jpg
+    - headline: PROTOTYPING & SMART CONTRACT ENTWICKLUNG
+      image: /img/pic01.jpg
       text: >-
         Selbstverständlich bieten wir auch die komplette Umsetzung Ihres
         Projekts an. Unsere erfahrenen Entwickler haben schon zahlreiche Apps
