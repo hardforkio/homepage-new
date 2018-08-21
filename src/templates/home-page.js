@@ -205,11 +205,10 @@ class HomePageTemplate extends React.Component {
   }
 
   componentDidMount () {
-    let that = this;
     this.setState({startAnimation: true})
     setTimeout(function () {
-      that.setState({startThirdAnimation: true})
-    }, 2000)
+      this.setState({startThirdAnimation: true})
+    }.bind(this), 2000)
   }
 
   render () {
