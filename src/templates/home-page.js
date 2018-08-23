@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 import Link from 'gatsby-link'
 import Offerings from '../components/Offerings'
-import Testimonials from '../components/Testimonials'
+import Practices from '../components/Practices'
 import transition from 'styled-transition-group'
 import arrow from '../img/arrow.svg'
 import scrollToComponent from 'react-scroll-to-component'
@@ -251,6 +251,7 @@ class HomePageTemplate extends React.Component {
         <section id='offerings' ref={(div) => { this.offerings = div }}>
           <Offerings offerings={this.props.offerings.blurbs} />
         </section>
+        <Practices headline={this.props.practices_headline} description={this.props.practices_description} practices={this.props.practices} />
         <section id='contact' ref={(div) => { this.contact = div }}>
           Contact section
         </section>
@@ -264,11 +265,12 @@ HomePageTemplate.propTypes = {
   meta_title: PropTypes.string,
   meta_description: PropTypes.string,
   heading: PropTypes.string,
-  description: PropTypes.string,
   offerings: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
-  testimonials: PropTypes.array,
+  practices_headline: PropTypes.string,
+  practices_description: PropTypes.string,
+  practices: PropTypes.array,
 
 }
 
@@ -281,9 +283,10 @@ const HomePage = ({data}) => {
       meta_title={frontmatter.meta_title}
       meta_description={frontmatter.meta_description}
       heading={frontmatter.heading}
-      description={frontmatter.description}
       offerings={frontmatter.offerings}
-      testimonials={frontmatter.testimonials}
+      practices_headline={frontmatter.practices_headline}
+      practices_description={frontmatter.practices_description}
+      practices={frontmatter.practices}
     />
   )
 }
@@ -306,7 +309,6 @@ export const pageQuery = graphql`
         meta_title
         meta_description
         heading
-        description
         offerings {
           blurbs {
             image
@@ -314,9 +316,12 @@ export const pageQuery = graphql`
             text
           }
         }
-        testimonials {
-          author
-          quote
+        practices_headline
+        practices_description
+        practices {
+          icon
+          headline
+          text
         }
       }
     }

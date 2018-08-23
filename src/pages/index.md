@@ -2,9 +2,6 @@
 templateKey: home-page
 title: Hardfork
 heading: Ihr Technologiepartner für Blockchain und anderes
-description: >-
-  Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
-  adipisci velit...
 offerings:
   blurbs:
     - image: /img/coffee.png
@@ -61,17 +58,34 @@ offerings:
         odio vitae, bibendum auctor lacus. Suspendisse potenti.  In tempor,
         massa quis euismod convallis, felis elit sodales urna, at aliquet mi
         elit auctor  risus.
-testimonials:
-  - author: Vaibhav Sharma
-    quote: >-
-      Donec scelerisque magna nec condimentum porttitor. Aliquam vel diam sed
-      diam luctus pretium.  Sed quis egestas libero. Vestibulum nec venenatis
-      ligula. 
-  - author: Subarashi San
-    quote: >-
-      Fusce porttitor vulputate enim, nec blandit magna gravida et. Etiam et
-      dignissim ligula.  Lorem ipsum dolor sit amet, consectetur adipiscing
-      elit.
+practices_headline: Blockchain Software Made In Germany
+practices_description: >-
+  Die Blockchain kann in vielen Fällen erhebliches Einsparungs- oder Sicherheitspotential bieten. Wir helfen Ihnen diese Potentiale freizulegen. Wir helfen wir Ihnen die Anforderungen und Annahmen kritisch zu hinterfragen und so besonders nachhaltige Lösungen zu produzieren. 
+practices:
+  - icon: PaperPlane
+    headline: Unabhängigkeit
+    text: >
+      Wir haben keine Favoriten wenn es um das Thema Blockchain geht und glauben auch nicht an Dogmen. Wir nutzen die Technologie, die für den konkreten Fall die besten Ergebnisse verspricht.
+  - icon: Laptop
+    headline: Kritische Analyse
+    text: >
+      Wir freuen uns über neue Aufträge und Projekte. Allerdings stellen wir beim Thema Blockchain auch eine gewisse Übertreibung der Einsatzmöglichkeiten fest. Wir hinterfragen immer kritisch, ob sich der hohe Entwicklungsaufwand für ein Projekt tatsächlich lohnt und geben Ihnen eine begründete Einschätzung in jedem Einzelfall.
+  - icon: PaperPlane
+    headline: Agile Entwicklung
+    text: >
+      Unsere Erfahrung im Startup-Bereich und mit den Themen Agile, Kanban und Continous Delivery lässt uns besonders schnell und zielorientiert arbeiten. Sie können jederzeit die Fortschritte bei der Entwicklung erfahren und haben so volle Kontrolle über die Projekte.
+  - icon: Laptop
+    headline: Vorträge
+    text: >
+      Wir halten regelmäßig Vorträge vor Fachpublikum aber auch Laien mit Interesse am spannenden Thema Blockchain. Wenn Sie zum Beispiel ein Event für Ihre Kunden im Finanzbereich planen, sprechen Sie uns an.
+  - icon: PaperPlane
+    headline: Reporting Tools
+    text: >
+      Hardfork hat die Software blooks entwickelt, mit der Sie die aktuellen Bestände und Wertentwicklung von Cryptowährungen verfolgen können. Diese steht unter einer Open Source Lizenz zur Verfügung. Gerne helfen wir Ihnen mit der Integration oder Anpassung für Ihre Zwecke. So können Sie auch die buchhalterischen Herausforderungen der Blockchain lösen. 
+  - icon: Laptop
+    headline: Partnerschaften
+    text: >
+      Wir arbeiten bereits heute mit Unternehmen zusammen, die zwar eine Expertise im Finanzbereich haben, diese aber gerne mit einem Partner zusammen erweitern möchten um gemeinsam noch komplexere Kundenprojekte umzusetzen. Falls Sie Interesse an einer solchen Zusammenarbeit haben, sprechen Sie uns bitte an.
 meta_title: Home | Gatsby Starter Business
 meta_description: >-
   Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
