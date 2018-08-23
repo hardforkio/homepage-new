@@ -25,8 +25,6 @@ const Intro = styled.section`
   -ms-justify-content: center;
   justify-content: center;
   cursor: default;
-  
-  
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -202,7 +200,7 @@ class HomePageTemplate extends React.Component {
           <title>{this.props.meta_title}</title>
           <meta name='description' content={this.props.meta_description} />
         </Helmet>
-        <Intro>
+        <Intro innerRef={(elem) => { this.intro = elem }}>
           <div>
             <IntroHeadline
               unmountOnExit
