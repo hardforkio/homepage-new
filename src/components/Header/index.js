@@ -33,9 +33,19 @@ const MenuWrap = styled.div`
     height: 18px;
     position: fixed;
     right: 18px;
-    top: 18px;
+    top: 14px;
     width: 18px;
     z-index: 10001;
+    
+    ${media.greaterThan('736px')`
+      top: 16px;
+    `}
+    ${media.greaterThan('980px')`
+      top: 18px;
+    `}
+    ${media.greaterThan('1680px')`
+      top: 22px;
+    `}
   }
   
   .bm-burger-bars {

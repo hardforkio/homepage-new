@@ -34,11 +34,14 @@ injectGlobal`
     line-height: 1.65em;
     margin: 0;
     
-    ${media.greaterThan('medium')`
+    ${media.greaterThan('736px')`
       font-size: 12pt;
     `}
-    ${media.greaterThan('large')`
+    ${media.greaterThan('980px')`
       font-size: 13pt;
+    `}
+    ${media.greaterThan('1680px')`
+      font-size: 15pt;
     `}
   }
   
