@@ -1,15 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import media from 'styled-media-query'
-import Link from 'gatsby-link'
+import transition from 'styled-transition-group'
+import scrollToComponent from 'react-scroll-to-component'
 import Offerings from '../components/Offerings'
 import Practices from '../components/Practices'
-import transition from 'styled-transition-group'
+import CallToAction from '../components/CallToAction'
+import Button from '../components/Button'
 import arrow from '../img/arrow.svg'
-import bgimage from '../img/banner.jpg'
-import scrollToComponent from 'react-scroll-to-component'
 
 const Intro = styled.section`
   display: -moz-flex;
@@ -126,46 +126,7 @@ const FadeIn = transition.div`
     transition: opacity 3.5s ease;
   }
 `
-const Button = styled(Link)`
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  -moz-transition: background-color .2s ease-in-out,color .2s ease-in-out;
-  -webkit-transition: background-color .2s ease-in-out,color .2s ease-in-out;
-  -ms-transition: background-color .2s ease-in-out,color .2s ease-in-out;
-  transition: background-color .2s ease-in-out,color .2s ease-in-out;
-  background-color: #ed4933;
-  border-radius: 3px;
-  border: 0;
-  box-shadow: none !important;
-  color: #ffffff !important;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 0.8em;
-  font-weight: 600;
-  height: 2.8rem;
-  letter-spacing: .225em;
-  line-height: 2.8rem;
-  margin: 0 auto !important;
-  max-width: 30em;
-  padding: 0 2.75em;
-  text-align: center;
-  text-decoration: none;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
-  white-space: nowrap;
-  width: 100%;
-  
-  ${media.greaterThan('736px')`
-    width: auto;
-  `}
-  
-  &:hover {
-    background-color: #ef5e4a !important;
-  }
-`
-const MailButton = Button.withComponent('a')
+
 const MoreLink = transition.a`
   border: none;
   bottom: 0;
@@ -215,101 +176,6 @@ const MoreLink = transition.a`
     transition: transform 0.75s ease, opacity 0.75s ease;
   }
 `
-const CtaSection = styled.section`
-  background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
-  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
-  background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
-  background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: block;
-  padding: 3em 2em 1em 2em;
-  
-  ${media.greaterThan('980px')`
-    padding: 6em 0 4em 0;
-  `}
-  
-  > div {
-    display: block;
-    margin: 0 auto;
-    max-width: 45em;
-    text-align: center;
-    width: 100%;
-    
-    ${media.greaterThan('980px')`
-      display: -moz-flex;
-      display: -webkit-flex;
-      display: -ms-flex;
-      display: flex;
-      max-width: 45em;
-      width: 90%;
-    `}  
-    
-    ${media.greaterThan('1280px')`
-      width: 60em;
-      margin: 0 auto;
-    `}  
-    
-    header {
-      -moz-order: 1;
-      -webkit-order: 1;
-      -ms-order: 1;
-      order: 1;
-      padding: 0;
-      width: 100%;
-      
-      ${media.greaterThan('980px')`
-        padding-right: 3em;
-        text-align: left;
-        width: 70%;
-      `}
-      
-      h2 {
-        color: #fff;
-        font-weight: 800;
-        letter-spacing: .225em;
-        margin: 0 0 1em 0;
-        text-transform: uppercase;
-        font-size: 1.1em;
-        line-height: 1.65em;
-        
-        ${media.greaterThan('736px')`
-          font-size: 1.35em;
-          line-height: 1.75em;
-        `}
-      }
-      
-      p {
-        margin: 0 0 2em 0;
-      }
-    }
-    
-    > div {
-      cursor: default;
-      list-style: none;
-      margin: 0 0 2em 0;
-      -moz-order: 2;
-      -webkit-order: 2;
-      -ms-order: 2;
-      order: 2;
-      padding-left: 0;
-      width: 100%;
-      
-      ${media.greaterThan('980px')`
-        align-items: center;
-        display: flex;
-        margin: 0;
-        width: 30%;
-      `}
-      
-    }
-  }
-  
-  
-  
-  
-`
 
 class HomePageTemplate extends React.Component {
   constructor (props) {
@@ -349,13 +215,9 @@ class HomePageTemplate extends React.Component {
               {this.props.title}
             </IntroHeadline>
             <IntroWrap>
-              <FadeIn
-                mountOnEnter
-                timeout={3500}
-                in={this.state.startSecondAnimation}
-              >
+              <FadeIn mountOnEnter timeout={3500} in={this.state.startSecondAnimation}>
                 <IntroText>{this.props.heading}</IntroText>
-                <Button to='/#contact' title='Kontakt' onClick={() => scrollToComponent(this.contact, scrollConfig)}>Kontakt</Button>
+                <Button to='/#contact' label='Kontakt' onClick={() => scrollToComponent(this.contact, scrollConfig)}>Kontakt</Button>
               </FadeIn>
             </IntroWrap>
           </div>
@@ -371,18 +233,19 @@ class HomePageTemplate extends React.Component {
         <section id='offerings' ref={(div) => { this.offerings = div }}>
           <Offerings offerings={this.props.offerings.blurbs} />
         </section>
-        <Practices headline={this.props.practices_headline} description={this.props.practices_description} practices={this.props.practices} />
-        <CtaSection id='contact' ref={(div) => { this.contact = div }} data-bgimage={bgimage}>
-          <div>
-            <header>
-              <h2>{this.props.contact_headline}</h2>
-              <p>{this.props.contact_description}</p>
-            </header>
-            <div>
-              <MailButton href={'mailto:' + this.props.contact_email}>{this.props.contact_button}</MailButton>
-            </div>
-          </div>
-        </CtaSection>
+        <Practices
+          headline={this.props.practices_headline}
+          description={this.props.practices_description}
+          practices={this.props.practices}
+        />
+        <CallToAction
+          id='contact'
+          refParent={(div) => { this.contact = div }}
+          headline={this.props.contact_headline}
+          description={this.props.contact_description}
+          email={this.props.contact_email}
+          button_label={this.props.contact_button}
+        />
       </div>
     )
   }
@@ -403,7 +266,6 @@ HomePageTemplate.propTypes = {
   contact_description: PropTypes.string,
   contact_button: PropTypes.string,
   contact_email: PropTypes.string,
-
 }
 
 const HomePage = ({data}) => {
