@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {kebabCase} from 'lodash'
-import Link from 'gatsby-link'
 import Content, {HTMLContent} from '../components/Content'
 import SE0 from '../components/SEO'
 import ArticleHeader from '../components/ArticleHeader/index.js'

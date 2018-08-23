@@ -70,19 +70,19 @@ practices:
     headline: Kritische Analyse
     text: >
       Wir freuen uns über neue Aufträge und Projekte. Allerdings stellen wir beim Thema Blockchain auch eine gewisse Übertreibung der Einsatzmöglichkeiten fest. Wir hinterfragen immer kritisch, ob sich der hohe Entwicklungsaufwand für ein Projekt tatsächlich lohnt und geben Ihnen eine begründete Einschätzung in jedem Einzelfall.
-  - icon: PaperPlane
+  - icon: Code
     headline: Agile Entwicklung
     text: >
       Unsere Erfahrung im Startup-Bereich und mit den Themen Agile, Kanban und Continous Delivery lässt uns besonders schnell und zielorientiert arbeiten. Sie können jederzeit die Fortschritte bei der Entwicklung erfahren und haben so volle Kontrolle über die Projekte.
-  - icon: Laptop
+  - icon: Headphones
     headline: Vorträge
     text: >
       Wir halten regelmäßig Vorträge vor Fachpublikum aber auch Laien mit Interesse am spannenden Thema Blockchain. Wenn Sie zum Beispiel ein Event für Ihre Kunden im Finanzbereich planen, sprechen Sie uns an.
-  - icon: PaperPlane
+  - icon: Heart
     headline: Reporting Tools
     text: >
       Hardfork hat die Software blooks entwickelt, mit der Sie die aktuellen Bestände und Wertentwicklung von Cryptowährungen verfolgen können. Diese steht unter einer Open Source Lizenz zur Verfügung. Gerne helfen wir Ihnen mit der Integration oder Anpassung für Ihre Zwecke. So können Sie auch die buchhalterischen Herausforderungen der Blockchain lösen. 
-  - icon: Laptop
+  - icon: Flag
     headline: Partnerschaften
     text: >
       Wir arbeiten bereits heute mit Unternehmen zusammen, die zwar eine Expertise im Finanzbereich haben, diese aber gerne mit einem Partner zusammen erweitern möchten um gemeinsam noch komplexere Kundenprojekte umzusetzen. Falls Sie Interesse an einer solchen Zusammenarbeit haben, sprechen Sie uns bitte an.

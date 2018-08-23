@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import media from 'styled-media-query'
+import Icon from '../Icon'
 
 const PracticesSection = styled.section`
   background-color: rgb(80, 83, 147);
@@ -136,6 +137,24 @@ const PracticesList = styled.ul`
     vertical-align: baseline
   }
 `
+const PracticeIcon = styled.div`
+  margin: 0 0 1em 0;
+  position: relative;
+  text-align: center;
+  
+  ${media.greaterThan('980px')`
+    left: 2.5em;
+    position: absolute;
+    text-align: left;
+    top: 4.1em;
+  `}
+  
+  svg {
+    color: rgb(0, 255, 204);
+    height: 26px;  
+    width: 26px;  
+  }
+`
 
 const Practices = ({headline, description, practices}) => (
   <PracticesSection>
@@ -147,6 +166,9 @@ const Practices = ({headline, description, practices}) => (
       <PracticesList>
         {practices.map((practice, id) => (
           <li key={id}>
+            <PracticeIcon>
+              <Icon name={practice.icon} />
+            </PracticeIcon>
             <h3>{practice.headline}</h3>
             <p>{practice.text}</p>
           </li>
@@ -159,8 +181,9 @@ const Practices = ({headline, description, practices}) => (
 Practices.propTypes = {
   practices: PropTypes.arrayOf(
     PropTypes.shape({
-      quote: PropTypes.string,
-      author: PropTypes.string,
+      icon: PropTypes.string,
+      headline: PropTypes.string,
+      text: PropTypes.string,
     })
   ),
 }
