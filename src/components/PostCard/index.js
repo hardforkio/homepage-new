@@ -36,7 +36,7 @@ const PostCardItem = styled.div`
   padding: 0 0 3em 0;
   width: 100%;
   
-  ${media.greaterThan('980px')`
+  ${media.greaterThan('981px')`
     width: 90%;
   `}
   ${media.greaterThan('1280px')`

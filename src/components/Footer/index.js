@@ -11,11 +11,11 @@ const Footer = styled.footer`
   padding: 3em 2em 1em 2em;
   text-align: center;
   
-  ${media.greaterThan('medium')`
+  ${media.greaterThan('981px')`
     padding: 4em 3em 2em 3em;
   `}
 
-  ${media.greaterThan('medium')`
+  ${media.greaterThan('981px')`
     padding: 6em 0 4em 0;
   `}
 `
@@ -34,7 +34,7 @@ const ListItem = styled.li`
   margin: 0;
   padding: 0.5em 0;
   
-  ${media.greaterThan('medium')`
+  ${media.greaterThan('981px')`
     border-left: solid 1px rgba(255,255,255,0.5);
     display: inline-block;
     line-height: 1em;
@@ -42,7 +42,7 @@ const ListItem = styled.li`
   `}
 `
 const ListItemFirst = ListItem.extend`
-  ${media.greaterThan('medium')` 
+  ${media.greaterThan('981px')` 
     border-left: 0;
     margin-left: 0;
     padding-left: 0;
@@ -67,7 +67,7 @@ const IconList = List.extend`
   margin: 0 0 2em 0;
 `
 const IconListItem = ListItem.extend`
-  ${media.greaterThan('medium')`
+  ${media.greaterThan('981px')`
     border: 0;
   `}
   

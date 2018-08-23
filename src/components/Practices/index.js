@@ -9,10 +9,10 @@ const PracticesSection = styled.section`
   color: rgb(211, 212, 228);
   padding: 3em 2em 1em 2em;
   
-  ${media.greaterThan('736px')`
+  ${media.greaterThan('737px')`
     padding: 4em 3em 2em 3em;    
   `}
-  ${media.greaterThan('980px')`
+  ${media.greaterThan('981px')`
     padding: 6em 0 4em 0;    
   `}
 `
@@ -20,7 +20,7 @@ const PracticesWrap = styled.div`
   width: 100%;
   margin: 0 auto;
   
-  ${media.greaterThan('980px')`
+  ${media.greaterThan('981px')`
     width: 90%;
   `}
   
@@ -47,7 +47,7 @@ const PracticesHeader = styled.header`
     position: relative;
     text-transform: uppercase;
     
-    ${media.greaterThan('736px')`
+    ${media.greaterThan('737px')`
       font-size: 1.35em;
       line-height: 1.75em;
     `}
@@ -88,7 +88,7 @@ const PracticesList = styled.ul`
         border-top: 0;
     }
     
-    ${media.greaterThan('736px')`
+    ${media.greaterThan('737px')`
       border-top: 0;
       padding: 3em 2em 1em 2em;
       width: 50%;
@@ -112,7 +112,7 @@ const PracticesList = styled.ul`
         background-color: rgba(0,0,0,0.21);
       }
     `}
-    ${media.greaterThan('980px')`
+    ${media.greaterThan('981px')`
       padding: 4em 4em 2em 6em;    
       text-align: left;  
     `}
@@ -142,7 +142,7 @@ const PracticeIcon = styled.div`
   position: relative;
   text-align: center;
   
-  ${media.greaterThan('980px')`
+  ${media.greaterThan('981px')`
     left: 2.5em;
     position: absolute;
     text-align: left;

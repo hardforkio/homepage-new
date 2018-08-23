@@ -35,7 +35,7 @@ const Intro = styled.section`
     height: auto;
     min-height: 0;
   
-  ${media.greaterThan('736px')`
+  ${media.greaterThan('737px')`
     height: 100vh;
     min-height: 35em;
     padding: 0;
@@ -56,7 +56,7 @@ const IntroHeadline = transition.h1`
   text-transform: uppercase;
   z-index: 1;
   
-  ${media.greaterThan('medium')`
+  ${media.greaterThan('981px')`
     font-size: 1.75em;
   `}
   
@@ -147,7 +147,7 @@ const MoreLink = transition.a`
   width: 16em;
   z-index: 1;
   
-  ${media.greaterThan('736px')`
+  ${media.greaterThan('737px')`
     display: block;
   `}
     

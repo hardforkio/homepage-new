@@ -36,7 +36,7 @@ const RegularButton = styled(Link)`
   white-space: nowrap;
   width: 100%;
   
-  ${media.greaterThan('736px')`
+  ${media.greaterThan('737px')`
     width: auto;
   `}
   

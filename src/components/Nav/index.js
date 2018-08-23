@@ -22,13 +22,13 @@ const NavWrap = styled.div`
     width: 18px;
     z-index: 10001;
     
-    ${media.greaterThan('736px')`
+    ${media.greaterThan('737px')`
       top: 16px;
     `}
-    ${media.greaterThan('980px')`
+    ${media.greaterThan('981px')`
       top: 18px;
     `}
-    ${media.greaterThan('1680px')`
+    ${media.greaterThan('1681px')`
       top: 22px;
     `}
   }
@@ -79,7 +79,7 @@ const NavWrap = styled.div`
         text-decoration: none;
         text-transform: uppercase;
         
-        ${media.greaterThan('medium')`
+        ${media.greaterThan('981px')`
           line-height: 2.05em;
         `}
       }

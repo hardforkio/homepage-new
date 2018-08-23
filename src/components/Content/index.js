@@ -8,10 +8,10 @@ const ContentWrap = styled.section`
   color: #4E4852;
   padding: 3em 2em 1em 2em;
   
-  ${media.greaterThan('736px')`
+  ${media.greaterThan('737px')`
       padding: 4em 3em 2em 3em;
   `}
-  ${media.greaterThan('980px')`
+  ${media.greaterThan('981px')`
     padding: 6em 0 4em 0;
   `}
   
@@ -19,10 +19,10 @@ const ContentWrap = styled.section`
     margin: 0 auto;
     width: 100%;
     
-    ${media.greaterThan('736px')`
+    ${media.greaterThan('737px')`
       width: 90%;
     `}
-    ${media.greaterThan('980px')`
+    ${media.greaterThan('981px')`
       width: 60em;
     `}
     
@@ -35,7 +35,7 @@ const ContentWrap = styled.section`
       margin: 0 0 1em 0;
       text-transform: uppercase;
       
-      ${media.greaterThan('736px')`
+      ${media.greaterThan('737px')`
         font-size: 1.15em;
         line-height: 1.75em;
       `}

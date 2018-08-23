@@ -38,7 +38,7 @@ const Offering = styled.section`
     flex-direction: row-reverse;
   }
   
-  ${media.greaterThan('980px')`
+  ${media.greaterThan('981px')`
     display: flex;
   `}
 `
@@ -55,7 +55,7 @@ const OfferingImg = styled.div`
     width: 100%;    
   }
   
-  ${media.greaterThan('980px')`
+  ${media.greaterThan('981px')`
     width: 45%;
   `}
   
@@ -85,10 +85,10 @@ const OfferingText = styled.div`
     margin: 0 0 2em 0;
   }
   
-  ${media.greaterThan('736px')`
+  ${media.greaterThan('737px')`
     padding: 4em 3em 2em 3em;
   `}
-  ${media.greaterThan('980px')`
+  ${media.greaterThan('981px')`
     max-width: 48em;
     text-align: left;
     width: 55%;

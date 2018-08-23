@@ -15,7 +15,7 @@ const CallToActionWrap = styled.section`
   display: block;
   padding: 3em 2em 1em 2em;
   
-  ${media.greaterThan('980px')`
+  ${media.greaterThan('981px')`
     padding: 6em 0 4em 0;
   `}
   
@@ -26,7 +26,7 @@ const CallToActionWrap = styled.section`
     text-align: center;
     width: 100%;
     
-    ${media.greaterThan('980px')`
+    ${media.greaterThan('981px')`
       display: -moz-flex;
       display: -webkit-flex;
       display: -ms-flex;
@@ -48,7 +48,7 @@ const CallToActionWrap = styled.section`
       padding: 0;
       width: 100%;
       
-      ${media.greaterThan('980px')`
+      ${media.greaterThan('981px')`
         padding-right: 3em;
         text-align: left;
         width: 70%;
@@ -63,7 +63,7 @@ const CallToActionWrap = styled.section`
         font-size: 1.1em;
         line-height: 1.65em;
         
-        ${media.greaterThan('736px')`
+        ${media.greaterThan('737px')`
           font-size: 1.35em;
           line-height: 1.75em;
         `}
@@ -85,7 +85,7 @@ const CallToActionWrap = styled.section`
       padding-left: 0;
       width: 100%;
       
-      ${media.greaterThan('980px')`
+      ${media.greaterThan('981px')`
         align-items: center;
         display: flex;
         margin: 0;
