@@ -8,6 +8,7 @@ description: >-
 offerings:
   blurbs:
     - image: /img/coffee.png
+      headline: Machbarkeitsstudien
       text: >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus 
         sem a sem ultrices, eget sagittis magna tempor. Quisque pulvinar lorem 
@@ -20,6 +21,7 @@ offerings:
         ipsum sem, dapibus nec eros in, feugiat sagittis mi.  Nullam et dui
         interdum, varius nibh eu, efficitur metus.
     - image: /img/coffee-gear.png
+      headline: Fortbildungen
       text: >
         Fusce semper turpis sed tortor consectetur condimentum. Nulla facilisi.
         Nam  ipsum nulla, dapibus eu mi non, commodo commodo sapien.
@@ -33,6 +35,7 @@ offerings:
         Sed eget ornare orci, quis dignissim nulla. Pellentesque aliquam
         consectetur congue.
     - image: /img/tutorials.png
+      headline: Headline 1
       text: >
         Sed in consequat leo, sit amet ullamcorper lacus. Duis lacinia, metus
         vitae sollicitudin  pharetra, ipsum augue tristique urna, in rhoncus
@@ -46,6 +49,7 @@ offerings:
         porttitor vehicula,  quam augue pretium erat, at commodo nisl tellus non
         risus.
     - image: /img/meeting-space.png
+      headline: Headline 1
       text: >
         Vestibulum libero lectus, dignissim eget magna sit amet, malesuada
         tincidunt mi. Vivamus  sed erat iaculis mauris efficitur vehicula.
