@@ -67,6 +67,9 @@ const IconList = List.extend`
   margin: 0 0 2em 0;
 `
 const IconListItem = ListItem.extend`
+  display: inline-block;
+  padding: 0 1em 0 1em;
+
   ${media.greaterThan('981px')`
     border: 0;
   `}
