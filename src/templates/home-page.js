@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import media from 'styled-media-query'
-import Link from 'gatsby-link'
-import Offerings from '../components/Offerings'
-import Testimonials from '../components/Testimonials'
 import transition from 'styled-transition-group'
-import arrow from '../img/arrow.svg'
 import scrollToComponent from 'react-scroll-to-component'
+import Offerings from '../components/Offerings'
+import Practices from '../components/Practices'
+import CallToAction from '../components/CallToAction'
+import Button from '../components/Button'
+import arrow from '../img/arrow.svg'
 
 const Intro = styled.section`
   display: -moz-flex;
@@ -24,11 +25,20 @@ const Intro = styled.section`
   -ms-justify-content: center;
   justify-content: center;
   cursor: default;
-  height: 100vh;
-  min-height: 35em;
   overflow: hidden;
   position: relative;
   text-align: center;
+  
+  padding: 7em 3em 7em 3em;
+    height: auto;
+    min-height: 0;
+  
+  ${media.greaterThan('737px')`
+    height: 100vh;
+    min-height: 35em;
+    padding: 0;
+  `}
+  
 `
 const IntroHeadline = transition.h1`
   color: #fff;
@@ -44,7 +54,7 @@ const IntroHeadline = transition.h1`
   text-transform: uppercase;
   z-index: 1;
   
-  ${media.greaterThan('medium')`
+  ${media.greaterThan('981px')`
     font-size: 1.75em;
   `}
   
@@ -114,42 +124,12 @@ const FadeIn = transition.div`
     transition: opacity 3.5s ease;
   }
 `
-const Button = styled(Link)`
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  -moz-transition: background-color .2s ease-in-out,color .2s ease-in-out;
-  -webkit-transition: background-color .2s ease-in-out,color .2s ease-in-out;
-  -ms-transition: background-color .2s ease-in-out,color .2s ease-in-out;
-  transition: background-color .2s ease-in-out,color .2s ease-in-out;
-  background-color: #ed4933;
-  border-radius: 3px;
-  border: 0;
-  box-shadow: none !important;
-  color: #ffffff !important;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 0.8em;
-  font-weight: 600;
-  height: 2.8rem;
-  letter-spacing: .225em;
-  line-height: 2.8rem;
-  padding: 0 2.75em;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  
-  &:hover {
-    background-color: #ef5e4a !important;
-  }
-`
+
 const MoreLink = transition.a`
   border: none;
   bottom: 0;
   color: inherit;
+  display: none;
   font-size: 0.8em;
   height: 8.5em;
   left: 50%;
@@ -164,6 +144,10 @@ const MoreLink = transition.a`
   text-transform: uppercase;
   width: 16em;
   z-index: 1;
+  
+  ${media.greaterThan('737px')`
+    display: block;
+  `}
     
   &::after {
     background-image: url(${props => props['data-arrow']});
@@ -216,7 +200,7 @@ class HomePageTemplate extends React.Component {
           <title>{this.props.meta_title}</title>
           <meta name='description' content={this.props.meta_description} />
         </Helmet>
-        <Intro>
+        <Intro innerRef={(elem) => { this.intro = elem }}>
           <div>
             <IntroHeadline
               unmountOnExit
@@ -229,13 +213,9 @@ class HomePageTemplate extends React.Component {
               {this.props.title}
             </IntroHeadline>
             <IntroWrap>
-              <FadeIn
-                mountOnEnter
-                timeout={3500}
-                in={this.state.startSecondAnimation}
-              >
+              <FadeIn mountOnEnter timeout={3500} in={this.state.startSecondAnimation}>
                 <IntroText>{this.props.heading}</IntroText>
-                <Button to='/#contact' title='Kontakt' onClick={() => scrollToComponent(this.contact, scrollConfig)}>Kontakt</Button>
+                <Button to='/#contact' label='Kontakt' onClick={() => scrollToComponent(this.contact, scrollConfig)}>Kontakt</Button>
               </FadeIn>
             </IntroWrap>
           </div>
@@ -251,9 +231,19 @@ class HomePageTemplate extends React.Component {
         <section id='offerings' ref={(div) => { this.offerings = div }}>
           <Offerings offerings={this.props.offerings.blurbs} />
         </section>
-        <section id='contact' ref={(div) => { this.contact = div }}>
-          Contact section
-        </section>
+        <Practices
+          headline={this.props.practices_headline}
+          description={this.props.practices_description}
+          practices={this.props.practices}
+        />
+        <CallToAction
+          id='contact'
+          refParent={(div) => { this.contact = div }}
+          headline={this.props.contact_headline}
+          description={this.props.contact_description}
+          email={this.props.contact_email}
+          button_label={this.props.contact_button}
+        />
       </div>
     )
   }
@@ -264,12 +254,16 @@ HomePageTemplate.propTypes = {
   meta_title: PropTypes.string,
   meta_description: PropTypes.string,
   heading: PropTypes.string,
-  description: PropTypes.string,
   offerings: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
-  testimonials: PropTypes.array,
-
+  practices_headline: PropTypes.string,
+  practices_description: PropTypes.string,
+  practices: PropTypes.array,
+  contact_headline: PropTypes.string,
+  contact_description: PropTypes.string,
+  contact_button: PropTypes.string,
+  contact_email: PropTypes.string,
 }
 
 const HomePage = ({data}) => {
@@ -281,9 +275,14 @@ const HomePage = ({data}) => {
       meta_title={frontmatter.meta_title}
       meta_description={frontmatter.meta_description}
       heading={frontmatter.heading}
-      description={frontmatter.description}
       offerings={frontmatter.offerings}
-      testimonials={frontmatter.testimonials}
+      practices_headline={frontmatter.practices_headline}
+      practices_description={frontmatter.practices_description}
+      practices={frontmatter.practices}
+      contact_headline={frontmatter.contact_headline}
+      contact_description={frontmatter.contact_description}
+      contact_button={frontmatter.contact_button}
+      contact_email={frontmatter.contact_email}
     />
   )
 }
@@ -306,17 +305,24 @@ export const pageQuery = graphql`
         meta_title
         meta_description
         heading
-        description
         offerings {
           blurbs {
             image
+            headline
             text
           }
         }
-        testimonials {
-          author
-          quote
+        practices_headline
+        practices_description
+        practices {
+          icon
+          headline
+          text
         }
+        contact_headline
+        contact_description
+        contact_button
+        contact_email
       }
     }
   }

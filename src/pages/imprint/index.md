@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
 title: Impressum
-subtitle: 
+subtitle: Lorem ipsum dolor sit amet
 meta_title: About Us | Gatsby Starter Business
 meta_description: >-
   Cum sociis natoque penatibus et magnis dis parturient montes, nascetur

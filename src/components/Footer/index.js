@@ -3,6 +3,7 @@ import config from '../../../meta/config'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import Link from 'gatsby-link'
+import Icon from '../Icon'
 
 const Footer = styled.footer`
   background-color: ${props => props.theme.defaultBg};
@@ -10,11 +11,11 @@ const Footer = styled.footer`
   padding: 3em 2em 1em 2em;
   text-align: center;
   
-  ${media.greaterThan('medium')`
+  ${media.greaterThan('981px')`
     padding: 4em 3em 2em 3em;
   `}
 
-  ${media.greaterThan('medium')`
+  ${media.greaterThan('981px')`
     padding: 6em 0 4em 0;
   `}
 `
@@ -33,7 +34,7 @@ const ListItem = styled.li`
   margin: 0;
   padding: 0.5em 0;
   
-  ${media.greaterThan('medium')`
+  ${media.greaterThan('981px')`
     border-left: solid 1px rgba(255,255,255,0.5);
     display: inline-block;
     line-height: 1em;
@@ -41,7 +42,7 @@ const ListItem = styled.li`
   `}
 `
 const ListItemFirst = ListItem.extend`
-  ${media.greaterThan('medium')` 
+  ${media.greaterThan('981px')` 
     border-left: 0;
     margin-left: 0;
     padding-left: 0;
@@ -62,9 +63,35 @@ const StyledLink = styled(Link)`
   }
 `
 const ExternalLink = StyledLink.withComponent('a')
+const IconList = List.extend`
+  margin: 0 0 2em 0;
+`
+const IconListItem = ListItem.extend`
+  display: inline-block;
+  padding: 0 1em 0 1em;
+
+  ${media.greaterThan('981px')`
+    border: 0;
+  `}
+  
+  svg {
+    color: rgba(255,255,255,0.5);
+    height: 20px;
+  }
+  
+  a:hover {
+    svg {
+      color: #fff;
+    }
+  }
+`
 
 export default () => (
   <Footer>
+    <IconList>
+      <IconListItem><a href='https://github.com/hardforkio' title='Github' target='_blank'><Icon name='Github' /></a></IconListItem>
+      <IconListItem><a href='mailto:contact@hardfork.io' title='Envelope'><Icon name='Envelope' /></a></IconListItem>
+    </IconList>
     <List>
       <ListItemFirst>{config.copyright}</ListItemFirst>
       <ListItem><StyledLink to='/imprint' title='Impressum'>Impressum</StyledLink></ListItem>

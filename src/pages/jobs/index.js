@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-
 import Helmet from 'react-helmet'
 import PostCard from '../../components/PostCard'
+import ArticleHeader from '../../components/ArticleHeader/index.js'
 
 export default class JobsPage extends Component {
   render () {
@@ -12,26 +12,10 @@ export default class JobsPage extends Component {
     return (
       <div>
         <Helmet>
-          <title>Jobs | Gatsby Starter Business</title>
+          <title>Jobs @ Hardfork.io, Berlin</title>
         </Helmet>
-        <section className='hero is-primary is-bold'>
-          <div className='hero-body'>
-            <div className='container'>
-              <div className='columns'>
-                <div className='column is-10 is-offset-1'>
-                  <div className='section'>
-                    <h1 className='title'>
-                       Jobs
-                    </h1>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className='section'>
-          <PostCard posts={posts} articleType='job-page' />
-        </section>
+        <ArticleHeader title='Jobs' subtitle='Hardfork.io | Berlin' />
+        <PostCard posts={posts} articleType='job-page' />
       </div>
     )
   }
@@ -50,7 +34,7 @@ export const jobsPageQuery = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          excerpt(pruneLength: 400)
+          excerpt(pruneLength: 130)
           id
           fields {
             slug

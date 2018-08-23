@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {kebabCase} from 'lodash'
-import Link from 'gatsby-link'
 import Content, {HTMLContent} from '../components/Content'
 import SE0 from '../components/SEO'
+import ArticleHeader from '../components/ArticleHeader/index.js'
 
 export const JobTemplate = ({
   content,
@@ -16,24 +16,16 @@ export const JobTemplate = ({
   const PostContent = contentComponent || Content
 
   return (
-    <section className='section'>
+    <article>
       <SE0
         title={title}
         meta_title={meta_title}
         meta_desc={meta_desc}
         slug={slug}
       />
-      <div className='container content'>
-        <div className='columns'>
-          <div className='column is-10 is-offset-1'>
-            <h1 className='title is-size-2 has-text-weight-bold is-bold-light'>
-              {title}
-            </h1>
-            <PostContent content={content} />
-          </div>
-        </div>
-      </div>
-    </section>
+      <ArticleHeader title={title} subtitle='' />
+      <PostContent content={content} />
+    </article>
   )
 }
 

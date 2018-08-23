@@ -34,12 +34,26 @@ injectGlobal`
     line-height: 1.65em;
     margin: 0;
     
-    ${media.greaterThan('medium')`
+    ${media.greaterThan('737px')`
       font-size: 12pt;
     `}
-    ${media.greaterThan('large')`
+    ${media.greaterThan('981px')`
       font-size: 13pt;
     `}
+    ${media.greaterThan('1681px')`
+      font-size: 15pt;
+    `}
+  }
+  
+  blockquote {
+    border-left: solid 4px #dfdfdf;
+    font-style: italic;
+    margin: 0 0 2em 0;
+    padding: 0.5em 0 0.5em 2em;
+    
+    > p {
+      margin: 0 !important;
+    }
   }
   
 `
