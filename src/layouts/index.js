@@ -45,6 +45,17 @@ injectGlobal`
     `}
   }
   
+  blockquote {
+    border-left: solid 4px #dfdfdf;
+    font-style: italic;
+    margin: 0 0 2em 0;
+    padding: 0.5em 0 0.5em 2em;
+    
+    > p {
+      margin: 0 !important;
+    }
+  }
+  
 `
 
 const hardforkTheme = {
