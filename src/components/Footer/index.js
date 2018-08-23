@@ -3,6 +3,7 @@ import config from '../../../meta/config'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import Link from 'gatsby-link'
+import Icon from '../Icon'
 
 const Footer = styled.footer`
   background-color: ${props => props.theme.defaultBg};
@@ -62,9 +63,32 @@ const StyledLink = styled(Link)`
   }
 `
 const ExternalLink = StyledLink.withComponent('a')
+const IconList = List.extend`
+  margin: 0 0 2em 0;
+`
+const IconListItem = ListItem.extend`
+  ${media.greaterThan('medium')`
+    border: 0;
+  `}
+  
+  svg {
+    color: rgba(255,255,255,0.5);
+    height: 20px;
+  }
+  
+  a:hover {
+    svg {
+      color: #fff;
+    }
+  }
+`
 
 export default () => (
   <Footer>
+    <IconList>
+      <IconListItem><a href='https://github.com/hardforkio' title='Github' target='_blank'><Icon name='Github' /></a></IconListItem>
+      <IconListItem><a href='mailto:contact@hardfork.io' title='Envelope'><Icon name='Envelope' /></a></IconListItem>
+    </IconList>
     <List>
       <ListItemFirst>{config.copyright}</ListItemFirst>
       <ListItem><StyledLink to='/imprint' title='Impressum'>Impressum</StyledLink></ListItem>
