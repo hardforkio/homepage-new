@@ -86,6 +86,11 @@ practices:
     headline: Partnerschaften
     text: >
       Wir arbeiten bereits heute mit Unternehmen zusammen, die zwar eine Expertise im Finanzbereich haben, diese aber gerne mit einem Partner zusammen erweitern möchten um gemeinsam noch komplexere Kundenprojekte umzusetzen. Falls Sie Interesse an einer solchen Zusammenarbeit haben, sprechen Sie uns bitte an.
+contact_headline: Kontaktanfrage
+contact_description: >-
+  Bitte schreiben Sie uns eine Email und wir melden uns schnellstmöglich zurück.
+contact_button: E-Mail senden
+contact_email: levin@hardfork.io
 meta_title: Home | Gatsby Starter Business
 meta_description: >-
   Cum sociis natoque penatibus et magnis dis parturient montes, nascetur

@@ -18,9 +18,13 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Heading, name: heading, widget: string}
           - {label: Offerings, name: offerings, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Headline, name: headline, widget: string}, {label: Text, name: text, widget: text}]}]}
-          - {label: Practices Headline, name: practicesHeadline, widget: string}
-          - {label: Practices Description, name: practicesDescription, widget: text}
+          - {label: Practices Headline, name: practices_headline, widget: string}
+          - {label: Practices Description, name: practices_description, widget: text}
           - {label: Practices, name: practices, widget: list, fields: [{label: Icon, name: icon, widget: string}, {label: Headline, name: headline, widget: string}, {label: Text, name: text, widget: text}]}
+          - {label: Contact Headline, name: contact_headline, widget: string}
+          - {label: Contact Description, name: contact_description, widget: text}
+          - {label: Contact Button, name: contact_button, widget: string}
+          - {label: Contact E-Mail, name: contact_email, widget: string}
           - {label: "Meta Title", name: "meta_title", widget: "string"}
           - {label: "Meta Description", name: "meta_description", widget: "text"}
       - file: "src/pages/about/index.md"

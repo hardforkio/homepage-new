@@ -8,6 +8,7 @@ import Offerings from '../components/Offerings'
 import Practices from '../components/Practices'
 import transition from 'styled-transition-group'
 import arrow from '../img/arrow.svg'
+import bgimage from '../img/banner.jpg'
 import scrollToComponent from 'react-scroll-to-component'
 
 const Intro = styled.section`
@@ -24,11 +25,22 @@ const Intro = styled.section`
   -ms-justify-content: center;
   justify-content: center;
   cursor: default;
-  height: 100vh;
-  min-height: 35em;
+  
+  
   overflow: hidden;
   position: relative;
   text-align: center;
+  
+  padding: 7em 3em 7em 3em;
+    height: auto;
+    min-height: 0;
+  
+  ${media.greaterThan('736px')`
+    height: 100vh;
+    min-height: 35em;
+    padding: 0;
+  `}
+  
 `
 const IntroHeadline = transition.h1`
   color: #fff;
@@ -135,21 +147,30 @@ const Button = styled(Link)`
   height: 2.8rem;
   letter-spacing: .225em;
   line-height: 2.8rem;
+  margin: 0 auto !important;
+  max-width: 30em;
   padding: 0 2.75em;
   text-align: center;
   text-decoration: none;
+  text-overflow: ellipsis;
   text-transform: uppercase;
   white-space: nowrap;
-  text-overflow: ellipsis;
+  width: 100%;
+  
+  ${media.greaterThan('736px')`
+    width: auto;
+  `}
   
   &:hover {
     background-color: #ef5e4a !important;
   }
 `
+const MailButton = Button.withComponent('a')
 const MoreLink = transition.a`
   border: none;
   bottom: 0;
   color: inherit;
+  display: none;
   font-size: 0.8em;
   height: 8.5em;
   left: 50%;
@@ -164,6 +185,10 @@ const MoreLink = transition.a`
   text-transform: uppercase;
   width: 16em;
   z-index: 1;
+  
+  ${media.greaterThan('736px')`
+    display: block;
+  `}
     
   &::after {
     background-image: url(${props => props['data-arrow']});
@@ -189,6 +214,101 @@ const MoreLink = transition.a`
     transform: translateY(0);
     transition: transform 0.75s ease, opacity 0.75s ease;
   }
+`
+const CtaSection = styled.section`
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
+  background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
+  background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  padding: 3em 2em 1em 2em;
+  
+  ${media.greaterThan('980px')`
+    padding: 6em 0 4em 0;
+  `}
+  
+  > div {
+    display: block;
+    margin: 0 auto;
+    max-width: 45em;
+    text-align: center;
+    width: 100%;
+    
+    ${media.greaterThan('980px')`
+      display: -moz-flex;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      max-width: 45em;
+      width: 90%;
+    `}  
+    
+    ${media.greaterThan('1280px')`
+      width: 60em;
+      margin: 0 auto;
+    `}  
+    
+    header {
+      -moz-order: 1;
+      -webkit-order: 1;
+      -ms-order: 1;
+      order: 1;
+      padding: 0;
+      width: 100%;
+      
+      ${media.greaterThan('980px')`
+        padding-right: 3em;
+        text-align: left;
+        width: 70%;
+      `}
+      
+      h2 {
+        color: #fff;
+        font-weight: 800;
+        letter-spacing: .225em;
+        margin: 0 0 1em 0;
+        text-transform: uppercase;
+        font-size: 1.1em;
+        line-height: 1.65em;
+        
+        ${media.greaterThan('736px')`
+          font-size: 1.35em;
+          line-height: 1.75em;
+        `}
+      }
+      
+      p {
+        margin: 0 0 2em 0;
+      }
+    }
+    
+    > div {
+      cursor: default;
+      list-style: none;
+      margin: 0 0 2em 0;
+      -moz-order: 2;
+      -webkit-order: 2;
+      -ms-order: 2;
+      order: 2;
+      padding-left: 0;
+      width: 100%;
+      
+      ${media.greaterThan('980px')`
+        align-items: center;
+        display: flex;
+        margin: 0;
+        width: 30%;
+      `}
+      
+    }
+  }
+  
+  
+  
+  
 `
 
 class HomePageTemplate extends React.Component {
@@ -252,9 +372,17 @@ class HomePageTemplate extends React.Component {
           <Offerings offerings={this.props.offerings.blurbs} />
         </section>
         <Practices headline={this.props.practices_headline} description={this.props.practices_description} practices={this.props.practices} />
-        <section id='contact' ref={(div) => { this.contact = div }}>
-          Contact section
-        </section>
+        <CtaSection id='contact' ref={(div) => { this.contact = div }} data-bgimage={bgimage}>
+          <div>
+            <header>
+              <h2>{this.props.contact_headline}</h2>
+              <p>{this.props.contact_description}</p>
+            </header>
+            <div>
+              <MailButton href={'mailto:' + this.props.contact_email}>{this.props.contact_button}</MailButton>
+            </div>
+          </div>
+        </CtaSection>
       </div>
     )
   }
@@ -271,6 +399,10 @@ HomePageTemplate.propTypes = {
   practices_headline: PropTypes.string,
   practices_description: PropTypes.string,
   practices: PropTypes.array,
+  contact_headline: PropTypes.string,
+  contact_description: PropTypes.string,
+  contact_button: PropTypes.string,
+  contact_email: PropTypes.string,
 
 }
 
@@ -287,6 +419,10 @@ const HomePage = ({data}) => {
       practices_headline={frontmatter.practices_headline}
       practices_description={frontmatter.practices_description}
       practices={frontmatter.practices}
+      contact_headline={frontmatter.contact_headline}
+      contact_description={frontmatter.contact_description}
+      contact_button={frontmatter.contact_button}
+      contact_email={frontmatter.contact_email}
     />
   )
 }
@@ -323,6 +459,10 @@ export const pageQuery = graphql`
           headline
           text
         }
+        contact_headline
+        contact_description
+        contact_button
+        contact_email
       }
     }
   }

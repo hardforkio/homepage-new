@@ -19,6 +19,10 @@ const HomePagePreview = ({ entry, getAsset }) => {
       practices_headline={entry.getIn(['data', 'practices_headline'])}
       practices_description={entry.getIn(['data', 'practices_description'])}
       practices={practices}
+      contact_headline={entry.getIn(['data', 'contact_headline'])}
+      contact_description={entry.getIn(['data', 'contact_description'])}
+      contact_button={entry.getIn(['data', 'contact_button'])}
+      contact_email={entry.getIn(['data', 'contact_email'])}
     />
   )
 }
