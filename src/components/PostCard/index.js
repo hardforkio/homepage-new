@@ -32,7 +32,7 @@ const PostCardWrap = styled.section`
 `
 const PostCardItem = styled.div`
   border-bottom: solid 2px #dfdfdf;
-  margin: 0 auto;
+  margin: 0 auto 3em auto;
   padding: 0 0 3em 0;
   width: 100%;
   
