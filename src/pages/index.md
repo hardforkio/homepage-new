@@ -1,7 +1,7 @@
 ---
 templateKey: home-page
 title: Hardfork
-heading: Ihr Technologiepartner für Blockchain und anderes
+heading: Ihr Partner für anspruchsvolle Softwareprojekte
 offerings:
   blurbs:
     - headline: MACHBARKEITSSTUDIEN
