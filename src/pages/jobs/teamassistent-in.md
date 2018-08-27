@@ -29,7 +29,7 @@ We’re looking for a smart, confident and positive team player, who is willing 
 
 In return, we promise to give you the runway to experiment, learn and grow. 
 
-## THE PLAY
+## The play
 
 ### 5 Hour Work Day!
 At Hardfork we permanently improve our efficiency to be able to deliver in 5 hours what anybody else achieves in their 8+ hour day. Everybody here gets a full salary for working every day from 8 a.m. to 1 p.m. This process makes us much more productive and focused in our work. It forces us to permanently leave our comfort zone, innovate and improvise, so we have more time for what is most important to us besides work. We work hard to work less.
