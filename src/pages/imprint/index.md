@@ -2,12 +2,8 @@
 templateKey: about-page
 title: Impressum
 subtitle: Hardfork GmbH Berlin
-meta_title: About Us | Gatsby Starter Business
-meta_description: >-
-  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-  ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam
-  venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis
-  consectetur purus sit amet fermentum.
+meta_title: Impressum Hardfork GmbH
+meta_description: Hardfork Impressum
 ---
 ### Angaben gemäß § 5 TMG:
 Hardfork GmbH  
