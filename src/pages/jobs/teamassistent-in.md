@@ -35,13 +35,13 @@ In return, we promise to give you the runway to experiment, learn and grow.
 At Hardfork we permanently improve our efficiency to be able to deliver in 5 hours what anybody else achieves in their 8+ hour day. Everybody here gets a full salary for working every day from 8 a.m. to 1 p.m. This process makes us much more productive and focused in our work. It forces us to permanently leave our comfort zone, innovate and improvise, so we have more time for what is most important to us besides work. We work hard to work less.
 
 #### Hard Facts: 
-Salary: 42,000 Euros per year (brutto)
-Work hours: 25 per year (8 a.m. to 1 p.m., 5 days a week, no exceptions, no Gleitzeit - sorry)
-Vacation: 6 weeks per year paid vacation
+- Salary: 42,000 Euros per year (brutto)
+- Work hours: 25 per year (8 a.m. to 1 p.m., 5 days a week, no exceptions, no - Gleitzeit - sorry)
+- Vacation: 6 weeks per year paid vacation
 
 ## The process
 
-If you are up for an exciting experiment in work life balance and pushing the frontier of technology apply now! 
+If you are up for an exciting experiment in work life balance and pushing the frontier of technology, apply now! 
 Please send an email to jobs@hardfork.io and include: 
  - A compact CV, 
  - A copy of your thesis and graduation certificate including grades
