@@ -3,7 +3,7 @@ templateKey: job-page
 title: Junior Blockchain Developer
 slug: juniordev
 date: '2018-08-27T09:26:34+02:00'
-meta_title: Blockchain Junior Developer
+meta_title: Hardfork GmbH - Job Ad Blockchain Junior Developer
 meta_description: Junior Developer Blockchain Job offer
 ---
 # Junior Blockchain Developer (f/m/i)
