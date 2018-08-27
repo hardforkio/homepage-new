@@ -22,6 +22,10 @@ Registriert am Amtsgericht Charlottenburg unter HRB 162146 B
 - Phone: +4915156041082  
 - E-mail: [contact@hardfork.io  ](mailto:contact@hardfork.io)
 
+### Umsatzsteuer
+
+VAT ID: DE297380065
+
 
 ### Verantwortlich für inhalte nach § 55 Abs. 2 RStV: 
 Levin Keller  
