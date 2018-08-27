@@ -47,7 +47,7 @@ practices:
     icon: Laptop
     text: >-
       Wir freuen uns über neue Aufträge und Projekte. Allerdings stellen wir
-      beim Thema Blockchain auch eine gewisse Übertreibung der
+      beim Thema Blockchain auch übertriebene Erwartungen an die
       Einsatzmöglichkeiten fest. Wir hinterfragen immer kritisch, ob sich der
       hohe Entwicklungsaufwand für ein Projekt tatsächlich lohnt und geben Ihnen
       eine begründete Einschätzung in jedem Einzelfall.
@@ -55,13 +55,13 @@ practices:
     icon: Code
     text: >-
       Unsere Erfahrung im Startup-Bereich und mit den Themen Agile, Kanban und
-      Continous Delivery lässt uns besonders schnell und zielorientiert
-      arbeiten. Sie können jederzeit die Fortschritte bei der Entwicklung
-      erfahren und haben so volle Kontrolle über die Projekte.
+      Continuous Delivery lässt uns besonders schnell und zielorientiert
+      arbeiten. Sie können jederzeit die Entwicklungsfortschritte selbst auf
+      Ihrem Endgerät erleben und haben so volle Kontrolle über das Projekt.
   - headline: Vorträge
     icon: Headphones
     text: >-
-      Wir halten regelmäßig Vorträge vor Fachpublikum aber auch Laien mit
+      Wir halten regelmäßig Vorträge vor Fachpublikum, aber auch vor Laien mit
       Interesse am spannenden Thema Blockchain. Wenn Sie zum Beispiel ein Event
       für Ihre Kunden im Finanzbereich planen, sprechen Sie uns an.
   - headline: Reporting Tools
@@ -77,15 +77,15 @@ practices:
     icon: Flag
     text: >-
       Wir arbeiten bereits heute mit Unternehmen zusammen, die zwar eine
-      Expertise im Finanzbereich haben, diese aber gerne mit einem Partner
-      zusammen erweitern möchten um gemeinsam noch komplexere Kundenprojekte
-      umzusetzen. Falls Sie Interesse an einer solchen Zusammenarbeit haben,
-      sprechen Sie uns bitte an.
+      Expertise im Finanzbereich haben, diese aber gerne gemeinsam mit einem
+      technologisch starken Partner um den Bereich Blockchain erweitern möchten,
+      um noch komplexere Kundenprojekte umzusetzen. Falls Sie Interesse an einer
+      solchen Zusammenarbeit haben, sprechen Sie uns bitte an.
 contact_headline: Kontaktanfrage
-contact_description: Bitte schreiben Sie uns eine Email und wir melden uns schnellstmöglich zurück.
+contact_description: Bitte schreiben Sie uns eine Email und wir melden uns zurück.
 contact_button: E-Mail senden
-contact_email: levin@hardfork.io
-meta_title: Hardfork.io - Ihr Technologiepartner für Blockchain und anderes
+contact_email: contact@hardfork.io
+meta_title: Hardfork GmbH - Ihr Technologiepartner für anspruchsvolle Softwareprojekte
 meta_description: >-
   Die Blockchain kann in vielen Fällen erhebliches Einsparungs- oder
   Sicherheitspotential bieten. Wir helfen Ihnen diese Potentiale freizulegen.
