@@ -23,7 +23,7 @@ You’ll mainly work with these technologies:
  - Linux
  - “Blockchain” (Ethereum, Bitcoin, potentially many others)
 
-# Skills
+## Skills
 
 We’re looking for a smart, confident and positive team player, who is willing to learn a lot and teach others about their findings. You should see the importance of writing clean code and enjoy working in a team. We expect a person with a university degree in a STEM field (Master, Diploma or above) and with a “can do anything” mentality. 
 
@@ -31,10 +31,10 @@ In return, we promise to give you the runway to experiment, learn and grow.
 
 ## The play
 
-### 5 Hour Work Day!
+#### 5 Hour Work Day!
 At Hardfork we permanently improve our efficiency to be able to deliver in 5 hours what anybody else achieves in their 8+ hour day. Everybody here gets a full salary for working every day from 8 a.m. to 1 p.m. This process makes us much more productive and focused in our work. It forces us to permanently leave our comfort zone, innovate and improvise, so we have more time for what is most important to us besides work. We work hard to work less.
 
-### Hard Facts: 
+#### Hard Facts: 
 Salary: 42,000 Euros per year (brutto)
 Work hours: 25 per year (8 a.m. to 1 p.m., 5 days a week, no exceptions, no Gleitzeit - sorry)
 Vacation: 6 weeks per year paid vacation
