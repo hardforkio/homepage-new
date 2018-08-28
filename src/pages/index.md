@@ -5,7 +5,7 @@ heading: Ihr Partner für anspruchsvolle Softwareprojekte
 offerings:
   blurbs:
     - headline: MACHBARKEITSSTUDIEN
-      image: /img/pic02.jpg
+      image: /img/pic01.jpg
       text: >-
         Sie haben einen Usecase für den Sie eine Lösung auf Basis der Blockchain
         entwickeln möchten? Wir helfen Ihnen die Umsetzung zu planen, mögliche
@@ -21,7 +21,7 @@ offerings:
         grundlegenden Konzepte der Entwicklung von Blockchain Prototypen und
         Protokollen erlernen und so das Portfolio Ihres Unternehmens erweitern.
     - headline: PROTOTYPING & SMART CONTRACT ENTWICKLUNG
-      image: /img/pic01.jpg
+      image: /img/pic03.jpg
       text: >-
         Selbstverständlich bieten wir auch die komplette Umsetzung Ihres
         Projekts an. Unsere erfahrenen Entwickler haben schon zahlreiche Apps
