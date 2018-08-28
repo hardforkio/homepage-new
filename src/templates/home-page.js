@@ -193,7 +193,7 @@ class HomePageTemplate extends React.Component {
   }
 
   render () {
-    let scrollConfig = { offset: -52, align: 'top', duration: 700 }
+    let scrollConfig = { offset: -52, align: 'top', duration: 1500, ease: 'in-out-sine' }
     return (
       <div>
         <Helmet>
