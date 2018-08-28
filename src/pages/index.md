@@ -5,7 +5,7 @@ heading: Ihr Partner für anspruchsvolle Softwareprojekte
 offerings:
   blurbs:
     - headline: MACHBARKEITSSTUDIEN
-      image: /img/pic01.jpg
+      image: /img/pic02.jpg
       text: >-
         Sie haben einen Usecase für den Sie eine Lösung auf Basis der Blockchain
         entwickeln möchten? Wir helfen Ihnen die Umsetzung zu planen, mögliche
