@@ -104,8 +104,8 @@ const IntroHeadline = transition.h1`
   }
 `
 const IntroWrap = styled.div`
-  margin: 2em 0 0 0;
-  height: 110px;
+  margin: 2em 0 2em 0;
+  height: 120px;
 `
 const IntroText = styled.p`
   letter-spacing: 0.225em;
@@ -193,7 +193,7 @@ class HomePageTemplate extends React.Component {
   }
 
   render () {
-    let scrollConfig = { offset: -52, align: 'top', duration: 700 }
+    let scrollConfig = { offset: -52, align: 'top', duration: 1500, ease: 'in-out-sine' }
     return (
       <div>
         <Helmet>
@@ -215,7 +215,7 @@ class HomePageTemplate extends React.Component {
             <IntroWrap>
               <FadeIn mountOnEnter timeout={3500} in={this.state.startSecondAnimation}>
                 <IntroText>{this.props.heading}</IntroText>
-                <Button to='/#contact' label='Kontakt' onClick={() => scrollToComponent(this.contact, scrollConfig)}>Kontakt</Button>
+                <p><Button to='/#contact' label='Kontakt' onClick={() => scrollToComponent(this.contact, scrollConfig)}>Kontakt</Button></p>
               </FadeIn>
             </IntroWrap>
           </div>
