@@ -86,11 +86,11 @@ const OfferingText = styled.div`
   }
   
   ${media.greaterThan('737px')`
-    padding: 2.5em 3em 1em 3em;
+    padding: 3em 3em 1em 3em;
   `}
   ${media.greaterThan('981px')`
     max-width: 48em;
-    
+    padding: 4em 3em 2em 3em;
     text-align: left;
     width: 55%;
   `}
