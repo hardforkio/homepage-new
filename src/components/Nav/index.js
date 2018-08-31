@@ -124,7 +124,6 @@ class Nav extends React.Component {
         >
           <ul>
             <li><Link onClick={() => this.closeMenu()} to='/' title='Startseite'>Startseite</Link></li>
-            <li><Link onClick={() => this.closeMenu()} to='/about' title='Über uns'>Über uns</Link></li>
             <li><Link onClick={() => this.closeMenu()} to='/jobs' title='Jobs'>Jobs</Link></li>
             <li><Link onClick={() => this.closeMenu()} to='/#contact' title='Kontakt'>Kontakt</Link></li>
           </ul>
