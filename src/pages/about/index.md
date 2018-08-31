@@ -1,6 +1,6 @@
 ---
 templateKey: about-page
-title: About Hardfork
+title: 
 subtitle: Lorem ipsum subtitle
 meta_title: About Us | Gatsby Starter Business
 meta_description: >-
