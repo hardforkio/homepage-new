@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Logo from '../Logo'
 import Nav from '../Nav'
+import {HeaderButton} from '../Button'
 
 const PageHeader = styled.header` 
   -moz-transition: background-color 0.2s ease;
@@ -22,6 +23,7 @@ const Header = ({isHome}) => {
   return (
     <PageHeader>
       <Logo isHome={isHome} />
+      <HeaderButton to='/jobs' label='We are hiring'>We are hiring</HeaderButton>
       <Nav />
     </PageHeader>
   )
