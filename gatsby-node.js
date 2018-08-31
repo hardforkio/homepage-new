@@ -37,7 +37,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             frontmatter {
               tags
               templateKey
-              title
             }
           }
         }
@@ -52,9 +51,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     const posts = result.data.allMarkdownRemark.edges
 
     posts.forEach(edge => {
-      // Prevent pages from being built if no templateKey is set
-      if (edge.node.frontmatter.title === null) return
-
       const id = edge.node.id
       createPage({
         path: edge.node.fields.slug,
