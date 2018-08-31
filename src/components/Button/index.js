@@ -59,5 +59,33 @@ export default Button
 
 
 export const MailButton = RegularButton.withComponent('a')
+MailButton.propTypes = Button.propTypes
 
+export const HeaderButton = styled(RegularButton)`
+  display: none;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  padding: 0 1em;
+  position: absolute;
+  right: 4.5em;
+  top: 8px;
+  width: auto;
+  
+  ${media.greaterThan('340px')`
+     display: block;
+  `}
+    
+  ${media.greaterThan('737px')`
+    height: 2.2rem;
+    line-height: 2.2rem;
+    padding: 0 2.75em;
+    right: 4em;
+    top: 7px;
+  `}
+  ${media.greaterThan('981px')`
+    height: 2.4rem;
+    line-height: 2.4rem;
+    top: 7px;
+  `}
+`
 MailButton.propTypes = Button.propTypes
