@@ -9,7 +9,7 @@ const PageHeader = styled.header`
   -webkit-transition: background-color 0.2s ease;
   -ms-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
-  background: #2e3842;
+  background: transparent;
   height: 3em;
   left: 0;
   line-height: 3em;

@@ -10,6 +10,7 @@ import Practices from '../components/Practices'
 import CallToAction from '../components/CallToAction'
 import Button from '../components/Button'
 import arrow from '../img/arrow.svg'
+import bgimage from '../img/banner.jpg'
 
 const Intro = styled.section`
   display: -moz-flex;
@@ -28,16 +29,44 @@ const Intro = styled.section`
   overflow: hidden;
   position: relative;
   text-align: center;
-  
   padding: 7em 3em 7em 3em;
-    height: auto;
-    min-height: 0;
+  height: auto;
+  min-height: 0;
   
   ${media.greaterThan('737px')`
     height: 100vh;
     min-height: 35em;
     padding: 0;
   `}
+  
+`
+const IntroBackground = transition.div`
+  
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
+    background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
+    background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    
+    &:enter {
+      opacity: 0;
+    }
+    &:enter-active {
+      opacity: 1;
+      transition: opacity 3.5s ease;
+    }
   
 `
 const IntroHeadline = transition.h1`
@@ -201,6 +230,7 @@ class HomePageTemplate extends React.Component {
           <meta name='description' content={this.props.meta_description} />
         </Helmet>
         <Intro innerRef={(elem) => { this.intro = elem }}>
+          <IntroBackground data-bgimage={bgimage} mountOnEnter unmountOnExit timeout={3500} in={this.state.startSecondAnimation} />
           <div>
             <IntroHeadline
               unmountOnExit
