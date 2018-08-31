@@ -5,7 +5,10 @@ import { withScroll } from 'react-window-decorators'
 import transition from 'styled-transition-group'
 
 const LogoWrap = transition.div`
+  background: rgb(46, 56, 66);
+  height: 100%;
   opacity: 1;
+  width: 100%;
   
   &:enter {
     opacity: 0;
