@@ -36,7 +36,7 @@ At Hardfork we permanently improve our efficiency to be able to deliver in 5 hou
 #### Hard Facts:
 
 * Salary: 42,000 Euros per year (brutto)
-* Work hours: 25 per week (8 a.m. to 1 p.m., 5 days a week, no exceptions, no - Gleitzeit - sorry)
+* Work hours: 25 per week (8 a.m. to 1 p.m., 5 days a week, no exceptions, no Gleitzeit - sorry)
 * Vacation: 6 weeks per year paid vacation
 
 ## The process
