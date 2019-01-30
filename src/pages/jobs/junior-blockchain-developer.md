@@ -14,7 +14,7 @@ Hardfork is a technical consulting company in the new and rising sphere of Block
 
 ## The job
 
-You will be part of a small team of technical coworkers with a strong background in STEM fields, building exciting things and permanently exchanging knowledge to maximize the quality of the software we build for our clients. You will design and implement decentralized applications with full end-to-end responsibility while also shaping the way we work as a team and how modern product development should be done.
+You will be part of a small team of technical coworkers with a strong background in STEM fields, building exciting things and permanently exchanging knowledge to maximize the quality of the software we build for our clients. You will design and implement decentralized applications with full end-to-end responsibility while also shaping the way we work as a team and how modern product development should be done. Haha lustig.
 You’ll mainly work with these technologies:
 
 * JavaScript (ECMA2016+, NodeJS, TypeScript)
