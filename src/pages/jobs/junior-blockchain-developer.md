@@ -47,6 +47,8 @@ Please send an email to jobs@hardfork.io and include:
 * A compact CV,
 * A copy of your thesis and graduation certificate including grades
 * A short text about what you expect for your personal and professional life from the five hour work day,
-* We will require later:
+
+We will require later:
+
 * References (contacts of persons you worked with, e.g. professors, employers etc. we will ask you before we contact any of them), please no “reference letters”,
 * Link to profile on: Github, Stackexchange, etc.
