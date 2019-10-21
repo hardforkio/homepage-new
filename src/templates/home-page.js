@@ -32,20 +32,23 @@ const Intro = styled.section`
   padding: 7em 3em 7em 3em;
   height: auto;
   min-height: 0;
-  
+
   ${media.greaterThan('737px')`
     height: 100vh;
     min-height: 35em;
     padding: 0;
   `}
-  
 `
 const IntroBackground = transition.div`
   
-    background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
-    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
-    background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
-    background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props =>
+      props['data-bgimage']});
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props =>
+      props['data-bgimage']});
+    background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props =>
+      props['data-bgimage']});
+    background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props =>
+      props['data-bgimage']});
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -140,7 +143,7 @@ const IntroText = styled.p`
   letter-spacing: 0.225em;
   margin: 0 0 2em 0;
   min-height: 1.75em;
-  text-transform: uppercase;  
+  text-transform: uppercase;
 `
 const FadeIn = transition.div`
   opacity: 1;
@@ -205,7 +208,7 @@ const MoreLink = transition.a`
 `
 
 class HomePageTemplate extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       startAnimation: false,
@@ -214,51 +217,90 @@ class HomePageTemplate extends React.Component {
     }
   }
 
-  componentDidMount () {
-    this.setState({startAnimation: true})
-    setTimeout(function () {
-      this.setState({startThirdAnimation: true})
-    }.bind(this), 2000)
+  componentDidMount() {
+    this.setState({ startAnimation: true })
+    setTimeout(
+      function() {
+        this.setState({ startThirdAnimation: true })
+      }.bind(this),
+      2000,
+    )
   }
 
-  render () {
-    let scrollConfig = { offset: -52, align: 'top', duration: 1500, ease: 'in-out-sine' }
+  render() {
+    let scrollConfig = {
+      offset: -52,
+      align: 'top',
+      duration: 1500,
+      ease: 'in-out-sine',
+    }
     return (
       <div>
         <Helmet>
           <title>{this.props.meta_title}</title>
-          <meta name='description' content={this.props.meta_description} />
+          <meta name="description" content={this.props.meta_description} />
         </Helmet>
-        <Intro innerRef={(elem) => { this.intro = elem }}>
-          <IntroBackground data-bgimage={bgimage} mountOnEnter unmountOnExit timeout={3500} in={this.state.startSecondAnimation} />
+        <Intro
+          innerRef={elem => {
+            this.intro = elem
+          }}
+        >
+          <IntroBackground
+            data-bgimage={bgimage}
+            mountOnEnter
+            unmountOnExit
+            timeout={3500}
+            in={this.state.startSecondAnimation}
+          />
           <div>
             <IntroHeadline
               unmountOnExit
               timeout={1000}
               in={this.state.startAnimation}
               onEntered={() => {
-                this.setState({startSecondAnimation: true})
+                this.setState({ startSecondAnimation: true })
               }}
             >
               {this.props.title}
             </IntroHeadline>
             <IntroWrap>
-              <FadeIn mountOnEnter timeout={3500} in={this.state.startSecondAnimation}>
+              <FadeIn
+                mountOnEnter
+                timeout={3500}
+                in={this.state.startSecondAnimation}
+              >
                 <IntroText>{this.props.heading}</IntroText>
-                <p><Button to='/#contact' label='Kontakt' onClick={() => scrollToComponent(this.contact, scrollConfig)}>Kontakt</Button></p>
+                <p>
+                  <Button
+                    to="/#contact"
+                    label="Kontakt"
+                    onClick={() =>
+                      scrollToComponent(this.contact, scrollConfig)
+                    }
+                  >
+                    Kontakt
+                  </Button>
+                </p>
               </FadeIn>
             </IntroWrap>
           </div>
           <MoreLink
-            href='#offerings'
+            href="#offerings"
             data-arrow={arrow}
             onClick={() => scrollToComponent(this.offerings, scrollConfig)}
             mountOnEnter
             timeout={750}
             in={this.state.startThirdAnimation}
-          >Mehr</MoreLink>
+          >
+            Mehr
+          </MoreLink>
         </Intro>
-        <section id='offerings' ref={(div) => { this.offerings = div }}>
+        <section
+          id="offerings"
+          ref={div => {
+            this.offerings = div
+          }}
+        >
           <Offerings offerings={this.props.offerings.blurbs} />
         </section>
         <Practices
@@ -267,8 +309,10 @@ class HomePageTemplate extends React.Component {
           practices={this.props.practices}
         />
         <CallToAction
-          id='contact'
-          refParent={(div) => { this.contact = div }}
+          id="contact"
+          refParent={div => {
+            this.contact = div
+          }}
           headline={this.props.contact_headline}
           description={this.props.contact_description}
           email={this.props.contact_email}
@@ -296,8 +340,8 @@ HomePageTemplate.propTypes = {
   contact_email: PropTypes.string,
 }
 
-const HomePage = ({data}) => {
-  const {frontmatter} = data.markdownRemark
+const HomePage = ({ data }) => {
+  const { frontmatter } = data.markdownRemark
 
   return (
     <HomePageTemplate

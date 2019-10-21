@@ -3,9 +3,9 @@
  */
 import React from 'react'
 import PropTypes from 'prop-types'
-import {JobTemplate} from '../../templates/job-page'
+import { JobTemplate } from '../../templates/job-page'
 
-const JobPreview = ({entry, widgetFor}) => (
+const JobPreview = ({ entry, widgetFor }) => (
   <JobTemplate
     content={widgetFor('body')}
     meta_title={entry.getIn(['data', 'meta_title'])}

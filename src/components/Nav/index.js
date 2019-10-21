@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 import media from 'styled-media-query'
-import {slide as Menu} from 'react-burger-menu'
+import { slide as Menu } from 'react-burger-menu'
 
 const NavWrap = styled.div`
   line-height: 1.65em;
@@ -98,34 +98,50 @@ const NavWrap = styled.div`
 `
 
 class Nav extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       menuOpen: false,
     }
   }
 
-  handleStateChange (state) {
-    this.setState({menuOpen: state.isOpen})
+  handleStateChange(state) {
+    this.setState({ menuOpen: state.isOpen })
   }
 
-  closeMenu () {
-    this.setState({menuOpen: false})
+  closeMenu() {
+    this.setState({ menuOpen: false })
   }
 
-  render () {
+  render() {
     return (
       <NavWrap>
         <Menu
           right
           width={'20em'}
           isOpen={this.state.menuOpen}
-          onStateChange={(state) => this.handleStateChange(state)}
+          onStateChange={state => this.handleStateChange(state)}
         >
           <ul>
-            <li><Link onClick={() => this.closeMenu()} to='/' title='Startseite'>Startseite</Link></li>
-            <li><Link onClick={() => this.closeMenu()} to='/jobs' title='Jobs'>Jobs</Link></li>
-            <li><Link onClick={() => this.closeMenu()} to='/#contact' title='Kontakt'>Kontakt</Link></li>
+            <li>
+              <Link onClick={() => this.closeMenu()} to="/" title="Startseite">
+                Startseite
+              </Link>
+            </li>
+            <li>
+              <Link onClick={() => this.closeMenu()} to="/jobs" title="Jobs">
+                Jobs
+              </Link>
+            </li>
+            <li>
+              <Link
+                onClick={() => this.closeMenu()}
+                to="/#contact"
+                title="Kontakt"
+              >
+                Kontakt
+              </Link>
+            </li>
           </ul>
         </Menu>
       </NavWrap>

@@ -2,30 +2,46 @@ import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import bgimage from '../../img/banner.jpg'
-import {MailButton} from '../Button'
+import { MailButton } from '../Button'
 
 const CallToActionWrap = styled.section`
-  background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
-  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
-  background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
-  background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
+  background-image: -moz-linear-gradient(
+      top,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(${props => props['data-bgimage']});
+  background-image: -webkit-linear-gradient(
+      top,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(${props => props['data-bgimage']});
+  background-image: -ms-linear-gradient(
+      top,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(${props => props['data-bgimage']});
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(${props => props['data-bgimage']});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   display: block;
   padding: 3em 2em 1em 2em;
-  
+
   ${media.greaterThan('981px')`
     padding: 6em 0 4em 0;
   `}
-  
+
   > div {
     display: block;
     margin: 0 auto;
     max-width: 45em;
     text-align: center;
     width: 100%;
-    
+
     ${media.greaterThan('981px')`
       display: -moz-flex;
       display: -webkit-flex;
@@ -33,8 +49,8 @@ const CallToActionWrap = styled.section`
       display: flex;
       max-width: 45em;
       width: 90%;
-    `}  
-    
+    `}
+
     ${media.greaterThan('1280px')`
       width: 60em;
       margin: 0 auto;
@@ -47,33 +63,33 @@ const CallToActionWrap = styled.section`
       order: 1;
       padding: 0;
       width: 100%;
-      
+
       ${media.greaterThan('981px')`
         padding-right: 3em;
         text-align: left;
         width: 70%;
       `}
-      
+
       h2 {
         color: #fff;
         font-weight: 800;
-        letter-spacing: .225em;
+        letter-spacing: 0.225em;
         margin: 0 0 1em 0;
         text-transform: uppercase;
         font-size: 1.1em;
         line-height: 1.65em;
-        
+
         ${media.greaterThan('737px')`
           font-size: 1.35em;
           line-height: 1.75em;
         `}
       }
-      
+
       p {
         margin: 0 0 2em 0;
       }
     }
-    
+
     > div {
       cursor: default;
       list-style: none;
@@ -84,19 +100,25 @@ const CallToActionWrap = styled.section`
       order: 2;
       padding-left: 0;
       width: 100%;
-      
+
       ${media.greaterThan('981px')`
         align-items: center;
         display: flex;
         margin: 0;
         width: 30%;
       `}
-      
     }
   }
 `
 
-const CallToAction = ({headline, description, email, button_label, id, refParent}) => {
+const CallToAction = ({
+  headline,
+  description,
+  email,
+  button_label,
+  id,
+  refParent,
+}) => {
   return (
     <CallToActionWrap data-bgimage={bgimage} id={id} ref={refParent}>
       <div>

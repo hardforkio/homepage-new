@@ -6,38 +6,38 @@ import media from 'styled-media-query'
 const Offering = styled.section`
   align-items: center;
   display: block;
-    
+
   &:nth-child(1) {
-    background-color: rgba(0,0,0,0.075);
+    background-color: rgba(0, 0, 0, 0.075);
   }
   &:nth-child(2) {
-      background-color: rgba(0,0,0,0.15);
-      -moz-flex-direction: row-reverse;
-      -webkit-flex-direction: row-reverse;
-      -ms-flex-direction: row-reverse;
-      flex-direction: row-reverse;
+    background-color: rgba(0, 0, 0, 0.15);
+    -moz-flex-direction: row-reverse;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
   }
   &:nth-child(3) {
-    background-color: rgba(0,0,0,0.225);
+    background-color: rgba(0, 0, 0, 0.225);
   }
   &:nth-child(4) {
-    background-color: rgba(0,0,0,0.075);
+    background-color: rgba(0, 0, 0, 0.075);
     -moz-flex-direction: row-reverse;
     -webkit-flex-direction: row-reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
   }
   &:nth-child(5) {
-      background-color: rgba(0,0,0,0.15);
+    background-color: rgba(0, 0, 0, 0.15);
   }
   &:nth-child(6) {
-    background-color: rgba(0,0,0,0.225);
+    background-color: rgba(0, 0, 0, 0.225);
     -moz-flex-direction: row-reverse;
     -webkit-flex-direction: row-reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
   }
-  
+
   ${media.greaterThan('981px')`
     display: flex;
   `}
@@ -49,16 +49,16 @@ const OfferingImg = styled.div`
   order: 1;
   border-radius: 0;
   width: 100%;
-  
+
   img {
     display: block;
-    width: 100%;    
+    width: 100%;
   }
-  
+
   ${media.greaterThan('981px')`
     width: 45%;
   `}
-  
+
   ${media.greaterThan('1280px')`
     width: 40%;
   `}
@@ -104,7 +104,7 @@ const Offerings = ({ offerings }) => (
     {offerings.map((item, index) => (
       <Offering key={'index' + index}>
         <OfferingImg>
-          <img alt='' src={item.image} />
+          <img alt="" src={item.image} />
         </OfferingImg>
         <OfferingText>
           <h2>{item.headline}</h2>
@@ -121,7 +121,7 @@ Offerings.propTypes = {
       image: PropTypes.string,
       headline: PropTypes.string,
       text: PropTypes.string,
-    })
+    }),
   ),
 }
 

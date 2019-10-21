@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import Logo from '../Logo'
 import Nav from '../Nav'
-import {HeaderButton} from '../Button'
+import { HeaderButton } from '../Button'
 
-const PageHeader = styled.header` 
+const PageHeader = styled.header`
   -moz-transition: background-color 0.2s ease;
   -webkit-transition: background-color 0.2s ease;
   -ms-transition: background-color 0.2s ease;
@@ -19,11 +19,13 @@ const PageHeader = styled.header`
   z-index: 10;
 `
 
-const Header = ({isHome}) => {
+const Header = ({ isHome }) => {
   return (
     <PageHeader>
       <Logo isHome={isHome} />
-      <HeaderButton to='/jobs' label='We are hiring'>We are hiring</HeaderButton>
+      <HeaderButton to="/jobs" label="We are hiring">
+        We are hiring
+      </HeaderButton>
       <Nav />
     </PageHeader>
   )
