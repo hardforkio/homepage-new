@@ -1,5 +1,5 @@
 ---
-templateKey: about-page
+templateKey: imprint-page
 title: Impressum
 subtitle: Hardfork GmbH Berlin
 meta_title: Impressum Hardfork GmbH
