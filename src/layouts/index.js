@@ -5,10 +5,10 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import config from '../../meta/config'
 import styledNormalize from 'styled-normalize'
-import { ThemeProvider, injectGlobal } from 'styled-components'
+import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import media from 'styled-media-query'
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   ${styledNormalize}
 
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic');
@@ -71,6 +71,7 @@ class TemplateWrapper extends React.Component {
           <title>{config.siteTitle}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
+        <GlobalStyle />
         <ThemeProvider theme={hardforkTheme}>
           <Header isHome={this.props.location.pathname === '/'} />
         </ThemeProvider>

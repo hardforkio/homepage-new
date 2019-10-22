@@ -39,7 +39,7 @@ const ListItem = styled.li`
     padding: 0 1em 0 1em;
   `};
 `
-const ListItemFirst = ListItem.extend`
+const ListItemFirst = styled(ListItem)`
   ${media.greaterThan('981px')` 
     border-left: 0;
     margin-left: 0;
@@ -61,10 +61,10 @@ const StyledLink = styled(Link)`
   }
 `
 const ExternalLink = StyledLink.withComponent('a')
-const IconList = List.extend`
+const IconList = styled(List)`
   margin: 0 0 2em 0;
 `
-const IconListItem = ListItem.extend`
+const IconListItem = styled(ListItem)`
   display: inline-block;
   padding: 0 1em 0 1em;
 
