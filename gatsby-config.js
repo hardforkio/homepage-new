@@ -92,12 +92,11 @@ module.exports = {
           },
         ],
       },
-
     },
     {
       resolve: 'gatsby-plugin-feed',
       options: {
-        setup (ref) {
+        setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata
           ret.allMarkdownRemark = ref.query.allMarkdownRemark
           ret.generator = 'GatsbyJS Business Starter'
@@ -122,10 +121,12 @@ module.exports = {
                   `,
         feeds: [
           {
-            serialize (ctx) {
+            serialize(ctx) {
               const rssMetadata = ctx.query.site.siteMetadata.rssMetadata
               return ctx.query.allMarkdownRemark.edges
-                .filter(edge => edge.node.frontmatter.templateKey === 'article-page')
+                .filter(
+                  edge => edge.node.frontmatter.templateKey === 'article-page',
+                )
                 .map(edge => ({
                   categories: edge.node.frontmatter.tags,
                   date: edge.node.frontmatter.date,
@@ -134,7 +135,7 @@ module.exports = {
                   author: rssMetadata.author,
                   url: rssMetadata.site_url + edge.node.fields.slug,
                   guid: rssMetadata.site_url + edge.node.fields.slug,
-                  custom_elements: [{'content:encoded': edge.node.html}],
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
                 }))
             },
             query: `
@@ -169,4 +170,3 @@ module.exports = {
     'gatsby-plugin-netlify',
   ],
 }
-
