@@ -4,7 +4,6 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import transition from 'styled-transition-group'
-import scrollToComponent from 'react-scroll-to-component'
 import Offerings from '../components/Offerings'
 import Practices from '../components/Practices'
 import CallToAction from '../components/CallToAction'
@@ -229,12 +228,6 @@ class HomePageTemplate extends React.Component {
   }
 
   render() {
-    let scrollConfig = {
-      offset: -52,
-      align: 'top',
-      duration: 1500,
-      ease: 'in-out-sine',
-    }
     return (
       <div>
         <Helmet>
@@ -274,13 +267,7 @@ class HomePageTemplate extends React.Component {
                   >
                     <IntroText>{this.props.heading}</IntroText>
                     <p>
-                      <Button
-                        to="/#contact"
-                        label="Kontakt"
-                        onClick={() =>
-                          scrollToComponent(this.contact, scrollConfig)
-                        }
-                      >
+                      <Button to="/#contact" label="Kontakt">
                         Kontakt
                       </Button>
                     </p>
@@ -290,7 +277,6 @@ class HomePageTemplate extends React.Component {
               <MoreLink
                 href="#offerings"
                 data-arrow={arrow}
-                onClick={() => scrollToComponent(this.offerings, scrollConfig)}
                 mountOnEnter
                 timeout={750}
                 in={this.state.startThirdAnimation}
