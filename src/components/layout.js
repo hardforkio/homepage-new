@@ -1,8 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Header from './Header'
+import Footer from './Footer'
 import config from '../../meta/config'
 import styledNormalize from 'styled-normalize'
 import { ThemeProvider, injectGlobal } from 'styled-components'
@@ -63,30 +62,20 @@ const hardforkTheme = {
   defaultBg: 'rgb(46, 56, 66)',
 }
 
-class TemplateWrapper extends React.Component {
-  render() {
-    return (
-      <div>
-        <Helmet>
-          <title>{config.siteTitle}</title>
-          <meta name="description" content={config.siteDescription} />
-        </Helmet>
-        <ThemeProvider theme={hardforkTheme}>
-          <Header isHome={this.props.location.pathname === '/'} />
-        </ThemeProvider>
-        <ThemeProvider theme={hardforkTheme}>
-          {this.props.children()}
-        </ThemeProvider>
-        <ThemeProvider theme={hardforkTheme}>
-          <Footer />
-        </ThemeProvider>
-      </div>
-    )
-  }
-}
+const Layout = ({ children }) => (
+  <div>
+    <Helmet>
+      <title>{config.siteTitle}</title>
+      <meta name="description" content={config.siteDescription} />
+    </Helmet>
+    <ThemeProvider theme={hardforkTheme}>
+      <Header isHome={false} />
+    </ThemeProvider>
+    <ThemeProvider theme={hardforkTheme}>{children}</ThemeProvider>
+    <ThemeProvider theme={hardforkTheme}>
+      <Footer />
+    </ThemeProvider>
+  </div>
+)
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-}
-
-export default TemplateWrapper
+export default Layout
