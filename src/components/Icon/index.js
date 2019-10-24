@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 import * as faBrands from 'styled-icons/fa-brands/index.cjs'
 import * as faRegular from 'styled-icons/fa-regular/index.cjs'
 import * as faSolid from 'styled-icons/fa-solid/index.cjs'
 
-const Icon = ({name}) => {
+const Icon = ({ name }) => {
   let componentList = {
     Code: faSolid.Code,
     Envelope: faRegular.Envelope,
@@ -15,10 +15,7 @@ const Icon = ({name}) => {
     PaperPlane: faRegular.PaperPlane,
   }
   let IconComponent = componentList[name]
-  return (
-    <IconComponent />
-  )
+  return <IconComponent />
 }
 
 export default Icon
-

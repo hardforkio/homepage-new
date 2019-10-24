@@ -1,21 +1,21 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import PostCard from '../../components/PostCard'
 import ArticleHeader from '../../components/ArticleHeader/index.js'
 
 export default class JobsPage extends Component {
-  render () {
-    const {data} = this.props
-    const {edges: posts} = data.allMarkdownRemark
+  render() {
+    const { data } = this.props
+    const { edges: posts } = data.allMarkdownRemark
 
     return (
       <div>
         <Helmet>
           <title>Jobs @ Hardfork.io, Berlin</title>
         </Helmet>
-        <ArticleHeader title='Jobs' subtitle='Hardfork.io | Berlin' />
-        <PostCard posts={posts} articleType='job-page' />
+        <ArticleHeader title="Jobs" subtitle="Hardfork.io | Berlin" />
+        <PostCard posts={posts} articleType="job-page" />
       </div>
     )
   }

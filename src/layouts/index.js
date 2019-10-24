@@ -5,7 +5,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import config from '../../meta/config'
 import styledNormalize from 'styled-normalize'
-import {ThemeProvider, injectGlobal} from 'styled-components'
+import { ThemeProvider, injectGlobal } from 'styled-components'
 import media from 'styled-media-query'
 
 injectGlobal`
@@ -64,15 +64,15 @@ const hardforkTheme = {
 }
 
 class TemplateWrapper extends React.Component {
-  render () {
+  render() {
     return (
       <div>
         <Helmet>
           <title>{config.siteTitle}</title>
-          <meta name='description' content={config.siteDescription} />
+          <meta name="description" content={config.siteDescription} />
         </Helmet>
         <ThemeProvider theme={hardforkTheme}>
-          <Header isHome={(this.props.location.pathname === '/')} />
+          <Header isHome={this.props.location.pathname === '/'} />
         </ThemeProvider>
         <ThemeProvider theme={hardforkTheme}>
           {this.props.children()}

@@ -1,7 +1,7 @@
 /**
  * Created by vaibhav on 31/3/18
  */
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 let inlinedStyles = ''
 if (process.env.NODE_ENV === 'production') {
@@ -15,28 +15,31 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 export default class HTML extends Component {
-  render () {
+  render() {
     let css
     if (process.env.NODE_ENV === 'production') {
       css = (
         <style
-          id='gatsby-inlined-css'
-          dangerouslySetInnerHTML={{__html: inlinedStyles}}
+          id="gatsby-inlined-css"
+          dangerouslySetInnerHTML={{ __html: inlinedStyles }}
         />
       )
     }
     return (
-      <html lang='en' className='has-navbar-fixed-top'>
+      <html lang="en" className="has-navbar-fixed-top">
         <head>
-          <meta charSet='utf-8' />
-          <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no' />
+          <meta charSet="utf-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, user-scalable=no"
+          />
           {this.props.headComponents}
           {css}
         </head>
         <body>
           <div
-            id='___gatsby'
-            dangerouslySetInnerHTML={{__html: this.props.body}}
+            id="___gatsby"
+            dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
           <script src={__PATH_PREFIX__ + '/js/toggle.js'} />

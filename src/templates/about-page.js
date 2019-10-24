@@ -1,12 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import styled from 'styled-components'
-import media from 'styled-media-query'
-import Content, {HTMLContent} from '../components/Content'
+import Content, { HTMLContent } from '../components/Content'
 import ArticleHeader from '../components/ArticleHeader/index.js'
 
-export const AboutPageTemplate = ({title, subtitle, content, contentComponent}) => {
+export const AboutPageTemplate = ({
+  title,
+  subtitle,
+  content,
+  contentComponent,
+}) => {
   const PageContent = contentComponent || Content
 
   return (
@@ -24,14 +27,14 @@ AboutPageTemplate.propTypes = {
   contentComponent: PropTypes.func,
 }
 
-const AboutPage = ({data}) => {
-  const {markdownRemark: post} = data
+const AboutPage = ({ data }) => {
+  const { markdownRemark: post } = data
 
   return (
     <div>
       <Helmet>
         <title>{post.frontmatter.meta_title}</title>
-        <meta name='description' content={post.frontmatter.meta_description} />
+        <meta name="description" content={post.frontmatter.meta_description} />
       </Helmet>
       <AboutPageTemplate
         contentComponent={HTMLContent}

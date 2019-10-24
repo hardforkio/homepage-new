@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {kebabCase} from 'lodash'
-import Content, {HTMLContent} from '../components/Content'
+import Content, { HTMLContent } from '../components/Content'
 import SE0 from '../components/SEO'
 import ArticleHeader from '../components/ArticleHeader/index.js'
 
@@ -23,7 +22,7 @@ export const JobTemplate = ({
         meta_desc={meta_desc}
         slug={slug}
       />
-      <ArticleHeader title={title} subtitle='' />
+      <ArticleHeader title={title} subtitle="" />
       <PostContent content={content} />
     </article>
   )
@@ -38,8 +37,8 @@ JobTemplate.propTypes = {
   slug: PropTypes.string,
 }
 
-const JobPage = ({data}) => {
-  const {markdownRemark: post} = data
+const JobPage = ({ data }) => {
+  const { markdownRemark: post } = data
   return (
     <JobTemplate
       content={post.html}

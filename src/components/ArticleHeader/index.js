@@ -5,10 +5,14 @@ import media from 'styled-media-query'
 import bgimage from '../../img/banner.jpg'
 
 const ArticleHeaderWrap = styled.header`
-  background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
-  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
-  background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
-  background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props => props['data-bgimage']});
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props =>
+    props['data-bgimage']});
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props =>
+    props['data-bgimage']});
+  background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props =>
+    props['data-bgimage']});
+  background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${props =>
+    props['data-bgimage']});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
