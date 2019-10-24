@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import Header from '.'
+import { HeaderComponent } from '.'
 
 storiesOf('Header', module)
-  .add('default', () => <Header />)
-  .add('transparent', () => <Header isHome={true} />)
+  .add('default', () => <HeaderComponent />)
+  .add('transparent', () => <HeaderComponent isHome={true} />)

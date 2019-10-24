@@ -13,13 +13,15 @@ const PageHeader = styled.header`
   height: 3em;
   left: 0;
   line-height: 3em;
-  position: fixed;
-  top: 0;
   width: 100%;
+`
+
+const Fixed = styled.div`
+  position: fixed;
   z-index: 10;
 `
 
-const Header = ({ isHome }) => {
+export const HeaderComponent = ({ isHome }) => {
   return (
     <PageHeader>
       <Logo isHome={isHome} />
@@ -28,6 +30,14 @@ const Header = ({ isHome }) => {
       </HeaderButton>
       <Nav />
     </PageHeader>
+  )
+}
+
+const Header = ({ isHome }) => {
+  return (
+    <Fixed>
+      <HeaderComponent isHome={isHome} />
+    </Fixed>
   )
 }
 
