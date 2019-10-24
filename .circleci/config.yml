@@ -1,0 +1,54 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: node:10
+      user: node
+restore_prepared_repo: &restore_prepared_repo
+  - attach_workspace:
+      at: ~/repo
+
+version: 2
+jobs:
+  prepare:
+    <<: *defaults
+    steps:
+      - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          name: Restore Npm Package Cache
+          keys:
+            - npm-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn
+      - save_cache:
+          name: Save Npm Package Cache
+          key: npm-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn  
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - '*'
+
+  lint:
+    <<: *defaults
+    steps:
+      - <<: *restore_prepared_repo
+      - run:
+          name: Lint code
+          command: yarn run lint
+          
+workflows:
+  version: 2
+  ci:
+    jobs:
+      - prepare
+      - lint:
+          requires:
+            - prepare
