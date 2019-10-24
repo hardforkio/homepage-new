@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
-import { withScroll } from 'react-window-decorators'
 import transition from 'styled-transition-group'
 
 const LogoWrap = transition.div`
@@ -36,7 +35,6 @@ const LogoLink = styled(Link)`
   top: 0;
 `
 
-@withScroll
 class Logo extends React.Component {
   render() {
     let scrollCorrection = 60

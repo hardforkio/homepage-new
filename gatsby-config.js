@@ -41,35 +41,7 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
     `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        // Setting a color is optional.
-        color: config.themeColor,
-        // Disable the loading spinner.
-        showSpinner: false,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-tagmanager`,
-      options: {
-        id: config.googleTagManagerID,
-        includeInDevelopment: false,
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
