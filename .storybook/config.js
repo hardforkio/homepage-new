@@ -11,4 +11,4 @@ window.___navigate = pathname => {
   action("NavigateTo:")(pathname)
 }
 
-configure(require.context('../src', true, /stories\.jsx?$/), module);
+configure(require.context('../src', true, /stor(y|ies)\.[jt]sx?$/), module);
