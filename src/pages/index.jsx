@@ -4,13 +4,14 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import transition from 'styled-transition-group'
-import scrollToComponent from 'react-scroll-to-component'
 import Offerings from '../components/Offerings'
 import Practices from '../components/Practices'
 import CallToAction from '../components/CallToAction'
 import Button from '../components/Button'
 import arrow from '../img/arrow.svg'
 import bgimage from '../img/banner.jpg'
+import { data } from '../data/home'
+import Layout from '../components/layout'
 
 const Intro = styled.section`
   display: -moz-flex;
@@ -32,7 +33,6 @@ const Intro = styled.section`
   padding: 7em 3em 7em 3em;
   height: auto;
   min-height: 0;
-
   ${media.greaterThan('737px')`
     height: 100vh;
     min-height: 35em;
@@ -228,96 +228,87 @@ class HomePageTemplate extends React.Component {
   }
 
   render() {
-    let scrollConfig = {
-      offset: -52,
-      align: 'top',
-      duration: 1500,
-      ease: 'in-out-sine',
-    }
     return (
       <div>
         <Helmet>
           <title>{this.props.meta_title}</title>
           <meta name="description" content={this.props.meta_description} />
         </Helmet>
-        <Intro
-          innerRef={elem => {
-            this.intro = elem
-          }}
-        >
-          <IntroBackground
-            data-bgimage={bgimage}
-            mountOnEnter
-            unmountOnExit
-            timeout={3500}
-            in={this.state.startSecondAnimation}
-          />
-          <div>
-            <IntroHeadline
-              unmountOnExit
-              timeout={1000}
-              in={this.state.startAnimation}
-              onEntered={() => {
-                this.setState({ startSecondAnimation: true })
+        <Layout>
+          <>
+            <Intro
+              innerRef={elem => {
+                this.intro = elem
               }}
             >
-              {this.props.title}
-            </IntroHeadline>
-            <IntroWrap>
-              <FadeIn
+              <IntroBackground
+                data-bgimage={bgimage}
                 mountOnEnter
+                unmountOnExit
                 timeout={3500}
                 in={this.state.startSecondAnimation}
-              >
-                <IntroText>{this.props.heading}</IntroText>
-                <p>
-                  <Button
-                    to="/#contact"
-                    label="Kontakt"
-                    onClick={() =>
-                      scrollToComponent(this.contact, scrollConfig)
-                    }
+              />
+              <div>
+                <IntroHeadline
+                  unmountOnExit
+                  timeout={1000}
+                  in={this.state.startAnimation}
+                  onEntered={() => {
+                    this.setState({ startSecondAnimation: true })
+                  }}
+                >
+                  {this.props.title}
+                </IntroHeadline>
+                <IntroWrap>
+                  <FadeIn
+                    mountOnEnter
+                    timeout={3500}
+                    in={this.state.startSecondAnimation}
                   >
-                    Kontakt
-                  </Button>
-                </p>
-              </FadeIn>
-            </IntroWrap>
-          </div>
-          <MoreLink
-            href="#offerings"
-            data-arrow={arrow}
-            onClick={() => scrollToComponent(this.offerings, scrollConfig)}
-            mountOnEnter
-            timeout={750}
-            in={this.state.startThirdAnimation}
-          >
-            Mehr
-          </MoreLink>
-        </Intro>
-        <section
-          id="offerings"
-          ref={div => {
-            this.offerings = div
-          }}
-        >
-          <Offerings offerings={this.props.offerings.blurbs} />
-        </section>
-        <Practices
-          headline={this.props.practices_headline}
-          description={this.props.practices_description}
-          practices={this.props.practices}
-        />
-        <CallToAction
-          id="contact"
-          refParent={div => {
-            this.contact = div
-          }}
-          headline={this.props.contact_headline}
-          description={this.props.contact_description}
-          email={this.props.contact_email}
-          button_label={this.props.contact_button}
-        />
+                    <IntroText>{this.props.heading}</IntroText>
+                    <p>
+                      <Button to="/#contact" label="Kontakt">
+                        Kontakt
+                      </Button>
+                    </p>
+                  </FadeIn>
+                </IntroWrap>
+              </div>
+              <MoreLink
+                href="#offerings"
+                data-arrow={arrow}
+                mountOnEnter
+                timeout={750}
+                in={this.state.startThirdAnimation}
+              >
+                Mehr
+              </MoreLink>
+            </Intro>
+            <section
+              id="offerings"
+              ref={div => {
+                this.offerings = div
+              }}
+            >
+              <Offerings offerings={this.props.offerings.blurbs} />
+            </section>
+            <Practices
+              headline={this.props.practices_headline}
+              description={this.props.practices_description}
+              practices={this.props.practices}
+            />
+            <CallToAction
+              id="contact"
+              refParent={div => {
+                this.contact = div
+              }}
+              headline={this.props.contact_headline}
+              description={this.props.contact_description}
+              email={this.props.contact_email}
+              button_label={this.props.contact_button}
+            />
+          </>
+        </Layout>
       </div>
     )
   }
@@ -340,64 +331,10 @@ HomePageTemplate.propTypes = {
   contact_email: PropTypes.string,
 }
 
-const HomePage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
-
-  return (
-    <HomePageTemplate
-      title={frontmatter.title}
-      meta_title={frontmatter.meta_title}
-      meta_description={frontmatter.meta_description}
-      heading={frontmatter.heading}
-      offerings={frontmatter.offerings}
-      practices_headline={frontmatter.practices_headline}
-      practices_description={frontmatter.practices_description}
-      practices={frontmatter.practices}
-      contact_headline={frontmatter.contact_headline}
-      contact_description={frontmatter.contact_description}
-      contact_button={frontmatter.contact_button}
-      contact_email={frontmatter.contact_email}
-    />
-  )
-}
+const HomePage = () => <HomePageTemplate {...data} />
 
 HomePage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
+  data: PropTypes.object,
 }
 
 export default HomePage
-
-export const pageQuery = graphql`
-  query IndexPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      frontmatter {
-        title
-        meta_title
-        meta_description
-        heading
-        offerings {
-          blurbs {
-            image
-            headline
-            text
-          }
-        }
-        practices_headline
-        practices_description
-        practices {
-          icon
-          headline
-          text
-        }
-        contact_headline
-        contact_description
-        contact_button
-        contact_email
-      }
-    }
-  }
-`

@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import Content, { HTMLContent } from '../components/Content'
+import Content from '../components/Content'
 import ArticleHeader from '../components/ArticleHeader/index.js'
+import { data } from '../data/imprint'
 
 export const AboutPageTemplate = ({
   title,
@@ -27,20 +28,17 @@ AboutPageTemplate.propTypes = {
   contentComponent: PropTypes.func,
 }
 
-const AboutPage = ({ data }) => {
-  const { markdownRemark: post } = data
-
+const AboutPage = () => {
   return (
     <div>
       <Helmet>
-        <title>{post.frontmatter.meta_title}</title>
-        <meta name="description" content={post.frontmatter.meta_description} />
+        <title>{data.meta_title}</title>
+        <meta name="description" content={data.meta_description} />
       </Helmet>
       <AboutPageTemplate
-        contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        subtitle={post.frontmatter.subtitle}
-        content={post.html}
+        title={data.title}
+        subtitle={data.subtitle}
+        content={data.text}
       />
     </div>
   )
@@ -51,17 +49,3 @@ AboutPage.propTypes = {
 }
 
 export default AboutPage
-
-export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
-      frontmatter {
-        title
-        subtitle
-        meta_title
-        meta_description
-      }
-    }
-  }
-`
