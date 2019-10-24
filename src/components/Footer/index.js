@@ -1,5 +1,5 @@
 import React from 'react'
-import config from '../../../meta/config'
+import config from '../../config'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import Link from 'gatsby-link'

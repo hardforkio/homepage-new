@@ -17,7 +17,7 @@ import {
   LinkedinIcon,
   RedditIcon,
 } from 'react-share'
-import config from '../../../meta/config'
+import config from '../../config'
 
 class Share extends Component {
   render() {
