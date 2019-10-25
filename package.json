@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Vaibhav Sharma",
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "bulma": "^0.6.2",
     "gatsby": "^2.17.2",
     "gatsby-plugin-google-tagmanager": "^2.1.15",
@@ -23,6 +24,7 @@
     "netlify-cms-app": "^2.9.7",
     "prop-types": "^15.6.1",
     "react": "^16.11.0",
+    "react-bootstrap": "^1.0.0-beta.14",
     "react-burger-menu": "^2.5.2",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.0",
