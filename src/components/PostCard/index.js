@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 import media from 'styled-media-query'
+import * as R from 'ramda'
 
 const StyledLink = styled(Link)`
   -moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
@@ -63,26 +64,29 @@ const PostCardItem = styled.div`
   }
 `
 
-const PostCard = ({ posts, articleType }) => {
-  return (
-    <PostCardWrap>
-      {posts
-        .filter(post => post.node.frontmatter.templateKey === articleType)
-        .map(({ node: post }) => (
-          <PostCardItem key={post.id}>
-            <h2>
-              <Link className="has-text-primary" to={post.fields.slug}>
-                {post.frontmatter.title}
-              </Link>
-            </h2>
-            <p>
-              {post.excerpt}{' '}
-              <StyledLink to={post.fields.slug}>Mehr erfahren →</StyledLink>
-            </p>
-          </PostCardItem>
-        ))}
-    </PostCardWrap>
-  )
-}
+const PostCard = ({ posts }) => (
+  <PostCardWrap>
+    {R.map(post => (
+      <PostCardItem key={post.id}>
+        <h2>
+          <Link className="has-text-primary" to={post.slug}>
+            {post.title}
+          </Link>
+        </h2>
+        <p>
+          {getExcerpt(post.skillsDescription)}
+          {'... '}
+          <StyledLink to={post.slug}>Mehr erfahren →</StyledLink>
+        </p>
+      </PostCardItem>
+    ))(posts)}
+  </PostCardWrap>
+)
 
 export default PostCard
+
+const getExcerpt = R.pipe(
+  R.split(''),
+  R.slice(0, 120),
+  R.join(''),
+)
