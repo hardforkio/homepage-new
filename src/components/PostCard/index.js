@@ -64,7 +64,7 @@ const PostCardItem = styled.div`
   }
 `
 
-const PostCard = ({ posts }) => (
+export const PostCard = ({ posts }) => (
   <PostCardWrap>
     {R.map(post => (
       <PostCardItem key={post.id}>
@@ -76,14 +76,12 @@ const PostCard = ({ posts }) => (
         <p>
           {getExcerpt(post.skillsDescription)}
           {'... '}
-          <StyledLink to={post.slug}>Mehr erfahren →</StyledLink>
+          <StyledLink to={`/jobs/${post.slug}`}>Mehr erfahren →</StyledLink>
         </p>
       </PostCardItem>
     ))(posts)}
   </PostCardWrap>
 )
-
-export default PostCard
 
 const getExcerpt = R.pipe(
   R.split(''),

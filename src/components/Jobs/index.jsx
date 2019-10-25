@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import PostCard from '../PostCard'
+import { PostCard } from '../PostCard'
 import ArticleHeader from '../ArticleHeader/index.js'
 import { data } from '../../data/jobs'
 
