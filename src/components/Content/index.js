@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 
-const ContentWrap = styled.section`
+export const ContentWrap = styled.section`
   background-color: #ffffff;
   color: #4e4852;
   padding: 3em 2em 1em 2em;
