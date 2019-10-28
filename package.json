@@ -3,6 +3,19 @@
   "description": "Gatsby Business Website Starter",
   "version": "1.0.0",
   "author": "Vaibhav Sharma",
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "start": "yarn run develop",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "serve": "gatsby serve",
+    "lint": "eslint --ext js,jsx --ignore-path .gitignore .",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
   "dependencies": {
     "bulma": "^0.6.2",
     "gatsby": "^2.17.2",
@@ -35,19 +48,6 @@
     "styled-media-query": "^2.0.2",
     "styled-normalize": "8.0.0",
     "styled-transition-group": "^1.0.0"
-  },
-  "license": "MIT",
-  "main": "n/a",
-  "scripts": {
-    "start": "yarn run develop",
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "serve": "gatsby serve",
-    "lint": "eslint --ext js,jsx --ignore-path .gitignore .",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
