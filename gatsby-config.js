@@ -1,7 +1,7 @@
 /**
  * Created by vaibhav on 31/3/18
  */
-const config = require('./src/config')
+const config = require('./config')
 
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
@@ -20,6 +20,7 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-typescript`,
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-styled-components`,
     {
@@ -66,5 +67,8 @@ module.exports = {
       },
     },
     'gatsby-plugin-netlify',
+    {
+      resolve: `gatsby-plugin-sass`,
+    },
   ],
 }

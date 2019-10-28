@@ -1,11 +1,12 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Header from './Header'
+import { Header } from './Header'
 import Footer from './Footer'
-import config from '../config'
+import config from '../../config'
 import styledNormalize from 'styled-normalize'
 import { ThemeProvider, injectGlobal } from 'styled-components'
 import media from 'styled-media-query'
+import { MenuEntries } from './Header/MenuEntries'
 
 injectGlobal`
   ${styledNormalize}
@@ -69,7 +70,7 @@ const Layout = ({ children }) => (
       <meta name="description" content={config.siteDescription} />
     </Helmet>
     <ThemeProvider theme={hardforkTheme}>
-      <Header isHome={false} />
+      <Header isHome={false} MenuEntries={MenuEntries} />
     </ThemeProvider>
     <ThemeProvider theme={hardforkTheme}>{children}</ThemeProvider>
     <ThemeProvider theme={hardforkTheme}>
