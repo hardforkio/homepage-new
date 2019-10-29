@@ -11,9 +11,9 @@ const Footer = styled.footer`
   padding: 3em 2em 1em 2em;
   text-align: center;
 
-  ${media.greaterThan('981px')`
+  ${media.greaterThan('large')`
     padding: 4em 3em 2em 3em;
-  `} ${media.greaterThan('981px')`
+  `} ${media.greaterThan('large')`
     padding: 6em 0 4em 0;
   `};
 `
@@ -32,7 +32,7 @@ const ListItem = styled.li`
   margin: 0;
   padding: 0.5em 0;
 
-  ${media.greaterThan('981px')`
+  ${media.greaterThan('large')`
     border-left: solid 1px rgba(255,255,255,0.5);
     display: inline-block;
     line-height: 1em;
@@ -40,7 +40,7 @@ const ListItem = styled.li`
   `};
 `
 const ListItemFirst = ListItem.extend`
-  ${media.greaterThan('981px')` 
+  ${media.greaterThan('large')`
     border-left: 0;
     margin-left: 0;
     padding-left: 0;
@@ -68,7 +68,7 @@ const IconListItem = ListItem.extend`
   display: inline-block;
   padding: 0 1em 0 1em;
 
-  ${media.greaterThan('981px')`
+  ${media.greaterThan('large')`
     border: 0;
   `} svg {
     color: rgba(255, 255, 255, 0.5);
@@ -110,7 +110,7 @@ export default () => (
       </ListItem>
       <ListItem>
         Design:{' '}
-        <ExternalLink href="https://html5up.net/" target="_blank">
+        <ExternalLink to="https://html5up.net/" target="_blank">
           HTML5 UP
         </ExternalLink>
       </ListItem>
