@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { ContentWrap } from '../Content'
 import SE0 from '../SEO'
-import ArticleHeader from '../ArticleHeader/index.js'
+import ArticleHeader from '../ArticleHeader/index'
 
 export const JobComponent = ({ content }) => (
   <article>

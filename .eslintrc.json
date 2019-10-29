@@ -1,13 +1,27 @@
 {
-  "extends": ["react-app"],
-  "plugins": ["prettier"],
+  "extends": [
+    "react-app",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
-    "prettier/prettier": ["error", { "semi": false, "trailingComma": "all", "singleQuote": true }],
-    "curly": ["error", "multi-line"]
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": false,
+        "trailingComma": "all",
+        "singleQuote": true
+      }
+    ],
+    "curly": [
+      "error",
+      "multi-line"
+    ]
   },
   "globals": {
     "graphql": true,
     "__PATH_PREFIX__": true
-  },
-  "parser": "babel-eslint"
+  }
 }

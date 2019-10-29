@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 import Logo from '../Logo'
 import Nav from '../Nav'
@@ -19,13 +19,15 @@ const PageHeader = styled.header`
   z-index: 10;
 `
 
-const Header = ({ isHome }) => {
+interface HeaderProps {
+  isHome?: boolean
+}
+
+const Header: FunctionComponent<HeaderProps> = ({ isHome = false }) => {
   return (
     <PageHeader>
       <Logo isHome={isHome} />
-      <HeaderButton to="/jobs" label="We are hiring">
-        We are hiring
-      </HeaderButton>
+      <HeaderButton to="/jobs">We are hiring</HeaderButton>
       <Nav />
     </PageHeader>
   )
