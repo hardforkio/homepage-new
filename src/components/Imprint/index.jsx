@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import ArticleHeader from '../ArticleHeader/index.js'
+import ArticleHeader from '../ArticleHeader/index'
 import { data } from '../../data/imprint'
-import { ContentWrap } from '../Content/index.js'
+import { ContentWrap } from '../Content/index'
 
 const ImprintComponent = ({
   title,

@@ -10,7 +10,7 @@ const PracticesSection = styled.section`
   padding: 3em 2em 1em 2em;
 
   ${media.greaterThan('737px')`
-    padding: 4em 3em 2em 3em;    
+    padding: 4em 3em 2em 3em;
   `}
   ${media.greaterThan('981px')`
     padding: 6em 0 4em 0;    
@@ -93,22 +93,22 @@ const PracticesList = styled.ul`
       width: 50%;
       
       &:nth-child(1) {
-        background-color: rgba(0,0,0,0.035);
+        background-color: rgba(0, 0, 0, 0.035);
       }
       &:nth-child(2) {
-        background-color: rgba(0,0,0,0.07);
+        background-color: rgba(0, 0, 0, 0.07);
       }
       &:nth-child(3) {
-        background-color: rgba(0,0,0,0.105);
+        background-color: rgba(0, 0, 0, 0.105);
       }
       &:nth-child(4) {
-        background-color: rgba(0,0,0,0.14);
+        background-color: rgba(0, 0, 0, 0.14);
       }
       &:nth-child(5) {
-        background-color: rgba(0,0,0,0.175);
+        background-color: rgba(0, 0, 0, 0.175);
       }
       &:nth-child(6) {
-        background-color: rgba(0,0,0,0.21);
+        background-color: rgba(0, 0, 0, 0.21);
       }
     `}
     ${media.greaterThan('981px')`
