@@ -10,11 +10,11 @@ export const Header: FunctionComponent<{
   const toggle = useCallback(() => setIsOpen(!isOpen), [isOpen])
   return (
     <header>
-      <Navbar bg="dark" expand="md">
+      <Navbar color="dark" dark expand="md">
         <NavbarBrand href="#home">{isHome ? 'HARDFORK' : ''}</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
+        <NavbarToggler onClick={toggle} className='border-0' />
         <Collapse isOpen={isOpen} navbar>
-          <Nav navbar>
+          <Nav className='ml-auto align-items-center' navbar>
             <MenuEntries />
           </Nav>
         </Collapse>

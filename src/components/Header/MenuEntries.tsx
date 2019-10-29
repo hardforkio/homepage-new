@@ -6,13 +6,10 @@ export const MenuEntries = () => (
   <>
     {[
       <NavItem key="jobs">
-        <Button
-          className="mr-md-5"
-          to="/jobs"
-          tag={({ to, children }) => <Link to={to}>{children}</Link>}
-          color="danger"
-        >
-          WE ARE HIRING
+        <Button className="mr-md-5" color="danger" size="sm">
+          <Link className="nav-link text-light font-weight-bold" to={'/jobs'}>
+            WE ARE HIRING
+          </Link>
         </Button>
       </NavItem>,
       <NavItem key="home">

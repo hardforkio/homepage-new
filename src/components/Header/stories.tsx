@@ -1,7 +1,8 @@
+import '../../scss/main.scss'
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { Header } from '.'
 import { NavItem, Button, NavLink } from 'reactstrap'
+import { Header } from '.'
 
 const MenuEntries = () => (
   <>
