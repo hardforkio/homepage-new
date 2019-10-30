@@ -26,9 +26,24 @@ module.exports = function ({ config }) {
     enforce: "pre"
   })
   config.module.rules.push({
-    test: /\.scss$/,
-    use: ['style-loader', 'css-loader', 'sass-loader'],
-    include: path.resolve(__dirname, '../'),
+    test: /\.module\.s(a|c)ss$/,
+    loader: ['style-loader', {
+      loader: 'css-loader', query: {
+        modules: true,
+        localIdentName: '[name]__[local]___[hash:base64:5]'
+      }
+    }, 'sass-loader'
+    ]
+  }, {
+    test: /\.s(a|c)ss$/,
+    exclude: /\.module.(s(a|c)ss)$/,
+    loader: [
+      'style-loader',
+      'css-loader',
+      'sass-loader',
+    ]
   });
+
+  config.resolve.extensions.push('.scss');
   return config
 }
