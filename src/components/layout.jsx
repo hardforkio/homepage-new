@@ -23,10 +23,6 @@ injectGlobal`
     box-sizing: border-box;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
     background: rgb(46, 56, 66);
     color: #ffffff;

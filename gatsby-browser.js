@@ -1,3 +1,7 @@
-import smoothscroll from "smoothscroll-polyfill"
+import SmoothScroll from "smooth-scroll"
 
-smoothscroll.polyfill()
+const LINK_SELECTOR = 'a[href*="#"]'
+new SmoothScroll(LINK_SELECTOR, {
+    speed: 1500,
+    speedAsDuration: true
+});
