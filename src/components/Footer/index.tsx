@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from "react"
-import config from "../../../config"
 import Link from "gatsby-link"
 
 import cn from "classnames"
@@ -17,8 +16,7 @@ const LegalBar: FunctionComponent = ({ children }) => (
       "flex-md-row",
       "justify-content-center",
       "text-uppercase",
-      "text-center",
-      styles.spacedLetters
+      "text-center"
     )}
   >
     {children}
@@ -26,16 +24,15 @@ const LegalBar: FunctionComponent = ({ children }) => (
 )
 
 const LegalItem: FunctionComponent = ({ children }) => (
-  <div
-    className={cn(
-      "px-3",
-      styles.verticalSeparatorOnMd,
-      styles.darkenTextAndHightlightLinksOnHover
-    )}
-  >
+  <div className={cn("px-3", "mb-2 mb-md-0", styles.verticalSeparatorOnMd)}>
     {children}
   </div>
 )
+
+const translations = {
+  copyrightText: "© 2017-2019 Hardfork GmbH",
+  imprintLinkText: "Impressum"
+}
 
 const Footer = () => (
   <footer className={cn("bg-dark py-3 py-md-5", styles.textGray)}>
@@ -63,12 +60,15 @@ const Footer = () => (
       </div>
     </div>
     <LegalBar>
-      <LegalItem>{config.copyright}</LegalItem>
+      <LegalItem>{translations.copyrightText}</LegalItem>
       <LegalItem>
-        <Link to="/imprint">impressum</Link>
+        <Link to="/imprint">{translations.imprintLinkText}</Link>
       </LegalItem>
       <LegalItem>
-        design:&nbsp;&nbsp;
+        {
+          //TODO: Remove this menu entry.
+        }
+        Design:&nbsp;&nbsp;
         <a
           href="https://html5up.net/"
           target="_blank"
