@@ -1,22 +1,22 @@
-import React, { FunctionComponent } from "react"
-import Link from "gatsby-link"
+import React, { FunctionComponent } from 'react'
+import Link from 'gatsby-link'
 
-import cn from "classnames"
-import styles from "./Footer.module.scss"
+import cn from 'classnames'
+import styles from './Footer.module.scss'
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const LegalBar: FunctionComponent = ({ children }) => (
   <div
     className={cn(
-      "d-flex",
-      "flex-column",
-      "flex-md-row",
-      "justify-content-center",
-      "text-uppercase",
-      "text-center"
+      'd-flex',
+      'flex-column',
+      'flex-md-row',
+      'justify-content-center',
+      'text-uppercase',
+      'text-center',
     )}
   >
     {children}
@@ -24,22 +24,28 @@ const LegalBar: FunctionComponent = ({ children }) => (
 )
 
 const LegalItem: FunctionComponent = ({ children }) => (
-  <div className={cn("px-3", "mb-2 mb-md-0", styles.verticalSeparatorOnMd)}>
+  <div className={cn('px-3', 'mb-2 mb-md-0', styles.verticalSeparatorOnMd)}>
     {children}
   </div>
 )
 
 const translations = {
-  copyrightText: "© 2017-2019 Hardfork GmbH",
-  imprintLinkText: "Impressum"
+  copyrightText: '© 2017-2019 Hardfork GmbH',
+  imprintLinkText: 'Impressum',
 }
 
 const Footer = () => (
-  <footer className={cn("bg-dark py-3 py-md-5", styles.textGray)}>
+  <footer
+    className={cn(
+      'bg-dark py-3 py-md-5',
+      styles.textGraySmallSpaced,
+      styles.linkNoBorderAndWhiteOnHover,
+    )}
+  >
     <div className="d-flex mb-4 justify-content-center">
       <div className="px-3">
         <a
-          className={cn("border-0")}
+          className={cn('border-0')}
           href="https://github.com/hardforkio"
           title="Github"
           target="_blank"
@@ -51,7 +57,7 @@ const Footer = () => (
 
       <div className="px-3">
         <a
-          className={cn("border-0")}
+          className={cn('border-0')}
           href="mailto:contact@hardfork.io"
           title="Email"
         >
