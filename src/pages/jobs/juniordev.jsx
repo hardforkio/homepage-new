@@ -4,7 +4,7 @@ import Layout from '../../components/layout'
 import { data } from '../../data/jobs'
 
 export default () => (
-  <Layout>
+  <Layout isHeaderTransparent={false}>
     <JobPage post={data.posts[0]} />
   </Layout>
 )

@@ -22,7 +22,9 @@ export const NavbarComponent: FunctionComponent<{
       dark
       expand="md"
     >
-      <NavbarBrand href="#home">{isTransparent ? '' : 'HARDFORK'}</NavbarBrand>
+      <NavbarBrand tag={linkTag} to="/">
+        {isTransparent ? '' : 'HARDFORK'}
+      </NavbarBrand>
       <NavbarToggler onClick={toggle} className="border-0" />
       <Collapse isOpen={isOpen} navbar>
         <Nav className="ml-auto align-items-center text-light" navbar>

@@ -13,11 +13,6 @@ export const MenuEntries = ({ linkTag }: { linkTag: any }) => (
           We are hiring
         </NavLink>
       </NavItem>,
-      <NavItem key="home">
-        <NavLink to="/" tag={linkTag}>
-          STARTSEITE
-        </NavLink>
-      </NavItem>,
       <NavItem key="jobs">
         <NavLink to="/jobs" tag={linkTag}>
           JOBS
