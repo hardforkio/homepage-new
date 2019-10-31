@@ -49,6 +49,58 @@ $danger: $red;
 $light: $white;
 $dark: #2e3842;
 
+$black: #000;
+
+$grays: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$grays: map-merge(
+  (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+  ),
+  $grays
+);
+
+$colors: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+  (
+    "blue": $blue,
+    "indigo": $indigo,
+    "purple": $purple,
+    "pink": $pink,
+    "red": $red,
+    "orange": $orange,
+    "yellow": $yellow,
+    "green": $green,
+    "teal": $teal,
+    "cyan": $cyan,
+    "white": $white,
+    "gray": $gray-600,
+    "gray-dark": $gray-800
+  ),
+  $colors
+);
+
+$secondary: $gray-600;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-800;
+
+$body-bg: $dark;
+$body-color: $white;
+
+
 // Typography
 //
 // Font, line-height, and color for body text, headings, and more.
@@ -57,3 +109,12 @@ $dark: #2e3842;
 $font-family-sans-serif:      "Open Sans", "Helvetica", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
+
+
+$font-size-base: 1.25rem; // Assumes the browser default, typically `16px`
+$line-height-base: 1.65;
+
+$link-color: inherit;
+$link-hover-color: inherit;
+$link-hover-decoration: none;
+$font-family-base: Open Sans, Helvetica, sans-serif;

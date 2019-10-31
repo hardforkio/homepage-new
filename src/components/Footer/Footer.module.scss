@@ -1,0 +1,27 @@
+@import "../../scss/bootstrap.scss";
+
+.verticalSeparatorOnMd {
+  @include media-breakpoint-up(md) {
+    border-left: 1px solid;
+    &:first-child {
+      border-left: none;
+    }
+  }
+}
+
+.textGraySmallSpaced {
+  color: $gray-500;
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+}
+
+.linkNoBorderAndWhiteOnHover {
+  a {
+    border-bottom: 1px dotted;
+    transition: color 0.2s ease 0s, border-bottom-color 0.2s ease 0s;
+    &:hover {
+      color: $white;
+      border-bottom-color: transparent;
+    }
+  }
+}

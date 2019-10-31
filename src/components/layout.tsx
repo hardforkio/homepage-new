@@ -26,6 +26,10 @@ injectGlobal`
 
   html {
     font-size: 11pt;
+    font-weight: 400;
+    letter-spacing: .075em;
+    margin: 0;
+    
     ${media.greaterThan('sm')`
       font-size: 12pt;
     `}
