@@ -1,4 +1,31 @@
-export const data = {
+export type HomeData = {
+  title: string
+  heading: string
+  offerings: { blurbs: Offering[] }
+  practices_headline: string
+  practices_description: string
+  practices: Practice[]
+  contact_headline: string
+  contact_description: string
+  contact_button: string
+  contact_email: string
+  meta_title: string
+  meta_description: string
+}
+
+export type Offering = {
+  headline: string
+  image: string
+  text: string
+}
+
+export type Practice = {
+  icon: string
+  headline: string
+  text: string
+}
+
+export const data: HomeData = {
   title: 'Hardfork',
   heading: 'Ihr Partner für anspruchsvolle Softwareprojekte',
   offerings: {
