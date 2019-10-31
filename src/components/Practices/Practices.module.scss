@@ -1,34 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import media from 'styled-media-query'
-import Icon from '../Icon'
-
-const PracticesSection = styled.section`
+.practicesSection {
   background-color: rgb(80, 83, 147);
   color: rgb(211, 212, 228);
   padding: 3em 2em 1em 2em;
 
-  ${media.greaterThan('737px')`
+  @media (min-width: 737px)  {
     padding: 4em 3em 2em 3em;
-  `}
-  ${media.greaterThan('981px')`
-    padding: 6em 0 4em 0;    
-  `}
-`
-const PracticesWrap = styled.div`
-  width: 100%;
-  margin: 0 auto;
+  }
 
-  ${media.greaterThan('981px')`
-    width: 90%;
-  `}
+  @media (min-width: 981px) {
+   padding: 6em 0 4em 0;    
+  }
+}
 
-  ${media.greaterThan('1280px')`
-    width: 60em;
-  `}
-`
-const PracticesHeader = styled.header`
+.practicesHeader {
   margin: 0px 0px 3.5em;
   text-align: center;
 
@@ -46,16 +30,31 @@ const PracticesHeader = styled.header`
     position: relative;
     text-transform: uppercase;
 
-    ${media.greaterThan('737px')`
+    @media (min-width: 737px) {
       font-size: 1.35em;
       line-height: 1.75em;
-    `}
+    }
   }
   p {
     margin: 0 0 2em 0;
   }
-`
-const PracticesList = styled.ul`
+}
+
+.practicesWrap {
+  width: 100%;
+  margin: 0 auto;
+
+  @media (min-width: 981px) {
+    width: 90%;
+  }
+
+  @media (min-width: 1280px) {
+    width: 60em;
+  }
+}
+
+.practicesList {
+
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -87,7 +86,7 @@ const PracticesList = styled.ul`
       border-top: 0;
     }
 
-    ${media.greaterThan('737px')`
+    @media (min-width: 737px) {
       border-top: 0;
       padding: 3em 2em 1em 2em;
       width: 50%;
@@ -110,11 +109,12 @@ const PracticesList = styled.ul`
       &:nth-child(6) {
         background-color: rgba(0, 0, 0, 0.21);
       }
-    `}
-    ${media.greaterThan('981px')`
+    }
+    
+    @media (min-width: 981px) {
       padding: 4em 4em 2em 6em;    
       text-align: left;  
-    `}
+    }
   }
 
   h3 {
@@ -135,56 +135,24 @@ const PracticesList = styled.ul`
     padding: 0px;
     vertical-align: baseline;
   }
-`
-const PracticeIcon = styled.div`
+}
+
+.praticesIcon {
+
   margin: 0 0 1em 0;
   position: relative;
   text-align: center;
 
-  ${media.greaterThan('981px')`
+  @media (min-width: 981px) {
     left: 2.5em;
     position: absolute;
     text-align: left;
     top: 4.1em;
-  `}
+  }
 
   svg {
     color: rgb(0, 255, 204);
     height: 26px;
     width: 26px;
   }
-`
-
-const Practices = ({ headline, description, practices }) => (
-  <PracticesSection>
-    <PracticesWrap>
-      <PracticesHeader>
-        <h2>{headline}</h2>
-        <p>{description}</p>
-      </PracticesHeader>
-      <PracticesList>
-        {practices.map((practice, id) => (
-          <li key={id}>
-            <PracticeIcon>
-              <Icon name={practice.icon} />
-            </PracticeIcon>
-            <h3>{practice.headline}</h3>
-            <p>{practice.text}</p>
-          </li>
-        ))}
-      </PracticesList>
-    </PracticesWrap>
-  </PracticesSection>
-)
-
-Practices.propTypes = {
-  practices: PropTypes.arrayOf(
-    PropTypes.shape({
-      icon: PropTypes.string,
-      headline: PropTypes.string,
-      text: PropTypes.string,
-    }),
-  ),
 }
-
-export default Practices
