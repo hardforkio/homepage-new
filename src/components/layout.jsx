@@ -30,7 +30,6 @@ injectGlobal`
     font-size: 11pt;
     font-weight: 400;
     letter-spacing: .075em;
-    line-height: 1.65em;
     margin: 0;
     
     ${media.greaterThan('737px')`
