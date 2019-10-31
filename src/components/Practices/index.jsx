@@ -3,19 +3,8 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import Icon from '../Icon'
+import styles from './Practices.module.scss'
 
-const PracticesSection = styled.section`
-  background-color: rgb(80, 83, 147);
-  color: rgb(211, 212, 228);
-  padding: 3em 2em 1em 2em;
-
-  ${media.greaterThan('737px')`
-    padding: 4em 3em 2em 3em;
-  `}
-  ${media.greaterThan('981px')`
-    padding: 6em 0 4em 0;    
-  `}
-`
 const PracticesWrap = styled.div`
   width: 100%;
   margin: 0 auto;
@@ -156,7 +145,7 @@ const PracticeIcon = styled.div`
 `
 
 const Practices = ({ headline, description, practices }) => (
-  <PracticesSection>
+  <section className={styles.practicesSection}>
     <PracticesWrap>
       <PracticesHeader>
         <h2>{headline}</h2>
@@ -174,7 +163,7 @@ const Practices = ({ headline, description, practices }) => (
         ))}
       </PracticesList>
     </PracticesWrap>
-  </PracticesSection>
+  </section>
 )
 
 Practices.propTypes = {

@@ -1,0 +1,13 @@
+.practices-section {
+  background-color: rgb(80, 83, 147);
+  color: rgb(211, 212, 228);
+  padding: 3em 2em 1em 2em;
+
+  @media (min-width: 737px)  {
+    padding: 4em 3em 2em 3em;
+  }
+
+  @media (min-width: 981px) {
+   padding: 6em 0 4em 0;    
+  }
+}
