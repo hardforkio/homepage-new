@@ -21,20 +21,26 @@ export const Practices: FunctionComponent<PracticesProps> = ({
         <p>{description}</p>
       </header>
       <ul className={styles.practicesList}>
-        {practices.map(
-          ({ icon, headline: praticeHeadline, text }: Practice, id: number) => (
-            <li key={id}>
-              <div className={styles.practicesIcon}>
-                <Icon name={icon} />
-              </div>
-              <h3>{praticeHeadline}</h3>
-              <p>{text}</p>
-            </li>
-          ),
-        )}
+        {practices.map((practice: Practice, index: number) => (
+          <PracticeComponent key={index} {...practice} />
+        ))}
       </ul>
     </div>
   </section>
+)
+
+const PracticeComponent: FunctionComponent<Practice> = ({
+  icon,
+  headline,
+  text,
+}) => (
+  <li>
+    <div className={styles.practicesIcon}>
+      <Icon name={icon} />
+    </div>
+    <h3>{headline}</h3>
+    <p>{text}</p>
+  </li>
 )
 
 export default Practices
