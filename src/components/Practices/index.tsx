@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
-import Icon from '../Icon'
 import styles from './Practices.module.scss'
 import { Practice } from '../../data/home'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface PracticesProps {
   headline: string
@@ -35,8 +35,8 @@ const PracticeComponent: FunctionComponent<Practice> = ({
   text,
 }) => (
   <li>
-    <div className={styles.practicesIcon}>
-      <Icon name={icon} />
+    <div className={styles.praticesIcon}>
+      <FontAwesomeIcon icon={icon} size="lg" />
     </div>
     <h3>{headline}</h3>
     <p>{text}</p>

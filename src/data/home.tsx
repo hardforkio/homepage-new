@@ -1,3 +1,15 @@
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import {
+  faPaperPlane,
+  faHeart,
+  faFlag,
+} from '@fortawesome/free-regular-svg-icons'
+import {
+  faHeadphones,
+  faLaptop,
+  faCode,
+} from '@fortawesome/free-solid-svg-icons'
+
 export type HomeData = {
   title: string
   heading: string
@@ -20,7 +32,7 @@ export type Offering = {
 }
 
 export type Practice = {
-  icon: string
+  icon: IconProp
   headline: string
   text: string
 }
@@ -56,37 +68,37 @@ export const data: HomeData = {
   practices: [
     {
       headline: 'Unabhängigkeit',
-      icon: 'PaperPlane',
+      icon: faPaperPlane,
       text:
         'Wir haben keine Favoriten wenn es um das Thema Blockchain geht und glauben auch nicht an Dogmen. Wir nutzen die Technologie, die für den konkreten Fall die besten Ergebnisse verspricht.',
     },
     {
       headline: 'Kritische Analyse',
-      icon: 'Laptop',
+      icon: faLaptop,
       text:
         'Wir freuen uns über neue Aufträge und Projekte. Allerdings stellen wir beim Thema Blockchain auch übertriebene Erwartungen an die Einsatzmöglichkeiten fest. Wir hinterfragen immer kritisch, ob sich der hohe Entwicklungsaufwand für ein Projekt tatsächlich lohnt und geben Ihnen eine begründete Einschätzung in jedem Einzelfall.',
     },
     {
       headline: 'Agile Entwicklung',
-      icon: 'Code',
+      icon: faCode,
       text:
         'Unsere Erfahrung im Startup-Bereich und mit den Themen Agile, Kanban und Continuous Delivery lässt uns besonders schnell und zielorientiert arbeiten. Sie können jederzeit die Entwicklungsfortschritte selbst auf Ihrem Endgerät erleben und haben so volle Kontrolle über das Projekt.',
     },
     {
       headline: 'Vorträge',
-      icon: 'Headphones',
+      icon: faHeadphones,
       text:
         'Wir halten regelmäßig Vorträge vor Fachpublikum, aber auch vor Laien mit Interesse am spannenden Thema Blockchain. Wenn Sie zum Beispiel ein Event für Ihre Kunden im Finanzbereich planen, sprechen Sie uns an.',
     },
     {
       headline: 'Reporting Tools',
-      icon: 'Heart',
+      icon: faHeart,
       text:
         'Hardfork hat die Software [blooks](https://github.com/blooks) entwickelt, mit der Sie die aktuellen Bestände und Wertentwicklung von Cryptowährungen verfolgen können. Diese steht unter einer Open Source Lizenz zur Verfügung. Gerne helfen wir Ihnen mit der Integration oder Anpassung für Ihre Zwecke. So können Sie auch die buchhalterischen Herausforderungen der Blockchain lösen.',
     },
     {
       headline: 'Partnerschaften',
-      icon: 'Flag',
+      icon: faFlag,
       text:
         'Wir arbeiten bereits heute mit Unternehmen zusammen, die zwar eine Expertise im Finanzbereich haben, diese aber gerne gemeinsam mit einem technologisch starken Partner um den Bereich Blockchain erweitern möchten, um noch komplexere Kundenprojekte umzusetzen. Falls Sie Interesse an einer solchen Zusammenarbeit haben, sprechen Sie uns bitte an.',
     },
