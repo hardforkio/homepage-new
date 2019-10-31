@@ -22,7 +22,7 @@ injectGlobal`
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
-  
+
   body {
     background: rgb(46, 56, 66);
     color: #ffffff;
