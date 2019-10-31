@@ -1,3 +1,4 @@
+import './src/scss/main.scss'
 import SmoothScroll from 'smooth-scroll'
 
 const LINK_SELECTOR = 'a[href*="#"]'

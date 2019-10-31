@@ -1,0 +1,11 @@
+@import "./bootstrap.scss";
+
+p {
+  a {
+    border-bottom: 1px dotted;
+    transition: color 0.2s ease 0s, border-bottom-color 0.2s ease 0s;
+    &:hover {
+      border-bottom-color: transparent;
+    }
+  }
+}
