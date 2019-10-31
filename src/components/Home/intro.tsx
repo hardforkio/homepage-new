@@ -1,11 +1,11 @@
 import React, { FunctionComponent, SetStateAction, Dispatch } from 'react'
 import styled from 'styled-components'
-import media from 'styled-media-query'
 import transition from 'styled-transition-group'
 import arrow from '../../img/arrow.svg'
 import bgimage from '../../img/banner.jpg'
 import { Button } from 'reactstrap'
 import { Link } from 'gatsby'
+import { media } from '../../config/media'
 
 const Intro = styled.section`
   display: -moz-flex;
@@ -27,7 +27,7 @@ const Intro = styled.section`
   padding: 7em 3em 7em 3em;
   height: auto;
   min-height: 0;
-  ${media.greaterThan('small')`
+  ${media.greaterThan('sm')`
       height: 100vh;
       min-height: 35em;
       padding: 0;
@@ -84,7 +84,7 @@ const IntroHeadline = transition.h1`
     text-transform: uppercase;
     z-index: 1;
     
-    ${media.greaterThan('medium')`
+    ${media.greaterThan('md')`
       font-size: 1.75em;
     `}
     
@@ -175,7 +175,7 @@ const MoreLink = transition.a`
     width: 16em;
     z-index: 1;
     
-    ${media.greaterThan('small')`
+    ${media.greaterThan('sm')`
       display: block;
     `}
       

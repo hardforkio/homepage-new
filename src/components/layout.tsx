@@ -5,8 +5,8 @@ import Footer from './Footer'
 import config from '../../config'
 import styledNormalize from 'styled-normalize'
 import { ThemeProvider, injectGlobal } from 'styled-components'
-import media from 'styled-media-query'
 import { Link } from 'gatsby'
+import { media } from '../config/media'
 
 injectGlobal`
   ${styledNormalize}
@@ -26,13 +26,13 @@ injectGlobal`
 
   html {
     font-size: 11pt;
-    ${media.greaterThan('small')`
+    ${media.greaterThan('sm')`
       font-size: 12pt;
     `}
-    ${media.greaterThan('medium')`
+    ${media.greaterThan('md')`
       font-size: 13pt;
     `}
-    ${media.greaterThan('large')`
+    ${media.greaterThan('xl')`
       font-size: 15pt;
     `}
   }
