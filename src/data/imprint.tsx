@@ -9,8 +9,8 @@ export const data = {
     street: 'Mühlenstraße 8a',
     city: '14167 Berlin',
   },
-  legal:
-    'Vertreten durch: Geschäftsführer Levin Keller Registriert am Amtsgericht Charlottenburg unter HRB 162146 B',
+  legal: 'Vertreten durch: Geschäftsführer Levin Keller',
+  court: 'Registriert am Amtsgericht Charlottenburg unter HRB 162146 B',
   contactHeadline: ' Kontakt:',
   contactPhone: '+4915156041082',
   contactEmail: 'contact@hardfork.io',
