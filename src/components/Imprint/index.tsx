@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
-import ArticleHeader from '../ArticleHeader/index'
+import { ArticleHeader } from '../ArticleHeader/index'
 import { data } from '../../data/imprint'
 import { ContentWrap } from '../Content/index'
 
