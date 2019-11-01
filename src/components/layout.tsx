@@ -33,12 +33,6 @@ injectGlobal`
     ${media.greaterThan('sm')`
       font-size: 12pt;
     `}
-    ${media.greaterThan('md')`
-      font-size: 13pt;
-    `}
-    ${media.greaterThan('xl')`
-      font-size: 15pt;
-    `}
   }
   
   body {
