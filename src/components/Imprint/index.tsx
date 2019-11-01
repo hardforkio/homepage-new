@@ -1,11 +1,32 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
 import ArticleHeader from '../ArticleHeader/index'
 import { data } from '../../data/imprint'
 import { ContentWrap } from '../Content/index'
 
-const ImprintComponent = ({
+interface Address {
+  name: string
+  street: string
+  city: string
+}
+
+interface ImprintProps {
+  title: string
+  subtitle: string
+  address: Address
+  headline: string
+  contactHeadline: string
+  contactPhone: string
+  contactEmail: string
+  taxHeadline: string
+  taxDescription: string
+  inChargeHeadline: string
+  inChargePerson: string
+  legal: string
+  court: string
+}
+
+const ImprintComponent: FunctionComponent<ImprintProps> = ({
   title,
   subtitle,
   address,
@@ -17,6 +38,8 @@ const ImprintComponent = ({
   taxDescription,
   inChargeHeadline,
   inChargePerson,
+  legal,
+  court,
 }) => (
   <article>
     <ArticleHeader title={title} subtitle={subtitle} />
@@ -30,6 +53,8 @@ const ImprintComponent = ({
           <br />
           {address.city}
         </p>
+        <p>{legal}</p>
+        <p>{court}</p>
         <h2>{contactHeadline}</h2>
         <ul>
           <li>Phone: {contactPhone}</li>
@@ -54,11 +79,6 @@ const ImprintComponent = ({
   </article>
 )
 
-ImprintComponent.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string,
-}
-
 export const Imprint = () => (
   <div>
     <Helmet>
@@ -68,7 +88,3 @@ export const Imprint = () => (
     <ImprintComponent {...data} />
   </div>
 )
-
-Imprint.propTypes = {
-  data: PropTypes.object.isRequired,
-}
