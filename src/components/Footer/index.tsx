@@ -70,19 +70,6 @@ const Footer = () => (
       <LegalItem>
         <Link to="/imprint">{translations.imprintLinkText}</Link>
       </LegalItem>
-      <LegalItem>
-        {
-          //TODO: Remove this menu entry.
-        }
-        Design:&nbsp;&nbsp;
-        <a
-          href="https://html5up.net/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          html5 up
-        </a>
-      </LegalItem>
     </LegalBar>
   </footer>
 )
