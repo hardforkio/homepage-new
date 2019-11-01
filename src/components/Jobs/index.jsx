@@ -6,7 +6,6 @@ import { data } from '../../data/jobs'
 
 export const Jobs = () => {
   const { posts } = data
-  console.log(posts)
 
   return (
     <div>

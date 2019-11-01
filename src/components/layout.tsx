@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
-import Header from './Header'
+import { NavbarComponent } from './Navbar'
 import Footer from './Footer'
 import config from '../../config'
 import styledNormalize from 'styled-normalize'
 import { ThemeProvider, injectGlobal } from 'styled-components'
-import media from 'styled-media-query'
+import { Link } from 'gatsby'
+import { media } from '../config/media'
 
 injectGlobal`
   ${styledNormalize}
@@ -23,25 +24,25 @@ injectGlobal`
     box-sizing: border-box;
   }
 
-  body {
-    background: rgb(46, 56, 66);
-    color: #ffffff;
-    font-family: Open Sans,Helvetica,sans-serif;
+  html {
     font-size: 11pt;
     font-weight: 400;
     letter-spacing: .075em;
     margin: 0;
     
-    ${media.greaterThan('737px')`
+    ${media.greaterThan('sm')`
       font-size: 12pt;
     `}
-    ${media.greaterThan('981px')`
-      font-size: 13pt;
-    `}
-    ${media.greaterThan('1681px')`
-      font-size: 15pt;
-    `}
   }
+  
+  body {
+    background: rgb(46, 56, 66);
+    color: #ffffff;
+    font-family: Open Sans,Helvetica,sans-serif;
+    font-weight: 400;
+    line-height: 1.65em;
+    margin: 0;
+    }
   
   blockquote {
     border-left: solid 4px #dfdfdf;
@@ -61,14 +62,23 @@ const hardforkTheme = {
   defaultBg: 'rgb(46, 56, 66)',
 }
 
-const Layout = ({ children }) => (
+const Layout: FunctionComponent<{ isHeaderTransparent?: boolean }> = ({
+  children,
+  isHeaderTransparent = true,
+}) => (
   <div>
     <Helmet>
       <title>{config.siteTitle}</title>
       <meta name="description" content={config.siteDescription} />
     </Helmet>
     <ThemeProvider theme={hardforkTheme}>
-      <Header isHome={false} />
+      <header>
+        <NavbarComponent
+          linkTag={Link}
+          isTransparent={isHeaderTransparent}
+          className="fixed-top"
+        />
+      </header>
     </ThemeProvider>
     <ThemeProvider theme={hardforkTheme}>{children}</ThemeProvider>
     <ThemeProvider theme={hardforkTheme}>

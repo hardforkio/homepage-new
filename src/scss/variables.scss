@@ -1,6 +1,22 @@
-// Color system
+/******************************************************************
+Bootstrap variables overwrites
+******************************************************************/
 
-$white: #fff;
+// Grid
+
+$grid-columns: 24;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 768px,
+  md: 1200px,
+  lg: 1600px,
+  xl: 1920px,
+);
+
+
+// Colors
+$white:    #fff;
 $gray-100: #f8f9fa;
 $gray-200: #e9ecef;
 $gray-300: #dee2e6;
@@ -10,6 +26,29 @@ $gray-600: #6c757d;
 $gray-700: #495057;
 $gray-800: #343a40;
 $gray-900: #212529;
+$black:    #000;
+
+$blue:    #0d6efd;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #d63384;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #28a745;
+$teal:    #20c997;
+$cyan:    #17a2b8;
+
+$lightgreen: #b1e3d3;
+$primary: #ed4933;
+$secondary: #c5c5c5;
+$success: $green;
+$info: $black;
+$warning: $orange;
+$danger: $red;
+$light: $white;
+$dark: #2e3842;
+
 $black: #000;
 
 $grays: ();
@@ -28,17 +67,6 @@ $grays: map-merge(
   ),
   $grays
 );
-
-$blue: #0d6efd;
-$indigo: #6610f2;
-$purple: #6f42c1;
-$pink: #d63384;
-$red: #dc3545;
-$orange: #fd7e14;
-$yellow: #ffc107;
-$green: #28a745;
-$teal: #20c997;
-$cyan: #17a2b8;
 
 $colors: ();
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -61,7 +89,6 @@ $colors: map-merge(
   $colors
 );
 
-$primary: $blue;
 $secondary: $gray-600;
 $success: $green;
 $info: $cyan;
@@ -72,6 +99,17 @@ $dark: $gray-800;
 
 $body-bg: $dark;
 $body-color: $white;
+
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      "Open Sans", "Helvetica", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base:            $font-family-sans-serif;
+
 
 $font-size-base: 1.25rem; // Assumes the browser default, typically `16px`
 $line-height-base: 1.65;

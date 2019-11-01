@@ -111,16 +111,9 @@ const CallToActionWrap = styled.section`
   }
 `
 
-const CallToAction = ({
-  headline,
-  description,
-  email,
-  button_label,
-  id,
-  refParent,
-}) => {
+const CallToAction = ({ headline, description, email, button_label, id }) => {
   return (
-    <CallToActionWrap data-bgimage={bgimage} id={id} ref={refParent}>
+    <CallToActionWrap data-bgimage={bgimage} id={id}>
       <div>
         <header>
           <h2>{headline}</h2>

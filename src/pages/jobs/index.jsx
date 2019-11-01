@@ -3,7 +3,7 @@ import { Jobs } from '../../components/Jobs'
 import Layout from '../../components/layout'
 
 export default () => (
-  <Layout>
+  <Layout isHeaderTransparent={false}>
     <Jobs />
   </Layout>
 )
