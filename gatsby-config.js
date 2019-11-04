@@ -77,5 +77,6 @@ module.exports = {
           'https://polyfill.io/v3/polyfill.min.js?flags=gated&features=IntersectionObserver',
       },
     },
+    `gatsby-plugin-netlify-cms`,
   ],
 }

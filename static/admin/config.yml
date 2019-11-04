@@ -1,6 +1,7 @@
 backend:
   name: git-gateway
-  branch: master
+  repo: hardforkio/homepage
+  branch: feature/issue-93--add-netlify-cms
 
 media_folder: "static/img"
 public_folder: "/img"
