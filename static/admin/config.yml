@@ -1,0 +1,39 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: "static/img"
+public_folder: "/img"
+
+collections:
+  - name: "imprint"
+    description: "Imprint"
+    folder: "src/data/imprint"
+    create: true
+    slug: "{{fields.locale}}-{{slug}}"
+    fields:
+      - { name: "title", widget: "string" }
+      - { name: "subtitle", widget: "string" }
+      - { name: "meta_title", widget: "string" }
+      - { name: "meta_description", widget: "string" }
+      - { name: "headline", widget: "string" }
+      - {
+          name: "address",
+          widget: "object",
+          fields:
+            [
+              { name: "name", widget: "string" },
+              { name: "street", widget: "string" },
+              { name: "city", widget: "string" },
+            ],
+        }
+      - { name: "legal", widget: "string" }
+      - { name: "court", widget: "string" }
+      - { name: "contactHeadline", widget: "string" }
+      - { name: "contactPhone", widget: "string" }
+      - { name: "contactEmail", widget: "string" }
+      - { name: "taxHeadline", widget: "string" }
+      - { name: "taxDescription", widget: "string" }
+      - { name: "inChargeHeadline", widget: "string" }
+      - { name: "inChargePerson", widget: "string" }
+      - { name: "locale", widget: "select", options: ["en", "de"] }
