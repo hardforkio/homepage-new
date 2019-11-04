@@ -1,13 +1,12 @@
 import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
-import { NavbarComponent } from './Navbar'
+import { Navbar } from './Navbar'
 import Footer from './Footer'
 import config from '../../config'
 import styledNormalize from 'styled-normalize'
 import { ThemeProvider, injectGlobal } from 'styled-components'
 import { Link } from 'gatsby'
 import { media } from '../config/media'
-import { useShowTransparentNavbar } from '../utils/showNavbarContext'
 
 injectGlobal`
   ${styledNormalize}
@@ -64,7 +63,6 @@ const hardforkTheme = {
 }
 
 const Layout: FunctionComponent = ({ children }) => {
-  const isTransparent = useShowTransparentNavbar()
   return (
     <div>
       <Helmet>
@@ -74,11 +72,7 @@ const Layout: FunctionComponent = ({ children }) => {
       <ThemeProvider theme={hardforkTheme}>
         <>
           <header>
-            <NavbarComponent
-              linkTag={Link}
-              isTransparent={isTransparent}
-              className="fixed-top"
-            />
+            <Navbar linkTag={Link} className="fixed-top" />
           </header>
           {children}
           <Footer />

@@ -1,12 +1,12 @@
 import React from 'react'
 import { Imprint } from '../components/Imprint'
 import Layout from '../components/layout'
-import { ShowTransparentNavbarProvider } from '../utils/showNavbarContext'
+import { NavbarStateProvider } from '../utils/hooks'
 
 export default () => (
-  <ShowTransparentNavbarProvider value={false}>
+  <NavbarStateProvider>
     <Layout>
       <Imprint />
     </Layout>
-  </ShowTransparentNavbarProvider>
+  </NavbarStateProvider>
 )

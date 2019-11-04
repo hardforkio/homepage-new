@@ -2,12 +2,12 @@ import React from 'react'
 import { JobPage } from '../../components/Jobs/job'
 import Layout from '../../components/layout'
 import { data } from '../../data/jobs'
-import { ShowTransparentNavbarProvider } from '../../utils/showNavbarContext'
+import { NavbarStateProvider } from '../../utils/hooks'
 
 export default () => (
-  <ShowTransparentNavbarProvider value={false}>
+  <NavbarStateProvider>
     <Layout>
       <JobPage post={data.posts[0]} />
     </Layout>
-  </ShowTransparentNavbarProvider>
+  </NavbarStateProvider>
 )

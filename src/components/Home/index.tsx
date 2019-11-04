@@ -3,10 +3,7 @@ import Helmet from 'react-helmet'
 import Offerings from '../Offerings'
 import Practices from '../Practices'
 import CallToAction from '../CallToAction'
-import Layout from '../layout'
-import { useInView } from 'react-hook-inview'
-import { IntroSection } from './intro'
-import { ShowTransparentNavbarProvider } from '../../utils/showNavbarContext'
+import { HeroSection } from './Hero'
 
 interface HomePageProps {
   title: string
@@ -41,8 +38,6 @@ export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
   const [startSecondAnimation, setSecondAnimation] = useState(false)
   const [startThirdAnimation, setThirdAnimation] = useState(false)
 
-  const [ref, inView] = useInView()
-
   useEffect(() => {
     setAnimation(true)
     setTimeout(() => {
@@ -56,37 +51,33 @@ export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
         <title>{meta_title}</title>
         <meta name="description" content={meta_description} />
       </Helmet>
-      <ShowTransparentNavbarProvider value={inView}>
-        <Layout>
-          <>
-            <div ref={ref}>
-              <IntroSection
-                startSecondAnimation={startSecondAnimation}
-                startAnimation={startAnimation}
-                setSecondAnimation={setSecondAnimation}
-                title={title}
-                heading={heading}
-                startThirdAnimation={startThirdAnimation}
-              />
-            </div>
-            <section id="offerings">
-              <Offerings offerings={offerings.blurbs} />
-            </section>
-            <Practices
-              headline={practices_headline}
-              description={practices_description}
-              practices={practices}
-            />
-            <CallToAction
-              id="contact"
-              headline={contact_headline}
-              description={contact_description}
-              email={contact_email}
-              button_label={contact_button}
-            />
-          </>
-        </Layout>
-      </ShowTransparentNavbarProvider>
+      <>
+        <div>
+          <HeroSection
+            startSecondAnimation={startSecondAnimation}
+            startAnimation={startAnimation}
+            setSecondAnimation={setSecondAnimation}
+            title={title}
+            heading={heading}
+            startThirdAnimation={startThirdAnimation}
+          />
+        </div>
+        <section id="offerings">
+          <Offerings offerings={offerings.blurbs} />
+        </section>
+        <Practices
+          headline={practices_headline}
+          description={practices_description}
+          practices={practices}
+        />
+        <CallToAction
+          id="contact"
+          headline={contact_headline}
+          description={contact_description}
+          email={contact_email}
+          button_label={contact_button}
+        />
+      </>
     </div>
   )
 }

@@ -1,12 +1,12 @@
 import React from 'react'
 import { Jobs } from '../../components/Jobs'
 import Layout from '../../components/layout'
-import { ShowTransparentNavbarProvider } from '../../utils/showNavbarContext'
+import { NavbarStateProvider } from '../../utils/hooks'
 
 export default () => (
-  <ShowTransparentNavbarProvider value={false}>
+  <NavbarStateProvider>
     <Layout>
       <Jobs />
     </Layout>
-  </ShowTransparentNavbarProvider>
+  </NavbarStateProvider>
 )

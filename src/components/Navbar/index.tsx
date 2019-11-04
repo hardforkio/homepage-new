@@ -1,19 +1,34 @@
 import React, { useState, useCallback, FunctionComponent } from 'react'
-import { Navbar, Nav, Collapse, NavbarToggler, NavbarBrand } from 'reactstrap'
+import {
+  Navbar as ReactstrapNavbar,
+  Nav,
+  Collapse,
+  NavbarToggler,
+  NavbarBrand,
+} from 'reactstrap'
 import { MenuEntries } from './MenuEntries'
 import cn from 'classnames'
 import styles from './NavBar.module.scss'
+import { useNavbarState } from '../../utils/hooks'
 
-export const NavbarComponent: FunctionComponent<{
-  isTransparent?: boolean
+interface NavbarProps {
   linkTag: any
   className?: string
-}> = ({ isTransparent = false, linkTag, className }) => {
-  const [isOpen, setIsOpen] = useState(false)
+}
 
+interface NavbarComponentProps extends NavbarProps {
+  isTransparent?: boolean
+}
+
+export const NavbarComponent: FunctionComponent<NavbarComponentProps> = ({
+  isTransparent = true,
+  linkTag,
+  className,
+}) => {
+  const [isOpen, setIsOpen] = useState(false)
   const toggle = useCallback(() => setIsOpen(!isOpen), [isOpen])
   return (
-    <Navbar
+    <ReactstrapNavbar
       className={cn(
         className,
         isTransparent && !isOpen ? 'bg-transparent' : 'bg-dark',
@@ -23,7 +38,7 @@ export const NavbarComponent: FunctionComponent<{
       expand="md"
     >
       <NavbarBrand tag={linkTag} to="/">
-        {isTransparent ? '' : 'HARDFORK'}
+        HARDFORK
       </NavbarBrand>
       <NavbarToggler onClick={toggle} className="border-0" />
       <Collapse isOpen={isOpen} navbar>
@@ -31,6 +46,12 @@ export const NavbarComponent: FunctionComponent<{
           <MenuEntries linkTag={linkTag} />
         </Nav>
       </Collapse>
-    </Navbar>
+    </ReactstrapNavbar>
   )
+}
+
+export const Navbar: FunctionComponent<NavbarProps> = props => {
+  const [transparent] = useNavbarState()
+  console.log('transparent is null', transparent === null)
+  return <NavbarComponent {...props} isTransparent={transparent} />
 }

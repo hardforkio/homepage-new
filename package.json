@@ -43,7 +43,6 @@
     "react-burger-menu": "^2.6.11",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.0",
-    "react-hook-inview": "^4.1.2",
     "react-share": "2.1.0",
     "react-transition-group": "^2.4.0",
     "react-window-decorators": "^1.0.2",
@@ -52,7 +51,8 @@
     "styled-components": "^3.4.2",
     "styled-media-query": "^2.0.2",
     "styled-normalize": "8.0.0",
-    "styled-transition-group": "^1.0.0"
+    "styled-transition-group": "^1.0.0",
+    "use-is-in-viewport": "^1.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
