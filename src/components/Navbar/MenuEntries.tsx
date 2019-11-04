@@ -4,7 +4,7 @@ import { NavItem, NavLink } from 'reactstrap'
 export const MenuEntries = ({ linkTag }: { linkTag: any }) => (
   <>
     {[
-      <NavItem key="jobs">
+      <NavItem key="hiring">
         <NavLink
           to="/jobs"
           tag={linkTag}
