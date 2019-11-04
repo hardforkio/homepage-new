@@ -6,6 +6,7 @@ import CallToAction from '../CallToAction'
 import Layout from '../layout'
 import { useInView } from 'react-hook-inview'
 import { IntroSection } from './intro'
+import { ShowTransparentNavbarProvider } from '../../utils/showNavbarContext'
 
 interface HomePageProps {
   title: string
@@ -55,35 +56,37 @@ export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
         <title>{meta_title}</title>
         <meta name="description" content={meta_description} />
       </Helmet>
-      <Layout isHeaderTransparent={inView}>
-        <>
-          <div ref={ref}>
-            <IntroSection
-              startSecondAnimation={startSecondAnimation}
-              startAnimation={startAnimation}
-              setSecondAnimation={setSecondAnimation}
-              title={title}
-              heading={heading}
-              startThirdAnimation={startThirdAnimation}
+      <ShowTransparentNavbarProvider value={inView}>
+        <Layout>
+          <>
+            <div ref={ref}>
+              <IntroSection
+                startSecondAnimation={startSecondAnimation}
+                startAnimation={startAnimation}
+                setSecondAnimation={setSecondAnimation}
+                title={title}
+                heading={heading}
+                startThirdAnimation={startThirdAnimation}
+              />
+            </div>
+            <section id="offerings">
+              <Offerings offerings={offerings.blurbs} />
+            </section>
+            <Practices
+              headline={practices_headline}
+              description={practices_description}
+              practices={practices}
             />
-          </div>
-          <section id="offerings">
-            <Offerings offerings={offerings.blurbs} />
-          </section>
-          <Practices
-            headline={practices_headline}
-            description={practices_description}
-            practices={practices}
-          />
-          <CallToAction
-            id="contact"
-            headline={contact_headline}
-            description={contact_description}
-            email={contact_email}
-            button_label={contact_button}
-          />
-        </>
-      </Layout>
+            <CallToAction
+              id="contact"
+              headline={contact_headline}
+              description={contact_description}
+              email={contact_email}
+              button_label={contact_button}
+            />
+          </>
+        </Layout>
+      </ShowTransparentNavbarProvider>
     </div>
   )
 }

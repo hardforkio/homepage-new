@@ -7,6 +7,7 @@ import styledNormalize from 'styled-normalize'
 import { ThemeProvider, injectGlobal } from 'styled-components'
 import { Link } from 'gatsby'
 import { media } from '../config/media'
+import { useShowTransparentNavbar } from '../utils/showNavbarContext'
 
 injectGlobal`
   ${styledNormalize}
@@ -62,29 +63,29 @@ const hardforkTheme = {
   defaultBg: 'rgb(46, 56, 66)',
 }
 
-const Layout: FunctionComponent<{ isHeaderTransparent?: boolean }> = ({
-  children,
-  isHeaderTransparent = true,
-}) => (
-  <div>
-    <Helmet>
-      <title>{config.siteTitle}</title>
-      <meta name="description" content={config.siteDescription} />
-    </Helmet>
-    <ThemeProvider theme={hardforkTheme}>
-      <header>
-        <NavbarComponent
-          linkTag={Link}
-          isTransparent={isHeaderTransparent}
-          className="fixed-top"
-        />
-      </header>
-    </ThemeProvider>
-    <ThemeProvider theme={hardforkTheme}>{children}</ThemeProvider>
-    <ThemeProvider theme={hardforkTheme}>
-      <Footer />
-    </ThemeProvider>
-  </div>
-)
+const Layout: FunctionComponent = ({ children }) => {
+  const isTransparent = useShowTransparentNavbar()
+  return (
+    <div>
+      <Helmet>
+        <title>{config.siteTitle}</title>
+        <meta name="description" content={config.siteDescription} />
+      </Helmet>
+      <ThemeProvider theme={hardforkTheme}>
+        <>
+          <header>
+            <NavbarComponent
+              linkTag={Link}
+              isTransparent={isTransparent}
+              className="fixed-top"
+            />
+          </header>
+          {children}
+          <Footer />
+        </>
+      </ThemeProvider>
+    </div>
+  )
+}
 
 export default Layout
