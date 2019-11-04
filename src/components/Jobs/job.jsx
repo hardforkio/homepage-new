@@ -1,7 +1,7 @@
 import React from 'react'
 import { ContentWrap } from '../Content'
 import SE0 from '../SEO'
-import ArticleHeader from '../ArticleHeader/index'
+import { ArticleHeader } from '../ArticleHeader/index'
 import ReactMarkdown from 'react-markdown'
 
 export const JobComponent = ({ description, content }) => (

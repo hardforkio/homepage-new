@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { PostCard } from '../PostCard'
-import ArticleHeader from '../ArticleHeader/index'
+import { ArticleHeader } from '../ArticleHeader/index'
 import { data } from '../../data/jobs'
 
 export const Jobs = () => (
