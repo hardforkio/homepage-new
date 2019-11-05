@@ -10,6 +10,8 @@ import {
   faCode,
 } from '@fortawesome/free-solid-svg-icons'
 
+import { TeamProps as TeamData } from '../components/Team'
+
 export type HomeData = {
   title: string
   heading: string
@@ -23,6 +25,7 @@ export type HomeData = {
   contact_email: string
   meta_title: string
   meta_description: string
+  team: TeamData
 }
 
 export type Offering = {
@@ -112,4 +115,10 @@ export const data: HomeData = {
     'Hardfork GmbH - Ihr Technologiepartner für anspruchsvolle Softwareprojekte',
   meta_description:
     'Die Blockchain kann in vielen Fällen erhebliches Einsparungs- oder Sicherheitspotential bieten. Wir helfen Ihnen diese Potentiale freizulegen. Wir helfen wir Ihnen die Anforderungen und Annahmen kritisch zu hinterfragen und so besonders nachhaltige Lösungen zu produzieren.',
+  team: {
+    header: 'Our Team',
+    subhead: '...',
+    members: [],
+    footer: 'So good.',
+  },
 }

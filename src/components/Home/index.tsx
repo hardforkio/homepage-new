@@ -6,6 +6,7 @@ import CallToAction from '../CallToAction'
 import Layout from '../layout'
 import { useInView } from 'react-hook-inview'
 import { IntroSection } from './intro'
+import { Team, TeamProps } from '../Team'
 
 interface HomePageProps {
   title: string
@@ -20,6 +21,7 @@ interface HomePageProps {
   contact_description: string
   contact_button: string
   contact_email: string
+  team: TeamProps
 }
 
 export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
@@ -35,6 +37,7 @@ export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
   contact_description,
   contact_button,
   contact_email,
+  team,
 }) => {
   const [startAnimation, setAnimation] = useState(false)
   const [startSecondAnimation, setSecondAnimation] = useState(false)
@@ -75,6 +78,9 @@ export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
             description={practices_description}
             practices={practices}
           />
+          {
+            //<Team {...team} />
+          }
           <CallToAction
             id="contact"
             headline={contact_headline}

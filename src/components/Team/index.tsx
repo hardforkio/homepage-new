@@ -1,42 +1,87 @@
 import React, { FunctionComponent } from 'react'
-import * as R from 'ramda'
+import { Col, Row } from 'reactstrap'
 import cn from 'classnames'
 
-import styles from './Team.module.scss'
-import { Col, Row } from 'reactstrap'
+import * as R from 'ramda'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
-interface TeamMemberProps {
+export enum Platforms {
+  github = 'github',
+  linkedIn = 'linkedIn',
+}
+export type Platform = Platforms
+
+const SocialMediaIcons: { [platform in Platforms]: IconProp } = {
+  github: faGithub,
+  linkedIn: faLinkedinIn,
+}
+
+interface SocialMediaProps {
+  platform: Platform
+  url: string
+}
+
+export interface TeamMemberProps {
   name: string
   jobTitle: string
-  imgSrc: string
+  avatarUrl: string
+  socialMedia: SocialMediaProps[]
 }
+
+export interface TeamProps {
+  header: string
+  subhead: string
+  members: TeamMemberProps[]
+  footer: string
+}
+
+const SocialIcon: FunctionComponent<SocialMediaProps> = ({ platform, url }) => (
+  <li className={cn('list-inline-item', 'mx-2')}>
+    <a href={url} title={platform} target="_blank" rel="noopener noreferrer">
+      <FontAwesomeIcon icon={SocialMediaIcons[platform]} size="lg" />
+    </a>
+  </li>
+)
 
 export const TeamMember: FunctionComponent<TeamMemberProps> = ({
   name,
   jobTitle,
-  imgSrc,
+  avatarUrl,
+  socialMedia,
 }) => (
-  <Col md={6} lg={4} className={cn('text-center', styles.teamMember)}>
+  <Col sm={6} md={4} lg={3} className={cn('mx-auto', 'mb-4')}>
     <img
-      className={cn('img-thumbnail', 'rounded-circle')}
-      src={imgSrc}
-      alt={`Thumbnail ${name}`}
+      className={cn('img-thumbnail', 'rounded-circle', 'mb-2')}
+      src={avatarUrl}
+      alt={`Avatar ${name}`}
     />
-    <h4>{name}</h4>
+    <h5>{name}</h5>
     <p className={cn('text-muted')}>{jobTitle}</p>
+
+    <ul className={cn('list-inline')}>
+      {R.addIndex<SocialMediaProps>(R.map)(
+        (iconProps, id) => (
+          <SocialIcon key={id.toString()} {...iconProps} />
+        ),
+        socialMedia,
+      )}
+    </ul>
   </Col>
 )
 
-export const Team: FunctionComponent<{ members: TeamMemberProps[] }> = ({
+export const Team: FunctionComponent<TeamProps> = ({
+  header,
+  subhead,
   members,
+  footer,
 }) => (
-  <div>
-    <Row>
-      <Col className="text-center">
-        <h2 className="text-uppercase">Our Team</h2>
-        <h2 className="text-muted">It's a good team.</h2>
-      </Col>
-    </Row>
+  <section className={cn('text-center', 'py-5')}>
+    <header>
+      <h2>{header}</h2>
+      <h3 className={cn('text-muted', 'mb-5')}>{subhead}</h3>
+    </header>
 
     <Row>
       {R.addIndex<TeamMemberProps>(R.map)(
@@ -47,14 +92,8 @@ export const Team: FunctionComponent<{ members: TeamMemberProps[] }> = ({
       )}
     </Row>
 
-    <Row>
-      <Col lg={8} className="mx-auto text-center">
-        <p className="large text-muted">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
-          laboriosam veritatis, quos non quis ad perspiciatis, totam corporis
-          ea, alias ut unde.
-        </p>
-      </Col>
-    </Row>
-  </div>
+    <footer>
+      <p className={cn('w-75 text-muted mx-auto')}>{footer}</p>
+    </footer>
+  </section>
 )
