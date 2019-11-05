@@ -7,33 +7,25 @@ public_folder: "/img"
 
 collections:
   - name: "imprint"
-    description: "Imprint"
+    label: "Imprint"
     folder: "src/data/imprint"
     create: true
-    slug: "{{fields.locale}}-{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}-{{slug}}"
     fields:
-      - { name: "title", widget: "string" }
-      - { name: "subtitle", widget: "string" }
-      - { name: "meta_title", widget: "string" }
-      - { name: "meta_description", widget: "string" }
-      - { name: "headline", widget: "string" }
-      - {
-          name: "address",
-          widget: "object",
-          fields:
-            [
-              { name: "name", widget: "string" },
-              { name: "street", widget: "string" },
-              { name: "city", widget: "string" },
-            ],
-        }
-      - { name: "legal", widget: "string" }
-      - { name: "court", widget: "string" }
-      - { name: "contactHeadline", widget: "string" }
-      - { name: "contactPhone", widget: "string" }
-      - { name: "contactEmail", widget: "string" }
-      - { name: "taxHeadline", widget: "string" }
-      - { name: "taxDescription", widget: "string" }
-      - { name: "inChargeHeadline", widget: "string" }
-      - { name: "inChargePerson", widget: "string" }
-      - { name: "locale", widget: "select", options: ["en", "de"] }
+      - name: "type"
+        widget: "hidden"
+        default: "imprint"
+
+      - name: "title"
+        label: "Short name"
+        description: "A name to identify this object within this collection. Should be unique within the collection."
+
+      - name: "translations"
+        label: "translations"
+        widget: "list"
+        fields:
+          - { name: "locale", widget: "select", options: ["en", "de"] }
+          - { name: "headline", widget: "string" }
+          - { name: "subheadline", widget: "string" }
+          - { name: "meta_title", widget: "string" }
+          - { name: "content", widget: "markdown" }
