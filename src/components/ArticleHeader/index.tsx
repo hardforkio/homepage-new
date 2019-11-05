@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useEffect } from 'react'
-import bgimage from '../../img/banner.jpg'
 import styles from './ArticleHeader.module.scss'
 import cn from 'classnames'
 import { useNavbarState } from '../../utils/hooks'
@@ -16,9 +15,18 @@ export const ArticleHeader: FunctionComponent<{
   }, [inView, setTransparent])
   console.log('inview', inView)
   return (
-    <div ref={ref} className={cn(styles.articleHeader)} data-bgimage={bgimage}>
-      <h1>{title}</h1>
-      <p>{subtitle}</p>
+    <div ref={ref}>
+      <ArticleHeaderComponent title={title} subtitle={subtitle} />
     </div>
   )
 }
+
+export const ArticleHeaderComponent: FunctionComponent<{
+  title: string
+  subtitle: string
+}> = ({ title, subtitle }) => (
+  <div className={cn(styles.articleHeader)}>
+    <h3 className="text-uppercase mb-4 font-weight-bold">{title}</h3>
+    <h6 className="text-uppercase">{subtitle}</h6>
+  </div>
+)
