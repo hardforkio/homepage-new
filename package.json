@@ -100,6 +100,7 @@
     "gatsby-plugin-typescript": "^2.1.15",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
+    "gatsby-transformer-remark": "^2.6.32",
     "prettier": "^1.18.2",
     "ramda": "^0.26.1",
     "react-docgen-typescript-loader": "^3.3.0",
