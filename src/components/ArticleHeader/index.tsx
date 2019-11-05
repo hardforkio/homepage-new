@@ -11,9 +11,10 @@ export const ArticleHeader: FunctionComponent<{
   const [inView, ref] = useIsInViewport()
   const [_, setTransparent] = useNavbarState()
   useEffect(() => {
-    setTransparent(inView)
+    if (inView !== null) {
+      setTransparent(inView)
+    }
   }, [inView, setTransparent])
-  console.log('inview', inView)
   return (
     <div ref={ref}>
       <ArticleHeaderComponent title={title} subtitle={subtitle} />

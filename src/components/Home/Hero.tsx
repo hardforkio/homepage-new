@@ -1,9 +1,4 @@
-import React, {
-  FunctionComponent,
-  SetStateAction,
-  Dispatch,
-  useEffect,
-} from 'react'
+import React, { FunctionComponent, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import transition from 'styled-transition-group'
 import arrow from '../../img/arrow.svg'
@@ -213,24 +208,27 @@ const MoreLink = transition.a`
   `
 
 interface IntroProps {
-  startSecondAnimation: boolean
-  startAnimation: boolean
-  setSecondAnimation: Dispatch<SetStateAction<boolean>>
   title: string
   heading: string
-  startThirdAnimation: boolean
 }
 
 export const HeroSection: FunctionComponent<IntroProps> = ({
-  startSecondAnimation,
-  startAnimation,
-  setSecondAnimation,
   title,
   heading,
-  startThirdAnimation,
 }) => {
+  const [startAnimation, setAnimation] = useState(false)
+  const [startSecondAnimation, setSecondAnimation] = useState(false)
+  const [startThirdAnimation, setThirdAnimation] = useState(false)
+
+  useEffect(() => {
+    setAnimation(true)
+    setTimeout(() => {
+      setThirdAnimation(true)
+    }, 2000)
+  }, [])
+
   const [_, setTransparent] = useNavbarState()
-  const [inView, ref] = useIsInViewport({ threshold: 10 })
+  const [inView, ref] = useIsInViewport({ modTop: '-75px' })
   useEffect(() => {
     setTransparent(inView)
   }, [inView, setTransparent])
@@ -244,7 +242,7 @@ export const HeroSection: FunctionComponent<IntroProps> = ({
         timeout={3500}
         in={startSecondAnimation}
       />
-      <div>
+      <div ref={ref}>
         <IntroHeadline
           unmountOnExit
           timeout={1000}

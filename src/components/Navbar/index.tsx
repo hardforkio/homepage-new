@@ -40,7 +40,7 @@ export const NavbarComponent: FunctionComponent<NavbarComponentProps> = ({
       <NavbarBrand tag={linkTag} to="/">
         HARDFORK
       </NavbarBrand>
-      <NavbarToggler onClick={toggle} className="border-0" />
+      <NavbarToggler onClick={toggle} className="border-0 ml-auto" />
       <Collapse isOpen={isOpen} navbar>
         <Nav className="ml-auto align-items-center text-light" navbar>
           <MenuEntries linkTag={linkTag} />
@@ -52,6 +52,5 @@ export const NavbarComponent: FunctionComponent<NavbarComponentProps> = ({
 
 export const Navbar: FunctionComponent<NavbarProps> = props => {
   const [transparent] = useNavbarState()
-  console.log('transparent is null', transparent === null)
   return <NavbarComponent {...props} isTransparent={transparent} />
 }

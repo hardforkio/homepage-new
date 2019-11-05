@@ -70,5 +70,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
     },
+    {
+      resolve: 'gatsby-plugin-load-script',
+      options: {
+        src:
+          'https://polyfill.io/v3/polyfill.min.js?flags=gated&features=IntersectionObserver',
+      },
+    },
   ],
 }
