@@ -3,11 +3,15 @@ import styled from 'styled-components'
 import transition from 'styled-transition-group'
 import arrow from '../../img/arrow.svg'
 import bgimage from '../../img/banner.jpg'
-import { Button } from 'reactstrap'
+import { Button, Row, Col } from 'reactstrap'
 import { Link } from 'gatsby'
 import { media } from '../../config/media'
 import { useNavbarState } from '../../utils/hooks'
 import useIsInViewport from 'use-is-in-viewport'
+import styles from './Hero.module.scss'
+import cn from 'classnames'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 const Intro = styled.section`
   display: -moz-flex;
@@ -228,53 +232,62 @@ export const HeroSection: FunctionComponent<IntroProps> = ({
   }, [])
 
   const [_, setTransparent] = useNavbarState()
-  const [inView, ref] = useIsInViewport({ modTop: '-75px' })
+  const [inView, ref] = useIsInViewport()
   useEffect(() => {
     setTransparent(inView)
   }, [inView, setTransparent])
 
   return (
-    <Intro innerRef={ref}>
-      <IntroBackground
-        data-bgimage={bgimage}
-        mountOnEnter
-        unmountOnExit
-        timeout={3500}
-        in={startSecondAnimation}
-      />
-      <div ref={ref}>
-        <IntroHeadline
-          unmountOnExit
-          timeout={1000}
-          in={startAnimation}
-          onEntered={() => {
-            setSecondAnimation(true)
-          }}
-        >
-          {title}
-        </IntroHeadline>
-        <IntroWrap>
-          <FadeIn mountOnEnter timeout={3500} in={startSecondAnimation}>
-            <IntroText>{heading}</IntroText>
-            <p>
-              <Link to="/#contact">
-                <Button className="px-5 text-uppercase" color="primary">
-                  Kontakt
-                </Button>
-              </Link>
-            </p>
-          </FadeIn>
-        </IntroWrap>
-      </div>
-      <MoreLink
-        href="#offerings"
-        data-arrow={arrow}
-        mountOnEnter
-        timeout={750}
-        in={startThirdAnimation}
-      >
-        Mehr
-      </MoreLink>
-    </Intro>
+    <Row>
+      <Col>
+        <Intro>
+          <IntroBackground
+            data-bgimage={bgimage}
+            mountOnEnter
+            unmountOnExit
+            timeout={3500}
+            in={startSecondAnimation}
+          />
+          <div ref={ref}>
+            <IntroHeadline
+              unmountOnExit
+              timeout={1000}
+              in={startAnimation}
+              onEntered={() => {
+                setSecondAnimation(true)
+              }}
+            >
+              {title}
+            </IntroHeadline>
+            <IntroWrap>
+              <FadeIn mountOnEnter timeout={3500} in={startSecondAnimation}>
+                <IntroText>{heading}</IntroText>
+                <p>
+                  <Link to="/#contact">
+                    <Button className="px-5 text-uppercase" color="primary">
+                      Kontakt
+                    </Button>
+                  </Link>
+                </p>
+              </FadeIn>
+            </IntroWrap>
+          </div>
+          <Row>
+            <Col>
+              <a
+                className={cn(
+                  styles.moreLink,
+                  'd-sm-inline text-uppercase align-items-end',
+                )}
+                href="#offerings"
+              >
+                <p>Mehr</p>
+                <FontAwesomeIcon icon={faArrowDown} size="2x" />
+              </a>
+            </Col>
+          </Row>
+        </Intro>
+      </Col>
+    </Row>
   )
 }
