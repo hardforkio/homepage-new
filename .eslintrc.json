@@ -18,7 +18,8 @@
     "curly": [
       "error",
       "multi-line"
-    ]
+    ],
+    "camelcase": 2
   },
   "globals": {
     "graphql": true,
