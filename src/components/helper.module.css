@@ -1,0 +1,7 @@
+.breakWord {
+  word-break: break-all;
+
+  /* Non standard for WebKit */
+  word-break: break-word;
+  hyphens: auto;
+}
