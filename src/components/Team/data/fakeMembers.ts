@@ -60,6 +60,32 @@ const fakeMembers: TeamMemberProps[] = [
     avatarUrl: avatar05Url,
     socialMedia: [],
   },
+
+  {
+    name: 'Dino Funk',
+    jobTitle: 'Chief Accountability Coordinator',
+    avatarUrl: avatar04Url,
+    socialMedia: [],
+  },
+  {
+    name: 'Jaiden Reinger III',
+    jobTitle: 'Investor Identity Supervisor',
+    avatarUrl: avatar05Url,
+    socialMedia: [],
+  },
+
+  {
+    name: 'Dino Funk',
+    jobTitle: 'Chief Accountability Coordinator',
+    avatarUrl: avatar04Url,
+    socialMedia: [],
+  },
+  {
+    name: 'Jaiden Reinger III',
+    jobTitle: 'Investor Identity Supervisor',
+    avatarUrl: avatar05Url,
+    socialMedia: [],
+  },
 ]
 
 export default fakeMembers

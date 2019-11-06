@@ -6,6 +6,7 @@ import * as R from 'ramda'
 
 import { Team } from './'
 import fakeMembers from './data/fakeMembers'
+import { Container } from 'reactstrap'
 
 const HEADER = 'Our Team'
 const SUBHEAD = '...'
@@ -16,22 +17,32 @@ const FOOTER = `
 
 storiesOf('Team', module)
   .add('3 members', () => (
-    <div className="container">
+    <Container>
       <Team
         header={HEADER}
         subhead={SUBHEAD}
         members={R.slice(0, 3, fakeMembers)}
         footer={FOOTER}
       />
-    </div>
+    </Container>
   ))
   .add('5 members', () => (
-    <div className="container">
+    <Container>
       <Team
         header={HEADER}
         subhead={SUBHEAD}
         members={R.slice(0, 5, fakeMembers)}
         footer={FOOTER}
       />
-    </div>
+    </Container>
+  ))
+  .add('7 members', () => (
+    <Container>
+      <Team
+        header={HEADER}
+        subhead={SUBHEAD}
+        members={R.slice(0, 7, fakeMembers)}
+        footer={FOOTER}
+      />
+    </Container>
   ))
