@@ -115,10 +115,4 @@ export const data: HomeData = {
     'Hardfork GmbH - Ihr Technologiepartner für anspruchsvolle Softwareprojekte',
   meta_description:
     'Die Blockchain kann in vielen Fällen erhebliches Einsparungs- oder Sicherheitspotential bieten. Wir helfen Ihnen diese Potentiale freizulegen. Wir helfen wir Ihnen die Anforderungen und Annahmen kritisch zu hinterfragen und so besonders nachhaltige Lösungen zu produzieren.',
-  team: {
-    header: 'Our Team',
-    subhead: '...',
-    members: [],
-    footer: 'So good.',
-  },
 }
