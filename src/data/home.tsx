@@ -10,8 +10,6 @@ import {
   faCode,
 } from '@fortawesome/free-solid-svg-icons'
 
-import { TeamProps as TeamData } from '../components/Team'
-
 export type HomeData = {
   title: string
   heading: string
@@ -25,7 +23,6 @@ export type HomeData = {
   contact_email: string
   meta_title: string
   meta_description: string
-  team: TeamData
 }
 
 export type Offering = {
