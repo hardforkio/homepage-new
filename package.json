@@ -68,6 +68,7 @@
     "@storybook/addons": "^5.2.5",
     "@storybook/react": "^5.2.5",
     "@types/classnames": "^2.2.9",
+    "@types/ramda": "^0.26.33",
     "@types/react": "^16.9.11",
     "@types/react-burger-menu": "^2.2.5",
     "@types/react-helmet": "^5.0.13",

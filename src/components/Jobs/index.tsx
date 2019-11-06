@@ -10,6 +10,6 @@ export const Jobs = () => (
       <title>Jobs @ Hardfork.io, Berlin</title>
     </Helmet>
     <ArticleHeader title="Jobs" subtitle="Hardfork.io | Berlin" />
-    <PostCard posts={data.posts} />
+    <PostCard posts={data} />
   </div>
 )
