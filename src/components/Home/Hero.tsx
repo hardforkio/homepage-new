@@ -161,56 +161,6 @@ const FadeIn = transition.div`
     }
   `
 
-const MoreLink = transition.a`
-    border: none;
-    bottom: 0;
-    color: inherit;
-    display: none;
-    font-size: 0.8em;
-    height: 8.5em;
-    left: 50%;
-    letter-spacing: .225em;
-    margin-left: -8.5em;
-    opacity: 1;
-    outline: 0;
-    padding-left: .225em;
-    position: absolute;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    width: 16em;
-    z-index: 1;
-    
-    ${media.greaterThan('sm')`
-      display: block;
-    `}
-      
-    &::after {
-      background-image: url(${(props: any) => props['data-arrow']});
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      bottom: 4em;
-      content: '';
-      display: block;
-      height: 1.5em;
-      left: 50%;
-      margin: 0 0 0 -0.75em;
-      position: absolute;
-      width: 1.5em;
-    }
-    
-    &:enter {
-      opacity: 0;
-      transform: translateY(8.5em);
-    }
-    &:enter-active {
-      opacity: 1;
-      transform: translateY(0);
-      transition: transform 0.75s ease, opacity 0.75s ease;
-    }
-  `
-
 interface IntroProps {
   title: string
   heading: string
@@ -232,7 +182,7 @@ export const HeroSection: FunctionComponent<IntroProps> = ({
   }, [])
 
   const [_, setTransparent] = useNavbarState()
-  const [inView, ref] = useIsInViewport()
+  const [inView, ref] = useIsInViewport({ threshold: 85 })
   useEffect(() => {
     setTransparent(inView)
   }, [inView, setTransparent])
@@ -262,21 +212,25 @@ export const HeroSection: FunctionComponent<IntroProps> = ({
             <IntroWrap>
               <FadeIn mountOnEnter timeout={3500} in={startSecondAnimation}>
                 <IntroText>{heading}</IntroText>
-                <p>
-                  <Link to="/#contact">
-                    <Button className="px-5 text-uppercase" color="primary">
-                      Kontakt
-                    </Button>
-                  </Link>
-                </p>
+                <Link to="/#contact">
+                  <Button className="px-5 text-uppercase" color="primary">
+                    Kontakt
+                  </Button>
+                </Link>
               </FadeIn>
             </IntroWrap>
           </div>
-          <Row>
-            <Col>
+
+          <Row className="pt-5">
+            <Col
+              className={cn(
+                styles.fadedOut,
+                startThirdAnimation ? styles.fadeIn : undefined,
+              )}
+            >
               <a
                 className={cn(
-                  styles.moreLink,
+                  styles.spacedLink,
                   'd-sm-inline text-uppercase align-items-end',
                 )}
                 href="#offerings"
