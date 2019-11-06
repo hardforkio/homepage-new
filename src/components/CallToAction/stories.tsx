@@ -1,16 +1,20 @@
 import React from 'react'
 import '../../scss/main.scss'
 import { storiesOf } from '@storybook/react'
-import CallToAction from '.'
 
-const SPECS = {
-  headline: 'We want YOU!',
-  description: 'To take action and apply for a job click the button.',
-  buttonLabel: 'Click here!',
-  email: 'mailto:example@gmx.com',
-  id: 3,
-}
+import { MockedExternalLink } from '../ExternalLink'
+import CallToAction from './'
+
+const HEADLINE = 'We want YOU!'
+const DESCRIPTION = 'To take action and apply for a job click the button.'
+const BUTTONLABEL = 'Click here!'
 
 storiesOf('CallToAction', module).add('default', () => (
-  <CallToAction {...SPECS} />
+  <CallToAction
+    headline={HEADLINE}
+    description={DESCRIPTION}
+    buttonLabel={BUTTONLABEL}
+    Link={MockedExternalLink}
+    url="https://example.org"
+  />
 ))
