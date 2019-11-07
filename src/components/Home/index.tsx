@@ -9,32 +9,32 @@ import { IntroSection } from './intro'
 
 interface HomePageProps {
   title: string
-  meta_title: string
-  meta_description: string
+  metaTitle: string
+  metaDescription: string
   heading: string
   offerings: { blurbs: any }
-  practices_headline: string
-  practices_description: string
+  practicesHeadline: string
+  practicesDescription: string
   practices: any
-  contact_headline: string
-  contact_description: string
-  contact_button: string
-  contact_email: string
+  contactHeadline: string
+  contactDescription: string
+  contactButton: string
+  contactEmail: string
 }
 
 export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
   title,
-  meta_title,
-  meta_description,
+  metaTitle,
+  metaDescription,
   heading,
   offerings,
-  practices_headline,
-  practices_description,
+  practicesHeadline,
+  practicesDescription,
   practices,
-  contact_headline,
-  contact_description,
-  contact_button,
-  contact_email,
+  contactHeadline,
+  contactDescription,
+  contactButton,
+  contactEmail,
 }) => {
   const [startAnimation, setAnimation] = useState(false)
   const [startSecondAnimation, setSecondAnimation] = useState(false)
@@ -52,8 +52,8 @@ export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
   return (
     <div>
       <Helmet>
-        <title>{meta_title}</title>
-        <meta name="description" content={meta_description} />
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
       </Helmet>
       <Layout isHeaderTransparent={inView}>
         <>
@@ -71,16 +71,16 @@ export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
             <Offerings offerings={offerings.blurbs} />
           </section>
           <Practices
-            headline={practices_headline}
-            description={practices_description}
+            headline={practicesHeadline}
+            description={practicesDescription}
             practices={practices}
           />
           <CallToAction
             id="contact"
-            headline={contact_headline}
-            description={contact_description}
-            email={contact_email}
-            button_label={contact_button}
+            headline={contactHeadline}
+            description={contactDescription}
+            email={contactEmail}
+            button_label={contactButton}
           />
         </>
       </Layout>

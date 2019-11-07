@@ -14,15 +14,15 @@ export type HomeData = {
   title: string
   heading: string
   offerings: { blurbs: Offering[] }
-  practices_headline: string
-  practices_description: string
+  practicesHeadline: string
+  practicesDescription: string
   practices: Practice[]
-  contact_headline: string
-  contact_description: string
-  contact_button: string
-  contact_email: string
-  meta_title: string
-  meta_description: string
+  contactHeadline: string
+  contactDescription: string
+  contactButton: string
+  contactEmail: string
+  metaTitle: string
+  metaDescription: string
 }
 
 export type Offering = {
@@ -62,8 +62,8 @@ export const data: HomeData = {
       },
     ],
   },
-  practices_headline: 'Blockchain Software made in Germany',
-  practices_description:
+  practicesHeadline: 'Blockchain Software made in Germany',
+  practicesDescription:
     'Die Blockchain kann in vielen Fällen erhebliches Einsparungs- oder Sicherheitspotential bieten. Wir helfen Ihnen diese Potentiale freizulegen. Wir helfen wir Ihnen die Anforderungen und Annahmen kritisch zu hinterfragen und so besonders nachhaltige Lösungen zu produzieren.',
   practices: [
     {
@@ -103,13 +103,13 @@ export const data: HomeData = {
         'Wir arbeiten bereits heute mit Unternehmen zusammen, die zwar eine Expertise im Finanzbereich haben, diese aber gerne gemeinsam mit einem technologisch starken Partner um den Bereich Blockchain erweitern möchten, um noch komplexere Kundenprojekte umzusetzen. Falls Sie Interesse an einer solchen Zusammenarbeit haben, sprechen Sie uns bitte an.',
     },
   ],
-  contact_headline: 'Kontaktanfrage',
-  contact_description:
+  contactHeadline: 'Kontaktanfrage',
+  contactDescription:
     'Bitte schreiben Sie uns eine Email und wir melden uns zurück.',
-  contact_button: 'E-Mail senden',
-  contact_email: 'contact@hardfork.io',
-  meta_title:
+  contactButton: 'E-Mail senden',
+  contactEmail: 'contact@hardfork.io',
+  metaTitle:
     'Hardfork GmbH - Ihr Technologiepartner für anspruchsvolle Softwareprojekte',
-  meta_description:
+  metaDescription:
     'Die Blockchain kann in vielen Fällen erhebliches Einsparungs- oder Sicherheitspotential bieten. Wir helfen Ihnen diese Potentiale freizulegen. Wir helfen wir Ihnen die Anforderungen und Annahmen kritisch zu hinterfragen und so besonders nachhaltige Lösungen zu produzieren.',
 }
