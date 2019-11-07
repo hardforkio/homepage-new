@@ -35,8 +35,8 @@ translations:
   - content: |-
       ### Angaben gemäß § 5 TMG:
 
-      Hardfork GmbH
-      Mühlenstraße 8a
+      Hardfork GmbH\
+      Mühlenstraße 8a\
       14167 Berlin
 
       Vertreten durch: Geschäftsführer Levin Keller
@@ -45,8 +45,8 @@ translations:
 
       ### Kontakt:
 
-      - Telefon: +4915156041082
-      - E-mail: contact@hardfork.io
+      * Telefon: +4915156041082
+      * E-mail: contact@hardfork.io
 
       ### Umsatzsteuer
 
