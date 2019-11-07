@@ -5,8 +5,8 @@ translations:
   - content: |-
       ### Information pursuant to § 5 TMG:
 
-      Hardfork GmbH
-      Mühlenstraße 8a
+      Hardfork GmbH\
+      Mühlenstraße 8a\
       14167 Berlin
 
       Represented by: CEO Levin Keller
@@ -15,8 +15,8 @@ translations:
 
       ### Contact
 
-      - Phone: +4915156041082
-      - E-mail: contact@hardfork.io
+      * Phone: +4915156041082
+      * E-mail: contact@hardfork.io
 
       ### Tax
 
