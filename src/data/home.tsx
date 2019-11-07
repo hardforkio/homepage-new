@@ -46,7 +46,7 @@ export const data: HomeData = {
         headline: 'MACHBARKEITSSTUDIEN',
         image: '/img/pic01.jpg',
         text:
-          'Sie haben einen Usecase für den Sie eine Lösung auf Basis der Blockchain entwickeln möchten? Wir helfen Ihnen die Umsetzung zu planen, mögliche Risiken frühzeitig zu erkennen und eine erste Einschätzung zu Kosten und Aufwand für Ihre Organisations zu bekommen. Dabei werfen wir auch einen kritischen Blick auf das Konzept und analysieren, ob die Blockchain überhaupt der richtige Lösungsansatz ist.',
+          'Sie haben einen Usecase für den Sie eine Lösung auf Basis der Blockchain entwickeln möchten? Wir helfen Ihnen die Umsetzung zu planen, mögliche Risiken frühzeitig zu erkennen und eine erste Einschätzung zu Kosten und Aufwand für Ihre Organisation zu bekommen. Dabei werfen wir auch einen kritischen Blick auf das Konzept und analysieren, ob die Blockchain überhaupt der richtige Lösungsansatz ist.',
       },
       {
         headline: 'FORTBILDUNGEN',
