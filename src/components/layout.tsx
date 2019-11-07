@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
-import { NavbarComponent } from './Navbar'
+import { Navbar } from './Navbar'
 import Footer from './Footer'
 import config from '../../config'
 import styledNormalize from 'styled-normalize'
@@ -62,29 +62,24 @@ const hardforkTheme = {
   defaultBg: 'rgb(46, 56, 66)',
 }
 
-const Layout: FunctionComponent<{ isHeaderTransparent?: boolean }> = ({
-  children,
-  isHeaderTransparent = true,
-}) => (
-  <div>
-    <Helmet>
-      <title>{config.siteTitle}</title>
-      <meta name="description" content={config.siteDescription} />
-    </Helmet>
-    <ThemeProvider theme={hardforkTheme}>
-      <header>
-        <NavbarComponent
-          linkTag={Link}
-          isTransparent={isHeaderTransparent}
-          className="fixed-top"
-        />
-      </header>
-    </ThemeProvider>
-    <ThemeProvider theme={hardforkTheme}>{children}</ThemeProvider>
-    <ThemeProvider theme={hardforkTheme}>
-      <Footer />
-    </ThemeProvider>
-  </div>
-)
+const Layout: FunctionComponent = ({ children }) => {
+  return (
+    <div>
+      <Helmet>
+        <title>{config.siteTitle}</title>
+        <meta name="description" content={config.siteDescription} />
+      </Helmet>
+      <ThemeProvider theme={hardforkTheme}>
+        <>
+          <header>
+            <Navbar linkTag={Link} className="fixed-top" />
+          </header>
+          {children}
+          <Footer />
+        </>
+      </ThemeProvider>
+    </div>
+  )
+}
 
 export default Layout

@@ -20,28 +20,11 @@
     @include media-breakpoint-up(xl) {
       padding: 15em 0 10em 0;
     }
-  h1 {
-    color: #fff;
-    font-size: 1.25em;
-    font-weight: 800;
+  h3 {
     letter-spacing: 0.225em;
-    line-height: 1.65em;
-    margin: 0 0 1em 0;
-    text-transform: uppercase;
-    @include media-breakpoint-up(sm) {
-      font-size: 1.75em;
-      line-height: 1.75em;
-      margin: 0 0 0.5em 0;
-    }
-
   }
   
-  p {
-    color: inherit;
+  h6 {
     letter-spacing: 0.225em;
-    margin: 0 0 2em 0;
-    text-transform: uppercase;
-    top: 0;
-
   }
 }
