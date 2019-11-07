@@ -8,7 +8,7 @@ export const ArticleHeader: FunctionComponent<{
   title: string
   subtitle: string
 }> = ({ title, subtitle }) => {
-  const [inView, ref] = useIsInViewport()
+  const [inView, ref] = useIsInViewport({ threshold: 80 })
   const [_, setTransparent] = useNavbarState()
   useEffect(() => {
     if (inView !== null) {
