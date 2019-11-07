@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import media from 'styled-media-query'
+import styles from '../helper.module.css'
+import cn from 'classnames'
 
 const Offering = styled.section`
   align-items: center;
@@ -107,7 +109,7 @@ const Offerings = ({ offerings }) => (
           <img alt="" src={item.image} />
         </OfferingImg>
         <OfferingText>
-          <h2>{item.headline}</h2>
+          <h2 className={cn(styles.breakWord)}>{item.headline}</h2>
           <p>{item.text}</p>
         </OfferingText>
       </Offering>
