@@ -11,6 +11,7 @@ collections:
     label: "Imprint"
     folder: "src/data/imprint"
     slug: "{{slug}}-{{year}}{{month}}{{day}}-{{hour}}{{minute}}{{second}}"
+    format: "json"
     create: true
     fields:
       - name: "type"
