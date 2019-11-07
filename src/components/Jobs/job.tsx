@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import { ContentWrap } from '../Content'
 import SE0 from '../SEO'
 import { ArticleHeader } from '../ArticleHeader/index'
-import ReactMarkdown from 'react-markdown'
+import ReactMarkdown from 'react-commonmark'
 import { Job } from '../../data/jobs'
 
 export const JobComponent: FunctionComponent<{
