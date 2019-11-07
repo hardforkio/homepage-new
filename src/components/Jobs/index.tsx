@@ -13,3 +13,4 @@ export const Jobs = () => (
     <PostCard posts={data} />
   </div>
 )
+

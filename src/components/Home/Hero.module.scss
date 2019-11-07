@@ -1,0 +1,16 @@
+.spacedLink {
+    font-size: 0.8em;
+    letter-spacing: .225em;
+
+}
+
+.faded-out.fade-in {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.faded-out {
+  transition: transform ease 1.25s, opacity ease 1.5s;
+  opacity: 0;
+  transform: translateY(80px);
+}

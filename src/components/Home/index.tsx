@@ -1,11 +1,9 @@
-import React, { FunctionComponent, useState, useEffect } from 'react'
+import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
 import Offerings from '../Offerings'
 import Practices from '../Practices'
 import CallToAction from '../CallToAction'
-import Layout from '../layout'
-import { useInView } from 'react-hook-inview'
-import { IntroSection } from './intro'
+import { HeroSection } from './Hero'
 
 interface HomePageProps {
   title: string
@@ -35,55 +33,29 @@ export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
   contact_description,
   contact_button,
   contact_email,
-}) => {
-  const [startAnimation, setAnimation] = useState(false)
-  const [startSecondAnimation, setSecondAnimation] = useState(false)
-  const [startThirdAnimation, setThirdAnimation] = useState(false)
-
-  const [ref, inView] = useInView()
-
-  useEffect(() => {
-    setAnimation(true)
-    setTimeout(() => {
-      setThirdAnimation(true)
-    }, 2000)
-  }, [])
-
-  return (
-    <div>
-      <Helmet>
-        <title>{meta_title}</title>
-        <meta name="description" content={meta_description} />
-      </Helmet>
-      <Layout isHeaderTransparent={inView}>
-        <>
-          <div ref={ref}>
-            <IntroSection
-              startSecondAnimation={startSecondAnimation}
-              startAnimation={startAnimation}
-              setSecondAnimation={setSecondAnimation}
-              title={title}
-              heading={heading}
-              startThirdAnimation={startThirdAnimation}
-            />
-          </div>
-          <section id="offerings">
-            <Offerings offerings={offerings.blurbs} />
-          </section>
-          <Practices
-            headline={practices_headline}
-            description={practices_description}
-            practices={practices}
-          />
-          <CallToAction
-            id="contact"
-            headline={contact_headline}
-            description={contact_description}
-            email={contact_email}
-            button_label={contact_button}
-          />
-        </>
-      </Layout>
-    </div>
-  )
-}
+}) => (
+  <div>
+    <Helmet>
+      <title>{meta_title}</title>
+      <meta name="description" content={meta_description} />
+    </Helmet>
+    <>
+      <HeroSection title={title} heading={heading} />
+      <section id="offerings">
+        <Offerings offerings={offerings.blurbs} />
+      </section>
+      <Practices
+        headline={practices_headline}
+        description={practices_description}
+        practices={practices}
+      />
+      <CallToAction
+        id="contact"
+        headline={contact_headline}
+        description={contact_description}
+        email={contact_email}
+        button_label={contact_button}
+      />
+    </>
+  </div>
+)
