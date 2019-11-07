@@ -1,0 +1,13 @@
+{
+  "type": "imprint",
+  "title": "Impressum",
+  "translations": [
+    {
+      "locale": "en",
+      "headline": "Imprint",
+      "subHeadline": "Hardfork GmbH Berlin",
+      "metaTitle": "Imprint Hardfork GmbH",
+      "content": "Information pursuant to § 5 TMG:\nHardfork GmbH\nMühlenstraße 8a\n14167 Berlin\nRepresented by: CEO Levin Keller\nRegistered at Amtsgericht Charlottenburg as HRB 162146 B\nContact\nPhone: +4915156041082\nE-mail: contact@hardfork.io\nTax\nVAT ID: DE297380065\nResponsible for content pursuant to § 55 Abs. 2 RStV:\nLevin Keller\nHardfork GmbH\nMühlenstraße 8a\n14167 Berlin"
+    }
+  ]
+}
