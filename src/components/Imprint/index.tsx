@@ -6,12 +6,9 @@ import { Imprint as ImprintData } from '../../data/imprint'
 import ReactMarkdown from 'react-markdown'
 
 export const ImprintComponent: FunctionComponent<ImprintData> = ({
-  headline,
-  subHeadline,
   content,
 }) => (
   <article>
-    <ArticleHeader title={headline} subtitle={subHeadline} />
     <ContentWrap>
       <div>
         <ReactMarkdown source={content} />
@@ -27,6 +24,7 @@ export const Imprint: FunctionComponent<{ imprint: ImprintData }> = ({
     <Helmet>
       <title>{imprint.metaTitle}</title>
     </Helmet>
+    <ArticleHeader title={imprint.headline} subtitle={imprint.subHeadline} />
     <ImprintComponent {...imprint} />
   </div>
 )
