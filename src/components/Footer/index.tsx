@@ -7,6 +7,7 @@ import styles from './Footer.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { SafeExternalLink } from '../ExternalLink'
 
 const LegalBar: FunctionComponent = ({ children }) => (
   <div
@@ -34,7 +35,7 @@ const translations = {
   imprintLinkText: 'Impressum',
 }
 
-const Footer = () => (
+const Footer = ({ ExtLink = SafeExternalLink }) => (
   <footer
     className={cn(
       'bg-dark py-3 py-md-5',
@@ -44,25 +45,23 @@ const Footer = () => (
   >
     <div className="d-flex mb-4 justify-content-center">
       <div className="px-3">
-        <a
+        <ExtLink
           className={cn('border-0')}
-          href="https://github.com/hardforkio"
+          to="https://github.com/hardforkio"
           title="Github"
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <FontAwesomeIcon icon={faGithub} />
-        </a>
+        </ExtLink>
       </div>
 
       <div className="px-3">
-        <a
+        <ExtLink
           className={cn('border-0')}
-          href="mailto:contact@hardfork.io"
+          to="mailto:contact@hardfork.io"
           title="Email"
         >
           <FontAwesomeIcon icon={faEnvelope} />
-        </a>
+        </ExtLink>
       </div>
     </div>
     <LegalBar>
