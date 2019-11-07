@@ -1,6 +1,6 @@
 ---
 type: imprint
-title: Standardimpressum
+title: Default
 translations:
   - content: |-
       ### Information pursuant to § 5 TMG:
