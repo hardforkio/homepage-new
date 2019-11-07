@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { ArticleHeader } from '../ArticleHeader/index'
 import { ContentWrap } from '../Content/index'
 import { Imprint as ImprintData } from '../../data/imprint'
-import ReactMarkdown from 'react-markdown'
+import ReactMarkdown from 'react-commonmark'
 
 export const ImprintComponent: FunctionComponent<ImprintData> = ({
   headline,
