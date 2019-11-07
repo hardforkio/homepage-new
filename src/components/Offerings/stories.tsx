@@ -27,6 +27,6 @@ const offerings = [
   },
 ]
 
-storiesOf('Article Header', module).add('default', () => (
+storiesOf('Offerings', module).add('default', () => (
   <Offerings offerings={offerings} />
 ))
