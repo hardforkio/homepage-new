@@ -1,8 +1,8 @@
 export const data = {
   title: 'Impressum',
   subtitle: 'Hardfork GmbH Berlin',
-  meta_title: 'Impressum Hardfork GmbH',
-  meta_description: 'Hardfork Impressum',
+  metaTitle: 'Impressum Hardfork GmbH',
+  metaDescription: 'Hardfork Impressum',
   headline: 'Angaben gemäß § 5 TMG:',
   address: {
     name: 'Hardfork GmbH',

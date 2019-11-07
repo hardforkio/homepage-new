@@ -82,8 +82,8 @@ const ImprintComponent: FunctionComponent<ImprintProps> = ({
 export const Imprint = () => (
   <div>
     <Helmet>
-      <title>{data.meta_title}</title>
-      <meta name="description" content={data.meta_description} />
+      <title>{data.metaTitle}</title>
+      <meta name="description" content={data.metaDescription} />
     </Helmet>
     <ImprintComponent {...data} />
   </div>

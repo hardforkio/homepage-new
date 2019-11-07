@@ -5,7 +5,7 @@ import React from 'react'
 import config from '../../../config'
 import Helmet from 'react-helmet'
 
-const SE0 = ({ title, meta_title, meta_desc, cover, slug }) => {
+const SE0 = ({ title, metaTitle, metaDesc, cover, slug }) => {
   let postURL = config.siteUrl + slug
   const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
   let image = config.siteUrl + realPrefix + cover
@@ -47,15 +47,15 @@ const SE0 = ({ title, meta_title, meta_desc, cover, slug }) => {
         '@type': 'ImageObject',
         url: image,
       },
-      meta_desc,
+      metaDesc,
     },
   ])
 
   return (
     <Helmet>
-      <title>{meta_title}</title>
+      <title>{metaTitle}</title>
       {/* General tags */}
-      <meta name="description" content={meta_desc} />
+      <meta name="description" content={metaDesc} />
       <meta name="image" content={cover} />
       {/* Schema.org tags */}
       <script type="application/ld+json">
@@ -65,7 +65,7 @@ const SE0 = ({ title, meta_title, meta_desc, cover, slug }) => {
       <meta property="og:url" content={postURL} />
       <meta property="og:type" content="article" />
       <meta property="og:title" content={title} />
-      <meta property="og:description" content={meta_desc} />
+      <meta property="og:description" content={metaDesc} />
       <meta property="og:image" content={image} />
       <meta
         property="fb:app_id"
@@ -78,7 +78,7 @@ const SE0 = ({ title, meta_title, meta_desc, cover, slug }) => {
         content={config.userTwitter ? config.userTwitter : ''}
       />
       <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={meta_desc} />
+      <meta name="twitter:description" content={metaDesc} />
       <meta name="twitter:image" content={image} />
     </Helmet>
   )

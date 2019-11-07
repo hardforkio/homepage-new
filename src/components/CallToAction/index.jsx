@@ -111,7 +111,7 @@ const CallToActionWrap = styled.section`
   }
 `
 
-const CallToAction = ({ headline, description, email, button_label, id }) => {
+const CallToAction = ({ headline, description, email, buttonLabel, id }) => {
   return (
     <CallToActionWrap data-bgimage={bgimage} id={id}>
       <div>
@@ -120,7 +120,7 @@ const CallToAction = ({ headline, description, email, button_label, id }) => {
           <p>{description}</p>
         </header>
         <div>
-          <MailButton href={'mailto:' + email}>{button_label}</MailButton>
+          <MailButton href={'mailto:' + email}>{buttonLabel}</MailButton>
         </div>
       </div>
     </CallToActionWrap>

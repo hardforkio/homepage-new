@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import transition from 'styled-transition-group'
-import arrow from '../../img/arrow.svg'
 import bgimage from '../../img/banner.jpg'
 import { Button, Row, Col } from 'reactstrap'
 import { Link } from 'gatsby'
