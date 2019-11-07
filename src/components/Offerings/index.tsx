@@ -1,24 +1,13 @@
 import React, { FunctionComponent } from 'react'
-import * as R from 'ramda'
 import styles from './Offering.module.scss'
 import helperStyles from '../helper.module.css'
 import cn from 'classnames'
 import { Col, Row } from 'reactstrap'
+import { mapToComponent } from '../../utils/helpers'
 
 export const Offerings: FunctionComponent<{ offerings: Offering[] }> = ({
   offerings,
-}) => (
-  <div>
-    {R.addIndex<Offering>(R.map)((item, index) => (
-      <OfferingComponent
-        index={index}
-        image={item.image}
-        headline={item.headline}
-        text={item.text}
-      />
-    ))(offerings)}
-  </div>
-)
+}) => <div>{mapToComponent(OfferingComponent, offerings)}</div>
 
 export const OfferingComponent: FunctionComponent<{
   index: number
