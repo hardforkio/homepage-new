@@ -40,6 +40,13 @@ module.exports = {
         name: 'images',
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/data`,
+        name: 'data',
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     `gatsby-plugin-offline`,
@@ -77,5 +84,7 @@ module.exports = {
           'https://polyfill.io/v3/polyfill.min.js?flags=gated&features=IntersectionObserver',
       },
     },
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-transformer-remark`,
   ],
 }
