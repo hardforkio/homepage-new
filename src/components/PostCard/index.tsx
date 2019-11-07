@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { FunctionComponent, ReactNode } from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-import media from 'styled-media-query'
 import * as R from 'ramda'
+import { Job } from '../../data/jobs'
+import { media } from '../../config/media'
 
 const StyledLink = styled(Link)`
   -moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
@@ -24,10 +25,10 @@ const PostCardWrap = styled.section`
   color: #4e4852;
   padding: 3em 2em 3em 2em;
 
-  ${media.greaterThan('736x')`
+  ${media.greaterThan('sm')`
     padding: 4em 3em 2em 3em;
   `}
-  ${media.greaterThan('980x')`
+  ${media.greaterThan('md')`
     padding: 6em 0 4em 0;
   `}
 `
@@ -37,10 +38,10 @@ const PostCardItem = styled.div`
   padding: 0 0 3em 0;
   width: 100%;
 
-  ${media.greaterThan('981px')`
+  ${media.greaterThan('md')`
     width: 90%;
   `}
-  ${media.greaterThan('1280px')`
+  ${media.greaterThan('lg')`
     width: 60em;
   `}
   
@@ -64,10 +65,12 @@ const PostCardItem = styled.div`
   }
 `
 
-export const PostCard = ({ posts }) => (
+const mapIndex = R.addIndex<Job, ReactNode>(R.map)
+
+export const PostCard: FunctionComponent<{ posts: Job[] }> = ({ posts }) => (
   <PostCardWrap>
-    {R.map(post => (
-      <PostCardItem key={post.id}>
+    {mapIndex((post: Job, index: number) => (
+      <PostCardItem key={index}>
         <h2>
           <Link className="has-text-primary" to={post.slug}>
             {post.title}

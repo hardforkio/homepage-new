@@ -1,13 +1,15 @@
 import React from 'react'
-import { JobPage } from '../../components/Jobs/job'
+import { JobComponent } from '../../components/Jobs/job'
 import Layout from '../../components/layout'
-import { data } from '../../data/jobs'
 import { NavbarStateProvider } from '../../utils/hooks'
+import { data as jobs } from '../../data/jobs'
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import juniorDev from 'raw-loader!../../data/juniorDev.md'
 
 export default () => (
   <NavbarStateProvider>
     <Layout>
-      <JobPage post={data.posts[0]} />
+      <JobComponent description={jobs[0]} content={juniorDev} />
     </Layout>
   </NavbarStateProvider>
 )

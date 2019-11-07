@@ -4,16 +4,13 @@ import { PostCard } from '../PostCard'
 import { ArticleHeader } from '../ArticleHeader/index'
 import { data } from '../../data/jobs'
 
-export const Jobs = () => {
-  const { posts } = data
+export const Jobs = () => (
+  <div>
+    <Helmet>
+      <title>Jobs @ Hardfork.io, Berlin</title>
+    </Helmet>
+    <ArticleHeader title="Jobs" subtitle="Hardfork.io | Berlin" />
+    <PostCard posts={data} />
+  </div>
+)
 
-  return (
-    <div>
-      <Helmet>
-        <title>Jobs @ Hardfork.io, Berlin</title>
-      </Helmet>
-      <ArticleHeader title="Jobs" subtitle="Hardfork.io | Berlin" />
-      <PostCard posts={posts} />
-    </div>
-  )
-}
