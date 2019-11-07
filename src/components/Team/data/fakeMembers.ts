@@ -4,7 +4,8 @@ import avatar03Url from './avatar/03.jpg'
 import avatar04Url from './avatar/04.jpg'
 import avatar05Url from './avatar/05.jpg'
 
-import { TeamMemberProps, Platforms } from '../index'
+import { Platform } from '../SocialIcon'
+import { TeamMemberProps } from '../index'
 
 const fakeMembers: TeamMemberProps[] = [
   {
@@ -13,11 +14,11 @@ const fakeMembers: TeamMemberProps[] = [
     avatarUrl: avatar01Url,
     socialMedia: [
       {
-        platform: Platforms.github,
+        platform: Platform.github,
         url: 'https://github.com/hardforkio',
       },
       {
-        platform: Platforms.linkedIn,
+        platform: Platform.linkedIn,
         url: 'https://www.linkedin.com/in/company/hardfork',
       },
     ],
@@ -28,11 +29,11 @@ const fakeMembers: TeamMemberProps[] = [
     avatarUrl: avatar02Url,
     socialMedia: [
       {
-        platform: Platforms.github,
+        platform: Platform.github,
         url: 'https://github.com/hardforkio',
       },
       {
-        platform: Platforms.github,
+        platform: Platform.github,
         url: 'https://github.com/hardforkio',
       },
     ],
@@ -43,7 +44,7 @@ const fakeMembers: TeamMemberProps[] = [
     avatarUrl: avatar03Url,
     socialMedia: [
       {
-        platform: Platforms.linkedIn,
+        platform: Platform.linkedIn,
         url: 'https://www.linkedin.com/in/company/hardfork',
       },
     ],
