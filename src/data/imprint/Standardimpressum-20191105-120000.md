@@ -60,7 +60,7 @@ translations:
       14167 Berlin
     headline: Impressum
     locale: de
-    metaTitle: Impressum Hardform GmbH
+    metaTitle: Impressum Hardfork GmbH
     subHeadline: Hardfork GmbH Berlin
 ---
 
