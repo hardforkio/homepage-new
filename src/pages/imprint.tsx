@@ -9,7 +9,7 @@ const ImprintPage: FunctionComponent<{}> = () => {
 
   return (
     <NavbarStateProvider>
-      <Layout isHeaderTransparent={false}>
+      <Layout>
         <Imprint imprint={imprints[0]} />
       </Layout>
     </NavbarStateProvider>
