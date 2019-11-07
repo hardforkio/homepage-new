@@ -1,7 +1,7 @@
 import '../../scss/main.scss'
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { Imprint } from '.'
+import { ImprintComponent } from '.'
 import { Imprint as ImprintData } from '../../data/imprint'
 
 const ENGLISH_IMPRINT: ImprintData = {
@@ -20,5 +20,5 @@ const GERMAN_IMPRINT: ImprintData = {
 }
 
 storiesOf('Imprint', module)
-  .add('german', () => <Imprint imprint={GERMAN_IMPRINT} />)
-  .add('english', () => <Imprint imprint={ENGLISH_IMPRINT} />)
+  .add('german', () => <ImprintComponent {...GERMAN_IMPRINT} />)
+  .add('english', () => <ImprintComponent {...ENGLISH_IMPRINT} />)
