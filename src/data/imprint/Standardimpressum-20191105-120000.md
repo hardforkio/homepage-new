@@ -1,5 +1,6 @@
 ---
 type: imprint
+title: Standardimpressum
 translations:
   - content: |-
       ### Information pursuant to § 5 TMG:
@@ -29,8 +30,8 @@ translations:
       14167 Berlin
     headline: Imprint
     locale: en
-    meta_title: Imprint Hardfork GmbH
-    subheadline: Hardfork GmbH Berlin
+    metaTitle: Imprint Hardfork GmbH
+    subHeadline: Hardfork GmbH Berlin
   - content: |-
       ### Angaben gemäß § 5 TMG:
 
@@ -59,7 +60,7 @@ translations:
       14167 Berlin
     headline: Impressum
     locale: de
-    meta_title: Impressum Hardform GmbH
-    subheadline: Hardfork GmbH Berlin
+    metaTitle: Impressum Hardform GmbH
+    subHeadline: Hardfork GmbH Berlin
 ---
 

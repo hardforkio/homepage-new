@@ -10,8 +10,8 @@ collections:
   - name: "imprint"
     label: "Imprint"
     folder: "src/data/imprint"
+    slug: "{{slug}}-{{year}}{{month}}{{day}}-{{hour}}{{minute}}{{second}}"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}-{{slug}}"
     fields:
       - name: "type"
         widget: "hidden"
@@ -27,6 +27,6 @@ collections:
         fields:
           - { name: "locale", widget: "select", options: ["en", "de"] }
           - { name: "headline", widget: "string" }
-          - { name: "subheadline", widget: "string" }
-          - { name: "meta_title", widget: "string" }
+          - { name: "subHeadline", widget: "string" }
+          - { name: "metaTitle", widget: "string" }
           - { name: "content", widget: "markdown" }
