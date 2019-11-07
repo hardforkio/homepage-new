@@ -80,7 +80,7 @@ export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
             headline={contactHeadline}
             description={contactDescription}
             email={contactEmail}
-            button_label={contactButton}
+            buttonLabel={contactButton}
           />
         </>
       </Layout>

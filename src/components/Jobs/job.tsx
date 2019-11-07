@@ -15,8 +15,8 @@ export const JobComponent: FunctionComponent<{
   <article>
     <SE0
       title={title}
-      meta_title={metaTitle}
-      meta_desc={metaDescription}
+      metaTitle={metaTitle}
+      metaDesc={metaDescription}
       slug={slug}
       cover=""
     />
