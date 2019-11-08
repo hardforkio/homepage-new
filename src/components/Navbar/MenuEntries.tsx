@@ -23,6 +23,11 @@ export const MenuEntries = ({ linkTag }: { linkTag: any }) => (
           KONTAKT
         </NavLink>
       </NavItem>,
+      <NavItem key="faq">
+        <NavLink to="/faq" tag={linkTag}>
+          FAQ
+        </NavLink>
+      </NavItem>,
     ]}
   </>
 )
