@@ -1,22 +1,9 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
-import {
-  faPaperPlane,
-  faHeart,
-  faFlag,
-} from '@fortawesome/free-regular-svg-icons'
-import {
-  faHeadphones,
-  faLaptop,
-  faCode,
-} from '@fortawesome/free-solid-svg-icons'
 
 export type HomeData = {
   title: string
   heading: string
   offerings: { blurbs: Offering[] }
-  practicesHeadline: string
-  practicesDescription: string
-  practices: Practice[]
   contactHeadline: string
   contactDescription: string
   contactButton: string
@@ -43,66 +30,25 @@ export const data: HomeData = {
   offerings: {
     blurbs: [
       {
-        headline: 'MACHBARKEITSSTUDIEN',
+        headline: 'Entwicklung',
         image: '/img/pic01.jpg',
         text:
-          'Sie haben einen Usecase für den Sie eine Lösung auf Basis der Blockchain entwickeln möchten? Wir helfen Ihnen die Umsetzung zu planen, mögliche Risiken frühzeitig zu erkennen und eine erste Einschätzung zu Kosten und Aufwand für Ihre Organisation zu bekommen. Dabei werfen wir auch einen kritischen Blick auf das Konzept und analysieren, ob die Blockchain überhaupt der richtige Lösungsansatz ist.',
+          'Wir entwickeln für Sie Software-Applikationen nach Ihren Vorstellungen. Wir beherrschen dafür alle Notwendigen Teilbereiche vom Frontend über komplexes Application State Management, Client zu Server Kommunikation, Backend-Entwicklung sowie die notwendige Expertise für skalierbaren und sicheren Betrieb in der Cloud. Mit Hardfork bekommen Sie Ihren gesamten Stack aus einer Hand.\n\nWir nutzen unter anderem die Technologien bzw. Libraries React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) und AWS serverless.',
       },
       {
-        headline: 'FORTBILDUNGEN',
+        headline: 'Company value',
         image: '/img/pic02.jpg',
         text:
-          'Sie haben Software-Entwickler im Haus, aber keine Experten in Blockchain und Ethereum? Wir führen Schulungen durch, bei denen Ihre Entwickler die grundlegenden Konzepte der Entwicklung von Blockchain Prototypen und Protokollen erlernen und so das Portfolio Ihres Unternehmens erweitern.',
+          'Wir verstehen uns nicht als reiner Technologiedienstleister sondern als Partner für das Erreichen von Unternehmenszielen. Durch unseren Hintergrund im Startup-Ökosystem von Berlin wissen wir, dass Software zuallererst Wert für den Kunden generieren muss. Wir berücksichtigen dies sowohl bei den grundlegenden Architekturentscheidungen als auch bei der täglichen Auswahl von Implementierungsdetails, die sich in der Software-Entwicklung ergeben.',
       },
       {
-        headline: 'PROTOTYPING & SMART CONTRACT ENTWICKLUNG',
+        headline: 'Qualität und Transparenz',
         image: '/img/pic03.jpg',
         text:
-          'Selbstverständlich bieten wir auch die komplette Umsetzung Ihres Projekts an. Unsere erfahrenen Entwickler haben schon zahlreiche Apps für Kunden auf Basis der Blockchain Technologie entwickelt. Dabei legen wir großen Wert auf schnelle Feedback-Loops mit unseren Kunden, so dass Sie schon nach wenigen Tagen eine erste Live-Version haben und Ihr Feedback in die weitere Entwicklung eingehen kann. Wir bieten darüberhinaus auch den Betrieb (Hosting) und die Wartung der Apps an.',
+          'Bei Hardfork arbeiten ausschließlich hoch ausgebildete Software-Entwickler in Festanstellung. Unsere Arbeit ist für den Kunden zu jeder Zeit einsehbar, die von uns entwickelte Software steht vom ersten Tag an für den Kunden zum Testen zur Verfügung. Wir arbeiten grundsätzlich mit automatisierten Tests, Continous Integration und Deployment und veröffentlichen neuen Code nur im Vier-Augen-Prinzip.',
       },
     ],
   },
-  practicesHeadline: 'Blockchain Software made in Germany',
-  practicesDescription:
-    'Die Blockchain kann in vielen Fällen erhebliches Einsparungs- oder Sicherheitspotential bieten. Wir helfen Ihnen diese Potentiale freizulegen. Wir helfen wir Ihnen die Anforderungen und Annahmen kritisch zu hinterfragen und so besonders nachhaltige Lösungen zu produzieren.',
-  practices: [
-    {
-      headline: 'Unabhängigkeit',
-      icon: faPaperPlane,
-      text:
-        'Wir haben keine Favoriten wenn es um das Thema Blockchain geht und glauben auch nicht an Dogmen. Wir nutzen die Technologie, die für den konkreten Fall die besten Ergebnisse verspricht.',
-    },
-    {
-      headline: 'Kritische Analyse',
-      icon: faLaptop,
-      text:
-        'Wir freuen uns über neue Aufträge und Projekte. Allerdings stellen wir beim Thema Blockchain auch übertriebene Erwartungen an die Einsatzmöglichkeiten fest. Wir hinterfragen immer kritisch, ob sich der hohe Entwicklungsaufwand für ein Projekt tatsächlich lohnt und geben Ihnen eine begründete Einschätzung in jedem Einzelfall.',
-    },
-    {
-      headline: 'Agile Entwicklung',
-      icon: faCode,
-      text:
-        'Unsere Erfahrung im Startup-Bereich und mit den Themen Agile, Kanban und Continuous Delivery lässt uns besonders schnell und zielorientiert arbeiten. Sie können jederzeit die Entwicklungsfortschritte selbst auf Ihrem Endgerät erleben und haben so volle Kontrolle über das Projekt.',
-    },
-    {
-      headline: 'Vorträge',
-      icon: faHeadphones,
-      text:
-        'Wir halten regelmäßig Vorträge vor Fachpublikum, aber auch vor Laien mit Interesse am spannenden Thema Blockchain. Wenn Sie zum Beispiel ein Event für Ihre Kunden im Finanzbereich planen, sprechen Sie uns an.',
-    },
-    {
-      headline: 'Reporting Tools',
-      icon: faHeart,
-      text:
-        'Hardfork hat die Software [blooks](https://github.com/blooks) entwickelt, mit der Sie die aktuellen Bestände und Wertentwicklung von Cryptowährungen verfolgen können. Diese steht unter einer Open Source Lizenz zur Verfügung. Gerne helfen wir Ihnen mit der Integration oder Anpassung für Ihre Zwecke. So können Sie auch die buchhalterischen Herausforderungen der Blockchain lösen.',
-    },
-    {
-      headline: 'Partnerschaften',
-      icon: faFlag,
-      text:
-        'Wir arbeiten bereits heute mit Unternehmen zusammen, die zwar eine Expertise im Finanzbereich haben, diese aber gerne gemeinsam mit einem technologisch starken Partner um den Bereich Blockchain erweitern möchten, um noch komplexere Kundenprojekte umzusetzen. Falls Sie Interesse an einer solchen Zusammenarbeit haben, sprechen Sie uns bitte an.',
-    },
-  ],
   contactHeadline: 'Kontaktanfrage',
   contactDescription:
     'Bitte schreiben Sie uns eine Email und wir melden uns zurück.',
