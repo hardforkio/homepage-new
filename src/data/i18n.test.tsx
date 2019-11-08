@@ -1,30 +1,29 @@
+import test from 'tape'
 import { Locale, Localized, getTranslation, getTranslations } from './i18n'
 
 const EN: Locale = 'en'
 const DE: Locale = 'de'
 
-describe('getTranslation', () => {
-  it('selects the desired language version', () => {
-    type Word = { word: string }
-    const PET: Localized<Word> = {
-      translations: [{ locale: EN, word: 'dog' }, { locale: DE, word: 'hund' }],
-    }
+test('getTranslation selects the desired language version', test => {
+  type Word = { word: string }
+  const PET: Localized<Word> = {
+    translations: [{ locale: EN, word: 'dog' }, { locale: DE, word: 'hund' }],
+  }
 
-    expect(getTranslation(DE)(PET)).toEqual({ word: 'hund' })
-    expect(getTranslation(EN)(PET)).toEqual({ word: 'dog' })
-  })
+  test.plan(2)
+  test.deepEqual(getTranslation(DE)(PET), { word: 'hund' })
+  test.deepEqual(getTranslation(EN)(PET), { word: 'dog' })
 })
 
-describe('getTranslations', () => {
-  it('gets a list of language versions', () => {
-    type Word = { word: string }
-    const PET: Localized<Word> = {
-      translations: [{ locale: EN, word: 'dog' }, { locale: DE, word: 'hund' }],
-    }
+test('getTranslations gets a list of language versions', test => {
+  type Word = { word: string }
+  const PET: Localized<Word> = {
+    translations: [{ locale: EN, word: 'dog' }, { locale: DE, word: 'hund' }],
+  }
 
-    expect(getTranslations(PET)).toEqual([
-      { locale: EN, word: 'dog' },
-      { locale: DE, word: 'hund' },
-    ])
-  })
+  test.plan(1)
+  test.deepEqual(getTranslations(PET), [
+    { locale: EN, word: 'dog' },
+    { locale: DE, word: 'hund' },
+  ])
 })
