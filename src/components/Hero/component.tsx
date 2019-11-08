@@ -104,35 +104,23 @@ const IntroHeadline = transition.h1`
     }
   `
 
-const FadeIn = transition.div`
-    opacity: 1;
-    
-    &:enter {
-      opacity: 0;
-    }
-    &:enter-active {
-      opacity: 1;
-      transition: opacity 3.5s ease;
-    }
-  `
-
 interface IntroProps {
   title: string
   subTitle: string
-  startHeadlineAnimation: boolean
-  startBackgroundAnimation: boolean
-  startMoreLinkAnimation: boolean
-  setBackgroundAnimation: any
+  showHeadline: boolean
+  showBackground: boolean
+  showMoreSection: boolean
+  showSubHeadline: boolean
   LinkTag: any
 }
 
 export const HeroSectionComponent: FunctionComponent<IntroProps> = ({
   title,
   subTitle,
-  startHeadlineAnimation,
-  startBackgroundAnimation,
-  startMoreLinkAnimation,
-  setBackgroundAnimation,
+  showHeadline,
+  showBackground,
+  showMoreSection,
+  showSubHeadline,
   LinkTag,
 }) => (
   <section
@@ -141,43 +129,26 @@ export const HeroSectionComponent: FunctionComponent<IntroProps> = ({
       'd-flex justify-content-center text-center p-sm-0',
     )}
   >
-    <IntroBackground
-      data-bgimage={bgimage}
-      mountOnEnter
-      unmountOnExit
-      timeout={3500}
-      in={startBackgroundAnimation}
-    />
-    <div className="mt-auto mb-5">
-      <IntroHeadline
-        unmountOnExit
-        timeout={1000}
-        in={startHeadlineAnimation}
-        onEntered={() => {
-          setBackgroundAnimation(true)
-        }}
-      >
+    <div className={cn('mt-auto mb-5 position-relative')}>
+      <h1 className={cn(styles.headline, showHeadline ? 'show' : '')}>
         {title}
-      </IntroHeadline>
+      </h1>
     </div>
-    <div className="mb-auto">
-      <FadeIn mountOnEnter timeout={3500} in={startBackgroundAnimation}>
-        <p className={cn(styles.spaced, 'text-uppercase')}>{subTitle}</p>
-        <LinkTag to="/#contact">
-          <Button className="px-5 my-4 text-uppercase" color="primary">
-            Kontakt
-          </Button>
-        </LinkTag>
-      </FadeIn>
-    </div>
-
     <div
       className={cn(
-        styles.fadedOut,
-        startMoreLinkAnimation ? styles.fadeIn : undefined,
-        'd-none d-sm-block mb-5',
+        'mb-auto',
+        styles.fadeInSubheadline,
+        showSubHeadline ? 'show' : '',
       )}
     >
+      <p className={cn(styles.spaced, 'text-uppercase')}>{subTitle}</p>
+      <LinkTag to="/#contact">
+        <Button className="px-5 my-4 text-uppercase" color="primary">
+          Kontakt
+        </Button>
+      </LinkTag>
+    </div>
+    <div className={cn(showMoreSection ? '' : 'invisible', 'd-sm-block mb-5')}>
       <a
         className={cn(
           styles.smallText,
