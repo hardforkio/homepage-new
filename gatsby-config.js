@@ -83,5 +83,6 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.ts`,
       },
     },
+    'gatsby-plugin-i18n',
   ],
 }
