@@ -13,10 +13,7 @@ const data: Localized<Imprint>[] = importAll(
   require.context('./', true, /\.json$/),
 ) //Implements ' import data from './*.json ' From https://webpack.js.org/guides/dependency-management/#context-module-api
 
-/**
- * Returns all the imprints in the CMS.
- */
-export const useImprints = (locale: Locale): Imprint[] =>
+export const getImprints = (locale: Locale): Imprint[] =>
   R.map(getTranslation(locale), data)
 
-export default useImprints
+export default getImprints
