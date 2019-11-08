@@ -3,6 +3,7 @@ backend:
   repo: hardforkio/homepage
   branch: master
 
+site_url: "https://hardfork.io"
 media_folder: "static/img"
 public_folder: "/img"
 publish_mode: editorial_workflow
@@ -12,6 +13,7 @@ collections:
     label: "Imprint"
     folder: "src/data/imprint"
     slug: "{{slug}}-{{year}}{{month}}{{day}}-{{hour}}{{minute}}{{second}}"
+    format: "json"
     create: true
     fields:
       - name: "type"
