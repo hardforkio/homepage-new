@@ -2,10 +2,10 @@ import React, { FunctionComponent } from 'react'
 import Layout from '../components/layout'
 import { Imprint } from '../components/Imprint'
 import { NavbarStateProvider } from '../utils/hooks'
-import useImprints from '../data/imprint'
+import getImprints from '../data/imprint'
 
 const ImprintPage: FunctionComponent<{}> = () => {
-  const imprints = useImprints('de')
+  const imprints = getImprints('de')
 
   return (
     <NavbarStateProvider>
