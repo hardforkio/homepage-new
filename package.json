@@ -12,7 +12,7 @@
     "serve": "gatsby serve",
     "lint": "eslint 'src/**/*.{jsx,js,ts,tsx}'",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tape -r ts-node/register 'src/**/*.test.[jt]s?(x)'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -78,6 +78,7 @@
     "@types/react-helmet": "^5.0.13",
     "@types/reactstrap": "^8.0.6",
     "@types/smooth-scroll": "^16.1.0",
+    "@types/tape": "^4.2.33",
     "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
@@ -99,6 +100,8 @@
     "ramda": "^0.26.1",
     "react-docgen-typescript-loader": "^3.3.0",
     "reactstrap": "^8.1.1",
+    "tape": "^4.11.0",
+    "ts-node": "^8.4.1",
     "typescript": "^3.6.4"
   }
 }
