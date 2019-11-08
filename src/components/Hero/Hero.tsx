@@ -1,12 +1,10 @@
-import React, { FunctionComponent, useEffect, useState } from 'react'
+import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 import transition from 'styled-transition-group'
 import bgimage from '../../img/banner.jpg'
 import { Button, Row, Col } from 'reactstrap'
 import { Link } from 'gatsby'
 import { media } from '../../config/media'
-import { useNavbarState } from '../../utils/hooks'
-import useIsInViewport from 'use-is-in-viewport'
 import styles from './Hero.module.scss'
 import cn from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -163,84 +161,75 @@ const FadeIn = transition.div`
 interface IntroProps {
   title: string
   heading: string
+  startHeadlineAnimation: boolean
+  startBackgroundAnimation: boolean
+  startMoreLinkAnimation: boolean
+  setBackgroundAnimation: any
+  LinkTag: any
 }
 
-export const HeroSection: FunctionComponent<IntroProps> = ({
+export const HeroSectionComponent: FunctionComponent<IntroProps> = ({
   title,
   heading,
-}) => {
-  const [startAnimation, setAnimation] = useState(false)
-  const [startSecondAnimation, setSecondAnimation] = useState(false)
-  const [startThirdAnimation, setThirdAnimation] = useState(false)
-
-  useEffect(() => {
-    setAnimation(true)
-    setTimeout(() => {
-      setThirdAnimation(true)
-    }, 2000)
-  }, [])
-
-  const [_, setTransparent] = useNavbarState()
-  const [inView, ref] = useIsInViewport({ threshold: 95 })
-  useEffect(() => {
-    setTransparent(inView)
-  }, [inView, setTransparent])
-
-  return (
-    <Row>
-      <Col>
-        <Intro>
-          <IntroBackground
-            data-bgimage={bgimage}
-            mountOnEnter
+  startHeadlineAnimation,
+  startBackgroundAnimation,
+  startMoreLinkAnimation,
+  setBackgroundAnimation,
+  LinkTag,
+}) => (
+  <Row>
+    <Col>
+      <Intro>
+        <IntroBackground
+          data-bgimage={bgimage}
+          mountOnEnter
+          unmountOnExit
+          timeout={3500}
+          in={startBackgroundAnimation}
+        />
+        <div>
+          <IntroHeadline
             unmountOnExit
-            timeout={3500}
-            in={startSecondAnimation}
-          />
-          <div ref={ref}>
-            <IntroHeadline
-              unmountOnExit
-              timeout={1000}
-              in={startAnimation}
-              onEntered={() => {
-                setSecondAnimation(true)
-              }}
-            >
-              {title}
-            </IntroHeadline>
-            <IntroWrap>
-              <FadeIn mountOnEnter timeout={3500} in={startSecondAnimation}>
-                <IntroText>{heading}</IntroText>
-                <Link to="/#contact">
-                  <Button className="px-5 text-uppercase" color="primary">
-                    Kontakt
-                  </Button>
-                </Link>
-              </FadeIn>
-            </IntroWrap>
-          </div>
+            timeout={1000}
+            in={startHeadlineAnimation}
+            onEntered={() => {
+              setBackgroundAnimation(true)
+            }}
+          >
+            {title}
+          </IntroHeadline>
+          <IntroWrap>
+            <FadeIn mountOnEnter timeout={3500} in={startBackgroundAnimation}>
+              <IntroText>{heading}</IntroText>
+              <LinkTag to="/#contact">
+                <Button className="px-5 text-uppercase" color="primary">
+                  Kontakt
+                </Button>
+              </LinkTag>
+            </FadeIn>
+          </IntroWrap>
+        </div>
 
-          <Row className="pt-5">
-            <Col
+        <Row className="pt-5">
+          <Col
+            className={cn(
+              styles.fadedOut,
+              startMoreLinkAnimation ? styles.fadeIn : undefined,
+            )}
+          >
+            <a
               className={cn(
-                styles.fadedOut,
-                startThirdAnimation ? styles.fadeIn : undefined,
+                styles.spacedLink,
+                'd-sm-inline text-uppercase align-items-end',
               )}
+              href="#offerings"
             >
-              <a
-                className={cn(
-                  styles.spacedLink,
-                  'd-sm-inline text-uppercase align-items-end',
-                )}
-                href="#offerings"
-              >
-                <p>Mehr</p>
-                <FontAwesomeIcon icon={faArrowDown} size="2x" />
-              </a>
-            </Col>
-          </Row>
-        </Intro>
-      </Col>
-    </Row>
-  )
-}
+              <p>Mehr</p>
+              <FontAwesomeIcon icon={faArrowDown} size="2x" />
+            </a>
+          </Col>
+        </Row>
+      </Intro>
+    </Col>
+  </Row>
+)
