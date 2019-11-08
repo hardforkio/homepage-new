@@ -4,6 +4,7 @@ import helperStyles from '../helper.module.css'
 import cn from 'classnames'
 import { Col, Row } from 'reactstrap'
 import { mapToComponent } from '../../utils/helpers'
+import ReactMarkdown from 'react-commonmark'
 
 export const Offerings: FunctionComponent<{ offerings: Offering[] }> = ({
   offerings,
@@ -29,7 +30,7 @@ export const OfferingComponent: FunctionComponent<{
         >
           {headline}
         </h4>
-        <p>{text}</p>
+        <ReactMarkdown source={text} />
       </div>
     </Col>
   </Row>
