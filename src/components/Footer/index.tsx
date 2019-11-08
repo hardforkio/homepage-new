@@ -68,7 +68,7 @@ const Footer = () => (
     <LegalBar>
       <LegalItem>{translations.copyrightText}</LegalItem>
       <LegalItem>
-        <Link to="/imprint">{translations.imprintLinkText}</Link>
+        <Link to="/de/imprint">{translations.imprintLinkText}</Link>
       </LegalItem>
     </LegalBar>
   </footer>
