@@ -12,7 +12,7 @@
     "serve": "gatsby serve",
     "lint": "eslint 'src/**/*.{jsx,js,ts,tsx}'",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "jest",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -72,7 +72,6 @@
     "@storybook/addons": "^5.2.5",
     "@storybook/react": "^5.2.5",
     "@types/classnames": "^2.2.9",
-    "@types/jest": "^24.0.22",
     "@types/ramda": "^0.26.33",
     "@types/react": "^16.9.11",
     "@types/react-burger-menu": "^2.2.5",
@@ -81,10 +80,8 @@
     "@types/smooth-scroll": "^16.1.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "^10.0.3",
-    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
-    "babel-preset-gatsby": "^0.2.20",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.4.0",
     "eslint-config-react-app": "^5.0.2",
@@ -98,15 +95,10 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "gatsby-plugin-typescript": "^2.1.15",
-    "gatsby-transformer-remark": "^2.6.32",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^24.9.0",
     "prettier": "^1.18.2",
     "ramda": "^0.26.1",
     "react-docgen-typescript-loader": "^3.3.0",
-    "react-test-renderer": "^16.11.0",
     "reactstrap": "^8.1.1",
-    "ts-jest": "^24.1.0",
     "typescript": "^3.6.4"
   }
 }
