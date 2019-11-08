@@ -2,7 +2,7 @@ import React from 'react'
 import '../../scss/main.scss'
 import { storiesOf } from '@storybook/react'
 
-import { MockedExternalLink } from '../ExternalLink'
+import { DispatchActionLink } from '../../storybook/helpers'
 import CallToAction from './'
 
 const HEADLINE = 'We want YOU!'
@@ -14,7 +14,7 @@ storiesOf('CallToAction', module).add('default', () => (
     headline={HEADLINE}
     description={DESCRIPTION}
     buttonLabel={BUTTONLABEL}
-    Link={MockedExternalLink}
+    Link={DispatchActionLink}
     url="https://example.org"
   />
 ))

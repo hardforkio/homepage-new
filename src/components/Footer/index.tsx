@@ -1,76 +1,9 @@
-import React, { FunctionComponent } from 'react'
-import Link from 'gatsby-link'
+import React from 'react'
+import { Footer as FooterComponent } from './component'
+import { FunctionComponent } from 'react'
+import { Link } from 'gatsby'
+import { SafeExternalLink } from '../Link'
 
-import cn from 'classnames'
-import styles from './Footer.module.scss'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { SafeExternalLink } from '../ExternalLink'
-
-const LegalBar: FunctionComponent = ({ children }) => (
-  <div
-    className={cn(
-      'd-flex',
-      'flex-column',
-      'flex-md-row',
-      'justify-content-center',
-      'text-uppercase',
-      'text-center',
-    )}
-  >
-    {children}
-  </div>
+export const Footer: FunctionComponent = () => (
+  <FooterComponent InternalLink={Link} ExternalLink={SafeExternalLink} />
 )
-
-const LegalItem: FunctionComponent = ({ children }) => (
-  <div className={cn('px-3', 'mb-2 mb-md-0', styles.verticalSeparatorOnMd)}>
-    {children}
-  </div>
-)
-
-const translations = {
-  copyrightText: '© 2017-2019 Hardfork GmbH',
-  imprintLinkText: 'Impressum',
-}
-
-const Footer = ({ ExtLink = SafeExternalLink }) => (
-  <footer
-    className={cn(
-      'bg-dark py-3 py-md-5',
-      styles.textGraySmallSpaced,
-      styles.linkNoBorderAndWhiteOnHover,
-    )}
-  >
-    <div className="d-flex mb-4 justify-content-center">
-      <div className="px-3">
-        <ExtLink
-          className={cn('border-0')}
-          to="https://github.com/hardforkio"
-          title="Github"
-        >
-          <FontAwesomeIcon icon={faGithub} />
-        </ExtLink>
-      </div>
-
-      <div className="px-3">
-        <ExtLink
-          className={cn('border-0')}
-          to="mailto:contact@hardfork.io"
-          title="Email"
-        >
-          <FontAwesomeIcon icon={faEnvelope} />
-        </ExtLink>
-      </div>
-    </div>
-    <LegalBar>
-      <LegalItem>{translations.copyrightText}</LegalItem>
-      <LegalItem>
-        <Link to="/de/imprint">{translations.imprintLinkText}</Link>
-      </LegalItem>
-    </LegalBar>
-  </footer>
-)
-
-export default Footer

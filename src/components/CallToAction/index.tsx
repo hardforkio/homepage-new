@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import cn from 'classnames'
 
-import { SafeExternalLink } from '../ExternalLink'
+import { SafeExternalLink } from '../Link'
 import styles from './CallToAction.module.scss'
 
 export interface CallToActionProps {
@@ -20,18 +20,18 @@ const CallToAction: FunctionComponent<CallToActionProps> = ({
   buttonLabel,
   url,
 }) => (
-  <section className={cn(styles.backgroundImg, 'p-5')}>
+  <div className={cn(styles.backgroundImg, 'text-center', 'py-md-5')}>
     <Container>
       <Row className="py-5">
-        <Col>
+        <Col md={8} className="text-md-left">
           <header>
             <h2 className={cn(styles.blockLetters, 'mb-4')}>{headline}</h2>
             <p>{description}</p>
           </header>
         </Col>
-        <Col className="align-self-center text-center">
+        <Col md={4} className="align-self-center">
           <Link
-            className="btn btn-primary text-uppercase text-white px-5 mx-2"
+            className="btn btn-primary text-uppercase text-white text-nowrap px-5 mx-2"
             to={url}
           >
             {buttonLabel}
@@ -39,7 +39,7 @@ const CallToAction: FunctionComponent<CallToActionProps> = ({
         </Col>
       </Row>
     </Container>
-  </section>
+  </div>
 )
 
 export default CallToAction

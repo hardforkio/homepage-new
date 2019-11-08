@@ -1,9 +1,9 @@
 import React from 'react'
 import '../../scss/main.scss'
 import { storiesOf } from '@storybook/react'
-import Footer from './'
-import { MockedExternalLink } from '../ExternalLink'
+import { Footer } from './component'
+import { DispatchActionLink } from '../../storybook/helpers'
 
 storiesOf('Footer', module).add('default', () => (
-  <Footer ExtLink={MockedExternalLink} />
+  <Footer ExternalLink={DispatchActionLink} InternalLink={DispatchActionLink} />
 ))
