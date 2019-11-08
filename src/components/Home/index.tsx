@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { Offerings } from '../Offerings'
 import Practices from '../Practices'
 import CallToAction from '../CallToAction'
-import { HeroSection } from './Hero'
+import { HeroSection } from '../Hero'
 
 interface HomePageProps {
   title: string
