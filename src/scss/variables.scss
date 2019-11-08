@@ -108,11 +108,15 @@ $font-family-sans-serif:      "Open Sans", "Helvetica", Arial, "Noto Sans", sans
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-family-base:            $font-family-sans-serif;
 
+$font-family-base: Open Sans, Helvetica, sans-serif;
+$font-size-base: 1.25rem;
 
-$font-size-base: 1.25rem; // Assumes the browser default, typically `16px`
 $line-height-base: 1.65;
 
 $link-color: inherit;
 $link-hover-color: inherit;
 $link-hover-decoration: none;
-$font-family-base: Open Sans, Helvetica, sans-serif;
+
+$headings-font-weight: 800;
+
+$h2-font-size: 1.7rem;

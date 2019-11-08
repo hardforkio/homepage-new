@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap'
 import cn from 'classnames'
 
 import { SafeExternalLink } from '../Link'
-import styles from './CallToAction.module.scss'
+import { blurryBackgroundBanner } from '../../scss/global.module.scss'
 
 export interface CallToActionProps {
   headline: string
@@ -20,12 +20,12 @@ const CallToAction: FunctionComponent<CallToActionProps> = ({
   buttonLabel,
   url,
 }) => (
-  <div className={cn(styles.backgroundImg, 'text-center', 'py-md-5')}>
+  <div className={cn(blurryBackgroundBanner, 'text-center', 'py-md-5')}>
     <Container>
       <Row className="py-5">
         <Col md={8} className="text-md-left">
           <header>
-            <h2 className={cn(styles.blockLetters, 'mb-4')}>{headline}</h2>
+            <h2 className="text-uppercase mb-4">{headline}</h2>
             <p>{description}</p>
           </header>
         </Col>
