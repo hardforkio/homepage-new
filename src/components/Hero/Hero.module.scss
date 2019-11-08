@@ -1,7 +1,11 @@
-.spacedLink {
-    font-size: 0.8em;
-    letter-spacing: .225em;
+@import "../../scss/bootstrap.scss";
 
+.smallText {
+    font-size: 0.8em;
+}
+
+.spaced {
+  letter-spacing: .225em;
 }
 
 .faded-out.fade-in {
@@ -14,3 +18,8 @@
   opacity: 0;
   transform: translateY(80px);
 }
+
+.intro {
+  flex-direction: column;
+  height: 100vh;
+  }
