@@ -10,16 +10,11 @@ export const Offerings: FunctionComponent<{ offerings: Offering[] }> = ({
 }) => <div>{mapToComponent(OfferingComponent, offerings)}</div>
 
 export const OfferingComponent: FunctionComponent<{
-  index: number
   image: any
   headline: string
   text: string
-}> = ({ index, image, headline, text }) => (
-  <Row
-    noGutters
-    className={cn(styles.offering, 'align-items-center')}
-    key={'index' + index}
-  >
+}> = ({ image, headline, text }) => (
+  <Row noGutters className={cn(styles.offering, 'align-items-center')}>
     <Col sm={12} md={{ size: 5 }}>
       <img className="img-fluid" alt="" src={image} />
     </Col>
