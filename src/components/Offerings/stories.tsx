@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../scss/main.scss'
 import { storiesOf } from '@storybook/react'
-import Offerings from './index'
+import { Offerings } from './index'
 import image1 from './pic01.jpg'
 import image2 from './pic02.jpg'
 import image3 from './pic03.jpg'
