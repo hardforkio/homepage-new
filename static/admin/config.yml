@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   repo: hardforkio/homepage
-  branch: master
+  branch: feature/issue-141--use-context-to-pass-locale-information
 
 site_url: "https://hardfork.io"
 media_folder: "static/img"
