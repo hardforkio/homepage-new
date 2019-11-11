@@ -112,6 +112,13 @@ $font-size-base: 1.25rem;
 
 $enable-responsive-font-sizes: true;
 
+// headings
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$headings-font-weight: $font-weight-bold;
+
 // links
 $link-color: inherit;
 $link-hover-color: inherit;
