@@ -1,6 +1,15 @@
 import React, { useContext, FunctionComponent, useState } from 'react'
 
-export const NavbarContext = React.createContext<any>(undefined)
+type NavbarState = [boolean, (newValue: boolean) => void]
+
+export const NavbarContext = React.createContext<NavbarState>([
+  true,
+  () => {
+    console.warn(
+      'WARNING: useNavbarState was used without a NavbarContext Provider',
+    )
+  },
+])
 
 export const NavbarStateProvider: FunctionComponent = ({ children }) => {
   const [transparent, setTransparent] = useState(true)
