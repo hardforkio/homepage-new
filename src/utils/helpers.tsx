@@ -10,3 +10,13 @@ export const mapToComponent = <Props extends unknown>(
     (item, index) => <Component key={index} {...item} />,
     list,
   )
+
+export const isSubset: <T = any>(
+  subset: T[],
+) => (superset: T[]) => boolean = R.curryN(
+  2,
+  R.pipe(
+    R.difference as (<T>(list1: T[], list2: T[]) => T[]),
+    R.isEmpty,
+  ),
+)
