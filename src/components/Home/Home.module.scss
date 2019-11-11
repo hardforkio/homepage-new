@@ -1,0 +1,11 @@
+@import "../../scss/bootstrap.scss";
+
+.avoidOverlapWithStickyHeader::before {
+  content: " ";
+  display: block;
+  position: relative;
+  height: 58px; // minimal height of navbar
+  margin-top: -58px;
+  visibility: hidden;
+  pointer-events: none;
+}
