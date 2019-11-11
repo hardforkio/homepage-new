@@ -5,12 +5,12 @@ import { NavbarStateProvider } from '../utils/hooks'
 import getImprints from '../data/imprint'
 
 const ImprintPage: FunctionComponent<{}> = () => {
-  const imprints = getImprints('en')
+  const imprint = getImprints('en')[0]
 
   return (
     <NavbarStateProvider>
-      <Layout>
-        <Imprint imprint={imprints[0]} />
+      <Layout title={imprint.metaTitle}>
+        <Imprint imprint={imprint} />
       </Layout>
     </NavbarStateProvider>
   )
