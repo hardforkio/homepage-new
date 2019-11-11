@@ -1,6 +1,17 @@
 import React, { useContext, FunctionComponent, useState } from 'react'
+import { Locale } from '../data/i18n'
 
-export const NavbarContext = React.createContext<any>(undefined)
+type NavbarState = [boolean, (newValue: boolean) => void]
+
+const NavbarContext = React.createContext<NavbarState>([
+  true,
+  () => {
+    console.warn(
+      'WARNING: useNavbarState was used without a NavbarContext Provider',
+    )
+  },
+])
+const LocaleContext = React.createContext<Locale>('de')
 
 export const NavbarStateProvider: FunctionComponent = ({ children }) => {
   const [transparent, setTransparent] = useState(true)
@@ -10,5 +21,7 @@ export const NavbarStateProvider: FunctionComponent = ({ children }) => {
     </NavbarContext.Provider>
   )
 }
+export const LocaleProvider = LocaleContext.Provider
 
 export const useNavbarState = () => useContext(NavbarContext)
+export const useLocale = () => useContext(LocaleContext)

@@ -1,14 +1,16 @@
 import React, { FunctionComponent } from 'react'
-import Helmet from 'react-helmet'
 import { ArticleHeader } from '../ArticleHeader/index'
 import { ContentWrap } from '../Content/index'
-import { Imprint as ImprintData } from '../../data/imprint'
+import { Imprint as ImprintData, useImprint } from '../../data/imprint'
 import ReactMarkdown from 'react-commonmark'
 
 export const ImprintComponent: FunctionComponent<ImprintData> = ({
   content,
+  headline,
+  subHeadline,
 }) => (
   <article>
+    <ArticleHeader title={headline} subtitle={subHeadline} />
     <ContentWrap>
       <div>
         <ReactMarkdown source={content} />
@@ -17,14 +19,7 @@ export const ImprintComponent: FunctionComponent<ImprintData> = ({
   </article>
 )
 
-export const Imprint: FunctionComponent<{ imprint: ImprintData }> = ({
-  imprint,
-}) => (
-  <div>
-    <Helmet>
-      <title>{imprint.metaTitle}</title>
-    </Helmet>
-    <ArticleHeader title={imprint.headline} subtitle={imprint.subHeadline} />
-    <ImprintComponent {...imprint} />
-  </div>
-)
+export const Imprint: FunctionComponent<{}> = () => {
+  const imprint: ImprintData = useImprint()
+  return <ImprintComponent {...imprint} />
+}
