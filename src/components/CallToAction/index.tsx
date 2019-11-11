@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import cn from 'classnames'
-
 import { SafeExternalLink } from '../Link'
 import { blurryBackgroundBanner } from '../../scss/global.module.scss'
 
@@ -20,12 +19,12 @@ const CallToAction: FunctionComponent<CallToActionProps> = ({
   buttonLabel,
   url,
 }) => (
-  <div className={cn(blurryBackgroundBanner, 'text-center', 'py-md-5')}>
+  <div className={cn(blurryBackgroundBanner, 'text-center', 'py-3', 'py-md-5')}>
     <Container>
-      <Row className="py-5">
+      <Row className="py-3 py-md-5">
         <Col md={8} className="text-md-left">
           <header>
-            <h2 className="text-uppercase mb-4">{headline}</h2>
+            <h4 className="mb-4">{headline}</h4>
             <p>{description}</p>
           </header>
         </Col>

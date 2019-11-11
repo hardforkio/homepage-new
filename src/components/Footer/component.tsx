@@ -1,12 +1,9 @@
 import React, { FunctionComponent, ComponentType } from 'react'
-
 import cn from 'classnames'
 import styles from './Footer.module.scss'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-
 import { LinkProps } from '../Link'
 
 const LegalBar: FunctionComponent = ({ children }) => (
