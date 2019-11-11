@@ -30,10 +30,10 @@ export const data: HomeData = {
   offerings: {
     blurbs: [
       {
-        headline: 'Entwicklung',
+        headline: 'Software',
         image: '/img/pic01.jpg',
         text:
-          'Wir entwickeln für Sie Software-Applikationen nach Ihren Vorstellungen. Wir beherrschen dafür alle Notwendigen Teilbereiche vom Frontend über komplexes Application State Management, Client zu Server Kommunikation, Backend-Entwicklung sowie die notwendige Expertise für skalierbaren und sicheren Betrieb in der Cloud. Mit Hardfork bekommen Sie Ihren gesamten Stack aus einer Hand.\n\nWir nutzen unter anderem die Technologien bzw. Libraries React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) und AWS serverless.',
+          'Wir entwickeln für Sie Software-Applikationen nach Ihren Vorstellungen. Wir beseitzen alle dafür notwendigen Kompetenzen vom Frontend mit komplexem Application State Management über Client zu Server Kommunikation und Backend-Entwicklung bis zum skalierbaren und sicheren Betrieb in der Cloud. Mit Hardfork bekommen Sie Ihren gesamten Stack aus einer Hand.\n\nWir nutzen unter anderem die Technologien bzw. Libraries React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) und AWS serverless.',
       },
       {
         headline: 'Company value',
