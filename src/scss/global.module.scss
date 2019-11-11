@@ -1,0 +1,17 @@
+@import "./bootstrap.scss";
+
+.blurryBackgroundBanner {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("../img/banner.jpg");
+  background-position: center center;
+  background-size: cover;
+  &:global(.hiddenBackground) {
+      opacity: 0;
+      transition: opacity 3.5s;
+
+  }
+  &:global(.showBackground) {
+opacity: 1;
+  }
+}

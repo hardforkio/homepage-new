@@ -14,13 +14,17 @@ export const HeroSection: FunctionComponent<IntroProps> = ({
   heading,
 }) => {
   const [showHeadline, setShowHeadline] = useState(false)
-  const [showBackground, setShowBackground] = useState(false)
   const [showSubheadline, setShowSubheadline] = useState(false)
+  const [showBackground, setShowBackground] = useState(false)
   const [showMoreSection, setShowMoreSection] = useState(false)
 
   useEffect(() => {
-    setShowHeadline(true)
-    setShowBackground(true)
+    setTimeout(() => {
+      setShowBackground(true)
+    }, 100)
+    setTimeout(() => {
+      setShowHeadline(true)
+    }, 750)
     setTimeout(() => {
       setShowSubheadline(true)
     }, 1000)

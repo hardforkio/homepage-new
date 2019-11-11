@@ -1,108 +1,9 @@
 import React, { FunctionComponent } from 'react'
-import transition from 'styled-transition-group'
-import bgimage from '../../img/banner.jpg'
-import { Button } from 'reactstrap'
-import { media } from '../../config/media'
+import { Button, Row, Col } from 'reactstrap'
 import styles from './Hero.module.scss'
 import cn from 'classnames'
 import { AiOutlineArrowDown } from 'react-icons/ai'
-
-const IntroBackground = transition.div`
-    
-      
-      background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${(
-        props: any,
-      ) => props['data-bgimage']});
-      
-      background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${(
-        props: any,
-      ) => props['data-bgimage']});
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      content: "";
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      opacity: 1;
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      z-index: -1;
-      
-      &:enter {
-        opacity: 0;
-      }
-      &:enter-active {
-        opacity: 1;
-        transition: opacity 3.5s ease;
-      }
-    
-  `
-const IntroHeadline = transition.h1`
-    color: #fff;
-    display: inline-block;
-    font-size: 1.25em;
-    font-weight: 800;
-    letter-spacing: .225em;
-    line-height: 1.75em;
-    margin: 0 0 1em 0;
-    opacity: 1;
-    padding: .35em 1em;
-    position: relative;
-    text-transform: uppercase;
-    z-index: 1;
-    
-    ${media.greaterThan('md')`
-      font-size: 1.75em;
-    `}
-    
-    &::before {
-      background: #fff;
-      content: "";
-      display: block;
-      height: 2px;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
-      
-    &::after {
-      background: #fff;
-      bottom: 0;
-      content: "";
-      display: block;
-      height: 2px;
-      position: absolute;
-      right: 0;
-      width: 100%;
-    }
-    
-    &:enter {
-      opacity: 0;
-      transform: scale(0.9);
-       
-      &::after,
-      &::before {
-        width: 0;
-      }
-    }
-    &:enter-active {
-      opacity: 1;
-      transform: scale(1);
-      transition: transform 0.5s ease, opacity 0.5s ease;
-      
-      &::after,
-      &::before {
-        width: 100%;
-        transition: width 0.85s ease;
-        transition-delay: 0.25s;
-      }
-      
-    }
-  `
+import { blurryBackgroundBanner } from '../../scss/global.module.scss'
 
 interface IntroProps {
   title: string
@@ -125,15 +26,19 @@ export const HeroSectionComponent: FunctionComponent<IntroProps> = ({
 }) => (
   <section
     className={cn(
+      blurryBackgroundBanner,
       styles.intro,
-      'd-flex justify-content-center text-center p-sm-0',
+      showBackground ? 'showBackground' : '',
+      'hiddenBackground d-flex justify-content-center text-center p-sm-0',
     )}
   >
-    <div className={cn('mt-auto mb-5 position-relative')}>
-      <h1 className={cn(styles.headline, showHeadline ? 'show' : '')}>
-        {title}
-      </h1>
-    </div>
+    <Row className="mt-auto mb-5">
+      <Col xs={{ size: 10, offset: 1 }} md={{ size: 2, offset: 5 }}>
+        <h1 className={cn(styles.headline, showHeadline ? 'show' : '', 'py-3')}>
+          {title}
+        </h1>
+      </Col>
+    </Row>
     <div
       className={cn(
         'mb-auto',
@@ -148,7 +53,13 @@ export const HeroSectionComponent: FunctionComponent<IntroProps> = ({
         </Button>
       </LinkTag>
     </div>
-    <div className={cn(showMoreSection ? '' : 'invisible', 'd-sm-block mb-5')}>
+    <div
+      className={cn(
+        styles.fadedOut,
+        showMoreSection ? styles.fadeIn : 'invisible',
+        'd-sm-block mb-5',
+      )}
+    >
       <a
         className={cn(
           styles.smallText,

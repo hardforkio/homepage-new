@@ -22,6 +22,7 @@
 .intro {
   flex-direction: column;
   height: 100vh;
+  
   }
 
 .fadeInSubheadline {
@@ -33,6 +34,9 @@
 }
 
 .headline {
+  text-transform: uppercase;
+  transition: transform 0.85s ease;
+  
   &::before {
     background: #fff;
     content: "";
@@ -41,9 +45,9 @@
     left: 0;
     position: absolute;
     top: 0;
-    width: 100%;
+    width: 0%;
     transform: scale(0);
-  }
+      }
     
   &::after {
     background: #fff;
@@ -53,17 +57,16 @@
     height: 2px;
     position: absolute;
     right: 0;
-    width: 100%;
+    width: 0%;
     transform: scale(0);
-  }
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  
-  
+      }
+ 
   &:global(.show) {
     &::after,
-  &::before {
-      transform: scale(1);
-        width: 100%;
+   &::before {
+     width: 100%;
+     transform: scale(1);
+     transition: width 0.85s ease;
       }
     }
 }
