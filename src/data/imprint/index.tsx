@@ -1,5 +1,6 @@
 import * as R from 'ramda'
 import { Locale, getTranslation, Localized } from '../i18n'
+import { useLocale } from '../../utils/hooks'
 
 export interface Imprint {
   headline: string
@@ -15,5 +16,13 @@ const data: Localized<Imprint>[] = importAll(
 
 export const getImprints = (locale: Locale): Imprint[] =>
   R.map(getTranslation(locale), data)
+
+/**
+ * Return all imprints in the CMS for the current locale
+ */
+export const useImprints: () => Imprint[] = R.pipe(
+  useLocale,
+  getImprints,
+)
 
 export default getImprints
