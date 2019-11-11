@@ -3,7 +3,6 @@ backend:
   repo: hardforkio/homepage
   branch: master
 
-site_url: "https://hardfork.io"
 media_folder: "static/img"
 public_folder: "/img"
 publish_mode: editorial_workflow
@@ -11,25 +10,29 @@ publish_mode: editorial_workflow
 collections:
   - name: "imprint"
     label: "Imprint"
-    folder: "src/data/imprint"
-    slug: "{{slug}}-{{year}}{{month}}{{day}}-{{hour}}{{minute}}{{second}}"
-    format: "json"
-    create: true
-    fields:
-      - name: "type"
-        widget: "hidden"
-        default: "imprint"
-
-      - name: "title"
-        label: "Short name"
-        description: "A name to identify this object within this collection. Should be unique within the collection."
-
-      - name: "translations"
-        label: "translations"
-        widget: "list"
+    delete: false
+    files:
+      - file: "src/data/imprint/imprint.json"
+        name: "imprint"
+        label: "Imprint"
+        format: "json"
         fields:
-          - { name: "locale", widget: "select", options: ["en", "de"] }
-          - { name: "headline", widget: "string" }
-          - { name: "subHeadline", widget: "string" }
-          - { name: "metaTitle", widget: "string" }
-          - { name: "content", widget: "markdown" }
+          - name: "type"
+            widget: "hidden"
+            default: "imprint"
+
+          - name: "title"
+            label: "Short name"
+            description: "A name to identify this object within this collection. Should be unique within the collection."
+            widget: "hidden"
+            default: "Impressum"
+
+          - name: "translations"
+            label: "translations"
+            widget: "list"
+            fields:
+              - { name: "locale", widget: "select", options: ["en", "de"] }
+              - { name: "headline", widget: "string" }
+              - { name: "subHeadline", widget: "string" }
+              - { name: "metaTitle", widget: "string" }
+              - { name: "content", widget: "markdown" }
