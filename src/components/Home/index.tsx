@@ -3,6 +3,8 @@ import Helmet from 'react-helmet'
 import { Offerings } from '../Offerings'
 import CallToAction from '../CallToAction'
 import { HeroSection } from '../Hero'
+import cn from 'classnames'
+import styles from './Home.module.scss'
 
 interface HomePageProps {
   title: string
@@ -33,7 +35,10 @@ export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
     </Helmet>
     <>
       <HeroSection title={title} heading={heading} />
-      <section id="offerings">
+      <section
+        className={cn(styles.avoidOverlapWithStickyHeader)}
+        id="offerings"
+      >
         <Offerings offerings={offerings.blurbs} />
       </section>
       <section id="contact">
