@@ -32,8 +32,8 @@ export const HeroSectionComponent: FunctionComponent<IntroProps> = ({
       'hiddenBackground d-flex justify-content-center text-center p-sm-0',
     )}
   >
-    <Row className="mt-auto mb-5">
-      <Col xs={{ size: 10, offset: 1 }} md={{ size: 2, offset: 5 }}>
+    <Row className="mt-auto mb-5 justify-content-center">
+      <Col xs={{ size: 9 }} md={{ size: 3 }}>
         <h1 className={cn(styles.headline, showHeadline ? 'show' : '', 'py-3')}>
           {title}
         </h1>
