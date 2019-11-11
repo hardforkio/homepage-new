@@ -9,20 +9,12 @@ export interface Imprint {
   content: string
 }
 
-const importAll = (r: any) => r.keys().map(r)
-const data: Localized<Imprint>[] = importAll(
-  require.context('./', true, /\.json$/),
-) //Implements ' import data from './*.json ' From https://webpack.js.org/guides/dependency-management/#context-module-api
+const data: Localized<Imprint> = require('./imprint.json') //TODO: Emit an error at build time if there is a type error here
 
-export const getImprints = (locale: Locale): Imprint[] =>
-  R.map(getTranslation(locale), data)
+export const getImprint = (locale: Locale): Imprint =>
+  getTranslation(locale)(data)
 
-/**
- * Return all imprints in the CMS for the current locale
- */
-export const useImprints: () => Imprint[] = R.pipe(
+export const useImprint: () => Imprint = R.pipe(
   useLocale,
-  getImprints,
+  getImprint,
 )
-
-export default getImprints

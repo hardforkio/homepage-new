@@ -2,15 +2,15 @@ import React, { FunctionComponent } from 'react'
 import Layout from '../components/layout'
 import { Imprint } from '../components/Imprint'
 import { NavbarStateProvider, LocaleProvider } from '../utils/hooks'
-import getImprints from '../data/imprint'
+import { getImprint } from '../data/imprint'
 
 const ImprintPage: FunctionComponent<{}> = () => {
-  const imprint = getImprints('en')[0]
+  const { metaTitle } = getImprint('en')
 
   return (
     <LocaleProvider value="en">
       <NavbarStateProvider>
-        <Layout title={imprint.metaTitle}>
+        <Layout title={metaTitle}>
           <Imprint />
         </Layout>
       </NavbarStateProvider>
