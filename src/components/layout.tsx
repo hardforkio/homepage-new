@@ -62,11 +62,18 @@ const hardforkTheme = {
   defaultBg: 'rgb(46, 56, 66)',
 }
 
-const Layout: FunctionComponent = ({ children }) => {
+interface LayoutProps {
+  title?: string
+}
+
+const Layout: FunctionComponent<LayoutProps> = ({
+  children,
+  title = config.siteTitle,
+}) => {
   return (
     <div>
       <Helmet>
-        <title>{config.siteTitle}</title>
+        <title>{title}</title>
         <meta name="description" content={config.siteDescription} />
       </Helmet>
       <ThemeProvider theme={hardforkTheme}>
