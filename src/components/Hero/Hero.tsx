@@ -3,12 +3,13 @@ import styled from 'styled-components'
 import transition from 'styled-transition-group'
 import bgimage from '../../img/banner.jpg'
 import { Button, Row, Col } from 'reactstrap'
-import { Link } from 'gatsby'
 import { media } from '../../config/media'
-import styles from './Hero.module.scss'
 import cn from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
+
+import styles from './Hero.module.scss'
+import { blurryBackgroundBanner } from '../../scss/global.module.scss'
 
 const Intro = styled.section`
   display: -moz-flex;
@@ -37,22 +38,6 @@ const Intro = styled.section`
     `}
 `
 const IntroBackground = transition.div`
-    
-      background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${(
-        props: any,
-      ) => props['data-bgimage']});
-      background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${(
-        props: any,
-      ) => props['data-bgimage']});
-      background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${(
-        props: any,
-      ) => props['data-bgimage']});
-      background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${(
-        props: any,
-      ) => props['data-bgimage']});
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
       content: "";
       top: 0;
       left: 0;
@@ -63,7 +48,7 @@ const IntroBackground = transition.div`
       height: 100%;
       width: 100%;
       z-index: -1;
-      
+
       &:enter {
         opacity: 0;
       }
@@ -71,7 +56,7 @@ const IntroBackground = transition.div`
         opacity: 1;
         transition: opacity 3.5s ease;
       }
-    
+
   `
 const IntroHeadline = transition.h1`
     color: #fff;
@@ -86,11 +71,11 @@ const IntroHeadline = transition.h1`
     position: relative;
     text-transform: uppercase;
     z-index: 1;
-    
+
     ${media.greaterThan('md')`
       font-size: 1.75em;
     `}
-    
+
     &::before {
       background: #fff;
       content: "";
@@ -101,7 +86,7 @@ const IntroHeadline = transition.h1`
       top: 0;
       width: 100%;
     }
-      
+
     &::after {
       background: #fff;
       bottom: 0;
@@ -112,11 +97,11 @@ const IntroHeadline = transition.h1`
       right: 0;
       width: 100%;
     }
-    
+
     &:enter {
       opacity: 0;
       transform: scale(0.9);
-       
+
       &::after,
       &::before {
         width: 0;
@@ -126,14 +111,14 @@ const IntroHeadline = transition.h1`
       opacity: 1;
       transform: scale(1);
       transition: transform 0.5s ease, opacity 0.5s ease;
-      
+
       &::after,
       &::before {
         width: 100%;
         transition: width 0.85s ease;
         transition-delay: 0.25s;
       }
-      
+
     }
   `
 const IntroWrap = styled.div`
@@ -148,7 +133,7 @@ const IntroText = styled.p`
 `
 const FadeIn = transition.div`
     opacity: 1;
-    
+
     &:enter {
       opacity: 0;
     }
@@ -181,6 +166,7 @@ export const HeroSectionComponent: FunctionComponent<IntroProps> = ({
     <Col>
       <Intro>
         <IntroBackground
+          className={cn(blurryBackgroundBanner)}
           data-bgimage={bgimage}
           mountOnEnter
           unmountOnExit

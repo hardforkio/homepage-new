@@ -34,7 +34,7 @@ export const TeamMember: FunctionComponent<TeamMemberProps> = ({
       />
     </div>
     <div className="flex-grow-1 mt-3">
-      <h5>{name}</h5>
+      <h6>{name}</h6>
       <p className="text-muted mb-2">{jobTitle}</p>
     </div>
     <ul className="list-inline">
@@ -56,7 +56,7 @@ export const Team: FunctionComponent<TeamProps> = ({
 }) => (
   <section className="text-center py-5">
     <h2>{header}</h2>
-    <h3 className="text-muted mb-5">{subhead}</h3>
+    <h5 className="text-muted mb-5">{subhead}</h5>
 
     <Row className="justify-content-center">
       {R.addIndex<TeamMemberProps>(R.map)(

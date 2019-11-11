@@ -36,13 +36,14 @@ export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
       <section id="offerings">
         <Offerings offerings={offerings.blurbs} />
       </section>
-      <CallToAction
-        id="contact"
-        headline={contactHeadline}
-        description={contactDescription}
-        email={contactEmail}
-        buttonLabel={contactButton}
-      />
+      <section id="contact">
+        <CallToAction
+          headline={contactHeadline}
+          description={contactDescription}
+          url={contactEmail}
+          buttonLabel={contactButton}
+        />
+      </section>
     </>
   </div>
 )
