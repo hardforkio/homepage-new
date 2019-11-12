@@ -67,7 +67,7 @@ export const Footer: FunctionComponent<{
     <LegalBar>
       <LegalItem>{translations.copyrightText}</LegalItem>
       <LegalItem>
-        <InternalLink to="/imprint">
+        <InternalLink to="/de/imprint">
           {translations.imprintLinkText}
         </InternalLink>
       </LegalItem>
