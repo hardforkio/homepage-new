@@ -2,7 +2,7 @@ import React from 'react'
 import { NavbarStateProvider, LocaleProvider } from '../utils/hooks'
 
 const HomePage = () => (
-  <LocaleProvider value="de">
+  <LocaleProvider value="en">
     <NavbarStateProvider>
       <HomePage />
     </NavbarStateProvider>
