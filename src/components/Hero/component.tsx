@@ -31,18 +31,25 @@ export const HeroSectionComponent: FunctionComponent<IntroProps> = ({
     )}
   >
     <BlurryBackground show={showBackground} />
-    <Row className="mt-auto mb-5 justify-content-center">
-      <Col xs={{ size: 9 }} md={{ size: 3 }}>
-        <h1 className={cn(styles.headline, showHeadline ? 'show' : '', 'py-3')}>
+    <div className="d-flex mt-auto justify-content-center pb-5">
+      <div className="position-relative">
+        <h1
+          className={cn(
+            styles.headline,
+            showHeadline ? 'show' : '',
+            'px-4 my-2',
+          )}
+        >
           {title}
         </h1>
-      </Col>
-    </Row>
+      </div>
+    </div>
     <div
       className={cn(
         'mb-auto',
         styles.fadeInSubheadline,
         showSubHeadline ? 'show' : '',
+        'mt-5',
       )}
     >
       <p className={cn(styles.spaced, 'text-uppercase')}>{subTitle}</p>
