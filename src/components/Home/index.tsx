@@ -5,6 +5,8 @@ import CallToAction from '../CallToAction'
 import { HeroSection } from '../Hero'
 import cn from 'classnames'
 import styles from './Home.module.scss'
+import { HomeData, useHomeData } from '../../data/home'
+import Layout from '../layout'
 
 interface HomePageProps {
   title: string
@@ -52,3 +54,12 @@ export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
     </>
   </div>
 )
+
+export const HomePage: FunctionComponent<{}> = () => {
+  const data: HomeData = useHomeData()
+  return (
+    <Layout title={data.metaTitle}>
+      <HomePageTemplate {...data} />
+    </Layout>
+  )
+}

@@ -16,7 +16,7 @@ export type Offering = {
   text: string
 }
 
-export const data: HomeData = {
+const data: HomeData = {
   title: 'Hardfork',
   heading: 'Ihr Partner für anspruchsvolle Softwareprojekte',
   offerings: {
@@ -50,4 +50,10 @@ export const data: HomeData = {
     'Hardfork GmbH - Ihr Technologiepartner für anspruchsvolle Softwareprojekte',
   metaDescription:
     'Die Blockchain kann in vielen Fällen erhebliches Einsparungs- oder Sicherheitspotential bieten. Wir helfen Ihnen diese Potentiale freizulegen. Wir helfen wir Ihnen die Anforderungen und Annahmen kritisch zu hinterfragen und so besonders nachhaltige Lösungen zu produzieren.',
+}
+
+export const useHomeData = (): HomeData => {
+  //const locale = useLocale()
+  //TODO: use locale to select language version
+  return data
 }
