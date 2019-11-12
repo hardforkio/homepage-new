@@ -57,11 +57,11 @@
     position: absolute;
     right: 0;
     width: 0%;
-      }
+  }
  
   &:global(.show) {
     &::after,
-   &::before {
+    &::before {
      width: 100%;
      transition: width 0.85s ease;
       }
