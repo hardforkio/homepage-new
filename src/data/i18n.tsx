@@ -1,7 +1,7 @@
 import * as R from 'ramda'
 export type Locale = 'en' | 'de'
 
-export type WithLocale<T> = T & { locale: Locale }
+type WithLocale<T> = T & { locale: string }
 
 export type Localized<T> = {
   translations: WithLocale<T>[]
