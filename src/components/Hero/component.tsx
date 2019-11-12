@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react'
-import { Button, Row, Col } from 'reactstrap'
+import { Button } from 'reactstrap'
 import styles from './Hero.module.scss'
 import cn from 'classnames'
 import { AiOutlineArrowDown } from 'react-icons/ai'
-import { BlurryBackground } from '../BlurryBackground'
+import { WithBlurryBackground } from '../BlurryBackground'
 
 interface IntroProps {
   title: string
@@ -15,64 +15,92 @@ interface IntroProps {
   LinkTag: any
 }
 
-export const HeroSectionComponent: FunctionComponent<IntroProps> = ({
+export const HeroSectionComponent: FunctionComponent<IntroProps> = props => (
+  <WithBlurryBackground
+    show={props.showBackground}
+    className={cn(styles.intro, 'd-flex flex-column justify-content-center')}
+  >
+    <MainSection {...props} className="flex-grow-1" />
+    <MoreSection show={props.showMoreSection} />
+  </WithBlurryBackground>
+)
+
+const MainSection: FunctionComponent<{
+  className: string
+  title: string
+  showHeadline: boolean
+  showSubHeadline: boolean
+  LinkTag: any
+  subTitle: string
+}> = ({
+  className,
   title,
-  subTitle,
-  showHeadline,
-  showBackground,
-  showMoreSection,
   showSubHeadline,
+  showHeadline,
   LinkTag,
+  subTitle,
 }) => (
-  <section
+  <div className={cn(className, 'd-flex flex-column justify-content-center')}>
+    <Headline show={showHeadline} title={title} />
+    <SubHeadline show={showSubHeadline} LinkTag={LinkTag} subTitle={subTitle} />
+  </div>
+)
+
+const MoreSection: FunctionComponent<{ show: boolean }> = ({ show }) => (
+  <div
     className={cn(
-      styles.intro,
-      'd-flex flex-column justify-content-center text-center p-sm-0',
+      styles.fadedOut,
+      show ? styles.fadeIn : 'invisible',
+      'mb-5',
+      'd-flex justify-content-center',
     )}
   >
-    <BlurryBackground show={showBackground} />
-    <div className="d-flex mt-auto justify-content-center pb-5">
-      <div className="position-relative">
-        <h1
-          className={cn(
-            styles.headline,
-            showHeadline ? 'show' : '',
-            'px-4 my-2',
-          )}
-        >
-          {title}
-        </h1>
-      </div>
-    </div>
-    <div
+    <a
       className={cn(
-        'mb-auto',
-        styles.fadeInSubheadline,
-        showSubHeadline ? 'show' : '',
-        'mt-5',
+        styles.smallText,
+        styles.spaced,
+        'text-uppercase text-center',
       )}
+      href="#offerings"
     >
-      <p className={cn(styles.spaced, 'text-uppercase')}>{subTitle}</p>
-      <LinkTag to="/#contact">
-        <Button className="px-5 my-4 text-uppercase" color="primary">
-          Kontakt
-        </Button>
-      </LinkTag>
+      Mehr
+      <br />
+      <AiOutlineArrowDown size={40} />
+    </a>
+  </div>
+)
+
+const Headline: FunctionComponent<{ show: boolean; title: string }> = ({
+  show,
+  title,
+}) => (
+  <div className="d-flex justify-content-center pb-5">
+    <div className="position-relative">
+      <h1 className={cn(styles.headline, show ? 'show' : '', 'px-4 my-2')}>
+        {title}
+      </h1>
     </div>
-    <div
-      className={cn(
-        styles.fadedOut,
-        showMoreSection ? styles.fadeIn : 'invisible',
-        'd-sm-block mb-5',
-      )}
-    >
-      <a
-        className={cn(styles.smallText, styles.spaced, 'text-uppercase ')}
-        href="#offerings"
-      >
-        <div>Mehr</div>
-        <AiOutlineArrowDown size={40} />
-      </a>
-    </div>
-  </section>
+  </div>
+)
+
+const SubHeadline: FunctionComponent<{
+  show: boolean
+  subTitle: string
+  LinkTag: any
+}> = ({ show, subTitle, LinkTag }) => (
+  <div
+    className={cn(
+      styles.fadeInSubheadline,
+      show ? 'show' : '',
+      'mt-5',
+      'text-center',
+    )}
+  >
+    <p className={cn(styles.spaced, 'text-uppercase')}>{subTitle}</p>
+    <LinkTag to="/#contact">
+      <Button className="px-5 my-4 text-uppercase" color="primary">
+        Kontakt
+      </Button>
+    </LinkTag>
+  </div>
 )
