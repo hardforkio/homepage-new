@@ -1,8 +1,11 @@
 import React, { FunctionComponent, useEffect } from 'react'
-import styles from './ArticleHeader.module.scss'
+
 import cn from 'classnames'
 import { useNavbarState } from '../../utils/hooks'
 import useIsInViewport from 'use-is-in-viewport'
+
+import { blurryBackgroundBanner } from '../../scss/global.module.scss'
+import { largePadding } from './ArticleHeader.module.scss'
 
 export const ArticleHeader: FunctionComponent<{
   title: string
@@ -26,8 +29,8 @@ export const ArticleHeaderComponent: FunctionComponent<{
   title: string
   subtitle: string
 }> = ({ title, subtitle }) => (
-  <div className={cn(styles.articleHeader)}>
-    <h3 className="text-uppercase mb-4 font-weight-bold">{title}</h3>
-    <h6 className="text-uppercase">{subtitle}</h6>
+  <div className={cn('text-center', largePadding, blurryBackgroundBanner)}>
+    <h3 className="mb-4">{title}</h3>
+    <h6>{subtitle}</h6>
   </div>
 )

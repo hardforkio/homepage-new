@@ -1,12 +1,12 @@
 @import "../../scss/bootstrap.scss";
 
 .largePadding {
-  padding: 5em 3em 3em 3em;
+  padding: 3em 2em 1em 2em;
 
   @include media-breakpoint-up(sm) {
-    padding: 13em 3em 6em 3em;
+    padding: 4em 3em 2em 3em;
   }
   @include media-breakpoint-up(lg) {
-    padding: 15em 0 10em 0;
+    padding: 6em 0 4em 0;
   }
 }
