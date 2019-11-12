@@ -1,0 +1,15 @@
+@import "../../scss/bootstrap.scss";
+
+// TODO: write mixin to generate vh-25, vh-50, etc classes
+.fillHalfViewport {
+  height: 50vh;
+  min-height: 12rem;
+}
+.fillThirdViewport {
+  height: 33.3vh;
+  min-height: 12em;
+}
+.fillQuaterViewport {
+  height: 25vh;
+  min-height: 12rem;
+}

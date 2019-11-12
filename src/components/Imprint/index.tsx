@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react'
-import { ArticleHeader } from '../ArticleHeader/index'
+import { TitleBanner } from '../TitleBanner/index'
 import { ContentWrap } from '../Content/index'
 import { Imprint as ImprintData, useImprint } from '../../data/imprint'
 import ReactMarkdown from 'react-commonmark'
@@ -10,7 +10,7 @@ export const ImprintComponent: FunctionComponent<ImprintData> = ({
   subHeadline,
 }) => (
   <article>
-    <ArticleHeader title={headline} subtitle={subHeadline} />
+    <TitleBanner title={headline} subtitle={subHeadline} />
     <ContentWrap>
       <div>
         <ReactMarkdown source={content} />
