@@ -1,16 +1,69 @@
-.spacedLink {
-    font-size: 0.8em;
-    letter-spacing: .225em;
+@import "../../scss/bootstrap.scss";
 
+.smallText {
+    font-size: 0.8em;
 }
 
-.faded-out.fade-in {
+.spaced {
+  letter-spacing: .225em;
+}
+
+.fadedOut.fadeIn {
   opacity: 1;
   transform: translateY(0px);
 }
 
-.faded-out {
+.fadedOut {
   transition: transform ease 1.25s, opacity ease 1.5s;
   opacity: 0;
   transform: translateY(80px);
+}
+
+.intro {
+  height: 100vh;
+  }
+
+.fadeInSubheadline {
+  opacity: 0;
+  transition: opacity 4s;
+  &:global(.show) {
+    opacity: 1;
+  }
+}
+
+.headline {
+  text-transform: uppercase;
+  font-size: 1.75em;
+  line-height: 1.75em;
+  font-weight: 800;
+  
+  &::before {
+    background: #fff;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0%;
+      }
+    
+  &::after {
+    background: #fff;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    right: 0;
+    width: 0%;
+      }
+ 
+  &:global(.show) {
+    &::after,
+   &::before {
+     width: 100%;
+     transition: width 0.85s ease;
+      }
+    }
 }
