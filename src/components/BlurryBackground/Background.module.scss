@@ -1,0 +1,16 @@
+.introBackground {
+    transition: opacity 3.5s ease;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    &:global(.show) {
+      opacity: 1;
+    }
+}

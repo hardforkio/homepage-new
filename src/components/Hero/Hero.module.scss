@@ -8,21 +8,19 @@
   letter-spacing: .225em;
 }
 
-.faded-out.fade-in {
+.fadedOut.fadeIn {
   opacity: 1;
   transform: translateY(0px);
 }
 
-.faded-out {
+.fadedOut {
   transition: transform ease 1.25s, opacity ease 1.5s;
   opacity: 0;
   transform: translateY(80px);
 }
 
 .intro {
-  flex-direction: column;
   height: 100vh;
-  
   }
 
 .fadeInSubheadline {
@@ -35,7 +33,6 @@
 
 .headline {
   text-transform: uppercase;
-  transition: transform 0.85s ease;
   
   &::before {
     background: #fff;
@@ -46,7 +43,6 @@
     position: absolute;
     top: 0;
     width: 0%;
-    transform: scale(0);
       }
     
   &::after {
@@ -58,14 +54,12 @@
     position: absolute;
     right: 0;
     width: 0%;
-    transform: scale(0);
       }
  
   &:global(.show) {
     &::after,
    &::before {
      width: 100%;
-     transform: scale(1);
      transition: width 0.85s ease;
       }
     }

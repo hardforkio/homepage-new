@@ -3,7 +3,7 @@ import { Button, Row, Col } from 'reactstrap'
 import styles from './Hero.module.scss'
 import cn from 'classnames'
 import { AiOutlineArrowDown } from 'react-icons/ai'
-import { blurryBackgroundBanner } from '../../scss/global.module.scss'
+import { BlurryBackground } from '../BlurryBackground'
 
 interface IntroProps {
   title: string
@@ -26,12 +26,11 @@ export const HeroSectionComponent: FunctionComponent<IntroProps> = ({
 }) => (
   <section
     className={cn(
-      blurryBackgroundBanner,
       styles.intro,
-      showBackground ? 'showBackground' : '',
-      'hiddenBackground d-flex justify-content-center text-center p-sm-0',
+      'd-flex flex-column justify-content-center text-center p-sm-0',
     )}
   >
+    <BlurryBackground show={showBackground} />
     <Row className="mt-auto mb-5 justify-content-center">
       <Col xs={{ size: 9 }} md={{ size: 3 }}>
         <h1 className={cn(styles.headline, showHeadline ? 'show' : '', 'py-3')}>
@@ -61,14 +60,10 @@ export const HeroSectionComponent: FunctionComponent<IntroProps> = ({
       )}
     >
       <a
-        className={cn(
-          styles.smallText,
-          styles.spaced,
-          'text-uppercase align-items-end',
-        )}
+        className={cn(styles.smallText, styles.spaced, 'text-uppercase ')}
         href="#offerings"
       >
-        <p>Mehr</p>
+        <div>Mehr</div>
         <AiOutlineArrowDown size={40} />
       </a>
     </div>
