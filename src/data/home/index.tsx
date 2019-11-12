@@ -1,5 +1,3 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core'
-
 export type HomeData = {
   title: string
   heading: string
@@ -15,12 +13,6 @@ export type HomeData = {
 export type Offering = {
   headline: string
   image: string
-  text: string
-}
-
-export type Practice = {
-  icon: IconProp
-  headline: string
   text: string
 }
 
