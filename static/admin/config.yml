@@ -13,20 +13,10 @@ collections:
     delete: false
     files:
       - file: "src/data/imprint/imprint.json"
-        name: "imprint"
+        name: "theImprint"
         label: "Imprint"
         format: "json"
         fields:
-          - name: "type"
-            widget: "hidden"
-            default: "imprint"
-
-          - name: "title"
-            label: "Short name"
-            description: "A name to identify this object within this collection. Should be unique within the collection."
-            widget: "hidden"
-            default: "Impressum"
-
           - name: "translations"
             label: "translations"
             widget: "list"
