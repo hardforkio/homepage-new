@@ -35,6 +35,7 @@ collections:
   - name: "faqEntry"
     label: "FaqEntry"
     folder: "src/data/faqEntry"
+    create: true
     fields:
       - name: "title"
         label: "title"
