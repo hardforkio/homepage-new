@@ -36,7 +36,7 @@ export const Footer: FunctionComponent<{
   ExternalLink: ComponentType<LinkProps>
   InternalLink: ComponentType<LinkProps>
 }> = ({ ExternalLink, InternalLink }) => (
-  <footer
+  <div
     className={cn(
       'bg-dark py-3 py-md-5',
       styles.textGraySmallSpaced,
@@ -72,5 +72,5 @@ export const Footer: FunctionComponent<{
         </InternalLink>
       </LegalItem>
     </LegalBar>
-  </footer>
+  </div>
 )
