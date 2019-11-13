@@ -1,4 +1,5 @@
-@import "../../scss/bootstrap.scss";
+@import "../../scss/variables";
+@import "~bootstrap/scss/mixins";
 
 .verticalSeparatorOnMd {
   @include media-breakpoint-up(md) {

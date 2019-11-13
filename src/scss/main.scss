@@ -1,4 +1,4 @@
-@import "./bootstrap.scss";
+@import "./_bootstrap.scss";
 
 p {
   a {
@@ -14,15 +14,6 @@ p {
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
-  text-transform: uppercase;
-}
-
-h1,
-h2,
-h3,
 h4 {
   letter-spacing: 0.25em;
 }
@@ -30,4 +21,17 @@ h4 {
 h5,
 h6 {
   letter-spacing: 0.1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+
+  &:not(:first-child) {
+    padding-top: 1rem;
+  }
 }

@@ -17,10 +17,6 @@ collections:
         label: "Imprint"
         format: "json"
         fields:
-          - name: "type"
-            widget: "hidden"
-            default: "imprint"
-
           - name: "title"
             label: "Short name"
             description: "A name to identify this object within this collection. Should be unique within the collection."
