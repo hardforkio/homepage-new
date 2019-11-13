@@ -3,6 +3,7 @@
 .verticalSeparatorOnMd {
   @include media-breakpoint-up(md) {
     border-left: 1px solid;
+
     &:first-child {
       border-left: none;
     }
@@ -19,6 +20,7 @@
   a {
     border-bottom: 1px dotted;
     transition: color 0.2s ease 0s, border-bottom-color 0.2s ease 0s;
+
     &:hover {
       color: $white;
       border-bottom-color: transparent;
