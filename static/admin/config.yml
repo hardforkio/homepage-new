@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   repo: hardforkio/homepage
-  branch: master
+  branch: feature/new-content-type
 
 media_folder: "static/img"
 public_folder: "/img"
@@ -17,10 +17,6 @@ collections:
         label: "Imprint"
         format: "json"
         fields:
-          - name: "type"
-            widget: "hidden"
-            default: "imprint"
-
           - name: "title"
             label: "Short name"
             description: "A name to identify this object within this collection. Should be unique within the collection."
@@ -36,3 +32,18 @@ collections:
               - { name: "subHeadline", widget: "string" }
               - { name: "metaTitle", widget: "string" }
               - { name: "content", widget: "markdown" }
+  - name: "faqEntry"
+    label: "FaqEntry"
+    folder: "src/data/faqEntry"
+    fields:
+      - name: "title"
+        label: "title"
+        description: "A name to identify this object within this collection. Should be unique within the collection."
+        widget: "string"
+      - name: "translations"
+        label: "translations"
+        widget: "list"
+        fields:
+          - { name: "locale", widget: "select", options: ["en", "de"] }
+          - { name: "question", widget: "string" }
+          - { name: "answer", widget: "string" }
