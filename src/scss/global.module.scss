@@ -1,8 +1,8 @@
-@import "./bootstrap.scss";
+@import "../scss/variables";
+@import "~bootstrap/scss/mixins";
 
 .blurryBackgroundBanner {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../img/banner.jpg");
   background-position: center center;
   background-size: cover;

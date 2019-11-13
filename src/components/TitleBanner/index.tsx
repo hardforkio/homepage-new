@@ -28,7 +28,7 @@ export const TitleBannerComponent: FunctionComponent<{
   title: string
   subtitle: string
 }> = ({ title, subtitle }) => (
-  <div className={cn(styles.fillHalfViewport, blurryBackgroundBanner)}>
+  <div className={cn(styles.viewportHeight50, blurryBackgroundBanner)}>
     <Container className="h-100 text-center d-flex flex-column justify-content-center">
       <h3 className="mb-4">{title}</h3>
       <h6>{subtitle}</h6>
