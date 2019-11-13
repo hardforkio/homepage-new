@@ -17,6 +17,9 @@ h4,
 h5,
 h6 {
   text-transform: uppercase;
+  &:not(:first-child) {
+    padding-top: 1rem;
+  }
 }
 
 h1,
