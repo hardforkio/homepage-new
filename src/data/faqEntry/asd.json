@@ -1,0 +1,15 @@
+{
+  "title": "asd",
+  "translations": [
+    {
+      "locale": "en",
+      "question": "asd",
+      "answer": "asd"
+    },
+    {
+      "locale": "de",
+      "question": "Was ist es?",
+      "answer": "Geil"
+    }
+  ]
+}
