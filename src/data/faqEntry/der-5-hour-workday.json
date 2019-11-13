@@ -1,0 +1,15 @@
+{
+  "title": "Der 5 Hour Workday",
+  "translations": [
+    {
+      "locale": "en",
+      "question": "What is the the Five Hour Workday?",
+      "answer": "Yadda"
+    },
+    {
+      "locale": "de",
+      "question": "Was ist es?",
+      "answer": "Geil"
+    }
+  ]
+}
