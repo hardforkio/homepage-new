@@ -1,5 +1,5 @@
 import * as R from 'ramda'
-import { Locale, getTranslation, Localized } from '../i18n'
+import { Locale, getTranslation, TranslationCollection } from '../i18n'
 import { useLocale } from '../../utils/hooks'
 import data from './imprint.json'
 
@@ -10,7 +10,7 @@ export interface Imprint {
   content: string
 }
 
-const imprint: Localized<Imprint> = data
+const imprint: TranslationCollection<Imprint> = data
 
 export const getImprint = (locale: Locale): Imprint =>
   getTranslation(locale)(imprint)

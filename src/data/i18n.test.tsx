@@ -1,12 +1,17 @@
 import test from 'tape'
-import { Locale, Localized, getTranslation, getTranslations } from './i18n'
+import {
+  Locale,
+  TranslationCollection,
+  getTranslation,
+  getTranslations,
+} from './i18n'
 
 const EN: Locale = 'en'
 const DE: Locale = 'de'
 
 test('getTranslation selects the desired language version', test => {
   type Word = { word: string }
-  const PET: Localized<Word> = {
+  const PET: TranslationCollection<Word> = {
     translations: [{ locale: EN, word: 'dog' }, { locale: DE, word: 'hund' }],
   }
 
@@ -17,7 +22,7 @@ test('getTranslation selects the desired language version', test => {
 
 test('getTranslations gets a list of language versions', test => {
   type Word = { word: string }
-  const PET: Localized<Word> = {
+  const PET: TranslationCollection<Word> = {
     translations: [{ locale: EN, word: 'dog' }, { locale: DE, word: 'hund' }],
   }
 
