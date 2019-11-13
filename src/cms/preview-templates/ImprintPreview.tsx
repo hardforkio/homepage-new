@@ -3,10 +3,10 @@ import { ImprintComponent } from '../../components/Imprint'
 import * as R from 'ramda'
 import { Imprint } from '../../data/imprint'
 import { PreviewProps, getJSON } from './helpers'
-import { Localized, getTranslations } from '../../data/i18n'
+import { TranslationCollection, getTranslations } from '../../data/i18n'
 
 export const ImprintPreview: FunctionComponent<PreviewProps> = ({ entry }) => {
-  const imprint: Localized<Imprint> = getJSON(entry)
+  const imprint: TranslationCollection<Imprint> = getJSON(entry)
   return <>{R.map(ImprintComponent, getTranslations(imprint))}</>
 }
 
