@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   repo: hardforkio/homepage
-  branch: feature/new-content-type
+  branch: master
 
 media_folder: "static/img"
 public_folder: "/img"
