@@ -36,13 +36,20 @@ jobs:
           paths:
             - '*'
 
-  lint:
+  lint-code:
     <<: *defaults
     steps:
       - <<: *restore_prepared_repo
       - run:
           name: Lint code
-          command: yarn run lint
+          command: yarn run lint:code
+  lint-styles:
+    <<: *defaults
+    steps:
+      - <<: *restore_prepared_repo
+      - run:
+          name: Lint styles
+          command: yarn run lint:styles          
   test:
     <<: *defaults
     steps:
@@ -56,7 +63,10 @@ workflows:
   ci:
     jobs:
       - prepare
-      - lint:
+      - lint-code:
+          requires:
+            - prepare
+      - lint-styles:
           requires:
             - prepare
       - test:
