@@ -1,5 +1,3 @@
-@import "../../scss/bootstrap.scss";
-
 .avoidOverlapWithStickyHeader::before {
   content: " ";
   display: block;

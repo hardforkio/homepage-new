@@ -1,11 +1,12 @@
-@import "../../scss/bootstrap.scss";
+@import "../../scss/variables";
+@import "~bootstrap/scss/mixins";
 
 .smallText {
-    font-size: 0.8em;
+  font-size: 0.8em;
 }
 
 .spaced {
-  letter-spacing: .225em;
+  letter-spacing: 0.225em;
 }
 
 .fadedOut.fadeIn {
@@ -21,7 +22,7 @@
 
 .intro {
   height: 100vh;
-  }
+}
 
 .fadeInSubheadline {
   opacity: 0;
@@ -36,7 +37,7 @@
   font-size: 1.75em;
   line-height: 1.75em;
   font-weight: 800;
-  
+
   &::before {
     background: #fff;
     content: "";
@@ -46,8 +47,8 @@
     position: absolute;
     top: 0;
     width: 0%;
-      }
-    
+  }
+
   &::after {
     background: #fff;
     bottom: 0;
@@ -58,12 +59,12 @@
     right: 0;
     width: 0%;
   }
- 
+
   &:global(.show) {
     &::after,
     &::before {
-     width: 100%;
-     transition: width 0.85s ease;
-      }
+      width: 100%;
+      transition: width 0.85s ease;
     }
+  }
 }
