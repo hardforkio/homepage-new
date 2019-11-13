@@ -1,4 +1,5 @@
 import * as R from 'ramda'
+import { findDefaultingToHead } from '../utils/helpers'
 export type Locale = 'en' | 'de'
 
 type WithLocale<T> = T & { locale: string }
@@ -11,7 +12,7 @@ export const getTranslation: <T = any>(
 ) => (data: TranslationCollection<T>) => T = <T extends {}>(locale: Locale) =>
   R.pipe(
     R.prop('translations'),
-    R.find(R.propEq('locale', locale)),
+    findDefaultingToHead(R.propEq('locale', locale)),
     R.omit(['locale']) as (content: WithLocale<T>) => T,
   )
 
