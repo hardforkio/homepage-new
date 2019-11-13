@@ -3,12 +3,12 @@ export type Locale = 'en' | 'de'
 
 type WithLocale<T> = T & { locale: string }
 
-export type Localized<T> = {
+export type TranslationCollection<T> = {
   translations: WithLocale<T>[]
 }
 export const getTranslation: <T = any>(
   locale: Locale,
-) => (data: Localized<T>) => T = <T extends {}>(locale: Locale) =>
+) => (data: TranslationCollection<T>) => T = <T extends {}>(locale: Locale) =>
   R.pipe(
     R.prop('translations'),
     R.find(R.propEq('locale', locale)),
@@ -16,5 +16,5 @@ export const getTranslation: <T = any>(
   )
 
 export const getTranslations: <T = any>(
-  data: Localized<T>,
+  data: TranslationCollection<T>,
 ) => WithLocale<T>[] = R.prop('translations')
