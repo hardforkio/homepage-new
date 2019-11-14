@@ -32,20 +32,31 @@ collections:
               - { name: "subHeadline", widget: "string" }
               - { name: "metaTitle", widget: "string" }
               - { name: "content", widget: "markdown" }
-  - name: "faqEntry"
-    label: "FaqEntry"
-    folder: "src/data/faqEntry"
-    create: true
-    format: "json"
-    fields:
-      - name: "title"
-        label: "title"
-        description: "A name to identify this object within this collection. Should be unique within the collection."
-        widget: "string"
-      - name: "translations"
-        label: "translations"
-        widget: "list"
-        fields:
-          - { name: "locale", widget: "select", options: ["en", "de"] }
-          - { name: "question", widget: "string" }
-          - { name: "answer", widget: "markdown" }
+  - name: "faqPage"
+    label: "FaqPage"
+    files:
+      - file: "src/data/faqEntry/faq.json"
+        format: "json"
+        name: "faq"
+        label: 'FAQ'
+        fields:  
+          - name: "id"
+            label: "id"
+            description: "A name to identify this object within this collection. Should be unique within the collection."
+            widget: "string"
+          - name: "translations"
+            label: "translations"
+            widget: "list"
+            fields:
+              - { name: "locale", widget: "select", options: ["en", "de"] }
+              - { name: "headline", widget: "string" }
+              - { name: "subHeadline", widget: "string" }
+              - { name: "metaTitle", widget: "string" }
+              - name: "faqEntries"
+                widget: "list"
+                fields:
+                  - { name: "question", widget: "string" }
+                  - { name: "answer", widget: "markdown" }
+
+
+
