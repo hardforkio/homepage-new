@@ -27,7 +27,7 @@ export const HomePageTemplate: FunctionComponent<HomeData> = ({
         className={cn(styles.avoidOverlapWithStickyHeader)}
         id="offerings"
       >
-        <Offerings offerings={offerings.blurbs} />
+        <Offerings offerings={offerings} />
       </section>
       <section id="contact">
         <CallToAction
