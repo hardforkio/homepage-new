@@ -35,7 +35,8 @@ collections:
 
   - name: "home"
     label: "Landing Page"
-    delete: false
+    create: true
+    delete: true
     files:
       - file: "src/data/home/home.json"
         name: "home"
