@@ -1,0 +1,16 @@
+{
+  "id" : "home",
+  "translations": [
+    {
+      "heading": "Ihr Partner für anspruchsvolle Softwareprojekte",
+      "contactButton": "E-Mail senden",
+      "metaTitle": "Hardfork GmbH - Ihr Technologiepartner für anspruchsvolle Softwareprojekte",
+      "contactHeadline": "Kontaktanfrage",
+      "metaDescription": "Die Blockchain kann in vielen Fällen erhebliches Einsparungs- oder Sicherheitspotential bieten. Wir helfen Ihnen diese Potentiale freizulegen. Wir helfen wir Ihnen die Anforderungen und Annahmen kritisch zu hinterfragen und so besonders nachhaltige Lösungen zu produzieren.",
+      "title": "Hardfork",
+      "locale": "de",
+      "contactEmail": "contact@hardfork.io",
+      "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück."
+    }
+  ]
+}

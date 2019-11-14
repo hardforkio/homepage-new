@@ -5,7 +5,7 @@ import CallToAction from '../CallToAction'
 import { HeroSection } from '../Hero'
 import cn from 'classnames'
 import styles from './Home.module.scss'
-import { HomeData, useHomeData } from '../../data/home'
+import { HomeData, useHome } from '../../data/home'
 import Layout from '../layout'
 
 export const HomePageTemplate: FunctionComponent<HomeData> = ({
@@ -44,7 +44,7 @@ export const HomePageTemplate: FunctionComponent<HomeData> = ({
 )
 
 export const HomePage: FunctionComponent<{}> = () => {
-  const data: HomeData = useHomeData()
+  const data: HomeData = useHome()
   return (
     <Layout title={data.metaTitle}>
       <HomePageTemplate {...data} />
