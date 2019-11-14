@@ -57,7 +57,20 @@ jobs:
       - run:
           name: Run tests
           command: yarn test
-          
+  build-page:
+    <<: *defaults
+    steps:
+      - <<: *restore_prepared_repo
+      - run:
+          name: Build the homepage
+          command: yarn build
+  build-storybook:
+    <<: *defaults
+    steps:
+      - <<: *restore_prepared_repo
+      - run:
+          name: Build the storybook
+          command: yarn build-storybook             
 workflows:
   version: 2
   ci:
@@ -72,3 +85,10 @@ workflows:
       - test:
           requires:
             - prepare
+      - build-page:
+          requires:
+            - prepare
+      - build-storybook:
+          requires:
+            - prepare
+
