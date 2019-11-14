@@ -1,3 +1,17 @@
+import { Offering } from '../offering'
+
+/*
+import { useLocale } from '../../utils/hooks'
+import { Locale, getTranslation, TranslationCollection } from '../i18n'
+import * as R from 'ramda'
+import data from './home.json'
+const home: TranslationCollection<HomeData> = data
+const getHome = (locale: Locale) => getTranslation<HomeData>(locale)(home)
+export const useHome: () => HomeData = R.pipe(
+  useLocale,
+  getHome,
+)
+*/
 export type HomeData = {
   title: string
   heading: string
@@ -8,12 +22,6 @@ export type HomeData = {
   contactEmail: string
   metaTitle: string
   metaDescription: string
-}
-
-export type Offering = {
-  headline: string
-  image: string
-  text: string
 }
 
 const data: HomeData = {
