@@ -1,10 +1,10 @@
 {
-    "title": "FAQ",
-    "translations": [
-        {
-            "locale": "de",
-            "question": "What is the best?",
-            "answer": "Jumping."
-        }
-    ]
+  "title": "FAQ",
+  "translations": [
+    {
+      "locale": "de",
+      "question": "What is the best?",
+      "answer": "Jumping."
+    }
+  ]
 }
