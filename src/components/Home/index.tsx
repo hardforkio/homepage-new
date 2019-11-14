@@ -6,19 +6,7 @@ import { HeroSection } from '../Hero'
 import cn from 'classnames'
 import styles from './Home.module.scss'
 
-interface HomePageProps {
-  title: string
-  metaTitle: string
-  metaDescription: string
-  heading: string
-  offerings: { blurbs: any }
-  contactHeadline: string
-  contactDescription: string
-  contactButton: string
-  contactEmail: string
-}
-
-export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
+export const HomePageTemplate: FunctionComponent<HomeData> = ({
   title,
   heading,
   offerings,
