@@ -2,9 +2,14 @@
   "title": "FAQ",
   "translations": [
     {
-      "locale": "de",
+      "locale": "en",
       "question": "What is the best?",
       "answer": "Jumping."
+    },
+    {
+      "locale": "de",
+      "question": "Was ist das beste?",
+      "answer": "Springen."
     }
   ]
 }
