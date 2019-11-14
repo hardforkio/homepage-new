@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   repo: hardforkio/homepage
-  branch: master
+  branch: feature/issue-167--internationalize-home-page
 
 media_folder: "static/img"
 public_folder: "/img"
@@ -33,3 +33,69 @@ collections:
               - { name: "subHeadline", widget: "string" }
               - { name: "metaTitle", widget: "string" }
               - { name: "content", widget: "markdown" }
+
+  - name: "home"
+    label: "Landing Page"
+    delete: false
+    files:
+      - file: "src/data/home/home.json"
+        name: "home"
+        label: "Landing Page"
+        format: "json"
+        fields:
+          - name: "id"
+            label: "Identifier"
+            description: "A name to identify this object within this collection. Should be unique within the collection."
+            widget: "hidden"
+            default: "home"
+
+          - name: "translations"
+            label: "translations"
+            widget: "list"
+            fields:
+              - { name: "locale", widget: "select", options: ["en", "de"] }
+              - {
+                  name: "title",
+                  widget: "string",
+                  label: "Page title",
+                  description: "Title shown on top of page. Not an ID.",
+                }
+              - { name: "heading", widget: "string" }
+              - {
+                  name: "offerings",
+                  widget: "relation",
+                  collection: "offering",
+                  valueField: "id",
+                  searchFields: ["id"],
+                  multiple: true,
+                }
+              - {
+                  name: "contactHeadline",
+                  widget: "string",
+                  description: "Contact Section Headline",
+                }
+              - { name: "contactDescription", widget: "string" }
+              - { name: "contactButton", widget: "string" }
+              - { name: "contactEmail", widget: "string" }
+              - { name: "metaTitle", widget: "string" }
+              - { name: "metaDescription", widget: "string" }
+
+  - name: "offering"
+    label: "Offering"
+    folder: "src/data/offering"
+    create: true
+    delete: true
+    format: "json"
+    fields:
+      - name: "id"
+        label: "Identifier"
+        description: "A name to identify this object within this collection. Should be unique within the collection."
+        widget: "string"
+      - name: "translations"
+        label: "translations"
+        widget: "list"
+        fields:
+          - { name: "locale", widget: "select", options: ["en", "de"] }
+          - { name: "headline", widget: "string" }
+          - { name: "image", widget: "image", allow_multiple: false }
+          - { name: "text", widget: "text" }
