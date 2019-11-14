@@ -19,3 +19,9 @@ export const getTranslation: <T = any>(
 export const getTranslations: <T = any>(
   data: TranslationCollection<T>,
 ) => WithLocale<T>[] = R.prop('translations')
+
+export const getTranslationsRecursively = (locale: Locale) => (
+  tree: object,
+) => {
+  return {}
+}
