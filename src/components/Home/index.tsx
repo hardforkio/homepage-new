@@ -8,19 +8,7 @@ import styles from './Home.module.scss'
 import { HomeData, useHomeData } from '../../data/home'
 import Layout from '../layout'
 
-interface HomePageProps {
-  title: string
-  metaTitle: string
-  metaDescription: string
-  heading: string
-  offerings: { blurbs: any }
-  contactHeadline: string
-  contactDescription: string
-  contactButton: string
-  contactEmail: string
-}
-
-export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
+export const HomePageTemplate: FunctionComponent<HomeData> = ({
   title,
   heading,
   offerings,
