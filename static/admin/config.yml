@@ -16,9 +16,10 @@ collections:
         name: "imprint"
         label: "Imprint"
         format: "json"
+        identifier_field: "id"
         fields:
-          - name: "title"
-            label: "Short name"
+          - name: "id"
+            label: "Identifier"
             description: "A name to identify this object within this collection. Should be unique within the collection."
             widget: "hidden"
             default: "Impressum"
