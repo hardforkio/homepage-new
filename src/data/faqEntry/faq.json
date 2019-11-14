@@ -1,15 +1,17 @@
 {
-  "title": "FAQ",
+  "id": "FAQPage",
   "translations": [
     {
       "locale": "en",
-      "question": "What is the best?",
-      "answer": "Jumping."
-    },
-    {
-      "locale": "de",
-      "question": "Was ist das beste?",
-      "answer": "Springen."
+      "headline": "FAQ",
+      "subHeadline": "Things you want to know",
+      "metaTitle": "faqPage",
+      "faqEntries": [
+        {
+          "question": "Is this the real world?",
+          "answer": "No, it is just fantasy."
+        }
+      ]
     }
   ]
 }
