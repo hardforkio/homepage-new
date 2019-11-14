@@ -4,21 +4,10 @@ p {
   a {
     border-bottom: 1px dotted;
     transition: color 0.2s ease 0s, border-bottom-color 0.2s ease 0s;
+
     &:hover {
       border-bottom-color: transparent;
     }
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-transform: uppercase;
-  &:not(:first-child) {
-    padding-top: 1rem;
   }
 }
 
@@ -32,4 +21,17 @@ h4 {
 h5,
 h6 {
   letter-spacing: 0.1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+
+  &:not(:first-child) {
+    padding-top: 1rem;
+  }
 }

@@ -11,7 +11,7 @@
 
 .fadedOut.fadeIn {
   opacity: 1;
-  transform: translateY(0px);
+  transform: translateY(0);
 }
 
 .fadedOut {
@@ -27,6 +27,7 @@
 .fadeInSubheadline {
   opacity: 0;
   transition: opacity 4s;
+
   &:global(.show) {
     opacity: 1;
   }

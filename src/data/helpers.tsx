@@ -9,7 +9,4 @@ const importAll = (r: any) => r.keys().map(r)
 export const importData: <T>(
   path: string,
   includeSubdirs: boolean,
-) => T[] = R.pipe(
-  R.partialRight(require.context, [/\.json$/]),
-  importAll,
-)
+) => T[] = R.pipe(R.partialRight(require.context, [/\.json$/]), importAll)

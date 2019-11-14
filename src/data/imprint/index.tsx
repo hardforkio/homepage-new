@@ -15,7 +15,4 @@ const imprint: TranslationCollection<Imprint> = data
 export const getImprint = (locale: Locale): Imprint =>
   getTranslation(locale)(imprint)
 
-export const useImprint: () => Imprint = R.pipe(
-  useLocale,
-  getImprint,
-)
+export const useImprint: () => Imprint = R.pipe(useLocale, getImprint)
