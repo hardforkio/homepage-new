@@ -1,0 +1,17 @@
+{
+  "title": "Software",
+  "translations": [
+    {
+      "locale": "de",
+      "headline": "Software",
+      "image": "/img/pic01.jpg",
+      "text": "Wir entwickeln für Sie Software-Applikationen nach Ihren Vorstellungen. Wir beseitzen alle dafür notwendigen Kompetenzen vom Frontend mit komplexem Application State Management über Client zu Server Kommunikation und Backend-Entwicklung bis zum skalierbaren und sicheren Betrieb in der Cloud. Mit Hardfork bekommen Sie Ihren gesamten Stack aus einer Hand.\n\nWir nutzen unter anderem die Technologien bzw. Libraries React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) und AWS serverless."
+    },
+    {
+      "locale": "en",
+      "headline": "Software",
+      "image": "/img/pic01.jpg",
+      "text": "We turn your ideas into software. We have all required competencies for this complex task in house: We can develop the front-ends with complex application state (if needed), back-ends, and operate your system in a scalable and secure way. Hardfork is your one-stop-shop for the whole stack.\n\nTechnologies we use include: React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL and AWS Serverless."
+    }
+  ]
+}
