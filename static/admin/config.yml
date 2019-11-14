@@ -48,4 +48,4 @@ collections:
         fields:
           - { name: "locale", widget: "select", options: ["en", "de"] }
           - { name: "question", widget: "string" }
-          - { name: "answer", widget: "string" }
+          - { name: "answer", widget: "markdown" }
