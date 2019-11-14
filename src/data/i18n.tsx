@@ -20,8 +20,21 @@ export const getTranslations: <T = any>(
   data: TranslationCollection<T>,
 ) => WithLocale<T>[] = R.prop('translations')
 
-export const getTranslationsRecursively = (locale: Locale) => (
-  tree: object,
-) => {
-  return {}
-}
+export const getTranslationRecursively: (
+  locale: Locale,
+) => (multilingual: any) => any = (locale: Locale) =>
+  R.cond([
+    [
+      R.has('translations'),
+      R.pipe(
+        getTranslation(locale),
+        // use excplicit arrow function to avoid maximum call stack error
+        node => getTranslationRecursively(locale)(node),
+      ),
+    ],
+    [
+      R.either(R.is(Array), R.is(Object)),
+      R.map(node => getTranslationRecursively(locale)(node)),
+    ],
+    [R.T, R.identity],
+  ])
