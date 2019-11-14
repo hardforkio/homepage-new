@@ -1,0 +1,1 @@
+{"type":"PR","pr":{"number":198,"head":"994c48f05f7e882ff31f38dc37ec26338ea956a7"},"user":"wimmer","status":"draft","branch":"cms/faq","collection":"faqEntry","title":"FAQ","description":"No Description!","objects":{"entry":{"path":"src/data/faqEntry/faq.json","sha":"dd342df15358b58c5b1db33afe007368e2d4a48f"},"files":[]},"timeStamp":"2019-11-14T10:27:37.703Z"}
