@@ -23,6 +23,16 @@ test('getTranslation selects the desired language version', test => {
   test.deepEqual(getTranslation(EN)(PET), { word: 'dog' })
 })
 
+test('getTranslation returns some language version, when user asks for a language that does not exist', test => {
+  type Word = { word: string }
+  const data: TranslationCollection<Word> = {
+    translations: [{ locale: DE, word: 'hund' }],
+  }
+
+  test.plan(1)
+  test.deepEqual(getTranslation(EN)(data), { word: 'hund' })
+})
+
 test('getTranslations gets a list of language versions', test => {
   type Word = { word: string }
   const PET: TranslationCollection<Word> = {
