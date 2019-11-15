@@ -4,17 +4,20 @@ export type Locale = 'en' | 'de'
 
 type WithLocale<T> = T & { locale: string }
 
-export type TranslationCollection<T> = {
+interface TranslationCollection<T> {
   translations: WithLocale<T>[]
 }
 export const extractSingleTranslation: <T = any>(
-  locale: Locale,
+  locale: Locale, //TODO: fix type signature
 ) => (data: TranslationCollection<T>) => T = <T extends {}>(locale: Locale) =>
-  R.pipe(
-    R.prop('translations'),
-    findDefaultingToHead(R.propEq('locale', locale)),
-    R.omit(['locale']) as (content: WithLocale<T>) => T,
-  )
+  R.converge(R.merge, [
+    R.pipe(
+      R.prop('translations'),
+      findDefaultingToHead(R.propEq('locale', locale)),
+      R.omit(['locale']) as (content: WithLocale<T>) => T,
+    ),
+    R.omit(['translations']),
+  ])
 
 export const getTranslations: <T = any>(
   data: TranslationCollection<T>,
