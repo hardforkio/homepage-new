@@ -36,20 +36,13 @@ jobs:
           paths:
             - '*'
 
-  lint-code:
+  lint:
     <<: *defaults
     steps:
       - <<: *restore_prepared_repo
       - run:
           name: Lint code
-          command: yarn run lint:code
-  lint-styles:
-    <<: *defaults
-    steps:
-      - <<: *restore_prepared_repo
-      - run:
-          name: Lint styles
-          command: yarn run lint:styles          
+          command: yarn run lint
   test:
     <<: *defaults
     steps:
@@ -57,38 +50,15 @@ jobs:
       - run:
           name: Run tests
           command: yarn test
-  build-page:
-    <<: *defaults
-    steps:
-      - <<: *restore_prepared_repo
-      - run:
-          name: Build the homepage
-          command: yarn build
-  build-storybook:
-    <<: *defaults
-    steps:
-      - <<: *restore_prepared_repo
-      - run:
-          name: Build the storybook
-          command: yarn build-storybook             
+          
 workflows:
   version: 2
   ci:
     jobs:
       - prepare
-      - lint-code:
-          requires:
-            - prepare
-      - lint-styles:
+      - lint:
           requires:
             - prepare
       - test:
           requires:
             - prepare
-      - build-page:
-          requires:
-            - prepare
-      - build-storybook:
-          requires:
-            - prepare
-

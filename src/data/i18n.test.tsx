@@ -12,10 +12,7 @@ const DE: Locale = 'de'
 test('getTranslation selects the desired language version', test => {
   type Word = { word: string }
   const PET: TranslationCollection<Word> = {
-    translations: [
-      { locale: EN, word: 'dog' },
-      { locale: DE, word: 'hund' },
-    ],
+    translations: [{ locale: EN, word: 'dog' }, { locale: DE, word: 'hund' }],
   }
 
   test.plan(2)
@@ -36,10 +33,7 @@ test('getTranslation returns some language version, when user asks for a languag
 test('getTranslations gets a list of language versions', test => {
   type Word = { word: string }
   const PET: TranslationCollection<Word> = {
-    translations: [
-      { locale: EN, word: 'dog' },
-      { locale: DE, word: 'hund' },
-    ],
+    translations: [{ locale: EN, word: 'dog' }, { locale: DE, word: 'hund' }],
   }
 
   test.plan(1)

@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import * as R from 'ramda'
 import { FunctionComponent } from 'react'
+import { Curry } from 'Function/Curry'
 
 export const mapToComponent = <Props extends unknown>(
   Component: FunctionComponent<Props>,

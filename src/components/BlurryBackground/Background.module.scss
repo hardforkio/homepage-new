@@ -1,15 +1,14 @@
 .introBackground {
-  transition: opacity 3.5s ease;
-  content: "";
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  opacity: 0;
-  height: 100vh;
-  z-index: -1;
-
-  &:global(.show) {
-    opacity: 1;
-  }
+    transition: opacity 3.5s ease;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    height: 100vh;
+    z-index: -1;
+    &:global(.show) {
+      opacity: 1;
+    }
 }
