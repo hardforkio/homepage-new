@@ -1,0 +1,12 @@
+{
+  "id": "team section",
+  "translations": [
+    {
+      "locale": "en",
+      "headline": "Our Team",
+      "subHeadline": "beschde",
+      "footer": "wanna join?"
+    }
+  ],
+  "teammembs": "Edwin"
+}
