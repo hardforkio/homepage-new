@@ -28,6 +28,18 @@
       "locale": "de",
       "contactEmail": "contact@hardfork.io",
       "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück."
+    },
+    {
+      "heading": "English Heading",
+      "offerings": [],
+      "contactButton": "Call us",
+      "metaTitle": "SEO Shit",
+      "contactHeadline": "English Us",
+      "metaDescription": "Deep SEO Shit",
+      "title": "English Title",
+      "locale": "en",
+      "contactEmail": "or@mail.us",
+      "contactDescription": "We are like this"
     }
   ]
 }
