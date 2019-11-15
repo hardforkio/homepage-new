@@ -131,18 +131,12 @@ collections:
   - name: "team section"
     label: "team section"
     delete: false
-    create: true
     files:
       - file: "src/data/team/team.json"
         name: "team"
         label: "team"
         format: "json"
         fields:
-          - name: "id"
-            description: "unique id"
-            widget: "string"
-            default: "team section"
-
           - name: "translations"
             widget: "list"
             fields:
@@ -159,8 +153,9 @@ collections:
           - name: "team members"
             widget: "relation"
             collection: "team member"
-            searchFields: ["full name"]
-            valuleField: "full name"
+            searchFields: ["id", "job title"]
+            valueField: "id"
+            multiple: true
 
   - name: "team member"
     label: "team member"
@@ -169,8 +164,8 @@ collections:
     identifier_field: "id"
     create: true
     fields:
-      - name: "id"
-        label: "full name"
+      - label: "full name"
+        name: "id"
         widget: "string"
       - name: "job title"
         widget: "string"
