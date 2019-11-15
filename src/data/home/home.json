@@ -31,6 +31,13 @@
     },
     {
       "heading": "Your partner for challenging software projects",
+      "offerings": [
+        {
+          "headline": "Services",
+          "image": "/img/codeonscreen.jpg",
+          "text": "Very service"
+        }
+      ],
       "contactButton": "Contact",
       "metaTitle": "Hardfork GmbH",
       "contactHeadline": "Send e-mail",
