@@ -28,6 +28,17 @@
       "locale": "de",
       "contactEmail": "contact@hardfork.io",
       "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück."
+    },
+    {
+      "heading": "Your partner for challenging software projects",
+      "contactButton": "Contact",
+      "metaTitle": "Hardfork GmbH",
+      "contactHeadline": "Send e-mail",
+      "metaDescription": "Software development and business services",
+      "title": "Hardfork",
+      "locale": "en",
+      "contactEmail": "contact@hardfork.io",
+      "contactDescription": "Please send us an e-mail and we will be in touch shortly!"
     }
   ]
 }
