@@ -12,7 +12,13 @@ export const useHome: () => HomeData = R.pipe(
   getHome,
 )
 */
-export type HomeData = {
+interface Offering {
+  headline: string
+  image: string
+  text: string
+}
+
+export interface HomeData {
   title: string
   heading: string
   offerings: Offering[]
