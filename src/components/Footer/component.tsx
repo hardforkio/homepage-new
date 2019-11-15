@@ -4,7 +4,7 @@ import styles from './Footer.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { LinkProps } from '../Link'
+import { LinkProps, LocalizedLink } from '../Link'
 
 const LegalBar: FunctionComponent = ({ children }) => (
   <div
@@ -67,9 +67,9 @@ export const Footer: FunctionComponent<{
     <LegalBar>
       <LegalItem>{translations.copyrightText}</LegalItem>
       <LegalItem>
-        <InternalLink to="/de/imprint">
+        <LocalizedLink linkTag={InternalLink} to="/imprint">
           {translations.imprintLinkText}
-        </InternalLink>
+        </LocalizedLink>
       </LegalItem>
     </LegalBar>
   </div>
