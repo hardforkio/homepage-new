@@ -7,7 +7,7 @@ type WithLocale<T> = T & { locale: string }
 export type TranslationCollection<T> = {
   translations: WithLocale<T>[]
 }
-export const getTranslation: <T = any>(
+export const extractSingleTranslation: <T = any>(
   locale: Locale,
 ) => (data: TranslationCollection<T>) => T = <T extends {}>(locale: Locale) =>
   R.pipe(
@@ -20,21 +20,21 @@ export const getTranslations: <T = any>(
   data: TranslationCollection<T>,
 ) => WithLocale<T>[] = R.prop('translations')
 
-export const getTranslationRecursively: (
+export const filterByLocale: (locale: Locale) => (multilingual: any) => any = (
   locale: Locale,
-) => (multilingual: any) => any = (locale: Locale) =>
+) =>
   R.cond([
     [
       R.has('translations'),
       R.pipe(
-        getTranslation(locale),
+        extractSingleTranslation(locale),
         // use excplicit arrow function to avoid maximum call stack error
-        node => getTranslationRecursively(locale)(node),
+        node => filterByLocale(locale)(node),
       ),
     ],
     [
       R.either(R.is(Array), R.is(Object)),
-      R.map(node => getTranslationRecursively(locale)(node)),
+      R.map(node => filterByLocale(locale)(node)),
     ],
     [R.T, R.identity],
   ])

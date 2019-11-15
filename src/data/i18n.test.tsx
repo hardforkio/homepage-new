@@ -2,9 +2,9 @@ import test from 'tape'
 import {
   Locale,
   TranslationCollection,
-  getTranslation,
+  extractSingleTranslation,
   getTranslations,
-  getTranslationRecursively,
+  filterByLocale,
 } from './i18n'
 
 const EN: Locale = 'en'
@@ -13,12 +13,15 @@ const DE: Locale = 'de'
 test('getTranslation selects the desired language version', test => {
   type Word = { word: string }
   const PET: TranslationCollection<Word> = {
-    translations: [{ locale: EN, word: 'dog' }, { locale: DE, word: 'hund' }],
+    translations: [
+      { locale: EN, word: 'dog' },
+      { locale: DE, word: 'hund' },
+    ],
   }
 
   test.plan(2)
-  test.deepEqual(getTranslation(DE)(PET), { word: 'hund' })
-  test.deepEqual(getTranslation(EN)(PET), { word: 'dog' })
+  test.deepEqual(extractSingleTranslation(DE)(PET), { word: 'hund' })
+  test.deepEqual(extractSingleTranslation(EN)(PET), { word: 'dog' })
 })
 
 test('getTranslation returns some language version, when user asks for a language that does not exist', test => {
@@ -28,13 +31,16 @@ test('getTranslation returns some language version, when user asks for a languag
   }
 
   test.plan(1)
-  test.deepEqual(getTranslation(EN)(data), { word: 'hund' })
+  test.deepEqual(extractSingleTranslation(EN)(data), { word: 'hund' })
 })
 
 test('getTranslations gets a list of language versions', test => {
   type Word = { word: string }
   const PET: TranslationCollection<Word> = {
-    translations: [{ locale: EN, word: 'dog' }, { locale: DE, word: 'hund' }],
+    translations: [
+      { locale: EN, word: 'dog' },
+      { locale: DE, word: 'hund' },
+    ],
   }
 
   test.plan(1)
@@ -45,17 +51,17 @@ test('getTranslations gets a list of language versions', test => {
 })
 
 test('findTranslationRecursively on objects without translations', test => {
-  test.deepEqual(getTranslationRecursively(DE)({}), {}, 'empty map')
-  test.deepEqual(getTranslationRecursively(DE)([]), [], 'empty array')
+  test.deepEqual(filterByLocale(DE)({}), {}, 'empty map')
+  test.deepEqual(filterByLocale(DE)([]), [], 'empty array')
   test.deepEqual(
-    getTranslationRecursively(DE)({ key: 'value' }),
+    filterByLocale(DE)({ key: 'value' }),
     {
       key: 'value',
     },
     'map without translations key',
   )
   test.deepEqual(
-    getTranslationRecursively(DE)([{ key: 'value' }]),
+    filterByLocale(DE)([{ key: 'value' }]),
     [
       {
         key: 'value',
@@ -89,10 +95,10 @@ test('findTranslationRecursively on map', test => {
     ],
   }
 
-  test.deepEqual(getTranslationRecursively(DE)(landingPage), {
+  test.deepEqual(filterByLocale(DE)(landingPage), {
     heroSection: { header: 'Wilkommen' },
   })
-  test.deepEqual(getTranslationRecursively(EN)(landingPage), {
+  test.deepEqual(filterByLocale(EN)(landingPage), {
     heroSection: { header: 'Welcome' },
   })
   test.end()
@@ -102,7 +108,10 @@ test('findTranslationRecursively on arrays', test => {
   const pets = [
     {
       title: 'dog',
-      translations: [{ locale: EN, name: 'dog' }, { locale: DE, name: 'Hund' }],
+      translations: [
+        { locale: EN, name: 'dog' },
+        { locale: DE, name: 'Hund' },
+      ],
     },
     {
       title: 'cat',
@@ -115,22 +124,37 @@ test('findTranslationRecursively on arrays', test => {
 
   const petsStore = {
     title: 'petStore',
+    name: 'Johnnies Pets and Toys',
     translations: [
       {
-        locale: EN,
-        pets: pets,
+        locale: DE,
+        description: 'Viele Tiere und keine Spielzeuge',
+        pets: pets[0],
+        toys: {
+          number: 4,
+          price: 10,
+        },
       },
       {
-        locale: DE,
-        pets: pets,
+        locale: EN,
+        description: 'A lot of pets and some toys',
+        pets,
       },
     ],
   }
 
-  test.deepEqual(getTranslationRecursively(DE)(petsStore), {
-    pets: [{ name: 'Hund' }, { name: 'Katze' }],
+  test.deepEqual(filterByLocale(DE)(petsStore), {
+    name: 'Johnnies Pets and Toys',
+    description: 'Viele Tiere und keine Spielzeuge',
+    pets: [{ name: 'Hund' }],
+    toys: {
+      number: 4,
+      price: 10,
+    },
   })
-  test.deepEqual(getTranslationRecursively(EN)(petsStore), {
+  test.deepEqual(filterByLocale(EN)(petsStore), {
+    name: 'Johnnies Pets and Toys',
+    description: 'A lot of pets and some toys',
     pets: [{ name: 'dog' }, { name: 'cat' }],
   })
   test.end()
