@@ -4,7 +4,7 @@ export type Locale = 'en' | 'de'
 
 type WithLocale<T> = T & { locale: string }
 
-interface TranslationCollection<T> {
+export interface TranslationCollection<T> {
   translations: WithLocale<T>[]
 }
 export const extractSingleTranslation: <T = any>(
@@ -23,7 +23,7 @@ export const getTranslations: <T = any>(
   data: TranslationCollection<T>,
 ) => WithLocale<T>[] = R.prop('translations')
 
-export const filterByLocale: (locale: Locale) => (multilingual: any) => any = (
+export const filterByLocale: (locale: Locale) => (currentNode: any) => any = (
   locale: Locale,
 ) =>
   R.cond([
