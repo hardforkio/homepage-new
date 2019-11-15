@@ -1,4 +1,8 @@
 import React, { FunctionComponent } from 'react'
+import { NavLink } from 'reactstrap'
+import * as R from 'ramda'
+import { useLocale, useLocation } from '../../utils/hooks'
+import { HistoryLocation } from '@reach/router'
 
 export interface LinkProps {
   className?: string
@@ -22,3 +26,17 @@ export const SafeExternalLink: FunctionComponent<LinkProps> = ({
     {children}
   </a>
 )
+
+export const LocalizedLink: FunctionComponent<{
+  to: string
+  className?: string
+  linkTag: any
+}> = ({ linkTag, to, children, className }) => {
+  const locale = useLocale()
+  const currentPrefix = locale === 'en' ? '/en' : '/de'
+  return (
+    <NavLink tag={linkTag} className={className} to={`${currentPrefix}${to}`}>
+      {children}
+    </NavLink>
+  )
+}
