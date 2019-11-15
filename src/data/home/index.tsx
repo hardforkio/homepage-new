@@ -1,5 +1,3 @@
-import { Offering } from '../offering'
-
 /*
 import { useLocale } from '../../utils/hooks'
 import { Locale, getTranslation, TranslationCollection } from '../i18n'
