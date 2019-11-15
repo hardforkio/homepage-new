@@ -132,14 +132,15 @@ collections:
     label: "team section"
     delete: false
     create: true
+    identifier_field: "id"
     files:
       - file: "src/data/team/team.json"
         name: "team"
         label: "team"
         format: "json"
+        identifier_field: "id"
         fields:
           - name: "id"
-            description: "unique id"
             widget: "string"
             default: "team section"
 
