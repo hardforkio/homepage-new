@@ -40,6 +40,7 @@ collections:
         format: "json"
         name: "faq"
         label: "FAQ"
+        identifier_field: "id"
         fields:
           - name: "id"
             label: "id"
@@ -67,6 +68,7 @@ collections:
         name: "home"
         label: "Landing Page"
         format: "json"
+        identifier_field: "id"
         fields:
           - name: "id"
             label: "Identifier"
