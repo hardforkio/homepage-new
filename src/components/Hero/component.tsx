@@ -97,10 +97,13 @@ const SubHeadline: FunctionComponent<{
     )}
   >
     <p className={cn(styles.spaced, 'text-uppercase')}>{subTitle}</p>
-    <LinkTag to="/#contact">
-      <Button className="px-5 my-4 text-uppercase" color="primary">
-        Kontakt
-      </Button>
-    </LinkTag>
+    <Button
+      tag="a"
+      href="#contact"
+      className="px-5 my-4 text-uppercase"
+      color="primary"
+    >
+      Kontakt
+    </Button>
   </div>
 )
