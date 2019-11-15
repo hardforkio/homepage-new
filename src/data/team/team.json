@@ -1,0 +1,19 @@
+{
+  "translations": [
+    {
+      "locale": "de",
+      "headline": "Unser Team",
+      "subheadline": "ist toll",
+      "footer": "oder?"
+    },
+    {
+      "locale": "en",
+      "headline": "Our Team",
+      "subheadline": "is great",
+      "footer": "right?"
+    }
+  ],
+  "teamMembers": [
+    "Edwin"
+  ]
+}
