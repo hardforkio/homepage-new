@@ -23,7 +23,7 @@ export const getTranslations: <T = any>(
   data: TranslationCollection<T>,
 ) => WithLocale<T>[] = R.prop('translations')
 
-export const filterByLocale: (locale: Locale) => (multilingual: any) => any = (
+export const filterByLocale: (locale: Locale) => (currentNode: any) => any = (
   locale: Locale,
 ) =>
   R.cond([

@@ -1,9 +1,5 @@
 import * as R from 'ramda'
-import {
-  Locale,
-  extractSingleTranslation,
-  TranslationCollection,
-} from '../i18n'
+import { Locale, filterByLocale, TranslationCollection } from '../i18n'
 import { useLocale } from '../../utils/hooks'
 import data from './imprint.json'
 
@@ -17,6 +13,9 @@ export interface Imprint {
 const imprint: TranslationCollection<Imprint> = data
 
 export const getImprint = (locale: Locale): Imprint =>
-  extractSingleTranslation(locale)(imprint)
+  filterByLocale(locale)(imprint)
 
-export const useImprint: () => Imprint = R.pipe(useLocale, getImprint)
+export const useImprint: () => Imprint = R.pipe(
+  useLocale,
+  getImprint,
+)
