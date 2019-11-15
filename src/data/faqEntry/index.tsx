@@ -20,3 +20,10 @@ export interface FAQEntry {
 const getFAQPage = (locale: Locale): FAQPage => getTranslation(locale)(faq)
 
 export const useFAQPage: () => FAQPage = R.pipe(useLocale, getFAQPage)
+
+export const hasFAQEntries: (faqPage: FAQPage) => boolean = R.pipe<
+  FAQPage,
+  FAQEntry[],
+  number,
+  boolean
+>(R.prop('faqEntries'), R.length, R.lte(1))
