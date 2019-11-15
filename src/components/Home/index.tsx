@@ -5,20 +5,10 @@ import CallToAction from '../CallToAction'
 import { HeroSection } from '../Hero'
 import cn from 'classnames'
 import styles from './Home.module.scss'
+import { HomeData, useHome } from '../../data/home'
+import Layout from '../layout'
 
-interface HomePageProps {
-  title: string
-  metaTitle: string
-  metaDescription: string
-  heading: string
-  offerings: { blurbs: any }
-  contactHeadline: string
-  contactDescription: string
-  contactButton: string
-  contactEmail: string
-}
-
-export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
+export const HomePageTemplate: FunctionComponent<HomeData> = ({
   title,
   heading,
   offerings,
@@ -39,7 +29,7 @@ export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
         className={cn(styles.avoidOverlapWithStickyHeader)}
         id="offerings"
       >
-        <Offerings offerings={offerings.blurbs} />
+        <Offerings offerings={offerings} />
       </section>
       <section id="contact">
         <CallToAction
@@ -52,3 +42,12 @@ export const HomePageTemplate: FunctionComponent<HomePageProps> = ({
     </>
   </div>
 )
+
+export const HomePage: FunctionComponent<{}> = () => {
+  const data: HomeData = useHome()
+  return (
+    <Layout title={data.metaTitle}>
+      <HomePageTemplate {...data} />
+    </Layout>
+  )
+}

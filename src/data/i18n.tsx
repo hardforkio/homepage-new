@@ -4,7 +4,7 @@ export type Locale = 'en' | 'de'
 
 type WithLocale<T> = T & { locale: string }
 
-export type TranslationCollection<T> = {
+export interface TranslationCollection<T> {
   translations: WithLocale<T>[]
 }
 export const getTranslation: <T = any>(
