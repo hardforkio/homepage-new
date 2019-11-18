@@ -15,9 +15,7 @@ export const MenuEntries = ({
   <>
     {[
       <NavItem key="contact">
-        <NavLink to="/#contact" tag={linkTag}>
-          KONTAKT
-        </NavLink>
+        <NavLink href="#contact">KONTAKT</NavLink>
       </NavItem>,
       <NavItem key="faq" className={showFAQ ? '' : 'd-none'}>
         <LocalizedLink to="/faq" linkTag={linkTag}>
