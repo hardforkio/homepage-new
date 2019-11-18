@@ -26,7 +26,7 @@
       "metaDescription": "Software Entwicklung und Business Development",
       "title": "Hardfork",
       "locale": "de",
-      "contactEmail": "contact@hardfork.io",
+      "contactEmail": "mailto:contact@hardfork.io",
       "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück."
     },
     {
@@ -44,7 +44,7 @@
       "metaDescription": "Software development and business services",
       "title": "Hardfork",
       "locale": "en",
-      "contactEmail": "contact@hardfork.io",
+      "contactEmail": "mailto:contact@hardfork.io",
       "contactDescription": "Please send us an e-mail and we will be in touch shortly!"
     }
   ]
