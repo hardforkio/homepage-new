@@ -1,12 +1,12 @@
 {
-  "id": "Edwin",
-  "job title": "BestBoy",
+  "name": "Edwin",
+  "jobTitle": "BestBoy",
   "degree": "Highest",
   "avatar": "/img/student-back-to-school-supplies_925x.jpg",
-  "social media": [
+  "socialMedia": [
     {
       "platform": "github",
-      "user name": "Edwinio"
+      "username": "Edwinio"
     }
   ]
 }

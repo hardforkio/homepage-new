@@ -124,12 +124,18 @@ collections:
                 label: "Offerings"
                 widget: "list"
                 fields:
-                  - { name: "headline", widget: "string" }
-                  - { name: "image", widget: "image", allow_multiple: false }
-                  - { name: "text", widget: "text" }
+                  - name: "headline"
+                    widget: "string"
 
-  - name: "team section"
-    label: "team section"
+                  - name: "image"
+                    widget: "image"
+                    allow_multiple: false
+
+                  - name: "text"
+                    widget: "text"
+
+  - label: "team section"
+    name: "teamSection"
     delete: false
     files:
       - file: "src/data/team/team.json"
@@ -143,41 +149,52 @@ collections:
               - name: "locale"
                 widget: "select"
                 <<: *locales
+
               - name: "headline"
                 widget: "string"
-              - name: "subHeadline"
+
+              - name: "subheadline"
                 widget: "string"
+
               - name: "footer"
                 widget: "string"
 
-          - name: "team members"
+          - label: "team members"
+            name: "teamMembers"
             widget: "relation"
-            collection: "team member"
-            searchFields: ["id", "job title"]
-            valueField: "id"
+            collection: "teamMember"
+            searchFields: ["name"]
+            valueField: "name"
             multiple: true
 
-  - name: "team member"
-    label: "team member"
+  - label: "team member"
+    name: "teamMember"
     folder: "src/data/team/member"
     format: "json"
-    identifier_field: "id"
+    identifier_field: "name"
     create: true
     fields:
-      - label: "full name"
-        name: "id"
+      - name: "name"
         widget: "string"
-      - name: "job title"
+
+      - label: "job title"
+        name: "jobTitle"
         widget: "string"
+
       - name: "degree"
         widget: "string"
+
       - name: "avatar"
         widget: "image"
-      - name: "social media"
+        allow_multiple: false
+
+      - label: "social media"
+        name: "socialMedia"
         widget: "list"
         fields:
           - name: "platform"
             widget: "select"
             <<: *socialMediaPlatforms
-          - name: "user name"
+
+          - name: "username"
             widget: "string"
