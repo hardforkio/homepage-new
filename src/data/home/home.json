@@ -7,7 +7,7 @@
         {
           "headline": "Software",
           "image": "/img/pic01.jpg",
-          "text": "Wir entwickeln für Sie Software-Applikationen nach Ihren Vorstellungen. Wir beseitzen alle dafür notwendigen Kompetenzen vom Frontend mit komplexem Application State Management über Client zu Server Kommunikation und Backend-Entwicklung bis zum skalierbaren und sicheren Betrieb in der Cloud. Mit Hardfork bekommen Sie Ihren gesamten Stack aus einer Hand.\n\nWir nutzen unter anderem die Technologien bzw. Libraries React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) und AWS serverless."
+          "text": "Wir entwickeln für Sie Software-Applikationen nach Ihren Vorstellungen. Unser Team besitzt alle dafür notwendigen Kompetenzen vom Frontend mit komplexem Application State Management über Client zu Server Kommunikation und Backend-Entwicklung bis zum skalierbaren und sicheren Betrieb in der Cloud. Mit Hardfork bekommen Sie Ihren gesamten Stack aus einer Hand.\n\nWir nutzen unter anderem die Technologien bzw. Libraries React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) und AWS serverless."
         },
         {
           "headline": "Company Value",
@@ -33,9 +33,9 @@
       "heading": "Your partner for challenging software projects",
       "offerings": [
         {
-          "headline": "Services",
+          "headline": "Software",
           "image": "/img/codeonscreen.jpg",
-          "text": "Very service"
+          "text": "We build software and web applications according to your needs. \n\nWir entwickeln für Sie Software-Applikationen nach Ihren Vorstellungen. Our team  is proficient in all required technologies be it complex frontend application state management, client to server communication, backend development or reliable and scaling deployment and delivery from the cloud. With Hardfork you get your whole stack from one supplier.\n\nWe use the technologies and libraries that provide the most value for your project. Usually these include React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) and / or AWS serverless."
         }
       ],
       "contactButton": "Contact",
