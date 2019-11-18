@@ -37,7 +37,6 @@ export const useLocation = () => {
     location: globalHistory.location,
     navigate: globalHistory.navigate,
   }
-
   const [state, setState] = useState(initialState)
   useEffect(() => {
     const removeListener = globalHistory.listen(params => {

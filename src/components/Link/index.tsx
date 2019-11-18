@@ -1,8 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { NavLink } from 'reactstrap'
-import * as R from 'ramda'
-import { useLocale, useLocation } from '../../utils/hooks'
-import { HistoryLocation } from '@reach/router'
+import { useLocale } from '../../utils/hooks'
 
 export interface LinkProps {
   className?: string
