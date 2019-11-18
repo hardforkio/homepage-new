@@ -1,6 +1,7 @@
 import * as R from 'ramda'
 import { findDefaultingToHead } from '../utils/helpers'
-export type Locale = 'en' | 'de'
+export const LOCALES = ['en', 'de'] as const
+export type Locale = typeof LOCALES[number]
 
 type WithLocale<T> = T & { locale: string }
 
