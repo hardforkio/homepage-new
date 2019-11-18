@@ -1,5 +1,6 @@
 import * as R from 'ramda'
 
+// Cannot
 const importAll = (r: any) => r.keys().map(r)
 /**
  * Implements ```import data from './*.json'```

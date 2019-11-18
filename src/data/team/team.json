@@ -2,18 +2,16 @@
   "translations": [
     {
       "locale": "de",
-      "headline": "Unser Team",
-      "subheadline": "ist toll",
+      "header": "Unser Team",
+      "subheader": "ist toll",
       "footer": "oder?"
     },
     {
       "locale": "en",
-      "headline": "Our Team",
-      "subheadline": "is great",
+      "header": "Our Team",
+      "subheader": "is great",
       "footer": "right?"
     }
   ],
-  "teamMembers": [
-    "Edwin"
-  ]
+  "teamMembers": ["Edwin"]
 }

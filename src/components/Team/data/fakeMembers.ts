@@ -4,87 +4,95 @@ import avatar03Url from './avatar/03.jpg'
 import avatar04Url from './avatar/04.jpg'
 import avatar05Url from './avatar/05.jpg'
 
-import { Platform } from '../SocialIcon'
-import { TeamMemberProps } from '../index'
+import { Platform, TeamMemberData } from '../../../data/team'
 
-const fakeMembers: TeamMemberProps[] = [
+const fakeMembers: TeamMemberData[] = [
   {
     name: 'Frances Muller',
     jobTitle: 'Lead Accountability Strategist',
-    avatarUrl: avatar01Url,
+    avatar: avatar01Url,
+    degree: 'M.Sc. Biology',
     socialMedia: [
       {
         platform: Platform.github,
-        url: 'https://github.com/hardforkio',
+        username: 'https://github.com/hardforkio',
       },
       {
         platform: Platform.linkedIn,
-        url: 'https://www.linkedin.com/in/company/hardfork',
+        username: 'https://www.linkedin.com/in/company/hardfork',
       },
     ],
   },
   {
     name: 'Sarah Zieme',
     jobTitle: 'Human Factors Associate',
-    avatarUrl: avatar02Url,
+    avatar: avatar02Url,
+    degree: 'PhD Communication Design',
     socialMedia: [
       {
         platform: Platform.github,
-        url: 'https://github.com/hardforkio',
+        username: 'https://github.com/hardforkio',
       },
       {
         platform: Platform.github,
-        url: 'https://github.com/hardforkio',
+        username: 'https://github.com/hardforkio',
       },
     ],
   },
   {
     name: 'Mr. Danielle Pfannerstill',
     jobTitle: 'Legacy Response Assistant',
-    avatarUrl: avatar03Url,
+    avatar: avatar03Url,
+    degree: 'M.Sc. Biology',
     socialMedia: [
       {
         platform: Platform.linkedIn,
-        url: 'https://www.linkedin.com/in/company/hardfork',
+        username: 'https://www.linkedin.com/in/company/hardfork',
       },
     ],
   },
   {
     name: 'Dino Funk',
     jobTitle: 'Chief Accountability Coordinator',
-    avatarUrl: avatar04Url,
+    avatar: avatar04Url,
+    degree: 'M.Sc. Biology',
     socialMedia: [],
   },
   {
     name: 'Jaiden Reinger III',
     jobTitle: 'Investor Identity Supervisor',
-    avatarUrl: avatar05Url,
+    avatar: avatar05Url,
+    degree: 'M.Sc. Biology',
     socialMedia: [],
   },
 
   {
     name: 'Dino Funk',
     jobTitle: 'Chief Accountability Coordinator',
-    avatarUrl: avatar04Url,
+    avatar: avatar04Url,
+    degree: 'M.Sc. Biology',
     socialMedia: [],
   },
   {
     name: 'Jaiden Reinger III',
     jobTitle: 'Investor Identity Supervisor',
-    avatarUrl: avatar05Url,
+    avatar: avatar05Url,
+    degree: 'M.Sc. Biology',
     socialMedia: [],
   },
 
   {
     name: 'Dino Funk',
     jobTitle: 'Chief Accountability Coordinator',
-    avatarUrl: avatar04Url,
+    avatar: avatar04Url,
+    degree: 'M.Sc. Biology',
     socialMedia: [],
   },
   {
     name: 'Jaiden Reinger III',
     jobTitle: 'Investor Identity Supervisor',
-    avatarUrl: avatar05Url,
+    avatar: avatar05Url,
+    degree: 'M.Sc. Biology',
     socialMedia: [],
   },
 ]

@@ -39,8 +39,8 @@ collections:
             widget: "list"
             fields:
               - { name: "locale", widget: "select", <<: *locales }
-              - { name: "headline", widget: "string" }
-              - { name: "subHeadline", widget: "string" }
+              - { name: "header", widget: "string" }
+              - { name: "subHeader", widget: "string" }
               - { name: "metaTitle", widget: "string" }
               - { name: "content", widget: "markdown" }
 
@@ -62,8 +62,8 @@ collections:
             widget: "list"
             fields:
               - { name: "locale", widget: "select", <<: *locales }
-              - { name: "headline", widget: "string" }
-              - { name: "subheadline", widget: "string" }
+              - { name: "header", widget: "string" }
+              - { name: "subheader", widget: "string" }
               - { name: "metaTitle", widget: "string" }
               - name: "faqEntries"
                 widget: "list"
@@ -103,9 +103,9 @@ collections:
               - name: "heading"
                 widget: "string"
 
-              - name: "contactHeadline"
+              - name: "contactHeader"
                 widget: "string"
-                description: "Contact Section Headline"
+                description: "Contact Section Header"
 
               - name: "contactDescription"
                 widget: "string"
@@ -127,7 +127,7 @@ collections:
                 widget: "list"
                 default: []
                 fields:
-                  - name: "headline"
+                  - name: "header"
                     widget: "string"
 
                   - name: "image"
@@ -137,21 +137,15 @@ collections:
                   - name: "text"
                     widget: "text"
 
-  - label: "team section"
+  - label: "Team Section"
     name: "teamSection"
     delete: false
-    create: true
     files:
       - file: "src/data/team/team.json"
         name: "team"
         label: "team"
         format: "json"
         fields:
-          - name: "id"
-            description: "unique id"
-            widget: "string"
-            default: "team section"
-
           - name: "translations"
             widget: "list"
             fields:
@@ -159,10 +153,10 @@ collections:
                 widget: "select"
                 <<: *locales
 
-              - name: "headline"
+              - name: "header"
                 widget: "string"
 
-              - name: "subheadline"
+              - name: "subheader"
                 widget: "string"
 
               - name: "footer"
@@ -176,7 +170,7 @@ collections:
             valueField: "name"
             multiple: true
 
-  - label: "team member"
+  - label: "Team Member"
     name: "teamMember"
     folder: "src/data/team/member"
     format: "json"
