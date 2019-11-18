@@ -36,6 +36,11 @@
           "headline": "Software",
           "image": "/img/codeonscreen.jpg",
           "text": "We build software and web applications according to your needs. \n\nWir entwickeln für Sie Software-Applikationen nach Ihren Vorstellungen. Our team  is proficient in all required technologies be it complex frontend application state management, client to server communication, backend development or reliable and scaling deployment and delivery from the cloud. With Hardfork you get your whole stack from one supplier.\n\nWe use the technologies and libraries that provide the most value for your project. Usually these include React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) and / or AWS serverless."
+        },
+        {
+          "headline": "Company value",
+          "image": "/img/pic01.jpg",
+          "text": "We do not see ourselves as a purely technical supplier but as a partner to help you achieve your company goals. With our background in the Berlin start up ecosystem we know that software firstly needs to generate value for our client's business. We consider this not only when choosing the right architecture and set up for your project but also in all small decisions the daily software development requires."
         }
       ],
       "contactButton": "Contact",
