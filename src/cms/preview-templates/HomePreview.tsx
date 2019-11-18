@@ -1,19 +1,16 @@
-import React, { FunctionComponent, useState } from 'react'
+import React, { FunctionComponent } from 'react'
 import { PreviewProps, getJSON } from './helpers'
-import { TranslationCollection, Locale, getTranslation } from '../../data/i18n'
+import { TranslationCollection, getTranslation } from '../../data/i18n'
 import { HomePageTemplate } from '../../components/Home'
 import { HomeData } from '../../data/home'
-import { LocalePicker } from './LocalePicker'
+import { createPreview } from './Preview'
 
-export const HomePreview: FunctionComponent<PreviewProps> = ({ entry }) => {
-  const [locale, setLocale] = useState<Locale>('de')
-  const data: TranslationCollection<HomeData> = getJSON(entry)
-  const homeTranslated: HomeData = getTranslation(locale)(data)
+const Preview = createPreview<TranslationCollection<HomeData>, HomeData>()
 
-  return (
-    <>
-      <LocalePicker currentLocale={locale} setLocale={setLocale} />
-      <HomePageTemplate {...homeTranslated} />
-    </>
-  )
-}
+export const HomePreview: FunctionComponent<PreviewProps> = ({ entry }) => (
+  <Preview
+    Component={HomePageTemplate}
+    data={getJSON(entry)}
+    translator={getTranslation}
+  />
+)
