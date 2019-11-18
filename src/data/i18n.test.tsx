@@ -4,36 +4,43 @@ import {
   TranslationCollection,
   getTranslations,
   filterByLocale,
+  extractSingleTranslation,
 } from './i18n'
 
 const EN: Locale = 'en'
 const DE: Locale = 'de'
 
-test('getTranslation selects the desired language version', test => {
+test('extractSingleTranslation selects the desired language version', test => {
   type Word = { word: string }
   const PET: TranslationCollection<Word> = {
-    translations: [{ locale: EN, word: 'dog' }, { locale: DE, word: 'hund' }],
+    translations: [
+      { locale: EN, word: 'dog' },
+      { locale: DE, word: 'hund' },
+    ],
   }
 
   test.plan(2)
-  test.deepEqual(filterByLocale(DE)(PET), { word: 'hund' })
-  test.deepEqual(filterByLocale(EN)(PET), { word: 'dog' })
+  test.deepEqual(extractSingleTranslation(DE)(PET), { word: 'hund' })
+  test.deepEqual(extractSingleTranslation(EN)(PET), { word: 'dog' })
 })
 
-test('filterByLocale returns some language version, when user asks for a language that does not exist', test => {
+test('extractSingleTranslation returns some language version, when user asks for a language that does not exist', test => {
   type Word = { word: string }
   const data: TranslationCollection<Word> = {
     translations: [{ locale: DE, word: 'hund' }],
   }
 
   test.plan(1)
-  test.deepEqual(filterByLocale(EN)(data), { word: 'hund' })
+  test.deepEqual(extractSingleTranslation(EN)(data), { word: 'hund' })
 })
 
 test('getTranslations gets a list of language versions', test => {
   type Word = { word: string }
   const PET: TranslationCollection<Word> = {
-    translations: [{ locale: EN, word: 'dog' }, { locale: DE, word: 'hund' }],
+    translations: [
+      { locale: EN, word: 'dog' },
+      { locale: DE, word: 'hund' },
+    ],
   }
 
   test.plan(1)
@@ -59,7 +66,10 @@ test('filterByLocal example: petstore', test => {
   const pets = [
     {
       id: 'dog',
-      translations: [{ locale: EN, name: 'dog' }, { locale: DE, name: 'Hund' }],
+      translations: [
+        { locale: EN, name: 'dog' },
+        { locale: DE, name: 'Hund' },
+      ],
     },
     {
       id: 'cat',
@@ -103,7 +113,10 @@ test('filterByLocal example: petstore', test => {
       id: 'pet shop',
       name: 'Johnnies Pets and Toys',
       description: 'A lot of pets and some toys',
-      pets: [{ id: 'dog', name: 'dog' }, { id: 'cat', name: 'cat' }],
+      pets: [
+        { id: 'dog', name: 'dog' },
+        { id: 'cat', name: 'cat' },
+      ],
       toys: [{ id: 'dog bone', name: 'dog bone' }],
     },
     'english',

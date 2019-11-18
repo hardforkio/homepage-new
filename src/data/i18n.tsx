@@ -7,9 +7,12 @@ type WithLocale<T> = T & { locale: string }
 export interface TranslationCollection<T> {
   translations: WithLocale<T>[]
 }
-export const extractSingleTranslation: <T = any>(
-  locale: Locale, //TODO: fix type signature
-) => (data: TranslationCollection<T>) => T = <T extends {}>(locale: Locale) =>
+
+type CMSData<T, S> = TranslationCollection<T> & S
+
+export const extractSingleTranslation: <T = any, S = {}>(
+  locale: Locale,
+) => (data: CMSData<T, S>) => T & S = <T extends {}>(locale: Locale) =>
   R.converge(R.merge, [
     R.pipe(
       R.prop('translations'),
@@ -31,7 +34,7 @@ export const filterByLocale: (locale: Locale) => (currentNode: any) => any = (
       R.has('translations'),
       R.pipe(
         extractSingleTranslation(locale),
-        // use excplicit arrow function to avoid maximum call stack error
+        // Force lazy evaluation to avoid maximum call stack error
         node => filterByLocale(locale)(node),
       ),
     ],

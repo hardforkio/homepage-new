@@ -1,6 +1,10 @@
 import * as R from 'ramda'
 import data from './home.json'
-import { TranslationCollection, Locale, getTranslation } from '../i18n'
+import {
+  TranslationCollection,
+  Locale,
+  extractSingleTranslation,
+} from '../i18n'
 import { useLocale } from '../../utils/hooks'
 interface Offering {
   headline: string
@@ -21,5 +25,6 @@ export interface HomeData {
 }
 
 const home: TranslationCollection<HomeData> = data
-const getHome = (locale: Locale) => getTranslation<HomeData>(locale)(home)
+const getHome = (locale: Locale) =>
+  extractSingleTranslation<HomeData>(locale)(home)
 export const useHome: () => HomeData = R.pipe(useLocale, getHome)
