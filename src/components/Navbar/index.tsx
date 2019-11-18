@@ -9,7 +9,7 @@ import {
 import { MenuEntries } from './MenuEntries'
 import cn from 'classnames'
 import styles from './NavBar.module.scss'
-import { useNavbarState } from '../../utils/hooks'
+import { useNavbarState, usePathPrefix } from '../../utils/hooks'
 import { useFAQPage, hasFAQEntries } from '../../data/faqEntry'
 
 interface NavbarProps {
@@ -30,6 +30,7 @@ export const NavbarComponent: FunctionComponent<NavbarComponentProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false)
   const toggle = useCallback(() => setIsOpen(!isOpen), [isOpen])
+  const homePath = usePathPrefix('/')
   return (
     <ReactstrapNavbar
       className={cn(
@@ -40,7 +41,7 @@ export const NavbarComponent: FunctionComponent<NavbarComponentProps> = ({
       dark
       expand="md"
     >
-      <NavbarBrand tag={linkTag} to="/">
+      <NavbarBrand tag={linkTag} to={homePath}>
         HARDFORK
       </NavbarBrand>
       <NavbarToggler onClick={toggle} className="border-0 ml-auto" />

@@ -57,6 +57,7 @@
     "react-transition-group": "^2.4.0",
     "react-window-decorators": "^1.0.2",
     "smooth-scroll": "^16.1.0",
+    "url-join": "^4.0.1",
     "use-is-in-viewport": "^1.0.3",
     "vfile-message": "^1"
   },
@@ -80,6 +81,7 @@
     "@types/reactstrap": "^8.0.6",
     "@types/smooth-scroll": "^16.1.0",
     "@types/tape": "^4.2.33",
+    "@types/url-join": "^4.0.0",
     "@types/vfile-message": "^1",
     "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "^10.0.3",
