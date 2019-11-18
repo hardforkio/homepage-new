@@ -2,8 +2,15 @@
  * Created by vaibhav on 31/3/18
  */
 const config = require('./config')
+const getRepoInfo = require('git-repo-info');
 
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
+
+const setBranchEnvironment = () => {
+  const {branch} = getRepoInfo()
+  process.env.GATSBY_BRANCH = branch
+}
+setBranchEnvironment()
 
 module.exports = {
   siteMetadata: {
