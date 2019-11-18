@@ -1,14 +1,22 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useState } from 'react'
 import '../../scss/main.scss'
 import { PreviewProps, getJSON } from './helpers'
-import { TranslationCollection, getTranslations } from '../../data/i18n'
+import { TranslationCollection, Locale, getTranslation } from '../../data/i18n'
 import { FAQPage } from '../../data/faqEntry'
+import { LocalePicker } from './LocalePicker'
 import { FAQComponent } from '../../components/FAQ/component'
-import * as R from 'ramda'
 
 export const FAQPreview: FunctionComponent<PreviewProps> = ({ entry }) => {
-  const faq: TranslationCollection<FAQPage> = getJSON(entry)
-  return <>{R.map(FAQComponent, getTranslations(faq))}</>
+  const [locale, setLocale] = useState<Locale>('de')
+  const data: TranslationCollection<FAQPage> = getJSON(entry)
+  const translated: FAQPage = getTranslation(locale)(data)
+
+  return (
+    <>
+      <LocalePicker currentLocale={locale} setLocale={setLocale} />
+      <FAQComponent {...translated} />
+    </>
+  )
 }
 
 export default FAQPreview
