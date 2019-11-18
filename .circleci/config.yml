@@ -50,6 +50,13 @@ jobs:
       - run:
           name: Lint styles
           command: yarn run lint:styles          
+  compile-dryrun:
+    <<: *defaults
+    steps:
+      - <<: *restore_prepared_repo
+      - run:
+          name: Compilation Dry-Run
+          command: yarn compile-dryrun
   test:
     <<: *defaults
     steps:
@@ -89,6 +96,9 @@ workflows:
           requires:
             - prepare
       - build-storybook:
+          requires:
+            - prepare
+      - compile-dryrun:
           requires:
             - prepare
 

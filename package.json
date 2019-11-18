@@ -8,6 +8,7 @@
   "scripts": {
     "start": "yarn run develop",
     "build": "gatsby build",
+    "compile-dryrun": "tsc -p . --noEmit",
     "develop": "gatsby develop",
     "serve": "gatsby serve",
     "lint": "concurrently \"yarn lint:code\" \"yarn lint:styles\"",
