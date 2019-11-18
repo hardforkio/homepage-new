@@ -39,8 +39,9 @@ collections:
       - file: "src/data/faqEntry/faq.json"
         format: "json"
         name: "faq"
-        label: 'FAQ'
-        fields:  
+        label: "FAQ"
+        identifier_field: "id"
+        fields:
           - name: "id"
             label: "id"
             description: "A name to identify this object within this collection. Should be unique within the collection."
@@ -67,6 +68,7 @@ collections:
         name: "home"
         label: "Landing Page"
         format: "json"
+        identifier_field: "id"
         fields:
           - name: "id"
             label: "Identifier"
@@ -112,6 +114,7 @@ collections:
               - name: "offerings"
                 label: "Offerings"
                 widget: "list"
+                default: []
                 fields:
                   - { name: "headline", widget: "string" }
                   - { name: "image", widget: "image", allow_multiple: false }
