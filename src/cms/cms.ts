@@ -1,15 +1,14 @@
-import CMS, { init } from 'netlify-cms-app'
+import CMS from 'netlify-cms-app'
 import { ImprintPreview } from './preview-templates/ImprintPreview'
 import { FAQPreview } from './preview-templates/FAQPreview'
 import '../scss/main.scss'
 
-init({
+CMS.init({
   config: {
     backend: {
-      branch: `${process.env.GATSBY_BRANCH}`,
+      branch: `feature/issue-191-enable-cms-preview-on-pr-branch`,
     },
   },
 })
-
 CMS.registerPreviewTemplate('imprint', ImprintPreview)
 CMS.registerPreviewTemplate('faq', FAQPreview)
