@@ -39,8 +39,8 @@ collections:
             widget: "list"
             fields:
               - { name: "locale", widget: "select", <<: *locales }
-              - { name: "header", widget: "string" }
-              - { name: "subHeader", widget: "string" }
+              - { name: "headline", widget: "string" }
+              - { name: "subHeadline", widget: "string" }
               - { name: "metaTitle", widget: "string" }
               - { name: "content", widget: "markdown" }
 
@@ -62,8 +62,8 @@ collections:
             widget: "list"
             fields:
               - { name: "locale", widget: "select", <<: *locales }
-              - { name: "header", widget: "string" }
-              - { name: "subheader", widget: "string" }
+              - { name: "headline", widget: "string" }
+              - { name: "subheadline", widget: "string" }
               - { name: "metaTitle", widget: "string" }
               - name: "faqEntries"
                 widget: "list"
@@ -103,9 +103,9 @@ collections:
               - name: "heading"
                 widget: "string"
 
-              - name: "contactHeader"
+              - name: "contactHeadline"
                 widget: "string"
-                description: "Contact Section Header"
+                description: "Contact Section Headline"
 
               - name: "contactDescription"
                 widget: "string"
@@ -127,7 +127,7 @@ collections:
                 widget: "list"
                 default: []
                 fields:
-                  - name: "header"
+                  - name: "headline"
                     widget: "string"
 
                   - name: "image"
