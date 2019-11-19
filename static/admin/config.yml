@@ -162,12 +162,13 @@ collections:
               - name: "footer"
                 widget: "string"
 
-          - label: "team members"
-            name: "teamMembers"
+          - label: "Team Members"
+            name: "teamMember"
             widget: "relation"
             collection: "teamMember"
             searchFields: ["name"]
             valueField: "name"
+            displayFields: ["name", "degree"]
             multiple: true
 
   - label: "Team Member"
