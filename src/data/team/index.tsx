@@ -2,10 +2,7 @@ import * as R from 'ramda'
 import data from './team.json'
 import { Locale, filterByLocale } from '../i18n'
 import { useLocale } from '../../utils/hooks'
-
-// import { importData } from '../helpers'
-// const memberData = importData('./member/', true)
-// console.log(memberData)
+import { expandCollection } from '../helpers'
 
 export enum Platform {
   github = 'github',
@@ -32,6 +29,9 @@ export interface TeamData {
   members: TeamMemberData[]
 }
 
-const getTeam: (locale: Locale) => TeamData = (locale: Locale) =>
-  filterByLocale(locale)(data)
+const getTeam: (locale: Locale) => TeamData = (locale: Locale) => {
+  const expanded = expandCollection('teamMember', './member/', data)
+  return filterByLocale(locale)(expanded)
+}
+
 export const useTeam: () => TeamData = R.pipe(useLocale, getTeam)
