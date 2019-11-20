@@ -1,9 +1,12 @@
 import CMS, { init } from 'netlify-cms-app'
+import '../scss/main.scss'
+import { UuidControl } from './widgets/uuid'
 import { ImprintPreview } from './preview-templates/ImprintPreview'
 import { FAQPreview } from './preview-templates/FAQPreview'
 import { FooterPreview } from './preview-templates/FooterPreview'
-import '../scss/main.scss'
 import { HomePreview } from './preview-templates/HomePreview'
+
+CMS.registerWidget('uuid', UuidControl)
 
 const config = {
   backend: {
