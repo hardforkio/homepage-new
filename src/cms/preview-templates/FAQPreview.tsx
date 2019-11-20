@@ -1,14 +1,17 @@
 import React, { FunctionComponent } from 'react'
 import '../../scss/main.scss'
 import { PreviewProps, getJSON } from './helpers'
-import { TranslationCollection, getTranslations } from '../../data/i18n'
+import { TranslationCollection, getTranslation } from '../../data/i18n'
 import { FAQPage } from '../../data/faqEntry'
+import { createPreview } from './Preview'
 import { FAQComponent } from '../../components/FAQ/component'
-import * as R from 'ramda'
 
-export const FAQPreview: FunctionComponent<PreviewProps> = ({ entry }) => {
-  const faq: TranslationCollection<FAQPage> = getJSON(entry)
-  return <>{R.map(FAQComponent, getTranslations(faq))}</>
-}
+const Preview = createPreview<TranslationCollection<FAQPage>, FAQPage>()
 
-export default FAQPreview
+export const FAQPreview: FunctionComponent<PreviewProps> = ({ entry }) => (
+  <Preview
+    Component={FAQComponent}
+    data={getJSON(entry)}
+    translator={getTranslation}
+  />
+)

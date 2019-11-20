@@ -7,7 +7,7 @@
         {
           "headline": "Software",
           "image": "/img/pic01.jpg",
-          "text": "Wir entwickeln für Sie Software-Applikationen nach Ihren Vorstellungen. Wir beseitzen alle dafür notwendigen Kompetenzen vom Frontend mit komplexem Application State Management über Client zu Server Kommunikation und Backend-Entwicklung bis zum skalierbaren und sicheren Betrieb in der Cloud. Mit Hardfork bekommen Sie Ihren gesamten Stack aus einer Hand.\n\nWir nutzen unter anderem die Technologien bzw. Libraries React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) und AWS serverless."
+          "text": "Wir entwickeln für Sie Software-Applikationen nach Ihren Vorstellungen. Unser Team besitzt alle dafür notwendigen Kompetenzen vom Frontend mit komplexem Application State Management über Client zu Server Kommunikation und Backend-Entwicklung bis zum skalierbaren und sicheren Betrieb in der Cloud. Mit Hardfork bekommen Sie Ihren gesamten Stack aus einer Hand.\n\nWir nutzen unter anderem die Technologien bzw. Libraries React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) und AWS serverless."
         },
         {
           "headline": "Company Value",
@@ -21,9 +21,9 @@
         }
       ],
       "contactButton": "E-Mail senden",
-      "metaTitle": "Hardfork GmbH",
+      "metaTitle": "Hardfork GmbH - Software Entwicklung und Business Development",
       "contactHeadline": "Kontaktanfrage",
-      "metaDescription": "Software Entwicklung und Business Development",
+      "metaDescription": "Wir entwickeln Software nach Ihren Wünschen in Berlin",
       "title": "Hardfork",
       "locale": "de",
       "contactEmail": "mailto:contact@hardfork.io",
@@ -33,15 +33,25 @@
       "heading": "Your partner for challenging software projects",
       "offerings": [
         {
-          "headline": "Services",
+          "headline": "Software",
           "image": "/img/codeonscreen.jpg",
-          "text": "Very service"
+          "text": "We build software and web applications according to your needs. Our team  is proficient in all required technologies be it complex frontend application state management, client to server communication, backend development or reliable and scaling deployment and delivery from the cloud. With Hardfork you get your whole stack from one supplier.\n\nWe use the technologies and libraries that provide the most value for your project. Usually these include React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) and / or AWS serverless."
+        },
+        {
+          "headline": "Company value",
+          "image": "/img/pic01.jpg",
+          "text": "We do not see ourselves as a purely technical supplier but as a partner to help you achieve your company goals. With our background in the Berlin start up ecosystem we know that software firstly needs to generate value for our client's business. We consider this not only when choosing the right architecture and set up for your project but also in all small decisions the daily software development requires."
+        },
+        {
+          "headline": "Quality and transparency",
+          "image": "/img/pic02.jpg",
+          "text": "At Hardfork we only work with highly qualified engineers in full time employment. Our work can be reviewed by the client at all times and the software built by us can be used and experienced from day one. We always work with automated tests, continous integration and deployment and ship new code only after careful review in the team."
         }
       ],
       "contactButton": "Contact",
-      "metaTitle": "Hardfork GmbH",
+      "metaTitle": "Hardfork GmbH - Software development and business services",
       "contactHeadline": "Send e-mail",
-      "metaDescription": "Software development and business services",
+      "metaDescription": "We develop software according to your needs in Berlin, Germany",
       "title": "Hardfork",
       "locale": "en",
       "contactEmail": "mailto:contact@hardfork.io",
