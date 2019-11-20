@@ -14,6 +14,8 @@ export const HomePageTemplate: FunctionComponent<HomeData> = ({
   offerings,
   contactHeadline,
   contactDescription,
+  contactButtonText,
+  moreLinkText,
   emailButton,
   contactEmail,
   metaDescription,
@@ -24,7 +26,12 @@ export const HomePageTemplate: FunctionComponent<HomeData> = ({
       <meta name="description" content={metaDescription} />
     </Helmet>
     <>
-      <HeroSection title={title} heading={heading} />
+      <HeroSection
+        title={title}
+        heading={heading}
+        contactButtonText={contactButtonText}
+        moreLinkText={moreLinkText}
+      />
       <section
         className={cn(styles.avoidOverlapWithStickyHeader)}
         id="offerings"

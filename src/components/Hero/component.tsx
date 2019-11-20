@@ -8,6 +8,8 @@ import { WithBlurryBackground } from '../BlurryBackground'
 interface IntroProps {
   title: string
   subTitle: string
+  contactButtonText: string
+  moreLinkText: string
   showHeadline: boolean
   showBackground: boolean
   showMoreSection: boolean
@@ -15,13 +17,18 @@ interface IntroProps {
   LinkTag: any
 }
 
-export const HeroSectionComponent: FunctionComponent<IntroProps> = props => (
+export const HeroSectionComponent: FunctionComponent<IntroProps> = ({
+  showBackground,
+  showMoreSection,
+  moreLinkText,
+  ...props
+}) => (
   <WithBlurryBackground
-    show={props.showBackground}
+    show={showBackground}
     className={cn(styles.intro, 'd-flex flex-column justify-content-center')}
   >
     <MainSection {...props} className="flex-grow-1" />
-    <MoreSection show={props.showMoreSection} />
+    <MoreSection show={showMoreSection} linkText={moreLinkText} />
   </WithBlurryBackground>
 )
 
@@ -30,23 +37,30 @@ const MainSection: FunctionComponent<{
   title: string
   showHeadline: boolean
   showSubHeadline: boolean
-  LinkTag: any
+  contactButtonText: string
   subTitle: string
 }> = ({
   className,
   title,
   showSubHeadline,
   showHeadline,
-  LinkTag,
+  contactButtonText,
   subTitle,
 }) => (
   <div className={cn(className, 'd-flex flex-column justify-content-center')}>
     <Headline show={showHeadline} title={title} />
-    <SubHeadline show={showSubHeadline} LinkTag={LinkTag} subTitle={subTitle} />
+    <SubHeadline
+      show={showSubHeadline}
+      subTitle={subTitle}
+      contactButtonText={contactButtonText}
+    />
   </div>
 )
 
-const MoreSection: FunctionComponent<{ show: boolean }> = ({ show }) => (
+const MoreSection: FunctionComponent<{
+  show: boolean
+  linkText: string
+}> = ({ show, linkText }) => (
   <div
     className={cn(
       styles.fadedOut,
@@ -63,7 +77,7 @@ const MoreSection: FunctionComponent<{ show: boolean }> = ({ show }) => (
       )}
       href="#offerings"
     >
-      Mehr
+      {linkText}
       <br />
       <AiOutlineArrowDown size={40} />
     </a>
@@ -86,8 +100,8 @@ const Headline: FunctionComponent<{ show: boolean; title: string }> = ({
 const SubHeadline: FunctionComponent<{
   show: boolean
   subTitle: string
-  LinkTag: any
-}> = ({ show, subTitle, LinkTag }) => (
+  contactButtonText: string
+}> = ({ show, subTitle, contactButtonText }) => (
   <div
     className={cn(
       styles.fadeInSubheadline,
@@ -103,7 +117,7 @@ const SubHeadline: FunctionComponent<{
       className="px-5 my-4 text-uppercase"
       color="primary"
     >
-      Kontakt
+      {contactButtonText}
     </Button>
   </div>
 )

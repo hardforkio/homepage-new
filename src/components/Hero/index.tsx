@@ -7,11 +7,15 @@ import { Link } from 'gatsby'
 interface IntroProps {
   title: string
   heading: string
+  contactButtonText: string
+  moreLinkText: string
 }
 
 export const HeroSection: FunctionComponent<IntroProps> = ({
   title,
   heading,
+  contactButtonText,
+  moreLinkText,
 }) => {
   const [showHeadline, setShowHeadline] = useState(false)
   const [showSubheadline, setShowSubheadline] = useState(false)
@@ -44,6 +48,8 @@ export const HeroSection: FunctionComponent<IntroProps> = ({
       <HeroSectionComponent
         subTitle={heading}
         title={title}
+        contactButtonText={contactButtonText}
+        moreLinkText={moreLinkText}
         showSubHeadline={showSubheadline}
         showBackground={showBackground}
         showHeadline={showHeadline}
