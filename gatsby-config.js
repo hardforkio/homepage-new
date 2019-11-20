@@ -2,10 +2,9 @@
  * Created by vaibhav on 31/3/18
  */
 const config = require('./config')
-const setBranchEnvironment = require('./helper')
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
-
-setBranchEnvironment()
+const { addGatsbyCmsBranchToEnvironment } = require('./envHelper')
+addGatsbyCmsBranchToEnvironment()
 
 module.exports = {
   siteMetadata: {
