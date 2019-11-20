@@ -56,7 +56,11 @@ const LocaleTab: FunctionComponent<{
   onClick: () => void
 }> = ({ locale, active, onClick }) => (
   <li className="nav-item">
-    <button className={`nav-link ${active ? 'active' : ''}`} onClick={onClick}>
+    <button
+      className={`nav-link ${active ? 'active' : ''}`}
+      disabled={active}
+      onClick={onClick}
+    >
       {locale}
     </button>
   </li>
