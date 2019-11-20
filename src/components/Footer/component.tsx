@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { LinkProps } from '../Link'
+import { Footer as FooterData } from '../../data/footer'
 
 const LegalBar: FunctionComponent = ({ children }) => (
   <div
@@ -27,15 +28,17 @@ const LegalItem: FunctionComponent = ({ children }) => (
   </div>
 )
 
-const translations = {
-  copyrightText: '© 2017-2019 Hardfork GmbH',
-  imprintLinkText: 'Impressum',
-}
-
 export const Footer: FunctionComponent<{
   ExternalLink: ComponentType<LinkProps>
   InternalLink: ComponentType<LinkProps>
-}> = ({ ExternalLink, InternalLink }) => (
+} & FooterData> = ({
+  ExternalLink,
+  InternalLink,
+  githubLinkURL,
+  contactEmail,
+  imprintLinkText,
+  copyrightText,
+}) => (
   <div
     className={cn(
       'bg-dark py-3 py-md-5',
@@ -47,7 +50,7 @@ export const Footer: FunctionComponent<{
       <div className="px-3">
         <ExternalLink
           className={cn('border-0')}
-          to="https://github.com/hardforkio"
+          to={githubLinkURL}
           title="Github"
         >
           <FontAwesomeIcon icon={faGithub} />
@@ -57,7 +60,7 @@ export const Footer: FunctionComponent<{
       <div className="px-3">
         <ExternalLink
           className={cn('border-0')}
-          to="mailto:contact@hardfork.io"
+          to={`mailto:${contactEmail}`}
           title="Email"
         >
           <FontAwesomeIcon icon={faEnvelope} />
@@ -65,11 +68,9 @@ export const Footer: FunctionComponent<{
       </div>
     </div>
     <LegalBar>
-      <LegalItem>{translations.copyrightText}</LegalItem>
+      <LegalItem>{copyrightText}</LegalItem>
       <LegalItem>
-        <InternalLink to="/de/imprint">
-          {translations.imprintLinkText}
-        </InternalLink>
+        <InternalLink to="/de/imprint">{imprintLinkText}</InternalLink>
       </LegalItem>
     </LegalBar>
   </div>
