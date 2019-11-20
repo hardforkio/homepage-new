@@ -100,6 +100,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-typescript": "^2.1.15",
+    "git-repo-info": "^2.1.1",
     "onchange": "^6.1.0",
     "prettier": "^1.18.2",
     "ramda": "^0.26.1",
