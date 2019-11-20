@@ -3,33 +3,21 @@ import { Col, Row } from 'reactstrap'
 
 import * as R from 'ramda'
 
-import { SocialIcon, SocialIconProps } from './SocialIcon'
+import { SocialIcon } from './SocialIcon'
 
-export interface TeamMemberProps {
-  name: string
-  jobTitle: string
-  avatarUrl: string
-  socialMedia: SocialIconProps[]
-}
+import { TeamData, SocialMediaData, TeamMemberData } from '../../data/team'
 
-export interface TeamProps {
-  header: string
-  subhead: string
-  members: TeamMemberProps[]
-  footer: string
-}
-
-export const TeamMember: FunctionComponent<TeamMemberProps> = ({
+export const TeamMember: FunctionComponent<TeamMemberData> = ({
   name,
   jobTitle,
-  avatarUrl,
-  socialMedia,
+  avatar,
+  socialMedia = [],
 }) => (
   <Col sm={6} md={4} lg={3} className="d-flex flex-column mb-5">
     <div className="px-5 px-md-3">
       <img
         className="img-thumbnail w-100 rounded-circle"
-        src={avatarUrl}
+        src={avatar}
         alt={`Avatar ${name}`}
       />
     </div>
@@ -38,7 +26,7 @@ export const TeamMember: FunctionComponent<TeamMemberProps> = ({
       <p className="text-muted mb-2">{jobTitle}</p>
     </div>
     <ul className="list-inline">
-      {R.addIndex<SocialIconProps>(R.map)(
+      {R.addIndex<SocialMediaData>(R.map)(
         (iconProps, id) => (
           <SocialIcon key={id.toString()} {...iconProps} />
         ),
@@ -48,18 +36,18 @@ export const TeamMember: FunctionComponent<TeamMemberProps> = ({
   </Col>
 )
 
-export const Team: FunctionComponent<TeamProps> = ({
+export const Team: FunctionComponent<TeamData> = ({
   header,
-  subhead,
-  members,
+  subheader,
+  members = [],
   footer,
 }) => (
   <section className="text-center py-5">
     <h2>{header}</h2>
-    <h5 className="text-muted mb-5">{subhead}</h5>
+    <h5 className="text-muted mb-5">{subheader}</h5>
 
     <Row className="justify-content-center">
-      {R.addIndex<TeamMemberProps>(R.map)(
+      {R.addIndex<TeamMemberData>(R.map)(
         (member, id) => (
           <TeamMember key={id.toString()} {...member} />
         ),
