@@ -1,0 +1,13 @@
+{
+  "uuid": "fa9da98a-c75c-4908-ac9d-dad0e863a1d6",
+  "name": "Billy Brown",
+  "jobTitle": "Bakerman",
+  "degree": "Apprentice",
+  "avatar": "/img/coffee.png",
+  "socialMedia": [
+    {
+      "platform": "linkedIn",
+      "username": "BillyBrown"
+    }
+  ]
+}
