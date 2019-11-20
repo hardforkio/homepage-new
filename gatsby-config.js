@@ -2,26 +2,9 @@
  * Created by vaibhav on 31/3/18
  */
 const config = require('./config')
-const getRepoInfo = require('git-repo-info')
-
+const setBranchEnvironment = require('./helper')
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
-const setBranchEnvironment = () => {
-  const { branch } = getRepoInfo()
-  console.log('BRANCH', branch)
-  console.log('BRANCH', process.env.GATSBY_BRANCH)
-  console.log('BRANCH', process.env.BRANCH)
-  console.log('HEAD', process.env.HEAD)
-  console.log('NETLIFY', process.env.NETLIFY)
-  if (process.env.NETLIFY) {
-    process.env.GATSBY_BRANCH = process.env.HEAD
-  } else {
-    process.env.GATSBY_BRANCH = branch
-
-  }
-
-
-}
 setBranchEnvironment()
 
 module.exports = {
@@ -98,8 +81,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        modulePath: `${__dirname}/src/cms/cms.ts`,
         manualInit: true,
+        modulePath: `${__dirname}/src/cms/cms.ts`,
       },
     },
     'gatsby-plugin-i18n',
