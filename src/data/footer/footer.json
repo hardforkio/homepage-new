@@ -5,6 +5,12 @@
       "imprintLinkText": "Impressum",
       "githubLinkURL": "https://github.com/hardforkio",
       "contactEmail": "contact@hardfork.io"
+    },
+    {
+      "locale": "en",
+      "imprintLinkText": "Imprint",
+      "githubLinkURL": "https://github.com/hardforkio",
+      "contactEmail": "contact@hardfork.io"
     }
   ]
 }
