@@ -1,9 +1,10 @@
+backend:
+  name: git-gateway
+  repo: hardforkio/homepage
+
 media_folder: "static/img"
 public_folder: "/img"
 publish_mode: editorial_workflow
-
-backend: 
-    name: "git-gateway"
 
 collections:
   - name: "imprint"
