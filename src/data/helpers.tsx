@@ -1,12 +1,36 @@
 import * as R from 'ramda'
 
-const importAll = (r: any) => r.keys().map(r)
-/**
- * Implements ```import data from './*.json'```
- *
- * From https://webpack.js.org/guides/dependency-management/#context-module-api
- */
-export const importData: <T>(
-  path: string,
-  includeSubdirs: boolean,
-) => T[] = R.pipe(R.partialRight(require.context, [/\.json$/]), importAll)
+// see: https://webpack.js.org/guides/dependency-management/#context-module-api
+export const importAll = <T extends {}>(
+  requiredContext: __WebpackModuleApi.RequireContext,
+) => {
+  var cache: T[] = []
+  requiredContext
+    .keys()
+    .forEach((key: string) => cache.push(requiredContext(key)))
+  return cache
+}
+
+export const filterDataByUuid = (
+  relationPath: string[],
+  relationData: any[],
+  collection: any,
+) =>
+  R.filter(
+    R.pipe(
+      R.prop('uuid'),
+      R.flip(R.includes)(R.path(relationPath, collection)),
+    ),
+    relationData,
+  )
+
+// TODO: Add typings.
+export const expandRelation: (
+  relationPath: string[],
+  relationData: any[],
+  collection: any,
+) => any = R.ifElse(
+  R.converge(R.hasPath, [R.nthArg(0), R.nthArg(2)]),
+  R.converge(R.assocPath, [R.nthArg(0), filterDataByUuid, R.nthArg(2)]),
+  R.nthArg(2),
+)
