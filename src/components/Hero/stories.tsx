@@ -13,5 +13,7 @@ storiesOf('Hero Section', module).add('default', () => (
     showHeadline
     showMoreSection
     LinkTag={ReachLink}
+    contactButtonText="Kontakt"
+    moreLinkText="Mehr"
   />
 ))
