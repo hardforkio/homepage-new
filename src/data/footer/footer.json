@@ -1,0 +1,10 @@
+{
+  "translations": [
+    {
+      "locale": "de",
+      "imprintLinkText": "Impressum",
+      "githubLinkURL": "https://github.com/hardforkio",
+      "contactEmail": "contact@hardfork.io"
+    }
+  ]
+}
