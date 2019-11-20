@@ -1,19 +1,19 @@
 {
-    "id": "FAQPage",
-    "translations": [
-        {
-            "locale": "en",
-            "headline": "FAQ",
-            "subheadline": "Things you want to know",
-            "metaTitle": "faqPage",
-            "faqEntries": []
-        },
-        {
-            "locale": "de",
-            "headline": "FAQ",
-            "subheadline": "Alles was Sie wissen müssen",
-            "metaTitle": "faqPage",
-            "faqEntries": []
-        }
-    ]
+  "id": "FAQPage",
+  "translations": [
+    {
+      "locale": "en",
+      "headline": "FAQ",
+      "subheadline": "Things you do not want to know",
+      "metaTitle": "faqPage",
+      "faqEntries": []
+    },
+    {
+      "locale": "de",
+      "headline": "FAQ",
+      "subheadline": "Alles was Sie wissen müssen",
+      "metaTitle": "faqPage",
+      "faqEntries": []
+    }
+  ]
 }
