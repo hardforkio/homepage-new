@@ -11,6 +11,9 @@ const config = {
   },
 }
 
+console.log(
+  `About to do manual configuration of CMS UI. Passing this config object: ${config}`,
+)
 init({ config })
 CMS.registerPreviewTemplate('imprint', ImprintPreview)
 CMS.registerPreviewTemplate('faq', FAQPreview)

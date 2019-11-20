@@ -16,8 +16,11 @@ const getBranchFromEnvironment = () => {
 
 const branch = getBranchFromEnvironment()
 
-const addGatsbyCmsBranchToEnvironment = () =>
-  (process.env.GATSBY_CMS_BRANCH = branch)
+const addGatsbyCmsBranchToEnvironment = () => {
+  console.log(`Adding environment variable: GATSBY_CMS_BRANCH = ${branch}`)
+  process.env.GATSBY_CMS_BRANCH = branch
+  console.log(`New value: ${process.env.GATSBY_CMS_BRANCH}`)
+}
 
 module.exports = {
   addGatsbyCmsBranchToEnvironment,
