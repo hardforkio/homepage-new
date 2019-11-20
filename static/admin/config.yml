@@ -100,7 +100,13 @@ collections:
               - name: "contactDescription"
                 widget: "string"
 
-              - name: "contactButton"
+              - name: "contactButtonText"
+                widget: "string"
+
+              - name: "moreLinkText"
+                widget: "string"
+
+              - name: "emailButton"
                 widget: "string"
 
               - name: "contactEmail"

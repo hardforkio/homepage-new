@@ -14,7 +14,7 @@ export const HomePageTemplate: FunctionComponent<HomeData> = ({
   offerings,
   contactHeadline,
   contactDescription,
-  contactButton,
+  emailButton,
   contactEmail,
   metaDescription,
 }) => (
@@ -36,7 +36,7 @@ export const HomePageTemplate: FunctionComponent<HomeData> = ({
           headline={contactHeadline}
           description={contactDescription}
           url={contactEmail}
-          buttonLabel={contactButton}
+          buttonLabel={emailButton}
         />
       </section>
     </>
