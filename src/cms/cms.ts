@@ -16,5 +16,5 @@ const config = {
 init({ config })
 CMS.registerPreviewTemplate('imprint', ImprintPreview)
 CMS.registerPreviewTemplate('faq', FAQPreview)
-CMS.registerPreviewTemplate('home', HomePreview)
+//CMS.registerPreviewTemplate('home', HomePreview)
 CMS.registerPreviewTemplate('footer', FooterPreview)
