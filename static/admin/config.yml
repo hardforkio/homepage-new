@@ -76,6 +76,23 @@ collections:
             widget: "hidden"
             default: "home"
 
+          - name: "offerings"
+            label: "Offerings"
+            widget: "list"
+            default: []
+            fields:
+              - name: "translations"
+                label: "translations"
+                widget: "list"
+                fields:
+                  - { name: "locale", widget: "select", options: ["en", "de"] }
+                  - { name: "headline", widget: "string" }
+                  - { name: "image", widget: "image", allow_multiple: false }
+                  - { name: "text", widget: "text" }
+
+          - name: "contactEmail"
+            widget: "string"
+
           - name: "translations"
             label: "translations"
             widget: "list"
@@ -108,23 +125,11 @@ collections:
               - name: "emailButton"
                 widget: "string"
 
-              - name: "contactEmail"
-                widget: "string"
-
               - name: "metaTitle"
                 widget: "string"
 
               - name: "metaDescription"
                 widget: "string"
-
-              - name: "offerings"
-                label: "Offerings"
-                widget: "list"
-                default: []
-                fields:
-                  - { name: "headline", widget: "string" }
-                  - { name: "image", widget: "image", allow_multiple: false }
-                  - { name: "text", widget: "text" }
 
   - name: "footer"
     label: "Footer"

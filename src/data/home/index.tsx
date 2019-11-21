@@ -22,6 +22,22 @@ export interface HomeData {
   metaDescription: string
 }
 
-const home: TranslationCollection<HomeData> = data
+export type HomeDataOnDisk = {
+  id: string
+  offerings: TranslationCollection<Offering>[]
+  contactEmail: string
+} & TranslationCollection<{
+  title: string
+  heading: string
+  contactHeadline: string
+  contactDescription: string
+  contactButtonText: string
+  moreLinkText: string
+  emailButton: string
+  metaTitle: string
+  metaDescription: string
+}>
+
+const home: HomeDataOnDisk = data
 const getHome = (locale: Locale) => getTranslation<HomeData>(locale)(home)
 export const useHome: () => HomeData = R.pipe(useLocale, getHome)
