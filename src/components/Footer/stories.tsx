@@ -2,7 +2,7 @@ import React from 'react'
 import '../../scss/main.scss'
 import { storiesOf } from '@storybook/react'
 import { DispatchActionLink } from '../../storybook/helpers'
-import { Footer as FooterComponent } from './component'
+import { FooterComponent } from './component'
 
 storiesOf('Footer', module).add('default', () => (
   <FooterComponent

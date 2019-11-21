@@ -4,7 +4,7 @@ import { PreviewProps, getJSON } from './helpers'
 import { TranslationCollection, getTranslation, Locale } from '../../data/i18n'
 import * as R from 'ramda'
 import { Footer as FooterData } from '../../data/footer'
-import { Footer as FooterComponent } from '../../components/Footer/component'
+import { FooterComponent } from '../../components/Footer/component'
 import { SafeExternalLink } from '../../components/Link'
 import { createPreview } from './Preview'
 

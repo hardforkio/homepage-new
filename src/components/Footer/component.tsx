@@ -28,7 +28,7 @@ const LegalItem: FunctionComponent = ({ children }) => (
   </div>
 )
 
-export const Footer: FunctionComponent<{
+export const FooterComponent: FunctionComponent<{
   ExternalLink: ComponentType<LinkProps>
   InternalLink: ComponentType<LinkProps>
 } & FooterData> = ({

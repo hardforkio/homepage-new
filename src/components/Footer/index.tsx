@@ -1,5 +1,5 @@
 import React from 'react'
-import { Footer as FooterComponent } from './component'
+import { FooterComponent } from './component'
 import { FunctionComponent } from 'react'
 import { Link } from 'gatsby'
 import { SafeExternalLink } from '../Link'
