@@ -1,6 +1,10 @@
 import * as R from 'ramda'
 import data from './footer.json'
-import { TranslationCollection, Locale, getTranslation } from '../i18n'
+import {
+  TranslationCollection,
+  Locale,
+  extractSingleTranslation,
+} from '../i18n'
 import { useLocale } from '../../utils/hooks'
 export interface Footer {
   imprintLinkText: string
@@ -10,5 +14,6 @@ export interface Footer {
 }
 
 const footer: TranslationCollection<Footer> = data
-const getFooter = (locale: Locale) => getTranslation<Footer>(locale)(footer)
+const getFooter = (locale: Locale) =>
+  extractSingleTranslation<Footer>(locale)(footer)
 export const useFooter: () => Footer = R.pipe(useLocale, getFooter)

@@ -2,9 +2,19 @@ backend:
   name: git-gateway
   repo: hardforkio/homepage
 
+locales: &locales
+  options:
+    - "en"
+    - "de"
+
+socialMediaPlatforms: &socialMediaPlatforms
+  options:
+    - "github"
+    - "linkedIn"
+
 media_folder: "static/img"
 public_folder: "/img"
-publish_mode: editorial_workflow
+publish_mode: "editorial_workflow"
 
 collections:
   - name: "imprint"
@@ -27,11 +37,12 @@ collections:
             label: "translations"
             widget: "list"
             fields:
-              - { name: "locale", widget: "select", options: ["en", "de"] }
+              - { name: "locale", widget: "select", <<: *locales }
               - { name: "headline", widget: "string" }
               - { name: "subHeadline", widget: "string" }
               - { name: "metaTitle", widget: "string" }
               - { name: "content", widget: "markdown" }
+
   - name: "faqPage"
     label: "FaqPage"
     files:
@@ -49,7 +60,7 @@ collections:
             label: "translations"
             widget: "list"
             fields:
-              - { name: "locale", widget: "select", options: ["en", "de"] }
+              - { name: "locale", widget: "select", <<: *locales }
               - { name: "headline", widget: "string" }
               - { name: "subheadline", widget: "string" }
               - { name: "metaTitle", widget: "string" }
@@ -85,7 +96,7 @@ collections:
                 label: "translations"
                 widget: "list"
                 fields:
-                  - { name: "locale", widget: "select", options: ["en", "de"] }
+                  - { name: "locale", widget: "select", <<: *locales }
                   - { name: "headline", widget: "string" }
                   - { name: "image", widget: "image", allow_multiple: false }
                   - { name: "text", widget: "text" }
@@ -99,7 +110,7 @@ collections:
             fields:
               - name: "locale"
                 widget: "select"
-                options: ["en", "de"]
+                <<: *locales
 
               - name: "title"
                 widget: "string"
@@ -153,7 +164,7 @@ collections:
             fields:
               - name: "locale"
                 widget: "select"
-                options: ["en", "de"]
+                <<: *locales
 
               - name: "imprintLinkText"
                 widget: "string"
