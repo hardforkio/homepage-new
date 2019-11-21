@@ -161,3 +161,33 @@ collections:
 
               - name: "copyrightText"
                 widget: "string"
+
+  - name: "seo"
+    label: "Seo"
+    delete: false
+    files:
+      - file: "src/data/seo/seo.json"
+        name: "seo"
+        label: "SEO"
+        format: "json"
+        identifier_field: "id"
+        fields:
+          - name: "id"
+            label: "Identifier"
+            description: "A name to identify this object within this collection. Should be unique within the collection."
+            widget: "hidden"
+            default: "seo"
+
+          - name: "translations"
+            label: "translations"
+            widget: "list"
+            fields:
+              - name: "locale"
+                widget: "select"
+                options: ["en", "de"]
+
+              - name: "title"
+                widget: "string"
+
+              - name: "description"
+                widget: "string"
