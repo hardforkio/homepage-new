@@ -14,7 +14,9 @@ export interface HomeData {
   offerings: Offering[]
   contactHeadline: string
   contactDescription: string
-  contactButton: string
+  contactButtonText: string
+  moreLinkText: string
+  emailButton: string
   contactEmail: string
   metaTitle: string
   metaDescription: string

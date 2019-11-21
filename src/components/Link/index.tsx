@@ -11,7 +11,7 @@ export const SafeExternalLink: FunctionComponent<LinkProps> = ({
   children,
   to,
   title,
-}: any) => (
+}) => (
   <a
     className={className}
     title={title}

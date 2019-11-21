@@ -1,6 +1,7 @@
 import CMS, { init } from 'netlify-cms-app'
 import { ImprintPreview } from './preview-templates/ImprintPreview'
 import { FAQPreview } from './preview-templates/FAQPreview'
+import { FooterPreview } from './preview-templates/FooterPreview'
 import '../scss/main.scss'
 import { HomePreview } from './preview-templates/HomePreview'
 
@@ -16,3 +17,4 @@ init({ config })
 CMS.registerPreviewTemplate('imprint', ImprintPreview)
 CMS.registerPreviewTemplate('faq', FAQPreview)
 CMS.registerPreviewTemplate('home', HomePreview)
+CMS.registerPreviewTemplate('footer', FooterPreview)
