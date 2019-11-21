@@ -1,19 +1,24 @@
 {
-    "id": "FAQPage",
-    "translations": [
+  "id": "FAQPage",
+  "translations": [
+    {
+      "locale": "en",
+      "headline": "FAQ",
+      "subheadline": "Things you want to know",
+      "metaTitle": "faqPage",
+      "faqEntries": [
         {
-            "locale": "en",
-            "headline": "FAQ",
-            "subheadline": "Things you want to know",
-            "metaTitle": "faqPage",
-            "faqEntries": []
-        },
-        {
-            "locale": "de",
-            "headline": "FAQ",
-            "subheadline": "Alles was Sie wissen müssen",
-            "metaTitle": "faqPage",
-            "faqEntries": []
+          "question": "Five hour work day.",
+          "answer": "Yes, we have it."
         }
-    ]
+      ]
+    },
+    {
+      "locale": "de",
+      "headline": "FAQ",
+      "subheadline": "Alles was Sie wissen müssen",
+      "metaTitle": "faqPage",
+      "faqEntries": []
+    }
+  ]
 }
