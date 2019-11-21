@@ -1,1 +1,35 @@
-{}
+{
+  "offerings": [
+    {
+      "translations": [
+        {
+          "locale": "en",
+          "headline": "Offering 1 Headline",
+          "image": "/img/codeonscreen.jpg",
+          "text": "Offering 1 Text"
+        },
+        {
+          "locale": "de",
+          "headline": "Angebot 1 Titel",
+          "image": "/img/codeonscreen.jpg",
+          "text": "Angebot 1 Text"
+        }
+      ]
+    }
+  ],
+  "contactEmail": "mailto:contact@hardfork.io",
+  "translations": [
+    {
+      "heading": "Kopf",
+      "emailButton": "Email",
+      "metaTitle": "Titel",
+      "contactHeadline": "Kontakt",
+      "metaDescription": "Beschreibung",
+      "title": "TItel",
+      "locale": "de",
+      "moreLinkText": "Mehr",
+      "contactDescription": "Kontaktieren sie uns",
+      "contactButtonText": "Kontakt"
+    }
+  ]
+}
