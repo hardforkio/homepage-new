@@ -91,7 +91,11 @@ collections:
             label: "Offerings"
             widget: "list"
             default: []
+            identfier_field: "id"
             fields:
+              - name: "id"
+                widget: "string"
+
               - name: "translations"
                 label: "translations"
                 widget: "list"
