@@ -2,6 +2,9 @@
  * Created by vaibhav on 31/3/18
  */
 const config = require('./config')
+const { setBranchEnvironment } = require('./envHelper')
+
+setBranchEnvironment()
 
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
@@ -79,6 +82,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
+        manualInit: true,
         modulePath: `${__dirname}/src/cms/cms.ts`,
       },
     },
