@@ -1,33 +1,34 @@
 import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
-import { SEOProps } from '../../data/seo'
 
-interface SEOComponentProps extends SEOProps {
+interface SEOProps {
   lang: string
+  metaTitle: string
+  metaDescription: string
 }
 
-export const Seo: FunctionComponent<SEOComponentProps> = ({
+export const Seo: FunctionComponent<SEOProps> = ({
   lang,
-  title,
-  description,
+  metaTitle,
+  metaDescription,
 }) => (
   <Helmet
     htmlAttributes={{
       lang,
     }}
-    title={title}
+    title={metaTitle}
     meta={[
       {
         name: `description`,
-        content: description,
+        content: metaDescription,
       },
       {
         property: `og:title`,
-        content: title,
+        content: metaTitle,
       },
       {
         property: `og:description`,
-        content: description,
+        content: metaDescription,
       },
       {
         property: `og:type`,
