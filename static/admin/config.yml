@@ -86,16 +86,16 @@ collections:
                 widget: "select"
                 options: ["en", "de"]
 
-              - name: "title"
-                widget: "string"
-                label: "Page title"
-                description: "Title shown on top of page. Not an ID."
-
               - name: "metaTitle"
                 widget: "string"
 
               - name: "metaDescription"
                 widget: "string"
+
+              - name: "title"
+                widget: "string"
+                label: "Page title"
+                description: "Title shown on top of page. Not an ID."
 
               - name: "heading"
                 widget: "string"
