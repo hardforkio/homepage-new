@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { NavItem, NavLink } from 'reactstrap'
+import { usePathPrefix } from '../../utils/hooks'
 
 export const MenuEntries: FunctionComponent<{
   linkTag: any
@@ -11,17 +12,20 @@ export const MenuEntries: FunctionComponent<{
   showFAQ,
   contactLinkText = 'KONTAKT',
   FAQLinkText = 'FAQ',
-}) => (
-  <>
-    {[
-      <NavItem key="contact">
-        <NavLink href="#contact">{contactLinkText}</NavLink>
-      </NavItem>,
-      <NavItem key="faq" className={showFAQ ? '' : 'd-none'}>
-        <NavLink to="/de/faq" tag={linkTag}>
-          {FAQLinkText}
-        </NavLink>
-      </NavItem>,
-    ]}
-  </>
-)
+}) => {
+  const FAQPath = usePathPrefix('/faq')
+  return (
+    <>
+      {[
+        <NavItem key="contact">
+          <NavLink href="#contact">{contactLinkText}</NavLink>
+        </NavItem>,
+        <NavItem key="faq" className={showFAQ ? '' : 'd-none'}>
+          <NavLink to={FAQPath} tag={linkTag}>
+            {FAQLinkText}
+          </NavLink>
+        </NavItem>,
+      ]}
+    </>
+  )
+}
