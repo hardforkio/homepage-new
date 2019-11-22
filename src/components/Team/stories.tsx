@@ -1,11 +1,9 @@
 import '../../scss/main.scss'
-
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import * as R from 'ramda'
-
 import { Team } from './'
-import fakeMembers from './data/fakeMembers'
+import { fakeMembers } from './data/fakeMembers'
 import { Container } from 'reactstrap'
 
 const HEADER = 'Our Team'

@@ -1,11 +1,8 @@
 import React, { FunctionComponent } from 'react'
 import { Col, Row } from 'reactstrap'
-
-import * as R from 'ramda'
-
-import { SocialIcon } from './SocialIcon'
-
-import { TeamData, SocialMediaData, TeamMemberData } from '../../data/team'
+import { SocialIcon, SocialMediaData } from './SocialIcon'
+import { TeamData, TeamMemberData } from '../../data/team'
+import { mapToComponent } from '../../utils/helpers'
 
 export const TeamMember: FunctionComponent<TeamMemberData> = ({
   name,
@@ -26,12 +23,7 @@ export const TeamMember: FunctionComponent<TeamMemberData> = ({
       <p className="text-muted mb-2">{jobTitle}</p>
     </div>
     <ul className="list-inline">
-      {R.addIndex<SocialMediaData>(R.map)(
-        (iconProps, id) => (
-          <SocialIcon key={id.toString()} {...iconProps} />
-        ),
-        socialMedia,
-      )}
+      {mapToComponent<SocialMediaData>(SocialIcon, socialMedia)}
     </ul>
   </Col>
 )
@@ -47,12 +39,7 @@ export const Team: FunctionComponent<TeamData> = ({
     <h5 className="text-muted mb-5">{subheader}</h5>
 
     <Row className="justify-content-center">
-      {R.addIndex<TeamMemberData>(R.map)(
-        (member, id) => (
-          <TeamMember key={id.toString()} {...member} />
-        ),
-        members,
-      )}
+      {mapToComponent<TeamMemberData>(TeamMember, members)}
     </Row>
     <Row>
       <Col lg={{ offset: 3, size: 6 }} md={{ offset: 2, size: 8 }}>

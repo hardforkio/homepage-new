@@ -17,8 +17,6 @@ const config = {
   },
 }
 
-init({ config })
-
 CMS.registerWidget(LocalizedStringWidget(LOCALES))
 CMS.registerWidget(UuidWidget())
 
@@ -27,3 +25,5 @@ CMS.registerPreviewTemplate('faq', FAQPreview)
 CMS.registerPreviewTemplate('home', HomePreview)
 CMS.registerPreviewTemplate('footer', FooterPreview)
 CMS.registerPreviewTemplate('navbar', NavbarPreview)
+
+init({ config })

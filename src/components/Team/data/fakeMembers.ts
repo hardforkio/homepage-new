@@ -4,9 +4,10 @@ import avatar03Url from './avatar/03.jpg'
 import avatar04Url from './avatar/04.jpg'
 import avatar05Url from './avatar/05.jpg'
 
-import { Platform, TeamMemberData } from '../../../data/team'
+import { TeamMemberData } from '../../../data/team'
+import { Platform } from '../SocialIcon'
 
-const fakeMembers: TeamMemberData[] = [
+export const fakeMembers: TeamMemberData[] = [
   {
     uuid: '1',
     name: 'Frances Muller',
@@ -16,11 +17,11 @@ const fakeMembers: TeamMemberData[] = [
     socialMedia: [
       {
         platform: Platform.github,
-        username: 'https://github.com/hardforkio',
+        username: 'FrancessMullller34',
       },
       {
         platform: Platform.linkedIn,
-        username: 'https://www.linkedin.com/in/company/hardfork',
+        username: 'FrancessMullller34',
       },
     ],
   },
@@ -33,11 +34,11 @@ const fakeMembers: TeamMemberData[] = [
     socialMedia: [
       {
         platform: Platform.github,
-        username: 'https://github.com/hardforkio',
+        username: 'hardforkio',
       },
       {
         platform: Platform.github,
-        username: 'https://github.com/hardforkio',
+        username: 'hardforkio',
       },
     ],
   },
@@ -50,7 +51,7 @@ const fakeMembers: TeamMemberData[] = [
     socialMedia: [
       {
         platform: Platform.linkedIn,
-        username: 'https://www.linkedin.com/in/company/hardfork',
+        username: 'company/hardfork',
       },
     ],
   },
@@ -105,5 +106,3 @@ const fakeMembers: TeamMemberData[] = [
     socialMedia: [],
   },
 ]
-
-export default fakeMembers
