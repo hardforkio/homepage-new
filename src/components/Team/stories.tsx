@@ -9,7 +9,7 @@ import fakeMembers from './data/fakeMembers'
 import { Container } from 'reactstrap'
 
 const HEADER = 'Our Team'
-const SUBHEAD = '...'
+const SUBHEADER = '...'
 const FOOTER = `
   A somehow long statement stating that we really care for whatever
   you want us to care for and we really need you to join us.
@@ -20,7 +20,7 @@ storiesOf('Team', module)
     <Container>
       <Team
         header={HEADER}
-        subhead={SUBHEAD}
+        subheader={SUBHEADER}
         members={R.slice(0, 3, fakeMembers)}
         footer={FOOTER}
       />
@@ -30,7 +30,7 @@ storiesOf('Team', module)
     <Container>
       <Team
         header={HEADER}
-        subhead={SUBHEAD}
+        subheader={SUBHEADER}
         members={R.slice(0, 5, fakeMembers)}
         footer={FOOTER}
       />
@@ -40,7 +40,7 @@ storiesOf('Team', module)
     <Container>
       <Team
         header={HEADER}
-        subhead={SUBHEAD}
+        subheader={SUBHEADER}
         members={R.slice(0, 7, fakeMembers)}
         footer={FOOTER}
       />
