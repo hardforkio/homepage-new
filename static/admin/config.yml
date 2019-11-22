@@ -28,9 +28,10 @@ collections:
             widget: "list"
             fields:
               - { name: "locale", widget: "select", options: ["en", "de"] }
+              - { name: "metaTitle", widget: "string" }
+              - { name: "metaDescription", widget: "string"}              
               - { name: "headline", widget: "string" }
               - { name: "subHeadline", widget: "string" }
-              - { name: "metaTitle", widget: "string" }
               - { name: "content", widget: "markdown" }
   - name: "faqPage"
     label: "FaqPage"
@@ -50,9 +51,10 @@ collections:
             widget: "list"
             fields:
               - { name: "locale", widget: "select", options: ["en", "de"] }
+              - { name: "metaTitle", widget: "string" }
+              - { name: "metaDescription", widget: "string"}
               - { name: "headline", widget: "string" }
               - { name: "subheadline", widget: "string" }
-              - { name: "metaTitle", widget: "string" }
               - name: "faqEntries"
                 widget: "list"
                 default: []
@@ -84,6 +86,12 @@ collections:
                 widget: "select"
                 options: ["en", "de"]
 
+              - name: "metaTitle"
+                widget: "string"
+
+              - name: "metaDescription"
+                widget: "string"
+
               - name: "title"
                 widget: "string"
                 label: "Page title"
@@ -109,12 +117,6 @@ collections:
                 widget: "string"
 
               - name: "contactEmail"
-                widget: "string"
-
-              - name: "metaTitle"
-                widget: "string"
-
-              - name: "metaDescription"
                 widget: "string"
 
               - name: "offerings"
