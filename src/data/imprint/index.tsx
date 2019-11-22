@@ -7,6 +7,7 @@ export interface Imprint {
   headline: string
   subHeadline: string
   metaTitle: string
+  metaDescription: string
   content: string
 }
 

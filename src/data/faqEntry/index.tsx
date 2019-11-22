@@ -7,6 +7,7 @@ export interface FAQPage {
   headline: string
   subheadline: string
   metaTitle: string
+  metaDescription: string
   faqEntries: FAQEntry[]
 }
 
@@ -17,7 +18,8 @@ export interface FAQEntry {
   answer: string
 }
 
-const getFAQPage = (locale: Locale): FAQPage => getTranslation(locale)(faq)
+export const getFAQPage = (locale: Locale): FAQPage =>
+  getTranslation(locale)(faq)
 
 export const useFAQPage: () => FAQPage = R.pipe(useLocale, getFAQPage)
 

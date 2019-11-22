@@ -23,5 +23,8 @@ export interface HomeData {
 }
 
 const home: TranslationCollection<HomeData> = data
-const getHome = (locale: Locale) => getTranslation<HomeData>(locale)(home)
+
+export const getHome = (locale: Locale) =>
+  getTranslation<HomeData>(locale)(home)
+
 export const useHome: () => HomeData = R.pipe(useLocale, getHome)

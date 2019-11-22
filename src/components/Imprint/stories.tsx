@@ -9,6 +9,7 @@ const ENGLISH_IMPRINT: ImprintData = {
   subHeadline: 'Hardfork Company',
   metaTitle:
     'This is displayed in the title bar and shows you are on the imprint page of Hardfork',
+  metaDescription: 'Hardfork Imprint',
   content: '# Markdown headline\nMarkdown content',
 }
 
@@ -16,6 +17,7 @@ const GERMAN_IMPRINT: ImprintData = {
   headline: 'Impressum',
   subHeadline: 'Hardfork GmbH',
   metaTitle: 'Hardfork Impressum',
+  metaDescription: 'Hardfork Impressum',
   content: '# Markdown abschnitt\nMarkdown inhalt',
 }
 
