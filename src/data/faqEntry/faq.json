@@ -3,19 +3,25 @@
     "translations": [
         {
             "locale": "en",
-            "metaTitle": "faq",
-            "metaDescription": "Frequently asked questions",
+            "title": "FAQ",
             "headline": "FAQ",
             "subheadline": "Things you want to know",
-            "faqEntries": []
+            "faqEntries": [],
+            "seo": {
+                "metaDescription": "Frequently asked questions",
+                "metaKeywords": "Softwareentwicklung"
+            }
         },
         {
             "locale": "de",
-            "metaTitle": "faq",
-            "metaDescription": "Frequently asked questions",
+            "title": "FAQ",
             "headline": "FAQ",
             "subheadline": "Alles was Sie wissen müssen",
-            "faqEntries": []
+            "faqEntries": [],
+            "seo": {
+                "metaDescription": "Frequently asked questions",
+                "metaKeywords": "Softwareentwicklung"
+            }
         }
     ]
 }

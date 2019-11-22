@@ -7,7 +7,7 @@ import styles from './Home.module.scss'
 import { HomeData, useHome } from '../../data/home'
 
 export const HomePageComponent: FunctionComponent<HomeData> = ({
-  title,
+  pageTitle,
   heading,
   offerings,
   contactHeadline,
@@ -19,7 +19,7 @@ export const HomePageComponent: FunctionComponent<HomeData> = ({
 }) => (
   <div>
     <HeroSection
-      title={title}
+      title={pageTitle}
       heading={heading}
       contactButtonText={contactButtonText}
       moreLinkText={moreLinkText}

@@ -38,11 +38,15 @@ collections:
             widget: "list"
             fields:
               - { name: "locale", widget: "select", <<: *locales }
-              - { name: "metaTitle", widget: "string" }
-              - { name: "metaDescription", widget: "string"}              
+              - { name: "title", widget: "string" }
               - { name: "headline", widget: "string" }
               - { name: "subHeadline", widget: "string" }
               - { name: "content", widget: "markdown" }
+              - name: "seo"
+                widget: "object"
+                fields:
+                  - { name: "metaDescription", widget: "string" }
+                  - { name: "metaKeywords", widget: "string" }
 
   - name: "faqPage"
     label: "FaqPage"
@@ -62,8 +66,7 @@ collections:
             widget: "list"
             fields:
               - { name: "locale", widget: "select", <<: *locales }
-              - { name: "metaTitle", widget: "string" }
-              - { name: "metaDescription", widget: "string"}
+              - { name: "title", widget: "string" }
               - { name: "headline", widget: "string" }
               - { name: "subheadline", widget: "string" }
               - name: "faqEntries"
@@ -72,6 +75,11 @@ collections:
                 fields:
                   - { name: "question", widget: "string" }
                   - { name: "answer", widget: "markdown" }
+              - name: "seo"
+                widget: "object"
+                fields:
+                  - { name: "metaDescription", widget: "string" }
+                  - { name: "metaKeywords", widget: "string" }    
 
   - name: "home"
     label: "Landing Page"
@@ -118,13 +126,10 @@ collections:
                 widget: "select"
                 <<: *locales
 
-              - name: "metaTitle"
-                widget: "string"
-
-              - name: "metaDescription"
-                widget: "string"
-
               - name: "title"
+                widget: "string"
+
+              - name: "pageTitle"
                 widget: "string"
                 label: "Page title"
                 description: "Title shown on top of page. Not an ID."
@@ -148,11 +153,11 @@ collections:
               - name: "emailButton"
                 widget: "string"
 
-              - name: "metaTitle"
-                widget: "string"
-
-              - name: "metaDescription"
-                widget: "string"
+              - name: "seo"
+                widget: "object"
+                fields:
+                  - { name: "metaDescription", widget: "string" }
+                  - { name: "metaKeywords", widget: "string" }
 
   - name: "footer"
     label: "Footer"

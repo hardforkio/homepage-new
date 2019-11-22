@@ -58,25 +58,31 @@
     {
       "heading": "Ihr Partner für anspruchsvolle Softwareprojekte",
       "emailButton": "E-Mail senden",
-      "metaTitle": "Hardfork GmbH - Software Entwicklung und Business Development",
+      "title": "Hardfork GmbH - Software Entwicklung und Business Development",
       "contactHeadline": "Kontaktanfrage",
-      "metaDescription": "Wir entwickeln Software nach Ihren Wünschen in Berlin",
-      "title": "Hardfork",
+      "pageTitle": "Hardfork",
       "locale": "de",
       "moreLinkText": "Mehr",
       "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück.",
+      "seo": {
+        "metaDescription": "Wir entwickeln Software nach Ihren Wünschen in Berlin",
+        "metaKeywords": "Softwareentwicklung"
+      },
       "contactButtonText": "Kontakt"
     },
     {
       "heading": "Your partner for challenging software projects",
       "emailButton": "Send E-Mail",
-      "metaTitle": "Hardfork GmbH - Software development and business services",
+      "title": "Hardfork GmbH - Software development and business services",
       "contactHeadline": "Send e-mail",
-      "metaDescription": "We develop software according to your needs in Berlin, Germany",
-      "title": "Hardfork",
+      "pageTitle": "Hardfork",
       "locale": "en",
       "moreLinkText": "More",
       "contactDescription": "Please send us an e-mail and we will be in touch shortly!",
+      "seo": {
+        "metaDescription": "We develop software according to your needs in Berlin, Germany",
+        "metaKeywords": "Software development"
+      },
       "contactButtonText": "Contact"
     }
   ]

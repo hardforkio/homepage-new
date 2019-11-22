@@ -6,13 +6,14 @@ import {
 } from '../i18n'
 import { useLocale } from '../../utils/hooks'
 import data from './faq.json'
+import { SEOContent } from '../../components/SEO'
 
 export interface FAQPage {
   headline: string
+  title: string
   subheadline: string
-  metaTitle: string
-  metaDescription: string
   faqEntries: FAQEntry[]
+  seo: SEOContent
 }
 
 const faq: TranslationCollection<FAQPage> = data

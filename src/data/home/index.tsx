@@ -2,6 +2,7 @@ import * as R from 'ramda'
 import data from './home.json'
 import { TranslationCollection, Locale, filterByLocale } from '../i18n'
 import { useLocale } from '../../utils/hooks'
+import { SEOContent } from '../../components/SEO/index.js'
 interface Offering {
   headline: string
   image: string
@@ -10,6 +11,7 @@ interface Offering {
 
 export interface HomeData {
   title: string
+  pageTitle: string
   heading: string
   offerings: Offering[]
   contactHeadline: string
@@ -18,8 +20,7 @@ export interface HomeData {
   moreLinkText: string
   emailButton: string
   contactEmail: string
-  metaTitle: string
-  metaDescription: string
+  seo: SEOContent
 }
 
 export type HomeDataOnDisk = {
@@ -28,14 +29,14 @@ export type HomeDataOnDisk = {
   contactEmail: string
 } & TranslationCollection<{
   title: string
+  pageTitle: string
   heading: string
   contactHeadline: string
   contactDescription: string
   contactButtonText: string
   moreLinkText: string
   emailButton: string
-  metaTitle: string
-  metaDescription: string
+  seo: SEOContent
 }>
 
 const home: HomeDataOnDisk = data

@@ -6,13 +6,14 @@ import {
 } from '../i18n'
 import { useLocale } from '../../utils/hooks'
 import data from './imprint.json'
+import { SEOContent } from '../../components/SEO'
 
 export interface Imprint {
   headline: string
   subHeadline: string
-  metaTitle: string
-  metaDescription: string
   content: string
+  title: string
+  seo: SEOContent
 }
 
 const imprint: TranslationCollection<Imprint> = data
