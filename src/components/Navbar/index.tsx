@@ -18,7 +18,7 @@ interface NavbarProps {
   className?: string
 }
 
-interface NavbarComponentProps extends NavbarProps, NavbarData {
+export interface NavbarComponentProps extends NavbarProps, NavbarData {
   isTransparent?: boolean
   showFAQ?: boolean
 }
