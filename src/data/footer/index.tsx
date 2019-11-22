@@ -1,7 +1,8 @@
 import * as R from 'ramda'
 import data from './footer.json'
 import { useLocale } from '../../utils/hooks'
-import { translate, Locale, TranslationCollection } from '../../cms/i18n'
+import { translate, Locale } from '../../cms/i18n'
+import { TranslationCollection } from '../../cms/i18n-lib'
 
 export interface FooterData {
   imprintLinkText: string
