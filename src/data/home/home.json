@@ -1,5 +1,6 @@
 {
   "id": "home",
+  "contactEmail": "contactme",
   "translations": [
     {
       "heading": "Ihr Partner für anspruchsvolle Softwareprojekte",
@@ -26,10 +27,9 @@
       "metaDescription": "Wir entwickeln Software nach Ihren Wünschen in Berlin",
       "title": "Hardfork",
       "locale": "de",
-      "contactEmail": "mailto:contact@hardfork.io",
+      "moreLinkText": "Mehr",
       "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück.",
-      "contactButtonText" : "Kontakt",
-      "moreLinkText" : "Mehr"
+      "contactButtonText": "Kontakt"
     },
     {
       "heading": "Your partner for challenging software projects",
@@ -56,10 +56,22 @@
       "metaDescription": "We develop software according to your needs in Berlin, Germany",
       "title": "Hardfork",
       "locale": "en",
-      "contactEmail": "mailto:contact@hardfork.io",
+      "moreLinkText": "More",
       "contactDescription": "Please send us an e-mail and we will be in touch shortly!",
-      "contactButtonText" : "Contact",
-      "moreLinkText" : "More"
+      "contactButtonText": "Contact"
     }
-  ]
+  ],
+  "team": {
+    "translations": [
+      {
+        "locale": "de",
+        "header": "sfd",
+        "subheader": "asdf",
+        "footer": "asfd"
+      }
+    ],
+    "members": [
+      "4d841417-3923-4101-aa5c-e23df0a18f3f"
+    ]
+  }
 }
