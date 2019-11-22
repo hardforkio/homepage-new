@@ -23,10 +23,6 @@ export const extractSingleTranslation: <T = any, S = {}>(
     R.omit(['translations']),
   ])
 
-export const getTranslations: <T = any>(
-  data: TranslationCollection<T>,
-) => WithLocale<T>[] = R.prop('translations')
-
 export const filterByLocale: (locale: Locale) => (currentNode: any) => any = (
   locale: Locale,
 ) =>

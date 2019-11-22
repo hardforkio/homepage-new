@@ -2,7 +2,6 @@ import test from 'tape'
 import {
   Locale,
   TranslationCollection,
-  getTranslations,
   filterByLocale,
   extractSingleTranslation,
 } from './i18n'
@@ -32,22 +31,6 @@ test('extractSingleTranslation returns some language version, when user asks for
 
   test.plan(1)
   test.deepEqual(extractSingleTranslation(EN)(data), { word: 'hund' })
-})
-
-test('getTranslations gets a list of language versions', test => {
-  type Word = { word: string }
-  const PET: TranslationCollection<Word> = {
-    translations: [
-      { locale: EN, word: 'dog' },
-      { locale: DE, word: 'hund' },
-    ],
-  }
-
-  test.plan(1)
-  test.deepEqual(getTranslations(PET), [
-    { locale: EN, word: 'dog' },
-    { locale: DE, word: 'hund' },
-  ])
 })
 
 test('filterByLocal on basic objects', test => {
