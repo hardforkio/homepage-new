@@ -3,16 +3,18 @@
     "translations": [
         {
             "locale": "en",
+            "metaTitle": "faq",
+            "metaDescription": "Frequently asked questions",
             "headline": "FAQ",
             "subheadline": "Things you want to know",
-            "metaTitle": "faqPage",
             "faqEntries": []
         },
         {
             "locale": "de",
+            "metaTitle": "faq",
+            "metaDescription": "Frequently asked questions",
             "headline": "FAQ",
             "subheadline": "Alles was Sie wissen müssen",
-            "metaTitle": "faqPage",
             "faqEntries": []
         }
     ]
