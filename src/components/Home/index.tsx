@@ -7,6 +7,9 @@ import cn from 'classnames'
 import styles from './Home.module.scss'
 import { HomeData, useHome } from '../../data/home'
 import Layout from '../layout'
+import { Team } from '../Team'
+import * as R from 'ramda'
+import { TeamData } from '../../data/team'
 
 export const HomePageTemplate: FunctionComponent<HomeData> = ({
   title,
@@ -19,6 +22,7 @@ export const HomePageTemplate: FunctionComponent<HomeData> = ({
   emailButton,
   contactEmail,
   metaDescription,
+  team,
 }) => (
   <div>
     <Helmet>
@@ -46,8 +50,17 @@ export const HomePageTemplate: FunctionComponent<HomeData> = ({
           buttonLabel={emailButton}
         />
       </section>
+      <section id="team">
+        {hasMembers(team) ? <Team {...team}></Team> : ''}
+      </section>
     </>
   </div>
+)
+
+const hasMembers: (team: TeamData) => boolean = R.pipe(
+  R.prop('members'),
+  R.isEmpty,
+  R.not,
 )
 
 export const HomePage: FunctionComponent<{}> = () => {

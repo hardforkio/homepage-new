@@ -3,12 +3,26 @@ import React, { FunctionComponent } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import * as R from 'ramda'
 
-import { Platform, SocialMediaData } from '../../data/team'
+export enum Platform {
+  github = 'github',
+  linkedIn = 'linkedIn',
+}
+
+export interface SocialMediaData {
+  platform: Platform
+  username: string
+}
 
 const socialMediaIcons: { [type in Platform]: IconProp } = {
   github: faGithub,
   linkedIn: faLinkedinIn,
+}
+
+const socialMediaUrls: { [type in Platform]: string } = {
+  github: 'https://github.com/',
+  linkedIn: 'https://www.linkedin.com/in/',
 }
 
 export const SocialIcon: FunctionComponent<SocialMediaData> = ({
@@ -17,7 +31,7 @@ export const SocialIcon: FunctionComponent<SocialMediaData> = ({
 }) => (
   <a
     className="list-inline-item px-1"
-    href={username}
+    href={R.concat(socialMediaUrls[platform], username)}
     title={platform}
     target="_blank"
     rel="noopener noreferrer"
