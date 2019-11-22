@@ -1,19 +1,22 @@
 {
     "id": "FAQPage",
+    "faqEntries": [],
     "translations": [
         {
             "locale": "en",
-            "headline": "FAQ",
-            "subheadline": "Things you want to know",
-            "metaTitle": "faqPage",
-            "faqEntries": []
+            "value": {
+                "headline": "FAQ",
+                "subheadline": "Things you want to know",
+                "metaTitle": "faqPage"
+            }
         },
         {
             "locale": "de",
-            "headline": "FAQ",
-            "subheadline": "Alles was Sie wissen müssen",
-            "metaTitle": "faqPage",
-            "faqEntries": []
+            "value" : {
+               "headline": "FAQ",
+                "subheadline": "Alles was Sie wissen müssen",
+                "metaTitle": "faqPage"
+            }
         }
     ]
 }
