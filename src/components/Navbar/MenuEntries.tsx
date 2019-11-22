@@ -1,25 +1,21 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import { NavItem, NavLink } from 'reactstrap'
 
-export const MenuEntries: FunctionComponent<{
-  linkTag: any
-  showFAQ: boolean
-  contactLinkText: string
-  FAQLinkText: string
-}> = ({
+export const MenuEntries = ({
   linkTag,
   showFAQ,
-  contactLinkText = 'KONTAKT',
-  FAQLinkText = 'FAQ',
+}: {
+  linkTag: any
+  showFAQ: boolean
 }) => (
   <>
     {[
       <NavItem key="contact">
-        <NavLink href="#contact">{contactLinkText}</NavLink>
+        <NavLink href="#contact">KONTAKT</NavLink>
       </NavItem>,
       <NavItem key="faq" className={showFAQ ? '' : 'd-none'}>
         <NavLink to="/de/faq" tag={linkTag}>
-          {FAQLinkText}
+          FAQ
         </NavLink>
       </NavItem>,
     ]}

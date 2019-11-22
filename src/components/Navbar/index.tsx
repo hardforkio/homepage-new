@@ -11,14 +11,13 @@ import cn from 'classnames'
 import styles from './NavBar.module.scss'
 import { useNavbarState, usePathPrefix } from '../../utils/hooks'
 import { useFAQPage, hasFAQEntries } from '../../data/faqEntry'
-import { useNavbar, Navbar as NavbarData } from '../../data/navbar'
 
 interface NavbarProps {
   linkTag: any
   className?: string
 }
 
-interface NavbarComponentProps extends NavbarProps, NavbarData {
+interface NavbarComponentProps extends NavbarProps {
   isTransparent?: boolean
   showFAQ?: boolean
 }
@@ -28,8 +27,6 @@ export const NavbarComponent: FunctionComponent<NavbarComponentProps> = ({
   linkTag,
   className,
   showFAQ = false,
-  contactLinkText,
-  FAQLinkText,
 }) => {
   const [isOpen, setIsOpen] = useState(false)
   const toggle = useCallback(() => setIsOpen(!isOpen), [isOpen])
@@ -50,31 +47,19 @@ export const NavbarComponent: FunctionComponent<NavbarComponentProps> = ({
       <NavbarToggler onClick={toggle} className="border-0 ml-auto" />
       <Collapse isOpen={isOpen} navbar>
         <Nav className="ml-auto align-items-center text-light" navbar>
-          <MenuEntries
-            linkTag={linkTag}
-            showFAQ={showFAQ}
-            contactLinkText={contactLinkText}
-            FAQLinkText={FAQLinkText}
-          />
+          <MenuEntries linkTag={linkTag} showFAQ={showFAQ} />
         </Nav>
       </Collapse>
     </ReactstrapNavbar>
   )
 }
 
-export const Navbar: FunctionComponent<NavbarProps> = ({
-  linkTag,
-  className = '',
-}) => {
+export const Navbar: FunctionComponent<NavbarProps> = props => {
   const [transparent] = useNavbarState()
   const faqPage = useFAQPage()
-  const cmsData: NavbarData = useNavbar()
-
   return (
     <NavbarComponent
-      {...cmsData}
-      linkTag={linkTag}
-      className={className}
+      {...props}
       showFAQ={hasFAQEntries(faqPage)}
       isTransparent={transparent}
     />
