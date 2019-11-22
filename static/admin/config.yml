@@ -2,9 +2,19 @@ backend:
   name: git-gateway
   repo: hardforkio/homepage
 
+locales: &locales
+  options:
+    - "en"
+    - "de"
+
+socialMediaPlatforms: &socialMediaPlatforms
+  options:
+    - "github"
+    - "linkedIn"
+
 media_folder: "static/img"
 public_folder: "/img"
-publish_mode: editorial_workflow
+publish_mode: "editorial_workflow"
 
 collections:
   - name: "imprint"
@@ -27,12 +37,13 @@ collections:
             label: "translations"
             widget: "list"
             fields:
-              - { name: "locale", widget: "select", options: ["en", "de"] }
+              - { name: "locale", widget: "select", <<: *locales }
               - { name: "metaTitle", widget: "string" }
               - { name: "metaDescription", widget: "string"}              
               - { name: "headline", widget: "string" }
               - { name: "subHeadline", widget: "string" }
               - { name: "content", widget: "markdown" }
+
   - name: "faqPage"
     label: "FaqPage"
     files:
@@ -50,7 +61,7 @@ collections:
             label: "translations"
             widget: "list"
             fields:
-              - { name: "locale", widget: "select", options: ["en", "de"] }
+              - { name: "locale", widget: "select", <<: *locales }
               - { name: "metaTitle", widget: "string" }
               - { name: "metaDescription", widget: "string"}
               - { name: "headline", widget: "string" }
@@ -78,13 +89,34 @@ collections:
             widget: "hidden"
             default: "home"
 
+          - name: "offerings"
+            label: "Offerings"
+            widget: "list"
+            default: []
+            identfier_field: "id"
+            fields:
+              - name: "id"
+                widget: "string"
+
+              - name: "translations"
+                label: "translations"
+                widget: "list"
+                fields:
+                  - { name: "locale", widget: "select", <<: *locales }
+                  - { name: "headline", widget: "string" }
+                  - { name: "image", widget: "image", allow_multiple: false }
+                  - { name: "text", widget: "text" }
+
+          - name: "contactEmail"
+            widget: "string"
+
           - name: "translations"
             label: "translations"
             widget: "list"
             fields:
               - name: "locale"
                 widget: "select"
-                options: ["en", "de"]
+                <<: *locales
 
               - name: "metaTitle"
                 widget: "string"
@@ -116,17 +148,11 @@ collections:
               - name: "emailButton"
                 widget: "string"
 
-              - name: "contactEmail"
+              - name: "metaTitle"
                 widget: "string"
 
-              - name: "offerings"
-                label: "Offerings"
-                widget: "list"
-                default: []
-                fields:
-                  - { name: "headline", widget: "string" }
-                  - { name: "image", widget: "image", allow_multiple: false }
-                  - { name: "text", widget: "text" }
+              - name: "metaDescription"
+                widget: "string"
 
   - name: "footer"
     label: "Footer"
@@ -150,7 +176,7 @@ collections:
             fields:
               - name: "locale"
                 widget: "select"
-                options: ["en", "de"]
+                <<: *locales
 
               - name: "imprintLinkText"
                 widget: "string"
