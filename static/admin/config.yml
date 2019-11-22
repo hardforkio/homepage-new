@@ -2,6 +2,10 @@ backend:
   name: git-gateway
   repo: hardforkio/homepage
 
+media_folder: "static/img"
+public_folder: "/img"
+publish_mode: "editorial_workflow"
+
 locales: &locales
   options:
     - "en"
@@ -11,10 +15,6 @@ socialMediaPlatforms: &socialMediaPlatforms
   options:
     - "github"
     - "linkedIn"
-
-media_folder: "static/img"
-public_folder: "/img"
-publish_mode: "editorial_workflow"
 
 collections:
   - name: "imprint"
@@ -242,6 +242,81 @@ collections:
                           - { name: "description", widget: "string" }
                           - { name: "keywords", widget: "string" }
            
+
+          - label: "Team"
+            name: "team"
+            widget: "object"
+            fields:
+              - name: "translations"
+                widget: "list"
+                fields:
+                  - name: "locale"
+                    widget: "select"
+                    <<: *locales
+
+                  - name: "header"
+                    widget: "string"
+
+                  - name: "subheader"
+                    widget: "string"
+
+                  - name: "footer"
+                    widget: "string"
+
+              - label: "Team Members"
+                name: "members"
+                widget: "relation"
+                collection: "teamMember"
+                searchFields: ["name"]
+                valueField: "uuid"
+                displayFields: ["name"]
+                multiple: true
+                required: false
+                hint: "The team section will show after adding a member."
+
+  - label: "Team Member"
+    name: "teamMember"
+    folder: "src/data/team/member"
+    format: "json"
+    identifier_field: "name"
+    create: true
+    delete: true
+    editor:
+      preview: false
+    fields:
+      - label: "Member ID"
+        name: "uuid"
+        widget: "uuid"
+
+      - label: "Full Name"
+        name: "name"
+        widget: "string"
+
+      - label: "Job Title"
+        name: "jobTitle"
+        widget: "string"
+
+      - label: "Degree"
+        name: "degree"
+        widget: "string"
+
+      - label: "Avatar"
+        name: "avatar"
+        widget: "image"
+        allow_multiple: false
+
+      - label: "Social Media"
+        name: "socialMedia"
+        widget: "list"
+        fields:
+          - label: "Platform"
+            name: "platform"
+            widget: "select"
+            <<: *socialMediaPlatforms
+
+          - label: "Username"
+            name: "username"
+            widget: "string"
 
   - name: "footer"
     label: "Footer"

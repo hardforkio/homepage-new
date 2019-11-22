@@ -1,19 +1,10 @@
 import { TranslationCollection } from '../i18n'
 import { importAll } from '../helpers'
+import { SocialMediaData } from '../../components/Team/SocialIcon'
 
 export const teamMembers = importAll<TeamMemberData>(
   require.context('./member/', true, /\.json$/),
 )
-
-export enum Platform {
-  github = 'github',
-  linkedIn = 'linkedIn',
-}
-
-export interface SocialMediaData {
-  platform: Platform
-  username: string
-}
 
 export interface TeamMemberData {
   uuid: string

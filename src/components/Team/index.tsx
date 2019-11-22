@@ -3,9 +3,9 @@ import { Col, Row } from 'reactstrap'
 
 import * as R from 'ramda'
 
-import { SocialIcon } from './SocialIcon'
+import { SocialIcon, SocialMediaData } from './SocialIcon'
 
-import { TeamData, SocialMediaData, TeamMemberData } from '../../data/team'
+import { TeamData, TeamMemberData } from '../../data/team'
 
 export const TeamMember: FunctionComponent<TeamMemberData> = ({
   name,
