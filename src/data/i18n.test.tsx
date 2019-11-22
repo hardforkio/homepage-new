@@ -13,8 +13,8 @@ test('extractSingleTranslation selects the desired language version', test => {
   type Word = { word: string }
   const PET: TranslationCollection<Word> = {
     translations: [
-      { locale: EN, word: 'dog' },
-      { locale: DE, word: 'hund' },
+      { locale: EN, value: { word: 'dog' } },
+      { locale: DE, value: { word: 'hund' } },
     ],
   }
 
@@ -26,7 +26,7 @@ test('extractSingleTranslation selects the desired language version', test => {
 test('extractSingleTranslation returns some language version, when user asks for a language that does not exist', test => {
   type Word = { word: string }
   const data: TranslationCollection<Word> = {
-    translations: [{ locale: DE, word: 'hund' }],
+    translations: [{ locale: DE, value: { word: 'hund' } }],
   }
 
   test.plan(1)
@@ -50,15 +50,15 @@ test('filterByLocal example: petstore', test => {
     {
       id: 'dog',
       translations: [
-        { locale: EN, name: 'dog' },
-        { locale: DE, name: 'Hund' },
+        { locale: EN, value: { name: 'dog' } },
+        { locale: DE, value: { name: 'Hund' } },
       ],
     },
     {
       id: 'cat',
       translations: [
-        { locale: EN, name: 'cat' },
-        { locale: DE, name: 'Katze' },
+        { locale: EN, value: { name: 'cat' } },
+        { locale: DE, value: { name: 'Katze' } },
       ],
     },
   ]
@@ -66,8 +66,8 @@ test('filterByLocal example: petstore', test => {
     {
       id: 'dog bone',
       translations: [
-        { locale: EN, name: 'dog bone' },
-        { locale: DE, name: 'Hundeknochen' },
+        { locale: EN, value: { name: 'dog bone' } },
+        { locale: DE, value: { name: 'Hundeknochen' } },
       ],
     },
   ]
@@ -79,13 +79,17 @@ test('filterByLocal example: petstore', test => {
     translations: [
       {
         locale: EN,
-        description: 'A lot of pets and some toys',
-        pets,
+        value: {
+          description: 'A lot of pets and some toys',
+          pets,
+        },
       },
       {
         locale: DE,
-        description: 'Viele Tiere und deren Spielzeuge',
-        pets: [pets[0]],
+        value: {
+          description: 'Viele Tiere und deren Spielzeuge',
+          pets: [pets[0]],
+        },
       },
     ],
   }
