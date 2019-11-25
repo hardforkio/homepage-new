@@ -2,20 +2,11 @@ import React, { FunctionComponent } from 'react'
 import { Navbar } from './Navbar'
 import { Footer } from './Footer'
 import { Link } from 'gatsby'
-import { Seo, SEOProps } from './SEO'
+import { Head } from './Head'
 
-const Layout: FunctionComponent<SEOProps> = ({
-  children,
-  title,
-  metaDescription,
-  metaKeywords,
-}) => (
+const Layout: FunctionComponent<Head> = ({ children, title, meta }) => (
   <div>
-    <Seo
-      title={title}
-      metaDescription={metaDescription}
-      metaKeywords={metaKeywords}
-    />
+    <Head title={title} meta={meta} />
     <header>
       <Navbar linkTag={Link} className="fixed-top" />
     </header>

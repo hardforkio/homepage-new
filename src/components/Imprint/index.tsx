@@ -7,10 +7,10 @@ import ReactMarkdown from 'react-commonmark'
 export const ImprintComponent: FunctionComponent<ImprintData> = ({
   content,
   headline,
-  subHeadline,
+  subheadline,
 }) => (
   <article>
-    <TitleBanner title={headline} subtitle={subHeadline} />
+    <TitleBanner title={headline} subtitle={subheadline} />
     <ContentWrap>
       <ReactMarkdown source={content} />
     </ContentWrap>

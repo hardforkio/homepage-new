@@ -5,12 +5,12 @@ import { NavbarStateProvider, LocaleProvider } from '../utils/hooks'
 import { getImprint } from '../data/imprint'
 
 const ImprintPage: FunctionComponent<{}> = () => {
-  const { seo, title } = getImprint('de')
+  const { head } = getImprint('de')
 
   return (
     <LocaleProvider value="de">
       <NavbarStateProvider>
-        <Layout {...seo} title={title}>
+        <Layout {...head}>
           <Imprint />
         </Layout>
       </NavbarStateProvider>

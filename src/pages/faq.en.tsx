@@ -5,11 +5,11 @@ import { FAQ } from '../components/FAQ'
 import { getFAQPage } from '../data/faqEntry'
 
 const FAQPage: FunctionComponent<{}> = () => {
-  const { seo, title } = getFAQPage('en')
+  const { head } = getFAQPage('en')
   return (
     <LocaleProvider value="en">
       <NavbarStateProvider>
-        <Layout {...seo} title={title}>
+        <Layout {...head}>
           <FAQ />
         </Layout>
       </NavbarStateProvider>

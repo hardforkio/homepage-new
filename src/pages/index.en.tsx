@@ -5,12 +5,12 @@ import Layout from '../components/layout'
 import { getHome } from '../data/home'
 
 const HomePage = () => {
-  const { seo, title } = getHome('en')
+  const { head } = getHome('en')
 
   return (
     <LocaleProvider value="en">
       <NavbarStateProvider>
-        <Layout {...seo} title={title}>
+        <Layout {...head}>
           <HomepageComponent />
         </Layout>
       </NavbarStateProvider>

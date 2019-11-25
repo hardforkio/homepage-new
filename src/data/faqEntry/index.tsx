@@ -1,22 +1,26 @@
 import * as R from 'ramda'
-import {
-  Locale,
-  extractSingleTranslation,
-  TranslationCollection,
-} from '../i18n'
+import { Locale, TranslationCollection, filterByLocale } from '../i18n'
 import { useLocale } from '../../utils/hooks'
 import data from './faq.json'
-import { SEOContent } from '../../components/SEO'
+import { Head } from '../../components/Head'
 
 export interface FAQPage {
   headline: string
-  title: string
   subheadline: string
   faqEntries: FAQEntry[]
-  seo: SEOContent
+  head: Head
 }
 
-const faq: TranslationCollection<FAQPage> = data
+export type FAQPageOnDisk = {
+  id: string
+  head: TranslationCollection<Head>
+} & TranslationCollection<{
+  headline: string
+  subheadline: string
+  faqEntries: FAQEntry[]
+}>
+
+const faq: FAQPageOnDisk = data
 
 export interface FAQEntry {
   question: string
@@ -24,7 +28,7 @@ export interface FAQEntry {
 }
 
 export const getFAQPage = (locale: Locale): FAQPage =>
-  extractSingleTranslation<FAQPage>(locale)(faq)
+  filterByLocale(locale)(faq)
 
 export const useFAQPage: () => FAQPage = R.pipe(useLocale, getFAQPage)
 

@@ -6,23 +6,27 @@ import { Imprint as ImprintData } from '../../data/imprint'
 
 const ENGLISH_IMPRINT: ImprintData = {
   headline: 'Imprint',
-  title: 'Hardfork',
-  subHeadline: 'Hardfork Company',
+  subheadline: 'Hardfork Company',
   content: '# Markdown headline\nMarkdown content',
-  seo: {
-    metaDescription: 'Hardfork',
-    metaKeywords: 'Software Development',
+  head: {
+    title: 'Hardfork',
+    meta: {
+      description: 'Hardfork',
+      keywords: 'Software Development',
+    },
   },
 }
 
 const GERMAN_IMPRINT: ImprintData = {
   headline: 'Impressum',
-  title: 'Hardfork',
-  subHeadline: 'Hardfork GmbH',
+  subheadline: 'Hardfork GmbH',
   content: '# Markdown abschnitt\nMarkdown inhalt',
-  seo: {
-    metaDescription: 'Hardfork',
-    metaKeywords: 'Software Development',
+  head: {
+    title: 'Hardfork',
+    meta: {
+      description: 'Hardfork',
+      keywords: 'Software Development',
+    },
   },
 }
 

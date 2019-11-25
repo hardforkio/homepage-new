@@ -2,19 +2,17 @@ import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
 import { useLocale } from '../../utils/hooks'
 
-export interface SEOContent {
-  metaDescription: string
-  metaKeywords: string
-}
-export interface SEOProps extends SEOContent {
+export interface Head {
   title: string
+  meta: MetaContent
 }
 
-export const Seo: FunctionComponent<SEOProps> = ({
-  title,
-  metaDescription,
-  metaKeywords,
-}) => {
+export interface MetaContent {
+  description: string
+  keywords: string
+}
+
+export const Head: FunctionComponent<Head> = ({ title, meta }) => {
   const locale = useLocale()
   return (
     <Helmet
@@ -25,7 +23,7 @@ export const Seo: FunctionComponent<SEOProps> = ({
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: meta.description,
         },
         {
           property: `og:title`,
@@ -33,7 +31,7 @@ export const Seo: FunctionComponent<SEOProps> = ({
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: meta.description,
         },
         {
           property: `og:type`,
@@ -41,7 +39,7 @@ export const Seo: FunctionComponent<SEOProps> = ({
         },
         {
           property: `keywords`,
-          content: metaKeywords,
+          content: meta.keywords,
         },
       ]}
     />
