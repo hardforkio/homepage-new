@@ -37,8 +37,7 @@ export const HeroSection: FunctionComponent<IntroProps> = ({
     }, 2000)
   }, [])
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_, setTransparent] = useNavbarState()
+  const [, setTransparent] = useNavbarState()
   const [inView, ref] = useIsInViewport({ threshold: 90 })
   useEffect(() => {
     setTransparent(!!inView)

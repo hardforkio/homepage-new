@@ -12,8 +12,7 @@ export const TitleBanner: FunctionComponent<{
 }> = ({ title, subtitle }) => {
   const [inView, ref] = useIsInViewport({ threshold: 80 })
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_, setTransparent] = useNavbarState()
+  const [, setTransparent] = useNavbarState()
   useEffect(() => {
     if (inView !== null) {
       setTransparent(inView)
