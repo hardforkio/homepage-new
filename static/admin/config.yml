@@ -194,3 +194,33 @@ collections:
 
               - name: "copyrightText"
                 widget: "string"
+
+
+  - name: "navbar"
+    label: "Navbar"
+    delete: false
+    files:
+      - file: "src/data/navbar/navbar.json"
+        name: "navbar"
+        label: "Navbar"
+        format: "json"
+        identifier_field: "id"
+        fields:
+          - name: "id"
+            label: "Identifier"
+            widget: "hidden"
+            default: "navbar"
+
+          - name: "translations"
+            label: "translations"
+            widget: "list"
+            fields:
+              - name: "locale"
+                widget: "select"
+                <<: *locales
+
+              - name: "contactLinkText"
+                widget: "string"
+
+              - name: "FAQLinkText"
+                widget: "string"

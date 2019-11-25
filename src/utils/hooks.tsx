@@ -27,8 +27,12 @@ export const LocaleProvider = LocaleContext.Provider
 export const useNavbarState = () => useContext(NavbarContext)
 export const useLocale = () => useContext(LocaleContext)
 
-export const usePathPrefix = (to: string): string => {
-  const locale = useLocale()
+export const getPathPrefix = (locale: Locale) => (to: string): string => {
   const currentPrefix = locale === 'en' ? '/en' : '/de'
   return urljoin(currentPrefix, to)
+}
+
+export const usePathPrefix = (to: string): string => {
+  const locale = useLocale()
+  return getPathPrefix(locale)(to)
 }
