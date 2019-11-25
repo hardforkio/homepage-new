@@ -13,8 +13,18 @@ const WithDarkBackground: DecoratorFn = storyFn => (
 storiesOf('Navbar', module)
   .addDecorator(WithDarkBackground)
   .add('visible', () => (
-    <NavbarComponent linkTag={Link} isTransparent={false} />
+    <NavbarComponent
+      linkTag={Link}
+      isTransparent={false}
+      contactLinkText="KONTAKT"
+      FAQLinkText="FAQ"
+    />
   ))
   .add('transparent', () => (
-    <NavbarComponent linkTag={Link} isTransparent={true} />
+    <NavbarComponent
+      linkTag={Link}
+      isTransparent={true}
+      contactLinkText="KONTAKT"
+      FAQLinkText="FAQ"
+    />
   ))

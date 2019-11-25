@@ -6,6 +6,7 @@ import React, {
 } from 'react'
 import { Locale, LOCALES } from '../../data/i18n'
 import * as R from 'ramda'
+import { LocaleProvider } from '../../utils/hooks'
 
 interface PreviewProps<JSONType, ComponentProps> {
   Component: FunctionComponent<ComponentProps>
@@ -24,10 +25,10 @@ export const createPreview = <
   const [locale, setLocale] = useState<Locale>('de')
   const componentProps: ComponentProps = translator(locale)(data)
   return (
-    <>
+    <LocaleProvider value={locale}>
       <LocalePicker currentLocale={locale} setLocale={setLocale} />
       <Component {...componentProps} />
-    </>
+    </LocaleProvider>
   )
 }
 
