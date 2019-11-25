@@ -5,6 +5,7 @@ import { FooterPreview } from './preview-templates/FooterPreview'
 import '../scss/main.scss'
 import { HomePreview } from './preview-templates/HomePreview'
 import { NavbarPreview } from './preview-templates/NavbarPreview'
+//import { LocalizedStringControl } from './widgets/localizedString'
 
 const config = {
   backend: {
@@ -20,3 +21,5 @@ CMS.registerPreviewTemplate('faq', FAQPreview)
 CMS.registerPreviewTemplate('home', HomePreview)
 CMS.registerPreviewTemplate('footer', FooterPreview)
 CMS.registerPreviewTemplate('navbar', NavbarPreview)
+
+//CMS.registerWidget('localizedString', LocalizedStringControl)
