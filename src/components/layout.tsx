@@ -2,13 +2,9 @@ import React, { FunctionComponent } from 'react'
 import { Navbar } from './Navbar'
 import { Footer } from './Footer'
 import { Link } from 'gatsby'
-import { Seo, SEOContent } from './SEO'
+import { Seo, SEOProps } from './SEO'
 
-interface LayoutProps extends SEOContent {
-  title: string
-}
-
-const Layout: FunctionComponent<LayoutProps> = ({
+const Layout: FunctionComponent<SEOProps> = ({
   children,
   title,
   metaDescription,
