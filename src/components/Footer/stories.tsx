@@ -12,5 +12,6 @@ storiesOf('Footer', module).add('default', () => (
     imprintLinkText="Impressum"
     githubLinkURL="https://github.com/hardforkio"
     contactEmail="contact@hardfork.io"
+    imprintLink="/de/imprint"
   />
 ))

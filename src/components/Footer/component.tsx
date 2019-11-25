@@ -31,6 +31,7 @@ const LegalItem: FunctionComponent = ({ children }) => (
 export const FooterComponent: FunctionComponent<{
   ExternalLink: ComponentType<LinkProps>
   InternalLink: ComponentType<LinkProps>
+  imprintLink: string
 } & FooterData> = ({
   ExternalLink,
   InternalLink,
@@ -38,6 +39,7 @@ export const FooterComponent: FunctionComponent<{
   contactEmail,
   imprintLinkText,
   copyrightText,
+  imprintLink,
 }) => (
   <div
     className={cn(
@@ -70,7 +72,7 @@ export const FooterComponent: FunctionComponent<{
     <LegalBar>
       <LegalItem>{copyrightText}</LegalItem>
       <LegalItem>
-        <InternalLink to="/de/imprint">{imprintLinkText}</InternalLink>
+        <InternalLink to={imprintLink}>{imprintLinkText}</InternalLink>
       </LegalItem>
     </LegalBar>
   </div>

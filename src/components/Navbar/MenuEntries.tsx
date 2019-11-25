@@ -1,23 +1,31 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { NavItem, NavLink } from 'reactstrap'
+import { usePathPrefix } from '../../utils/hooks'
 
-export const MenuEntries = ({
-  linkTag,
-  showFAQ,
-}: {
+export const MenuEntries: FunctionComponent<{
   linkTag: any
   showFAQ: boolean
-}) => (
-  <>
-    {[
-      <NavItem key="contact">
-        <NavLink href="#contact">KONTAKT</NavLink>
-      </NavItem>,
-      <NavItem key="faq" className={showFAQ ? '' : 'd-none'}>
-        <NavLink to="/de/faq" tag={linkTag}>
-          FAQ
-        </NavLink>
-      </NavItem>,
-    ]}
-  </>
-)
+  contactLinkText: string
+  FAQLinkText: string
+}> = ({
+  linkTag,
+  showFAQ,
+  contactLinkText = 'KONTAKT',
+  FAQLinkText = 'FAQ',
+}) => {
+  const FAQPath = usePathPrefix('/faq')
+  return (
+    <>
+      {[
+        <NavItem key="contact">
+          <NavLink href="#contact">{contactLinkText}</NavLink>
+        </NavItem>,
+        <NavItem key="faq" className={showFAQ ? '' : 'd-none'}>
+          <NavLink to={FAQPath} tag={linkTag}>
+            {FAQLinkText}
+          </NavLink>
+        </NavItem>,
+      ]}
+    </>
+  )
+}
