@@ -135,12 +135,11 @@ collections:
                 widget: "select"
                 <<: *locales
 
-              - name: "pageTitle"
+              - name: "heroHeadline"
                 widget: "string"
-                label: "Page title"
                 description: "Title shown on top of page. Not an ID."
 
-              - name: "heading"
+              - name: "heroSubheadline"
                 widget: "string"
 
               - name: "contactHeadline"

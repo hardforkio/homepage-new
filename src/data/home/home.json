@@ -56,20 +56,20 @@
   "contactEmail": "mailto:contact@hardfork.io",
   "translations": [
     {
-      "heading": "Ihr Partner für anspruchsvolle Softwareprojekte",
+      "heroSubheadline": "Ihr Partner für anspruchsvolle Softwareprojekte",
       "emailButton": "E-Mail senden",
       "contactHeadline": "Kontaktanfrage",
-      "pageTitle": "Hardfork",
+      "heroHeadline": "Hardfork",
       "locale": "de",
       "moreLinkText": "Mehr",
       "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück.",
       "contactButtonText": "Kontakt"
     },
     {
-      "heading": "Your partner for challenging software projects",
+      "heroSubheadline": "Your partner for challenging software projects",
       "emailButton": "Send E-Mail",
       "contactHeadline": "Send e-mail",
-      "pageTitle": "Hardfork",
+      "heroHeadline": "Hardfork",
       "locale": "en",
       "moreLinkText": "More",
       "contactDescription": "Please send us an e-mail and we will be in touch shortly!",

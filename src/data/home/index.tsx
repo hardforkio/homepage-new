@@ -11,8 +11,8 @@ interface Offering {
 }
 
 export interface HomeData {
-  pageTitle: string
-  heading: string
+  heroHeadline: string
+  heroSubheadline: string
   offerings: Offering[]
   contactHeadline: string
   contactDescription: string
@@ -29,8 +29,8 @@ export type HomeDataOnDisk = {
   contactEmail: string
   head: TranslationCollection<Head>
 } & TranslationCollection<{
-  pageTitle: string
-  heading: string
+  heroHeadline: string
+  heroSubheadline: string
   contactHeadline: string
   contactDescription: string
   contactButtonText: string

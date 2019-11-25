@@ -17,7 +17,7 @@ export const Head: FunctionComponent<Head> = ({ title, meta }) => {
   return (
     <Helmet
       htmlAttributes={{
-        locale,
+        lang: locale,
       }}
       title={title}
       meta={[
