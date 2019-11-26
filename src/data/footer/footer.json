@@ -2,17 +2,21 @@
   "translations": [
     {
       "locale": "de",
-      "imprintLinkText": "Impressum",
-      "githubLinkURL": "https://github.com/hardforkio",
-      "contactEmail": "contact@hardfork.io",
-      "copyrightText" : "© 2017-2019 Hardfork GmbH"
+      "value" : {
+         "imprintLinkText": "Impressum",
+         "githubLinkURL": "https://github.com/hardforkio",
+         "contactEmail": "contact@hardfork.io",
+         "copyrightText" : "© 2017-2019 Hardfork GmbH"
+      }
     },
     {
       "locale": "en",
-      "imprintLinkText": "Imprint",
-      "githubLinkURL": "https://github.com/hardforkio",
-      "contactEmail": "contact@hardfork.io",
-      "copyrightText" : "© 2017-2019 Hardfork GmbH"
+      "value" : {
+         "imprintLinkText": "Imprint",
+         "githubLinkURL": "https://github.com/hardforkio",
+         "contactEmail": "contact@hardfork.io",
+         "copyrightText" : "© 2017-2019 Hardfork GmbH"
+      }
     }
   ]
 }

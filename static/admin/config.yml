@@ -37,11 +37,16 @@ collections:
             label: "translations"
             widget: "list"
             fields:
-              - { name: "locale", widget: "select", <<: *locales }
-              - { name: "headline", widget: "string" }
-              - { name: "subHeadline", widget: "string" }
-              - { name: "metaTitle", widget: "string" }
-              - { name: "content", widget: "markdown" }
+              - name: "locale"
+                widget: "select"
+                <<: *locales
+              - name: "value"
+                widget: "object"
+                fields:
+                  - { name: "headline", widget: "string" }
+                  - { name: "subHeadline", widget: "string" }
+                  - { name: "metaTitle", widget: "string" }
+                  - { name: "content", widget: "markdown" }
 
   - name: "faqPage"
     label: "FaqPage"
@@ -60,16 +65,33 @@ collections:
             label: "translations"
             widget: "list"
             fields:
-              - { name: "locale", widget: "select", <<: *locales }
-              - { name: "headline", widget: "string" }
-              - { name: "subheadline", widget: "string" }
-              - { name: "metaTitle", widget: "string" }
-              - name: "faqEntries"
-                widget: "list"
-                default: []
+              - name: "locale"
+                widget: "select"
+                <<: *locales
+              - name: "value"
+                widget: "object"
                 fields:
-                  - { name: "question", widget: "string" }
-                  - { name: "answer", widget: "markdown" }
+                  - { name: "headline", widget: "string" }
+                  - { name: "subheadline", widget: "string" }
+                  - { name: "metaTitle", widget: "string" }
+          - name: "faqEntries"
+            widget: "list"
+            default: []
+            identfier_field: "id"
+            fields:
+              - name: "id"
+                widget: "string"
+              - name: "translations"
+                widget: "list"
+                fields:
+                  - name: "locale"
+                    widget: "select"
+                    <<: *locales
+                  - name: "value"
+                    widget: "object"
+                    fields:
+                      - { name: "question", widget: "string" }
+                      - { name: "answer", widget: "markdown" }
 
   - name: "home"
     label: "Landing Page"
@@ -100,10 +122,19 @@ collections:
                 label: "translations"
                 widget: "list"
                 fields:
-                  - { name: "locale", widget: "select", <<: *locales }
-                  - { name: "headline", widget: "string" }
-                  - { name: "image", widget: "image", allow_multiple: false }
-                  - { name: "text", widget: "text" }
+                  - name: "locale"
+                    widget: "select"
+                    <<: *locales
+                  - name: "value"
+                    widget: "object"
+                    fields:
+                      - { name: "headline", widget: "string" }
+                      - {
+                          name: "image",
+                          widget: "image",
+                          allow_multiple: false,
+                        }
+                      - { name: "text", widget: "text" }
 
           - name: "contactEmail"
             widget: "string"
@@ -116,35 +147,38 @@ collections:
                 widget: "select"
                 <<: *locales
 
-              - name: "title"
-                widget: "string"
-                label: "Page title"
-                description: "Title shown on top of page. Not an ID."
+              - name: "value"
+                widget: "object"
+                fields:
+                  - name: "title"
+                    widget: "string"
+                    label: "Page title"
+                    description: "Title shown on top of page. Not an ID."
 
-              - name: "heading"
-                widget: "string"
+                  - name: "heading"
+                    widget: "string"
 
-              - name: "contactHeadline"
-                widget: "string"
-                description: "Contact Section Headline"
+                  - name: "contactHeadline"
+                    widget: "string"
+                    description: "Contact Section Headline"
 
-              - name: "contactDescription"
-                widget: "string"
+                  - name: "contactDescription"
+                    widget: "string"
 
-              - name: "contactButtonText"
-                widget: "string"
+                  - name: "contactButtonText"
+                    widget: "string"
 
-              - name: "moreLinkText"
-                widget: "string"
+                  - name: "moreLinkText"
+                    widget: "string"
 
-              - name: "emailButton"
-                widget: "string"
+                  - name: "emailButton"
+                    widget: "string"
 
-              - name: "metaTitle"
-                widget: "string"
+                  - name: "metaTitle"
+                    widget: "string"
 
-              - name: "metaDescription"
-                widget: "string"
+                  - name: "metaDescription"
+                    widget: "string"
 
   - name: "footer"
     label: "Footer"
@@ -170,18 +204,20 @@ collections:
                 widget: "select"
                 <<: *locales
 
-              - name: "imprintLinkText"
-                widget: "string"
+              - name: "value"
+                widget: "object"
+                fields:
+                  - name: "imprintLinkText"
+                    widget: "string"
 
-              - name: "githubLinkURL"
-                widget: "string"
+                  - name: "githubLinkURL"
+                    widget: "string"
 
-              - name: "contactEmail"
-                widget: "string"
+                  - name: "contactEmail"
+                    widget: "string"
 
-              - name: "copyrightText"
-                widget: "string"
-
+                  - name: "copyrightText"
+                    widget: "string"
 
   - name: "navbar"
     label: "Navbar"
