@@ -1,6 +1,5 @@
 import React, { useContext, FunctionComponent, useState } from 'react'
 import { Locale } from '../data/i18n'
-import urljoin from 'url-join'
 
 type NavbarState = [boolean, (newValue: boolean) => void]
 
@@ -29,7 +28,7 @@ export const useLocale = () => useContext(LocaleContext)
 
 export const getPathPrefix = (locale: Locale) => (to: string): string => {
   const currentPrefix = locale === 'en' ? '/en' : '/de'
-  return urljoin(currentPrefix, to)
+  return `${currentPrefix}${to}`
 }
 
 export const usePathPrefix = (to: string): string => {

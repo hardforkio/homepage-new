@@ -14,11 +14,12 @@ export const MenuEntries: FunctionComponent<{
   FAQLinkText = 'FAQ',
 }) => {
   const FAQPath = usePathPrefix('/faq')
+  const contactPath = usePathPrefix('/#contact')
   return (
     <>
       {[
         <NavItem key="contact">
-          <NavLink href="#contact">{contactLinkText}</NavLink>
+          <NavLink href={contactPath}>{contactLinkText}</NavLink>
         </NavItem>,
         <NavItem key="faq" className={showFAQ ? '' : 'd-none'}>
           <NavLink to={FAQPath} tag={linkTag}>
