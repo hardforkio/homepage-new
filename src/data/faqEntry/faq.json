@@ -5,14 +5,14 @@
       "locale": "en",
       "value": {
         "headline": "FAQ",
-        "subheadline": "Things you want to know",
-        "metaTitle": "faqPage"
+        "subheadline": "Common questions about our services",
+        "metaTitle": "Do you want to know more about Hardfork? We are happy to answer all your questions."
       }
     },
     {
       "locale": "de",
       "value": {
-        "headline": "Hardfork FAQ",
+        "headline": "FAQ",
         "subheadline": "Häufige Fragen zu unseren Dienstleistungen",
         "metaTitle": "Haben Sie noch Fragen zu Hardfork? Wir antworten Ihnen gerne."
       }
