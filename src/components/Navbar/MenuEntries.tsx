@@ -1,6 +1,8 @@
 import React, { FunctionComponent } from 'react'
 import { NavItem, NavLink } from 'reactstrap'
-import { usePathPrefix } from '../../utils/hooks'
+import { usePathPrefix, useLocale, useLocation } from '../../utils/hooks'
+import * as R from 'ramda'
+import { HistoryLocation } from '@reach/router'
 
 export const MenuEntries: FunctionComponent<{
   linkTag: any
@@ -25,7 +27,27 @@ export const MenuEntries: FunctionComponent<{
             {FAQLinkText}
           </NavLink>
         </NavItem>,
+        <NavItem key="languageSwitcher">
+          <LanguageSwitcher linkTag={linkTag} />
+        </NavItem>,
       ]}
     </>
+  )
+}
+
+const LanguageSwitcher: FunctionComponent<{ linkTag: any }> = ({ linkTag }) => {
+  const locale = useLocale()
+  const { location } = useLocation()
+  const toPrefix = locale === 'en' ? '/de' : '/en'
+  const linkText = locale === 'en' ? 'DE' : 'EN'
+  const currentPrefix = locale === 'en' ? '/en' : '/de'
+  const to = R.pipe<HistoryLocation, string, string>(
+    R.prop('pathname'),
+    R.replace(currentPrefix, toPrefix),
+  )(location)
+  return (
+    <NavLink to={to} tag={linkTag}>
+      {linkText}
+    </NavLink>
   )
 }

@@ -1,6 +1,12 @@
-import React, { useContext, FunctionComponent, useState } from 'react'
+import React, {
+  useContext,
+  FunctionComponent,
+  useState,
+  useEffect,
+} from 'react'
 import { Locale } from '../data/i18n'
 import urljoin from 'url-join'
+import { globalHistory } from '@reach/router'
 
 type NavbarState = [boolean, (newValue: boolean) => void]
 
@@ -35,4 +41,24 @@ export const getPathPrefix = (locale: Locale) => (to: string): string => {
 export const usePathPrefix = (to: string): string => {
   const locale = useLocale()
   return getPathPrefix(locale)(to)
+}
+
+export const useLocation = () => {
+  const initialState = {
+    location: globalHistory.location,
+    navigate: globalHistory.navigate,
+  }
+  const [state, setState] = useState(initialState)
+  useEffect(() => {
+    const removeListener = globalHistory.listen(params => {
+      const { location } = params
+      const newState = Object.assign({}, initialState, { location })
+      setState(newState)
+    })
+    return () => {
+      removeListener()
+    }
+  }, [initialState])
+
+  return state
 }
