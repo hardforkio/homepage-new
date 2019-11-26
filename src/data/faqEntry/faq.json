@@ -1,22 +1,22 @@
 {
-    "id": "FAQPage",
-    "faqEntries": [],
-    "translations": [
-        {
-            "locale": "en",
-            "value": {
-                "headline": "FAQ",
-                "subheadline": "Things you want to know",
-                "metaTitle": "faqPage"
-            }
-        },
-        {
-            "locale": "de",
-            "value" : {
-               "headline": "FAQ",
-                "subheadline": "Alles was Sie wissen müssen",
-                "metaTitle": "faqPage"
-            }
-        }
-    ]
+  "id": "FAQPage",
+  "translations": [
+    {
+      "locale": "en",
+      "value": {
+        "headline": "FAQ",
+        "subheadline": "Things you want to know",
+        "metaTitle": "faqPage"
+      }
+    },
+    {
+      "locale": "de",
+      "value": {
+        "headline": "Hardfork FAQ",
+        "subheadline": "Häufige Fragen zu unseren Dienstleistungen",
+        "metaTitle": "Haben Sie noch Fragen zu Hardfork? Wir antworten Ihnen gerne."
+      }
+    }
+  ],
+  "faqEntries": []
 }
