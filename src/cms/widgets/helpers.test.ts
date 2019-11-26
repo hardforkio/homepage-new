@@ -1,5 +1,5 @@
 import test from 'tape'
-import { getTranslation, setTranslation } from './helpers'
+import { getTranslation, upsertTranslation, areValidLocales } from './helpers'
 
 const translations = Object.freeze([
   {
@@ -26,9 +26,9 @@ test('getTranslation', t => {
   t.end()
 })
 
-test('setTranslation', t => {
+test('upsertTranslation', t => {
   t.deepEqual(
-    setTranslation('de', 'Kater')(translations),
+    upsertTranslation('de', 'Kater')(translations),
     [
       {
         locale: 'de',
@@ -39,14 +39,14 @@ test('setTranslation', t => {
         value: 'cat',
       },
     ],
-    'returns an updated copy for existing locale',
+    'updates translation for known locale.',
   )
   t.deepEqual(
-    setTranslation('es', 'gato')(translations),
+    upsertTranslation('es', 'gato')(translations),
     [
       {
         locale: 'de',
-        value: 'Kater',
+        value: 'Katze',
       },
       {
         locale: 'en',
@@ -57,7 +57,22 @@ test('setTranslation', t => {
         value: 'gato',
       },
     ],
-    'returns an extended copy for new locale',
+    'adds new translation for unknown locale.',
   )
+  t.deepEqual(
+    upsertTranslation('de', '')(translations),
+    [
+      {
+        locale: 'en',
+        value: 'cat',
+      },
+    ],
+    'removes translation if value is empty string.',
+  )
+  t.end()
+})
+
+test('areValidLocales', t => {
+  t.true(areValidLocales(['de', 'en']))
   t.end()
 })

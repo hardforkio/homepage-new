@@ -3,7 +3,7 @@ import { findDefaultingToHead } from '../utils/helpers'
 export const LOCALES = ['en', 'de'] as const
 export type Locale = typeof LOCALES[number]
 
-type WithLocale<T> = { value: T; locale: string }
+export type WithLocale<T> = { value: T; locale: string }
 
 export interface TranslationCollection<T> {
   translations: WithLocale<T>[]
