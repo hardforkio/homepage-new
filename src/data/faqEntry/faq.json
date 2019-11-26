@@ -18,5 +18,18 @@
       }
     }
   ],
-  "faqEntries": []
+  "faqEntries": [
+    {
+      "id": "5 hour work day",
+      "translations": [
+        {
+          "locale": "de",
+          "value": {
+            "question": "Wieso arbeitet Hardfork im 5 hour work day?",
+            "answer": "Software-Entwicklung ist Denkarbeit. Unsere Entwickler arbeiten jeden Tag genau 5 Stunden hochkonzentriert, fokussiert und motiviert. Dabei hat die Effizienz und Qualität oberste Priorität. Diese Arbeitsweise kann kein Mitarbeiter dauerhaft täglich über 8 Stunden oder mehr umsetzen. Wir sind zu dem Schluss gekommen, dass 8 Stunden im Büro sowohl die Effizienz als auch die Qualität der entwickelten Software reduzieren.\\\nAußerdem erlaubt uns dieses innovative Arbeitszeitmodell besondere Ansprüche bei der Auswahl der Bewerber zu stellen und Ihnen somit auch im aktuellen Fachkräftemangel ein Team von absoluten Top-Entwicklern zur Verfügung zu stellen."
+          }
+        }
+      ]
+    }
+  ]
 }
