@@ -4,15 +4,27 @@ import { hasFAQEntries, FAQPage } from '.'
 const FAQ_PAGE_EMTPY: FAQPage = {
   headline: 'Test',
   subheadline: 'Test',
-  metaTitle: 'test',
   faqEntries: [],
+  head: {
+    title: 't',
+    meta: {
+      keywords: 't',
+      description: 't',
+    },
+  },
 }
 
 const FAQ_PAGE_WITH_ENTRIES: FAQPage = {
   headline: 'Test',
   subheadline: 'Test',
-  metaTitle: 'test',
   faqEntries: [{ question: 'Is this a test', answer: 'Yes it is' }],
+  head: {
+    title: 't',
+    meta: {
+      keywords: 't',
+      description: 't',
+    },
+  },
 }
 
 test('the faq page has entries', test => {

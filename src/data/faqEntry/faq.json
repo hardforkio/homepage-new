@@ -6,17 +6,40 @@
             "locale": "en",
             "value": {
                 "headline": "FAQ",
-                "subheadline": "Things you want to know",
-                "metaTitle": "faqPage"
+                "subheadline": "Things you want to know"
             }
         },
         {
             "locale": "de",
-            "value" : {
-               "headline": "FAQ",
-                "subheadline": "Alles was Sie wissen müssen",
-                "metaTitle": "faqPage"
+            "value": {
+                "headline": "FAQ",
+                "subheadline": "Alles was Sie wissen müssen"
             }
         }
-    ]
+    ],
+    "head": {
+        "id": "Head",
+        "translations": [
+            {
+                "locale": "de",
+                "value": {
+                    "title": "FAQ",
+                    "meta": {
+                        "description": "Frequently asked questions",
+                        "keywords": "Softwareentwicklung"
+                    }
+                }
+            },
+            {
+                "locale": "en",
+                "value": {
+                    "title": "FAQ",
+                    "meta": {
+                        "description": "Frequently asked questions",
+                        "keywords": "Software development"
+                    }
+                }
+            }
+        ]
+    }
 }

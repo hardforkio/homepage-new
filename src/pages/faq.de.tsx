@@ -2,15 +2,19 @@ import React, { FunctionComponent } from 'react'
 import Layout from '../components/layout'
 import { NavbarStateProvider, LocaleProvider } from '../utils/hooks'
 import { FAQ } from '../components/FAQ'
+import { getFAQPage } from '../data/faqEntry'
 
-const FAQPage: FunctionComponent<{}> = () => (
-  <LocaleProvider value="de">
-    <NavbarStateProvider>
-      <Layout title={'FAQ'}>
-        <FAQ />
-      </Layout>
-    </NavbarStateProvider>
-  </LocaleProvider>
-)
+const FAQPage: FunctionComponent<{}> = () => {
+  const { head } = getFAQPage('de')
+  return (
+    <LocaleProvider value="de">
+      <NavbarStateProvider>
+        <Layout {...head}>
+          <FAQ />
+        </Layout>
+      </NavbarStateProvider>
+    </LocaleProvider>
+  )
+}
 
 export default FAQPage

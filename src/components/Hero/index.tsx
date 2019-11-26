@@ -5,15 +5,15 @@ import { useNavbarState } from '../../utils/hooks'
 import { Link } from 'gatsby'
 
 interface IntroProps {
-  title: string
-  heading: string
+  headline: string
+  subheadline: string
   contactButtonText: string
   moreLinkText: string
 }
 
 export const HeroSection: FunctionComponent<IntroProps> = ({
-  title,
-  heading,
+  headline,
+  subheadline,
   contactButtonText,
   moreLinkText,
 }) => {
@@ -46,8 +46,8 @@ export const HeroSection: FunctionComponent<IntroProps> = ({
   return (
     <div ref={ref}>
       <HeroSectionComponent
-        subTitle={heading}
-        title={title}
+        subTitle={subheadline}
+        title={headline}
         contactButtonText={contactButtonText}
         moreLinkText={moreLinkText}
         showSubHeadline={showSubheadline}

@@ -2,13 +2,17 @@
   "translations": [
     {
       "locale": "de",
-      "contactLinkText": "KONTAKT",
-      "FAQLinkText": "FAQ"
+      "value": {
+        "contactLinkText": "KONTAKT",
+        "FAQLinkText": "FAQ"
+      }
     },
     {
       "locale": "en",
-      "contactLinkText": "CONTACT",
-      "FAQLinkText": "FAQ"
+      "value": {
+        "contactLinkText": "CONTACT",
+        "FAQLinkText": "FAQ"
+      }
     }
   ]
 }
