@@ -5,16 +5,14 @@
       "locale": "en",
       "value": {
         "headline": "FAQ",
-        "subheadline": "Common questions about our services",
-        "metaTitle": "Do you want to know more about Hardfork? We are happy to answer all your questions."
+        "subheadline": "Common questions about our services"
       }
     },
     {
       "locale": "de",
       "value": {
         "headline": "FAQ",
-        "subheadline": "Häufige Fragen zu unseren Dienstleistungen",
-        "metaTitle": "Haben Sie noch Fragen zu Hardfork? Wir antworten Ihnen gerne."
+        "subheadline": "Häufige Fragen zu unseren Dienstleistungen"
       }
     }
   ],
@@ -57,5 +55,30 @@
         }
       ]
     }
-  ]
+  ],
+  "head": {
+    "id": "Head",
+    "translations": [
+      {
+        "locale": "de",
+        "value": {
+          "title": "FAQ - Hardfork GmbH",
+          "meta": {
+            "description": "Haben Sie noch Fragen zu Hardfork? Wir antworten Ihnen gerne.",
+            "keywords": "Softwareentwicklung"
+          }
+        }
+      },
+      {
+        "locale": "en",
+        "value": {
+          "title": "FAQ - Hardfork GmbH",
+          "meta": {
+            "description": "Do you want to know more about Hardfork? We are happy to answer all your questions.",
+            "keywords": "Software development"
+          }
+        }
+      }
+    ]
+  }
 }
