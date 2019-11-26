@@ -3,15 +3,19 @@
   "translations": [
     {
       "locale": "en",
-      "headline": "Imprint",
-      "subheadline": "Hardfork GmbH Berlin",
-      "content": "###### Information pursuant to § 5 TMG\n\nHardfork GmbH\\\nMühlenstraße 8a\\\n14167 Berlin\n\nRepresented by: CEO Levin Keller\n\nRegistered at Amtsgericht Charlottenburg as HRB 162146 B\n\n###### Contact\n\n- Phone: +4915156041082\n- E-mail: contact@hardfork.io\n\n###### Tax\n\nVAT ID: DE297380065\n\n###### Responsible for content pursuant to § 55 Abs. 2 RStV\n\nLevin Keller\\\nHardfork GmbH\\\nMühlenstraße 8a\\\n14167 Berlin"
+      "value": {
+        "headline": "Imprint",
+        "subheadline": "Hardfork GmbH Berlin",
+        "content": "###### Information pursuant to § 5 TMG\n\nHardfork GmbH\\\nMühlenstraße 8a\\\n14167 Berlin\n\nRepresented by: CEO Levin Keller\n\nRegistered at Amtsgericht Charlottenburg as HRB 162146 B\n\n###### Contact\n\n- Phone: +4915156041082\n- E-mail: contact@hardfork.io\n\n###### Tax\n\nVAT ID: DE297380065\n\n###### Responsible for content pursuant to § 55 Abs. 2 RStV\n\nLevin Keller\\\nHardfork GmbH\\\nMühlenstraße 8a\\\n14167 Berlin"
+      }
     },
     {
       "locale": "de",
-      "headline": "Impressum",
-      "subheadline": "Hardfork GmbH Berlin",
-      "content": "###### Angaben gemäß § 5 TMG\n\nHardfork GmbH\\\nMühlenstraße 8a\\\n14167 Berlin\n\nVertreten durch: Geschäftsführer Levin Keller\n\nRegistriert am Amtsgericht Charlottenburg unter HRB 162146 B\n\n###### Kontakt\n\n- Telefon: +4915156041082\n- E-mail: contact@hardfork.io\n\n###### Umsatzsteuer\n\nUSt-ID: DE297380065\n\n###### Verantwortlich für Inhalte nach § 55 Abs. 2 RStV\n\nLevin Keller\\\nHardfork GmbH\\\nMühlenstraße 8a\\\n14167 Berlin"
+      "value": {
+        "headline": "Impressum",
+        "subheadline": "Hardfork GmbH Berlin",
+        "content": "###### Angaben gemäß § 5 TMG\n\nHardfork GmbH\\\nMühlenstraße 8a\\\n14167 Berlin\n\nVertreten durch: Geschäftsführer Levin Keller\n\nRegistriert am Amtsgericht Charlottenburg unter HRB 162146 B\n\n###### Kontakt\n\n- Telefon: +4915156041082\n- E-mail: contact@hardfork.io\n\n###### Umsatzsteuer\n\nUSt-ID: DE297380065\n\n###### Verantwortlich für Inhalte nach § 55 Abs. 2 RStV\n\nLevin Keller\\\nHardfork GmbH\\\nMühlenstraße 8a\\\n14167 Berlin"
+      }
     }
   ],
   "head": {
@@ -19,18 +23,22 @@
     "translations": [
       {
         "locale": "de",
-        "title": "Impressum Hardfork GmbH",
-        "meta": {
-          "description": "Das Impressum der Hardfork GmbH",
-          "keywords": "Softwareentwicklung"
+        "value": {
+          "title": "Impressum Hardfork GmbH",
+          "meta": {
+            "description": "Das Impressum der Hardfork GmbH",
+            "keywords": "Softwareentwicklung"
+          }
         }
       },
       {
         "locale": "en",
-        "title": "Imprint Hardfork GmbH",
-        "meta": {
-          "description": "The imprint of Hardfork GmbH",
-          "keywords": "Software development"
+        "value": {
+          "title": "Imprint Hardfork GmbH",
+          "meta": {
+            "description": "The imprint of Hardfork GmbH",
+            "keywords": "Software development"
+          }
         }
       }
     ]

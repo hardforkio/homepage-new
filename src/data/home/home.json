@@ -6,15 +6,19 @@
       "translations": [
         {
           "locale": "de",
-          "headline": "Software",
-          "image": "/img/pic01.jpg",
-          "text": "Wir entwickeln für Sie Software-Applikationen nach Ihren Vorstellungen. Unser Team besitzt alle dafür notwendigen Kompetenzen vom Frontend mit komplexem Application State Management über Client zu Server Kommunikation und Backend-Entwicklung bis zum skalierbaren und sicheren Betrieb in der Cloud. Mit Hardfork bekommen Sie Ihren gesamten Stack aus einer Hand.\n\nWir nutzen unter anderem die Technologien bzw. Libraries React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) und AWS serverless."
+          "value": {
+            "headline": "Software",
+            "image": "/img/pic01.jpg",
+            "text": "Wir entwickeln für Sie Software-Applikationen nach Ihren Vorstellungen. Unser Team besitzt alle dafür notwendigen Kompetenzen vom Frontend mit komplexem Application State Management über Client zu Server Kommunikation und Backend-Entwicklung bis zum skalierbaren und sicheren Betrieb in der Cloud. Mit Hardfork bekommen Sie Ihren gesamten Stack aus einer Hand.\n\nWir nutzen unter anderem die Technologien bzw. Libraries React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) und AWS serverless."
+          }
         },
         {
           "locale": "en",
-          "headline": "Software",
-          "image": "/img/codeonscreen.jpg",
-          "text": "We build software and web applications according to your needs. Our team  is proficient in all required technologies be it complex frontend application state management, client to server communication, backend development or reliable and scaling deployment and delivery from the cloud. With Hardfork you get your whole stack from one supplier.\n\nWe use the technologies and libraries that provide the most value for your project. Usually these include React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) and / or AWS serverless."
+          "value": {
+            "headline": "Software",
+            "image": "/img/codeonscreen.jpg",
+            "text": "We build software and web applications according to your needs. Our team  is proficient in all required technologies be it complex frontend application state management, client to server communication, backend development or reliable and scaling deployment and delivery from the cloud. With Hardfork you get your whole stack from one supplier.\n\nWe use the technologies and libraries that provide the most value for your project. Usually these include React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) and / or AWS serverless."
+          }
         }
       ]
     },
@@ -23,15 +27,19 @@
       "translations": [
         {
           "locale": "de",
-          "headline": "Company Value",
-          "image": "/img/pic02.jpg",
-          "text": "Wir verstehen uns nicht als reiner Technologiedienstleister sondern als Partner für das Erreichen von Unternehmenszielen. Durch unseren Hintergrund im Startup-Ökosystem von Berlin wissen wir, dass Software zuallererst Wert für den Kunden generieren muss. Wir berücksichtigen dies sowohl bei den grundlegenden Architekturentscheidungen als auch bei der täglichen Auswahl von Implementierungsdetails, die sich in der Software-Entwicklung ergeben."
+          "value": {
+            "headline": "Company Value",
+            "image": "/img/pic02.jpg",
+            "text": "Wir verstehen uns nicht als reiner Technologiedienstleister sondern als Partner für das Erreichen von Unternehmenszielen. Durch unseren Hintergrund im Startup-Ökosystem von Berlin wissen wir, dass Software zuallererst Wert für den Kunden generieren muss. Wir berücksichtigen dies sowohl bei den grundlegenden Architekturentscheidungen als auch bei der täglichen Auswahl von Implementierungsdetails, die sich in der Software-Entwicklung ergeben."
+          }
         },
         {
           "locale": "en",
-          "headline": "Company value",
-          "image": "/img/pic01.jpg",
-          "text": "We do not see ourselves as a purely technical supplier but as a partner to help you achieve your company goals. With our background in the Berlin start up ecosystem we know that software firstly needs to generate value for our client's business. We consider this not only when choosing the right architecture and set up for your project but also in all small decisions the daily software development requires."
+          "value": {
+            "headline": "Company value",
+            "image": "/img/pic01.jpg",
+            "text": "We do not see ourselves as a purely technical supplier but as a partner to help you achieve your company goals. With our background in the Berlin start up ecosystem we know that software firstly needs to generate value for our client's business. We consider this not only when choosing the right architecture and set up for your project but also in all small decisions the daily software development requires."
+          }
         }
       ]
     },
@@ -40,15 +48,19 @@
       "translations": [
         {
           "locale": "de",
-          "headline": "Qualität und Transparenz",
-          "image": "/img/pic03.jpg",
-          "text": "Bei Hardfork arbeiten ausschließlich hoch ausgebildete Software-Entwickler in Festanstellung. Unsere Arbeit ist für den Kunden zu jeder Zeit einsehbar, die von uns entwickelte Software steht vom ersten Tag an für den Kunden zum Testen zur Verfügung. Wir arbeiten grundsätzlich mit automatisierten Tests, Continous Integration und Deployment und veröffentlichen neuen Code nur im Vier-Augen-Prinzip."
+          "value": {
+            "headline": "Qualität und Transparenz",
+            "image": "/img/pic03.jpg",
+            "text": "Bei Hardfork arbeiten ausschließlich hoch ausgebildete Software-Entwickler in Festanstellung. Unsere Arbeit ist für den Kunden zu jeder Zeit einsehbar, die von uns entwickelte Software steht vom ersten Tag an für den Kunden zum Testen zur Verfügung. Wir arbeiten grundsätzlich mit automatisierten Tests, Continous Integration und Deployment und veröffentlichen neuen Code nur im Vier-Augen-Prinzip."
+          }
         },
         {
           "locale": "en",
-          "headline": "Quality and transparency",
-          "image": "/img/pic02.jpg",
-          "text": "At Hardfork we only work with highly qualified engineers in full time employment. Our work can be reviewed by the client at all times and the software built by us can be used and experienced from day one. We always work with automated tests, continous integration and deployment and ship new code only after careful review in the team."
+          "value": {
+            "headline": "Quality and transparency",
+            "image": "/img/pic02.jpg",
+            "text": "At Hardfork we only work with highly qualified engineers in full time employment. Our work can be reviewed by the client at all times and the software built by us can be used and experienced from day one. We always work with automated tests, continous integration and deployment and ship new code only after careful review in the team."
+          }
         }
       ]
     }
@@ -56,24 +68,28 @@
   "contactEmail": "mailto:contact@hardfork.io",
   "translations": [
     {
-      "heroSubheadline": "Ihr Partner für anspruchsvolle Softwareprojekte",
-      "emailButton": "E-Mail senden",
-      "contactHeadline": "Kontaktanfrage",
-      "heroHeadline": "Hardfork",
       "locale": "de",
-      "moreLinkText": "Mehr",
-      "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück.",
-      "contactButtonText": "Kontakt"
+      "value": {
+        "heroSubheadline": "Ihr Partner für anspruchsvolle Softwareprojekte",
+        "heroHeadline": "Hardfork",
+        "emailButton": "E-Mail senden",
+        "contactHeadline": "Kontaktanfrage",
+        "moreLinkText": "Mehr",
+        "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück.",
+        "contactButtonText": "Kontakt"
+      }
     },
     {
-      "heroSubheadline": "Your partner for challenging software projects",
-      "emailButton": "Send E-Mail",
-      "contactHeadline": "Send e-mail",
-      "heroHeadline": "Hardfork",
       "locale": "en",
-      "moreLinkText": "More",
-      "contactDescription": "Please send us an e-mail and we will be in touch shortly!",
-      "contactButtonText": "Contact"
+      "value": {
+        "heroHeadline": "Hardfork",
+        "heroSubheadline": "Your partner for challenging software projects",
+        "emailButton": "Send E-Mail",
+        "contactHeadline": "Send e-mail",
+        "moreLinkText": "More",
+        "contactDescription": "Please send us an e-mail and we will be in touch shortly!",
+        "contactButtonText": "Contact"
+      }
     }
   ],
   "head": {
@@ -81,18 +97,22 @@
     "translations": [
       {
         "locale": "de",
-        "title": "Hardfork GmbH - Software Entwicklung und Business Development",
-        "meta": {
-          "description": "Wir entwickeln Software nach Ihren Wünschen in Berlin",
-          "keywords": "Softwareentwicklung"
+        "value": {
+          "title": "Hardfork GmbH - Software Entwicklung und Business Development",
+          "meta": {
+            "description": "Wir entwickeln Software nach Ihren Wünschen in Berlin",
+            "keywords": "Softwareentwicklung"
+          }
         }
       },
       {
         "locale": "en",
-        "title": "Hardfork GmbH - Software development and business services",
-        "meta": {
-          "description": "We develop software according to your needs in Berlin, Germany",
-          "keywords": "Software development"
+        "value": {
+          "title": "Hardfork GmbH - Software development and business services",
+          "meta": {
+            "description": "We develop software according to your needs in Berlin, Germany",
+            "keywords": "Software development"
+          }
         }
       }
     ]

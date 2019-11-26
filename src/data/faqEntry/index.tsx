@@ -14,10 +14,10 @@ export interface FAQPage {
 export type FAQPageOnDisk = {
   id: string
   head: TranslationCollection<Head>
+  faqEntries: TranslationCollection<FAQEntry>[]
 } & TranslationCollection<{
   headline: string
   subheadline: string
-  faqEntries: FAQEntry[]
 }>
 
 const faq: FAQPageOnDisk = data

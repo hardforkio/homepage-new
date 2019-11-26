@@ -37,10 +37,15 @@ collections:
             label: "translations"
             widget: "list"
             fields:
-              - { name: "locale", widget: "select", <<: *locales }
-              - { name: "headline", widget: "string" }
-              - { name: "subHeadline", widget: "string" }
-              - { name: "content", widget: "markdown" }
+              - name: "locale"
+                widget: "select"
+                <<: *locales
+              - name: "value"
+                widget: "object"
+                fields:
+                  - { name: "headline", widget: "string" }
+                  - { name: "subHeadline", widget: "string" }
+                  - { name: "content", widget: "markdown" }
 
           - name: "head"
             label: "Head"
@@ -49,18 +54,20 @@ collections:
             fields:
               - name: "id"
                 widget: "string"
-
               - name: "translations"
                 label: "translations"
                 widget: "list"
                 fields:
                   - { name: "locale", widget: "select", <<: *locales }
-                  - { name: "title", widget: "string" }
-                  - name: "meta"
-                    widget: "object" 
-                    fields: 
-                      - { name: "description", widget: "string" }
-                      - { name: "keywords", widget: "string" }
+                  - name: "value"
+                    widget: "object"
+                    fields:
+                      - { name: "title", widget: "string" }
+                      - name: "meta"
+                        widget: "object" 
+                        fields: 
+                          - { name: "description", widget: "string" }
+                          - { name: "keywords", widget: "string" }
                                     
 
   - name: "faqPage"
@@ -80,16 +87,33 @@ collections:
             label: "translations"
             widget: "list"
             fields:
-              - { name: "locale", widget: "select", <<: *locales }
-              - { name: "headline", widget: "string" }
-              - { name: "subheadline", widget: "string" }
-              - name: "faqEntries"
-                widget: "list"
-                default: []
+              - name: "locale"
+                widget: "select"
+                <<: *locales
+              - name: "value"
+                widget: "object"
                 fields:
-                  - { name: "question", widget: "string" }
-                  - { name: "answer", widget: "markdown" }
-                  
+                  - { name: "headline", widget: "string" }
+                  - { name: "subheadline", widget: "string" }
+          - name: "faqEntries"
+            widget: "list"
+            default: []
+            identfier_field: "id"
+            fields:
+              - name: "id"
+                widget: "string"
+              - name: "translations"
+                widget: "list"
+                fields:
+                  - name: "locale"
+                    widget: "select"
+                    <<: *locales
+                  - name: "value"
+                    widget: "object"
+                    fields:
+                      - { name: "question", widget: "string" }
+                      - { name: "answer", widget: "markdown" }
+
           - name: "head"
             label: "Head"
             widget: "object"
@@ -97,19 +121,21 @@ collections:
             fields:
               - name: "id"
                 widget: "string"
-
               - name: "translations"
                 label: "translations"
                 widget: "list"
                 fields:
                   - { name: "locale", widget: "select", <<: *locales }
-                  - { name: "title", widget: "string" }
-                  - name: "meta"
-                    widget: "object" 
-                    fields: 
-                      - { name: "description", widget: "string" }
-                      - { name: "keywords", widget: "string" }
-                  
+                  - name: "value"
+                    widget: "object"
+                    fields:
+                      - { name: "title", widget: "string" }
+                      - name: "meta"
+                        widget: "object" 
+                        fields: 
+                          - { name: "description", widget: "string" }
+                          - { name: "keywords", widget: "string" }
+                                         
 
   - name: "home"
     label: "Landing Page"
@@ -127,6 +153,11 @@ collections:
             widget: "hidden"
             default: "home"
 
+
+
+          - name: "contactEmail"
+            widget: "string"
+
           - name: "translations"
             label: "translations"
             widget: "list"
@@ -135,28 +166,32 @@ collections:
                 widget: "select"
                 <<: *locales
 
-              - name: "heroHeadline"
-                widget: "string"
-                description: "Title shown on top of page. Not an ID."
+              - name: "value"
+                widget: "object"
+                fields:
+                  - name: "heroHeadline"
+                    widget: "string"
+                    label: "Page title"
+                    description: "Title shown on top of page. Not an ID."
 
-              - name: "heroSubheadline"
-                widget: "string"
+                  - name: "heroSubheadline"
+                    widget: "string"
 
-              - name: "contactHeadline"
-                widget: "string"
-                description: "Contact Section Headline"
+                  - name: "contactHeadline"
+                    widget: "string"
+                    description: "Contact Section Headline"
 
-              - name: "contactDescription"
-                widget: "string"
+                  - name: "contactDescription"
+                    widget: "string"
 
-              - name: "contactButtonText"
-                widget: "string"
+                  - name: "contactButtonText"
+                    widget: "string"
 
-              - name: "moreLinkText"
-                widget: "string"
+                  - name: "moreLinkText"
+                    widget: "string"
 
-              - name: "emailButton"
-                widget: "string"
+                  - name: "emailButton"
+                    widget: "string"
 
           - name: "offerings"
             label: "Offerings"
@@ -171,13 +206,19 @@ collections:
                 label: "translations"
                 widget: "list"
                 fields:
-                  - { name: "locale", widget: "select", <<: *locales }
-                  - { name: "headline", widget: "string" }
-                  - { name: "image", widget: "image", allow_multiple: false }
-                  - { name: "text", widget: "text" }
-
-          - name: "contactEmail"
-            widget: "string"                  
+                  - name: "locale"
+                    widget: "select"
+                    <<: *locales
+                  - name: "value"
+                    widget: "object"
+                    fields:
+                      - { name: "headline", widget: "string" }
+                      - {
+                          name: "image",
+                          widget: "image",
+                          allow_multiple: false,
+                        }
+                      - { name: "text", widget: "text" }                    
 
           - name: "head"
             label: "Head"
@@ -186,18 +227,21 @@ collections:
             fields:
               - name: "id"
                 widget: "string"
-
               - name: "translations"
                 label: "translations"
                 widget: "list"
                 fields:
                   - { name: "locale", widget: "select", <<: *locales }
-                  - { name: "title", widget: "string" }
-                  - name: "meta"
-                    widget: "object" 
-                    fields: 
-                      - { name: "description", widget: "string" }
-                      - { name: "keywords", widget: "string" }
+                  - name: "value"
+                    widget: "object"
+                    fields:
+                      - { name: "title", widget: "string" }
+                      - name: "meta"
+                        widget: "object" 
+                        fields: 
+                          - { name: "description", widget: "string" }
+                          - { name: "keywords", widget: "string" }
+           
 
   - name: "footer"
     label: "Footer"
@@ -223,18 +267,20 @@ collections:
                 widget: "select"
                 <<: *locales
 
-              - name: "imprintLinkText"
-                widget: "string"
+              - name: "value"
+                widget: "object"
+                fields:
+                  - name: "imprintLinkText"
+                    widget: "string"
 
-              - name: "githubLinkURL"
-                widget: "string"
+                  - name: "githubLinkURL"
+                    widget: "string"
 
-              - name: "contactEmail"
-                widget: "string"
+                  - name: "contactEmail"
+                    widget: "string"
 
-              - name: "copyrightText"
-                widget: "string"
-
+                  - name: "copyrightText"
+                    widget: "string"
 
   - name: "navbar"
     label: "Navbar"
@@ -258,9 +304,13 @@ collections:
               - name: "locale"
                 widget: "select"
                 <<: *locales
+              - name: "value"
+                widget: "object"
+                fields:
+                  - name: "contactLinkText"
+                    widget: "string"
 
-              - name: "contactLinkText"
-                widget: "string"
+                  - name: "FAQLinkText"
+                    widget: "string"
 
-              - name: "FAQLinkText"
-                widget: "string"
+

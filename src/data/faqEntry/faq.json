@@ -1,17 +1,20 @@
 {
     "id": "FAQPage",
+    "faqEntries": [],
     "translations": [
         {
             "locale": "en",
-            "headline": "FAQ",
-            "subheadline": "Things you want to know",
-            "faqEntries": []
+            "value": {
+                "headline": "FAQ",
+                "subheadline": "Things you want to know"
+            }
         },
         {
             "locale": "de",
-            "headline": "FAQ",
-            "subheadline": "Alles was Sie wissen müssen",
-            "faqEntries": []
+            "value": {
+                "headline": "FAQ",
+                "subheadline": "Alles was Sie wissen müssen"
+            }
         }
     ],
     "head": {
@@ -19,18 +22,22 @@
         "translations": [
             {
                 "locale": "de",
-                "title": "FAQ",
-                "meta": {
-                    "description": "Frequently asked questions",
-                    "keywords": "Softwareentwicklung"
+                "value": {
+                    "title": "FAQ",
+                    "meta": {
+                        "description": "Frequently asked questions",
+                        "keywords": "Softwareentwicklung"
+                    }
                 }
             },
             {
                 "locale": "en",
-                "title": "FAQ",
-                "meta": {
-                    "description": "Frequently asked questions",
-                    "keywords": "Software development"
+                "value": {
+                    "title": "FAQ",
+                    "meta": {
+                        "description": "Frequently asked questions",
+                        "keywords": "Software development"
+                    }
                 }
             }
         ]
