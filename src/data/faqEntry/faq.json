@@ -28,6 +28,13 @@
             "question": "Was ist der 5 hour work day?",
             "answer": "Unsere Mitarbeiter arbeiten grundsätzlich jeden Tag von 8 bis 13 Uhr in unserem Büro in Berlin. Wir verzichten auf die Produktivitätskiller Homeoffice und Gleitzeit und machen während dieser 5 Stunden auch keine Pause. Um 13 Uhr beenden wir bewusst unsere gemeinsame Arbeit als Team um am nächsten morgen wieder frisch und mit höchster Konzentration in einen neuen Produktiven 5 Stunden Arbeitstag zu starten."
           }
+        },
+        {
+          "locale": "en",
+          "value": {
+            "question": "What is the five hour work day?",
+            "answer": "Our team works every day from 8 am to 1 pm on site in our office in Berlin. We disallow the concept of telecommute or flex time as they both kill productivity and do not take breaks in these 5 hours. We rarely have meetings and keep them very short and the number of attendees to required minimum. A 1 pm we consciously stop our work and recreate during the afternoon to be ready for another very intense 5 hours the next morning at 8 am."
+          }
         }
       ]
     },
@@ -39,6 +46,13 @@
           "value": {
             "question": "Wieso arbeitet Hardfork im 5-hour-work-day-Modell?",
             "answer": "Software-Entwicklung ist Denkarbeit. Unsere Entwickler arbeiten jeden Tag genau 5 Stunden hochkonzentriert, fokussiert und motiviert. Dabei hat die Effizienz und Qualität oberste Priorität. Diese Arbeitsweise kann kein Mitarbeiter dauerhaft täglich über 8 Stunden oder mehr umsetzen. Wir sind zu dem Schluss gekommen, dass 8 Stunden im Büro sowohl die Effizienz als auch die Qualität der entwickelten Software reduzieren.\n\nAußerdem erlaubt uns dieses innovative Arbeitszeitmodell besondere Ansprüche bei der Auswahl der Bewerber zu stellen und Ihnen somit auch im aktuellen Fachkräftemangel ein Team von absoluten Top-Entwicklern zur Verfügung zu stellen."
+          }
+        },
+        {
+          "locale": "en",
+          "value": {
+            "question": "Why did Hardfork choose the 5 hour work day?",
+            "answer": "Software development is brain work. Our engineers work every day exactly 5 hours with exceptional concentration, focus and motivation. For five hours we only focus on efficiency and quality. This exceptionally focused work cannot be kept up for 8 hours a day for months or even years. It is our conviction that a longer work time per day not only decreases the engineers efficiency and motivation but also introduces more bugs and lower code quality in the software.\n\nAdditionally, due to this unique setup we are able to attract outstanding candidates as our employees and as such are able to support you with an outstanding dev team."
           }
         }
       ]
