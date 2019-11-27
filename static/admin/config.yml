@@ -240,9 +240,15 @@ collections:
                   - name: "value"
                     widget: "object"
                     fields:
+                      - { name: "slug", widget: "string" }
                       - { name: "client", widget: "string" }
                       - { name: "clientLink", widget: "string" }
                       - { name: "reference", widget: "string" }
+                      - {
+                          name: "image",
+                          widget: "image",
+                          allow_multiple: false,
+                        }
                       - { name: "product", widget: "string" }
                       - { name: "application", widget: "markdown" }
                       - { name: "technologies", widget: "markdown" }

@@ -11,13 +11,15 @@ interface Offering {
 }
 
 export interface ProjectProps {
+  slug: string
   client: string
   clientLink: string
   reference: string
+  image: string
   product: string
   application: string
   technologies: string
-  responsibilies: string
+  responsibilities: string
 }
 
 export interface HomeData {
