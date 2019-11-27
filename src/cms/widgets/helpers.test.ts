@@ -1,7 +1,7 @@
 import test from 'tape'
-import { getTranslation, upsertTranslation, areValidLocales } from './helpers'
+import { getTranslation, upsertTranslation, Localized } from './helpers'
 
-const translations = Object.freeze([
+const translations: readonly Localized<string>[] = Object.freeze([
   {
     locale: 'de',
     value: 'Katze',
@@ -69,10 +69,5 @@ test('upsertTranslation', t => {
     ],
     'removes translation if value is empty string.',
   )
-  t.end()
-})
-
-test('areValidLocales', t => {
-  t.true(areValidLocales(['de', 'en']))
   t.end()
 })

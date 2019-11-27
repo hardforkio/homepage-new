@@ -2,11 +2,18 @@ import React from 'react'
 import '../../scss/main.scss'
 import { storiesOf } from '@storybook/react'
 import { createLocalizedStringWidget } from './localizedString'
+import { Localized } from './helpers'
+import { Locale } from './i18n-locales'
 
-const LocalizedStringControl = createLocalizedStringWidget(['de', 'en'])
+interface WrapperProps {
+  locales: Locale[]
+}
 
-export const Wrapper: React.FunctionComponent = () => {
-  const [value, setValue] = React.useState([])
+export const Wrapper: React.FunctionComponent<WrapperProps> = ({ locales }) => {
+  const [value, setValue] = React.useState<readonly Localized<string>[]>([])
+
+  const LocalizedStringControl = createLocalizedStringWidget(locales)
+
   return (
     <div>
       <div>In the widget I would see:</div>
@@ -19,4 +26,8 @@ export const Wrapper: React.FunctionComponent = () => {
   )
 }
 
-storiesOf('Widgets.LocalizedString', module).add('default', () => <Wrapper />)
+storiesOf('Widgets.LocalizedString', module)
+  .add('default', () => <Wrapper locales={['de', 'en']} />)
+  .add('exotic', () => (
+    <Wrapper locales={['de', 'de-AT', 'en', 'en-US-POSIX']} />
+  ))

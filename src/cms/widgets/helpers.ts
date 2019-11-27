@@ -1,21 +1,21 @@
-import { WithLocale } from '../../data/i18n'
 import * as R from 'ramda'
 
-import LOCALES from 'i18n-locales'
+import { Locale } from './i18n-locales'
 
-const isValidLocale = R.flip<string, string[], (a: string) => boolean>(
-  R.includes,
-)(LOCALES)
+export interface Localized<T> {
+  locale: Locale
+  value: T
+}
 
-export const areValidLocales = R.all(isValidLocale)
+type TranslationArray<T> = readonly Localized<T>[]
 
-type LocalizedString = readonly WithLocale<string>[]
+const hasTranslation = <T>(locale: Locale) =>
+  R.any<Localized<T>>(R.propEq('locale', locale))
 
-export type Locale = 'de' | 'en' | 'es'
-
-const hasTranslation = (locale: Locale) => R.any(R.propEq('locale', locale))
-
-const newTranslation = <T>(locale: Locale, value: T) => ({ locale, value })
+const newTranslation = <T>(locale: Locale, value: T): Localized<T> => ({
+  locale,
+  value,
+})
 
 const addTranslation = <T>(locale: Locale, value: T) =>
   R.append(newTranslation(locale, value))
@@ -29,14 +29,14 @@ const updateTranslation = <T>(locale: Locale, value: T) =>
 
 const removeEmptyTranslations = R.reject(R.propEq('value', ''))
 
-export const getTranslation = (locale: Locale) =>
-  R.pipe(
+export const getTranslation = <T>(locale: Locale) =>
+  R.pipe<TranslationArray<T>, Localized<T> | undefined, T | undefined>(
     R.find(R.propEq('locale', locale)),
     R.ifElse(R.isNil, R.identity, R.prop('value')),
   )
 
 export const upsertTranslation = <T>(locale: Locale, value: T) =>
-  R.pipe(
+  R.pipe<TranslationArray<T>, TranslationArray<T>, TranslationArray<T>>(
     R.ifElse(
       hasTranslation(locale),
       updateTranslation(locale, value),
