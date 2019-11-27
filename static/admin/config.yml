@@ -153,8 +153,6 @@ collections:
             widget: "hidden"
             default: "home"
 
-
-
           - name: "contactEmail"
             widget: "string"
 
@@ -193,6 +191,9 @@ collections:
                   - name: "emailButton"
                     widget: "string"
 
+                  - name: "projectsHeadline"
+                    widget: "string"                    
+
           - name: "offerings"
             label: "Offerings"
             widget: "list"
@@ -218,7 +219,35 @@ collections:
                           widget: "image",
                           allow_multiple: false,
                         }
-                      - { name: "text", widget: "text" }                    
+                      - { name: "text", widget: "text" }   
+          
+          - name: "projects"
+            label: "Projects"
+            widget: "list"
+            default: []
+            identfier_field: "id"
+            fields:
+              - name: "id"
+                widget: "string"
+
+              - name: "translations"
+                label: "translations"
+                widget: "list"
+                fields:
+                  - name: "locale"
+                    widget: "select"
+                    <<: *locales
+                  - name: "value"
+                    widget: "object"
+                    fields:
+                      - { name: "client", widget: "string" }
+                      - { name: "clientLink", widget: "string" }
+                      - { name: "reference", widget: "string" }
+                      - { name: "product", widget: "string" }
+                      - { name: "application", widget: "markdown" }
+                      - { name: "technologies", widget: "markdown" }
+                      - { name: "responsibilities", widget: "markdown" }
+                                                              
 
           - name: "head"
             label: "Head"

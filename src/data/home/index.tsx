@@ -10,6 +10,16 @@ interface Offering {
   text: string
 }
 
+export interface ProjectProps {
+  client: string
+  clientLink: string
+  reference: string
+  product: string
+  application: string
+  technologies: string
+  responsibilies: string
+}
+
 export interface HomeData {
   heroHeadline: string
   heroSubheadline: string
@@ -20,7 +30,9 @@ export interface HomeData {
   moreLinkText: string
   emailButton: string
   contactEmail: string
+  projectsHeadline?: string
   head: Head
+  projects: ProjectProps[]
 }
 
 export type HomeDataOnDisk = {
@@ -28,6 +40,7 @@ export type HomeDataOnDisk = {
   offerings: TranslationCollection<Offering>[]
   contactEmail: string
   head: TranslationCollection<Head>
+  projects: TranslationCollection<ProjectProps>[]
 } & TranslationCollection<{
   heroHeadline: string
   heroSubheadline: string
@@ -36,6 +49,7 @@ export type HomeDataOnDisk = {
   contactButtonText: string
   moreLinkText: string
   emailButton: string
+  projectsHeadline?: string
 }>
 
 const home: HomeDataOnDisk = data

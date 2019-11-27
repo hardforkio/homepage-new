@@ -5,6 +5,8 @@ import { HeroSection } from '../Hero'
 import cn from 'classnames'
 import styles from './Home.module.scss'
 import { HomeData, useHome } from '../../data/home'
+import { PastProjectsComponent } from '../PastProjects/Section'
+import { Container } from 'reactstrap'
 
 export const HomePageComponent: FunctionComponent<HomeData> = ({
   heroHeadline,
@@ -16,6 +18,8 @@ export const HomePageComponent: FunctionComponent<HomeData> = ({
   moreLinkText,
   emailButton,
   contactEmail,
+  projectsHeadline,
+  projects,
 }) => (
   <div>
     <HeroSection
@@ -26,6 +30,14 @@ export const HomePageComponent: FunctionComponent<HomeData> = ({
     />
     <section className={cn(styles.avoidOverlapWithStickyHeader)} id="offerings">
       <Offerings offerings={offerings} />
+    </section>
+    <section>
+      <Container>
+        <PastProjectsComponent
+          headline={projectsHeadline}
+          projects={projects}
+        />
+      </Container>
     </section>
     <section id="contact">
       <CallToAction

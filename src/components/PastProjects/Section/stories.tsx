@@ -2,8 +2,9 @@ import '../../../scss/main.scss'
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Container } from 'reactstrap'
-import { PastProjectsComponent, Project } from '.'
+import { PastProjectsComponent } from '.'
 import * as R from 'ramda'
+import { ProjectProps } from '../../../data/home'
 
 storiesOf('Past Projects', module)
   .add('1 Project', () => (
@@ -22,7 +23,7 @@ storiesOf('Past Projects', module)
 
 const HEADLINE = 'Past Projects'
 
-const projects: Project[] = [
+const projects: ProjectProps[] = [
   {
     client: 'FND',
     clientLink: 'fnd',

@@ -65,6 +65,37 @@
       ]
     }
   ],
+  "projects": [
+    {
+      "id": "FND",
+      "translations": [
+        {
+          "locale": "de",
+          "value": {
+            "client": "FND",
+            "clientLink": "fnd",
+            "reference": "string",
+            "product": "A digital investment platform for investments in real estate funds",
+            "application": "string",
+            "technologies": "string",
+            "responsibilies": "string"
+          }
+        },
+        {
+          "locale": "en",
+          "value": {
+            "client": "FND",
+            "clientLink": "fnd",
+            "reference": "string",
+            "product": "A digital investment platform for investments in real estate funds",
+            "application": "string",
+            "technologies": "string",
+            "responsibilies": "string"
+          }
+        }
+      ]
+    }
+  ],
   "contactEmail": "mailto:contact@hardfork.io",
   "translations": [
     {
@@ -76,7 +107,8 @@
         "contactHeadline": "Kontaktanfrage",
         "moreLinkText": "Mehr",
         "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück.",
-        "contactButtonText": "Kontakt"
+        "contactButtonText": "Kontakt",
+        "projectsHeadline": "Vergangene Projekte"
       }
     },
     {
@@ -88,7 +120,8 @@
         "contactHeadline": "Send e-mail",
         "moreLinkText": "More",
         "contactDescription": "Please send us an e-mail and we will be in touch shortly!",
-        "contactButtonText": "Contact"
+        "contactButtonText": "Contact",
+        "projectsHeadline": "Past projects"
       }
     }
   ],

@@ -9,28 +9,25 @@ import {
   Col,
 } from 'reactstrap'
 import { mapToComponent } from '../../../utils/helpers'
-
-export interface Project {
-  client: string
-  clientLink: string
-  reference: string
-  product: string
-  application: string
-  technologies: string
-  responsibilies: string
-}
+import { ProjectProps } from '../../../data/home'
+import * as R from 'ramda'
 
 export const PastProjectsComponent: FunctionComponent<{
-  headline: string
-  projects: Project[]
-}> = ({ headline, projects }) => (
-  <section className="text-center py-5">
-    <h2>{headline}</h2>
-    <Row className="justify-content-center py-5">
-      {mapToComponent(Project, projects)}
-    </Row>
-  </section>
-)
+  headline: string | undefined
+  projects: ProjectProps[]
+}> = ({ headline, projects }) => {
+  if (hasProjects(projects)) {
+    return (
+      <div className="text-center py-5">
+        <h2>{headline ? headline : ''}</h2>
+        <Row className="justify-content-center py-5">
+          {mapToComponent(Project, projects)}
+        </Row>
+      </div>
+    )
+  }
+  return null
+}
 
 const Project: FunctionComponent<{ client: string; product: string }> = ({
   client,
@@ -46,3 +43,5 @@ const Project: FunctionComponent<{ client: string; product: string }> = ({
     </Card>
   </Col>
 )
+
+const hasProjects = R.pipe(R.isEmpty, R.not)
