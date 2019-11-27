@@ -23,6 +23,7 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-catch-links`,
     `gatsby-plugin-typescript`,
     'gatsby-plugin-react-helmet',
     {
