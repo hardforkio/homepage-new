@@ -1,7 +1,13 @@
 import test from 'tape'
-import { getTranslation, upsertTranslation, Localized } from './helpers'
+import {
+  getTranslation,
+  upsertTranslation,
+  isTranslationCollection,
+  translate,
+  TranslationCollection,
+} from './helpers'
 
-const translations: readonly Localized<string>[] = Object.freeze([
+const translations: TranslationCollection<string> = Object.freeze([
   {
     locale: 'de',
     value: 'Katze',
@@ -68,6 +74,29 @@ test('upsertTranslation', t => {
       },
     ],
     'removes translation if value is empty string.',
+  )
+  t.end()
+})
+
+test('isTranslationCollection', t => {
+  t.true(isTranslationCollection([]))
+  t.true(isTranslationCollection(translations))
+  t.false(isTranslationCollection({}))
+  t.false(isTranslationCollection([{ value: 'cat' }]))
+  t.end()
+})
+
+test('translate', t => {
+  t.equals(translate('en')(translations), 'cat', 'picks existing translation')
+  t.equals(translate('es')(translations), 'Katze', 'picks head otherwise')
+  t.equals(translate('de')([]), '', 'defaults to empty string')
+  t.equals(translate('de')(34), 34, 'ignores literals: int')
+  t.equals(translate('de')('string'), 'string', 'ignores literals: string')
+  t.deepEquals(translate('de')([0, 1, 3]), [0, 1, 3], 'ignores literals: array')
+  t.deepEquals(
+    translate('de')({ key: 'value' }),
+    { key: 'value' },
+    'ignores literals: object',
   )
   t.end()
 })

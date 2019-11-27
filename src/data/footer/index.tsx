@@ -1,19 +1,24 @@
 import * as R from 'ramda'
 import data from './footer.json'
-import {
-  TranslationCollection,
-  Locale,
-  extractSingleTranslation,
-} from '../i18n'
+import { Locale } from '../i18n'
 import { useLocale } from '../../utils/hooks'
-export interface Footer {
+import { Localized, translate } from '../../cms/widgets/helpers'
+
+export interface FooterData {
   imprintLinkText: string
   githubLinkURL: string
   contactEmail: string
   copyrightText: string
 }
 
-const footer: TranslationCollection<Footer> = data
-const getFooter = (locale: Locale) =>
-  extractSingleTranslation<Footer>(locale)(footer)
-export const useFooter: () => Footer = R.pipe(useLocale, getFooter)
+export interface FooterDataOnDisk {
+  imprintLinkText?: Localized<string>[]
+  githubLinkURL?: string
+  contactEmail?: string
+  copyrightText?: string
+}
+
+// TODO: add type analysis of imported data
+//       checkout https://github.com/pelotom/runtypes
+const getFooter = (locale: Locale): FooterData => translate(locale)(data)
+export const useFooter = R.pipe(useLocale, getFooter)
