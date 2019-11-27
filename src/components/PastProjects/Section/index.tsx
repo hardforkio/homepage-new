@@ -2,11 +2,11 @@ import React, { FunctionComponent } from 'react'
 import {
   Card,
   CardBody,
-  CardTitle,
   CardText,
   Button,
   Row,
   Col,
+  CardHeader,
 } from 'reactstrap'
 import { mapToComponent } from '../../../utils/helpers'
 import { ProjectProps } from '../../../data/home'
@@ -29,16 +29,15 @@ export const PastProjectsComponent: FunctionComponent<{
   return null
 }
 
-const Project: FunctionComponent<{ client: string; product: string }> = ({
-  client,
-  product,
-}) => (
+const Project: FunctionComponent<ProjectProps> = ({ client, product }) => (
   <Col sm={24} md={4} className="d-flex flex-column mb-5">
     <Card className="text-dark flex-grow-1">
+      <CardHeader>{client}</CardHeader>
       <CardBody className="d-flex flex-column text-left ">
-        <CardTitle>{client}</CardTitle>
         <CardText className="flex-grow-1">{product}</CardText>
-        <Button color="primary">more</Button>
+        <Button disabled color="primary">
+          more
+        </Button>
       </CardBody>
     </Card>
   </Col>
