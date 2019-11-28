@@ -229,6 +229,13 @@ collections:
             fields:
               - name: "id"
                 widget: "string"
+              - label: "Technologies"
+                name: "technologies"  
+                widget: "relation"
+                multiple: true
+                collection: "technologies"
+                searchFields: ["name"]
+                valueFields: "name"
 
               - name: "translations"
                 label: "translations"
@@ -240,12 +247,17 @@ collections:
                   - name: "value"
                     widget: "object"
                     fields:
+                      - { name: "slug", widget: "string" }
                       - { name: "client", widget: "string" }
                       - { name: "clientLink", widget: "string" }
                       - { name: "reference", widget: "string" }
+                      - {
+                          name: "image",
+                          widget: "image",
+                          allow_multiple: false,
+                        }
                       - { name: "product", widget: "string" }
                       - { name: "application", widget: "markdown" }
-                      - { name: "technologies", widget: "markdown" }
                       - { name: "responsibilities", widget: "markdown" }
                                                               
 
@@ -342,4 +354,30 @@ collections:
                   - name: "FAQLinkText"
                     widget: "string"
 
+  - label: "Technologies"
+    name: "technologies"  
+    files:
+      - file: "src/data/technologies/technologies.json"
+        name: "technologies"
+        label: "Technologies"
+        format: json
+        identifier_id: "id"
+        fields:
+          - name: "id"
+            label: "Identifier"
+            widget: "hidden"
+            default: "technologies"
+
+          - name: "technologies"
+            label: "Technologies"
+            widget: "list"
+            allow_add: true
+            default: []
+            fields:
+              - name: "name"
+                label: "Name"
+                widget: "string"
+              - name: "link"
+                label: "Link"
+                widget: "string"
 
