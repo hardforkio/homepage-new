@@ -1,5 +1,34 @@
 {
   "id": "home",
+  "contactEmail": "mailto:contact@hardfork.io",
+  "translations": [
+    {
+      "locale": "de",
+      "value": {
+        "heroHeadline": "Hardfork",
+        "heroSubheadline": "Ihr Partner für anspruchsvolle Softwareprojekte",
+        "contactHeadline": "Kontaktanfrage",
+        "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück.",
+        "contactButtonText": "Kontakt",
+        "moreLinkText": "Mehr",
+        "emailButton": "E-Mail senden",
+        "projectsHeadline": "Vergangene Projekte"
+      }
+    },
+    {
+      "locale": "en",
+      "value": {
+        "heroHeadline": "Hardfork",
+        "heroSubheadline": "Your partner for challenging software projects",
+        "contactHeadline": "Send e-mail",
+        "contactDescription": "Please send us an e-mail and we will be in touch shortly!",
+        "contactButtonText": "Contact",
+        "moreLinkText": "More",
+        "emailButton": "Send E-Mail",
+        "projectsHeadline": "Past projects"
+      }
+    }
+  ],
   "offerings": [
     {
       "id": "Software",
@@ -68,61 +97,36 @@
   "projects": [
     {
       "id": "FND",
+      "usedTechnologies": [
+        "{\"name\":\"ReactJS\",\"link\":\"https://reactjs.org/\"}",
+        "{\"name\":\"Typescript\",\"link\":\"https://www.typescriptlang.org/\"}"
+      ],
       "translations": [
         {
           "locale": "de",
           "value": {
+            "slug": "sdf",
             "client": "FND",
             "clientLink": "fnd",
             "reference": "string",
             "product": "A digital investment platform for investments in real estate funds",
             "application": "string",
-            "technologies": "string",
-            "responsibilies": "string"
+            "responsibilities": "sdf"
           }
         },
         {
           "locale": "en",
           "value": {
+            "slug": "sdf",
             "client": "FND",
             "clientLink": "fnd",
             "reference": "string",
             "product": "A digital investment platform for investments in real estate funds",
             "application": "string",
-            "technologies": "string",
-            "responsibilies": "string"
+            "responsibilities": "sdf"
           }
         }
       ]
-    }
-  ],
-  "contactEmail": "mailto:contact@hardfork.io",
-  "translations": [
-    {
-      "locale": "de",
-      "value": {
-        "heroSubheadline": "Ihr Partner für anspruchsvolle Softwareprojekte",
-        "heroHeadline": "Hardfork",
-        "emailButton": "E-Mail senden",
-        "contactHeadline": "Kontaktanfrage",
-        "moreLinkText": "Mehr",
-        "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück.",
-        "contactButtonText": "Kontakt",
-        "projectsHeadline": "Vergangene Projekte"
-      }
-    },
-    {
-      "locale": "en",
-      "value": {
-        "heroHeadline": "Hardfork",
-        "heroSubheadline": "Your partner for challenging software projects",
-        "emailButton": "Send E-Mail",
-        "contactHeadline": "Send e-mail",
-        "moreLinkText": "More",
-        "contactDescription": "Please send us an e-mail and we will be in touch shortly!",
-        "contactButtonText": "Contact",
-        "projectsHeadline": "Past projects"
-      }
     }
   ],
   "head": {
