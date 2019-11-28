@@ -1,5 +1,34 @@
 {
   "id": "home",
+  "contactEmail": "mailto:contact@hardfork.io",
+  "translations": [
+    {
+      "locale": "de",
+      "value": {
+        "heroHeadline": "Hardfork",
+        "heroSubheadline": "Ihr Partner für anspruchsvolle Softwareprojekte",
+        "contactHeadline": "Kontaktanfrage",
+        "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück.",
+        "contactButtonText": "Kontakt",
+        "moreLinkText": "Mehr",
+        "emailButton": "E-Mail senden",
+        "projectsHeadline": "Vergangene Projekte"
+      }
+    },
+    {
+      "locale": "en",
+      "value": {
+        "heroHeadline": "Hardfork",
+        "heroSubheadline": "Your partner for challenging software projects",
+        "contactHeadline": "Send e-mail",
+        "contactDescription": "Please send us an e-mail and we will be in touch shortly!",
+        "contactButtonText": "Contact",
+        "moreLinkText": "More",
+        "emailButton": "Send E-Mail",
+        "projectsHeadline": "Past projects"
+      }
+    }
+  ],
   "offerings": [
     {
       "id": "Software",
@@ -68,7 +97,9 @@
   "projects": [
     {
       "id": "FND",
-      "usedTechnologies": [],
+      "usedTechnologies": [
+        "{\"name\":\"ReactJS\",\"link\":\"https://reactjs.org/\"}"
+      ],
       "translations": [
         {
           "locale": "de",
@@ -77,10 +108,10 @@
             "client": "FND Group - 01/2018 bis 10/2019",
             "clientLink": "https://fnd.group",
             "reference": "Florian Glatz, CEO",
+            "image": "/img/mock.jpg",
             "product": "A digital investment platform for investments in real estate funds",
             "application": "* Landingpage with CMS and i18n (<https://fnd.group>)\n* SPA with login, identity verification (IDNow) and private key management (<https://invest.fnd.group>)\n* Smart Contract for token and token distribution",
-            "responsibilities": "* Tech department as a service\n* Planning of infrastructure\n* Planning of security model\n* Choice of technologies\n* Setup and maintenance of deployment, CI, CD, kanban board, etc.\n* Management of requirements (design and product)\n* Software development",
-            "image": "/img/mock.jpg"
+            "responsibilities": "* Tech department as a service\n* Planning of infrastructure\n* Planning of security model\n* Choice of technologies\n* Setup and maintenance of deployment, CI, CD, kanban board, etc.\n* Management of requirements (design and product)\n* Software development"
           }
         },
         {
@@ -90,42 +121,13 @@
             "client": "FND Group - 01/2018 to 10/2019",
             "clientLink": "https://fnd.group",
             "reference": "Florian Glatz, CEO",
+            "image": "/img/mock.jpg",
             "product": "A digital investment platform for investments in real estate funds",
             "application": "* Landingpage with CMS and i18n (<https://fnd.group>)\n* SPA with login, identity verification (IDNow) and private key management (<https://invest.fnd.group>)\n* Smart Contract for token and token distribution",
-            "responsibilities": "* Tech department as a service\n* Planning of infrastructure\n* Planning of security model\n* Choice of technologies\n* Setup and maintenance of deployment, CI, CD, kanban board, etc.\n* Management of requirements (design and product)\n* Software development",
-            "image": "/img/mock.jpg"
+            "responsibilities": "* Tech department as a service\n* Planning of infrastructure\n* Planning of security model\n* Choice of technologies\n* Setup and maintenance of deployment, CI, CD, kanban board, etc.\n* Management of requirements (design and product)\n* Software development"
           }
         }
       ]
-    }
-  ],
-  "contactEmail": "mailto:contact@hardfork.io",
-  "translations": [
-    {
-      "locale": "de",
-      "value": {
-        "heroSubheadline": "Ihr Partner für anspruchsvolle Softwareprojekte",
-        "heroHeadline": "Hardfork",
-        "emailButton": "E-Mail senden",
-        "contactHeadline": "Kontaktanfrage",
-        "moreLinkText": "Mehr",
-        "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück.",
-        "contactButtonText": "Kontakt",
-        "projectsHeadline": "Vergangene Projekte"
-      }
-    },
-    {
-      "locale": "en",
-      "value": {
-        "heroHeadline": "Hardfork",
-        "heroSubheadline": "Your partner for challenging software projects",
-        "emailButton": "Send E-Mail",
-        "contactHeadline": "Send e-mail",
-        "moreLinkText": "More",
-        "contactDescription": "Please send us an e-mail and we will be in touch shortly!",
-        "contactButtonText": "Contact",
-        "projectsHeadline": "Past projects"
-      }
     }
   ],
   "head": {
