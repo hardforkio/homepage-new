@@ -7,8 +7,7 @@ import { FooterComponent } from '../../components/Footer/component'
 import { SafeExternalLink } from '../../components/Link'
 import { createPreview } from './Preview'
 import { getPathPrefix } from '../../utils/hooks'
-import { translate } from '../widgets/i18n'
-import { Locale } from '../../data/i18n'
+import { Locale, translate } from '../i18n'
 
 const Preview = createPreview<
   FooterDataOnDisk,
