@@ -190,34 +190,26 @@ collections:
         format: "json"
         identifier_field: "id"
         fields:
-          - name: "id"
-            label: "Identifier"
-            description: "A name to identify this object within this collection. Should be unique within the collection."
+          - label: "Identifier"
+            name: "id"
             widget: "hidden"
-            default: "footer"
+            default: "Footer"
 
-          - name: "translations"
-            label: "translations"
-            widget: "list"
-            fields:
-              - name: "locale"
-                widget: "select"
-                <<: *locales
+          - label: "Imprint Link Text"
+            name: "imprintLinkText"
+            widget: "localizedString"
 
-              - name: "value"
-                widget: "object"
-                fields:
-                  - name: "imprintLinkText"
-                    widget: "string"
+          - label: "Github Link URL"
+            name: "githubLinkURL"
+            widget: "string"
 
-                  - name: "githubLinkURL"
-                    widget: "string"
+          - label: "Contact Email"
+            name: "contactEmail"
+            widget: "string"
 
-                  - name: "contactEmail"
-                    widget: "string"
-
-                  - name: "copyrightText"
-                    widget: "string"
+          - label: "Copyright Text"
+            name: "copyrightText"
+            widget: "string"
 
   - name: "navbar"
     label: "Navbar"

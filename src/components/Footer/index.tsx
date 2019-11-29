@@ -3,7 +3,7 @@ import { FooterComponent } from './component'
 import { FunctionComponent } from 'react'
 import { Link } from 'gatsby'
 import { SafeExternalLink } from '../Link'
-import { useFooter, Footer as FooterData } from '../../data/footer'
+import { useFooter, FooterData } from '../../data/footer'
 import { usePathPrefix } from '../../utils/hooks'
 
 export const Footer: FunctionComponent = () => {
