@@ -1,8 +1,22 @@
 import test from 'tape'
-import { importSingleFile, importFiles, expandCollection } from './helpers'
+import {
+  importSingleFile,
+  importFiles,
+  expandCollection,
+  parseString,
+  convertToObjectList,
+  convertTechnologies,
+} from './helpers'
 
 import testItem1 from './testCollection/item1.json'
 import testItem2 from './testCollection/item2.json'
+import {
+  asObject,
+  asString,
+  objectList,
+  stringList,
+} from './testCollection/withStringObject.json'
+import homeMock from './testCollection/homeMock.json'
 
 test('importSingleFile', async t => {
   const data = await importSingleFile('./testCollection/item1.json')
@@ -34,4 +48,27 @@ test('expandCollection', async t => {
     testCollection: [testItem1, testItem2],
   })
   t.end()
+})
+
+test('String parser', assert => {
+  assert.deepEqual(parseString(asString), asObject, 'Remove all backslashes')
+  assert.end()
+})
+
+test('Map string list to object list', assert => {
+  assert.deepEqual(
+    convertToObjectList(stringList),
+    objectList,
+    'Remove all backslashes',
+  )
+  assert.end()
+})
+
+test.only('converter', assert => {
+  assert.deepEqual(
+    convertTechnologies(homeMock.withString),
+    homeMock.withObject,
+    'Should convert only the technologies to objects',
+  )
+  assert.end()
 })
