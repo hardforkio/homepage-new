@@ -65,6 +65,43 @@
       ]
     }
   ],
+  "projects": [
+    {
+      "id": "FND",
+      "usedTechnologies": [
+        "{\"name\":\"ReactJS\",\"link\":\"https://reactjs.org/\"}",
+        "{\"name\":\"Typescript\",\"link\":\"https://www.typescriptlang.org/\"}"
+      ],
+      "translations": [
+        {
+          "locale": "de",
+          "value": {
+            "slug": "fnd",
+            "client": "FND Group - 01/2018 bis 10/2019",
+            "clientLink": "https://fnd.group",
+            "reference": "Florian Glatz, CEO",
+            "product": "A digital investment platform for investments in real estate funds",
+            "application": "* Landingpage with CMS and i18n (<https://fnd.group>)\n* SPA with login, identity verification (IDNow) and private key management (<https://invest.fnd.group>)\n* Smart Contract for token and token distribution",
+            "responsibilities": "* Tech department as a service\n* Planning of infrastructure\n* Planning of security model\n* Choice of technologies\n* Setup and maintenance of deployment, CI, CD, kanban board, etc.\n* Management of requirements (design and product)\n* Software development",
+            "image": "/img/mock.jpg"
+          }
+        },
+        {
+          "locale": "en",
+          "value": {
+            "slug": "fnd",
+            "client": "FND Group - 01/2018 to 10/2019",
+            "clientLink": "https://fnd.group",
+            "reference": "Florian Glatz, CEO",
+            "product": "A digital investment platform for investments in real estate funds",
+            "application": "* Landingpage with CMS and i18n (<https://fnd.group>)\n* SPA with login, identity verification (IDNow) and private key management (<https://invest.fnd.group>)\n* Smart Contract for token and token distribution",
+            "responsibilities": "* Tech department as a service\n* Planning of infrastructure\n* Planning of security model\n* Choice of technologies\n* Setup and maintenance of deployment, CI, CD, kanban board, etc.\n* Management of requirements (design and product)\n* Software development",
+            "image": "/img/mock.jpg"
+          }
+        }
+      ]
+    }
+  ],
   "contactEmail": "mailto:contact@hardfork.io",
   "translations": [
     {
@@ -76,7 +113,8 @@
         "contactHeadline": "Kontaktanfrage",
         "moreLinkText": "Mehr",
         "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück.",
-        "contactButtonText": "Kontakt"
+        "contactButtonText": "Kontakt",
+        "projectsHeadline": "Vergangene Projekte"
       }
     },
     {
@@ -88,7 +126,8 @@
         "contactHeadline": "Send e-mail",
         "moreLinkText": "More",
         "contactDescription": "Please send us an e-mail and we will be in touch shortly!",
-        "contactButtonText": "Contact"
+        "contactButtonText": "Contact",
+        "projectsHeadline": "Past projects"
       }
     }
   ],

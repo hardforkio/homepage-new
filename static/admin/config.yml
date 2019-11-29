@@ -153,8 +153,6 @@ collections:
             widget: "hidden"
             default: "home"
 
-
-
           - name: "contactEmail"
             widget: "string"
 
@@ -193,6 +191,9 @@ collections:
                   - name: "emailButton"
                     widget: "string"
 
+                  - name: "projectsHeadline"
+                    widget: "string"                    
+
           - name: "offerings"
             label: "Offerings"
             widget: "list"
@@ -218,7 +219,50 @@ collections:
                           widget: "image",
                           allow_multiple: false,
                         }
-                      - { name: "text", widget: "text" }                    
+                      - { name: "text", widget: "text" }   
+          
+          - name: "projects"
+            label: "Projects"
+            widget: "list"
+            default: []
+            identfier_field: "id"
+            fields:
+              - name: "id"
+                widget: "string"
+
+              - label: "Used technologies"
+                name: "usedTechnologies"  
+                widget: "relation"
+                collection: "technology"
+                searchFields: ["value.name"]
+                valueField: value
+                displayFields: ['value.name']
+                multiple: true
+
+              - name: "translations"
+                label: "translations"
+                widget: "list"
+                fields:
+                  - name: "locale"
+                    widget: "select"
+                    <<: *locales
+                  - name: "value"
+                    widget: "object"
+                    fields:
+                      - { name: "slug", widget: "string" }
+                      - { name: "client", widget: "string" }
+                      - { name: "clientLink", widget: "string" }
+                      - { name: "reference", widget: "string" }
+                      - {
+                          name: "image",
+                          widget: "image",
+                          allow_multiple: false,
+                          required: false
+                        }
+                      - { name: "product", widget: "string" }
+                      - { name: "application", widget: "markdown" }
+                      - { name: "responsibilities", widget: "markdown" }
+                                                              
 
           - name: "head"
             label: "Head"
@@ -305,4 +349,20 @@ collections:
                   - name: "FAQLinkText"
                     widget: "string"
 
+  - name: "technology"
+    label: "Technology"
+    folder: "src/data/technology"
+    identifier_field: "title"
+    create: true
+    format: "json"
+    editor:
+      preview: false
+    fields:
+      - {label: "Title", name: "title", widget: "string", default: "technology"}
+      - name: "value"
+        widget: "object"
+        fields:
+          - {label: "Name", name: "name", widget: "string", required: true}
+          - {label: "Link", name: "link", widget: "string", required: false}
+          
 
