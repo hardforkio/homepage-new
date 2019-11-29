@@ -1,0 +1,21 @@
+{
+    "stringList": [
+        "{\"name\":\"ReactJS\",\"link\":\"https://reactjs.org/\"}",
+        "{\"name\":\"Typescript\",\"link\":\"https://www.typescriptlang.org/\"}"
+    ],
+    "objectList": [
+        {
+            "name": "ReactJS",
+            "link": "https://reactjs.org/"
+        },
+        {
+            "name": "Typescript",
+            "link": "https://www.typescriptlang.org/"
+        }
+    ],
+    "asString": "{\"name\":\"ReactJS\",\"link\":\"https://reactjs.org/\"}",
+    "asObject": {
+        "name": "ReactJS",
+        "link": "https://reactjs.org/"
+    }
+}

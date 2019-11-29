@@ -1,0 +1,90 @@
+{
+    "withString": {
+        "offerings": [
+            {
+                "headline": "Software",
+                "image": "/img/pic01.jpg",
+                "text": "Wir entwickeln für Sie Software-Applikationen nach Ihren Vorstellungen. Unser Team besitzt alle dafür notwendigen Kompetenzen vom Frontend mit komplexem Application State Management über Client zu Server Kommunikation und Backend-Entwicklung bis zum skalierbaren und sicheren Betrieb in der Cloud. Mit Hardfork bekommen Sie Ihren gesamten Stack aus einer Hand.\n\nWir nutzen unter anderem die Technologien bzw. Libraries React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) und AWS serverless."
+            }
+        ],
+        "projects": [
+            {
+                "usedTechnologies": [
+                    "{\"name\":\"ReactJS\",\"link\":\"https://reactjs.org/\"}",
+                    "{\"name\":\"Typescript\",\"link\":\"https://www.typescriptlang.org/\"}"
+                ],
+                "slug": "fnd",
+                "client": "FND Group - 01/2018 bis 10/2019",
+                "clientLink": "https: //fnd.group",
+                "reference": "Florian Glatz, CEO",
+                "product": "A digital investment platform for investments in real estate funds",
+                "application": "* Landingpage with CMS and i18n (<https: //fnd.group>)\n* SPA with login, identity verification (IDNow) and private key management (<https://invest.fnd.group>)\n* Smart Contract for token and token distribution",
+                "responsibilities": "* Tech department as a service\n* Planning of infrastructure\n* Planning of security model\n* Choice of technologies\n* Setup and maintenance of deployment, CI, CD, kanban board, etc.\n* Management of requirements (design and product)\n* Software development",
+                "image": "/img/mock.jpg"
+            }
+        ],
+        "contactEmail": "mailto:contact@hardfork.io",
+        "heroSubheadline": "Ihr Partner für anspruchsvolle Softwareprojekte",
+        "heroHeadline": "Hardfork",
+        "emailButton": "E-Mail senden",
+        "contactHeadline": "Kontaktanfrage",
+        "moreLinkText": "Mehr",
+        "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück.",
+        "contactButtonText": "Kontakt",
+        "projectsHeadline": "Vergangene Projekte",
+        "head": {
+            "title": "Hardfork GmbH - Software Entwicklung und Business Development",
+            "meta": {
+                "description": "Wir entwickeln Software nach Ihren Wünschen in Berlin",
+                "keywords": "Softwareentwicklung"
+            }
+        }
+    },
+    "withObject": {
+        "offerings": [
+            {
+                "headline": "Software",
+                "image": "/img/pic01.jpg",
+                "text": "Wir entwickeln für Sie Software-Applikationen nach Ihren Vorstellungen. Unser Team besitzt alle dafür notwendigen Kompetenzen vom Frontend mit komplexem Application State Management über Client zu Server Kommunikation und Backend-Entwicklung bis zum skalierbaren und sicheren Betrieb in der Cloud. Mit Hardfork bekommen Sie Ihren gesamten Stack aus einer Hand.\n\nWir nutzen unter anderem die Technologien bzw. Libraries React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) und AWS serverless."
+            }
+        ],
+        "projects": [
+            {
+                "usedTechnologies": [
+                    {
+                        "name": "ReactJS",
+                        "link": "https://reactjs.org/"
+                    },
+                    {
+                        "name": "Typescript",
+                        "link": "https://www.typescriptlang.org/"
+                    }
+                ],
+                "slug": "fnd",
+                "client": "FND Group - 01/2018 bis 10/2019",
+                "clientLink": "https: //fnd.group",
+                "reference": "Florian Glatz, CEO",
+                "product": "A digital investment platform for investments in real estate funds",
+                "application": "* Landingpage with CMS and i18n (<https: //fnd.group>)\n* SPA with login, identity verification (IDNow) and private key management (<https://invest.fnd.group>)\n* Smart Contract for token and token distribution",
+                "responsibilities": "* Tech department as a service\n* Planning of infrastructure\n* Planning of security model\n* Choice of technologies\n* Setup and maintenance of deployment, CI, CD, kanban board, etc.\n* Management of requirements (design and product)\n* Software development",
+                "image": "/img/mock.jpg"
+            }
+        ],
+        "contactEmail": "mailto:contact@hardfork.io",
+        "heroSubheadline": "Ihr Partner für anspruchsvolle Softwareprojekte",
+        "heroHeadline": "Hardfork",
+        "emailButton": "E-Mail senden",
+        "contactHeadline": "Kontaktanfrage",
+        "moreLinkText": "Mehr",
+        "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück.",
+        "contactButtonText": "Kontakt",
+        "projectsHeadline": "Vergangene Projekte",
+        "head": {
+            "title": "Hardfork GmbH - Software Entwicklung und Business Development",
+            "meta": {
+                "description": "Wir entwickeln Software nach Ihren Wünschen in Berlin",
+                "keywords": "Softwareentwicklung"
+            }
+        }
+    }
+}
