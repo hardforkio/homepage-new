@@ -1,7 +1,9 @@
 {
   "imprintLinkText": [
-    { "locale": "de", "value": "Impressum" },
-    { "locale": "en", "value": "Imprint" }
+    {
+      "locale": "de",
+      "value": "dfg"
+    }
   ],
   "githubLinkURL": "https://github.com/hardforkio",
   "contactEmail": "contact@hardfork.io",
