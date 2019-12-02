@@ -6,6 +6,7 @@ import '../scss/main.scss'
 import { HomePreview } from './preview-templates/HomePreview'
 import { NavbarPreview } from './preview-templates/NavbarPreview'
 import { createLocalizedStringWidget } from './widgets/LocalizedString'
+import { ProjectPreview } from './preview-templates/ProjectPreview'
 
 const LocalizedStringControl = createLocalizedStringWidget(['en', 'de'])
 
@@ -26,3 +27,4 @@ CMS.registerPreviewTemplate('footer', FooterPreview)
 CMS.registerPreviewTemplate('navbar', NavbarPreview)
 
 CMS.registerWidget('localizedString', LocalizedStringControl)
+CMS.registerPreviewTemplate('project', ProjectPreview)

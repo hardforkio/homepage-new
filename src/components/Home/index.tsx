@@ -8,8 +8,11 @@ import { HomeData, useHome } from '../../data/home'
 import { PastProjectsComponent } from '../PastProjects/Section'
 import { Container } from 'reactstrap'
 import { Link } from 'gatsby'
+import { ProjectProps, useProjects } from '../../data/project'
 
-export const HomePageComponent: FunctionComponent<HomeData> = ({
+export const HomePageComponent: FunctionComponent<HomeData & {
+  projects: ProjectProps[]
+}> = ({
   heroHeadline,
   heroSubheadline,
   offerings,
@@ -54,5 +57,7 @@ export const HomePageComponent: FunctionComponent<HomeData> = ({
 
 export const HomePage: FunctionComponent<{}> = () => {
   const data: HomeData = useHome()
-  return <HomePageComponent {...data} />
+  const projects: ProjectProps[] = useProjects()
+  console.log(projects)
+  return <HomePageComponent {...data} projects={projects} />
 }

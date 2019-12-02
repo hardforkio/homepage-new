@@ -1,12 +1,12 @@
 import React, { FunctionComponent, useEffect } from 'react'
 import { ContentWrap } from '../../Content/index'
 import ReactMarkdown from 'react-commonmark'
-import { ProjectProps } from '../../../data/home'
 import cn from 'classnames'
 import { Row, Col, Badge } from 'reactstrap'
 import { mapToComponent } from '../../../utils/helpers'
 import { Technology } from '../../../data/technology'
 import { useNavbarState } from '../../../utils/hooks'
+import { ProjectProps } from '../../../data/project'
 
 export const ProjectPageComponent: FunctionComponent<ProjectProps> = ({
   client,

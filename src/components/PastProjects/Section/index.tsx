@@ -9,9 +9,9 @@ import {
   CardHeader,
 } from 'reactstrap'
 import { mapToComponent } from '../../../utils/helpers'
-import { ProjectProps } from '../../../data/home'
 import * as R from 'ramda'
 import { usePathPrefix } from '../../../utils/hooks'
+import { ProjectProps } from '../../../data/project'
 
 export const PastProjectsComponent: FunctionComponent<{
   headline: string | undefined

@@ -1,5 +1,5 @@
 import * as R from 'ramda'
-import { ProjectProps } from './home'
+import { ProjectProps } from './project'
 
 export const importSingleFile: <T extends {} = any>(
   path: string,
@@ -42,5 +42,5 @@ export const filterBySlug = (slug: string) =>
   )
 
 export const convertTechnologies: (data: any) => any = R.evolve({
-  projects: R.map(R.evolve({ usedTechnologies: convertToObjectList })),
+  usedTechnologies: convertToObjectList,
 })

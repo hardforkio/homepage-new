@@ -1,5 +1,5 @@
-import { ProjectProps } from '../../data/home'
 import mockScreen from './Mock.jpg'
+import { ProjectProps } from '../../data/project'
 
 export const MOCK_PROJECTS: ProjectProps[] = [
   {
@@ -19,6 +19,13 @@ export const MOCK_PROJECTS: ProjectProps[] = [
 
     responsibilities:
       '* Tech department as a service\n* Planning of infrastructure\n* Planning of security model\n* Choice of technologies\n* Setup and maintenance of deployment, CI, CD, kanban board, etc.\n* Management of requirements (design and product)\n* Software development',
+    head: {
+      title: 'Hardfork GmbH - Software Entwicklung und Business Development',
+      meta: {
+        description: 'Wir entwickeln Software nach Ihren Wünschen in Berlin',
+        keywords: 'Softwareentwicklung',
+      },
+    },
   },
   {
     slug: 'fnd',
@@ -36,6 +43,13 @@ export const MOCK_PROJECTS: ProjectProps[] = [
     ],
     responsibilities:
       '* Tech department as a service\n* Planning of infrastructure\n* Planning of security model\n* Choice of technologies\n* Setup and maintenance of deployment, CI, CD, kanban board, etc.\n* Management of requirements (design and product)\n* Software development',
+    head: {
+      title: 'Hardfork GmbH - Software Entwicklung und Business Development',
+      meta: {
+        description: 'Wir entwickeln Software nach Ihren Wünschen in Berlin',
+        keywords: 'Softwareentwicklung',
+      },
+    },
   },
   {
     slug: 'fnd',
@@ -48,6 +62,13 @@ export const MOCK_PROJECTS: ProjectProps[] = [
     application: 'string',
     usedTechnologies: [],
     responsibilities: 'string',
+    head: {
+      title: 'Hardfork GmbH - Software Entwicklung und Business Development',
+      meta: {
+        description: 'Wir entwickeln Software nach Ihren Wünschen in Berlin',
+        keywords: 'Softwareentwicklung',
+      },
+    },
   },
   {
     slug: 'fnd',
@@ -60,5 +81,12 @@ export const MOCK_PROJECTS: ProjectProps[] = [
     application: 'string',
     usedTechnologies: [],
     responsibilities: 'string',
+    head: {
+      title: 'Hardfork GmbH - Software Entwicklung und Business Development',
+      meta: {
+        description: 'Wir entwickeln Software nach Ihren Wünschen in Berlin',
+        keywords: 'Softwareentwicklung',
+      },
+    },
   },
 ]

@@ -4,3 +4,5 @@ export interface Technology {
 }
 
 export type StringifiedTechnologies = string[]
+
+type TechnologiesOnDisk = Technology[]
