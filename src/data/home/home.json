@@ -75,7 +75,7 @@
         "emailButton": "E-Mail senden",
         "contactHeadline": "Kontaktanfrage",
         "moreLinkText": "Mehr",
-        "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück.",
+        "contactDescription": "Bitte schreiben Sie uns und wir melden uns zurück.",
         "contactButtonText": "Kontakt",
         "projectsHeadline": "Vergangene Projekte"
       }
@@ -88,7 +88,7 @@
         "emailButton": "Send E-Mail",
         "contactHeadline": "Send e-mail",
         "moreLinkText": "More",
-        "contactDescription": "Please send us an e-mail and we will be in touch shortly!",
+        "contactDescription": "Please write us and we will be in touch shortly!",
         "contactButtonText": "Contact",
         "projectsHeadline": "Past projects"
       }
