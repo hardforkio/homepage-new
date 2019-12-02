@@ -37,7 +37,7 @@ export const HeroSection: FunctionComponent<IntroProps> = ({
     }, 2000)
   }, [])
 
-  const [_, setTransparent] = useNavbarState()
+  const [, setTransparent] = useNavbarState()
   const [inView, ref] = useIsInViewport({ threshold: 90 })
   useEffect(() => {
     setTransparent(!!inView)
