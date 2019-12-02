@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react'
 import { Offerings } from '../Offerings'
-import CallToAction from '../CallToAction'
 import { HeroSection } from '../Hero'
 import cn from 'classnames'
 import styles from './Home.module.scss'
@@ -12,6 +11,7 @@ import { ProjectData } from '../../data/project/types'
 import { Team } from '../Team'
 import * as R from 'ramda'
 import { TeamData } from '../../data/team'
+import { ContactSection } from '../Contact'
 
 export const HomePageComponent: FunctionComponent<HomeData & {
   projects: ProjectData[]
@@ -52,7 +52,7 @@ export const HomePageComponent: FunctionComponent<HomeData & {
       {hasMembers(team) ? <Team {...team}></Team> : ''}
     </section>
     <section id="contact">
-      <CallToAction
+      <ContactSection
         headline={contactHeadline}
         description={contactDescription}
         url={contactEmail}
