@@ -1,0 +1,1 @@
+export { createLocalizedStringWidget } from './control'
