@@ -1,5 +1,5 @@
 import * as R from 'ramda'
-import { ProjectProps } from './home'
+import { ProjectProps } from './project'
 
 export const importSingleFile: <T extends {} = any>(
   path: string,
