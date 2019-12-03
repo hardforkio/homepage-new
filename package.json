@@ -15,9 +15,9 @@
     "lint:code": "eslint 'src/**/*.{jsx,js,ts,tsx}'",
     "lint:styles": "stylelint 'src/**/*.{scss,css}'",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "yarn test-code && yarn test-widget",
+    "test": "yarn test-code && yarn test-component",
     "test-code": "tape -r ts-node/register 'src/**/*.test.[jt]s?(x)' | tap-spec",
-    "test-widget": "jest",
+    "test-component": "jest",
     "test:watch": "onchange -i 'src/**/*.[jt]s?(x)' -- yarn test",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"

@@ -1,8 +1,11 @@
 import * as React from 'react'
 import * as R from 'ramda'
-
-import { getTranslationDefault, upsertTranslation, Localized } from '../i18n'
-import { Locale } from '../i18n-locales'
+import {
+  getTranslation,
+  uppendTranslation,
+  TranslationCollection,
+} from '../../i18n-lib'
+import { Locale } from '../../i18n-locales'
 
 interface WidgetProps<T> {
   value: T
@@ -11,7 +14,33 @@ interface WidgetProps<T> {
 }
 
 interface LocalizedStringWidgetProps
-  extends WidgetProps<readonly Localized<string>[]> {}
+  extends WidgetProps<TranslationCollection<string>> {}
+
+export const createLocalizedStringWidget = (locales: Locale[]) => {
+  class LocalizedStringControl extends React.Component<
+    LocalizedStringWidgetProps
+  > {
+    render = () => {
+      const { value = [], onChange, classNameWrapper } = this.props
+
+      return (
+        <div className={classNameWrapper}>
+          {locales.map((locale: Locale) => (
+            <InputField
+              classNameWrapper={classNameWrapper}
+              key={locale}
+              locale={locale}
+              onChange={onChange}
+              value={R.is(Array, value) ? value : (value as any).toJS()}
+            />
+          ))}
+        </div>
+      )
+    }
+  }
+
+  return LocalizedStringControl
+}
 
 interface InputFieldProps extends LocalizedStringWidgetProps {
   locale: Locale
@@ -25,7 +54,7 @@ const InputField: React.FunctionComponent<InputFieldProps> = ({
 }) => {
   const handleChange = React.useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      onChange(upsertTranslation(locale, event.target.value)(value))
+      onChange(uppendTranslation(locale, event.target.value)(value))
     },
     [locale, onChange, value],
   )
@@ -36,35 +65,9 @@ const InputField: React.FunctionComponent<InputFieldProps> = ({
         id={locale}
         className={classNameWrapper}
         type="text"
-        value={getTranslationDefault(locale)(value) || ''}
+        value={getTranslation<string>(locale)(value) || ''}
         onChange={handleChange}
       />
     </div>
   )
-}
-
-export const createLocalizedStringWidget = (locales: Locale[]) => {
-  class LocalizedStringControl extends React.Component<
-    LocalizedStringWidgetProps
-  > {
-    render = () => {
-      const { value = [], onChange, classNameWrapper } = this.props
-
-      return (
-        <div className={classNameWrapper}>
-          {locales.map((locale: Locale, index: number) => (
-            <InputField
-              classNameWrapper={classNameWrapper}
-              key={index.toString()}
-              locale={locale}
-              onChange={onChange}
-              value={R.is(Array, value) ? value : (value as any).toJS()}
-            />
-          ))}
-        </div>
-      )
-    }
-  }
-
-  return LocalizedStringControl
 }

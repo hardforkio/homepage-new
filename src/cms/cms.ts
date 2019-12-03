@@ -7,8 +7,9 @@ import { HomePreview } from './preview-templates/HomePreview'
 import { NavbarPreview } from './preview-templates/NavbarPreview'
 import { createLocalizedStringWidget } from './widgets/LocalizedString'
 import { ProjectPreview } from './preview-templates/ProjectPreview'
+import { LOCALES } from './i18n'
 
-const LocalizedStringControl = createLocalizedStringWidget(['en', 'de'])
+const LocalizedStringControl = createLocalizedStringWidget(LOCALES)
 
 const config = {
   backend: {
@@ -25,6 +26,6 @@ CMS.registerPreviewTemplate('faq', FAQPreview)
 CMS.registerPreviewTemplate('home', HomePreview)
 CMS.registerPreviewTemplate('footer', FooterPreview)
 CMS.registerPreviewTemplate('navbar', NavbarPreview)
+CMS.registerPreviewTemplate('project', ProjectPreview)
 
 CMS.registerWidget('localizedString', LocalizedStringControl)
-CMS.registerPreviewTemplate('project', ProjectPreview)

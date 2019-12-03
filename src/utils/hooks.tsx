@@ -4,7 +4,7 @@ import React, {
   useState,
   useEffect,
 } from 'react'
-import { Locale } from '../data/i18n'
+import { Locale } from '../cms/i18n'
 import { globalHistory } from '@reach/router'
 
 type NavbarState = [boolean, (newValue: boolean) => void]

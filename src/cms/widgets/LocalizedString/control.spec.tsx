@@ -1,8 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { createLocalizedStringWidget } from './control'
-import { TranslationCollection } from '../i18n'
-
+import { TranslationCollection } from '../../i18n-lib'
 import { fromJS } from 'immutable'
 
 const Widget = createLocalizedStringWidget(['de', 'en'])
