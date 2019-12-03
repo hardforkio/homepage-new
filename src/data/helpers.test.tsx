@@ -64,7 +64,7 @@ test('Map string list to object list', assert => {
   assert.end()
 })
 
-test.only('converter', assert => {
+test('converter', assert => {
   assert.deepEqual(
     convertTechnologies(homeMock.withString),
     homeMock.withObject,
