@@ -2,11 +2,17 @@ import { Technology, StringifiedTechnologies } from '../technology'
 import { TranslationCollection, Locale, filterByLocale } from '../i18n'
 import * as R from 'ramda'
 import { useLocale } from '../../utils/hooks'
-import { convertTechnologies } from '../helpers'
+import { convertToObjectList } from '../helpers'
 import { Head } from '../../components/Head'
 import { graphql, useStaticQuery } from 'gatsby'
 
-interface TranslatedProjectProps {
+export type ProjectData = {
+  usedTechnologies: Technology[]
+  slug: string
+  head: Head
+} & TranslatedProjectData
+
+interface TranslatedProjectData {
   client: string
   clientLink: string
   reference: string
@@ -16,27 +22,23 @@ interface TranslatedProjectProps {
   responsibilities: string
 }
 
-export type ProjectProps = {
-  usedTechnologies: Technology[]
-  slug: string
-  head: Head
-} & TranslatedProjectProps
-
-type ProjectPropsOnDisk = {
-  usedTechnologies: StringifiedTechnologies // Apparently the relation widget returns a list of stringified Technology objects. They are parsed later in the component whre they are used.
+type ProjectDataOnDisk = {
+  usedTechnologies: StringifiedTechnologies
   slug: string
   head: TranslationCollection<Head>
-} & TranslationCollection<TranslatedProjectProps>
+} & TranslationCollection<TranslatedProjectData>
 
-export const useGetProjects = (locale: Locale): ProjectProps[] => {
-  const projects = useLoadFiles()
-  const filteredProjects = filterByLocale(locale)(projects)
-  return convertTechnologies(filteredProjects)
+export const useParsedProjects = (locale: Locale): ProjectData[] => {
+  const jsonData: ProjectDataOnDisk[] = useLoadFiles()
+  return R.map(
+    R.pipe(filterByLocale(locale), deserializeTechnologies),
+    jsonData,
+  )
 }
 
-export const useProjects: () => ProjectProps[] = R.pipe(
+export const useProjects: () => ProjectData[] = R.pipe(
   useLocale,
-  useGetProjects,
+  useParsedProjects,
 )
 
 const useLoadFiles = () => {
@@ -79,3 +81,11 @@ const useLoadFiles = () => {
   )
   return data.allProjectJson.nodes
 }
+
+export const deserializeTechnologies: (
+  data: Omit<ProjectData, 'usedTechnologies'> & {
+    usedTechnologies: StringifiedTechnologies
+  },
+) => ProjectData = R.evolve({
+  usedTechnologies: convertToObjectList,
+})

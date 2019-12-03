@@ -3,10 +3,10 @@ import { PreviewProps, getJSON } from './helpers'
 import { filterByLocale, Locale } from '../../data/i18n'
 import { createPreview } from './Preview'
 import { ProjectPageComponent } from '../../components/PastProjects/Page'
-import { ProjectProps } from '../../data/project'
+import { ProjectData } from '../../data/project'
 import { convertTechnologies } from '../../data/helpers'
 
-const Preview = createPreview<ProjectProps, ProjectProps>()
+const Preview = createPreview<ProjectData, ProjectData>()
 
 export const ProjectPreview: FunctionComponent<PreviewProps> = ({ entry }) => (
   <Preview

@@ -4,11 +4,11 @@ import { HomePageComponent } from '../../components/Home'
 import { HomeData, HomeDataOnDisk } from '../../data/home'
 import { createPreview } from './Preview'
 import { filterByLocale } from '../../data/i18n'
-import { ProjectProps } from '../../data/project'
+import { ProjectData } from '../../data/project'
 
 const Preview = createPreview<
   HomeDataOnDisk,
-  HomeData & { projects: ProjectProps[] }
+  HomeData & { projects: ProjectData[] }
 >()
 
 export const HomePreview: FunctionComponent<PreviewProps> = ({ entry }) => (

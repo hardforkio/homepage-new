@@ -6,9 +6,9 @@ import { Row, Col, Badge } from 'reactstrap'
 import { mapToComponent } from '../../../utils/helpers'
 import { Technology } from '../../../data/technology'
 import { useNavbarState } from '../../../utils/hooks'
-import { ProjectProps } from '../../../data/project'
+import { ProjectData } from '../../../data/project'
 
-export const ProjectPageComponent: FunctionComponent<ProjectProps> = ({
+export const ProjectPageComponent: FunctionComponent<ProjectData> = ({
   client,
   product,
   application,

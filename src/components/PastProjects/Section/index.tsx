@@ -11,11 +11,11 @@ import {
 import { mapToComponent } from '../../../utils/helpers'
 import * as R from 'ramda'
 import { usePathPrefix } from '../../../utils/hooks'
-import { ProjectProps } from '../../../data/project'
+import { ProjectData } from '../../../data/project'
 
 export const PastProjectsComponent: FunctionComponent<{
   headline: string | undefined
-  projects: ProjectProps[]
+  projects: ProjectData[]
   linkTag: any
 }> = ({ headline, projects, linkTag }) => {
   if (hasProjects(projects)) {
@@ -33,7 +33,7 @@ export const PastProjectsComponent: FunctionComponent<{
 
 const createProjectComponent: (
   linkTag: any,
-) => FunctionComponent<ProjectProps> = linkTag => ({
+) => FunctionComponent<ProjectData> = linkTag => ({
   client,
   product,
   slug,

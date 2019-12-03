@@ -1,7 +1,7 @@
 import mockScreen from './Mock.jpg'
-import { ProjectProps } from '../../data/project'
+import { ProjectData } from '../../data/project'
 
-export const MOCK_PROJECTS: ProjectProps[] = [
+export const MOCK_PROJECTS: ProjectData[] = [
   {
     slug: 'fnd',
     client: 'FND Group - 01/2018 bis 10/2019',

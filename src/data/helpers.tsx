@@ -1,5 +1,5 @@
 import * as R from 'ramda'
-import { ProjectProps } from './project'
+import { ProjectData } from './project'
 
 export const importSingleFile: <T extends {} = any>(
   path: string,
@@ -34,13 +34,3 @@ export const expandCollection: <S>(
 export const parseString = JSON.parse
 
 export const convertToObjectList: (list: string[]) => any = R.map(parseString)
-
-export const filterBySlug = (slug: string) =>
-  R.pipe<ProjectProps[], ProjectProps[], ProjectProps>(
-    R.filter(R.propEq('slug', slug)),
-    R.head,
-  )
-
-export const convertTechnologies: (data: any) => any = R.evolve({
-  usedTechnologies: convertToObjectList,
-})
