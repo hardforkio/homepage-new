@@ -22,23 +22,20 @@ interface TranslatedProjectData {
   responsibilities: string
 }
 
-type ProjectDataOnDisk = {
+export type ProjectDataOnDisk = {
   usedTechnologies: StringifiedTechnologies
   slug: string
   head: TranslationCollection<Head>
 } & TranslationCollection<TranslatedProjectData>
 
-export const useParsedProjects = (locale: Locale): ProjectData[] => {
+export const useGetProjects = (locale: Locale): ProjectData[] => {
   const jsonData: ProjectDataOnDisk[] = useLoadFiles()
-  return R.map(
-    R.pipe(filterByLocale(locale), deserializeTechnologies),
-    jsonData,
-  )
+  return R.map(translateAndConvert(locale), jsonData)
 }
 
 export const useProjects: () => ProjectData[] = R.pipe(
   useLocale,
-  useParsedProjects,
+  useGetProjects,
 )
 
 const useLoadFiles = () => {
@@ -81,6 +78,11 @@ const useLoadFiles = () => {
   )
   return data.allProjectJson.nodes
 }
+
+export const translateAndConvert = (
+  locale: Locale,
+): ((data: ProjectDataOnDisk) => ProjectData) =>
+  R.pipe(filterByLocale(locale), deserializeTechnologies)
 
 export const deserializeTechnologies: (
   data: Omit<ProjectData, 'usedTechnologies'> & {

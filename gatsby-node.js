@@ -1,7 +1,6 @@
 const path = require(`path`)
 require('ts-node').register() // To use imports from ts files. See https://github.com/gatsbyjs/gatsby/issues/1457#issuecomment-446006181
-const { filterByLocale } = require('./src/data/i18n')
-const { convertTechnologies } = require('./src/data/helpers')
+const { translateAndConvert } = require('./src/data/project')
 const R = require('ramda')
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -41,11 +40,11 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  const germanTranslations = R.map(filterAndConvert('de'))(
+  const germanTranslations = R.map(translateAndConvert('de'))(
     result.data.allProjectJson.nodes,
   )
 
-  const englishTranslations = R.map(filterAndConvert('en'))(
+  const englishTranslations = R.map(translateAndConvert('en'))(
     result.data.allProjectJson.nodes,
   )
 
@@ -68,9 +67,4 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })(englishTranslations)
-}
-
-const filterAndConvert = locale => node => {
-  const filteredProjects = filterByLocale(locale)(node)
-  return convertTechnologies(filteredProjects)
 }

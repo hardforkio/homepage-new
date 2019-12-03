@@ -1,11 +1,48 @@
 import test from 'tape'
-import homeMock from '../testCollection/homeMock.json'
-import { deserializeTechnologies } from './index'
+import { deserializeTechnologies, ProjectData } from './index'
 
 test('converter', assert => {
+  const projectWithString = {
+    title: '',
+    slug: '',
+    usedTechnologies: [
+      '{"name":"ReactJS","link":"https://reactjs.org/"}',
+      '{"name":"Typescript","link":"https://www.typescriptlang.org/"}',
+    ],
+
+    client: '',
+    clientLink: '',
+    reference: '',
+    product: '',
+    application: '',
+    responsibilities: '',
+    image: '/img/mock.jpg',
+    head: {
+      title: '',
+      meta: {
+        description: '',
+        keywords: '',
+      },
+    },
+  }
+
+  const projectWithObject: ProjectData = {
+    ...projectWithString,
+    usedTechnologies: [
+      {
+        name: 'ReactJS',
+        link: 'https://reactjs.org/',
+      },
+      {
+        name: 'Typescript',
+        link: 'https://www.typescriptlang.org/',
+      },
+    ],
+  }
+
   assert.deepEqual(
-    deserializeTechnologies(homeMock.withString),
-    homeMock.withObject,
+    deserializeTechnologies(projectWithString),
+    projectWithObject,
     'Should convert only the technologies to objects',
   )
   assert.end()

@@ -1,5 +1,4 @@
 import * as R from 'ramda'
-import { ProjectData } from './project'
 
 export const importSingleFile: <T extends {} = any>(
   path: string,
