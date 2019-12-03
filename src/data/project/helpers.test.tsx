@@ -1,5 +1,6 @@
 import test from 'tape'
-import { deserializeTechnologies, ProjectData } from './index'
+import { ProjectData } from './index'
+import { deserializeTechnologies } from './helpers'
 
 test('converter', assert => {
   const projectWithString = {

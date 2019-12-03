@@ -1,10 +1,10 @@
-import { Technology, StringifiedTechnologies } from '../technology'
-import { TranslationCollection, Locale, filterByLocale } from '../i18n'
+import { Technology } from '../technology'
+import { TranslationCollection, Locale } from '../i18n'
 import * as R from 'ramda'
 import { useLocale } from '../../utils/hooks'
-import { convertToObjectList } from '../helpers'
+import { importAll } from '../helpers'
 import { Head } from '../../components/Head'
-import { graphql, useStaticQuery } from 'gatsby'
+import { translateAndConvert } from './helpers'
 
 export type ProjectData = {
   usedTechnologies: Technology[]
@@ -23,71 +23,15 @@ interface TranslatedProjectData {
 }
 
 export type ProjectDataOnDisk = {
-  usedTechnologies: StringifiedTechnologies
+  usedTechnologies: string[]
   slug: string
   head: TranslationCollection<Head>
 } & TranslationCollection<TranslatedProjectData>
 
-export const useGetProjects = (locale: Locale): ProjectData[] => {
-  const jsonData: ProjectDataOnDisk[] = useLoadFiles()
-  return R.map(translateAndConvert(locale), jsonData)
-}
+const context = require.context('./', false, /\.json$/)
+const data: ProjectDataOnDisk[] = importAll<ProjectDataOnDisk>(context)
 
-export const useProjects: () => ProjectData[] = R.pipe(
-  useLocale,
-  useGetProjects,
-)
+export const getProjects = (locale: Locale): ProjectData[] =>
+  R.map(translateAndConvert(locale), data)
 
-const useLoadFiles = () => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        allProjectJson {
-          nodes {
-            slug
-            title
-            usedTechnologies
-            translations {
-              locale
-              value {
-                application
-                client
-                clientLink
-                image
-                product
-                reference
-                responsibilities
-              }
-            }
-            head {
-              translations {
-                locale
-                value {
-                  title
-                  meta {
-                    description
-                    keywords
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    `,
-  )
-  return data.allProjectJson.nodes
-}
-
-export const translateAndConvert = (
-  locale: Locale,
-): ((data: ProjectDataOnDisk) => ProjectData) =>
-  R.pipe(filterByLocale(locale), deserializeTechnologies)
-
-export const deserializeTechnologies: (
-  data: Omit<ProjectData, 'usedTechnologies'> & {
-    usedTechnologies: StringifiedTechnologies
-  },
-) => ProjectData = R.evolve({
-  usedTechnologies: convertToObjectList,
-})
+export const useProjects: () => ProjectData[] = R.pipe(useLocale, getProjects)

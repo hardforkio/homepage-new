@@ -1,5 +1,10 @@
 import * as R from 'ramda'
 
+// see: https://webpack.js.org/guides/dependency-management/#context-module-api
+export const importAll = <T extends {}>(
+  context: __WebpackModuleApi.RequireContext,
+) => context.keys().map(context) as T[]
+
 export const importSingleFile: <T extends {} = any>(
   path: string,
 ) => Promise<T> = path =>
