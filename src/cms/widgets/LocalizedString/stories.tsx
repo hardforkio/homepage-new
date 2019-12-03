@@ -2,8 +2,8 @@ import React from 'react'
 import '../../../scss/main.scss'
 import { storiesOf } from '@storybook/react'
 import cn from 'classnames'
-import styles from './styles.module.scss'
-import { createLocalizedStringWidget } from '.'
+import styles from '../styles.module.scss'
+import { createLocalizedStringControl } from './control'
 import { TranslationCollection } from '../../i18n-lib'
 import { Locale } from '../../i18n-locales'
 
@@ -14,13 +14,14 @@ interface WrapperProps {
 export const Wrapper: React.FunctionComponent<WrapperProps> = ({ locales }) => {
   const [value, setValue] = React.useState<TranslationCollection<string>>([])
 
-  const Widget = createLocalizedStringWidget(locales)
+  const LocalizedStringControl = createLocalizedStringControl(locales)
 
   return (
     <div>
       <div>In the widget I would see:</div>
       <div>
-        <Widget
+        <LocalizedStringControl
+          forID={'widget-identifier'}
           classNameWrapper={cn(styles.netlify)}
           onChange={setValue}
           value={value}

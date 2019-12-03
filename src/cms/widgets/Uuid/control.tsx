@@ -1,20 +1,14 @@
 import React from 'react'
 import uuidv4 from 'uuid/v4'
 
-interface WidgetProps {
-  value?: string
-  field: Map<any, any>
-  forID: string
-  onChange: (value: string) => void
-  classNameWrapper: string
-}
+import { NetlifyWidgetProps } from '../utils'
 
 const grayTextColor = {
   color: '#cdcdcd',
 }
 
-// Widgets cannot be function components.
-export class UuidControl extends React.Component<WidgetProps> {
+// Has to be React.Component, see: https://github.com/netlify/netlify-cms/issues/1346
+export class UuidControl extends React.Component<NetlifyWidgetProps> {
   componentDidMount() {
     const { value, onChange } = this.props
 
