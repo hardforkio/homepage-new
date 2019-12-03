@@ -3,9 +3,7 @@ import data from './home.json'
 import { TranslationCollection, Locale, filterByLocale } from '../i18n'
 import { useLocale } from '../../utils/hooks'
 import { Head } from '../../components/Head'
-
-import { TeamData, TeamDataOnDisk, teamMembers } from '../team'
-import { expandRelation } from '../helpers'
+import { TeamData, TeamDataOnDisk } from '../team'
 
 interface Offering {
   headline: string
@@ -45,14 +43,8 @@ export type HomeDataOnDisk = {
   emailButton: string
 }>
 
-export const expandTeamMembers = R.partial(expandRelation, [
-  ['team', 'members'],
-  teamMembers,
-])
-
 const home: HomeDataOnDisk = data
 export const getHome = (locale: Locale): HomeData => {
-  const expanded = expandTeamMembers(home)
-  return filterByLocale(locale)(expanded)
+  return filterByLocale(locale)(home)
 }
 export const useHome: () => HomeData = R.pipe(useLocale, getHome)

@@ -64,11 +64,10 @@ collections:
                     fields:
                       - { name: "title", widget: "string" }
                       - name: "meta"
-                        widget: "object" 
-                        fields: 
+                        widget: "object"
+                        fields:
                           - { name: "description", widget: "string" }
                           - { name: "keywords", widget: "string" }
-                                    
 
   - name: "faqPage"
     label: "FaqPage"
@@ -131,11 +130,10 @@ collections:
                     fields:
                       - { name: "title", widget: "string" }
                       - name: "meta"
-                        widget: "object" 
-                        fields: 
+                        widget: "object"
+                        fields:
                           - { name: "description", widget: "string" }
                           - { name: "keywords", widget: "string" }
-                                         
 
   - name: "home"
     label: "Landing Page"
@@ -152,8 +150,6 @@ collections:
             description: "A name to identify this object within this collection. Should be unique within the collection."
             widget: "hidden"
             default: "home"
-
-
 
           - name: "contactEmail"
             widget: "string"
@@ -218,7 +214,7 @@ collections:
                           widget: "image",
                           allow_multiple: false,
                         }
-                      - { name: "text", widget: "text" }                    
+                      - { name: "text", widget: "text" }
 
           - name: "head"
             label: "Head"
@@ -237,86 +233,65 @@ collections:
                     fields:
                       - { name: "title", widget: "string" }
                       - name: "meta"
-                        widget: "object" 
-                        fields: 
+                        widget: "object"
+                        fields:
                           - { name: "description", widget: "string" }
                           - { name: "keywords", widget: "string" }
-           
 
           - label: "Team"
             name: "team"
             widget: "object"
+            hint: "Only shows after adding a team member."
             fields:
-              - name: "translations"
-                widget: "list"
-                fields:
-                  - name: "locale"
-                    widget: "select"
-                    <<: *locales
+              - label: "Headline"
+                name: "header"
+                widget: "localizedString"
 
-                  - name: "header"
-                    widget: "string"
+              - label: "Subheadline"
+                name: "subheader"
+                widget: "localizedString"
 
-                  - name: "subheader"
-                    widget: "string"
-
-                  - name: "footer"
-                    widget: "string"
+              - label: "Footer"
+                name: "footer"
+                widget: "localizedString"
 
               - label: "Team Members"
                 name: "members"
-                widget: "relation"
-                collection: "teamMember"
-                searchFields: ["name"]
-                valueField: "uuid"
-                displayFields: ["name"]
-                multiple: true
-                required: false
-                hint: "The team section will show after adding a member."
+                widget: "list"
+                fields:
+                  - label: "Member ID"
+                    name: "uuid"
+                    widget: "uuid"
 
-  - label: "Team Member"
-    name: "teamMember"
-    folder: "src/data/team/member"
-    format: "json"
-    identifier_field: "name"
-    create: true
-    delete: true
-    editor:
-      preview: false
-    fields:
-      - label: "Member ID"
-        name: "uuid"
-        widget: "uuid"
+                  - label: "Full Name"
+                    name: "name"
+                    widget: "string"
 
-      - label: "Full Name"
-        name: "name"
-        widget: "string"
+                  - label: "Job Title"
+                    name: "jobTitle"
+                    widget: "localizedString"
 
-      - label: "Job Title"
-        name: "jobTitle"
-        widget: "string"
+                  - label: "Degree"
+                    name: "degree"
+                    widget: "localizedString"
 
-      - label: "Degree"
-        name: "degree"
-        widget: "string"
+                  - label: "Avatar"
+                    name: "avatar"
+                    widget: "image"
+                    allow_multiple: false
 
-      - label: "Avatar"
-        name: "avatar"
-        widget: "image"
-        allow_multiple: false
+                  - label: "Social Media"
+                    name: "socialMedia"
+                    widget: "list"
+                    fields:
+                      - label: "Platform"
+                        name: "platform"
+                        widget: "select"
+                        <<: *socialMediaPlatforms
 
-      - label: "Social Media"
-        name: "socialMedia"
-        widget: "list"
-        fields:
-          - label: "Platform"
-            name: "platform"
-            widget: "select"
-            <<: *socialMediaPlatforms
-
-          - label: "Username"
-            name: "username"
-            widget: "string"
+                      - label: "Username"
+                        name: "username"
+                        widget: "string"
 
   - name: "footer"
     label: "Footer"
@@ -379,5 +354,3 @@ collections:
 
                   - name: "FAQLinkText"
                     widget: "string"
-
-
