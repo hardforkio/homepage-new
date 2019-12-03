@@ -3,6 +3,7 @@ import '../../scss/main.scss'
 import { storiesOf } from '@storybook/react'
 import { DispatchActionLink } from '../../storybook/helpers'
 import { ContactSection } from '.'
+import { ExampleFormSection } from './example'
 
 const HEADLINE = 'We want YOU!'
 const DESCRIPTION = 'To take action and apply for a job click the button.'
@@ -16,4 +17,8 @@ storiesOf('Contact Form', module).add('default', () => (
     Link={DispatchActionLink}
     url="https://example.org"
   />
+))
+
+storiesOf('Spectral Template - Example Form', module).add('default', () => (
+  <ExampleFormSection />
 ))
