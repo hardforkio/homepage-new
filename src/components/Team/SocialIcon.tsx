@@ -3,15 +3,11 @@ import React, { FunctionComponent } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import { SocialMediaData } from '../../data/team'
 
 export enum Platform {
   github = 'github',
   linkedIn = 'linkedIn',
-}
-
-export interface SocialMediaData {
-  platform: Platform
-  username: string
 }
 
 const socialMediaIcons: { [type in Platform]: IconProp } = {

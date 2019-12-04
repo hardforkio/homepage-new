@@ -1,4 +1,4 @@
-import { SocialMediaData } from '../../components/Team/SocialIcon'
+import { Platform } from '../../components/Team/SocialIcon'
 
 // NOTE: using the new i18n library
 import { TranslationCollection } from '../../cms/i18n-lib'
@@ -17,7 +17,7 @@ export interface TeamMemberDataOnDisk {
   jobTitle: LocalizedString
   degree: LocalizedString
   avatar: string
-  socialMedia: SocialMediaData[]
+  socialMedia: SocialMediaDataOnDisk[]
 }
 
 export interface TeamData {
@@ -34,4 +34,14 @@ export interface TeamMemberData {
   degree: string
   avatar: string
   socialMedia: SocialMediaData[]
+}
+
+export interface SocialMediaData {
+  platform: Platform
+  username: string
+}
+
+export interface SocialMediaDataOnDisk {
+  platform: string
+  username: string
 }
