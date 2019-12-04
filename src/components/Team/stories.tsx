@@ -44,13 +44,3 @@ storiesOf('Team', module)
       />
     </Container>
   ))
-  .add('No members', () => (
-    <Container>
-      <Team
-        header={HEADER}
-        subheader={SUBHEADER}
-        members={[]}
-        footer={FOOTER}
-      />
-    </Container>
-  ))

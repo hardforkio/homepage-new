@@ -19,7 +19,6 @@ export const HomePageComponent: FunctionComponent<HomeData> = ({
   moreLinkText,
   emailButton,
   contactEmail,
-  metaDescription,
   team,
 }) => (
   <div>
@@ -46,10 +45,10 @@ export const HomePageComponent: FunctionComponent<HomeData> = ({
   </div>
 )
 
-const hasMembers: (team: TeamData) => boolean = R.pipe(
+const hasMembers: (team: TeamData) => boolean = R.ifElse(
   R.prop('members'),
-  R.isEmpty,
-  R.not,
+  R.pipe(R.prop('members'), R.isEmpty, R.not),
+  R.F,
 )
 
 export const HomePage: FunctionComponent<{}> = () => {

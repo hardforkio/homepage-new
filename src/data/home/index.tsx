@@ -4,6 +4,7 @@ import { TranslationCollection, Locale, filterByLocale } from '../i18n'
 import { useLocale } from '../../utils/hooks'
 import { Head } from '../../components/Head'
 import { TeamData, TeamDataOnDisk } from '../team'
+import { translate } from '../../cms/i18n'
 
 interface Offering {
   headline: string
@@ -43,8 +44,12 @@ export type HomeDataOnDisk = {
   emailButton: string
 }>
 
+// FIXME: Mixes old and new translation methods
 const home: HomeDataOnDisk = data
 export const getHome = (locale: Locale): HomeData => {
-  return filterByLocale(locale)(home)
+  return R.pipe<HomeDataOnDisk, any, any>(
+    filterByLocale(locale),
+    translate(locale),
+  )(home)
 }
 export const useHome: () => HomeData = R.pipe(useLocale, getHome)
