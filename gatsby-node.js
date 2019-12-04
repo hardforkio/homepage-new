@@ -1,52 +1,17 @@
 const path = require(`path`)
+const glob = require('glob')
 require('ts-node').register() // To use imports from ts files. See https://github.com/gatsbyjs/gatsby/issues/1457#issuecomment-446006181
 const { translateAndConvert } = require('./src/data/project/helpers')
 const R = require('ramda')
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ actions }) => {
   const { createPage } = actions
-  const result = await graphql(`
-    query {
-      allProjectJson {
-        nodes {
-          slug
-          title
-          usedTechnologies
-          translations {
-            locale
-            value {
-              application
-              client
-              clientLink
-              image
-              product
-              reference
-              responsibilities
-            }
-          }
-          head {
-            translations {
-              locale
-              value {
-                title
-                meta {
-                  description
-                  keywords
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-  const germanTranslations = R.map(translateAndConvert('de'))(
-    result.data.allProjectJson.nodes,
-  )
 
-  const englishTranslations = R.map(translateAndConvert('en'))(
-    result.data.allProjectJson.nodes,
-  )
+  const projects = importAllForNode('./src/data/project')
+
+  const germanTranslations = R.map(translateAndConvert('de'))(projects)
+
+  const englishTranslations = R.map(translateAndConvert('en'))(projects)
 
   R.forEach(props => {
     createPage({
@@ -68,3 +33,6 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })(englishTranslations)
 }
+
+const importAllForNode = filepath =>
+  glob.sync(`${filepath}/*.json`).map(file => require(path.resolve(file)))
