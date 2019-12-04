@@ -1,11 +1,9 @@
 import '../../scss/main.scss'
-
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import * as R from 'ramda'
-
 import { Team } from './'
-import fakeMembers from './data/fakeMembers'
+import { fakeMembers } from './data/fakeMembers'
 import { Container } from 'reactstrap'
 
 const HEADER = 'Our Team'
@@ -42,6 +40,16 @@ storiesOf('Team', module)
         header={HEADER}
         subheader={SUBHEADER}
         members={R.slice(0, 7, fakeMembers)}
+        footer={FOOTER}
+      />
+    </Container>
+  ))
+  .add('No members', () => (
+    <Container>
+      <Team
+        header={HEADER}
+        subheader={SUBHEADER}
+        members={[]}
         footer={FOOTER}
       />
     </Container>

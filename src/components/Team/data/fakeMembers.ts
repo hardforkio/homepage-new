@@ -7,7 +7,7 @@ import avatar05Url from './avatar/05.jpg'
 import { TeamMemberData } from '../../../data/team'
 import { Platform } from '../SocialIcon'
 
-const fakeMembers: TeamMemberData[] = [
+export const fakeMembers: TeamMemberData[] = [
   {
     uuid: '1',
     name: 'Frances Muller',
@@ -106,5 +106,3 @@ const fakeMembers: TeamMemberData[] = [
     socialMedia: [],
   },
 ]
-
-export default fakeMembers

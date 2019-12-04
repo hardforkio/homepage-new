@@ -4,22 +4,6 @@ import { SocialMediaData } from '../../components/Team/SocialIcon'
 import { TranslationCollection } from '../../cms/i18n-lib'
 type LocalizedString = TranslationCollection<string>
 
-export interface TeamData {
-  header: string
-  subheader: string
-  footer: string
-  members: TeamMemberData[]
-}
-
-export interface TeamMemberData {
-  uuid: string
-  name: string
-  jobTitle: string
-  degree: string
-  avatar: string
-  socialMedia: SocialMediaData[]
-}
-
 export interface TeamDataOnDisk {
   header: LocalizedString
   subheader: LocalizedString
@@ -32,6 +16,22 @@ export interface TeamMemberDataOnDisk {
   name: string
   jobTitle: LocalizedString
   degree: LocalizedString
+  avatar: string
+  socialMedia: SocialMediaData[]
+}
+
+export interface TeamData {
+  header: string
+  subheader: string
+  footer: string
+  members: TeamMemberData[]
+}
+
+export interface TeamMemberData {
+  uuid: string
+  name: string
+  jobTitle: string
+  degree: string
   avatar: string
   socialMedia: SocialMediaData[]
 }
