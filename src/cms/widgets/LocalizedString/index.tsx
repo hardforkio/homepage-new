@@ -1,1 +1,11 @@
-export { createLocalizedStringWidget } from './control'
+import { createLocalizedStringControl } from './control'
+import { TranslationCollection } from '../../i18n-lib'
+import { Locale } from '../../i18n-locales'
+
+export type LocalizedString = TranslationCollection<string>
+
+export const LocalizedStringWidget = (locales: Locale[], opts = {}) => ({
+  name: 'localizedString',
+  controlComponent: createLocalizedStringControl(locales),
+  ...opts,
+})

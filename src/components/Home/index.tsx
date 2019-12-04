@@ -5,6 +5,9 @@ import { HeroSection } from '../Hero'
 import cn from 'classnames'
 import styles from './Home.module.scss'
 import { HomeData, useHome } from '../../data/home'
+import { Team } from '../Team'
+import * as R from 'ramda'
+import { TeamData } from '../../data/team'
 
 export const HomePageComponent: FunctionComponent<HomeData> = ({
   heroHeadline,
@@ -16,6 +19,7 @@ export const HomePageComponent: FunctionComponent<HomeData> = ({
   moreLinkText,
   emailButton,
   contactEmail,
+  team,
 }) => (
   <div>
     <HeroSection
@@ -27,6 +31,9 @@ export const HomePageComponent: FunctionComponent<HomeData> = ({
     <section className={cn(styles.avoidOverlapWithStickyHeader)} id="offerings">
       <Offerings offerings={offerings} />
     </section>
+    <section id="team">
+      {hasMembers(team) ? <Team {...team}></Team> : ''}
+    </section>
     <section id="contact">
       <CallToAction
         headline={contactHeadline}
@@ -36,6 +43,12 @@ export const HomePageComponent: FunctionComponent<HomeData> = ({
       />
     </section>
   </div>
+)
+
+const hasMembers: (team: TeamData) => boolean = R.ifElse(
+  R.prop('members'),
+  R.pipe(R.prop('members'), R.isEmpty, R.not),
+  R.F,
 )
 
 export const HomePage: FunctionComponent<{}> = () => {
