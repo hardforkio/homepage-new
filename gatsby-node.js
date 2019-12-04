@@ -1,6 +1,6 @@
+require('ts-node').register() // To use imports from ts files. See https://github.com/gatsbyjs/gatsby/issues/1457#issuecomment-446006181
 const path = require(`path`)
 const glob = require('glob')
-require('ts-node').register() // To use imports from ts files. See https://github.com/gatsbyjs/gatsby/issues/1457#issuecomment-446006181
 const { translateAndConvert } = require('./src/data/project/helpers')
 const R = require('ramda')
 
