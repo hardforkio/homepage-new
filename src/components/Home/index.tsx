@@ -4,11 +4,12 @@ import CallToAction from '../CallToAction'
 import { HeroSection } from '../Hero'
 import cn from 'classnames'
 import styles from './Home.module.scss'
-import { HomeData, useHome } from '../../data/home'
+import { HomeData } from '../../data/home'
 import { PastProjectsComponent } from '../PastProjects/Section'
 import { Container } from 'reactstrap'
 import { Link } from 'gatsby'
-import { ProjectData, useProjects } from '../../data/project'
+import { ProjectData } from '../../data/project'
+import { useHome, useProjects } from '../../hooks/data'
 
 export const HomePageComponent: FunctionComponent<HomeData & {
   projects: ProjectData[]
@@ -58,6 +59,5 @@ export const HomePageComponent: FunctionComponent<HomeData & {
 export const HomePage: FunctionComponent<{}> = () => {
   const data: HomeData = useHome()
   const projects: ProjectData[] = useProjects()
-  console.log(projects)
   return <HomePageComponent {...data} projects={projects} />
 }

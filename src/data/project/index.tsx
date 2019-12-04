@@ -1,7 +1,6 @@
 import { Technology } from '../technology'
 import { TranslationCollection, Locale } from '../i18n'
 import * as R from 'ramda'
-import { useLocale } from '../../utils/hooks'
 import { importAll } from '../helpers'
 import { Head } from '../../components/Head'
 import { translateAndConvert } from './helpers'
@@ -33,5 +32,3 @@ const data: ProjectDataOnDisk[] = importAll<ProjectDataOnDisk>(context)
 
 export const getProjects = (locale: Locale): ProjectData[] =>
   R.map(translateAndConvert(locale), data)
-
-export const useProjects: () => ProjectData[] = R.pipe(useLocale, getProjects)

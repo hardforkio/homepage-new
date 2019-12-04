@@ -10,8 +10,9 @@ import { MenuEntries } from './MenuEntries'
 import cn from 'classnames'
 import styles from './NavBar.module.scss'
 import { useNavbarState, usePathPrefix } from '../../utils/hooks'
-import { useFAQPage, hasFAQEntries } from '../../data/faqEntry'
-import { useNavbar, Navbar as NavbarData } from '../../data/navbar'
+import { Navbar as NavbarData } from '../../data/navbar'
+import { useFAQPage, useNavbar } from '../../hooks/data'
+import { hasFAQEntries } from '../../data/faqEntry/helper'
 
 interface NavbarProps {
   linkTag: any

@@ -1,7 +1,5 @@
-import * as R from 'ramda'
 import data from './home.json'
 import { TranslationCollection, Locale, filterByLocale } from '../i18n'
-import { useLocale } from '../../utils/hooks'
 import { Head } from '../../components/Head'
 
 interface Offering {
@@ -41,10 +39,6 @@ export type HomeDataOnDisk = {
 }>
 
 const home: HomeDataOnDisk = data
-export const getHome = (locale: Locale): HomeData => {
-  return filterByLocale(locale)(home)
-  // const filteredHome = filterByLocale(locale)(home)
-  // return convertTechnologies(filteredHome)
-}
 
-export const useHome: () => HomeData = R.pipe(useLocale, getHome)
+export const getHome = (locale: Locale): HomeData =>
+  filterByLocale(locale)(home)
