@@ -1,5 +1,32 @@
 {
   "id": "home",
+  "contactEmail": "mailto:contact@hardfork.io",
+  "translations": [
+    {
+      "locale": "de",
+      "value": {
+        "heroHeadline": "Hardfork",
+        "heroSubheadline": "Ihr Partner für anspruchsvolle Softwareprojekte",
+        "contactHeadline": "Kontaktanfrage",
+        "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück.",
+        "contactButtonText": "Kontakt",
+        "moreLinkText": "Mehr",
+        "emailButton": "E-Mail senden"
+      }
+    },
+    {
+      "locale": "en",
+      "value": {
+        "heroHeadline": "Hardfork",
+        "heroSubheadline": "Your partner for challenging software projects",
+        "contactHeadline": "Send e-mail",
+        "contactDescription": "Please send us an e-mail and we will be in touch shortly!",
+        "contactButtonText": "Contact",
+        "moreLinkText": "More",
+        "emailButton": "Send E-Mail"
+      }
+    }
+  ],
   "offerings": [
     {
       "id": "Software",
@@ -65,33 +92,6 @@
       ]
     }
   ],
-  "contactEmail": "mailto:contact@hardfork.io",
-  "translations": [
-    {
-      "locale": "de",
-      "value": {
-        "heroSubheadline": "Ihr Partner für anspruchsvolle Softwareprojekte",
-        "heroHeadline": "Hardfork",
-        "emailButton": "E-Mail senden",
-        "contactHeadline": "Kontaktanfrage",
-        "moreLinkText": "Mehr",
-        "contactDescription": "Bitte schreiben Sie uns eine Email und wir melden uns zurück.",
-        "contactButtonText": "Kontakt"
-      }
-    },
-    {
-      "locale": "en",
-      "value": {
-        "heroHeadline": "Hardfork",
-        "heroSubheadline": "Your partner for challenging software projects",
-        "emailButton": "Send E-Mail",
-        "contactHeadline": "Send e-mail",
-        "moreLinkText": "More",
-        "contactDescription": "Please send us an e-mail and we will be in touch shortly!",
-        "contactButtonText": "Contact"
-      }
-    }
-  ],
   "head": {
     "id": "Head",
     "translations": [
@@ -114,6 +114,51 @@
             "keywords": "Software development"
           }
         }
+      }
+    ]
+  },
+  "team": {
+    "header": [
+      {
+        "locale": "en",
+        "value": "Team"
+      }
+    ],
+    "subheader": [
+      {
+        "locale": "en",
+        "value": "About us"
+      }
+    ],
+    "footer": [
+      {
+        "locale": "de",
+        "value": "Wir freuen uns auf Sie"
+      }
+    ],
+    "members": [
+      {
+        "uuid": "20ec59b1-fbeb-4f59-a525-624d9ef8dee4",
+        "name": "Cavan King",
+        "jobTitle": [
+          {
+            "locale": "en",
+            "value": "Developer"
+          }
+        ],
+        "degree": [
+          {
+            "locale": "en",
+            "value": "MSC Computer Science"
+          }
+        ],
+        "avatar": "/img/coffee.png",
+        "socialMedia": [
+          {
+            "platform": "github",
+            "username": "Bakkhos"
+          }
+        ]
       }
     ]
   }
