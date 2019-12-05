@@ -19,7 +19,7 @@ export interface TranslatedProjectData {
 }
 
 export type ProjectDataOnDisk = {
-  usedTechnologies: string[]
+  usedTechnologies: Technology[]
   slug: string
   head: TranslationCollection<Head>
 } & TranslationCollection<TranslatedProjectData>

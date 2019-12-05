@@ -1,10 +1,10 @@
 import { Locale } from '../types'
 import * as R from 'ramda'
 import { importAll } from '../helpers'
-import { translateAndConvert } from './helpers'
 import { importAllNode } from '../helpers-node'
 import { ProjectDataOnDisk, ProjectData } from './types'
 import { expandTechnologies } from '../technology'
+import { filterByLocale } from '../i18n'
 
 const loadData = (): ProjectDataOnDisk[] => {
   try {
@@ -18,4 +18,4 @@ const loadData = (): ProjectDataOnDisk[] => {
 const data = loadData()
 
 export const getProjects = (locale: Locale): ProjectData[] =>
-  R.pipe(R.map(expandTechnologies), R.map(translateAndConvert(locale)))(data)
+  R.pipe(R.map(expandTechnologies), R.map(filterByLocale(locale)))(data)

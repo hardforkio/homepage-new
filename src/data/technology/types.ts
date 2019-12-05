@@ -1,8 +1,5 @@
 export interface Technology {
+  uuid: string
   name: string
   link: string
-}
-
-export interface TechnologyOnDisk extends Technology {
-  uuid: string
 }

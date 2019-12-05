@@ -39,8 +39,7 @@ export const ProjectPageComponent: FunctionComponent<ProjectData> = ({
         <Col xs={12} md={6} className="pb-5">
           <h5>Technologies</h5>
           <ul className="list-inline">
-            {mapToComponent(TechTag, usedTechnologies as any)}{' '}
-            {/* As long as the typing for the project includes the string[], I put the any here */}
+            {mapToComponent(TechTag, usedTechnologies)}{' '}
           </ul>
         </Col>
       </Row>

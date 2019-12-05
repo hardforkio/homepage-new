@@ -9,8 +9,12 @@ export const MOCK_PROJECTS: ProjectData[] = [
     reference: 'Max Minze, CEO',
     image: '',
     usedTechnologies: [
-      { name: 'ReactJS', link: 'https://reactjs.org/' },
-      { name: 'Typescript', link: 'https://www.typescriptlang.org/' },
+      { uuid: '123', name: 'ReactJS', link: 'https://reactjs.org/' },
+      {
+        uuid: '1234',
+        name: 'Typescript',
+        link: 'https://www.typescriptlang.org/',
+      },
     ],
     product:
       'A digital investment platform for investments in real estate funds',
@@ -38,8 +42,12 @@ export const MOCK_PROJECTS: ProjectData[] = [
     application:
       '* Landingpage with CMS and i18n (<https://google.de>)\n* SPA with login, identity verification (IDNow) and private key management (<https://invest.fnd.group>)\n* Smart Contract for token and token distribution',
     usedTechnologies: [
-      { name: 'ReactJS', link: 'https://reactjs.org/' },
-      { name: 'Typescript', link: 'https://www.typescriptlang.org/' },
+      { uuid: '1234', name: 'ReactJS', link: 'https://reactjs.org/' },
+      {
+        uuid: '1234',
+        name: 'Typescript',
+        link: 'https://www.typescriptlang.org/',
+      },
     ],
     responsibilities:
       '* Tech department as a service\n* Planning of infrastructure\n* Planning of security model\n* Choice of technologies\n* Setup and maintenance of deployment, CI, CD, kanban board, etc.\n* Management of requirements (design and product)\n* Software development',

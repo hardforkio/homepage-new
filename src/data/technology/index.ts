@@ -1,14 +1,14 @@
 import { importAll, expandRelation } from '../helpers'
 import * as R from 'ramda'
 import { importAllNode } from '../helpers-node'
-import { TechnologyOnDisk } from './types'
+import { Technology } from './types'
 
-const loadData = (): TechnologyOnDisk[] => {
+const loadData = (): Technology[] => {
   try {
     const context = require.context('./', false, /\.json$/)
-    return importAll<TechnologyOnDisk>(context)
+    return importAll<Technology>(context)
   } catch (error) {
-    return importAllNode<TechnologyOnDisk>(__dirname)
+    return importAllNode<Technology>(__dirname)
   }
 }
 

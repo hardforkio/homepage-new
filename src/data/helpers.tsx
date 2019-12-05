@@ -18,10 +18,6 @@ export const filterDataByUuid = (
     relationData,
   )
 
-export const parseString = JSON.parse
-
-export const convertToObjectList: (list: string[]) => any = R.map(parseString)
-
 // TODO: Add typings.
 export const expandRelation: (
   relationPath: string[],

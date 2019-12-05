@@ -1,20 +1,8 @@
 import test from 'tape'
-import {
-  importAll,
-  expandRelation,
-  filterDataByUuid,
-  parseString,
-  convertToObjectList,
-} from './helpers'
+import { importAll, expandRelation, filterDataByUuid } from './helpers'
 
 import testItem1 from './testCollection/item1.json'
 import testItem2 from './testCollection/item2.json'
-import {
-  asObject,
-  asString,
-  objectList,
-  stringList,
-} from './testCollection/withStringObject.json'
 
 interface TestItem {
   uuid: string
@@ -100,18 +88,4 @@ test('expandRelation', t => {
     'should omit missing/unknown relations data.',
   )
   t.end()
-})
-
-test('String parser', assert => {
-  assert.deepEqual(parseString(asString), asObject, 'Remove all backslashes')
-  assert.end()
-})
-
-test('Map string list to object list', assert => {
-  assert.deepEqual(
-    convertToObjectList(stringList),
-    objectList,
-    'Remove all backslashes',
-  )
-  assert.end()
 })
