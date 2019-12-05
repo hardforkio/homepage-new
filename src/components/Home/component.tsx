@@ -9,6 +9,9 @@ import { Container } from 'reactstrap'
 import { Link } from 'gatsby'
 import { HomeData } from '../../data/home/types'
 import { ProjectData } from '../../data/project/types'
+import { Team } from '../Team'
+import * as R from 'ramda'
+import { TeamData } from '../../data/team'
 
 export const HomePageComponent: FunctionComponent<HomeData & {
   projects: ProjectData[]
@@ -24,6 +27,7 @@ export const HomePageComponent: FunctionComponent<HomeData & {
   contactEmail,
   projectsHeadline,
   projects,
+  team,
 }) => (
   <div>
     <HeroSection
@@ -44,6 +48,9 @@ export const HomePageComponent: FunctionComponent<HomeData & {
         />
       </Container>
     </section>
+    <section id="team">
+      {hasMembers(team) ? <Team {...team}></Team> : ''}
+    </section>
     <section id="contact">
       <CallToAction
         headline={contactHeadline}
@@ -53,4 +60,10 @@ export const HomePageComponent: FunctionComponent<HomeData & {
       />
     </section>
   </div>
+)
+
+const hasMembers: (team: TeamData) => boolean = R.ifElse(
+  R.prop('members'),
+  R.pipe(R.prop('members'), R.isEmpty, R.not),
+  R.F,
 )

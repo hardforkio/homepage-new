@@ -1,5 +1,6 @@
 import { TranslationCollection } from '../types'
 import { Head } from '../../components/Head'
+import { TeamData, TeamDataOnDisk } from '../team'
 
 export interface Offering {
   headline: string
@@ -17,8 +18,11 @@ export interface HomeData {
   moreLinkText: string
   emailButton: string
   contactEmail: string
-  projectsHeadline?: string
   head: Head
+  metaTitle: string
+  metaDescription: string
+  projectsHeadline: string
+  team: TeamData
 }
 
 export type HomeDataOnDisk = {
@@ -26,6 +30,7 @@ export type HomeDataOnDisk = {
   offerings: TranslationCollection<Offering>[]
   contactEmail: string
   head: TranslationCollection<Head>
+  team?: TeamDataOnDisk
 } & TranslationCollection<{
   heroHeadline: string
   heroSubheadline: string
@@ -33,6 +38,6 @@ export type HomeDataOnDisk = {
   contactDescription: string
   contactButtonText: string
   moreLinkText: string
+  projectsHeadline: string
   emailButton: string
-  projectsHeadline?: string
 }>

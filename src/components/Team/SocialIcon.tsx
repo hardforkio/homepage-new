@@ -3,15 +3,11 @@ import React, { FunctionComponent } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import { SocialMediaData } from '../../data/team'
 
 export enum Platform {
   github = 'github',
   linkedIn = 'linkedIn',
-}
-
-export interface SocialIconProps {
-  platform: Platform
-  url: string
 }
 
 const socialMediaIcons: { [type in Platform]: IconProp } = {
@@ -19,13 +15,18 @@ const socialMediaIcons: { [type in Platform]: IconProp } = {
   linkedIn: faLinkedinIn,
 }
 
-export const SocialIcon: FunctionComponent<SocialIconProps> = ({
+const socialMediaUrls: { [type in Platform]: string } = {
+  github: 'https://github.com/',
+  linkedIn: 'https://www.linkedin.com/in/',
+}
+
+export const SocialIcon: FunctionComponent<SocialMediaData> = ({
   platform,
-  url,
+  username,
 }) => (
   <a
     className="list-inline-item px-1"
-    href={url}
+    href={`${socialMediaUrls[platform]}${username}`}
     title={platform}
     target="_blank"
     rel="noopener noreferrer"

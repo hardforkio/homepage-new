@@ -8,6 +8,7 @@ export const TitleBanner: FunctionComponent<{
   subtitle: string
 }> = ({ title, subtitle }) => {
   const [inView, ref] = useIsInViewport({ threshold: 80 })
+
   const [, setTransparent] = useNavbarState()
   useEffect(() => {
     if (inView !== null) {

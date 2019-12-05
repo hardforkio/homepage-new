@@ -2,6 +2,10 @@ backend:
   name: git-gateway
   repo: hardforkio/homepage
 
+media_folder: "static/img"
+public_folder: "/img"
+publish_mode: "editorial_workflow"
+
 locales: &locales
   options:
     - "en"
@@ -11,10 +15,6 @@ socialMediaPlatforms: &socialMediaPlatforms
   options:
     - "github"
     - "linkedIn"
-
-media_folder: "static/img"
-public_folder: "/img"
-publish_mode: "editorial_workflow"
 
 collections:
   - name: "imprint"
@@ -64,11 +64,10 @@ collections:
                     fields:
                       - { name: "title", widget: "string" }
                       - name: "meta"
-                        widget: "object" 
-                        fields: 
+                        widget: "object"
+                        fields:
                           - { name: "description", widget: "string" }
                           - { name: "keywords", widget: "string" }
-                                    
 
   - name: "faqPage"
     label: "FaqPage"
@@ -131,11 +130,10 @@ collections:
                     fields:
                       - { name: "title", widget: "string" }
                       - name: "meta"
-                        widget: "object" 
-                        fields: 
+                        widget: "object"
+                        fields:
                           - { name: "description", widget: "string" }
                           - { name: "keywords", widget: "string" }
-                                         
 
   - name: "home"
     label: "Landing Page"
@@ -221,49 +219,6 @@ collections:
                         }
                       - { name: "text", widget: "text" }   
           
-          - name: "projects"
-            label: "Projects"
-            widget: "list"
-            default: []
-            identfier_field: "id"
-            fields:
-              - name: "id"
-                widget: "string"
-
-              - label: "Used technologies"
-                name: "usedTechnologies"  
-                widget: "relation"
-                collection: "technology"
-                searchFields: ["value.name"]
-                valueField: value
-                displayFields: ['value.name']
-                multiple: true
-
-              - name: "translations"
-                label: "translations"
-                widget: "list"
-                fields:
-                  - name: "locale"
-                    widget: "select"
-                    <<: *locales
-                  - name: "value"
-                    widget: "object"
-                    fields:
-                      - { name: "slug", widget: "string" }
-                      - { name: "client", widget: "string" }
-                      - { name: "clientLink", widget: "string" }
-                      - { name: "reference", widget: "string" }
-                      - {
-                          name: "image",
-                          widget: "image",
-                          allow_multiple: false,
-                          required: false
-                        }
-                      - { name: "product", widget: "string" }
-                      - { name: "application", widget: "markdown" }
-                      - { name: "responsibilities", widget: "markdown" }
-                                                              
-
           - name: "head"
             label: "Head"
             widget: "object"
@@ -281,11 +236,65 @@ collections:
                     fields:
                       - { name: "title", widget: "string" }
                       - name: "meta"
-                        widget: "object" 
-                        fields: 
+                        widget: "object"
+                        fields:
                           - { name: "description", widget: "string" }
                           - { name: "keywords", widget: "string" }
-           
+
+          - label: "Team"
+            name: "team"
+            widget: "object"
+            hint: "Only shows after adding a team member."
+            fields:
+              - label: "Headline"
+                name: "header"
+                widget: "localizedString"
+
+              - label: "Subheadline"
+                name: "subheader"
+                widget: "localizedString"
+
+              - label: "Footer"
+                name: "footer"
+                widget: "localizedString"
+
+              - label: "Team Members"
+                name: "members"
+                widget: "list"
+                fields:
+                  - label: "Member ID"
+                    name: "uuid"
+                    widget: "uuid"
+
+                  - label: "Full Name"
+                    name: "name"
+                    widget: "string"
+
+                  - label: "Job Title"
+                    name: "jobTitle"
+                    widget: "localizedString"
+
+                  - label: "Degree"
+                    name: "degree"
+                    widget: "localizedString"
+
+                  - label: "Avatar"
+                    name: "avatar"
+                    widget: "image"
+                    allow_multiple: false
+
+                  - label: "Social Media"
+                    name: "socialMedia"
+                    widget: "list"
+                    fields:
+                      - label: "Platform"
+                        name: "platform"
+                        widget: "select"
+                        <<: *socialMediaPlatforms
+
+                      - label: "Username"
+                        name: "username"
+                        widget: "string"
 
   - name: "footer"
     label: "Footer"

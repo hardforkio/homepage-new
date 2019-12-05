@@ -1,16 +1,20 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { createLocalizedStringWidget } from './control'
+import { createLocalizedStringControl } from './control'
 import { TranslationCollection } from '../../i18n-lib'
 import { fromJS } from 'immutable'
 
-const Widget = createLocalizedStringWidget(['de', 'en'])
+const LocalizedStringControl = createLocalizedStringControl(['de', 'en'])
 
 const data: TranslationCollection<string> = [{ locale: 'de', value: 'Hallo' }]
 
-test('Widget accepts immutable data.', () => {
-  const { getByLabelText } = render(
-    <Widget value={fromJS(data)} onChange={jest.fn()} />,
-  )
+test('LocalizedStringControl accepts immutable data.', () => {
+  const testProps = {
+    value: fromJS(data),
+    onChange: jest.fn(),
+    forID: 'test-id',
+    classNameWrapper: '',
+  }
+  const { getByLabelText } = render(<LocalizedStringControl {...testProps} />)
   expect(getByLabelText('de')).toHaveValue('Hallo')
 })

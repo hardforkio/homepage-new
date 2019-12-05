@@ -1,4 +1,4 @@
-import { TranslationCollection } from '../../cms/i18n'
+import { TranslationCollection } from '../../cms/i18n-lib'
 
 export interface FooterData {
   imprintLinkText: string
