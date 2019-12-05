@@ -1,10 +1,7 @@
 {
     "title": "FND",
     "slug": "fnd",
-    "usedTechnologies": [
-        "{\"name\":\"ReactJS\",\"link\":\"https://reactjs.org/\"}",
-        "{\"name\":\"Typescript\",\"link\":\"https://www.typescriptlang.org/\"}"
-    ],
+    "usedTechnologies": [],
     "translations": [
         {
             "locale": "de",

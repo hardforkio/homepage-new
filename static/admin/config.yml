@@ -361,18 +361,18 @@ collections:
   - name: "technology"
     label: "Technology"
     folder: "src/data/technology"
-    identifier_field: "title"
     create: true
+    delete: false
     format: "json"
+    identifier_field: "name"
     editor:
       preview: false
     fields:
-      - {label: "Title", name: "title", widget: "string", default: "technology"}
-      - name: "value"
-        widget: "object"
-        fields:
-          - {label: "Name", name: "name", widget: "string", required: true}
-          - {label: "Link", name: "link", widget: "string", required: false}
+      - label: "Tech ID"
+        name: "uuid"
+        widget: "uuid"
+      - {label: "Name", name: "name", widget: "string", required: true}
+      - {label: "Link", name: "link", widget: "string", required: false}
           
   - name: "project"
     label: "Project"
@@ -389,9 +389,9 @@ collections:
         name: "usedTechnologies"  
         widget: "relation"
         collection: "technology"
-        searchFields: ["value.name"]
-        valueField: value
-        displayFields: ['value.name']
+        searchFields: ["name"]
+        valueField: uuid
+        displayFields: ['name']
         multiple: true
 
       - name: "translations"

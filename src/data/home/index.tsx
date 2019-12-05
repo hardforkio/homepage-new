@@ -8,10 +8,10 @@ import { Locale } from '../types.js'
 
 // FIXME: Mixes old and new translation methods
 const home: HomeDataOnDisk = data
-export const getHome = (locale: Locale): HomeData => {
-  return R.pipe<HomeDataOnDisk, any, any>(
+export const getHome = (locale: Locale): HomeData =>
+  R.pipe<HomeDataOnDisk, any, any>(
     filterByLocale(locale),
     translate(locale),
   )(home)
-}
+
 export const useHome: () => HomeData = R.pipe(useLocale, getHome)

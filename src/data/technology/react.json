@@ -1,7 +1,5 @@
 {
-    "title": "react",
-    "value": {
-        "name": "ReactJS",
-        "link": "https://reactjs.org/"
-    }
+    "uuid": "7f047ac5-ee91-4244-a99d-e6fcc0677931",
+    "name": "React",
+    "link": "https://reactjs.org/"
 }
