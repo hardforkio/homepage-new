@@ -1,4 +1,5 @@
 import { TranslationCollection } from '../types'
+import { TranslationCollection as NewStyleTranslationCollection } from '../../cms/i18n-lib'
 import { Head } from '../../components/Head'
 import { TeamData, TeamDataOnDisk } from '../team'
 
@@ -55,11 +56,11 @@ export interface ContactFormProps {
 }
 
 export interface ContactFormPropsOnDisk {
-  name: TranslationCollection<string>
-  company: TranslationCollection<string>
-  phone: TranslationCollection<string>
-  body: TranslationCollection<string>
-  submitButtonText: TranslationCollection<string>
-  submitButtonSuccessText: TranslationCollection<string>
-  resetButtonText: TranslationCollection<string>
+  name: NewStyleTranslationCollection<string>
+  company: NewStyleTranslationCollection<string>
+  phone: NewStyleTranslationCollection<string>
+  body: NewStyleTranslationCollection<string>
+  submitButtonText: NewStyleTranslationCollection<string>
+  submitButtonSuccessText: NewStyleTranslationCollection<string>
+  resetButtonText: NewStyleTranslationCollection<string>
 }
