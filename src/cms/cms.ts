@@ -5,6 +5,7 @@ import { FAQPreview } from './preview-templates/FAQPreview'
 import { FooterPreview } from './preview-templates/FooterPreview'
 import { HomePreview } from './preview-templates/HomePreview'
 import { NavbarPreview } from './preview-templates/NavbarPreview'
+import { ProjectPreview } from './preview-templates/ProjectPreview'
 import { LocalizedStringWidget } from './widgets/LocalizedString'
 import { UuidWidget } from './widgets/Uuid'
 import { LOCALES } from './i18n'
@@ -25,5 +26,6 @@ CMS.registerPreviewTemplate('faq', FAQPreview)
 CMS.registerPreviewTemplate('home', HomePreview)
 CMS.registerPreviewTemplate('footer', FooterPreview)
 CMS.registerPreviewTemplate('navbar', NavbarPreview)
+CMS.registerPreviewTemplate('project', ProjectPreview)
 
 init({ config })

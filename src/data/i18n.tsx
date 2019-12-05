@@ -1,15 +1,6 @@
 import * as R from 'ramda'
 import { findDefaultingToHead } from '../utils/helpers'
-export const LOCALES = ['en', 'de'] as const
-export type Locale = typeof LOCALES[number]
-
-type WithLocale<T> = { value: T; locale: string }
-
-export interface TranslationCollection<T> {
-  translations: WithLocale<T>[]
-}
-
-type CMSData<T, S> = TranslationCollection<T> & S
+import { Locale, CMSData } from './types'
 
 export const extractSingleTranslation: <T = any, S = {}>(
   locale: Locale,

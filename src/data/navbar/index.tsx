@@ -1,15 +1,9 @@
-import * as R from 'ramda'
-import { Locale, TranslationCollection, filterByLocale } from '../i18n'
-import { useLocale } from '../../utils/hooks'
+import { filterByLocale } from '../i18n'
 import data from './navbar.json'
-
-export interface Navbar {
-  contactLinkText: string
-  FAQLinkText: string
-}
+import { Navbar } from './types'
+import { TranslationCollection, Locale } from '../types'
 
 const navbar: TranslationCollection<Navbar> = data
 
-const getNavbar = (locale: Locale): Navbar => filterByLocale(locale)(navbar)
-
-export const useNavbar: () => Navbar = R.pipe(useLocale, getNavbar)
+export const getNavbar = (locale: Locale): Navbar =>
+  filterByLocale(locale)(navbar)

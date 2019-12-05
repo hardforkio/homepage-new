@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import '../../scss/main.scss'
 import { PreviewProps, getJSON } from './helpers'
 import { filterByLocale } from '../../data/i18n'
-import { FAQPage, FAQPageOnDisk } from '../../data/faqEntry'
+import { FAQPage, FAQPageOnDisk } from '../../data/faqEntry/types'
 import { createPreview } from './Preview'
 import { FAQComponent } from '../../components/FAQ/component'
 

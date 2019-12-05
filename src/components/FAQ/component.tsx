@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { TitleBanner } from '../TitleBanner'
-import { FAQEntry } from '../../data/faqEntry'
+import { FAQEntry } from '../../data/faqEntry/types'
 import { ContentWrap } from '../Content'
 import { mapToComponent } from '../../utils/helpers'
 import ReactMarkdown from 'react-commonmark'

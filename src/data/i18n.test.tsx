@@ -1,10 +1,6 @@
 import test from 'tape'
-import {
-  Locale,
-  TranslationCollection,
-  filterByLocale,
-  extractSingleTranslation,
-} from './i18n'
+import { filterByLocale, extractSingleTranslation } from './i18n'
+import { TranslationCollection, Locale } from './types'
 
 const EN: Locale = 'en'
 const DE: Locale = 'de'
