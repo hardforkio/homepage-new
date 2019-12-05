@@ -35,6 +35,17 @@
   ],
   "head": {
     "id": "fnd ",
-    "translations": []
+    "translations": [
+      {
+        "locale": "en",
+        "value": {
+          "title": "FND Group",
+          "meta": {
+            "description": "A digital investment platform for investments in real estate funds",
+            "keywords": "sto, real esate"
+          }
+        }
+      }
+    ]
   }
 }
