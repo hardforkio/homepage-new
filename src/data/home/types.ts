@@ -1,4 +1,5 @@
 import { TranslationCollection } from '../types'
+import { TranslationCollection as NewStyleTranslationCollection } from '../../cms/i18n-lib'
 import { Head } from '../../components/Head'
 import { TeamData, TeamDataOnDisk } from '../team'
 
@@ -23,6 +24,7 @@ export interface HomeData {
   metaDescription: string
   projectsHeadline: string
   team: TeamData
+  contactFormLabels: ContactFormProps
 }
 
 export type HomeDataOnDisk = {
@@ -31,6 +33,7 @@ export type HomeDataOnDisk = {
   contactEmail: string
   head: TranslationCollection<Head>
   team?: TeamDataOnDisk
+  contactFormLabels: ContactFormPropsOnDisk
 } & TranslationCollection<{
   heroHeadline: string
   heroSubheadline: string
@@ -41,3 +44,23 @@ export type HomeDataOnDisk = {
   projectsHeadline: string
   emailButton: string
 }>
+
+export interface ContactFormProps {
+  name: string
+  company: string
+  phone: string
+  body: string
+  submitButtonText: string
+  submitButtonSuccessText: string
+  resetButtonText: string
+}
+
+export interface ContactFormPropsOnDisk {
+  name: NewStyleTranslationCollection<string>
+  company: NewStyleTranslationCollection<string>
+  phone: NewStyleTranslationCollection<string>
+  body: NewStyleTranslationCollection<string>
+  submitButtonText: NewStyleTranslationCollection<string>
+  submitButtonSuccessText: NewStyleTranslationCollection<string>
+  resetButtonText: NewStyleTranslationCollection<string>
+}
