@@ -1,5 +1,14 @@
 import React, { FunctionComponent } from 'react'
-import { Container } from 'reactstrap'
+import {
+  Container,
+  Form,
+  Row,
+  FormGroup,
+  Input,
+  Label,
+  Nav,
+  NavItem,
+} from 'reactstrap'
 
 export const ExampleFormSection: FunctionComponent<{}> = () => (
   <Container className="bg-white text-dark">
@@ -13,30 +22,30 @@ export const ExampleForm: FunctionComponent<{ className?: string }> = ({
 }) => (
   <section className={className}>
     <h4>Form</h4>
-    <form method="post" action="#">
-      <div className="row">
-        <div className="col-12 col-sm-6 form-group">
-          <input
+    <Form method="post" action="#">
+      <Row>
+        <FormGroup className="col-12 col-sm-6">
+          <Input
             type="text"
             name="demo-name"
             id="demo-name"
-            className="border-0 bg-light form-control"
+            className="border-0 bg-light"
             value=""
             placeholder="Name"
           />
-        </div>
-        <div className="col-12 col-sm-6 form-group">
-          <input
+        </FormGroup>
+        <FormGroup className="col-12 col-sm-6">
+          <Input
             type="email"
             name="demo-email"
             id="demo-email"
-            className="border-0 bg-light form-control"
+            className="border-0 bg-light"
             value=""
             placeholder="Email"
           />
-        </div>
-      </div>
-      <div className="form-group">
+        </FormGroup>
+      </Row>
+      <FormGroup>
         <select
           name="demo-category"
           id="demo-category"
@@ -48,10 +57,10 @@ export const ExampleForm: FunctionComponent<{ className?: string }> = ({
           <option value="1">Administration</option>
           <option value="1">Human Resources</option>
         </select>
-      </div>
-      <div className="row">
-        <div className="col-12 col-md-4 form-check">
-          <input
+      </FormGroup>
+      <Row className="row">
+        <FormGroup check className="col-12 col-md-4">
+          <Input
             type="radio"
             id="demo-priority-low"
             name="demo-priority"
@@ -59,50 +68,40 @@ export const ExampleForm: FunctionComponent<{ className?: string }> = ({
             checked
             className="mr-2"
           />
-          <label htmlFor="demo-priority-low">Low</label>
-        </div>
-        <div className="col-12 col-md-4 form-check">
-          <input
+          <Label for="demo-priority-low">Low</Label>
+        </FormGroup>
+        <FormGroup check className="col-12 col-md-4">
+          <Input
             type="radio"
             id="demo-priority-normal"
             name="demo-priority"
             value="normal"
             className="mr-2"
           />
-          <label htmlFor="demo-priority-normal">Normal</label>
-        </div>
-        <div className="col-12 col-md-4 form-check">
-          <input
+          <Label for="demo-priority-normal">Normal</Label>
+        </FormGroup>
+        <FormGroup check className="col-12 col-md-4">
+          <Input
             type="radio"
             id="demo-priority-high"
             name="demo-priority"
             value="high"
-            className="mr-2 form-check-input"
-          />
-          <label htmlFor="demo-priority-high form-check-label">High</label>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-12 col-md-6 form-check">
-          <input
-            type="checkbox"
-            id="demo-copy"
-            name="demo-copy"
             className="mr-2"
           />
-          <label htmlFor="demo-copy">Email me a copy</label>
-        </div>
-        <div className="col-12 col-md-6 form-check">
-          <input
-            type="checkbox"
-            id="demo-human"
-            name="demo-human"
-            className="mr-2"
-          />
-          <label htmlFor="demo-human">Not a robot</label>
-        </div>
-      </div>
-      <div className="form-group">
+          <Label for="demo-priority-high">High</Label>
+        </FormGroup>
+      </Row>
+      <Row>
+        <FormGroup check className="col-12 col-md-6">
+          <Input type="checkbox" id="demo-copy" name="demo-copy" />
+          <Label for="demo-copy">Email me a copy</Label>
+        </FormGroup>
+        <FormGroup check className="col-12 col-md-6">
+          <Input type="checkbox" id="demo-human" name="demo-human" />
+          <Label for="demo-human">Not a robot</Label>
+        </FormGroup>
+      </Row>
+      <FormGroup>
         <textarea
           name="demo-message"
           id="demo-message"
@@ -110,24 +109,24 @@ export const ExampleForm: FunctionComponent<{ className?: string }> = ({
           rows={6}
           className="border-0 bg-light form-control"
         ></textarea>
-      </div>
+      </FormGroup>
 
-      <ul className="nav form-group">
-        <li className="nav-item">
-          <input
+      <Nav className="form-group">
+        <NavItem>
+          <Input
             type="submit"
             value="Send Message"
             className="primary btn btn-primary mr-2 text-uppercase px-5"
           />
-        </li>
-        <li className="nav-item">
-          <input
+        </NavItem>
+        <NavItem>
+          <Input
             type="reset"
             value="Reset"
             className="btn btn-secondary mx-2 text-uppercase px-5"
           />
-        </li>
-      </ul>
-    </form>
+        </NavItem>
+      </Nav>
+    </Form>
   </section>
 )

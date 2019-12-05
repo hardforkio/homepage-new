@@ -45,6 +45,7 @@ interface ContactFormProps {
     body: string
     submitButtonText: string
     submitButtonSuccessText: string
+    resetButtonText: string
   }
 }
 
@@ -59,6 +60,7 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
     body = 'Your inquiry',
     submitButtonText = 'Send',
     submitButtonSuccessText = 'Sent',
+    resetButtonText = 'Reset',
   } = {},
 }) => {
   const [success, setSuccess] = useState(false)
@@ -71,27 +73,33 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
         event.preventDefault()
       }}
     >
-      <FormGroup>
-        <Label hidden for="contactform-input-name">
-          {name}
-        </Label>
-        <Input
-          id="contactform-input-name"
-          name="name"
-          placeholder={name}
-          required
-        ></Input>
-      </FormGroup>
-      <FormGroup>
-        <Label hidden for="contactform-input-company">
-          {company}
-        </Label>
-        <Input
-          id="contactform-input-company"
-          name="company"
-          placeholder={company}
-        ></Input>
-      </FormGroup>
+      <Row>
+        <Col xs={12} sm={6}>
+          <FormGroup>
+            <Label hidden for="contactform-input-name">
+              {name}
+            </Label>
+            <Input
+              id="contactform-input-name"
+              name="name"
+              placeholder={name}
+              required
+            ></Input>
+          </FormGroup>
+        </Col>
+        <Col xs={12} sm={6}>
+          <FormGroup>
+            <Label hidden for="contactform-input-company">
+              {company}
+            </Label>
+            <Input
+              id="contactform-input-company"
+              name="company"
+              placeholder={company}
+            ></Input>
+          </FormGroup>
+        </Col>
+      </Row>
       <FormGroup>
         <Label hidden for="contactform-input-phone">
           {phone}
@@ -117,13 +125,30 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
           placeholder={body}
         ></textarea>
       </FormGroup>
-      <Button
-        type="submit"
-        color="primary"
-        className="px-5 my-4 text-uppercase mx-auto"
-      >
-        {success ? submitButtonSuccessText : submitButtonText}
-      </Button>
+      <Row className="my-4">
+        <Col md={false}>
+          <Button
+            block
+            type="submit"
+            color="primary"
+            className="px-5 my-2 text-uppercase"
+          >
+            {success ? submitButtonSuccessText : submitButtonText}
+          </Button>
+        </Col>
+        <Col md={false}>
+          <Button
+            block
+            type="reset"
+            color="secondary"
+            className="px-5 my-2 text-uppercase"
+            onClick={(e: any) => setSuccess(false)}
+          >
+            {resetButtonText}
+          </Button>
+        </Col>
+      </Row>
+
       <Input type="hidden" name="_captcha" value="false" />
       <Input type="hidden" name="_template" value="table" />
       <Input name="_honey" className="d-none" />
