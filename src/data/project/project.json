@@ -1,0 +1,35 @@
+{
+  "title": "project",
+  "slug": "Test project",
+  "usedTechnologies": [
+    "704a25f4-24c1-4832-97da-5db1135c6438"
+  ],
+  "translations": [
+    {
+      "locale": "en",
+      "value": {
+        "client": "Me",
+        "clientLink": "You",
+        "reference": "asd",
+        "product": "asd",
+        "application": "assd",
+        "responsibilities": "ad"
+      }
+    }
+  ],
+  "head": {
+    "id": "asdasdasd334",
+    "translations": [
+      {
+        "locale": "en",
+        "value": {
+          "title": "fsdf",
+          "meta": {
+            "description": "asd",
+            "keywords": "sad"
+          }
+        }
+      }
+    ]
+  }
+}
