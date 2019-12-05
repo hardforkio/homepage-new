@@ -1,5 +1,106 @@
 {
   "id": "home",
+  "contactEmail": "mailto:contact@hardfork.io",
+  "contactFormLabels": {
+    "name": [
+      {
+        "locale": "de",
+        "value": "Name"
+      },
+      {
+        "locale": "en",
+        "value": "Name"
+      }
+    ],
+    "company": [
+      {
+        "locale": "de",
+        "value": "Firma"
+      },
+      {
+        "locale": "en",
+        "value": "Company"
+      }
+    ],
+    "phone": [
+      {
+        "locale": "de",
+        "value": "Telefon"
+      },
+      {
+        "locale": "en",
+        "value": "Phone"
+      }
+    ],
+    "body": [
+      {
+        "locale": "en",
+        "value": "Your Inquiry"
+      },
+      {
+        "locale": "de",
+        "value": "Ihre Anfrage"
+      }
+    ],
+    "submitButtonText": [
+      {
+        "locale": "en",
+        "value": "Send"
+      },
+      {
+        "locale": "de",
+        "value": "Absenden"
+      }
+    ],
+    "submitButtonSuccessText": [
+      {
+        "locale": "en",
+        "value": "Sent"
+      },
+      {
+        "locale": "de",
+        "value": "Erhalten"
+      }
+    ],
+    "resetButtonText": [
+      {
+        "locale": "en",
+        "value": "Reset"
+      },
+      {
+        "locale": "de",
+        "value": "Zurücksetzen"
+      }
+    ]
+  },
+  "translations": [
+    {
+      "locale": "de",
+      "value": {
+        "heroHeadline": "Hardfork",
+        "heroSubheadline": "Ihr Partner für anspruchsvolle Softwareprojekte",
+        "contactHeadline": "Kontaktanfrage",
+        "contactDescription": "Bitte schreiben Sie uns und wir melden uns zurück.",
+        "contactButtonText": "Kontakt",
+        "moreLinkText": "Mehr",
+        "emailButton": "E-Mail senden",
+        "projectsHeadline": "Vergangene Projekte"
+      }
+    },
+    {
+      "locale": "en",
+      "value": {
+        "heroHeadline": "Hardfork",
+        "heroSubheadline": "Your partner for challenging software projects",
+        "contactHeadline": "Send e-mail",
+        "contactDescription": "Please write us and we will be in touch shortly!",
+        "contactButtonText": "Contact",
+        "moreLinkText": "More",
+        "emailButton": "Send E-Mail",
+        "projectsHeadline": "Past projects"
+      }
+    }
+  ],
   "offerings": [
     {
       "id": "Software",
@@ -65,35 +166,6 @@
       ]
     }
   ],
-  "contactEmail": "mailto:contact@hardfork.io",
-  "translations": [
-    {
-      "locale": "de",
-      "value": {
-        "heroSubheadline": "Ihr Partner für anspruchsvolle Softwareprojekte",
-        "heroHeadline": "Hardfork",
-        "emailButton": "E-Mail senden",
-        "contactHeadline": "Kontaktanfrage",
-        "moreLinkText": "Mehr",
-        "contactDescription": "Bitte schreiben Sie uns und wir melden uns zurück.",
-        "contactButtonText": "Kontakt",
-        "projectsHeadline": "Vergangene Projekte"
-      }
-    },
-    {
-      "locale": "en",
-      "value": {
-        "heroHeadline": "Hardfork",
-        "heroSubheadline": "Your partner for challenging software projects",
-        "emailButton": "Send E-Mail",
-        "contactHeadline": "Send e-mail",
-        "moreLinkText": "More",
-        "contactDescription": "Please write us and we will be in touch shortly!",
-        "contactButtonText": "Contact",
-        "projectsHeadline": "Past projects"
-      }
-    }
-  ],
   "head": {
     "id": "Head",
     "translations": [
@@ -116,6 +188,38 @@
             "keywords": "Software development"
           }
         }
+      }
+    ]
+  },
+  "team": {
+    "header": [
+      {
+        "locale": "en",
+        "value": "Our Team"
+      },
+      {
+        "locale": "de",
+        "value": "Unser Team"
+      }
+    ],
+    "subheader": [
+      {
+        "locale": "en",
+        "value": " "
+      },
+      {
+        "locale": "de",
+        "value": " "
+      }
+    ],
+    "footer": [
+      {
+        "locale": "en",
+        "value": " "
+      },
+      {
+        "locale": "de",
+        "value": " "
       }
     ]
   }
