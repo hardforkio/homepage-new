@@ -9,18 +9,18 @@ import {
   Label,
   Button,
 } from 'reactstrap'
+import { ContactFormProps } from '../../data/home/types'
 
-interface ContactProps {
+interface ContactSectionProps {
   headline: string
   description: string
-  Link?: any
-  buttonLabel: string
-  url: string
+  formProps: ContactFormProps
 }
 
-export const ContactSection: FunctionComponent<ContactProps> = ({
+export const ContactSection: FunctionComponent<ContactSectionProps> = ({
   headline,
   description,
+  formProps,
 }) => (
   <div className="py-3 py-md-5 bg-white text-dark">
     <Container>
@@ -30,38 +30,24 @@ export const ContactSection: FunctionComponent<ContactProps> = ({
             <h4 className="mb-4">{headline}</h4>
             <p>{description}</p>
           </header>
-          <ContactForm />
+          <ContactForm {...formProps} />
         </Col>
       </Row>
     </Container>
   </div>
 )
 
-interface ContactFormProps {
-  labels?: {
-    name: string
-    company: string
-    phone: string
-    body: string
-    submitButtonText: string
-    submitButtonSuccessText: string
-    resetButtonText: string
-  }
-}
-
 const CONTACT_EMAIL: string = '36e919fa91e3e3e350fac038388f1737'
 const FORM_SUBMIT_ENDPOINT: string = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`
 
 const ContactForm: FunctionComponent<ContactFormProps> = ({
-  labels: {
-    name = 'Name',
-    company = 'Company',
-    phone = 'Phone',
-    body = 'Your inquiry',
-    submitButtonText = 'Send',
-    submitButtonSuccessText = 'Sent',
-    resetButtonText = 'Reset',
-  } = {},
+  name = 'Name',
+  company = 'Company',
+  phone = 'Phone',
+  body = 'Your inquiry',
+  submitButtonText = 'Send',
+  submitButtonSuccessText = 'Sent',
+  resetButtonText = 'Reset',
 }) => {
   const [success, setSuccess] = useState(false)
 

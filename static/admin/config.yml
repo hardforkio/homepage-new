@@ -154,6 +154,24 @@ collections:
           - name: "contactEmail"
             widget: "string"
 
+          - name: "contactFormLabels"
+            widget: "object"
+            fields:
+              - name: "name"
+                widget: "localizedString"
+              - name: "company"
+                widget: "localizedString"
+              - name: "phone"
+                widget: "localizedString"
+              - name: "body"
+                widget: "localizedString"
+              - name: "submitButtonText"
+                widget: "localizedString"
+              - name: "submitButtonSuccessText"
+                widget: "localizedString"
+              - name: "resetButtonText"
+                widget: "localizedString"
+
           - name: "translations"
             label: "translations"
             widget: "list"
@@ -190,7 +208,7 @@ collections:
                     widget: "string"
 
                   - name: "projectsHeadline"
-                    widget: "string"                    
+                    widget: "string"
 
           - name: "offerings"
             label: "Offerings"
@@ -217,8 +235,8 @@ collections:
                           widget: "image",
                           allow_multiple: false,
                         }
-                      - { name: "text", widget: "text" }   
-          
+                      - { name: "text", widget: "text" }
+
           - name: "head"
             label: "Head"
             widget: "object"
@@ -371,9 +389,9 @@ collections:
       - label: "Tech ID"
         name: "uuid"
         widget: "uuid"
-      - {label: "Name", name: "name", widget: "string", required: true}
-      - {label: "Link", name: "link", widget: "string", required: false}
-          
+      - { label: "Name", name: "name", widget: "string", required: true }
+      - { label: "Link", name: "link", widget: "string", required: false }
+
   - name: "project"
     label: "Project"
     folder: "src/data/project"
@@ -381,17 +399,17 @@ collections:
     create: true
     format: "json"
     fields:
-      - {label: "Title", name: "title", widget: "string", default: "project"}
+      - { label: "Title", name: "title", widget: "string", default: "project" }
 
       - { name: "slug", widget: "string" }
 
       - label: "Used technologies"
-        name: "usedTechnologies"  
+        name: "usedTechnologies"
         widget: "relation"
         collection: "technology"
         searchFields: ["name"]
         valueField: uuid
-        displayFields: ['name']
+        displayFields: ["name"]
         multiple: true
 
       - name: "translations"
@@ -411,12 +429,12 @@ collections:
                   name: "image",
                   widget: "image",
                   allow_multiple: false,
-                  required: false
+                  required: false,
                 }
               - { name: "product", widget: "string" }
               - { name: "application", widget: "markdown" }
-              - { name: "responsibilities", widget: "markdown" }    
-          
+              - { name: "responsibilities", widget: "markdown" }
+
       - name: "head"
         label: "Head"
         widget: "object"
@@ -434,8 +452,7 @@ collections:
                 fields:
                   - { name: "title", widget: "string" }
                   - name: "meta"
-                    widget: "object" 
-                    fields: 
+                    widget: "object"
+                    fields:
                       - { name: "description", widget: "string" }
-                      - { name: "keywords", widget: "string" }              
-
+                      - { name: "keywords", widget: "string" }
