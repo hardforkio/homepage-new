@@ -1,5 +1,5 @@
 import test from 'tape'
-import { ProjectData } from './index'
+import { ProjectData } from './types'
 import { deserializeTechnologies } from './helpers'
 
 test('converter', assert => {

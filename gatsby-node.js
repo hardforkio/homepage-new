@@ -1,17 +1,19 @@
 require('ts-node').register() // To use imports from ts files. See https://github.com/gatsbyjs/gatsby/issues/1457#issuecomment-446006181
 const path = require(`path`)
-const glob = require('glob')
-const { translateAndConvert } = require('./src/data/project/helpers')
+const { getProjects } = require('./src/data/project')
 const R = require('ramda')
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    node: { fs: 'empty' },
+  })
+}
 
 exports.createPages = async ({ actions }) => {
   const { createPage } = actions
 
-  const projects = importAllForNode('./src/data/project')
-
-  const germanTranslations = R.map(translateAndConvert('de'))(projects)
-
-  const englishTranslations = R.map(translateAndConvert('en'))(projects)
+  const germanTranslations = getProjects('de')
+  const englishTranslations = getProjects('en')
 
   R.forEach(props => {
     createPage({
@@ -33,6 +35,3 @@ exports.createPages = async ({ actions }) => {
     })
   })(englishTranslations)
 }
-
-const importAllForNode = filepath =>
-  glob.sync(`${filepath}/*.json`).map(file => require(path.resolve(file)))

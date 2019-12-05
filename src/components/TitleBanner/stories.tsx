@@ -1,9 +1,9 @@
 import React from 'react'
 import '../../scss/main.scss'
 import { storiesOf } from '@storybook/react'
-import { TitleBanner, TitleBannerComponent } from '.'
-import { Navbar } from '../Navbar'
+import { TitleBannerComponent } from './component'
 import { DispatchActionLink } from '../../storybook/helpers'
+import { NavbarComponent } from '../Navbar/component'
 
 const TITLE = 'JOBS'
 const SUBTITLE = 'Hardfork.io | Berlin'
@@ -14,7 +14,13 @@ storiesOf('Title Banner', module)
   ))
   .add('with header', () => (
     <div>
-      <Navbar linkTag={DispatchActionLink} className="fixed-top" />
-      <TitleBanner title={TITLE} subtitle={SUBTITLE} />
+      <NavbarComponent
+        linkTag={DispatchActionLink}
+        className="fixed-top"
+        contactLinkText="CONTACT"
+        FAQLinkText="FAQ"
+        showFAQ={true}
+      />
+      <TitleBannerComponent title={TITLE} subtitle={SUBTITLE} />
     </div>
   ))

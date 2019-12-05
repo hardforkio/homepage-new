@@ -11,7 +11,7 @@ import {
 import { mapToComponent } from '../../../utils/helpers'
 import * as R from 'ramda'
 import { usePathPrefix } from '../../../utils/hooks'
-import { ProjectData } from '../../../data/project'
+import { ProjectData } from '../../../data/project/types'
 
 export const PastProjectsComponent: FunctionComponent<{
   headline: string | undefined

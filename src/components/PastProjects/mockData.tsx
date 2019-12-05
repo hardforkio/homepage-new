@@ -1,5 +1,5 @@
 import mockScreen from './Mock.jpg'
-import { ProjectData } from '../../data/project'
+import { ProjectData } from '../../data/project/types'
 
 export const MOCK_PROJECTS: ProjectData[] = [
   {

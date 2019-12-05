@@ -1,34 +1,20 @@
-import { Technology } from '../technology'
-import { TranslationCollection, Locale } from '../i18n'
+import { Locale } from '../types'
 import * as R from 'ramda'
 import { importAll } from '../helpers'
-import { Head } from '../../components/Head'
 import { translateAndConvert } from './helpers'
+import { importAllNode } from '../helpers-node'
+import { ProjectDataOnDisk, ProjectData } from './types'
 
-export type ProjectData = {
-  usedTechnologies: Technology[]
-  slug: string
-  head: Head
-} & TranslatedProjectData
-
-interface TranslatedProjectData {
-  client: string
-  clientLink: string
-  reference: string
-  image: string
-  product: string
-  application: string
-  responsibilities: string
+const loadData = (): ProjectDataOnDisk[] => {
+  try {
+    const context = require.context('./', false, /\.json$/)
+    return importAll<ProjectDataOnDisk>(context)
+  } catch (error) {
+    return importAllNode<ProjectDataOnDisk>(__dirname)
+  }
 }
 
-export type ProjectDataOnDisk = {
-  usedTechnologies: string[]
-  slug: string
-  head: TranslationCollection<Head>
-} & TranslationCollection<TranslatedProjectData>
-
-const context = require.context('./', false, /\.json$/)
-const data: ProjectDataOnDisk[] = importAll<ProjectDataOnDisk>(context)
+const data = loadData()
 
 export const getProjects = (locale: Locale): ProjectData[] =>
   R.map(translateAndConvert(locale), data)

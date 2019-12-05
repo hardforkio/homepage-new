@@ -4,9 +4,9 @@ import ReactMarkdown from 'react-commonmark'
 import cn from 'classnames'
 import { Row, Col, Badge } from 'reactstrap'
 import { mapToComponent } from '../../../utils/helpers'
-import { Technology } from '../../../data/technology'
+import { Technology } from '../../../data/technology/types'
 import { useNavbarState } from '../../../utils/hooks'
-import { ProjectData } from '../../../data/project'
+import { ProjectData } from '../../../data/project/types'
 
 export const ProjectPageComponent: FunctionComponent<ProjectData> = ({
   client,

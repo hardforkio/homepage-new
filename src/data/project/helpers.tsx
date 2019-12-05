@@ -1,7 +1,8 @@
 import * as R from 'ramda'
-import { Locale, filterByLocale } from '../i18n'
-import { ProjectDataOnDisk, ProjectData } from '.'
+import { filterByLocale } from '../i18n'
+import { ProjectDataOnDisk, ProjectData } from './types'
 import { convertToObjectList } from '../helpers'
+import { Locale } from '../types'
 
 export const translateAndConvert = (
   locale: Locale,

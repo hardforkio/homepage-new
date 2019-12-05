@@ -1,10 +1,7 @@
-import { Locale, TranslationCollection, filterByLocale } from '../i18n'
+import { filterByLocale } from '../i18n'
 import data from './navbar.json'
-
-export interface Navbar {
-  contactLinkText: string
-  FAQLinkText: string
-}
+import { Navbar } from './types'
+import { TranslationCollection, Locale } from '../types'
 
 const navbar: TranslationCollection<Navbar> = data
 

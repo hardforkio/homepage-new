@@ -1,22 +1,7 @@
-import { Locale, TranslationCollection, filterByLocale } from '../i18n'
+import { filterByLocale } from '../i18n'
 import data from './faq.json'
-import { Head } from '../../components/Head'
-
-export interface FAQPage {
-  headline: string
-  subheadline: string
-  faqEntries: FAQEntry[]
-  head: Head
-}
-
-export type FAQPageOnDisk = {
-  id: string
-  head: TranslationCollection<Head>
-  faqEntries: TranslationCollection<FAQEntry>[]
-} & TranslationCollection<{
-  headline: string
-  subheadline: string
-}>
+import { FAQPageOnDisk, FAQPage } from './types'
+import { Locale } from '../../cms/i18n'
 
 const faq: FAQPageOnDisk = data
 

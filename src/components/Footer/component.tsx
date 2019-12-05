@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { LinkProps } from '../Link'
-import { FooterData } from '../../data/footer'
+import { FooterData } from '../../data/footer/types'
 
 const LegalBar: FunctionComponent = ({ children }) => (
   <div

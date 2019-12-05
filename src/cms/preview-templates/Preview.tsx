@@ -4,9 +4,9 @@ import React, {
   Dispatch,
   useState,
 } from 'react'
-import { Locale, LOCALES } from '../../data/i18n'
 import * as R from 'ramda'
 import { LocaleProvider } from '../../utils/hooks'
+import { Locale, LOCALES } from '../../data/types'
 
 interface PreviewProps<JSONType, ComponentProps> {
   Component: FunctionComponent<ComponentProps>

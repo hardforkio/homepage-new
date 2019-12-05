@@ -85,6 +85,12 @@ module.exports = {
       options: {
         manualInit: true,
         modulePath: `${__dirname}/src/cms/cms.ts`,
+        customizeWebpackConfig: config => {
+          config.node = {
+            ...config.node,
+            fs: 'empty',
+          }
+        },
       },
     },
     'gatsby-plugin-i18n',

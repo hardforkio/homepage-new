@@ -1,11 +1,17 @@
 import * as R from 'ramda'
-import { ProjectData, getProjects } from '../data/project'
+import { getProjects } from '../data/project'
 import { useLocale } from '../utils/hooks'
-import { Navbar, getNavbar } from '../data/navbar'
-import { Imprint, getImprint } from '../data/imprint'
-import { getHome, HomeData } from '../data/home'
-import { getFooter, FooterData } from '../data/footer'
-import { getFAQPage, FAQPage } from '../data/faqEntry'
+import { getNavbar } from '../data/navbar'
+import { getImprint } from '../data/imprint'
+import { getHome } from '../data/home'
+import { getFooter } from '../data/footer'
+import { getFAQPage } from '../data/faqEntry'
+import { ProjectData } from '../data/project/types'
+import { Navbar } from '../data/navbar/types'
+import { Imprint } from '../data/imprint/types'
+import { HomeData } from '../data/home/types'
+import { FooterData } from '../data/footer/types'
+import { FAQPage } from '../data/faqEntry/types'
 
 export const useProjects: () => ProjectData[] = R.pipe(useLocale, getProjects)
 

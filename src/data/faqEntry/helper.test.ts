@@ -1,6 +1,6 @@
 import test from 'tape'
 import { hasFAQEntries } from './helper'
-import { FAQPage } from '.'
+import { FAQPage } from './types'
 
 const FAQ_PAGE_EMTPY: FAQPage = {
   headline: 'Test',

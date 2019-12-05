@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import { FAQComponent } from './component'
-import { useFAQPage, FAQPage } from '../../data/faqEntry'
+import { useFAQPage } from '../../hooks/data'
+import { FAQPage } from '../../data/faqEntry/types'
 
 export const FAQ: FunctionComponent = () => {
   const faqPageData: FAQPage = useFAQPage()

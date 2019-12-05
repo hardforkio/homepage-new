@@ -5,6 +5,7 @@ import cn from 'classnames'
 import { Col, Row } from 'reactstrap'
 import { mapToComponent } from '../../utils/helpers'
 import ReactMarkdown from 'react-commonmark'
+import { Offering } from '../../data/home/types'
 
 export const Offerings: FunctionComponent<{ offerings: Offering[] }> = ({
   offerings,
@@ -35,9 +36,3 @@ export const OfferingComponent: FunctionComponent<{
     </Col>
   </Row>
 )
-
-interface Offering {
-  headline: string
-  text: string
-  image: string
-}

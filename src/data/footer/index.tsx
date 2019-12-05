@@ -1,19 +1,6 @@
 import data from './footer.json'
-import { translate, Locale, TranslationCollection } from '../../cms/i18n'
-
-export interface FooterData {
-  imprintLinkText: string
-  githubLinkURL: string
-  contactEmail: string
-  copyrightText: string
-}
-
-export interface FooterDataOnDisk {
-  imprintLinkText?: TranslationCollection<string>
-  githubLinkURL?: string
-  contactEmail?: string
-  copyrightText?: string
-}
+import { translate, Locale } from '../../cms/i18n'
+import { FooterDataOnDisk, FooterData } from './types.js'
 
 // TODO: add type analysis of imported data
 //       checkout https://github.com/pelotom/runtypes
