@@ -1,0 +1,40 @@
+{
+  "title": "FND",
+  "slug": "fnd",
+  "usedTechnologies": [
+    "479a9b61-0b55-4872-8043-af131d3d63c4",
+    "1cf624ef-b80f-4f74-a971-d9a4d44892e3",
+    "704a25f4-24c1-4832-97da-5db1135c6438",
+    "098f5396-e32c-4451-b467-2f973393b395",
+    "b8d9a6d1-4757-49b0-97c2-640d65ab4233",
+    "d763ce73-d856-4ee7-8161-d64fed15a602",
+    "cfb5b3ab-b89c-4fa7-8ae2-a0f96c91aa8c",
+    "483d0574-71ed-4473-ac93-41b47312c58d",
+    "a8af18c5-fc99-4e1f-a9cf-4a29b218d3cc",
+    "ac093ddc-dda6-4d8e-99c6-551619c6eff7",
+    "75d1829f-911d-42f3-9c84-587108d87313",
+    "7f047ac5-ee91-4244-a99d-e6fcc0677931",
+    "10677bfa-cda2-47e3-bb88-0bb8b74dadbc",
+    "15c99b9e-dc50-4555-a9d3-947038754846",
+    "4342557e-8563-4ff9-a88e-0c09f927047a",
+    "4a79293a-f739-485e-893f-42ee3bf1d915",
+    "f4b66895-b95e-4467-8030-5ebc336f00c0"
+  ],
+  "translations": [
+    {
+      "locale": "en",
+      "value": {
+        "client": "FND Group - 01/2018 to 10/2019",
+        "clientLink": "https://fnd.group",
+        "reference": "Florian Glatz, CEO",
+        "product": " A digital investment platform for investments in real estate funds",
+        "application": "* Landingpage with CMS and i18n <https://fnd.group>\n* SPA with login, identity verification (IDNow) and private key management <https://invest.fnd.group>\n* Smart Contract for token and token distribution",
+        "responsibilities": "* **Tech department as a service**\n* Planning of infrastructure\n* Planning of security model\n* Choice of technologies\n* Setup and maintenance of deployment, CI, CD, kanban board, etc.\n* Management of requirements (design and product)\n* Software development"
+      }
+    }
+  ],
+  "head": {
+    "id": "fnd ",
+    "translations": []
+  }
+}
