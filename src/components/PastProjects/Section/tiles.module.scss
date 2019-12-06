@@ -1,0 +1,33 @@
+@import '../../../scss/vars';
+@import '../../../scss/functions';
+@import "~bootstrap/scss/mixins";
+
+.features {
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  @for $i from 1 through _misc(max-features) {
+    $j: 0.035 * $i;
+
+    &:nth-child(#{$i}) a {
+      background-color: rgba(0, 0, 0, $j);
+    }
+  }
+
+  &:nth-child(1) a {
+    border-top-left-radius: 3px;
+  }
+
+  &:nth-child(2) a {
+    border-top-right-radius: 3px;
+  }
+
+  &:nth-last-child(1) a {
+    border-bottom-right-radius: 3px;
+  }
+
+  &:nth-last-child(2) a {
+    border-bottom-left-radius: 3px;
+  }
+}
