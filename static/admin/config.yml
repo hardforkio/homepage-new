@@ -151,7 +151,7 @@ collections:
 
           - name: "projectsHeadline"
             widget: "localizedString"
-            
+
           - name: "offerings"
             label: "Offerings"
             widget: "list"
@@ -376,3 +376,14 @@ collections:
             fields:
               - { name: "description", widget: "localizedString" }
               - { name: "keywords", widget: "localizedString" }
+
+  - label: "Widgets"
+    name: "widgets"
+    files:
+      - file: "src/data/widgets/localizedMarkdown.json"
+        label: "Localized Markdown"
+        name: "localizedMmarkdown"
+        format: "json"
+        fields:
+          - name: "text"
+            widget: "localizedMarkdown"

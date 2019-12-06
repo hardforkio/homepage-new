@@ -9,6 +9,7 @@ import { ProjectPreview } from './preview-templates/ProjectPreview'
 import { LocalizedStringWidget } from './widgets/LocalizedString'
 import { UuidWidget } from './widgets/Uuid'
 import { LOCALES } from './i18n'
+import { LocalizedMarkdownWidget } from './widgets/LocalizedMarkdown'
 
 const config = {
   backend: {
@@ -18,6 +19,7 @@ const config = {
   },
 }
 
+CMS.registerWidget(LocalizedMarkdownWidget(LOCALES))
 CMS.registerWidget(LocalizedStringWidget(LOCALES))
 CMS.registerWidget(UuidWidget())
 
