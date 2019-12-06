@@ -24,8 +24,9 @@ $gray-700: #495057;
 $gray-800: #343a40;
 $gray-900: #212529;
 $black: #000;
+$transparent-black : rgba(0, 0, 0, 0.04);
 $input-placeholder-color: #8e8892; //TODO create small color set
-$input-bg:  rgba(0, 0, 0, 0.04);
+$input-bg:  $transparent-black;
 $blue: #0d6efd;
 $indigo: #6610f2;
 $purple: #6f42c1;
@@ -121,6 +122,13 @@ $font-weight-normal: 400;
 $font-weight-bold: 700;
 
 $headings-font-weight: $font-weight-bold;
+
+$line-height-base: 1.65;
+$input-padding-y: 0.65rem;
+
+$btn-padding-x: 2.75rem;
+$btn-padding-x-sm: $btn-padding-x;
+$btn-padding-x-lg: $btn-padding-x;
 
 // links
 $link-color: inherit;

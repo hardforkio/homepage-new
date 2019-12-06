@@ -10,6 +10,7 @@ import {
   Nav,
   NavItem,
   Col,
+  Button,
 } from 'reactstrap'
 
 //Copied from /static/template/blue/elements.html
@@ -39,17 +40,13 @@ export const Form: FunctionComponent<{ className?: string }> = ({
           </FormGroup>
         </Row>
         <FormGroup>
-          <select
-            name="demo-category"
-            id="demo-category"
-            className="form-control"
-          >
+          <Input name="demo-category" id="demo-category" type="select">
             <option value="">- Category -</option>
             <option value="1">Manufacturing</option>
-            <option value="1">Shipping</option>
-            <option value="1">Administration</option>
-            <option value="1">Human Resources</option>
-          </select>
+            <option value="2">Shipping</option>
+            <option value="3">Administration</option>
+            <option value="4">Human Resources</option>
+          </Input>
         </FormGroup>
         <Row form>
           <Col xs={12} md={4}>
@@ -104,26 +101,16 @@ export const Form: FunctionComponent<{ className?: string }> = ({
             id="demo-message"
             placeholder="Enter your message"
             rows={6}
-            className="border-0 bg-light form-control"
+            className="form-control"
           ></textarea>
         </FormGroup>
 
-        <Nav className="form-group">
-          <NavItem>
-            <Input
-              type="submit"
-              value="Send Message"
-              className="primary btn btn-primary mr-2 text-uppercase px-5"
-            />
-          </NavItem>
-          <NavItem>
-            <Input
-              type="reset"
-              value="Reset"
-              className="btn btn-secondary mx-2 text-uppercase px-5"
-            />
-          </NavItem>
-        </Nav>
+        <Button color="primary" type="submit" className="mr-2 text-uppercase">
+          Send Message
+        </Button>
+        <Button outline type="reset" className="mx-2 text-uppercase">
+          Reset
+        </Button>
       </BootstrapForm>
     </section>
   </Container>
