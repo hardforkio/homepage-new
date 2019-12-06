@@ -27,6 +27,7 @@
         "client": "FND Group",
         "clientLink": "https://fnd.group",
         "reference": "Florian Glatz, CEO",
+        "image": "/img/selection_287.jpg",
         "product": " A digital investment platform for investments in real estate funds",
         "application": "* [Landingpage](https://fnd.group) with CMS and i18n \n* SPA with login, identity verification (IDNow) and private key management <https://invest.fnd.group>\n* Smart Contract for token and token distribution",
         "responsibilities": "* **Tech department as a service**\n* Planning of infrastructure\n* Planning of security model\n* Choice of technologies\n* Setup and maintenance of deployment, CI, CD, kanban board, etc.\n* Management of requirements (design and product)\n* Software development"
@@ -38,6 +39,7 @@
         "client": "FND Group",
         "clientLink": "https://fnd.group",
         "reference": "Florian Glatz, Geschäftsführer",
+        "image": "/img/selection_287.jpg",
         "product": "Plattform für digitale Investitionen in Immobilienfonds",
         "application": "* [Landingpage](https://fnd.group) mit CMS und Internationalisierung\n* SPA mit\n  * User Sign Up / Login\n  * KYC bzw. Identitätsverifikation (IDNow)\n  * Ethereum private key management (Metamask)\n  * Ethereum Smart Contract Interface (Metamask)\n* Entwicklung Smart Contract für Token-Verwaltung und Token-Emission\n* Entwicklung, Betrieb und Wartung Backend (GraphQL, AWS serverless, MySQL)",
         "responsibilities": "* **Technologieabteilung als Service**\n* Planung der Komponenten und Infrastruktur\n* Entwicklung eines robusten Sicherheitsmodells\n* Auswahl der Technologien\n* Einrichtung, Betrieb und Betreuung von Deployment, CI, CD, kanban board, etc.\n* Anforderungsmanagement in Rücksprache mit dem Kunden\n* Entwicklung der nötigen Software\n* Umsetzung von Designspezifikationen"
