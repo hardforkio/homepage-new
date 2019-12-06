@@ -16,7 +16,7 @@
         "clientLink": "https://hardfork.io",
         "reference": "Levin Keller, managing director",
         "product": "Landingpage for Hardfork GmbH",
-        "application": "As a show case for our work we built a rather sophisticated homepage that has internationalization, a CMS with Editor Workflow, very fast page load and a nice design.",
+        "application": "As a show case for our work we built a rather sophisticated homepage that has internationalization, a CMS with Editor Workflow, very fast page load and a nice design. Because we believe in our work we do it in public! You can go to our [repository](https://github.com/hardforkio/homepage) and have a look at our source code, the CI configuration, our Kanban Board and issues. All the code produced by us for this project is released as open source, so feel free to use it for your own projects.",
         "responsibilities": "* Planning\n* Development\n* Improvements\n* Hosting\n* Maintenance"
       }
     }
