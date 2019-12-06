@@ -28,8 +28,6 @@ collections:
         identifier_field: "id"
         fields:
           - name: "id"
-            label: "Identifier"
-            description: "A name to identify this object within this collection. Should be unique within the collection."
             widget: "hidden"
             default: "Impressum"
 
@@ -50,19 +48,16 @@ collections:
           - name: "head"
             label: "Head"
             widget: "object"
-            identfier_field: "id"
             fields:
-              - name: "id"
-                widget: "string"
               - { name: "title", widget: "localizedString" }
               - name: "meta"
-                widget: "object" 
-                fields: 
+                widget: "object"
+                fields:
                   - { name: "description", widget: "localizedString" }
-                  - { name: "keywords", widget: "localizedString" }  
+                  - { name: "keywords", widget: "localizedString" }
 
-  - name: "faqPage"
-    label: "FaqPage"
+  - label: "FAQ Page"
+    name: "faqPage"
     files:
       - file: "src/data/faqEntry/faq.json"
         format: "json"
@@ -71,18 +66,24 @@ collections:
         identifier_field: "id"
         fields:
           - name: "id"
-            label: "id"
-            description: "A name to identify this object within this collection. Should be unique within the collection."
-            widget: "string"
-          - { name: "headline", widget: "localizedString" }
-          - { name: "subheadline", widget: "localizedString" }
+            widget: "hidden"
+            default: "faqPage"
+
+          - name: "headline"
+            widget: "localizedString"
+
+          - name: "subheadline"
+            widget: "localizedString"
+
           - name: "faqEntries"
             widget: "list"
             default: []
             identfier_field: "id"
             fields:
-              - name: "id"
+              - label: "Title"
+                name: "id"
                 widget: "string"
+
               - name: "translations"
                 widget: "list"
                 fields:
@@ -98,16 +99,14 @@ collections:
           - name: "head"
             label: "Head"
             widget: "object"
-            identfier_field: "id"
             fields:
-              - name: "id"
-                widget: "string"
-              - { name: "title", widget: "localizedString" }
+              - name: "title"
+                widget: "localizedString"
               - name: "meta"
-                widget: "object" 
-                fields: 
+                widget: "object"
+                fields:
                   - { name: "description", widget: "localizedString" }
-                  - { name: "keywords", widget: "localizedString" }  
+                  - { name: "keywords", widget: "localizedString" }
 
   - name: "home"
     label: "Landing Page"
@@ -120,8 +119,6 @@ collections:
         identifier_field: "id"
         fields:
           - name: "id"
-            label: "Identifier"
-            description: "A name to identify this object within this collection. Should be unique within the collection."
             widget: "hidden"
             default: "home"
 
@@ -153,7 +150,7 @@ collections:
             widget: "localizedString"
 
           - name: "projectsHeadline"
-            widget: "localizedString"                    
+            widget: "localizedString"
 
           - name: "offerings"
             label: "Offerings"
@@ -161,7 +158,8 @@ collections:
             default: []
             identfier_field: "id"
             fields:
-              - name: "id"
+              - label: "Title"
+                name: "id"
                 widget: "string"
 
               - name: "translations"
@@ -180,8 +178,8 @@ collections:
                           widget: "image",
                           allow_multiple: false,
                         }
-                      - { name: "text", widget: "text" }   
-             
+                      - { name: "text", widget: "text" }
+
           - label: "Team"
             name: "team"
             widget: "object"
@@ -240,16 +238,13 @@ collections:
           - name: "head"
             label: "Head"
             widget: "object"
-            identfier_field: "id"
             fields:
-              - name: "id"
-                widget: "string"
               - { name: "title", widget: "localizedString" }
               - name: "meta"
-                widget: "object" 
-                fields: 
+                widget: "object"
+                fields:
                   - { name: "description", widget: "localizedString" }
-                  - { name: "keywords", widget: "localizedString" }                          
+                  - { name: "keywords", widget: "localizedString" }
 
   - name: "footer"
     label: "Footer"
@@ -261,8 +256,7 @@ collections:
         format: "json"
         identifier_field: "id"
         fields:
-          - label: "Identifier"
-            name: "id"
+          - name: "id"
             widget: "hidden"
             default: "Footer"
 
@@ -293,7 +287,6 @@ collections:
         identifier_field: "id"
         fields:
           - name: "id"
-            label: "Identifier"
             widget: "hidden"
             default: "navbar"
 
@@ -326,9 +319,9 @@ collections:
       - label: "Tech ID"
         name: "uuid"
         widget: "uuid"
-      - {label: "Name", name: "name", widget: "string", required: true}
-      - {label: "Link", name: "link", widget: "string", required: false}
-          
+      - { label: "Name", name: "name", widget: "string", required: true }
+      - { label: "Link", name: "link", widget: "string", required: false }
+
   - name: "project"
     label: "Project"
     folder: "src/data/project"
@@ -336,17 +329,17 @@ collections:
     create: true
     format: "json"
     fields:
-      - {label: "Title", name: "title", widget: "string", default: "project"}
+      - { label: "Title", name: "title", widget: "string", default: "project" }
 
       - { name: "slug", widget: "string" }
 
       - label: "Used technologies"
-        name: "usedTechnologies"  
+        name: "usedTechnologies"
         widget: "relation"
         collection: "technology"
         searchFields: ["name"]
         valueField: uuid
-        displayFields: ['name']
+        displayFields: ["name"]
         multiple: true
 
       - name: "translations"
@@ -366,23 +359,19 @@ collections:
                   name: "image",
                   widget: "image",
                   allow_multiple: false,
-                  required: false
+                  required: false,
                 }
               - { name: "product", widget: "string" }
               - { name: "application", widget: "markdown" }
-              - { name: "responsibilities", widget: "markdown" }    
-          
+              - { name: "responsibilities", widget: "markdown" }
+
       - name: "head"
         label: "Head"
         widget: "object"
-        identfier_field: "id"
         fields:
-          - name: "id"
-            widget: "string"
           - { name: "title", widget: "localizedString" }
           - name: "meta"
-            widget: "object" 
-            fields: 
+            widget: "object"
+            fields:
               - { name: "description", widget: "localizedString" }
-              - { name: "keywords", widget: "localizedString" }              
-
+              - { name: "keywords", widget: "localizedString" }
