@@ -2,30 +2,28 @@ import * as React from 'react'
 import * as R from 'ramda'
 import { getTranslation, uppendTranslation } from '../../i18n-lib'
 import { Locale } from '../../i18n-locales'
-import { NetlifyWidgetProps } from '../utils'
+import { WidgetProps } from '../mockNetlify'
 
-interface LocalizedStringWidgetProps extends NetlifyWidgetProps {}
+interface LocalizedStringWidgetProps extends WidgetProps {}
+
+type ChangeEvent = React.ChangeEvent<HTMLInputElement>
 
 export const createLocalizedStringControl = (locales: Locale[]) => {
-  class LocalizedStringControl extends React.Component<
+  return class LocalizedStringControl extends React.Component<
     LocalizedStringWidgetProps
   > {
-    ensureJS = (value: any = []) =>
-      R.is(Array, value) ? value : (value as any).toJS()
+    getWidgetState = () => {
+      const { value: state } = this.props
+      return !state ? [] : R.is(Array, state) ? state : state.toJS()
+    }
 
-    changeHandler = (locale: Locale) => (
-      event: React.ChangeEvent<HTMLInputElement>,
-    ) => {
-      const { value, onChange } = this.props
-      onChange(
-        uppendTranslation(locale, event.target.value)(this.ensureJS(value)),
+    changeHandler = (locale: Locale) => (event: ChangeEvent) =>
+      this.props.onChange(
+        uppendTranslation(locale, event.target.value)(this.getWidgetState()),
       )
-    }
 
-    getValue = (locale: Locale) => {
-      const { value } = this.props
-      return getTranslation<string>(locale)(this.ensureJS(value))
-    }
+    getValue = (locale: Locale) =>
+      getTranslation<string>(locale)(this.getWidgetState())
 
     render = () => {
       const {
@@ -52,8 +50,6 @@ export const createLocalizedStringControl = (locales: Locale[]) => {
       )
     }
   }
-
-  return LocalizedStringControl
 }
 
 interface InputFieldProps {
