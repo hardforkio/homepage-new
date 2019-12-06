@@ -1,0 +1,59 @@
+{
+  "title": "Hardfork Homepage",
+  "slug": "homepage",
+  "usedTechnologies": [
+    "b8d9a6d1-4757-49b0-97c2-640d65ab4233",
+    "d763ce73-d856-4ee7-8161-d64fed15a602",
+    "483d0574-71ed-4473-ac93-41b47312c58d",
+    "7f047ac5-ee91-4244-a99d-e6fcc0677931",
+    "ac093ddc-dda6-4d8e-99c6-551619c6eff7"
+  ],
+  "translations": [
+    {
+      "locale": "en",
+      "value": {
+        "client": "Hardfork",
+        "clientLink": "https://hardfork.io",
+        "reference": "Levin Keller, managing director",
+        "product": "Landingpage for Hardfork GmbH",
+        "application": "As a show case for our work we built a rather sophisticated homepage that has internationalization, a CMS with Editor Workflow, very fast page load and a nice design.",
+        "responsibilities": "* Planning\n* Development\n* Improvements\n* Hosting\n* Maintenance"
+      }
+    }
+  ],
+  "head": {
+    "id": "homepage",
+    "title": [
+      {
+        "locale": "en",
+        "value": "Hardfork GmbH - Project Hardfork Homepage"
+      },
+      {
+        "locale": "de",
+        "value": "Hardfork GmbH - Projekt Hardfork Homepage"
+      }
+    ],
+    "meta": {
+      "description": [
+        {
+          "locale": "en",
+          "value": "Details on the development of our own homepage."
+        },
+        {
+          "locale": "de",
+          "value": "Details zur Entwicklung unserer eigenen Homepage"
+        }
+      ],
+      "keywords": [
+        {
+          "locale": "en",
+          "value": "software development, open source, oss"
+        },
+        {
+          "locale": "de",
+          "value": "Software-Entwicklung, open source, oss"
+        }
+      ]
+    }
+  }
+}
