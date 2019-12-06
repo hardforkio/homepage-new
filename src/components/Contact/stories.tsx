@@ -17,7 +17,6 @@ storiesOf('Contact Form', module).add('default', () => (
       phone: 'Phone',
       body: 'Your inquiry',
       submitButtonText: 'Send',
-      submitButtonSuccessText: 'Sent',
       resetButtonText: 'Reset',
     }}
   />

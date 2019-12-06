@@ -167,8 +167,6 @@ collections:
                 widget: "localizedString"
               - name: "submitButtonText"
                 widget: "localizedString"
-              - name: "submitButtonSuccessText"
-                widget: "localizedString"
               - name: "resetButtonText"
                 widget: "localizedString"
 

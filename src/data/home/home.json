@@ -52,16 +52,6 @@
         "value": "Absenden"
       }
     ],
-    "submitButtonSuccessText": [
-      {
-        "locale": "en",
-        "value": "Sent"
-      },
-      {
-        "locale": "de",
-        "value": "Erhalten"
-      }
-    ],
     "resetButtonText": [
       {
         "locale": "en",

@@ -51,7 +51,6 @@ export interface ContactFormProps {
   phone: string
   body: string
   submitButtonText: string
-  submitButtonSuccessText: string
   resetButtonText: string
 }
 
@@ -61,6 +60,5 @@ export interface ContactFormPropsOnDisk {
   phone: NewStyleTranslationCollection<string>
   body: NewStyleTranslationCollection<string>
   submitButtonText: NewStyleTranslationCollection<string>
-  submitButtonSuccessText: NewStyleTranslationCollection<string>
   resetButtonText: NewStyleTranslationCollection<string>
 }
