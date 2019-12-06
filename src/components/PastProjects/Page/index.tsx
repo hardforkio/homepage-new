@@ -32,9 +32,9 @@ export const ProjectPageComponent: FunctionComponent<ProjectData> = ({
       <Row className="justify-content-center ">
         <Col xs={12} md={6} className="pb-5">
           <h5>Applications</h5>
-          <ReactMarkdown source={application} />
+          <ReactMarkdown source={application} containerTagName="p" />
           <h5>Responsibilities</h5>
-          <ReactMarkdown source={responsibilities} />
+          <ReactMarkdown source={responsibilities} containerTagName="p" />
         </Col>
         <Col xs={12} md={6} className="pb-5">
           <h5>Technologies</h5>

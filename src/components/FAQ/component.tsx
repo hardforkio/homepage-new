@@ -29,7 +29,7 @@ const FAQEntryComponent: FunctionComponent<{
   <div>
     <h5>{question}</h5>
     <div className="pb-5">
-      <ReactMarkdown source={answer} />
+      <ReactMarkdown source={answer} containerTagName="p" />
     </div>
   </div>
 )
