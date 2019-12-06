@@ -19,28 +19,38 @@
     }
   ],
   "head": {
-    "id": "Head",
-    "translations": [
-      {
-        "locale": "de",
-        "value": {
-          "title": "Impressum Hardfork GmbH",
-          "meta": {
-            "description": "Das Impressum der Hardfork GmbH",
-            "keywords": "Softwareentwicklung"
-          }
-        }
-      },
+    "id": "Imprint",
+    "title": [
       {
         "locale": "en",
-        "value": {
-          "title": "Imprint Hardfork GmbH",
-          "meta": {
-            "description": "The imprint of Hardfork GmbH",
-            "keywords": "Software development"
-          }
-        }
+        "value": "Imprint Hardfork GmbH"
+      },
+      {
+        "locale": "de",
+        "value": "Impressum Hardfork GmbH"
       }
-    ]
+    ],
+    "meta": {
+      "description": [
+        {
+          "locale": "en",
+          "value": "The imprint of Hardfork GmbH"
+        },
+        {
+          "locale": "de",
+          "value": "Das Impressum der Hardfork GmbH"
+        }
+      ],
+      "keywords": [
+        {
+          "locale": "en",
+          "value": "Software development"
+        },
+        {
+          "locale": "de",
+          "value": "Softwareentwicklung"
+        }
+      ]
+    }
   }
 }

@@ -1,6 +1,6 @@
 import { Technology } from '../technology/types'
-import { Head } from '../../components/Head'
-import { TranslationCollection } from '../types'
+import { Head, HeadLocalized } from '../../components/Head'
+import { TranslationCollection as TranslationCollectionOld } from '../types'
 
 export type ProjectData = {
   usedTechnologies: Technology[]
@@ -21,5 +21,5 @@ export interface TranslatedProjectData {
 export type ProjectDataOnDisk = {
   usedTechnologies: Technology[]
   slug: string
-  head: TranslationCollection<Head>
-} & TranslationCollection<TranslatedProjectData>
+  head: HeadLocalized
+} & TranslationCollectionOld<TranslatedProjectData>

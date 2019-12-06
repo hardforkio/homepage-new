@@ -7,6 +7,7 @@ import { translate, Locale } from '../i18n'
 import { filterByLocale } from '../../data/i18n'
 import { ProjectData } from '../../data/project/types'
 import * as R from 'ramda'
+import { getProjects } from '../../data/project'
 
 const Preview = createPreview<
   HomeDataOnDisk,
@@ -23,5 +24,11 @@ export const HomePreview: FunctionComponent<PreviewProps> = ({ entry }) => {
   )
 }
 
-const translator = (locale: Locale) =>
-  R.pipe(filterByLocale(locale), translate(locale))
+const translator = (
+  locale: Locale,
+): ((json: HomeDataOnDisk) => HomeData & { projects: ProjectData[] }) =>
+  R.pipe(
+    filterByLocale(locale),
+    translate(locale) as (_: any) => HomeData,
+    R.mergeRight({ projects: getProjects(locale) }), //impure; necessary as the HomeDataOnDisk does not contain the Project Data that homepages display.
+  )
