@@ -19,6 +19,17 @@
         "application": "As a show case for our work we built a rather sophisticated homepage that has internationalization, a CMS with editorial work flow, very fast page load and a nice design. Because we believe in our work we do it in public! You can go to our [repository](https://github.com/hardforkio/homepage) and have a look at our source code, the CI configuration, our Kanban Board and issues. All the code produced by us for this project is released as open source, so feel free to use it for your own projects.",
         "responsibilities": "* Planning\n* Development\n* Improvements\n* Hosting\n* Maintenance"
       }
+    },
+    {
+      "locale": "de",
+      "value": {
+        "client": "Hardfork GmbH",
+        "clientLink": "https://hardfork.io",
+        "reference": "Levin Keller, Geschäftsführer",
+        "product": "Landingpage für Hardfork",
+        "application": "Als Show-Case für unsere Arbeit haben wir eine technologisch ausgefeilte Homepage gebaut. Wir haben ein CMS mit einem editorial Workflow angebunden, welches Internationalisierung der Inhalte erlaubt, eine sehr schnelle Lade-Geschwindigkeit für die Seite erreicht und ein schönes Design appliziert. Weil wir stolz auf unsere Arbeit sind, machen wir diese in der Öffentlichkeit! Gehen sie zum [Repository](https://github.com/hardforkio/homepage)  und studieren Sie unseren Source Code, sehen Sie wie wir mit Github Issues und Github Projects unser Anforderungsmangament gestalten und wie wir den CI-Prozess konfigurieren. Der gesamte Code den wir für dieses Projekt entwickeln haben ist Open Source, wir laden Sie herzlich ein, Teile davon in Ihrem Projekt zu verwenden.",
+        "responsibilities": "* Planung\n* Umsetzung / Implementierung\n* Anforderungsmangament\n* Hosting\n* Wartung"
+      }
     }
   ],
   "head": {
