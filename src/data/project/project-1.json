@@ -1,0 +1,55 @@
+{
+  "title": "project",
+  "slug": "fd",
+  "usedTechnologies": [
+    "479a9b61-0b55-4872-8043-af131d3d63c4"
+  ],
+  "translations": [
+    {
+      "locale": "en",
+      "value": {
+        "client": "df",
+        "clientLink": "sdf",
+        "reference": "sfd",
+        "product": "sdf",
+        "application": "sdf",
+        "responsibilities": "sdf"
+      }
+    }
+  ],
+  "head": {
+    "id": "sdf",
+    "title": [
+      {
+        "locale": "en",
+        "value": "sfd"
+      },
+      {
+        "locale": "de",
+        "value": "sdf"
+      }
+    ],
+    "meta": {
+      "description": [
+        {
+          "locale": "en",
+          "value": "sfd"
+        },
+        {
+          "locale": "de",
+          "value": "sdf"
+        }
+      ],
+      "keywords": [
+        {
+          "locale": "en",
+          "value": "sfd"
+        },
+        {
+          "locale": "de",
+          "value": "sfd"
+        }
+      ]
+    }
+  }
+}
