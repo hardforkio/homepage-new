@@ -1,19 +1,23 @@
 {
   "id": "FAQ Page",
-  "translations": [
+  "headline": [
     {
       "locale": "en",
-      "value": {
-        "headline": "FAQ",
-        "subheadline": "Common questions about our services"
-      }
+      "value": "FAQ"
     },
     {
       "locale": "de",
-      "value": {
-        "headline": "FAQ",
-        "subheadline": "Häufige Fragen zu unseren Dienstleistungen"
-      }
+      "value": "FAQ"
+    }
+  ],
+  "subheadline": [
+    {
+      "locale": "en",
+      "value": "Common questions about our services"
+    },
+    {
+      "locale": "de",
+      "value": "Häufige Fragen zu unseren Dienstleistungen"
     }
   ],
   "faqEntries": [
@@ -58,27 +62,37 @@
   ],
   "head": {
     "id": "Head",
-    "translations": [
-      {
-        "locale": "de",
-        "value": {
-          "title": "FAQ - Hardfork GmbH",
-          "meta": {
-            "description": "Haben Sie noch Fragen zu Hardfork? Wir antworten Ihnen gerne.",
-            "keywords": "Softwareentwicklung"
-          }
-        }
-      },
+    "title": [
       {
         "locale": "en",
-        "value": {
-          "title": "FAQ - Hardfork GmbH",
-          "meta": {
-            "description": "Do you want to know more about Hardfork? We are happy to answer all your questions.",
-            "keywords": "Software development"
-          }
-        }
+        "value": "FAQ - Hardfork GmbH"
+      },
+      {
+        "locale": "de",
+        "value": "FAQ - Hardfork GmbH"
       }
-    ]
+    ],
+    "meta": {
+      "description": [
+        {
+          "locale": "en",
+          "value": "Do you want to know more about Hardfork? We are happy to answer all your questions."
+        },
+        {
+          "locale": "de",
+          "value": "Haben Sie noch Fragen zu Hardfork? Wir antworten Ihnen gerne."
+        }
+      ],
+      "keywords": [
+        {
+          "locale": "en",
+          "value": "Software development"
+        },
+        {
+          "locale": "de",
+          "value": "Softwareentwicklung"
+        }
+      ]
+    }
   }
 }

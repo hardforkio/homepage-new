@@ -1,6 +1,7 @@
-import { TranslationCollection } from '../types'
+import { TranslationCollection as TranslationCollectionOld } from '../types'
 import { Head } from '../../components/Head'
 import { TeamData, TeamDataOnDisk } from '../team'
+import { TranslationCollection } from '../../cms/i18n-lib'
 
 export interface Offering {
   headline: string
@@ -27,7 +28,7 @@ export interface HomeData {
 
 export type HomeDataOnDisk = {
   id: string
-  offerings: TranslationCollection<Offering>[]
+  offerings: TranslationCollectionOld<Offering>[]
   contactEmail: string
   head: TranslationCollection<Head>
   team?: TeamDataOnDisk

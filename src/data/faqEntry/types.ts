@@ -1,5 +1,6 @@
 import { Head } from '../../components/Head'
-import { TranslationCollection } from '../types'
+import { TranslationCollection as TranslationCollectionOld } from '../types'
+import { TranslationCollection } from '../../cms/i18n-lib'
 
 export interface FAQPage {
   headline: string
@@ -11,7 +12,7 @@ export interface FAQPage {
 export type FAQPageOnDisk = {
   id: string
   head: TranslationCollection<Head>
-  faqEntries: TranslationCollection<FAQEntry>[]
+  faqEntries: TranslationCollectionOld<FAQEntry>[]
 } & TranslationCollection<{
   headline: string
   subheadline: string

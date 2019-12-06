@@ -1,6 +1,7 @@
 import { Technology } from '../technology/types'
 import { Head } from '../../components/Head'
-import { TranslationCollection } from '../types'
+import { TranslationCollection as TranslationCollectionOld } from '../types'
+import { TranslationCollection } from '../../cms/i18n-lib'
 
 export type ProjectData = {
   usedTechnologies: Technology[]
@@ -22,4 +23,4 @@ export type ProjectDataOnDisk = {
   usedTechnologies: Technology[]
   slug: string
   head: TranslationCollection<Head>
-} & TranslationCollection<TranslatedProjectData>
+} & TranslationCollectionOld<TranslatedProjectData>
