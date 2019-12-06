@@ -49,7 +49,7 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({
   resetButtonText = 'Reset',
 }) => (
   <Form action={FORM_SUBMIT_ENDPOINT} method="post" target="_blank">
-    <Row>
+    <Row form>
       <Col xs={12} sm={6}>
         <FormGroup>
           <Label hidden for="contactform-input-name">
