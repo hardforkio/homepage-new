@@ -6,10 +6,5 @@ import * as R from 'ramda'
 
 const faq: FAQPageOnDisk = data
 
-export interface FAQEntry {
-  question: string
-  answer: string
-}
-
 export const getFAQPage = (locale: Locale): FAQPage =>
   R.pipe(filterByLocale(locale), translate(locale))(faq)

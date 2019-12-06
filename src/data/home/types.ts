@@ -1,5 +1,5 @@
 import { TranslationCollection as TranslationCollectionOld } from '../types'
-import { Head } from '../../components/Head'
+import { Head, HeadLocalized } from '../../components/Head'
 import { TeamData, TeamDataOnDisk } from '../team'
 import { TranslationCollection } from '../../cms/i18n-lib'
 
@@ -30,15 +30,15 @@ export type HomeDataOnDisk = {
   id: string
   offerings: TranslationCollectionOld<Offering>[]
   contactEmail: string
-  head: TranslationCollection<Head>
+  head: HeadLocalized
   team?: TeamDataOnDisk
-} & TranslationCollection<{
-  heroHeadline: string
-  heroSubheadline: string
-  contactHeadline: string
-  contactDescription: string
-  contactButtonText: string
-  moreLinkText: string
-  projectsHeadline: string
-  emailButton: string
-}>
+} & {
+  heroHeadline: TranslationCollection<string>
+  heroSubheadline: TranslationCollection<string>
+  contactHeadline: TranslationCollection<string>
+  contactDescription: TranslationCollection<string>
+  contactButtonText: TranslationCollection<string>
+  moreLinkText: TranslationCollection<string>
+  projectsHeadline: TranslationCollection<string>
+  emailButton: TranslationCollection<string>
+}
