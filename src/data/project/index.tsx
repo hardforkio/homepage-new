@@ -5,6 +5,7 @@ import { importAllNode } from '../helpers-node'
 import { ProjectDataOnDisk, ProjectData } from './types'
 import { expandTechnologies } from '../technology'
 import { filterByLocale } from '../i18n'
+import { translate } from '../../cms/i18n'
 
 const loadData = (): ProjectDataOnDisk[] => {
   try {
@@ -18,4 +19,8 @@ const loadData = (): ProjectDataOnDisk[] => {
 const data = loadData()
 
 export const getProjects = (locale: Locale): ProjectData[] =>
-  R.pipe(R.map(expandTechnologies), R.map(filterByLocale(locale)))(data)
+  R.pipe(
+    R.map(expandTechnologies),
+    R.map(filterByLocale(locale)),
+    R.map(translate(locale)),
+  )(data)

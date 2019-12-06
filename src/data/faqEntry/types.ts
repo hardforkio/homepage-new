@@ -1,5 +1,6 @@
-import { Head } from '../../components/Head'
-import { TranslationCollection } from '../types'
+import { Head, HeadLocalized } from '../../components/Head'
+import { TranslationCollection as TranslationCollectionOld } from '../types'
+import { TranslationCollection } from '../../cms/i18n-lib'
 
 export interface FAQPage {
   headline: string
@@ -10,12 +11,12 @@ export interface FAQPage {
 
 export type FAQPageOnDisk = {
   id: string
-  head: TranslationCollection<Head>
-  faqEntries: TranslationCollection<FAQEntry>[]
-} & TranslationCollection<{
-  headline: string
-  subheadline: string
-}>
+  head: HeadLocalized
+  faqEntries: TranslationCollectionOld<FAQEntry>[]
+} & {
+  headline: TranslationCollection<string>
+  subheadline: TranslationCollection<string>
+}
 
 export interface FAQEntry {
   question: string

@@ -54,20 +54,12 @@ collections:
             fields:
               - name: "id"
                 widget: "string"
-              - name: "translations"
-                label: "translations"
-                widget: "list"
-                fields:
-                  - { name: "locale", widget: "select", <<: *locales }
-                  - name: "value"
-                    widget: "object"
-                    fields:
-                      - { name: "title", widget: "string" }
-                      - name: "meta"
-                        widget: "object"
-                        fields:
-                          - { name: "description", widget: "string" }
-                          - { name: "keywords", widget: "string" }
+              - { name: "title", widget: "localizedString" }
+              - name: "meta"
+                widget: "object" 
+                fields: 
+                  - { name: "description", widget: "localizedString" }
+                  - { name: "keywords", widget: "localizedString" }  
 
   - name: "faqPage"
     label: "FaqPage"
@@ -82,18 +74,8 @@ collections:
             label: "id"
             description: "A name to identify this object within this collection. Should be unique within the collection."
             widget: "string"
-          - name: "translations"
-            label: "translations"
-            widget: "list"
-            fields:
-              - name: "locale"
-                widget: "select"
-                <<: *locales
-              - name: "value"
-                widget: "object"
-                fields:
-                  - { name: "headline", widget: "string" }
-                  - { name: "subheadline", widget: "string" }
+          - { name: "headline", widget: "localizedString" }
+          - { name: "subheadline", widget: "localizedString" }
           - name: "faqEntries"
             widget: "list"
             default: []
@@ -120,20 +102,12 @@ collections:
             fields:
               - name: "id"
                 widget: "string"
-              - name: "translations"
-                label: "translations"
-                widget: "list"
-                fields:
-                  - { name: "locale", widget: "select", <<: *locales }
-                  - name: "value"
-                    widget: "object"
-                    fields:
-                      - { name: "title", widget: "string" }
-                      - name: "meta"
-                        widget: "object"
-                        fields:
-                          - { name: "description", widget: "string" }
-                          - { name: "keywords", widget: "string" }
+              - { name: "title", widget: "localizedString" }
+              - name: "meta"
+                widget: "object" 
+                fields: 
+                  - { name: "description", widget: "localizedString" }
+                  - { name: "keywords", widget: "localizedString" }  
 
   - name: "home"
     label: "Landing Page"
@@ -154,43 +128,32 @@ collections:
           - name: "contactEmail"
             widget: "string"
 
-          - name: "translations"
-            label: "translations"
-            widget: "list"
-            fields:
-              - name: "locale"
-                widget: "select"
-                <<: *locales
+          - name: "heroHeadline"
+            widget: "localizedString"
+            label: "Page title"
+            description: "Title shown on top of page. Not an ID."
 
-              - name: "value"
-                widget: "object"
-                fields:
-                  - name: "heroHeadline"
-                    widget: "string"
-                    label: "Page title"
-                    description: "Title shown on top of page. Not an ID."
+          - name: "heroSubheadline"
+            widget: "localizedString"
 
-                  - name: "heroSubheadline"
-                    widget: "string"
+          - name: "contactHeadline"
+            widget: "localizedString"
+            description: "Contact Section Headline"
 
-                  - name: "contactHeadline"
-                    widget: "string"
-                    description: "Contact Section Headline"
+          - name: "contactDescription"
+            widget: "localizedString"
 
-                  - name: "contactDescription"
-                    widget: "string"
+          - name: "contactButtonText"
+            widget: "localizedString"
 
-                  - name: "contactButtonText"
-                    widget: "string"
+          - name: "moreLinkText"
+            widget: "localizedString"
 
-                  - name: "moreLinkText"
-                    widget: "string"
+          - name: "emailButton"
+            widget: "localizedString"
 
-                  - name: "emailButton"
-                    widget: "string"
-
-                  - name: "projectsHeadline"
-                    widget: "string"                    
+          - name: "projectsHeadline"
+            widget: "localizedString"                    
 
           - name: "offerings"
             label: "Offerings"
@@ -218,29 +181,7 @@ collections:
                           allow_multiple: false,
                         }
                       - { name: "text", widget: "text" }   
-          
-          - name: "head"
-            label: "Head"
-            widget: "object"
-            identfier_field: "id"
-            fields:
-              - name: "id"
-                widget: "string"
-              - name: "translations"
-                label: "translations"
-                widget: "list"
-                fields:
-                  - { name: "locale", widget: "select", <<: *locales }
-                  - name: "value"
-                    widget: "object"
-                    fields:
-                      - { name: "title", widget: "string" }
-                      - name: "meta"
-                        widget: "object"
-                        fields:
-                          - { name: "description", widget: "string" }
-                          - { name: "keywords", widget: "string" }
-
+             
           - label: "Team"
             name: "team"
             widget: "object"
@@ -295,6 +236,20 @@ collections:
                       - label: "Username"
                         name: "username"
                         widget: "string"
+
+          - name: "head"
+            label: "Head"
+            widget: "object"
+            identfier_field: "id"
+            fields:
+              - name: "id"
+                widget: "string"
+              - { name: "title", widget: "localizedString" }
+              - name: "meta"
+                widget: "object" 
+                fields: 
+                  - { name: "description", widget: "localizedString" }
+                  - { name: "keywords", widget: "localizedString" }                          
 
   - name: "footer"
     label: "Footer"
@@ -424,18 +379,10 @@ collections:
         fields:
           - name: "id"
             widget: "string"
-          - name: "translations"
-            label: "translations"
-            widget: "list"
-            fields:
-              - { name: "locale", widget: "select", <<: *locales }
-              - name: "value"
-                widget: "object"
-                fields:
-                  - { name: "title", widget: "string" }
-                  - name: "meta"
-                    widget: "object" 
-                    fields: 
-                      - { name: "description", widget: "string" }
-                      - { name: "keywords", widget: "string" }              
+          - { name: "title", widget: "localizedString" }
+          - name: "meta"
+            widget: "object" 
+            fields: 
+              - { name: "description", widget: "localizedString" }
+              - { name: "keywords", widget: "localizedString" }              
 

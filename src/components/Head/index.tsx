@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
 import { useLocale } from '../../utils/hooks'
+import { TranslationCollection } from '../../cms/i18n-lib'
 
 export interface Head {
   title: string
@@ -10,6 +11,16 @@ export interface Head {
 export interface MetaContent {
   description: string
   keywords: string
+}
+
+interface MetaContentLocalized {
+  description: TranslationCollection<string>
+  keywords: TranslationCollection<string>
+}
+
+export interface HeadLocalized {
+  title: TranslationCollection<string>
+  meta: MetaContentLocalized
 }
 
 export const Head: FunctionComponent<Head> = ({ title, meta }) => {

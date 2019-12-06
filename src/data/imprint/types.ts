@@ -1,5 +1,5 @@
-import { TranslationCollection } from '../types'
-import { Head } from '../../components/Head'
+import { TranslationCollection as TranslationCollectionOld } from '../types'
+import { Head, HeadLocalized } from '../../components/Head'
 
 export interface Imprint {
   headline: string
@@ -10,8 +10,8 @@ export interface Imprint {
 
 export type ImprintPageOnDisk = {
   id: string
-  head: TranslationCollection<Head>
-} & TranslationCollection<{
+  head: HeadLocalized
+} & TranslationCollectionOld<{
   headline: string
   subheadline: string
   content: string
