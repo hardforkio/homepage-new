@@ -14,10 +14,10 @@ export const PastProjectsComponent: FunctionComponent<{
 }> = ({ headline, projects, linkTag }) => {
   if (hasProjects(projects)) {
     return (
-      <section className="bg-indigo">
+      <section className="bg-indigo py-5">
         <Container>
-          <div className="text-center py-5 ">
-            <h3 className="py-5">{headline ? headline : ''}</h3>
+          <div className="text-center py-5">
+            <h3 className="pb-5">{headline ? headline : ''}</h3>
             <Row noGutters className={cn('justify-content-center')}>
               {mapToComponent(createProjectComponent(linkTag), projects)}
             </Row>
@@ -38,7 +38,7 @@ const createProjectComponent: (
 }) => {
   const subpagePath = usePathPrefix(`/project/${slug}`)
   return (
-    <Col sm={24} md={6} className={cn(styles.features, 'd-flex col')}>
+    <Col sm={24} md={6} className={cn(styles.features, 'd-flex')}>
       <Card
         tag={linkTag}
         to={subpagePath}
