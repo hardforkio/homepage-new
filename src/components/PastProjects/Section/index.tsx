@@ -38,7 +38,7 @@ const createProjectComponent: (
 }) => {
   const subpagePath = usePathPrefix(`/project/${slug}`)
   return (
-    <Col sm={24} md={6} className={cn(styles.features, 'd-flex')}>
+    <Col sm={24} md={6} className={cn(styles.features, 'd-flex ')}>
       <Card
         tag={linkTag}
         to={subpagePath}
@@ -46,7 +46,7 @@ const createProjectComponent: (
       >
         <CardBody className="d-flex flex-column text-left">
           <h5 className="pb-4">{client}</h5>
-          <CardText className="flex-grow-1">{product}</CardText>
+          <CardText className="flex-grow-1 text-gray-400">{product}</CardText>
         </CardBody>
       </Card>
     </Col>
