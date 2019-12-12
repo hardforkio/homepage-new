@@ -6,6 +6,14 @@ const R = require('ramda')
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     node: { fs: 'empty' },
+    module: {
+      rules: [
+        {
+          test: /\.md$/i,
+          use: 'raw-loader',
+        },
+      ],
+    },
   })
 }
 

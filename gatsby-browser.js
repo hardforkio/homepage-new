@@ -12,5 +12,5 @@ new SmoothScroll(LINK_SELECTOR, {
 // navigation to the current location which scrolls to the desired section.
 
 export const onInitialClientRender = () => {
-  window.___navigate()
+  window.___navigate(window.location.href)
 }
