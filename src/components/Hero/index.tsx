@@ -44,7 +44,7 @@ export const HeroSection: FunctionComponent<IntroProps> = ({
   }, [inView, setTransparent])
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="text-white">
       <HeroSectionComponent
         subTitle={subheadline}
         title={headline}

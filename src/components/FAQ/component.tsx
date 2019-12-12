@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from 'react'
 import { TitleBanner } from '../TitleBanner'
 import { FAQEntry } from '../../data/faqEntry/types'
-import { ContentWrap } from '../Content'
 import { mapToComponent } from '../../utils/helpers'
 import ReactMarkdown from 'react-commonmark'
 import * as R from 'ramda'
+import { Container } from 'reactstrap'
 
 export const FAQComponent: FunctionComponent<{
   faqEntries: FAQEntry[]
@@ -13,12 +13,12 @@ export const FAQComponent: FunctionComponent<{
 }> = ({ faqEntries, headline, subheadline }) => (
   <>
     <TitleBanner title={headline} subtitle={subheadline} />
-    <ContentWrap>
+    <Container>
       {mapToComponent(
         FAQEntryComponent,
         preventUndefinedFAQEntries(faqEntries),
       )}
-    </ContentWrap>
+    </Container>
   </>
 )
 

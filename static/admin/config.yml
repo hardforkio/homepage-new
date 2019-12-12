@@ -151,7 +151,22 @@ collections:
 
           - name: "projectsHeadline"
             widget: "localizedString"
-
+            
+          - name: "contactFormLabels"
+            widget: "object"
+            fields:
+              - name: "name"
+                widget: "localizedString"
+              - name: "company"
+                widget: "localizedString"
+              - name: "phone"
+                widget: "localizedString"
+              - name: "body"
+                widget: "localizedString"
+              - name: "submitButtonText"
+                widget: "localizedString"
+              - name: "resetButtonText"
+                widget: "localizedString"
           - name: "offerings"
             label: "Offerings"
             widget: "list"
@@ -200,6 +215,7 @@ collections:
               - label: "Team Members"
                 name: "members"
                 widget: "list"
+                default: []
                 fields:
                   - label: "Member ID"
                     name: "uuid"
