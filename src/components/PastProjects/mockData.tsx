@@ -97,4 +97,61 @@ export const MOCK_PROJECTS: ProjectData[] = [
       },
     },
   },
+  {
+    slug: 'fnd',
+    client: 'SatoshiPay',
+    clientLink: 'stoshi',
+    reference: 'string',
+    image: '',
+    product:
+      'Micropayment "one click, zero signup" solution using Bitcoin / Blockchain (today Stellar)',
+    application: 'string',
+    usedTechnologies: [],
+    responsibilities: 'string',
+    head: {
+      title: 'Hardfork GmbH - Software Entwicklung und Business Development',
+      meta: {
+        description: 'Wir entwickeln Software nach Ihren Wünschen in Berlin',
+        keywords: 'Softwareentwicklung',
+      },
+    },
+  },
+  {
+    slug: 'fnd',
+    client: 'SatoshiPay',
+    clientLink: 'stoshi',
+    reference: 'string',
+    image: '',
+    product:
+      'Micropayment "one click, zero signup" solution using Bitcoin / Blockchain (today Stellar)',
+    application: 'string',
+    usedTechnologies: [],
+    responsibilities: 'string',
+    head: {
+      title: 'Hardfork GmbH - Software Entwicklung und Business Development',
+      meta: {
+        description: 'Wir entwickeln Software nach Ihren Wünschen in Berlin',
+        keywords: 'Softwareentwicklung',
+      },
+    },
+  },
+  {
+    slug: 'fnd',
+    client: 'SatoshiPay',
+    clientLink: 'stoshi',
+    reference: 'string',
+    image: '',
+    product:
+      'Micropayment "one click, zero signup" solution using Bitcoin / Blockchain (today Stellar)',
+    application: 'string',
+    usedTechnologies: [],
+    responsibilities: 'string',
+    head: {
+      title: 'Hardfork GmbH - Software Entwicklung und Business Development',
+      meta: {
+        description: 'Wir entwickeln Software nach Ihren Wünschen in Berlin',
+        keywords: 'Softwareentwicklung',
+      },
+    },
+  },
 ]
