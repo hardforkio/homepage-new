@@ -1,5 +1,5 @@
 import { TranslationCollection as TranslationCollectionOld } from '../types'
-import { Head, HeadLocalized } from '../../components/Head'
+import { Head, HeadLocalized } from '../head/types'
 import { TeamData, TeamDataOnDisk } from '../team'
 import { TranslationCollection } from '../../cms/i18n-lib'
 

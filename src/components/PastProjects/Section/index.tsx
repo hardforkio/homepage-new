@@ -1,17 +1,11 @@
 import React, { FunctionComponent } from 'react'
-import {
-  Card,
-  CardBody,
-  CardText,
-  Button,
-  Row,
-  Col,
-  CardHeader,
-} from 'reactstrap'
+import { Card, CardBody, CardText, Row, Col, Container } from 'reactstrap'
 import { mapToComponent } from '../../../utils/helpers'
 import * as R from 'ramda'
 import { usePathPrefix } from '../../../utils/hooks'
 import { ProjectData } from '../../../data/project/types'
+import cn from 'classnames'
+import styles from './tiles.module.scss'
 
 export const PastProjectsComponent: FunctionComponent<{
   headline: string | undefined
@@ -20,12 +14,16 @@ export const PastProjectsComponent: FunctionComponent<{
 }> = ({ headline, projects, linkTag }) => {
   if (hasProjects(projects)) {
     return (
-      <div className="text-center py-5">
-        <h2>{headline ? headline : ''}</h2>
-        <Row className="justify-content-center py-5">
-          {mapToComponent(createProjectComponent(linkTag), projects)}
-        </Row>
-      </div>
+      <section className="bg-indigo py-5">
+        <Container>
+          <div className="text-center py-5">
+            <h3 className="pb-5">{headline ? headline : ''}</h3>
+            <Row noGutters className={cn('justify-content-center')}>
+              {mapToComponent(createProjectComponent(linkTag), projects)}
+            </Row>
+          </div>
+        </Container>
+      </section>
     )
   }
   return null
@@ -40,14 +38,15 @@ const createProjectComponent: (
 }) => {
   const subpagePath = usePathPrefix(`/project/${slug}`)
   return (
-    <Col sm={24} md={4} className="d-flex flex-column mb-5">
-      <Card className="text-dark flex-grow-1">
-        <CardHeader>{client}</CardHeader>
-        <CardBody className="d-flex flex-column text-left ">
-          <CardText className="flex-grow-1">{product}</CardText>
-          <Button tag={linkTag} to={subpagePath} color="primary">
-            more
-          </Button>
+    <Col sm={24} md={6} className={cn(styles.features, 'd-flex ')}>
+      <Card
+        tag={linkTag}
+        to={subpagePath}
+        className={cn('text-light flex-grow-1 bg-black border-0 p-5')}
+      >
+        <CardBody className="d-flex flex-column text-left">
+          <h5 className="pb-4">{client}</h5>
+          <CardText className="flex-grow-1 text-gray-400">{product}</CardText>
         </CardBody>
       </Card>
     </Col>
