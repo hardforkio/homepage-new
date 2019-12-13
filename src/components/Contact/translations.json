@@ -1,0 +1,18 @@
+{
+  "en": {
+    "submit": "Submit",
+    "name": "Name",
+    "company": "Company",
+    "phone": "Phone number",
+    "email": "E-mail address",
+    "message": "Your message"
+  },
+  "de": {
+    "submit": "Senden",
+    "name": "Name",
+    "company": "Firma",
+    "phone": "Telefonnummer",
+    "email": "E-Mail-Adresse",
+    "message": "Ihre Nachricht"
+  }
+}

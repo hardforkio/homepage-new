@@ -2,6 +2,7 @@ require('ts-node').register() // To use imports from ts files. See https://githu
 const path = require(`path`)
 const { getProjects } = require('./src/data/project')
 const R = require('ramda')
+const fs = require('fs-extra')
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
