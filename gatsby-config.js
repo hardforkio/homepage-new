@@ -69,7 +69,14 @@ module.exports = {
         ],
       },
     },
-    'gatsby-plugin-netlify',
+    {
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+        headers: {
+          '/*': ['referrer-policy: strict-origin'],
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-sass`,
     },

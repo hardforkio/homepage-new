@@ -42,7 +42,7 @@ const FORM_SUBMIT_ENDPOINT: string = `https://formsubmit.co/${CONTACT_EMAIL}`
 export const ContactForm: FunctionComponent = () => {
   const [t] = useTranslations(translations)
   return (
-    <Form method="post" action={FORM_SUBMIT_ENDPOINT}>
+    <Form method="POST" action={FORM_SUBMIT_ENDPOINT}>
       <Row form>
         <Col xs={12} sm={6}>
           <FormGroup>
@@ -122,7 +122,6 @@ export const ContactForm: FunctionComponent = () => {
       </Row>
 
       <Input type="hidden" name="_captcha" value="false" />
-      <Input type="hidden" name="_template" value="table" />
       <Input name="_honey" className="d-none" />
     </Form>
   )
