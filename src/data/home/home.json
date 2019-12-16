@@ -1,5 +1,96 @@
 {
   "id": "home",
+  "contactEmail": "mailto:contact@hardfork.io",
+  "contactFormLabels": {
+    "name": [
+      {
+        "locale": "de",
+        "value": "Name"
+      },
+      {
+        "locale": "en",
+        "value": "Name"
+      }
+    ],
+    "company": [
+      {
+        "locale": "de",
+        "value": "Firma"
+      },
+      {
+        "locale": "en",
+        "value": "Company"
+      }
+    ],
+    "phone": [
+      {
+        "locale": "de",
+        "value": "Telefon"
+      },
+      {
+        "locale": "en",
+        "value": "Phone"
+      }
+    ],
+    "body": [
+      {
+        "locale": "en",
+        "value": "Your Inquiry"
+      },
+      {
+        "locale": "de",
+        "value": "Ihre Anfrage"
+      }
+    ],
+    "submitButtonText": [
+      {
+        "locale": "en",
+        "value": "Send"
+      },
+      {
+        "locale": "de",
+        "value": "Absenden"
+      }
+    ],
+    "resetButtonText": [
+      {
+        "locale": "en",
+        "value": "Reset"
+      },
+      {
+        "locale": "de",
+        "value": "Zurücksetzen"
+      }
+    ]
+  },
+  "translations": [
+    {
+      "locale": "de",
+      "value": {
+        "heroHeadline": "Hardfork",
+        "heroSubheadline": "Ihr Partner für anspruchsvolle Softwareprojekte",
+        "contactHeadline": "Kontaktanfrage",
+        "contactDescription": "Bitte schreiben Sie uns und wir melden uns zurück.",
+        "contactButtonText": "Kontakt",
+        "moreLinkText": "Mehr",
+        "emailButton": "E-Mail senden",
+        "projectsHeadline": "Vergangene Projekte"
+      }
+    },
+    {
+      "locale": "en",
+      "value": {
+        "heroHeadline": "Hardfork",
+        "heroSubheadline": "Your partner for challenging software projects",
+        "contactHeadline": "Contact Us",
+        "contactDescription": "Please write us and we will be in touch shortly!",
+        "contactButtonText": "Contact",
+        "moreLinkText": "More",
+        "emailButton": "Send E-Mail",
+        "projectsHeadline": "Past projects"
+      }
+    }
+  ],
   "offerings": [
     {
       "id": "Software",
@@ -65,7 +156,6 @@
       ]
     }
   ],
-  "contactEmail": "mailto:contact@hardfork.io",
   "heroSubheadline": [
     {
       "locale": "en",

@@ -1,13 +1,12 @@
 import React, { FunctionComponent, useEffect } from 'react'
-import { ContentWrap } from '../../Content/index'
 import ReactMarkdown from 'react-commonmark'
 import cn from 'classnames'
-import { Row, Col, Badge } from 'reactstrap'
+import { Row, Col, Badge, Container } from 'reactstrap'
 import { mapToComponent } from '../../../utils/helpers'
 import { Technology } from '../../../data/technology/types'
 import { useNavbarState } from '../../../utils/hooks'
 import { ProjectData } from '../../../data/project/types'
-
+import helperStyles from '../../helper.module.scss'
 export const ProjectPageComponent: FunctionComponent<ProjectData> = ({
   client,
   product,
@@ -19,7 +18,7 @@ export const ProjectPageComponent: FunctionComponent<ProjectData> = ({
   const [, setTransparent] = useNavbarState()
   useEffect(() => setTransparent(false))
   return (
-    <ContentWrap>
+    <Container className={helperStyles.detailPagePadding}>
       <div className="text-center mb-5">
         <h2>{client}</h2>
         <h5>{product}</h5>
@@ -43,7 +42,7 @@ export const ProjectPageComponent: FunctionComponent<ProjectData> = ({
           </ul>
         </Col>
       </Row>
-    </ContentWrap>
+    </Container>
   )
 }
 

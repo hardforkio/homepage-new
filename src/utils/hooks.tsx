@@ -6,7 +6,7 @@ import React, {
 } from 'react'
 import { globalHistory } from '@reach/router'
 import { Locale } from '../data/types'
-
+import * as R from 'ramda'
 type NavbarState = [boolean, (newValue: boolean) => void]
 
 const NavbarContext = React.createContext<NavbarState>([
@@ -60,4 +60,11 @@ export const useLocation = () => {
   }, [initialState])
 
   return state
+}
+
+export const useTranslations = (
+  translations: any,
+): [(key: string) => string] => {
+  const locale = useLocale()
+  return [(key: string) => R.path<any>([locale, key])(translations) || key]
 }

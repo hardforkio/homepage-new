@@ -24,7 +24,9 @@ $gray-700: #495057;
 $gray-800: #343a40;
 $gray-900: #212529;
 $black: #000;
-
+$transparent-black : rgba(0, 0, 0, 0.04);
+$input-placeholder-color: #8e8892; //TODO create small color set
+$input-bg:  $transparent-black;
 $blue: #0d6efd;
 $indigo: #505393;
 $purple: #6f42c1;
@@ -102,9 +104,6 @@ $danger: $red;
 $light: $gray-100;
 $dark: $gray-800;
 
-$body-bg: $dark;
-$body-color: $white;
-
 // Typography
 //
 // Font, line-height, and color for body text, headings, and more.
@@ -116,6 +115,12 @@ $font-family-sans-serif: "Open Sans", "Helvetica", sans-serif, Arial,
 
 $font-family-base: $font-family-sans-serif;
 $font-size-base: 1.25rem;
+$h1-font-size: $font-size-base * 2;
+$h2-font-size: $font-size-base * 1.35;
+$h3-font-size: $font-size-base * 1.15;
+$h4-font-size: $font-size-base;
+$h5-font-size: $font-size-base * 0.8;
+$h6-font-size: $font-size-base * 0.7;
 
 $enable-responsive-font-sizes: true;
 
@@ -126,9 +131,18 @@ $font-weight-bold: 700;
 
 $headings-font-weight: $font-weight-bold;
 
+$line-height-base: 1.65;
+$input-padding-y: 0.65rem;
+
+$btn-padding-x: 2.75rem;
+$btn-padding-x-sm: $btn-padding-x;
+$btn-padding-x-lg: $btn-padding-x;
+
 // links
 $link-color: inherit;
 $link-hover-color: inherit;
 $link-hover-decoration: none;
 
-$border-radius: 0.19rem;
+$border-radius: 3px;
+$input-border-width: 0;
+$input-focus-box-shadow:  0 0 0 2px $primary;

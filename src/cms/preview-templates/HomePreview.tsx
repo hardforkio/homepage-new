@@ -15,10 +15,11 @@ const Preview = createPreview<
 >()
 
 export const HomePreview: FunctionComponent<PreviewProps> = ({ entry }) => {
+  const data: HomeDataOnDisk = getJSON(entry)
   return (
     <Preview
       Component={HomePageComponent}
-      data={getJSON(entry)}
+      data={data}
       translator={translator}
     />
   )

@@ -16,7 +16,7 @@ export const TitleBanner: FunctionComponent<{
     }
   }, [inView, setTransparent])
   return (
-    <div ref={ref}>
+    <div ref={ref} className="text-white">
       <TitleBannerComponent title={title} subtitle={subtitle} />
     </div>
   )
