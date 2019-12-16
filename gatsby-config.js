@@ -73,7 +73,7 @@ module.exports = {
       resolve: 'gatsby-plugin-netlify',
       options: {
         headers: {
-          '/*': ['referrer-policy: strict-origin'],
+          '/*': ['Referrer-Policy: strict-origin'],
         },
       },
     },
