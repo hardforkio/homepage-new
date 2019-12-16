@@ -1,96 +1,38 @@
 {
-  "id": "home",
-  "contactEmail": "mailto:contact@hardfork.io",
-  "contactFormLabels": {
-    "name": [
-      {
-        "locale": "de",
-        "value": "Name"
-      },
+  "head": {
+    "title": [
       {
         "locale": "en",
-        "value": "Name"
+        "value": "Hardfork GmbH - Software development and business services"
+      },
+      {
+        "locale": "de",
+        "value": "Hardfork GmbH - Software Entwicklung und Business Development"
       }
     ],
-    "company": [
-      {
-        "locale": "de",
-        "value": "Firma"
-      },
-      {
-        "locale": "en",
-        "value": "Company"
-      }
-    ],
-    "phone": [
-      {
-        "locale": "de",
-        "value": "Telefon"
-      },
-      {
-        "locale": "en",
-        "value": "Phone"
-      }
-    ],
-    "body": [
-      {
-        "locale": "en",
-        "value": "Your Inquiry"
-      },
-      {
-        "locale": "de",
-        "value": "Ihre Anfrage"
-      }
-    ],
-    "submitButtonText": [
-      {
-        "locale": "en",
-        "value": "Send"
-      },
-      {
-        "locale": "de",
-        "value": "Absenden"
-      }
-    ],
-    "resetButtonText": [
-      {
-        "locale": "en",
-        "value": "Reset"
-      },
-      {
-        "locale": "de",
-        "value": "Zurücksetzen"
-      }
-    ]
-  },
-  "translations": [
-    {
-      "locale": "de",
-      "value": {
-        "heroHeadline": "Hardfork",
-        "heroSubheadline": "Ihr Partner für anspruchsvolle Softwareprojekte",
-        "contactHeadline": "Kontaktanfrage",
-        "contactDescription": "Bitte schreiben Sie uns und wir melden uns zurück.",
-        "contactButtonText": "Kontakt",
-        "moreLinkText": "Mehr",
-        "emailButton": "E-Mail senden",
-        "projectsHeadline": "Vergangene Projekte"
-      }
-    },
-    {
-      "locale": "en",
-      "value": {
-        "heroHeadline": "Hardfork",
-        "heroSubheadline": "Your partner for challenging software projects",
-        "contactHeadline": "Contact Us",
-        "contactDescription": "Please write us and we will be in touch shortly!",
-        "contactButtonText": "Contact",
-        "moreLinkText": "More",
-        "emailButton": "Send E-Mail",
-        "projectsHeadline": "Past projects"
-      }
+    "meta": {
+      "description": [
+        {
+          "locale": "en",
+          "value": "We develop software according to your needs in Berlin, Germany"
+        },
+        {
+          "locale": "de",
+          "value": "Wir entwickeln Software nach Ihren Wünschen in Berlin"
+        }
+      ],
+      "keywords": [
+        {
+          "locale": "en",
+          "value": "Software development"
+        },
+        {
+          "locale": "de",
+          "value": "Softwareentwicklung"
+        }
+      ]
     }
-  ],
+  },
   "offerings": [
     {
       "id": "Software",
@@ -156,24 +98,14 @@
       ]
     }
   ],
-  "heroSubheadline": [
+  "projectsHeadline": [
     {
       "locale": "en",
-      "value": "Your partner for challenging software projects"
+      "value": "Past projects"
     },
     {
       "locale": "de",
-      "value": "Ihr Partner für anspruchsvolle Softwareprojekte"
-    }
-  ],
-  "heroHeadline": [
-    {
-      "locale": "en",
-      "value": "Hardfork"
-    },
-    {
-      "locale": "de",
-      "value": "Hardfork"
+      "value": "Vergangene Projekte"
     }
   ],
   "emailButton": [
@@ -186,6 +118,16 @@
       "value": "E-Mail senden"
     }
   ],
+  "heroHeadline": [
+    {
+      "locale": "en",
+      "value": "Hardfork"
+    },
+    {
+      "locale": "de",
+      "value": "Hardfork"
+    }
+  ],
   "contactHeadline": [
     {
       "locale": "en",
@@ -196,6 +138,17 @@
       "value": "Kontaktanfrage"
     }
   ],
+  "heroSubheadline": [
+    {
+      "locale": "en",
+      "value": "Your partner for challenging software projects"
+    },
+    {
+      "locale": "de",
+      "value": "Ihr Partner für anspruchsvolle Softwareprojekte"
+    }
+  ],
+  "id": "home",
   "moreLinkText": [
     {
       "locale": "en",
@@ -206,16 +159,49 @@
       "value": "Mehr"
     }
   ],
+  "contactEmail": "mailto:contact@hardfork.io",
   "contactDescription": [
     {
       "locale": "en",
-      "value": "Please send us an e-mail and we will be in touch shortly!"
+      "value": "Please send us a message and we will be in touch shortly!"
     },
     {
       "locale": "de",
-      "value": "Bitte schreiben Sie uns eine Email und wir melden uns zurück."
+      "value": "Bitte schreiben Sie uns eine Nachricht und wir melden uns zurück."
     }
   ],
+  "team": {
+    "header": [
+      {
+        "locale": "en",
+        "value": "Team"
+      },
+      {
+        "locale": "de",
+        "value": "Team"
+      }
+    ],
+    "subheader": [
+      {
+        "locale": "en",
+        "value": "Team"
+      },
+      {
+        "locale": "de",
+        "value": "Team"
+      }
+    ],
+    "footer": [
+      {
+        "locale": "en",
+        "value": "Team"
+      },
+      {
+        "locale": "de",
+        "value": "Team"
+      }
+    ]
+  },
   "contactButtonText": [
     {
       "locale": "en",
@@ -225,49 +211,5 @@
       "locale": "de",
       "value": "Kontakt"
     }
-  ],
-  "projectsHeadline": [
-    {
-      "locale": "en",
-      "value": "Past projects"
-    },
-    {
-      "locale": "de",
-      "value": "Vergangene Projekte"
-    }
-  ],
-  "head": {
-    "title": [
-      {
-        "locale": "en",
-        "value": "Hardfork GmbH - Software development and business services"
-      },
-      {
-        "locale": "de",
-        "value": "Hardfork GmbH - Software Entwicklung und Business Development"
-      }
-    ],
-    "meta": {
-      "description": [
-        {
-          "locale": "en",
-          "value": "We develop software according to your needs in Berlin, Germany"
-        },
-        {
-          "locale": "de",
-          "value": "Wir entwickeln Software nach Ihren Wünschen in Berlin"
-        }
-      ],
-      "keywords": [
-        {
-          "locale": "en",
-          "value": "Software development"
-        },
-        {
-          "locale": "de",
-          "value": "Softwareentwicklung"
-        }
-      ]
-    }
-  }
+  ]
 }
