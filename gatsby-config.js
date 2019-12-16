@@ -35,6 +35,9 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: ['/de/lexoffice'],
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',

@@ -17,7 +17,6 @@ export const MenuEntries: FunctionComponent<{
 }) => {
   const FAQPath = usePathPrefix('/faq')
   const contactPath = usePathPrefix('/#contact')
-  const { location } = useLocation()
   return (
     <>
       {[
@@ -29,11 +28,9 @@ export const MenuEntries: FunctionComponent<{
             {FAQLinkText}
           </NavLink>
         </NavItem>,
-        location.pathname !== '/de/lexoffice' ? ( // TODO: Remove this hack!
-          <NavItem key="languageSwitcher">
-            <LanguageSwitcher linkTag={linkTag} />
-          </NavItem>
-        ) : null,
+        <NavItem key="languageSwitcher">
+          <LanguageSwitcher linkTag={linkTag} />
+        </NavItem>,
       ]}
     </>
   )
