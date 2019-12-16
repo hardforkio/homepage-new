@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useCallback, FC } from 'react'
+import React, { FunctionComponent } from 'react'
 import {
   Container,
   Row,
@@ -9,23 +9,17 @@ import {
   Label,
   Button,
 } from 'reactstrap'
-import { ContactFormProps } from '../../data/home/types'
-
-import { FORM_ERROR } from 'final-form'
-import * as R from 'ramda'
 import translations from './translations.json'
 import { useTranslations } from '../../utils/hooks'
 
 interface ContactSectionProps {
   headline: string
   description: string
-  formProps: ContactFormProps
 }
 
 export const ContactSection: FunctionComponent<ContactSectionProps> = ({
   headline,
   description,
-  formProps,
 }) => (
   <div className="py-3 py-md-5 bg-white text-dark">
     <Container>
@@ -35,7 +29,7 @@ export const ContactSection: FunctionComponent<ContactSectionProps> = ({
             <h4 className="mb-4">{headline}</h4>
             <p>{description}</p>
           </header>
-          <ContactForm {...formProps} />
+          <ContactForm />
         </Col>
       </Row>
     </Container>
@@ -45,10 +39,10 @@ export const ContactSection: FunctionComponent<ContactSectionProps> = ({
 const CONTACT_EMAIL: string = 'contact@hardfork.io'
 const FORM_SUBMIT_ENDPOINT: string = `https://formsubmit.co/${CONTACT_EMAIL}`
 
-const ContactForm: FunctionComponent<ContactFormProps> = () => {
+export const ContactForm: FunctionComponent = () => {
   const [t] = useTranslations(translations)
   return (
-    <Form action={FORM_SUBMIT_ENDPOINT} method="POST">
+    <Form method="post" action={FORM_SUBMIT_ENDPOINT}>
       <Row form>
         <Col xs={12} sm={6}>
           <FormGroup>
@@ -59,7 +53,6 @@ const ContactForm: FunctionComponent<ContactFormProps> = () => {
               id="contactform-input-name"
               placeholder={t('name')}
               required
-              name="name"
             />
           </FormGroup>
         </Col>
@@ -100,19 +93,21 @@ const ContactForm: FunctionComponent<ContactFormProps> = () => {
           required
         ></Input>
       </FormGroup>
+
       <FormGroup>
         <Label hidden for="contactform-input-body">
           {t('message')}
         </Label>
         <textarea
+          name="message"
           className="form-control"
           id="contactform-input-body"
-          name="message"
           rows={8}
           required
           placeholder={t('message')}
         />
       </FormGroup>
+
       <Row className="my-4">
         <Col xs={12} md={{ size: 6, offset: 6 }}>
           <Button
@@ -125,6 +120,7 @@ const ContactForm: FunctionComponent<ContactFormProps> = () => {
           </Button>
         </Col>
       </Row>
+
       <Input type="hidden" name="_captcha" value="false" />
       <Input type="hidden" name="_template" value="table" />
       <Input name="_honey" className="d-none" />

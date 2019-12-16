@@ -14,6 +14,7 @@ import PublicAPI from './publicApi.md'
 import PartnerAPI from './partnerApi.md'
 
 import ReactMarkdown from 'react-commonmark'
+import { ContactForm } from '../Contact'
 
 export const LexofficeComponent = () => {
   const [showPublicApi, setShowPublicAPI] = useState(false)
@@ -38,7 +39,7 @@ export const LexofficeComponent = () => {
         subtitle="Software-Entwicklung und -Beratung um Ihre Anbindung an Lexoffice zu verwirklichen"
       />
       <Container>
-        <Row>
+        <Row className="mt-5 mb-3">
           <Col className="pb-4">
             Im Folgenden möchten wir Ihnen einen Überblick über die Leistungen
             der Hardfork GmbH für die Anbindung von verschiedenen Systemen an
@@ -69,7 +70,7 @@ export const LexofficeComponent = () => {
                 </NavLink>
               </NavItem>
             </Nav>
-            <Card>
+            <Card className="p-3">
               <CardBody>
                 {showPublicApi ? (
                   <ReactMarkdown source={PublicAPI} />
@@ -78,6 +79,16 @@ export const LexofficeComponent = () => {
                 )}
               </CardBody>
             </Card>
+          </Col>
+        </Row>
+        <Row className="my-5">
+          <Col>
+            <h2>Unverbindliche Anfrage stellen</h2>
+            <p>
+              Senden Sie uns eine Nachricht und beschreiben Sie Ihr Projekt. Wir
+              melden uns zeitnah bei Ihnen für ein Angebot.
+            </p>
+            <ContactForm />
           </Col>
         </Row>
       </Container>
