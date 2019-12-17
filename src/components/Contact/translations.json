@@ -9,6 +9,8 @@
   },
   "de": {
     "submit": "Senden",
+    "submit error": "Fehler!",
+    "submit success": "Erfolg",
     "name": "Name",
     "company": "Firma",
     "phone": "Telefonnummer",

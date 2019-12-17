@@ -19,5 +19,8 @@
                 "cmd": "yarn stylelint ${file} --fix"
             },
         ]
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
     }
 }
