@@ -8,7 +8,7 @@ export interface TeamDataOnDisk {
   header: LocalizedString
   subheader: LocalizedString
   footer: LocalizedString
-  members: TeamMemberDataOnDisk[]
+  members?: TeamMemberDataOnDisk[]
 }
 
 export interface TeamMemberDataOnDisk {
