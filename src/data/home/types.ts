@@ -17,14 +17,11 @@ export interface HomeData {
   contactDescription: string
   contactButtonText: string
   moreLinkText: string
-  emailButton: string
-  contactEmail: string
   head: Head
   metaTitle: string
   metaDescription: string
   projectsHeadline: string
   team: TeamData
-  contactFormLabels: ContactFormProps
 }
 
 export type HomeDataOnDisk = {
@@ -33,7 +30,6 @@ export type HomeDataOnDisk = {
   contactEmail: string
   head: HeadLocalized
   team?: TeamDataOnDisk
-  contactFormLabels: ContactFormPropsOnDisk
 } & {
   heroHeadline: TranslationCollection<string>
   heroSubheadline: TranslationCollection<string>
@@ -42,20 +38,4 @@ export type HomeDataOnDisk = {
   contactButtonText: TranslationCollection<string>
   moreLinkText: TranslationCollection<string>
   projectsHeadline: TranslationCollection<string>
-  emailButton: TranslationCollection<string>
-}
-export interface ContactFormProps {
-  name: string
-  company: string
-  phone: string
-  body: string
-  resetButtonText: string
-}
-
-export interface ContactFormPropsOnDisk {
-  name: TranslationCollection<string>
-  company: TranslationCollection<string>
-  phone: TranslationCollection<string>
-  body: TranslationCollection<string>
-  resetButtonText: TranslationCollection<string>
 }

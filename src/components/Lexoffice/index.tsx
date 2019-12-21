@@ -17,7 +17,7 @@ import ReactMarkdown from 'react-commonmark'
 import { ContactForm } from '../Contact'
 
 export const LexofficeComponent = () => {
-  const [showPublicApi, setShowPublicAPI] = useState(false)
+  const [showPublicApi, setShowPublicAPI] = useState(true)
   const switchToPublicApi = useCallback(
     e => {
       e.preventDefault()
@@ -54,19 +54,19 @@ export const LexofficeComponent = () => {
               <NavItem>
                 <NavLink
                   href="/#"
-                  active={!showPublicApi}
-                  onClick={switchToPartnerApi}
+                  active={showPublicApi}
+                  onClick={switchToPublicApi}
                 >
-                  Partner API
+                  Public API
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink
                   href="/#"
-                  active={showPublicApi}
-                  onClick={switchToPublicApi}
+                  active={!showPublicApi}
+                  onClick={switchToPartnerApi}
                 >
-                  Public API
+                  Partner API
                 </NavLink>
               </NavItem>
             </Nav>

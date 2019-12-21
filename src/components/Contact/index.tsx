@@ -8,9 +8,8 @@ import {
   Input,
   Label,
   Button,
-  Alert
+  Alert,
 } from 'reactstrap'
-import { ContactFormProps } from '../../data/home/types'
 import { Form as FinalForm, Field } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import * as R from 'ramda'
@@ -21,13 +20,11 @@ import request from 'superagent'
 interface ContactSectionProps {
   headline: string
   description: string
-  formProps: ContactFormProps
 }
 
 export const ContactSection: FunctionComponent<ContactSectionProps> = ({
   headline,
   description,
-  formProps,
 }) => (
   <div className="py-3 py-md-5 bg-white text-dark">
     <Container>
@@ -37,7 +34,7 @@ export const ContactSection: FunctionComponent<ContactSectionProps> = ({
             <h4 className="mb-4">{headline}</h4>
             <p>{description}</p>
           </header>
-          <ContactForm {...formProps} />
+          <ContactForm />
         </Col>
       </Row>
     </Container>
@@ -69,7 +66,7 @@ const sendData = async (values: FormValues) => {
   }
 }
 
-const ContactForm: FunctionComponent<ContactFormProps> = () => {
+export const ContactForm: FunctionComponent = () => {
   const [t] = useTranslations(translations)
   const onSubmit = useCallback(async (values: FormValues) => {
     try {
@@ -191,9 +188,13 @@ const ContactForm: FunctionComponent<ContactFormProps> = () => {
                 />
               </Button>
             </Col>
-            {formProps.submitError
-              ? <Alert color="danger">There was an error during submission. Please try a different browser without adblockers. If the problem persists please send an email to contact@hardfork.io</Alert>
-              : null}
+            {formProps.submitError ? (
+              <Alert color="danger">
+                There was an error during submission. Please try a different
+                browser without adblockers. If the problem persists please send
+                an email to contact@hardfork.io
+              </Alert>
+            ) : null}
           </Row>
           <Field name="_captcha">
             {({ input }) => (

@@ -170,38 +170,6 @@
       "value": "Bitte schreiben Sie uns eine Nachricht und wir melden uns zurück."
     }
   ],
-  "team": {
-    "header": [
-      {
-        "locale": "en",
-        "value": "Team"
-      },
-      {
-        "locale": "de",
-        "value": "Team"
-      }
-    ],
-    "subheader": [
-      {
-        "locale": "en",
-        "value": "Team"
-      },
-      {
-        "locale": "de",
-        "value": "Team"
-      }
-    ],
-    "footer": [
-      {
-        "locale": "en",
-        "value": "Team"
-      },
-      {
-        "locale": "de",
-        "value": "Team"
-      }
-    ]
-  },
   "contactButtonText": [
     {
       "locale": "en",

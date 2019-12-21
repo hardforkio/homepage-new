@@ -21,7 +21,6 @@ export const HomePageComponent: FunctionComponent<HomeData & {
   contactHeadline,
   contactDescription,
   contactButtonText,
-  contactFormLabels,
   moreLinkText,
   projectsHeadline,
   projects,
@@ -50,7 +49,6 @@ export const HomePageComponent: FunctionComponent<HomeData & {
       <ContactSection
         headline={contactHeadline}
         description={contactDescription}
-        formProps={contactFormLabels}
       />
     </section>
   </div>
