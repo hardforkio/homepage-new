@@ -382,8 +382,24 @@ collections:
     files:
       - file: "src/data/widgets/localizedMarkdown.json"
         label: "Localized Markdown"
-        name: "localizedMmarkdown"
+        name: "localizedMarkdown"
         format: "json"
         fields:
-          - name: "text"
+          - name: "example"
             widget: "localizedMarkdown"
+
+      - file: "src/data/widgets/localizedString.json"
+        label: "Localized String"
+        name: "localizedString"
+        format: "json"
+        fields:
+          - name: "example"
+            widget: "localizedString"
+
+      - file: "src/data/widgets/uuid.json"
+        label: "UUID"
+        name: "uuid"
+        format: "json"
+        fields:
+          - name: "uuid"
+            widget: "uuid"

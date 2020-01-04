@@ -6,10 +6,10 @@ import { WidgetProps } from '../mockNetlify'
 import { getTranslation, uppendTranslation } from '../../i18n-lib'
 import { Locale } from '../../i18n-locales'
 
-const MarkdownControl = CMS.getWidget('markdown').control
+const MarkdownPreview = CMS.getWidget('markdown').preview
 
-export const createLocalizedMarkdownControl = (locales: Locale[]) => {
-  return class LocalizedMarkdownControl extends Component<WidgetProps> {
+export const createLocalizedMarkdownPreview = (locales: Locale[]) => {
+  return class LocalizedMarkdownPreview extends Component<WidgetProps> {
     getWidgetState = () => {
       const { value } = this.props
       return !value ? [] : isImmutable(value) ? value.toJS() : value
@@ -34,7 +34,7 @@ export const createLocalizedMarkdownControl = (locales: Locale[]) => {
     render = () => (
       <div>
         {locales.map(locale => (
-          <MarkdownControl {...this.updateProps(locale)} />
+          <MarkdownPreview {...this.updateProps(locale)} />
         ))}
       </div>
     )
