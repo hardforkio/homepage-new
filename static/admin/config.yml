@@ -380,6 +380,19 @@ collections:
   - label: "Widgets"
     name: "widgets"
     files:
+      - file: "src/data/widgets/localizedObject.json"
+        label: "Localized Object"
+        name: "localizedObject"
+        format: "json"
+        fields:
+          - name: "movie"
+            widget: "localizedObject"
+            fields:
+              - name: "title"
+                widget: "string"
+              - name: "description"
+                widget: "markdown"
+
       - file: "src/data/widgets/localizedMarkdown.json"
         label: "Localized Markdown"
         name: "localizedMarkdown"
