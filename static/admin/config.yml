@@ -385,7 +385,7 @@ collections:
         name: "localizedObject"
         format: "json"
         fields:
-          - name: "movie"
+          - name: "example"
             widget: "localizedObject"
             fields:
               - name: "title"

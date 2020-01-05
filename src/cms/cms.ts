@@ -10,6 +10,7 @@ import { LocalizedStringWidget } from './widgets/LocalizedString'
 import { UuidWidget } from './widgets/Uuid'
 import { LOCALES } from './i18n'
 import { LocalizedMarkdownWidget } from './widgets/LocalizedMarkdown'
+import { LocalizedObjectWidget } from './widgets/LocalizedObject'
 
 const config = {
   backend: {
@@ -21,6 +22,7 @@ const config = {
 
 CMS.registerWidget(LocalizedMarkdownWidget(LOCALES))
 CMS.registerWidget(LocalizedStringWidget(LOCALES))
+CMS.registerWidget(LocalizedObjectWidget(LOCALES))
 CMS.registerWidget(UuidWidget())
 
 CMS.registerPreviewTemplate('imprint', ImprintPreview)
