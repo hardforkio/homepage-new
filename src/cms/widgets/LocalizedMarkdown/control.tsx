@@ -1,12 +1,17 @@
 import CMS from 'netlify-cms-app'
 import React from 'react'
-import { fromJS, isImmutable, Map, List } from 'immutable'
+import { isImmutable, Map, List, fromJS } from 'immutable'
+import * as R from 'ramda'
 
-import { getTranslation, uppendTranslation } from '../../i18n-lib'
+import {
+  getTranslation,
+  uppendTranslation,
+  TranslationCollection,
+} from '../../i18n-lib'
 import { Locale } from '../../i18n-locales'
+import { LocalePicker } from '../LocalizedWidget/LocalePicker'
 
 const MarkdownControl = CMS.getWidget('markdown').control
-console.log(CMS)
 
 // netlify CMS markdown widget properties
 export interface MarkdownWidgetProps {
@@ -16,7 +21,7 @@ export interface MarkdownWidgetProps {
   classNameWrapper: string
   editorControl: Function
   value?: string // defaults to empty string
-  field: Map<any, any>
+  field: Map<string, any>
   getEditorComponents?: Function
 }
 
@@ -27,44 +32,51 @@ export interface LocalizedMarkdownWidgetProps {
   getAsset?: Function // not used at all
   classNameWrapper?: string
   value?: List<Map<any, any>>
-  field: Map<any, any> // according to docs should support 'default' (it doesn't) and 'buttons' (working)
+  field: Map<string, any> // according to docs should support 'default' (it doesn't) and 'buttons' (working)
   editorControl?: Function // JSX element used for plugins (needed when plugins enabled)
   getEditorComponents: Function // returns list of plugins
+  // purely optional
+  setActiveStyle?: Function // not working
+  setInactiveStyle?: Function // not working
 }
 
 export const createLocalizedMarkdownControl = (locales: Locale[]) => {
-  return class LocalizedMarkdownControl extends React.Component<
-    LocalizedMarkdownWidgetProps
-  > {
-    getWidgetState = () => {
-      console.log('props', this.props)
-      console.log('field', this.props.field.toJS())
-      const { value } = this.props
-      return !value ? [] : isImmutable(value) ? value.toJS() : value
+  const LocalizedMarkdownControl: React.FC<LocalizedMarkdownWidgetProps> = props => {
+    const [locale, setLocale] = React.useState<Locale>(
+      R.head(locales) as Locale,
+    )
+    const collection = extractAsJS(props.value)
+
+    const getValue = (locale: Locale) =>
+      fromJS(getTranslation<string>(locale)(collection))
+
+    const handleChange = (locale: Locale) => (newValue: any) => {
+      props.onChange(fromJS(uppendTranslation(locale, newValue)(collection)))
     }
 
-    getValue = (locale: Locale) =>
-      getTranslation<object>(locale)(this.getWidgetState())
-
-    handleChange = (locale: Locale) => (newValue: any) => {
-      this.props.onChange(
-        uppendTranslation(locale, newValue)(this.getWidgetState()),
-      )
-    }
-
-    updateProps = (locale: Locale) => ({
-      ...this.props,
-      key: locale,
-      onChange: this.handleChange(locale),
-      value: fromJS(this.getValue(locale)),
-    })
-
-    render = () => (
+    return (
       <div>
-        {locales.map(locale => (
-          <MarkdownControl {...this.updateProps(locale)} />
-        ))}
+        <LocalePicker
+          locales={locales}
+          currentLocale={locale}
+          setLocale={setLocale}
+        />
+        <MarkdownControl
+          {...props}
+          key={locale}
+          onChange={handleChange(locale)}
+          value={getValue(locale)}
+        />
       </div>
     )
   }
+  return LocalizedMarkdownControl
 }
+
+const toJS = (value: any) => value.toJS()
+
+const extractAsJS: (value: any) => TranslationCollection<any> = R.cond([
+  [R.isNil, R.always([])],
+  [isImmutable, toJS],
+  [R.T, R.identity],
+])

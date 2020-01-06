@@ -5,14 +5,11 @@ import { storiesOf } from '@storybook/react'
 import cn from 'classnames'
 import styles from '../styles.module.scss'
 
-import {
-  createLocalizedMarkdownControl,
-  LocalizedMarkdownWidgetProps,
-} from './control'
-import { Map } from 'immutable'
+import { createLocalizedMarkdownControl } from './control'
+import { Map, List } from 'immutable'
 
 interface WrapperProps {
-  Widget: React.ComponentClass<LocalizedMarkdownWidgetProps>
+  Widget: any
 }
 
 const Wrapper: React.FC<WrapperProps> = ({ Widget }) => {
@@ -30,7 +27,7 @@ const Wrapper: React.FC<WrapperProps> = ({ Widget }) => {
           //onAddAsset={() => {}}
           //getAsset={() => {}}
           //editorControl={() => <div></div>}
-          getEditorComponents={() => {}}
+          getEditorComponents={() => Map([])}
         />
       </div>
       <div>And in the file I would save:</div>
