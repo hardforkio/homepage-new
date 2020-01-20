@@ -36,7 +36,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        exclude: ['/de/lexoffice'],
+        exclude: ['/de/lexoffice', '/de/powertools/*'],
       },
     },
     {

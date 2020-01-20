@@ -151,7 +151,7 @@ collections:
 
           - name: "projectsHeadline"
             widget: "localizedString"
-            
+
           - name: "offerings"
             label: "Offerings"
             widget: "list"
