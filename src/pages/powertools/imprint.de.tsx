@@ -18,8 +18,7 @@ const seo = {
   },
 }
 
-const getImprint = () => ({ __html: data })
-const Imprint: FC = () => <div dangerouslySetInnerHTML={getImprint()}></div>
+const Imprint: FC = () => <div dangerouslySetInnerHTML={{ __html: data }}></div>
 
 const ImprintPage: FC = () => {
   return (

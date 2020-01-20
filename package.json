@@ -120,6 +120,7 @@
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-typescript": "^2.1.15",
     "git-repo-info": "^2.1.1",
+    "html-loader": "^0.5.5",
     "identity-obj-proxy": "^3.0.0",
     "immutable": "^4.0.0-rc.12",
     "jest": "^24.9.0",

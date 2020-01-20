@@ -18,9 +18,8 @@ const seo = {
   },
 }
 
-const getPrivacyPolicy = () => ({ __html: data })
 const PrivacyPolicy: FC = () => (
-  <div dangerouslySetInnerHTML={getPrivacyPolicy()}></div>
+  <div dangerouslySetInnerHTML={{ __html: data }}></div>
 )
 
 const PrivacyPolicyPage: FC = () => {

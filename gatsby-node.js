@@ -14,7 +14,7 @@ exports.onCreateWebpackConfig = ({ actions, plugins }) => {
         },
         {
           test: /\.html$/i,
-          use: 'raw-loader',
+          use: 'html-loader',
         },
       ],
     },
