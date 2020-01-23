@@ -6,9 +6,6 @@ import {
   FormGroup,
   Input,
   CustomInput,
-  Label,
-  Nav,
-  NavItem,
   Col,
   Button,
 } from 'reactstrap'
