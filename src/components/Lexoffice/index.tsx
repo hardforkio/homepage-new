@@ -41,11 +41,20 @@ export const LexofficeComponent = () => {
       <Container>
         <Row className="mt-5 mb-3">
           <Col className="pb-4">
-            Im Folgenden möchten wir Ihnen einen Überblick über die Leistungen
-            der Hardfork GmbH für die Anbindung von verschiedenen Systemen an
-            die Buchhaltungssoftware "Lexoffice" geben. Lexoffice bietet zwei
-            Varianten für die automatische Anbindung von Software an Ihre
-            Systeme an.
+            <p>
+              Im Folgenden möchten wir Ihnen einen Überblick über die Leistungen
+              der Hardfork GmbH für die Anbindung von verschiedenen Systemen an
+              die Buchhaltungssoftware{' '}
+              <a
+                href="https://lexoffice.de"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Lexoffice
+              </a>{' '}
+              geben. Lexoffice bietet zwei Varianten für die automatische
+              Anbindung von Software an Ihre Systeme an.
+            </p>
           </Col>
         </Row>
         <Row>

@@ -13,7 +13,7 @@ export const FAQComponent: FunctionComponent<{
 }> = ({ faqEntries, headline, subheadline }) => (
   <>
     <TitleBanner title={headline} subtitle={subheadline} />
-    <Container>
+    <Container className="py-5">
       {mapToComponent(
         FAQEntryComponent,
         preventUndefinedFAQEntries(faqEntries),

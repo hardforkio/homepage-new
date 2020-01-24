@@ -3,7 +3,7 @@ import Layout from '../../components/layout'
 import { NavbarStateProvider, LocaleProvider } from '../../utils/hooks'
 import { TitleBanner } from '../../components/TitleBanner'
 import { Container } from 'reactstrap'
-import data from '../../data/powertools/imprint.html'
+import data from '../../components/powertools/imprint.html'
 
 const banner = {
   title: 'Impressum',
@@ -26,7 +26,7 @@ const ImprintPage: FC = () => {
       <NavbarStateProvider>
         <Layout {...seo}>
           <TitleBanner {...banner} />
-          <Container className="p-5">
+          <Container className="py-5">
             <Imprint />
           </Container>
         </Layout>

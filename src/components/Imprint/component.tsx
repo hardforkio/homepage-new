@@ -12,7 +12,7 @@ export const ImprintComponent: FunctionComponent<ImprintData> = ({
   <article>
     <TitleBanner title={headline} subtitle={subheadline} />
 
-    <Container>
+    <Container className="py-5">
       <ReactMarkdown source={content} />
     </Container>
   </article>
