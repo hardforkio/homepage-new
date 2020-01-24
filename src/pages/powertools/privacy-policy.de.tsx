@@ -3,7 +3,7 @@ import Layout from '../../components/layout'
 import { NavbarStateProvider, LocaleProvider } from '../../utils/hooks'
 import { TitleBanner } from '../../components/TitleBanner'
 import { Container } from 'reactstrap'
-import data from '../../data/powertools/privacy-policy.html'
+import data from '../../components/powertools/privacy-policy.html'
 
 const banner = {
   title: 'Dateschutzerklärung',
