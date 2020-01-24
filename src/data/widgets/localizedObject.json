@@ -1,0 +1,18 @@
+{
+  "example": [
+    {
+      "locale": "de",
+      "value": {
+        "title": "Zwei glorreiche Halunken",
+        "description": "Ein toller Film"
+      }
+    },
+    {
+      "locale": "en",
+      "value": {
+        "title": "The good, the bad and the ugly",
+        "description": "A great movie"
+      }
+    }
+  ]
+}

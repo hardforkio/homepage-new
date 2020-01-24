@@ -1,0 +1,6 @@
+{
+  "example": [
+    { "locale": "de", "value": "Schreibmaschine" },
+    { "locale": "en", "value": "Typewriter" }
+  ]
+}

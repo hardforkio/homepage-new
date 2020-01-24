@@ -1,0 +1,6 @@
+{
+  "example": [
+    { "locale": "de", "value": "markdown for german page" },
+    { "locale": "en", "value": "markdown for english page" }
+  ]
+}

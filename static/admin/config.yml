@@ -376,3 +376,43 @@ collections:
             fields:
               - { name: "description", widget: "localizedString" }
               - { name: "keywords", widget: "localizedString" }
+
+  - label: "Widgets"
+    name: "widgets"
+    files:
+      - file: "src/data/widgets/localizedObject.json"
+        label: "Localized Object"
+        name: "localizedObject"
+        format: "json"
+        fields:
+          - name: "example"
+            widget: "localizedObject"
+            fields:
+              - name: "title"
+                widget: "string"
+              - name: "description"
+                widget: "markdown"
+
+      - file: "src/data/widgets/localizedMarkdown.json"
+        label: "Localized Markdown"
+        name: "localizedMarkdown"
+        format: "json"
+        fields:
+          - name: "example"
+            widget: "localizedMarkdown"
+
+      - file: "src/data/widgets/localizedString.json"
+        label: "Localized String"
+        name: "localizedString"
+        format: "json"
+        fields:
+          - name: "example"
+            widget: "localizedString"
+
+      - file: "src/data/widgets/uuid.json"
+        label: "UUID"
+        name: "uuid"
+        format: "json"
+        fields:
+          - name: "uuid"
+            widget: "uuid"

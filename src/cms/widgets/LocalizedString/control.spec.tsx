@@ -12,6 +12,7 @@ test('LocalizedStringControl accepts immutable data.', () => {
   const testProps = {
     value: fromJS(data),
     onChange: jest.fn(),
+    onChangeObject: jest.fn(),
     forID: 'test-id',
     classNameWrapper: '',
   }
