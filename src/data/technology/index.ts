@@ -1,5 +1,6 @@
-import { importAll, expandRelation } from '../helpers'
 import * as R from 'ramda'
+
+import { expandRelation, importAll } from '../helpers'
 import { importAllNode } from '../helpers-node'
 import { Technology } from './types'
 

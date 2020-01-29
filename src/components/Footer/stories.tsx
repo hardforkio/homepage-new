@@ -1,6 +1,8 @@
-import React from 'react'
 import '../../scss/main.scss'
+
 import { storiesOf } from '@storybook/react'
+import React from 'react'
+
 import { DispatchActionLink } from '../../storybook/helpers'
 import { FooterComponent } from './component'
 

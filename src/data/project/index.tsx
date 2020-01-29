@@ -1,11 +1,12 @@
-import { Locale } from '../types'
 import * as R from 'ramda'
+
+import { translate } from '../../cms/i18n'
 import { importAll } from '../helpers'
 import { importAllNode } from '../helpers-node'
-import { ProjectDataOnDisk, ProjectData } from './types'
-import { expandTechnologies } from '../technology'
 import { filterByLocale } from '../i18n'
-import { translate } from '../../cms/i18n'
+import { expandTechnologies } from '../technology'
+import { Locale } from '../types'
+import { ProjectData, ProjectDataOnDisk } from './types'
 
 const loadData = (): ProjectDataOnDisk[] => {
   try {

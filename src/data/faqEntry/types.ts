@@ -1,6 +1,6 @@
+import { TranslationCollection } from '../../cms/i18n-lib'
 import { Head, HeadLocalized } from '../head/types'
 import { TranslationCollection as TranslationCollectionOld } from '../types'
-import { TranslationCollection } from '../../cms/i18n-lib'
 
 export interface FAQPage {
   headline: string

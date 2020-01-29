@@ -1,13 +1,14 @@
-import React, { FunctionComponent } from 'react'
-import { PreviewProps, getJSON } from './helpers'
-import { createPreview } from './Preview'
-import { ProjectPageComponent } from '../../components/PastProjects/Page'
-import { ProjectData, ProjectDataOnDisk } from '../../data/project/types'
 import * as R from 'ramda'
+import React, { FunctionComponent } from 'react'
+
+import { ProjectPageComponent } from '../../components/PastProjects/Page'
+import { filterByLocale } from '../../data/i18n'
+import { ProjectData, ProjectDataOnDisk } from '../../data/project/types'
+import { expandTechnologies } from '../../data/technology'
 import { Locale } from '../../data/types'
 import { translate } from '../i18n'
-import { filterByLocale } from '../../data/i18n'
-import { expandTechnologies } from '../../data/technology'
+import { getJSON, PreviewProps } from './helpers'
+import { createPreview } from './Preview'
 
 const Preview = createPreview<ProjectDataOnDisk, ProjectData>()
 

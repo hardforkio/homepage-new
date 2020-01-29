@@ -1,11 +1,10 @@
+import { TeamMemberData } from '../../../data/team'
+import { Platform } from '../SocialIcon'
 import avatar01Url from './avatar/01.jpg'
 import avatar02Url from './avatar/02.jpg'
 import avatar03Url from './avatar/03.jpg'
 import avatar04Url from './avatar/04.jpg'
 import avatar05Url from './avatar/05.jpg'
-
-import { TeamMemberData } from '../../../data/team'
-import { Platform } from '../SocialIcon'
 
 export const fakeMembers: TeamMemberData[] = [
   {

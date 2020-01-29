@@ -1,16 +1,17 @@
-import React, { FunctionComponent } from 'react'
-import { Offerings } from '../Offerings'
-import { HeroSection } from '../Hero'
 import cn from 'classnames'
-import styles from './Home.module.scss'
-import { PastProjectsComponent } from '../PastProjects/Section'
 import { Link } from 'gatsby'
+import * as R from 'ramda'
+import React, { FunctionComponent } from 'react'
+
 import { HomeData } from '../../data/home/types'
 import { ProjectData } from '../../data/project/types'
-import { Team } from '../Team'
-import * as R from 'ramda'
 import { TeamData } from '../../data/team'
 import { ContactSection } from '../Contact'
+import { HeroSection } from '../Hero'
+import { Offerings } from '../Offerings'
+import { PastProjectsComponent } from '../PastProjects/Section'
+import { Team } from '../Team'
+import styles from './Home.module.scss'
 
 export const HomePageComponent: FunctionComponent<HomeData & {
   projects: ProjectData[]

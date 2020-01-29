@@ -1,7 +1,6 @@
-import { Platform } from '../../components/Team/SocialIcon'
-
 // NOTE: using the new i18n library
 import { TranslationCollection } from '../../cms/i18n-lib'
+import { Platform } from '../../components/Team/SocialIcon'
 type LocalizedString = TranslationCollection<string>
 
 export interface TeamDataOnDisk {

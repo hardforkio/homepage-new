@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from 'react'
 import {
+  Button,
+  Col,
   Container,
+  CustomInput,
   Form as BootstrapForm,
-  Row,
   FormGroup,
   Input,
-  CustomInput,
-  Col,
-  Button,
+  Row,
 } from 'reactstrap'
 
 //Copied from /static/template/blue/elements.html

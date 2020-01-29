@@ -1,20 +1,20 @@
-import React, { useState, useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
+import ReactMarkdown from 'react-commonmark'
 import {
-  Row,
-  Col,
-  Container,
   Card,
   CardBody,
+  Col,
+  Container,
   Nav,
   NavItem,
   NavLink,
+  Row,
 } from 'reactstrap'
-import { TitleBanner } from '../TitleBanner'
-import PublicAPI from './publicApi.md'
-import PartnerAPI from './partnerApi.md'
 
-import ReactMarkdown from 'react-commonmark'
 import { ContactForm } from '../Contact'
+import { TitleBanner } from '../TitleBanner'
+import PartnerAPI from './partnerApi.md'
+import PublicAPI from './publicApi.md'
 
 export const LexofficeComponent = () => {
   const [showPublicApi, setShowPublicAPI] = useState(true)

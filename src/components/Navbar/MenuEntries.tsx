@@ -1,8 +1,9 @@
+import { HistoryLocation } from '@reach/router'
+import * as R from 'ramda'
 import React, { FunctionComponent } from 'react'
 import { NavItem, NavLink } from 'reactstrap'
-import { usePathPrefix, useLocale, useLocation } from '../../utils/hooks'
-import * as R from 'ramda'
-import { HistoryLocation } from '@reach/router'
+
+import { useLocale, useLocation, usePathPrefix } from '../../utils/hooks'
 
 export const MenuEntries: FunctionComponent<{
   linkTag: any

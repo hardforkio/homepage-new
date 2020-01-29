@@ -1,8 +1,9 @@
-import React from 'react'
 import { render } from '@testing-library/react'
-import { createLocalizedStringControl } from './control'
-import { TranslationCollection } from '../../i18n-lib'
 import { fromJS } from 'immutable'
+import React from 'react'
+
+import { TranslationCollection } from '../../i18n-lib'
+import { createLocalizedStringControl } from './control'
 
 const LocalizedStringControl = createLocalizedStringControl(['de', 'en'])
 

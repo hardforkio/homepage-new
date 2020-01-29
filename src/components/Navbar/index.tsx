@@ -1,8 +1,9 @@
 import React, { FunctionComponent } from 'react'
-import { useNavbarState } from '../../utils/hooks'
+
+import { hasFAQEntries } from '../../data/faqEntry/helper'
 import { Navbar as NavbarData } from '../../data/navbar/types'
 import { useFAQPage, useNavbar } from '../../hooks/data'
-import { hasFAQEntries } from '../../data/faqEntry/helper'
+import { useNavbarState } from '../../utils/hooks'
 import { NavbarComponent, NavbarProps } from './component'
 
 export const Navbar: FunctionComponent<NavbarProps> = ({

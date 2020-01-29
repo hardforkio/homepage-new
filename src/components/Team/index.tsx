@@ -1,8 +1,9 @@
 import React, { FunctionComponent } from 'react'
 import { Col, Row } from 'reactstrap'
-import { SocialIcon } from './SocialIcon'
-import { TeamData, TeamMemberData, SocialMediaData } from '../../data/team'
+
+import { SocialMediaData, TeamData, TeamMemberData } from '../../data/team'
 import { mapToComponent } from '../../utils/helpers'
+import { SocialIcon } from './SocialIcon'
 
 export const TeamMember: FunctionComponent<TeamMemberData> = ({
   name,

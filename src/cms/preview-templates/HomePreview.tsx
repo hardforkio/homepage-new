@@ -1,13 +1,14 @@
+import * as R from 'ramda'
 import React, { FunctionComponent } from 'react'
-import { PreviewProps, getJSON } from './helpers'
+
 import { HomePageComponent } from '../../components/Home/component'
 import { HomeData, HomeDataOnDisk } from '../../data/home/types'
-import { createPreview } from './Preview'
-import { translate, Locale } from '../i18n'
 import { filterByLocale } from '../../data/i18n'
-import { ProjectData } from '../../data/project/types'
-import * as R from 'ramda'
 import { getProjects } from '../../data/project'
+import { ProjectData } from '../../data/project/types'
+import { Locale, translate } from '../i18n'
+import { getJSON, PreviewProps } from './helpers'
+import { createPreview } from './Preview'
 
 const Preview = createPreview<
   HomeDataOnDisk,

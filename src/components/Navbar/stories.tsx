@@ -1,8 +1,10 @@
 import '../../scss/main.scss'
-import React from 'react'
-import { storiesOf, DecoratorFn } from '@storybook/react'
-import { NavbarComponent } from './component'
+
 import { Link as ReachLink } from '@reach/router'
+import { DecoratorFn, storiesOf } from '@storybook/react'
+import React from 'react'
+
+import { NavbarComponent } from './component'
 
 const Link = (props: any) => <ReachLink {...props}>{props.children}</ReachLink>
 

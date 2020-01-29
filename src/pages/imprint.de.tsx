@@ -1,8 +1,9 @@
 import React, { FunctionComponent } from 'react'
-import Layout from '../components/layout'
+
 import { Imprint } from '../components/Imprint'
-import { NavbarStateProvider, LocaleProvider } from '../utils/hooks'
+import Layout from '../components/layout'
 import { getImprint } from '../data/imprint'
+import { LocaleProvider, NavbarStateProvider } from '../utils/hooks'
 
 const ImprintPage: FunctionComponent<{}> = () => {
   const { head } = getImprint('de')

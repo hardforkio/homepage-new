@@ -1,4 +1,5 @@
 import test from 'tape'
+
 import { hasFAQEntries } from './helper'
 import { FAQPage } from './types'
 

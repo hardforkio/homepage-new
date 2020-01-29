@@ -1,8 +1,10 @@
 import '../../scss/main.scss'
-import React from 'react'
+
 import { storiesOf } from '@storybook/react'
-import { ImprintComponent } from './component'
+import React from 'react'
+
 import { Imprint as ImprintData } from '../../data/imprint/types'
+import { ImprintComponent } from './component'
 
 const ENGLISH_IMPRINT: ImprintData = {
   headline: 'Imprint',

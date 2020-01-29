@@ -1,21 +1,22 @@
-import React, { FunctionComponent, useCallback, FC } from 'react'
+import { FORM_ERROR } from 'final-form'
+import * as R from 'ramda'
+import React, { FC, FunctionComponent, useCallback } from 'react'
+import { Field, Form as FinalForm } from 'react-final-form'
 import {
-  Container,
-  Row,
+  Alert,
+  Button,
   Col,
+  Container,
   Form,
   FormGroup,
   Input,
   Label,
-  Button,
-  Alert,
+  Row,
 } from 'reactstrap'
-import { Form as FinalForm, Field } from 'react-final-form'
-import { FORM_ERROR } from 'final-form'
-import * as R from 'ramda'
-import translations from './translations.json'
-import { useTranslations } from '../../utils/hooks'
 import request from 'superagent'
+
+import { useTranslations } from '../../utils/hooks'
+import translations from './translations.json'
 
 interface ContactSectionProps {
   headline: string

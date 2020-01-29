@@ -1,9 +1,10 @@
 import React, { FC } from 'react'
-import Layout from '../../components/layout'
-import { NavbarStateProvider, LocaleProvider } from '../../utils/hooks'
-import { TitleBanner } from '../../components/TitleBanner'
 import { Container } from 'reactstrap'
+
+import Layout from '../../components/layout'
 import data from '../../components/powertools/privacy-policy.html'
+import { TitleBanner } from '../../components/TitleBanner'
+import { LocaleProvider, NavbarStateProvider } from '../../utils/hooks'
 
 const banner = {
   title: 'Dateschutzerklärung',

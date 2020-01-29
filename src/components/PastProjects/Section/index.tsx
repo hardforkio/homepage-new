@@ -1,10 +1,11 @@
-import React, { FunctionComponent } from 'react'
-import { Card, CardBody, CardText, Row, Col, Container } from 'reactstrap'
-import { mapToComponent } from '../../../utils/helpers'
-import * as R from 'ramda'
-import { usePathPrefix } from '../../../utils/hooks'
-import { ProjectData } from '../../../data/project/types'
 import cn from 'classnames'
+import * as R from 'ramda'
+import React, { FunctionComponent } from 'react'
+import { Card, CardBody, CardText, Col, Container, Row } from 'reactstrap'
+
+import { ProjectData } from '../../../data/project/types'
+import { mapToComponent } from '../../../utils/helpers'
+import { usePathPrefix } from '../../../utils/hooks'
 import styles from './tiles.module.scss'
 
 export const PastProjectsComponent: FunctionComponent<{

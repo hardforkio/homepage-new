@@ -1,6 +1,6 @@
-import { createLocalizedStringControl } from './control'
 import { TranslationCollection } from '../../i18n-lib'
 import { Locale } from '../../i18n-locales'
+import { createLocalizedStringControl } from './control'
 
 export type LocalizedString = TranslationCollection<string>
 

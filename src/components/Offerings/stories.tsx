@@ -1,6 +1,8 @@
-import React from 'react'
 import '../../scss/main.scss'
+
 import { storiesOf } from '@storybook/react'
+import React from 'react'
+
 import { Offerings } from './index'
 import image1 from './pic01.jpg'
 import image2 from './pic02.jpg'

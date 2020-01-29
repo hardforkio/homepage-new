@@ -1,7 +1,9 @@
-import React from 'react'
 import '../../../scss/main.scss'
+
 import { storiesOf } from '@storybook/react'
 import cn from 'classnames'
+import React from 'react'
+
 import styles from '../styles.module.scss'
 import { UuidControl } from './control'
 

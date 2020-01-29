@@ -1,9 +1,11 @@
-import React from 'react'
 import '../../scss/main.scss'
+
 import { storiesOf } from '@storybook/react'
-import { TitleBannerComponent } from './component'
+import React from 'react'
+
 import { DispatchActionLink } from '../../storybook/helpers'
 import { NavbarComponent } from '../Navbar/component'
+import { TitleBannerComponent } from './component'
 
 const TITLE = 'JOBS'
 const SUBTITLE = 'Hardfork.io | Berlin'

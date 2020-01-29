@@ -1,8 +1,9 @@
+import { Link } from 'gatsby'
 import React, { FunctionComponent, useEffect, useState } from 'react'
 import useIsInViewport from 'use-is-in-viewport'
-import { HeroSectionComponent } from './component'
+
 import { useNavbarState } from '../../utils/hooks'
-import { Link } from 'gatsby'
+import { HeroSectionComponent } from './component'
 
 interface IntroProps {
   headline: string

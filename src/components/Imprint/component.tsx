@@ -1,8 +1,9 @@
 import React, { FunctionComponent } from 'react'
-import { TitleBanner } from '../TitleBanner/index'
-import { Imprint as ImprintData } from '../../data/imprint/types'
 import ReactMarkdown from 'react-commonmark'
 import { Container } from 'reactstrap'
+
+import { Imprint as ImprintData } from '../../data/imprint/types'
+import { TitleBanner } from '../TitleBanner/index'
 
 export const ImprintComponent: FunctionComponent<ImprintData> = ({
   content,

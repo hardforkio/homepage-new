@@ -1,5 +1,5 @@
-import { TranslationCollection as TranslationCollectionOld } from '../types'
 import { Head, HeadLocalized } from '../head/types'
+import { TranslationCollection as TranslationCollectionOld } from '../types'
 
 export interface Imprint {
   headline: string

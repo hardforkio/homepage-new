@@ -1,6 +1,6 @@
 import test from 'tape'
-import { importAll, expandRelation, filterDataByUuid } from './helpers'
 
+import { expandRelation, filterDataByUuid, importAll } from './helpers'
 import testItem1 from './testCollection/item1.json'
 import testItem2 from './testCollection/item2.json'
 

@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react'
 import * as R from 'ramda'
+import React, { ReactNode } from 'react'
 import { FunctionComponent } from 'react'
 
 export const mapToComponent = <Props extends unknown>(

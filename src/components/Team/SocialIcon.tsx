@@ -1,8 +1,8 @@
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { FunctionComponent } from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { SocialMediaData } from '../../data/team'
 
 export enum Platform {

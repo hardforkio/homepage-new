@@ -1,11 +1,12 @@
 import test from 'tape'
+
 import {
   findTranslation,
-  uppendTranslation,
-  isTranslationCollection,
-  TranslationCollection,
-  translate,
   getTranslation,
+  isTranslationCollection,
+  translate,
+  TranslationCollection,
+  uppendTranslation,
 } from './i18n-lib'
 
 const cat: TranslationCollection<string> = [

@@ -1,10 +1,11 @@
+import * as R from 'ramda'
 import React, { FunctionComponent } from 'react'
-import { TitleBanner } from '../TitleBanner'
+import ReactMarkdown from 'react-commonmark'
+import { Container } from 'reactstrap'
+
 import { FAQEntry } from '../../data/faqEntry/types'
 import { mapToComponent } from '../../utils/helpers'
-import ReactMarkdown from 'react-commonmark'
-import * as R from 'ramda'
-import { Container } from 'reactstrap'
+import { TitleBanner } from '../TitleBanner'
 
 export const FAQComponent: FunctionComponent<{
   faqEntries: FAQEntry[]
