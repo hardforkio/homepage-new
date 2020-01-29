@@ -1,5 +1,5 @@
-import { Technology } from '../technology/types'
 import { Head, HeadLocalized } from '../head/types'
+import { Technology } from '../technology/types'
 import { TranslationCollection as TranslationCollectionOld } from '../types'
 
 export type ProjectData = {

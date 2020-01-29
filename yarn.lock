@@ -6970,6 +6970,11 @@ eslint-plugin-react@^7.16.0:
     prop-types "^15.7.2"
     resolve "^1.13.1"
 
+eslint-plugin-simple-import-sort@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-simple-import-sort/-/eslint-plugin-simple-import-sort-5.0.1.tgz#fd47d3ed2af30db3dd2cadaed285ad510dde479b"
+  integrity sha512-s6Hjp9rcIDYT1h7tuTulblbY7+XQNZK+014uUkNJSKRXEHZO2i7CTr16HOpfgD9HDnUOpl0fwphPsr0oxZqgGg==
+
 eslint-plugin-standard@^3.0.1:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-standard/-/eslint-plugin-standard-3.1.0.tgz#2a9e21259ba4c47c02d53b2d0c9135d4b1022d47"

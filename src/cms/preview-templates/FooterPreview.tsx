@@ -1,13 +1,15 @@
-import React, { FunctionComponent, ComponentProps } from 'react'
 import '../../scss/main.scss'
-import { PreviewProps, getJSON } from './helpers'
+
 import * as R from 'ramda'
-import { FooterData, FooterDataOnDisk } from '../../data/footer/types'
+import React, { ComponentProps, FunctionComponent } from 'react'
+
 import { FooterComponent } from '../../components/Footer/component'
 import { SafeExternalLink } from '../../components/Link'
-import { createPreview } from './Preview'
+import { FooterData, FooterDataOnDisk } from '../../data/footer/types'
 import { getPathPrefix } from '../../utils/hooks'
 import { Locale, translate } from '../i18n'
+import { getJSON, PreviewProps } from './helpers'
+import { createPreview } from './Preview'
 
 const Preview = createPreview<
   FooterDataOnDisk,

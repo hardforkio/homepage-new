@@ -1,7 +1,8 @@
 import React from 'react'
-import { LocaleProvider, NavbarStateProvider } from '../utils/hooks'
+
 import Layout from '../components/layout'
 import { ProjectPageComponent } from '../components/PastProjects/Page'
+import { LocaleProvider, NavbarStateProvider } from '../utils/hooks'
 
 export default ({ pageContext }) => (
   <LocaleProvider value="en">

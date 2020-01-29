@@ -1,6 +1,7 @@
 import * as R from 'ramda'
+
 import { findDefaultingToHead } from '../utils/helpers'
-import { Locale, CMSData } from './types'
+import { CMSData, Locale } from './types'
 
 export const extractSingleTranslation: <T = any, S = {}>(
   locale: Locale,

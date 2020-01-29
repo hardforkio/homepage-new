@@ -1,7 +1,8 @@
 import React from 'react'
-import { NavbarStateProvider, LocaleProvider } from '../utils/hooks'
+
 import Layout from '../components/layout'
 import { LexofficeComponent } from '../components/Lexoffice'
+import { LocaleProvider, NavbarStateProvider } from '../utils/hooks'
 
 const seo = {
   title: 'Hardfork GmbH - Lexoffice Integrationspartnerschaft',

@@ -1,7 +1,7 @@
-import { TranslationCollection as TranslationCollectionOld } from '../types'
+import { TranslationCollection } from '../../cms/i18n-lib'
 import { Head, HeadLocalized } from '../head/types'
 import { TeamData, TeamDataOnDisk } from '../team'
-import { TranslationCollection } from '../../cms/i18n-lib'
+import { TranslationCollection as TranslationCollectionOld } from '../types'
 
 export interface Offering {
   headline: string

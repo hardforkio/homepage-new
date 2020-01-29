@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
-import { useLocale } from '../../utils/hooks'
+
 import { Head as HeadProps } from '../../data/head/types'
+import { useLocale } from '../../utils/hooks'
 
 export const Head: FunctionComponent<HeadProps> = ({ title, meta }) => {
   const locale = useLocale()

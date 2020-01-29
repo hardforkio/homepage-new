@@ -4,7 +4,8 @@
     "prettier"
   ],
   "plugins": [
-    "prettier"
+    "prettier",
+    "simple-import-sort"
   ],
   "rules": {
     "prettier/prettier": [
@@ -15,6 +16,7 @@
         "singleQuote": true
       }
     ],
+    "simple-import-sort/sort": "error",
     "curly": [
       "error",
       "multi-line"

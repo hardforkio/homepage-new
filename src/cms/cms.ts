@@ -1,14 +1,16 @@
-import CMS, { init } from 'netlify-cms-app'
 import '../scss/main.scss'
-import { ImprintPreview } from './preview-templates/ImprintPreview'
+
+import CMS, { init } from 'netlify-cms-app'
+
+import { LOCALES } from './i18n'
 import { FAQPreview } from './preview-templates/FAQPreview'
 import { FooterPreview } from './preview-templates/FooterPreview'
 import { HomePreview } from './preview-templates/HomePreview'
+import { ImprintPreview } from './preview-templates/ImprintPreview'
 import { NavbarPreview } from './preview-templates/NavbarPreview'
 import { ProjectPreview } from './preview-templates/ProjectPreview'
 import { LocalizedStringWidget } from './widgets/LocalizedString'
 import { UuidWidget } from './widgets/Uuid'
-import { LOCALES } from './i18n'
 
 const config = {
   backend: {

@@ -1,5 +1,6 @@
-import React, { FunctionComponent } from 'react'
 import { action } from '@storybook/addon-actions'
+import React, { FunctionComponent } from 'react'
+
 import { LinkProps } from '../components/Link'
 
 export const DispatchActionLink: FunctionComponent<LinkProps> = ({

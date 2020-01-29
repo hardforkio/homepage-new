@@ -1,9 +1,10 @@
-import React, { FunctionComponent } from 'react'
-import { Button } from 'reactstrap'
-import styles from './Hero.module.scss'
 import cn from 'classnames'
+import React, { FunctionComponent } from 'react'
 import { AiOutlineArrowDown } from 'react-icons/ai'
+import { Button } from 'reactstrap'
+
 import { WithBlurryBackground } from '../BlurryBackground'
+import styles from './Hero.module.scss'
 
 interface IntroProps {
   title: string

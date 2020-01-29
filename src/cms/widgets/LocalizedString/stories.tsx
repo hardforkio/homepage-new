@@ -1,11 +1,13 @@
-import React from 'react'
 import '../../../scss/main.scss'
+
 import { storiesOf } from '@storybook/react'
 import cn from 'classnames'
-import styles from '../styles.module.scss'
-import { createLocalizedStringControl } from './control'
+import React from 'react'
+
 import { TranslationCollection } from '../../i18n-lib'
 import { Locale } from '../../i18n-locales'
+import styles from '../styles.module.scss'
+import { createLocalizedStringControl } from './control'
 
 interface WrapperProps {
   locales: Locale[]

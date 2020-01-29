@@ -1,11 +1,12 @@
+import cn from 'classnames'
 import React, { FunctionComponent, useEffect } from 'react'
 import ReactMarkdown from 'react-commonmark'
-import cn from 'classnames'
-import { Row, Col, Badge, Container } from 'reactstrap'
-import { mapToComponent } from '../../../utils/helpers'
-import { Technology } from '../../../data/technology/types'
-import { useNavbarState } from '../../../utils/hooks'
+import { Badge, Col, Container, Row } from 'reactstrap'
+
 import { ProjectData } from '../../../data/project/types'
+import { Technology } from '../../../data/technology/types'
+import { mapToComponent } from '../../../utils/helpers'
+import { useNavbarState } from '../../../utils/hooks'
 import helperStyles from '../../helper.module.scss'
 export const ProjectPageComponent: FunctionComponent<ProjectData> = ({
   client,

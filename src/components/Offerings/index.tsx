@@ -1,11 +1,12 @@
-import React, { FunctionComponent } from 'react'
-import styles from './Offering.module.scss'
-import helperStyles from '../helper.module.scss'
 import cn from 'classnames'
-import { Col, Row } from 'reactstrap'
-import { mapToComponent } from '../../utils/helpers'
+import React, { FunctionComponent } from 'react'
 import ReactMarkdown from 'react-commonmark'
+import { Col, Row } from 'reactstrap'
+
 import { Offering } from '../../data/home/types'
+import { mapToComponent } from '../../utils/helpers'
+import helperStyles from '../helper.module.scss'
+import styles from './Offering.module.scss'
 
 export const Offerings: FunctionComponent<{ offerings: Offering[] }> = ({
   offerings,

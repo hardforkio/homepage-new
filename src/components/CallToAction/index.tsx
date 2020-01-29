@@ -1,8 +1,9 @@
-import React, { FunctionComponent } from 'react'
-import { Container, Row, Col } from 'reactstrap'
 import cn from 'classnames'
-import { SafeExternalLink } from '../Link'
+import React, { FunctionComponent } from 'react'
+import { Col, Container, Row } from 'reactstrap'
+
 import { blurryBackgroundBanner } from '../../scss/global.module.scss'
+import { SafeExternalLink } from '../Link'
 
 export interface CallToActionProps {
   headline: string

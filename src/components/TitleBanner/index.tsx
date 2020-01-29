@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useEffect } from 'react'
 import useIsInViewport from 'use-is-in-viewport'
+
 import { useNavbarState } from '../../utils/hooks'
 import { TitleBannerComponent } from './component'
 

@@ -1,5 +1,6 @@
-import * as React from 'react'
 import * as R from 'ramda'
+import * as React from 'react'
+
 import { getTranslation, uppendTranslation } from '../../i18n-lib'
 import { Locale } from '../../i18n-locales'
 import { NetlifyWidgetProps } from '../utils'

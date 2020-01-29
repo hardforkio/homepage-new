@@ -1,12 +1,13 @@
+import * as R from 'ramda'
 import React, {
+  Dispatch,
   FunctionComponent,
   SetStateAction,
-  Dispatch,
   useState,
 } from 'react'
-import * as R from 'ramda'
-import { LocaleProvider } from '../../utils/hooks'
+
 import { Locale, LOCALES } from '../../data/types'
+import { LocaleProvider } from '../../utils/hooks'
 
 interface PreviewProps<JSONType, ComponentProps> {
   Component: FunctionComponent<ComponentProps>

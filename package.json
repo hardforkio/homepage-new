@@ -115,6 +115,7 @@
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "eslint-plugin-simple-import-sort": "^5.0.1",
     "eslint-plugin-standard": "^3.0.1",
     "gatsby-plugin-catch-links": "^2.1.17",
     "gatsby-plugin-i18n": "^1.0.1",

@@ -1,4 +1,5 @@
 import * as R from 'ramda'
+
 import { Locale } from './i18n-locales'
 
 export const setLocales = <T extends Locale>(locales: T[]) => locales

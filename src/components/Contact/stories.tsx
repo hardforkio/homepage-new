@@ -1,6 +1,8 @@
-import React from 'react'
 import '../../scss/main.scss'
+
 import { storiesOf } from '@storybook/react'
+import React from 'react'
+
 import { ContactSection } from '.'
 
 const HEADLINE = 'We want YOU!'

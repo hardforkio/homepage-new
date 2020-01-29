@@ -1,12 +1,13 @@
-import React, {
-  useContext,
-  FunctionComponent,
-  useState,
-  useEffect,
-} from 'react'
 import { globalHistory } from '@reach/router'
-import { Locale } from '../data/types'
 import * as R from 'ramda'
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
+
+import { Locale } from '../data/types'
 type NavbarState = [boolean, (newValue: boolean) => void]
 
 const NavbarContext = React.createContext<NavbarState>([

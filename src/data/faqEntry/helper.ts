@@ -1,5 +1,6 @@
 import * as R from 'ramda'
-import { FAQPage, FAQEntry } from './types'
+
+import { FAQEntry, FAQPage } from './types'
 
 export const hasFAQEntries: (faqPage: FAQPage) => boolean = R.pipe<
   FAQPage,

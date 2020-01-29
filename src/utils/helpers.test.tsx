@@ -1,4 +1,5 @@
 import test from 'tape'
+
 import { findDefaultingToHead } from './helpers'
 
 const isEven = (x: number) => x % 2 === 0

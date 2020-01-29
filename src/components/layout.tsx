@@ -1,9 +1,10 @@
-import React, { FunctionComponent } from 'react'
-import { Navbar } from './Navbar'
-import { Footer } from './Footer'
 import { Link } from 'gatsby'
+import React, { FunctionComponent } from 'react'
+
 import { Head as HeadProps } from '../data/head/types'
+import { Footer } from './Footer'
 import { Head } from './Head'
+import { Navbar } from './Navbar'
 
 const Layout: FunctionComponent<HeadProps> = ({ children, title, meta }) => (
   <div>

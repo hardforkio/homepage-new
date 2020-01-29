@@ -1,16 +1,17 @@
-import React, { useState, useCallback, FunctionComponent } from 'react'
-import {
-  Navbar as ReactstrapNavbar,
-  Nav,
-  Collapse,
-  NavbarToggler,
-  NavbarBrand,
-} from 'reactstrap'
-import { MenuEntries } from './MenuEntries'
 import cn from 'classnames'
-import styles from './NavBar.module.scss'
-import { usePathPrefix } from '../../utils/hooks'
+import React, { FunctionComponent, useCallback, useState } from 'react'
+import {
+  Collapse,
+  Nav,
+  Navbar as ReactstrapNavbar,
+  NavbarBrand,
+  NavbarToggler,
+} from 'reactstrap'
+
 import { Navbar as NavbarData } from '../../data/navbar/types'
+import { usePathPrefix } from '../../utils/hooks'
+import { MenuEntries } from './MenuEntries'
+import styles from './NavBar.module.scss'
 
 export interface NavbarProps {
   linkTag: any

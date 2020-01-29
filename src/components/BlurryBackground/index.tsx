@@ -1,5 +1,6 @@
-import React, { FunctionComponent } from 'react'
 import cn from 'classnames'
+import React, { FunctionComponent } from 'react'
+
 import { blurryBackgroundBanner } from '../../scss/global.module.scss'
 import styles from './Background.module.scss'
 

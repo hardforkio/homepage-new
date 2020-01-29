@@ -1,10 +1,12 @@
 import '../../../scss/main.scss'
-import React from 'react'
+
 import { storiesOf } from '@storybook/react'
-import { PastProjectsComponent } from '.'
 import * as R from 'ramda'
-import { MOCK_PROJECTS } from '../mockData'
+import React from 'react'
+
 import { DispatchActionLink } from '../../../storybook/helpers'
+import { MOCK_PROJECTS } from '../mockData'
+import { PastProjectsComponent } from '.'
 
 storiesOf('Past Projects', module)
   .add('1 Project', () => (
