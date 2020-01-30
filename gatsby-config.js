@@ -48,6 +48,14 @@ module.exports = {
         name: 'images',
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/,
+        },
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     `gatsby-plugin-offline`,
