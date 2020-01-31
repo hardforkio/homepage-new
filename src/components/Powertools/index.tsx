@@ -1,9 +1,7 @@
-import { graphql } from 'gatsby'
 import React from 'react'
 import ReactMarkdown from 'react-commonmark'
 import { Col, Container, Row } from 'reactstrap'
 
-import { ContactForm } from '../Contact'
 import { TitleBanner } from '../TitleBanner'
 import CommingSoon from './commingSoon.md'
 import image from './extensionScreenShot.png'
