@@ -1,16 +1,38 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import React from 'react'
+import React, { FC, ReactElement } from 'react'
 import ReactMarkdown from 'react-commonmark'
 import { FaChrome, FaFirefox, FaSafari } from 'react-icons/fa'
 import { Button, Col, Container, Row } from 'reactstrap'
 
+import { mapToComponent } from '../../utils/helpers'
 import { TitleBanner } from '../TitleBanner'
 import PowertoolsIcon from './assets/extensionLogoTransparent.svg'
 import Description from './description.md'
 
 const extensionChromeStoreLink =
   'https://chrome.google.com/webstore/detail/hardfork-powertools/ocfgkhnplliadmaifkhhjncimaobcchh'
+
+const downloadItems: DownloadItemProps[] = [
+  {
+    link: extensionChromeStoreLink,
+    available: true,
+    browser: 'Chrome',
+    icon: <FaChrome className="mr-2 mr-md-3" size="2em" />,
+  },
+  {
+    link: '',
+    available: false,
+    browser: 'Firefox',
+    icon: <FaFirefox className="mr-2 mr-md-3" size="2em" />,
+  },
+  {
+    link: '',
+    available: false,
+    browser: 'Safari',
+    icon: <FaSafari className="mr-2 mr-md-3" size="2em" />,
+  },
+]
 
 const extensionScreenShotQuery = graphql`
   query extensionShot {
@@ -44,6 +66,7 @@ export const PowertoolsComponent = () => {
           <Col xs={12}>
             <Downloads />
             <h2>Screenshots</h2>
+
             <Img
               className={'img-fluid pb-5'}
               alt={`Extension Screenshot`}
@@ -59,39 +82,39 @@ export const PowertoolsComponent = () => {
 const Downloads = () => (
   <>
     <h2>Installation</h2>
-    <div className="d-flex mt-5 mb-4 justify-content-center ">
-      <Button
-        className="p-4 m-3 text-uppercase"
-        color="primary"
-        size="large"
-        tag="a"
-        href={extensionChromeStoreLink}
-      >
-        <FaChrome className="mr-3" size="2em" />
-        Chrome Extension
-      </Button>
-      <Button
-        className="p-4 m-3 text-uppercase"
-        color="secondary"
-        size="large"
-        tag="a"
-        disabled
-        href={extensionChromeStoreLink}
-      >
-        <FaFirefox className="mr-3" size="2em" />
-        Firefox Extension
-      </Button>
-      <Button
-        className="p-4 m-3 text-uppercase"
-        color="secondary"
-        size="large"
-        tag="a"
-        disabled
-        href={extensionChromeStoreLink}
-      >
-        <FaSafari className="mr-3" size="2em" />
-        Safari Extension
-      </Button>
+    <div className=" d-flex flex-column flex-md-row my-5 text-center align-items-stretch justify-content-around">
+      {mapToComponent(DownloadButton, downloadItems)}
     </div>
   </>
+)
+
+interface DownloadItemProps {
+  link: string
+  browser: string
+  icon: ReactElement
+  available: boolean
+}
+
+const DownloadButton: FC<DownloadItemProps> = ({
+  link,
+  browser,
+  icon,
+  available,
+}) => (
+  <Button
+    className="d-flex align-items-center justify-content-center my-3 my-md-0 p-4"
+    color={available ? 'primary' : 'secondary'}
+    size="large"
+    tag="a"
+    disabled={!available}
+    href={link}
+  >
+    <div className="d-flex align-items-center">
+      {icon}
+      <div>
+        <div className="text-uppercase">{`${browser} Extension`}</div>
+        {!available ? <small>(bald verfügbar)</small> : null}
+      </div>
+    </div>
+  </Button>
 )
