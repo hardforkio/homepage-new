@@ -6,6 +6,7 @@ import { FaChrome, FaFirefox, FaSafari } from 'react-icons/fa'
 import { Button, Col, Container, Row } from 'reactstrap'
 
 import { mapToComponent } from '../../utils/helpers'
+import { SafeExternalLink } from '../Link'
 import { TitleBanner } from '../TitleBanner'
 import PowertoolsIcon from './assets/extensionLogoTransparent.svg'
 import Description from './description.md'
@@ -64,14 +65,22 @@ export const PowertoolsComponent = () => {
         <ReactMarkdown source={Description} />
         <Row className="mt-5 mb-3">
           <Col xs={12}>
+            <h2 id="installation">Installation</h2>
             <Downloads />
-            <h2>Screenshots</h2>
-
+            <h2 id="screenshots">Screenshots</h2>
             <Img
               className={'img-fluid'}
               alt={`Extension Screenshot`}
               fluid={data.extensionShot.childImageSharp.fluid}
             />
+            <h2 id="preis">Preis</h2>
+            <p>
+              Für jeden Brief, den sie versenden, bezahlen sie den aktuellen
+              <SafeExternalLink to="https://letterxpress.de/preise">
+                {' Versandpreis von LetterXpress '}
+              </SafeExternalLink>
+              zuzüglich einer Servicegebühr von 0,99€ an Hardfork.
+            </p>
           </Col>
         </Row>
       </Container>
@@ -80,12 +89,9 @@ export const PowertoolsComponent = () => {
 }
 
 const Downloads = () => (
-  <>
-    <h2>Installation</h2>
-    <div className=" d-flex flex-column flex-md-row my-5 text-center align-items-stretch justify-content-around">
-      {mapToComponent(DownloadButton, downloadItems)}
-    </div>
-  </>
+  <div className=" d-flex flex-column flex-md-row my-5 text-center align-items-stretch justify-content-around">
+    {mapToComponent(DownloadButton, downloadItems)}
+  </div>
 )
 
 interface DownloadItemProps {
