@@ -79,7 +79,7 @@ export const PowertoolsComponent = () => {
               <SafeExternalLink to="https://letterxpress.de/preise">
                 {' Versandpreis von LetterXpress '}
               </SafeExternalLink>
-              zuzüglich einer Servicegebühr von netto 1,00&nbsp;€ an Hardfork.
+              zuzüglich einer Servicegebühr von 1,00&nbsp;€ netto an Hardfork.
             </p>
           </Col>
         </Row>
