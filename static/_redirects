@@ -1,1 +1,4 @@
-/ /de/ 302
+/ /de/ 302 Language=de
+/ /en/ 302
+/powertools /de/powertools 302
+/powertools/* /de/powertools/* 302
