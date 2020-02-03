@@ -13,6 +13,7 @@ module.exports = {
     title: config.siteTitle,
     siteUrl: config.siteUrl,
     rssMetadata: {
+      /* eslint-disable camelcase*/
       site_url: config.siteUrl + pathPrefix,
       feed_url: config.siteUrl + pathPrefix + config.siteRss,
       title: config.siteTitle,
@@ -20,6 +21,7 @@ module.exports = {
       image_url: `${config.siteUrl + pathPrefix}/icons/icon-512x512.png`,
       author: config.userName,
       copyright: config.copyright,
+      /* eslint-enable camelcase*/
     },
   },
   plugins: [
@@ -46,17 +48,27 @@ module.exports = {
         name: 'images',
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/,
+        },
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
+        /* eslint-disable camelcase*/
         name: config.siteTitle,
         short_name: config.siteTitleAlt,
         start_url: '/',
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
+        /* eslint-enable camelcase*/
         display: 'standalone',
         icons: [
           {
