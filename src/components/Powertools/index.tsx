@@ -5,7 +5,6 @@ import ReactMarkdown from 'react-commonmark'
 import { FaChrome, FaFirefox, FaSafari } from 'react-icons/fa'
 import { Button, Col, Container, Row } from 'reactstrap'
 
-import shot from '../../img/extensionScreenShot.png'
 import { mapToComponent } from '../../utils/helpers'
 import { TitleBanner } from '../TitleBanner'
 import PowertoolsIcon from './assets/extensionLogoTransparent.svg'

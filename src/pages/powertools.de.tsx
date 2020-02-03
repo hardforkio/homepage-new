@@ -1,5 +1,7 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
+import { Freshchat } from '../components/Freshchat'
 import Layout from '../components/layout'
 import { PowertoolsComponent } from '../components/Powertools'
 import { LocaleProvider, NavbarStateProvider } from '../utils/hooks'
@@ -13,16 +15,18 @@ const seo = {
   },
 }
 
-const Powertools = () => {
-  return (
-    <LocaleProvider value="de">
-      <NavbarStateProvider>
-        <Layout {...seo}>
-          <PowertoolsComponent />
-        </Layout>
-      </NavbarStateProvider>
-    </LocaleProvider>
-  )
-}
+const Powertools = () => (
+  <LocaleProvider value="de">
+    <NavbarStateProvider>
+      <Layout {...seo}>
+        <Helmet>
+          <script src="https://wchat.freshchat.com/js/widget.js"></script>
+        </Helmet>
+        <PowertoolsComponent />
+        <Freshchat />
+      </Layout>
+    </NavbarStateProvider>
+  </LocaleProvider>
+)
 
 export default Powertools
