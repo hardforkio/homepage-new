@@ -36,7 +36,7 @@ export const LexofficeComponent = () => {
     <article>
       <TitleBanner
         title="Lexoffice Integration"
-        subtitle="Software-Entwicklung und -Beratung um Ihre Anbindung an Lexoffice zu verwirklichen"
+        subtitle="Software-Entwicklung und -Beratung um Ihre Anbindung an lexoffice zu verwirklichen"
       />
       <Container>
         <Row className="mt-5 mb-3">
@@ -50,7 +50,7 @@ export const LexofficeComponent = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Lexoffice
+                lexoffice
               </a>{' '}
               geben. Lexoffice bietet zwei Varianten für die automatische
               Anbindung von Software an Ihre Systeme an.
