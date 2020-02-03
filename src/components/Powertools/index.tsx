@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-commonmark'
 import { FaChrome, FaFirefox, FaSafari } from 'react-icons/fa'
 import { Button, Col, Container, Row } from 'reactstrap'
 
+import shot from '../../img/extensionScreenShot.png'
 import { mapToComponent } from '../../utils/helpers'
 import { TitleBanner } from '../TitleBanner'
 import PowertoolsIcon from './assets/extensionLogoTransparent.svg'
@@ -68,7 +69,7 @@ export const PowertoolsComponent = () => {
             <h2>Screenshots</h2>
 
             <Img
-              className={'img-fluid pb-5'}
+              className={'img-fluid'}
               alt={`Extension Screenshot`}
               fluid={data.extensionShot.childImageSharp.fluid}
             />
