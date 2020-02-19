@@ -46,7 +46,7 @@ export const LexofficeComponent = () => {
               der Hardfork GmbH für die Anbindung von verschiedenen Systemen an
               die Buchhaltungssoftware{' '}
               <a
-                href="https://lexoffice.de"
+                href="https://lexoffice.de?pid=hardfork"
                 target="_blank"
                 rel="noopener noreferrer"
               >
