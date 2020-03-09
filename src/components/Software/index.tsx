@@ -8,11 +8,11 @@ import { Button, Col, Container, Row } from 'reactstrap'
 import { mapToComponent } from '../../utils/helpers'
 import { SafeExternalLink } from '../Link'
 import { TitleBanner } from '../TitleBanner'
-import PowertoolsIcon from './assets/extensionLogoTransparent.svg'
+import ChromeIcon from './assets/extensionLogoTransparent.svg'
 import Description from './description.md'
 
 const extensionChromeStoreLink =
-  'https://chrome.google.com/webstore/detail/hardfork-powertools/ocfgkhnplliadmaifkhhjncimaobcchh'
+  'https://chrome.google.com/webstore/detail/ocfgkhnplliadmaifkhhjncimaobcchh'
 
 const downloadItems: DownloadItemProps[] = [
   {
@@ -47,19 +47,19 @@ const extensionScreenShotQuery = graphql`
   }
 `
 
-export const PowertoolsComponent = () => {
+export const SoftwareComponent = () => {
   const data = useStaticQuery(extensionScreenShotQuery)
 
   return (
     <article>
       <TitleBanner
         title="Browser Erweiterung"
-        subtitle="Versenden Sie Ihre Rechnungen direkt aus Lexoffice per Brief an Ihre Kunden."
+        subtitle="Versenden Sie Ihre Rechnungen direkt aus lexoffice per Brief an Ihre Kunden."
       />
       <Container>
         <Row className="mt-5 mb-3 ">
           <Col className="pb-4 justify-content-center">
-            <PowertoolsIcon className="img-fluid" />
+            <ChromeIcon className="img-fluid" />
           </Col>
         </Row>
         <ReactMarkdown source={Description} />
@@ -114,6 +114,8 @@ const DownloadButton: FC<DownloadItemProps> = ({
     tag="a"
     disabled={!available}
     href={link}
+    target="_blank"
+    rel="noopener"
   >
     <div className="d-flex align-items-center">
       {icon}

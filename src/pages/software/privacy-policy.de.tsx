@@ -2,20 +2,20 @@ import React, { FC } from 'react'
 import { Container } from 'reactstrap'
 
 import Layout from '../../components/layout'
-import data from '../../components/powertools/privacy-policy.html'
+import data from '../../components/software/privacy-policy.html'
 import { TitleBanner } from '../../components/TitleBanner'
 import { LocaleProvider, NavbarStateProvider } from '../../utils/hooks'
 
 const banner = {
   title: 'Dateschutzerklärung',
-  subtitle: 'Powertools Extension',
+  subtitle: 'Briefversand Extension',
 }
 
 const seo = {
-  title: 'Hardfork GmbH - Powertools Datenschutzerklärung',
+  title: 'Hardfork GmbH - Datenschutzerklärung Briefversand',
   meta: {
-    description: 'Datenschutzerklärung der Powertools Extension',
-    keywords: 'Datenschutz, Powertools, Hardfork',
+    description: 'Datenschutzerklärung der Briefversand Extension',
+    keywords: 'Datenschutz, Briefversand, Hardfork',
   },
 }
 

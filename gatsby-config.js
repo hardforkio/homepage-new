@@ -36,12 +36,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        exclude: ['/de/lexoffice', '/de/powertools/*'],
-      },
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/img`,
@@ -59,6 +53,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     `gatsby-plugin-offline`,
+    'gatsby-plugin-robots-txt',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

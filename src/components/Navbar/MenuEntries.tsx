@@ -9,18 +9,24 @@ export const MenuEntries: FunctionComponent<{
   linkTag: any
   showFAQ: boolean
   contactLinkText: string
+  softwareLinkText: string
   FAQLinkText: string
 }> = ({
   linkTag,
   showFAQ,
+  softwareLinkText = 'SOFTWARE',
   contactLinkText = 'KONTAKT',
   FAQLinkText = 'FAQ',
 }) => {
   const FAQPath = usePathPrefix('/faq')
   const contactPath = usePathPrefix('/#contact')
+  const softwarePath = '/de/software'
   return (
     <>
       {[
+        <NavItem key="software">
+          <NavLink href={softwarePath}>{softwareLinkText}</NavLink>
+        </NavItem>,
         <NavItem key="contact">
           <NavLink href={contactPath}>{contactLinkText}</NavLink>
         </NavItem>,
