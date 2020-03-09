@@ -114,6 +114,8 @@ const DownloadButton: FC<DownloadItemProps> = ({
     tag="a"
     disabled={!available}
     href={link}
+    target="_blank"
+    rel="noopener"
   >
     <div className="d-flex align-items-center">
       {icon}
