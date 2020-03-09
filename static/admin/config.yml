@@ -301,6 +301,9 @@ collections:
               - name: "value"
                 widget: "object"
                 fields:
+                  - name: "servicesLinkText"
+                    widget: "string"
+
                   - name: "contactLinkText"
                     widget: "string"
 

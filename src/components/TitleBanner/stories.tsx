@@ -22,6 +22,7 @@ storiesOf('Title Banner', module)
         contactLinkText="CONTACT"
         FAQLinkText="FAQ"
         softwareLinkText="SOFTWARE"
+        servicesLinkText="SERVICES"
         showFAQ={true}
       />
       <TitleBannerComponent title={TITLE} subtitle={SUBTITLE} />
