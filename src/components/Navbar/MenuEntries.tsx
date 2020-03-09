@@ -3,27 +3,32 @@ import * as R from 'ramda'
 import React, { FunctionComponent } from 'react'
 import { NavItem, NavLink } from 'reactstrap'
 
+import { Navbar as NavbarData } from '../../data/navbar/types'
 import { useLocale, useLocation, usePathPrefix } from '../../utils/hooks'
 
-export const MenuEntries: FunctionComponent<{
+interface MenuEntriesProps extends NavbarData {
   linkTag: any
   showFAQ: boolean
-  contactLinkText: string
-  softwareLinkText: string
-  FAQLinkText: string
-}> = ({
+}
+
+export const MenuEntries: FunctionComponent<MenuEntriesProps> = ({
   linkTag,
   showFAQ,
   softwareLinkText = 'SOFTWARE',
   contactLinkText = 'KONTAKT',
   FAQLinkText = 'FAQ',
+  servicesLinkText = 'DIENSTLEISTUNGEN',
 }) => {
   const FAQPath = usePathPrefix('/faq')
   const contactPath = usePathPrefix('/#contact')
+  const servicesPath = usePathPrefix('/')
   const softwarePath = '/de/software'
   return (
     <>
       {[
+        <NavItem key="services">
+          <NavLink href={servicesPath}>{servicesLinkText}</NavLink>
+        </NavItem>,
         <NavItem key="software">
           <NavLink href={softwarePath}>{softwareLinkText}</NavLink>
         </NavItem>,

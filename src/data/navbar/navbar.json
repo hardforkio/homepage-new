@@ -3,6 +3,7 @@
     {
       "locale": "de",
       "value": {
+        "servicesLinkText" : "DIENSTLEISTUNGEN",
         "contactLinkText": "KONTAKT",
         "FAQLinkText": "FAQ",
         "softwareLinkText" : "SOFTWARE"
@@ -11,6 +12,7 @@
     {
       "locale": "en",
       "value": {
+        "servicesLinkText" : "SERVICES",
         "contactLinkText": "CONTACT",
         "FAQLinkText": "FAQ",
         "softwareLinkText" : "SOFTWARE"

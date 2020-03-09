@@ -30,6 +30,7 @@ export const NavbarComponent: FunctionComponent<NavbarComponentProps> = ({
   softwareLinkText,
   showFAQ = false,
   contactLinkText,
+  servicesLinkText,
   FAQLinkText,
 }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -57,6 +58,7 @@ export const NavbarComponent: FunctionComponent<NavbarComponentProps> = ({
             softwareLinkText={softwareLinkText}
             contactLinkText={contactLinkText}
             FAQLinkText={FAQLinkText}
+            servicesLinkText={servicesLinkText}
           />
         </Nav>
       </Collapse>
