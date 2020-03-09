@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 import { Container } from 'reactstrap'
 
-import data from '../../components/briefversand/imprint.html'
 import Layout from '../../components/layout'
+import data from '../../components/software/imprint.html'
 import { TitleBanner } from '../../components/TitleBanner'
 import { LocaleProvider, NavbarStateProvider } from '../../utils/hooks'
 

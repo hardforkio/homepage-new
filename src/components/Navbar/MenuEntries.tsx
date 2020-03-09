@@ -20,7 +20,7 @@ export const MenuEntries: FunctionComponent<{
 }) => {
   const FAQPath = usePathPrefix('/faq')
   const contactPath = usePathPrefix('/#contact')
-  const softwarePath = '/de/lexoffice-briefversand'
+  const softwarePath = '/de/software'
   return (
     <>
       {[

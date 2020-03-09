@@ -1,9 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import { BriefversandComponent } from '../components/Briefversand'
 import { Freshchat } from '../components/Freshchat'
 import Layout from '../components/layout'
+import { SoftwareComponent } from '../components/Software'
 import { LocaleProvider, NavbarStateProvider } from '../utils/hooks'
 
 const seo = {
@@ -16,18 +16,18 @@ const seo = {
   },
 }
 
-const Briefversand = () => (
+const Software = () => (
   <LocaleProvider value="de">
     <NavbarStateProvider>
       <Layout {...seo}>
         <Helmet>
           <script src="https://wchat.freshchat.com/js/widget.js"></script>
         </Helmet>
-        <BriefversandComponent />
+        <SoftwareComponent />
         <Freshchat />
       </Layout>
     </NavbarStateProvider>
   </LocaleProvider>
 )
 
-export default Briefversand
+export default Software

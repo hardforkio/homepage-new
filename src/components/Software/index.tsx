@@ -12,7 +12,7 @@ import ChromeIcon from './assets/extensionLogoTransparent.svg'
 import Description from './description.md'
 
 const extensionChromeStoreLink =
-  'https://chrome.google.com/webstore/detail/briefversand-für-lexoffic/ocfgkhnplliadmaifkhhjncimaobcchh'
+  'https://chrome.google.com/webstore/detail/ocfgkhnplliadmaifkhhjncimaobcchh'
 
 const downloadItems: DownloadItemProps[] = [
   {
@@ -47,14 +47,14 @@ const extensionScreenShotQuery = graphql`
   }
 `
 
-export const BriefversandComponent = () => {
+export const SoftwareComponent = () => {
   const data = useStaticQuery(extensionScreenShotQuery)
 
   return (
     <article>
       <TitleBanner
         title="Browser Erweiterung"
-        subtitle="Versenden Sie Ihre Rechnungen direkt aus Lexoffice per Brief an Ihre Kunden."
+        subtitle="Versenden Sie Ihre Rechnungen direkt aus lexoffice per Brief an Ihre Kunden."
       />
       <Container>
         <Row className="mt-5 mb-3 ">
