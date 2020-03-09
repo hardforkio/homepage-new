@@ -8,11 +8,11 @@ import { Button, Col, Container, Row } from 'reactstrap'
 import { mapToComponent } from '../../utils/helpers'
 import { SafeExternalLink } from '../Link'
 import { TitleBanner } from '../TitleBanner'
-import PowertoolsIcon from './assets/extensionLogoTransparent.svg'
+import ChromeIcon from './assets/extensionLogoTransparent.svg'
 import Description from './description.md'
 
 const extensionChromeStoreLink =
-  'https://chrome.google.com/webstore/detail/hardfork-powertools/ocfgkhnplliadmaifkhhjncimaobcchh'
+  'https://chrome.google.com/webstore/detail/briefversand-für-lexoffic/ocfgkhnplliadmaifkhhjncimaobcchh'
 
 const downloadItems: DownloadItemProps[] = [
   {
@@ -47,7 +47,7 @@ const extensionScreenShotQuery = graphql`
   }
 `
 
-export const PowertoolsComponent = () => {
+export const BriefversandComponent = () => {
   const data = useStaticQuery(extensionScreenShotQuery)
 
   return (
@@ -59,7 +59,7 @@ export const PowertoolsComponent = () => {
       <Container>
         <Row className="mt-5 mb-3 ">
           <Col className="pb-4 justify-content-center">
-            <PowertoolsIcon className="img-fluid" />
+            <ChromeIcon className="img-fluid" />
           </Col>
         </Row>
         <ReactMarkdown source={Description} />

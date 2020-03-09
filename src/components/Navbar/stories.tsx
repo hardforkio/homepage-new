@@ -20,6 +20,7 @@ storiesOf('Navbar', module)
       isTransparent={false}
       contactLinkText="KONTAKT"
       FAQLinkText="FAQ"
+      softwareLinkText="SOFTWARE"
     />
   ))
   .add('transparent', () => (
@@ -28,5 +29,6 @@ storiesOf('Navbar', module)
       isTransparent={true}
       contactLinkText="KONTAKT"
       FAQLinkText="FAQ"
+      softwareLinkText="SOFTWARE"
     />
   ))

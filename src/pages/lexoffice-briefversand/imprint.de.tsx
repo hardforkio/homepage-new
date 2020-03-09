@@ -1,21 +1,21 @@
 import React, { FC } from 'react'
 import { Container } from 'reactstrap'
 
+import data from '../../components/briefversand/imprint.html'
 import Layout from '../../components/layout'
-import data from '../../components/powertools/imprint.html'
 import { TitleBanner } from '../../components/TitleBanner'
 import { LocaleProvider, NavbarStateProvider } from '../../utils/hooks'
 
 const banner = {
   title: 'Impressum',
-  subtitle: 'Powertools Extension',
+  subtitle: 'Browser Extension Briefversand',
 }
 
 const seo = {
-  title: 'Hardfork GmbH - Powertools Impressum',
+  title: 'Hardfork GmbH - Impressum - Browser Extension Briefversand',
   meta: {
-    description: 'Impressum der Powertools Extension',
-    keywords: 'Impressum, Powertools, Hardfork',
+    description: 'Impressum der Browser Extension Briefversand',
+    keywords: 'Impressum, Briefversand, Hardfork, Extension',
   },
 }
 

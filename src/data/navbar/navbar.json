@@ -4,14 +4,16 @@
       "locale": "de",
       "value": {
         "contactLinkText": "KONTAKT",
-        "FAQLinkText": "FAQ"
+        "FAQLinkText": "FAQ",
+        "softwareLinkText" : "SOFTWARE"
       }
     },
     {
       "locale": "en",
       "value": {
         "contactLinkText": "CONTACT",
-        "FAQLinkText": "FAQ"
+        "FAQLinkText": "FAQ",
+        "softwareLinkText" : "SOFTWARE"
       }
     }
   ]

@@ -307,6 +307,9 @@ collections:
                   - name: "FAQLinkText"
                     widget: "string"
 
+                  - name: "softwareLinkText"
+                    widget: "string"
+
   - name: "technology"
     label: "Technology"
     folder: "src/data/technology"

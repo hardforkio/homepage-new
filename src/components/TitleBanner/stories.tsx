@@ -21,6 +21,7 @@ storiesOf('Title Banner', module)
         className="fixed-top"
         contactLinkText="CONTACT"
         FAQLinkText="FAQ"
+        softwareLinkText="SOFTWARE"
         showFAQ={true}
       />
       <TitleBannerComponent title={TITLE} subtitle={SUBTITLE} />
