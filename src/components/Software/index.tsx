@@ -8,11 +8,14 @@ import { Button, Col, Container, Row } from 'reactstrap'
 import { mapToComponent } from '../../utils/helpers'
 import { SafeExternalLink } from '../Link'
 import { TitleBanner } from '../TitleBanner'
-import ChromeIcon from './assets/extensionLogoTransparent.svg'
+import TitleImage from './assets/powertoolsLogoTransparent.svg'
 import Description from './description.md'
 
 const extensionChromeStoreLink =
   'https://chrome.google.com/webstore/detail/ocfgkhnplliadmaifkhhjncimaobcchh'
+
+const extensionFirefoxStoreLink =
+  'https://addons.mozilla.org/de/firefox/addon/lexoffice-briefversand/'
 
 const downloadItems: DownloadItemProps[] = [
   {
@@ -22,8 +25,8 @@ const downloadItems: DownloadItemProps[] = [
     icon: <FaChrome className="mr-2 mr-md-3" size="2em" />,
   },
   {
-    link: '',
-    available: false,
+    link: extensionFirefoxStoreLink,
+    available: true,
     browser: 'Firefox',
     icon: <FaFirefox className="mr-2 mr-md-3" size="2em" />,
   },
@@ -59,7 +62,7 @@ export const SoftwareComponent = () => {
       <Container>
         <Row className="mt-5 mb-3 ">
           <Col className="pb-4 justify-content-center">
-            <ChromeIcon className="img-fluid" />
+            <TitleImage className="img-fluid" />
           </Col>
         </Row>
         <ReactMarkdown source={Description} />
