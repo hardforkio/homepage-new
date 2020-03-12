@@ -2,3 +2,4 @@
 / /en/ 302
 /software /de/software 302
 /software/* /de/software/:splat 302
+/de/powertools/privacy-policy /de/software/privacy-policy 302
