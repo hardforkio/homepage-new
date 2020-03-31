@@ -28,6 +28,7 @@ module.exports = {
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-typescript`,
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-netlify-cache',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -52,7 +53,6 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    `gatsby-plugin-offline`,
     `gatsby-plugin-sitemap`,
     'gatsby-plugin-robots-txt',
     {
@@ -112,5 +112,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-i18n',
+    `gatsby-plugin-remove-serviceworker`,
   ],
 }
