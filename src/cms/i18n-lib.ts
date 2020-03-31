@@ -37,7 +37,7 @@ export const uppendTranslation = <T>(locale: Locale, value: T) => (
   collection: TranslationCollection<T>,
 ): TranslationCollection<T> =>
   R.pipe(
-    R.reject<Localized<T>, 'array'>(R.propEq('locale', locale)),
+    R.reject<Localized<T>, 'array'>(R.propEq<any, any>('locale', locale)), //TODO fix types
     R.ifElse(
       R.pipe(R.always(value), R.isEmpty),
       R.identity,
@@ -52,7 +52,7 @@ export const getTranslation = <T>(locale: Locale) => (
   R.pipe(
     R.find(R.propEq('locale', locale)),
     R.ifElse(R.isNil, R.identity, R.prop('value')),
-  )(collection)
+  )(collection as any) //TODO fix types
 
 export const findTranslation = <T>(locales: Locale[]) => (
   collection: TranslationCollection<T>,

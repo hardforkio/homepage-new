@@ -5,11 +5,11 @@ import { CMSData, Locale } from './types'
 
 export const extractSingleTranslation: <T = any, S = {}>(
   locale: Locale,
-) => (data: CMSData<T, S>) => T & S = <T extends {}>(locale: Locale) =>
+) => (data: CMSData<T, S>) => T & S = (locale: Locale) =>
   R.converge(R.merge, [
     R.pipe(
       R.prop('translations'),
-      findDefaultingToHead(R.propEq('locale', locale)),
+      findDefaultingToHead<any>(R.propEq('locale', locale)),
       R.prop('value'),
     ),
     R.omit(['translations']),
