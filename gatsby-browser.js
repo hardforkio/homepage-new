@@ -1,4 +1,5 @@
 import './src/scss/main.scss'
+
 import SmoothScroll from 'smooth-scroll'
 
 const LINK_SELECTOR = 'a[href*="#"]'
@@ -12,5 +13,6 @@ new SmoothScroll(LINK_SELECTOR, {
 // navigation to the current location which scrolls to the desired section.
 
 export const onInitialClientRender = () => {
+  console.log(`Navigation to ${window.location.href}`)
   window.___navigate(window.location.href)
 }
