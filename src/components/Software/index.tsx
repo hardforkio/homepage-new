@@ -73,6 +73,7 @@ export const SoftwareComponent = () => {
             <Img
               alt="Briefversand für lexoffice"
               fluid={titleImage.childImageSharp.fluid}
+              fadeIn={false}
             />
           </Col>
         </Row>
