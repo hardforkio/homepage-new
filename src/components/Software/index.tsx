@@ -8,7 +8,6 @@ import { Button, Col, Container, Row } from 'reactstrap'
 import { mapToComponent } from '../../utils/helpers'
 import { SafeExternalLink } from '../Link'
 import { TitleBanner } from '../TitleBanner'
-import TitleImage from './assets/powertoolsLogoTransparent.svg'
 import Description from './description.md'
 
 const extensionChromeStoreLink =
@@ -38,11 +37,18 @@ const downloadItems: DownloadItemProps[] = [
   },
 ]
 
-const extensionScreenShotQuery = graphql`
-  query extensionShot {
+const query = graphql`
+  {
     extensionShot: file(relativePath: { eq: "extensionScreenShot.png" }) {
       childImageSharp {
         fluid(maxWidth: 1280, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    titleImage: file(relativePath: { eq: "briefversandLogoTransparent.png" }) {
+      childImageSharp {
+        fluid {
           ...GatsbyImageSharpFluid
         }
       }
@@ -51,7 +57,9 @@ const extensionScreenShotQuery = graphql`
 `
 
 export const SoftwareComponent = () => {
-  const data = useStaticQuery(extensionScreenShotQuery)
+  const data = useStaticQuery<QueryData>(query)
+  console.log(data)
+  const { titleImage, extensionShot } = data
 
   return (
     <article>
@@ -60,9 +68,12 @@ export const SoftwareComponent = () => {
         subtitle="Versenden Sie Ihre Rechnungen direkt aus lexoffice per Brief an Ihre Kunden."
       />
       <Container>
-        <Row className="mt-5 mb-3 ">
-          <Col className="pb-4 justify-content-center">
-            <TitleImage className="img-fluid" />
+        <Row className="my-5">
+          <Col>
+            <Img
+              alt="Briefversand für lexoffice"
+              fluid={titleImage.childImageSharp.fluid}
+            />
           </Col>
         </Row>
         <ReactMarkdown source={Description} />
@@ -72,9 +83,8 @@ export const SoftwareComponent = () => {
             <Downloads />
             <h2 id="screenshots">Screenshots</h2>
             <Img
-              className={'img-fluid'}
               alt={`Extension Screenshot`}
-              fluid={data.extensionShot.childImageSharp.fluid}
+              fluid={extensionShot.childImageSharp.fluid}
             />
             <h2 id="preis">Preis</h2>
             <p>
@@ -129,3 +139,14 @@ const DownloadButton: FC<DownloadItemProps> = ({
     </div>
   </Button>
 )
+
+interface ImageQueryData {
+  childImageSharp: {
+    fluid: any
+  }
+}
+
+interface QueryData {
+  extensionShot: ImageQueryData
+  titleImage: ImageQueryData
+}
