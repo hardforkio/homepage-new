@@ -11,7 +11,7 @@ import {
   Row,
 } from 'reactstrap'
 
-import { ContactForm } from '../Contact'
+import { ContactForm } from '../Contact/ContactForm'
 import { TitleBanner } from '../TitleBanner'
 import PartnerAPI from './partnerApi.md'
 import PublicAPI from './publicApi.md'
