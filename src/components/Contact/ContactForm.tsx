@@ -1,20 +1,11 @@
 import { FORM_ERROR } from 'final-form'
-import * as R from 'ramda'
-import React, { FC, FunctionComponent, useCallback } from 'react'
+import React, { FunctionComponent, useCallback } from 'react'
 import { Field, Form as FinalForm } from 'react-final-form'
-import {
-  Alert,
-  Button,
-  Col,
-  Form,
-  FormGroup,
-  Input,
-  Label,
-  Row,
-} from 'reactstrap'
+import { Alert, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap'
 import request from 'superagent'
 
 import { useTranslations } from '../../utils/hooks'
+import { SubmitButton } from './SubmitButton'
 import translations from './translations.json'
 
 const CONTACT_EMAIL: string = 'contact@hardfork.io'
@@ -30,7 +21,7 @@ export interface FormValues {
   _captcha: boolean
 }
 
-const sendDataDefault = async (values: FormValues) => {
+const sendDataDefault = async (values: FormValues, form: any) => {
   const response = await request
     .post(FORM_SUBMIT_ENDPOINT)
     .type('form')
@@ -40,21 +31,24 @@ const sendDataDefault = async (values: FormValues) => {
   if (body.success !== 'true') {
     throw new Error('Failed to submit successfully')
   }
+  form.reset()
 }
 
 interface ContactFormProps {
+  initialValues?: FormValues
   sendData?: (values: FormValues) => Promise<void>
 }
 
 export const ContactForm: FunctionComponent<ContactFormProps> = ({
+  initialValues = {},
   sendData = sendDataDefault,
 }) => {
   const [t] = useTranslations(translations)
   const onSubmit = useCallback(
-    async (values: FormValues) => {
+    async (values: FormValues, form: any) => {
       try {
         if (sendData) {
-          await sendData(values)
+          await sendData(values, form)
         }
         return {}
       } catch (error) {
@@ -69,6 +63,7 @@ export const ContactForm: FunctionComponent<ContactFormProps> = ({
       onSubmit={onSubmit}
       initialValues={
         {
+          ...initialValues,
           _captcha: false,
         } as FormValues
       }
@@ -161,19 +156,11 @@ export const ContactForm: FunctionComponent<ContactFormProps> = ({
           </Field>
           <Row className="my-4">
             <Col xs={12} md={{ size: 6, offset: 6 }}>
-              <Button
-                block
-                type="submit"
-                color="primary"
-                className="px-5 my-2 text-uppercase"
-              >
-                <SubmitButtonText
-                  {...R.pick(
-                    ['submitting', 'submitError', 'submitSucceeded'],
-                    formProps,
-                  )}
-                />
-              </Button>
+              <SubmitButton
+                submitting={formProps.submitting}
+                submitError={formProps.submitError}
+                submitSucceeded={formProps.submitSucceeded}
+              />
             </Col>
             {formProps.submitError ? (
               <Alert color="danger">
@@ -195,28 +182,4 @@ export const ContactForm: FunctionComponent<ContactFormProps> = ({
       )}
     />
   )
-}
-
-interface SubmitButtonTextProps {
-  submitting: boolean
-  submitError: boolean
-  submitSucceeded: boolean
-}
-
-const SubmitButtonText: FC<SubmitButtonTextProps> = ({
-  submitting,
-  submitError,
-  submitSucceeded,
-}) => {
-  const [t] = useTranslations(translations)
-  if (submitting) {
-    return <>{t('submitting')}</>
-  }
-  if (submitError) {
-    return <>{t('submit error')}</>
-  }
-  if (submitSucceeded) {
-    return <>{t('submit success')}</>
-  }
-  return <>{t('submit')}</>
 }
