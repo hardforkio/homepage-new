@@ -3,13 +3,12 @@ import React, { FunctionComponent, useCallback } from 'react'
 import { Field, Form as FinalForm } from 'react-final-form'
 import { Alert, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap'
 import request from 'superagent'
-import waait from 'waait'
 
 import { useTranslations } from '../../utils/hooks'
 import { SubmitButton } from './SubmitButton'
 import translations from './translations.json'
 
-export const CONTACT_EMAIL: string = 'kolb@hardfork.io'
+export const CONTACT_EMAIL: string = 'contact@hardfork.io'
 const FORM_SUBMIT_ENDPOINT: string = `https://formsubmit.co/ajax/`
 
 export interface FormValues {
@@ -33,11 +32,10 @@ export const onSubmit = (contactEmail: string) => async (
     .type('form')
     .send(values)
   const body = JSON.parse(response.text)
-  console.log(body)
   if (body.success !== 'true') {
     throw new Error('Failed to submit successfully')
   }
-  setTimeout(form.reset, 5000)
+  setTimeout(form.reset)
 }
 
 interface ContactFormProps {
@@ -73,8 +71,8 @@ export const ContactForm: FunctionComponent<ContactFormProps> = ({
           _captcha: false,
         } as FormValues
       }
-      render={formProps => (
-        <Form onSubmit={formProps.handleSubmit}>
+      render={formRenderProps => (
+        <Form onSubmit={formRenderProps.handleSubmit}>
           <Row form>
             <Col xs={12} sm={6}>
               <Field name="name">
@@ -162,13 +160,9 @@ export const ContactForm: FunctionComponent<ContactFormProps> = ({
           </Field>
           <Row className="my-4">
             <Col xs={12} md={{ size: 6, offset: 6 }}>
-              <SubmitButton
-                submitting={formProps.submitting}
-                submitError={formProps.submitError}
-                submitSucceeded={formProps.submitSucceeded}
-              />
+              <SubmitButton {...formRenderProps} />
             </Col>
-            {formProps.submitError ? (
+            {formRenderProps.submitError ? (
               <Alert color="danger">
                 There was an error during submission. Please try a different
                 browser without adblockers. If the problem persists please send

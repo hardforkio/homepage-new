@@ -63,9 +63,9 @@ export const useLocation = () => {
   return state
 }
 
-export const useTranslations = (
-  translations: any,
-): [(key: string) => string] => {
+export type UseTranslations = (translations: any) => [(key: string) => string]
+
+export const useTranslations: UseTranslations = translations => {
   const locale = useLocale()
   return [(key: string) => R.path<any>([locale, key])(translations) || key]
 }

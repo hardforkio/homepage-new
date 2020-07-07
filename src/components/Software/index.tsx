@@ -58,7 +58,6 @@ const query = graphql`
 
 export const SoftwareComponent = () => {
   const data = useStaticQuery<QueryData>(query)
-  console.log(data)
   const { titleImage, extensionShot } = data
 
   return (
