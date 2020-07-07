@@ -3,13 +3,14 @@ import React, { FunctionComponent, useCallback } from 'react'
 import { Field, Form as FinalForm } from 'react-final-form'
 import { Alert, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap'
 import request from 'superagent'
+import waait from 'waait'
 
 import { useTranslations } from '../../utils/hooks'
 import { SubmitButton } from './SubmitButton'
 import translations from './translations.json'
 
-const CONTACT_EMAIL: string = 'contact@hardfork.io'
-const FORM_SUBMIT_ENDPOINT: string = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`
+export const CONTACT_EMAIL: string = 'kolb@hardfork.io'
+const FORM_SUBMIT_ENDPOINT: string = `https://formsubmit.co/ajax/`
 
 export interface FormValues {
   name: string
@@ -21,9 +22,14 @@ export interface FormValues {
   _captcha: boolean
 }
 
-const sendDataDefault = async (values: FormValues, form: any) => {
+//TODO: make this a function creator that accepts an email address
+// (and rename it to onSubmit to make its usage transparent)
+export const onSubmit = (contactEmail: string) => async (
+  values: FormValues,
+  form: any,
+) => {
   const response = await request
-    .post(FORM_SUBMIT_ENDPOINT)
+    .post(`${FORM_SUBMIT_ENDPOINT}${contactEmail}`)
     .type('form')
     .send(values)
   const body = JSON.parse(response.text)
@@ -31,17 +37,17 @@ const sendDataDefault = async (values: FormValues, form: any) => {
   if (body.success !== 'true') {
     throw new Error('Failed to submit successfully')
   }
-  form.reset()
+  setTimeout(form.reset, 5000)
 }
 
 interface ContactFormProps {
   initialValues?: FormValues
-  sendData?: (values: FormValues) => Promise<void>
+  sendData: (values: FormValues, form: any) => Promise<void>
 }
 
 export const ContactForm: FunctionComponent<ContactFormProps> = ({
   initialValues = {},
-  sendData = sendDataDefault,
+  sendData,
 }) => {
   const [t] = useTranslations(translations)
   const onSubmit = useCallback(

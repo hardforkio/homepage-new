@@ -70,7 +70,8 @@
     "superagent": "^5.1.2",
     "use-is-in-viewport": "^1.0.3",
     "uuid": "^3.3.3",
-    "vfile-message": "^1"
+    "vfile-message": "^1",
+    "waait": "^1.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",

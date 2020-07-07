@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import { Col, Container, Row } from 'reactstrap'
 
-import { ContactForm } from './ContactForm'
+import { CONTACT_EMAIL, ContactForm, onSubmit } from './ContactForm'
 
 interface ContactSectionProps {
   headline: string
@@ -20,7 +20,7 @@ export const ContactSection: FunctionComponent<ContactSectionProps> = ({
             <h4 className="mb-4">{headline}</h4>
             <p>{description}</p>
           </header>
-          <ContactForm />
+          <ContactForm sendData={onSubmit(CONTACT_EMAIL)} />
         </Col>
       </Row>
     </Container>
