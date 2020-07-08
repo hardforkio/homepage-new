@@ -11,7 +11,7 @@ import {
   Row,
 } from 'reactstrap'
 
-import { ContactForm } from '../Contact'
+import { CONTACT_EMAIL, ContactForm, onSubmit } from '../Contact/ContactForm'
 import { TitleBanner } from '../TitleBanner'
 import PartnerAPI from './partnerApi.md'
 import PublicAPI from './publicApi.md'
@@ -97,7 +97,7 @@ export const LexofficeComponent = () => {
               Senden Sie uns eine Nachricht und beschreiben Sie Ihr Projekt. Wir
               melden uns zeitnah bei Ihnen für ein Angebot.
             </p>
-            <ContactForm />
+            <ContactForm sendData={onSubmit(CONTACT_EMAIL)} />
           </Col>
         </Row>
       </Container>

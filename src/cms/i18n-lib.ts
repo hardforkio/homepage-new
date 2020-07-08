@@ -57,7 +57,7 @@ export const getTranslation = <T>(locale: Locale) => (
 export const findTranslation = <T>(locales: Locale[]) => (
   collection: TranslationCollection<T>,
 ): T | undefined =>
-  R.pipe(
+  R.pipe<any, any, any, T | undefined>(
     R.map((locale: Locale) => getTranslation(locale)(collection)),
     R.reject(R.isNil),
     R.head,
