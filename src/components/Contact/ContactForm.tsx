@@ -35,7 +35,6 @@ export const onSubmit = (contactEmail: string) => async (
   if (body.success !== 'true') {
     throw new Error('Failed to submit successfully')
   }
-  setTimeout(form.reset)
 }
 
 interface ContactFormProps {
