@@ -77,12 +77,25 @@ jobs:
       - <<: *restore_prepared_repo
       - run:
           name: Build the storybook
-          command: yarn build-storybook             
+          command: yarn build-storybook
+  run-lighthouse:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:12-browsers
+        user: node
+    steps:
+      - <<: *restore_prepared_repo
+      - run:
+          name: Run Lighthouse SEO checks
+          command: yarn lighthouse
 workflows:
   version: 2
   ci:
     jobs:
       - prepare
+      - run-lighthouse:
+          requires:
+            - prepare
       - lint-code:
           requires:
             - prepare

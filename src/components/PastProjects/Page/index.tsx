@@ -1,4 +1,3 @@
-import cn from 'classnames'
 import React, { FunctionComponent, useEffect } from 'react'
 import ReactMarkdown from 'react-commonmark'
 import { Badge, Col, Container, Row } from 'reactstrap'
@@ -7,7 +6,9 @@ import { ProjectData } from '../../../data/project/types'
 import { Technology } from '../../../data/technology/types'
 import { mapToComponent } from '../../../utils/helpers'
 import { useNavbarState } from '../../../utils/hooks'
+import { CMSImage } from '../../CMSImage'
 import helperStyles from '../../helper.module.scss'
+
 export const ProjectPageComponent: FunctionComponent<ProjectData> = ({
   client,
   product,
@@ -18,17 +19,16 @@ export const ProjectPageComponent: FunctionComponent<ProjectData> = ({
 }) => {
   const [, setTransparent] = useNavbarState()
   useEffect(() => setTransparent(false))
+
   return (
     <Container className={helperStyles.detailPagePadding}>
       <div className="text-center mb-5">
         <h2>{client}</h2>
         <h5>{product}</h5>
       </div>
-      <img
-        className={cn(image ? image : 'd-none', 'img-fluid pb-5')}
-        alt={`Screens ${client}`}
-        src={image}
-      />
+      {image && (
+        <CMSImage className={'mb-5'} alt={`Screens ${client}`} src={image} />
+      )}
       <Row className="justify-content-center ">
         <Col xs={12} md={6} className="pb-5">
           <h5>Applications</h5>
