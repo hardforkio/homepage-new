@@ -56,3 +56,18 @@
 - Transparancy about/Advertisement of past projects
 - Discoverability. Put the Company on some lists and link it where we can. Will also improve google search results.
 - Google listing: SEO check our content and fix [some faux pas](https://sitechecker.pro/app/main/project/1091572/audit/summary), List the company on google maps
+
+#### Action Items:
+
+- Link to Privacy
+- Fix link to services
+- Link to github larger?
+- Image for Hero section
+- English version of software page
+- fix language picker on landing page (only change language, don't reload page)
+- List more past projects!
+- Google maps entry?
+- Fix most obvious SEO faux pas, see e.g. [this seo check sumary](https://sitechecker.pro/app/main/project/1091572/audit/summary)
+- SEO optimization of content (keywords)
+- Generate some backlinks (e.g. put Hardfork in all the registers that we can find)
+- 
