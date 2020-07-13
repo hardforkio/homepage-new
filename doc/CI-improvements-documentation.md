@@ -54,20 +54,35 @@
 - Homepage Consistency
 - Homepage formal/legal compliance
 - Transparancy about/Advertisement of past projects
-- Discoverability. Put the Company on some lists and link it where we can. Will also improve google search results.
+- Discoverability.
 - Google listing: SEO check our content and fix [some faux pas](https://sitechecker.pro/app/main/project/1091572/audit/summary), List the company on google maps
 
 #### Action Items:
 
-- Link to Privacy
-- Fix link to services
-- Link to github larger?
-- Image for Hero section
-- English version of software page
-- fix language picker on landing page (only change language, don't reload page)
-- List more past projects!
-- Google maps entry?
-- Fix most obvious SEO faux pas, see e.g. [this seo check sumary](https://sitechecker.pro/app/main/project/1091572/audit/summary)
-- SEO optimization of content (keywords)
-- Generate some backlinks (e.g. put Hardfork in all the registers that we can find)
+- Homepage Consistency
+  - Fix link to services
+  - English version of software page
+  - fix language picker on landing page (only change language, don't reload page)
+  - Remove chat widget (that is talking BS)
+- Homapage Content/Design
+  - Link to github larger?
+  - Image for Hero section
+  - Graphical representation of different types of services/expertise
+    - Full Stack Webdev (Frontend & State management, Client <-> Server, Backend, (Cloud) Deployment)
+    - Static Webpages & CMS
+    - Native Mobile (iOS & Android)
+    - Blockchain & dApps
+- Homepage formal/legal compliance
+  - Link to Privacy
+- Transparancy about/Advertisement of past projects
+  - List more past projects! And link them to the advertised areas of expertise
+- Discoverability.
+- Google listing: SEO check our content and fix [some faux pas](https://sitechecker.pro/app/main/project/1091572/audit/summary), List the company on google maps
+  - Google maps entry?
+  - Fix most obvious SEO faux pas, see e.g. [this seo check sumary](https://sitechecker.pro/app/main/project/1091572/audit/summary)
+  - SEO optimization of content (keywords)
+  - Generate some backlinks (e.g. put Hardfork in all the registers that we can find)
+
+
+
 - 
