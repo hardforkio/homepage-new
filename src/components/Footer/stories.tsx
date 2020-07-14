@@ -12,8 +12,10 @@ storiesOf('Footer', module).add('default', () => (
     InternalLink={DispatchActionLink}
     copyrightText="© 2017-2019 Hardfork GmbH"
     imprintLinkText="Impressum"
+    imprintLink="/de/imprint"
+    privacyLinkText="Datenschutzerklärung"
+    privacyLink="/de/privacy-policy"
     githubLinkURL="https://github.com/hardforkio"
     contactEmail="contact@hardfork.io"
-    imprintLink="/de/imprint"
   />
 ))
