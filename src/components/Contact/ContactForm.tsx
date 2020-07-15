@@ -14,7 +14,7 @@ import {
 } from 'reactstrap'
 import request from 'superagent'
 
-import { useTranslations } from '../../utils/hooks'
+import { usePathPrefix, useTranslations } from '../../utils/hooks'
 import { SubmitButton } from './SubmitButton'
 import translations from './translations.json'
 
@@ -57,6 +57,7 @@ export const ContactForm: FunctionComponent<ContactFormProps> = ({
   sendData,
 }) => {
   const [t] = useTranslations(translations)
+  const privacyLink: string = usePathPrefix('/privacy-policy')
   const onSubmit = useCallback(
     async (values: FormValues, form: any) => {
       try {
@@ -174,7 +175,7 @@ export const ContactForm: FunctionComponent<ContactFormProps> = ({
               >
                 <Label>
                   {t('acceptPrivacy1')}
-                  <a href="someUrl">{t('acceptPrivacy2')}</a>
+                  <a href={privacyLink}>{t('acceptPrivacy2')}</a>
                   {t('acceptPrivacy3')}
                 </Label>
               </CustomInput>
