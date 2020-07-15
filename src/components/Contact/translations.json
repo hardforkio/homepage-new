@@ -5,7 +5,10 @@
     "company": "Company",
     "phone": "Phone number",
     "email": "E-mail address",
-    "message": "Your message"
+    "message": "Your message",
+    "acceptPrivacy1": "I acknowledge and accept the ",
+    "acceptPrivacy2": "data privacy policy",
+    "acceptPrivacy3": "."
   },
   "de": {
     "submit": "Senden",
@@ -15,6 +18,9 @@
     "company": "Firma",
     "phone": "Telefonnummer",
     "email": "E-Mail-Adresse",
-    "message": "Ihre Nachricht"
+    "message": "Ihre Nachricht",
+    "acceptPrivacy1": "Ich habe die ",
+    "acceptPrivacy2": "Datenschutzerklärung",
+    "acceptPrivacy3": " gelesen und akzeptiert."
   }
 }
