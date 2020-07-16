@@ -10,6 +10,7 @@ interface IntroProps {
   subheadline: string
   contactButtonText: string
   moreLinkText: string
+  skipAnimation: boolean
 }
 
 export const HeroSection: FunctionComponent<IntroProps> = ({
@@ -17,13 +18,17 @@ export const HeroSection: FunctionComponent<IntroProps> = ({
   subheadline,
   contactButtonText,
   moreLinkText,
+  skipAnimation,
 }) => {
-  const [showHeadline, setShowHeadline] = useState(false)
-  const [showSubheadline, setShowSubheadline] = useState(false)
-  const [showBackground, setShowBackground] = useState(false)
-  const [showMoreSection, setShowMoreSection] = useState(false)
+  const [showHeadline, setShowHeadline] = useState(skipAnimation)
+  const [showSubheadline, setShowSubheadline] = useState(skipAnimation)
+  const [showBackground, setShowBackground] = useState(skipAnimation)
+  const [showMoreSection, setShowMoreSection] = useState(skipAnimation)
 
   useEffect(() => {
+    if (skipAnimation) {
+      return
+    }
     setTimeout(() => {
       setShowBackground(true)
     }, 100)
@@ -36,7 +41,7 @@ export const HeroSection: FunctionComponent<IntroProps> = ({
     setTimeout(() => {
       setShowMoreSection(true)
     }, 2000)
-  }, [])
+  }, [skipAnimation])
 
   const [, setTransparent] = useNavbarState()
   const [inView, ref] = useIsInViewport({ threshold: 90 })

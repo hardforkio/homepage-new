@@ -7,3 +7,9 @@ new SmoothScroll(LINK_SELECTOR, {
   speed: 1500,
   speedAsDuration: true,
 })
+
+window.showLandingAnimation = true
+
+export const onInitialClientRender = () => {
+  window.showLandingAnimation = false
+}

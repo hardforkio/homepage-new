@@ -33,6 +33,9 @@ export const HomePageComponent: FunctionComponent<HomeData & {
       subheadline={heroSubheadline}
       contactButtonText={contactButtonText}
       moreLinkText={moreLinkText}
+      skipAnimation={
+        typeof window !== 'undefined' ? !window.showLandingAnimation : true
+      }
     />
     <section className={cn(styles.avoidOverlapWithStickyHeader)} id="offerings">
       <Offerings offerings={offerings} />
