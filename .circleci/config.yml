@@ -77,7 +77,12 @@ jobs:
       - <<: *restore_prepared_repo
       - run:
           name: Build the storybook
-          command: yarn build-storybook             
+          command: yarn build-storybook
+  run-lighthouse:
+    <<: *defaults
+    steps:
+      - run: sudo npm install -g @lhci/cli@0.4.x
+      - run: lhci autorun
 workflows:
   version: 2
   ci:
