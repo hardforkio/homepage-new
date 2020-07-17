@@ -8,8 +8,8 @@ new SmoothScroll(LINK_SELECTOR, {
   speedAsDuration: true,
 })
 
-window.showLandingAnimation = true
+window.initialClientSideRenderingDone = false
 
 export const onInitialClientRender = () => {
-  window.showLandingAnimation = false
+  window.initialClientSideRenderingDone = true
 }

@@ -33,9 +33,7 @@ export const HomePageComponent: FunctionComponent<HomeData & {
       subheadline={heroSubheadline}
       contactButtonText={contactButtonText}
       moreLinkText={moreLinkText}
-      skipAnimation={
-        typeof window !== 'undefined' ? !window.showLandingAnimation : true
-      }
+      showAnimation={isServerSideNavigationToPage()}
     />
     <section className={cn(styles.avoidOverlapWithStickyHeader)} id="offerings">
       <Offerings offerings={offerings} />
@@ -57,6 +55,10 @@ export const HomePageComponent: FunctionComponent<HomeData & {
     </section>
   </div>
 )
+
+// When gatsby renders server side, window does not exist.
+const isServerSideNavigationToPage = (): boolean =>
+  typeof window !== 'undefined' ? !window.initialClientSideRenderingDone : true
 
 const hasMembers: (team: TeamData) => boolean = R.ifElse(
   R.prop('members'),
