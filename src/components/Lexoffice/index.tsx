@@ -36,10 +36,10 @@ export const LexofficeComponent = () => {
     <article>
       <TitleBanner
         title="Lexoffice Integration"
-        subtitle="Software-Entwicklung und -Beratung um Ihre Anbindung an lexoffice zu verwirklichen"
+        subtitle="Ihre persönliche lexoffice-Anbindung"
       />
       <Container>
-        <Row className="mt-5 mb-3">
+        <Row className="mt-4 mt-sm-5 mb-3">
           <Col className="pb-4">
             <p>
               Im Folgenden möchten wir Ihnen einen Überblick über die Leistungen

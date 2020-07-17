@@ -7,6 +7,7 @@ import {
   Form as BootstrapForm,
   FormGroup,
   Input,
+  InputGroup,
   Row,
 } from 'reactstrap'
 
@@ -45,7 +46,7 @@ export const Form: FunctionComponent<{ className?: string }> = ({
             <option value="4">Human Resources</option>
           </Input>
         </FormGroup>
-        <Row form>
+        <Row form tag={FormGroup}>
           <Col xs={12} md={4}>
             <CustomInput
               type="radio"
@@ -64,6 +65,7 @@ export const Form: FunctionComponent<{ className?: string }> = ({
               label="Normal"
             />
           </Col>
+
           <Col xs={12} md={4}>
             <CustomInput
               type="radio"
@@ -74,8 +76,8 @@ export const Form: FunctionComponent<{ className?: string }> = ({
             />
           </Col>
         </Row>
-        <Row form>
-          <Col xs={12} md={6}>
+        <Row form tag={FormGroup}>
+          <Col xs={12} md={4}>
             <CustomInput
               type="checkbox"
               id="demo-copy"
@@ -83,7 +85,7 @@ export const Form: FunctionComponent<{ className?: string }> = ({
               label="Email me a copy"
             />
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={4}>
             <CustomInput
               type="checkbox"
               id="demo-human"

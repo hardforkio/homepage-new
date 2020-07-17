@@ -1,14 +1,14 @@
 import React, { FC } from 'react'
 import { Container } from 'reactstrap'
 
-import Layout from '../../components/layout'
-import data from '../../components/software/privacy-policy.html'
-import { TitleBanner } from '../../components/TitleBanner'
-import { LocaleProvider, NavbarStateProvider } from '../../utils/hooks'
+import Layout from '../components/layout'
+import data from '../components/software/privacy-policy.html'
+import { TitleBanner } from '../components/TitleBanner'
+import { LocaleProvider, NavbarStateProvider } from '../utils/hooks'
 
 const banner = {
   title: 'Dateschutzerklärung',
-  subtitle: 'Briefversand Extension',
+  subtitle: '',
 }
 
 const seo = {

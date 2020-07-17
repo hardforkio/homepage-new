@@ -75,7 +75,7 @@ const OuterButton = R.pipe(
   }>({
     block: true,
     type: 'submit',
-    className: 'px-5 my-2 text-uppercase',
+    className: 'text-uppercase',
   }),
   mapPropsWithChildren(formRenderPropsToSubmitButtonProps),
 )(Button)

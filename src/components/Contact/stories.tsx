@@ -28,6 +28,7 @@ const initialValues = {
   email: 'jane@gmail.com',
   phone: '000',
   message: 'Hi!',
+  acceptPrivacy: true,
 } as FormValues
 
 storiesOf('Contact Section', module).add('Form with prefilled values', () => (
