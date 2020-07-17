@@ -3,6 +3,10 @@
     { "locale": "de", "value": "Impressum" },
     { "locale": "en", "value": "Imprint" }
   ],
+  "privacyLinkText": [
+    { "locale": "de", "value": "Datenschutzerklärung" },
+    { "locale": "en", "value": "Privacy Notice" }
+  ],
   "githubLinkURL": "https://github.com/hardforkio",
   "contactEmail": "contact@hardfork.io",
   "copyrightText": "© 2017-2019 Hardfork GmbH"

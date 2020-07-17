@@ -11,11 +11,13 @@ import { FooterComponent } from './component'
 export const Footer: FunctionComponent = () => {
   const footerData: FooterData = useFooter()
   const imprintLink: string = usePathPrefix('/imprint')
+  const privacyLink: string = usePathPrefix('/privacy-policy')
   return (
     <FooterComponent
       InternalLink={Link}
       ExternalLink={SafeExternalLink}
       imprintLink={imprintLink}
+      privacyLink={privacyLink}
       {...footerData}
     />
   )

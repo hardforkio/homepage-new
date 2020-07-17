@@ -1,7 +1,8 @@
 @import "./_bootstrap.scss";
 @import './vars';
 
-p {
+p,
+span {
   a {
     border-bottom: 1px dotted;
     transition: color 0.2s ease 0s, border-bottom-color 0.2s ease 0s;
@@ -39,10 +40,6 @@ h6 {
 
 ul {
   padding-left: 1em;
-}
-
-.form-row {
-  padding: 1.1rem 0;
 }
 
 select {
