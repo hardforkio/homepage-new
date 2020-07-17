@@ -1,18 +1,22 @@
 {
   "en": {
     "submit": "Submit",
+    "submitting": "Submitting",
+    "submit error": "Error",
+    "submit success": "Success",
     "name": "Name",
     "company": "Company",
     "phone": "Phone number",
     "email": "E-mail address",
     "message": "Your message",
     "acceptPrivacyBeginning": "I acknowledge and accept the ",
-    "privacyPolicyLinkText": "data privacy policy",
+    "privacyPolicyLinkText": "privacy policy",
     "acceptPrivacyEnding": "."
   },
   "de": {
     "submit": "Senden",
-    "submit error": "Fehler!",
+    "submitting": "Sende",
+    "submit error": "Fehler",
     "submit success": "Erfolg",
     "name": "Name",
     "company": "Firma",
