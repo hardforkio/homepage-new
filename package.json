@@ -21,7 +21,10 @@
     "test-component": "jest",
     "test:watch": "onchange -i 'src/**/*.[jt]s?(x)' -- yarn test",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lighthouse": "lhci autorun",
+    "prelighthouse": "yarn clean && yarn build",
+    "clean": "gatsby clean"
   },
   "engines": {
     "node": "^12"
@@ -84,6 +87,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
+    "@lhci/cli": "0.4.x",
     "@mdx-js/loader": "^1.5.1",
     "@storybook/addon-actions": "^6.0.0-beta.44",
     "@storybook/addon-info": "^6.0.0-alpha.2",
@@ -136,6 +140,7 @@
     "identity-obj-proxy": "^3.0.0",
     "immutable": "^4.0.0-rc.12",
     "jest": "^24.9.0",
+    "lighthouse": "^6.1.1",
     "onchange": "^6.1.0",
     "prettier": "^1.18.2",
     "ramda": "^0.26.1",
