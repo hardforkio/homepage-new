@@ -1,18 +1,18 @@
-# Partner API
+## Partner API
 Die lexoffice Partner-API eignet sich für Unternehmen, welche eine **Anbindung an lexoffice für ihre Kunden benötigen**.
-## Use cases
+### Use cases
 Die Partner API von lexoffice kommt für Sie in Frage wenn Sie
 1. eine cloudbasierte Software-Lösung für Ihre Kunden anbieten
 und Sie:
 2.  - Daten im Namen der Kunden an lexoffice überspielen wollen.
     - Daten im Namen Ihrer Kunden aus lexoffice abrufen und in Ihrer eigenen Plattform anzeigen bzw. aggregieren wollen.
     - Die Nutzung Ihrer Dienste für Kunden von lexoffice stark vereinfachen wollen.
-## Beispiele
+### Beispiele
 Um Ihnen eine Vorstellung zu geben hier ein paar Beispiele:
 - Ein Fintech-Unternehmen überträgt automatisch die Buchungen auf dem Bankkonto des Kunden in das lexoffice Konto des Kunden
 - Ein Unternehmen, welches Abbuchungen und Rechnungsstellungen für Abo-Modelle anbietet möchte für den Kunden die erstellten Ausgangsrechnungen automatisch in lexoffice hochladen und buchen.
 - Ein Inkassounternehmen möchte seinen Kunden den automatischen Import von überfälligen Rechnungen aus lexoffice ermöglichen.
-## Leistungen von Hardfork
+### Leistungen von Hardfork
 Hardfork kann für Sie die folgenden Leistungen übernehmen:
 - Erstellung und Betrieb der Business-Logic inklusive Anbindung an die lexoffice Partner-API
 - Konzeption und Entwicklung des Dashboards für die Einrichtung der Anbindung durch den Kunden

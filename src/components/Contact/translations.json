@@ -1,20 +1,30 @@
 {
   "en": {
     "submit": "Submit",
+    "submitting": "Submitting",
+    "submit error": "Error",
+    "submit success": "Success",
     "name": "Name",
     "company": "Company",
     "phone": "Phone number",
     "email": "E-mail address",
-    "message": "Your message"
+    "message": "Your message",
+    "acceptPrivacyBeginning": "I acknowledge and accept the ",
+    "privacyPolicyLinkText": "privacy policy",
+    "acceptPrivacyEnding": "."
   },
   "de": {
     "submit": "Senden",
-    "submit error": "Fehler!",
+    "submitting": "Sende",
+    "submit error": "Fehler",
     "submit success": "Erfolg",
     "name": "Name",
     "company": "Firma",
     "phone": "Telefonnummer",
     "email": "E-Mail-Adresse",
-    "message": "Ihre Nachricht"
+    "message": "Ihre Nachricht",
+    "acceptPrivacyBeginning": "Ich habe die ",
+    "privacyPolicyLinkText": "Datenschutzerklärung",
+    "acceptPrivacyEnding": " gelesen und akzeptiert."
   }
 }

@@ -10,6 +10,7 @@ interface IntroProps {
   subheadline: string
   contactButtonText: string
   moreLinkText: string
+  showAnimation: boolean
 }
 
 export const HeroSection: FunctionComponent<IntroProps> = ({
@@ -17,26 +18,29 @@ export const HeroSection: FunctionComponent<IntroProps> = ({
   subheadline,
   contactButtonText,
   moreLinkText,
+  showAnimation,
 }) => {
-  const [showHeadline, setShowHeadline] = useState(false)
-  const [showSubheadline, setShowSubheadline] = useState(false)
-  const [showBackground, setShowBackground] = useState(false)
-  const [showMoreSection, setShowMoreSection] = useState(false)
+  const [showHeadline, setShowHeadline] = useState(!showAnimation)
+  const [showSubheadline, setShowSubheadline] = useState(!showAnimation)
+  const [showBackground, setShowBackground] = useState(!showAnimation)
+  const [showMoreSection, setShowMoreSection] = useState(!showAnimation)
 
   useEffect(() => {
-    setTimeout(() => {
-      setShowBackground(true)
-    }, 100)
-    setTimeout(() => {
-      setShowHeadline(true)
-    }, 750)
-    setTimeout(() => {
-      setShowSubheadline(true)
-    }, 1000)
-    setTimeout(() => {
-      setShowMoreSection(true)
-    }, 2000)
-  }, [])
+    if (showAnimation) {
+      setTimeout(() => {
+        setShowBackground(true)
+      }, 100)
+      setTimeout(() => {
+        setShowHeadline(true)
+      }, 750)
+      setTimeout(() => {
+        setShowSubheadline(true)
+      }, 1000)
+      setTimeout(() => {
+        setShowMoreSection(true)
+      }, 2000)
+    }
+  }, [showAnimation])
 
   const [, setTransparent] = useNavbarState()
   const [inView, ref] = useIsInViewport({ threshold: 90 })

@@ -31,6 +31,7 @@ const mergeLinkProps: (
     ExternalLink: SafeExternalLink,
     InternalLink: SafeExternalLink,
     imprintLink: getPathPrefix(locale)('/imprint'),
+    privacyLink: getPathPrefix(locale)('/privacy-policy'),
   })
 
 const translator = (locale: Locale) =>
