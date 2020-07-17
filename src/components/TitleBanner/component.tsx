@@ -12,7 +12,7 @@ export const TitleBannerComponent: FunctionComponent<{
   <div className={cn(styles.viewportHeight50, blurryBackgroundBanner)}>
     <Container className="h-100 text-center d-flex flex-column justify-content-center">
       <h1 className="mb-4">{title}</h1>
-      <h4>{subtitle}</h4>
+      <h5>{subtitle}</h5>
     </Container>
   </div>
 )

@@ -25,7 +25,7 @@ const PrivacyPolicy: FC = () => (
 
 const PrivacyPolicyPage: FC = () => {
   return (
-    <LocaleProvider value="de">
+    <LocaleProvider value="en">
       <NavbarStateProvider>
         <Layout {...seo}>
           <TitleBanner {...banner} />

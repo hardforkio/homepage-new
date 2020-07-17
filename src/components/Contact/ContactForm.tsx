@@ -1,10 +1,21 @@
 import { FORM_ERROR } from 'final-form'
+import { Link } from 'gatsby'
 import React, { FunctionComponent, useCallback } from 'react'
 import { Field, Form as FinalForm } from 'react-final-form'
-import { Alert, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap'
+import {
+  Alert,
+  Col,
+  CustomInput,
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  Row,
+} from 'reactstrap'
 import request from 'superagent'
 
-import { useTranslations } from '../../utils/hooks'
+import { usePathPrefix, useTranslations } from '../../utils/hooks'
+import { SafeExternalLink } from '../Link'
 import { SubmitButton } from './SubmitButton'
 import translations from './translations.json'
 
@@ -19,13 +30,13 @@ export interface FormValues {
   message: string
   _honey: string
   _captcha: boolean
+  acceptPrivacy: boolean
 }
 
 //TODO: make this a function creator that accepts an email address
 // (and rename it to onSubmit to make its usage transparent)
 export const onSubmit = (contactEmail: string) => async (
   values: FormValues,
-  form: any,
 ) => {
   const response = await request
     .post(`${FORM_SUBMIT_ENDPOINT}${contactEmail}`)
@@ -43,10 +54,11 @@ interface ContactFormProps {
 }
 
 export const ContactForm: FunctionComponent<ContactFormProps> = ({
-  initialValues = {},
+  initialValues,
   sendData,
 }) => {
   const [t] = useTranslations(translations)
+  const privacyLink: string = usePathPrefix('/privacy-policy')
   const onSubmit = useCallback(
     async (values: FormValues, form: any) => {
       try {
@@ -73,40 +85,37 @@ export const ContactForm: FunctionComponent<ContactFormProps> = ({
       render={formRenderProps => (
         <Form onSubmit={formRenderProps.handleSubmit}>
           <Row form>
-            <Col xs={12} sm={6}>
-              <Field name="name">
-                {({ input }) => (
-                  <FormGroup>
-                    <Label hidden for="contactform-input-name">
-                      {t('name')}
-                    </Label>
-                    <Input
-                      {...(input as any)}
-                      id="contactform-input-name"
-                      placeholder={t('name')}
-                      required
-                    />
-                  </FormGroup>
-                )}
-              </Field>
-            </Col>
-            <Col xs={12} sm={6}>
-              <Field name="company">
-                {({ input }) => (
-                  <FormGroup>
-                    <Label hidden for="contactform-input-company">
-                      {t('company')}
-                    </Label>
-                    <Input
-                      {...(input as any)}
-                      id="contactform-input-company"
-                      name="company"
-                      placeholder={t('company')}
-                    ></Input>
-                  </FormGroup>
-                )}
-              </Field>
-            </Col>
+            <Field name="name">
+              {({ input }) => (
+                <Col xs={12} sm={6} tag={FormGroup}>
+                  <Label hidden for="contactform-input-name">
+                    {t('name')}
+                  </Label>
+                  <Input
+                    {...(input as any)}
+                    id="contactform-input-name"
+                    placeholder={t('name')}
+                    required
+                  />
+                </Col>
+              )}
+            </Field>
+
+            <Field name="company">
+              {({ input }) => (
+                <Col xs={12} sm={6} tag={FormGroup}>
+                  <Label hidden for="contactform-input-company">
+                    {t('company')}
+                  </Label>
+                  <Input
+                    {...(input as any)}
+                    id="contactform-input-company"
+                    name="company"
+                    placeholder={t('company')}
+                  />
+                </Col>
+              )}
+            </Field>
           </Row>
           <Field name="phone">
             {({ input }) => (
@@ -136,7 +145,7 @@ export const ContactForm: FunctionComponent<ContactFormProps> = ({
                   id="contactform-input-email"
                   placeholder={t('email')}
                   required
-                ></Input>
+                />
               </FormGroup>
             )}
           </Field>
@@ -157,8 +166,32 @@ export const ContactForm: FunctionComponent<ContactFormProps> = ({
               </FormGroup>
             )}
           </Field>
-          <Row className="my-4">
-            <Col xs={12} md={{ size: 6, offset: 6 }}>
+          <Row form>
+            <Field name="acceptPrivacy">
+              {({ input }) => (
+                <Col xs={12} tag={FormGroup}>
+                  <CustomInput
+                    {...input}
+                    checked={input.value}
+                    required
+                    type="checkbox"
+                    id="accept-privacy"
+                    label={
+                      <span>
+                        {t('acceptPrivacyBeginning')}
+                        <SafeExternalLink to={privacyLink}>
+                          {t('privacyPolicyLinkText')}
+                        </SafeExternalLink>
+                        {t('acceptPrivacyEnding')}
+                      </span>
+                    }
+                  />
+                </Col>
+              )}
+            </Field>
+          </Row>
+          <Row>
+            <Col xs={{ size: 6, offset: 6 }} md={{ size: 4, offset: 8 }}>
               <SubmitButton {...formRenderProps} />
             </Col>
             {formRenderProps.submitError ? (
@@ -169,6 +202,7 @@ export const ContactForm: FunctionComponent<ContactFormProps> = ({
               </Alert>
             ) : null}
           </Row>
+
           <Field name="_captcha">
             {({ input }) => (
               <Input type="checkbox" {...(input as any)} className="d-none" />

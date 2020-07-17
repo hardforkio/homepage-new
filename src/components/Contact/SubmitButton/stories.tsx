@@ -3,7 +3,7 @@ import '../../../scss/main.scss'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 import { Field, Form } from 'react-final-form'
-import { Container } from 'reactstrap'
+import { Col, Container, Row } from 'reactstrap'
 import wait from 'waait'
 
 import { SubmitButton } from '.'
@@ -34,26 +34,36 @@ storiesOf('Contact Section/Submit Button', module).add(
   'submit button in different stages',
   () => (
     <Container>
-      <SubmitButton
-        submitting={false}
-        submitError={false}
-        submitSucceeded={false}
-      />
-      <SubmitButton
-        submitting={true}
-        submitError={false}
-        submitSucceeded={false}
-      />
-      <SubmitButton
-        submitting={false}
-        submitError={false}
-        submitSucceeded={true}
-      />
-      <SubmitButton
-        submitting={false}
-        submitError={true}
-        submitSucceeded={false}
-      />
+      <Row>
+        <Col>
+          <SubmitButton
+            submitting={false}
+            submitError={false}
+            submitSucceeded={false}
+          />
+        </Col>
+        <Col>
+          <SubmitButton
+            submitting={true}
+            submitError={false}
+            submitSucceeded={false}
+          />
+        </Col>
+        <Col>
+          <SubmitButton
+            submitting={false}
+            submitError={false}
+            submitSucceeded={true}
+          />
+        </Col>
+        <Col xs={2}>
+          <SubmitButton
+            submitting={false}
+            submitError={true}
+            submitSucceeded={false}
+          />
+        </Col>
+      </Row>
     </Container>
   ),
 )
