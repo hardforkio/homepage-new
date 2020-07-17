@@ -7,3 +7,9 @@ new SmoothScroll(LINK_SELECTOR, {
   speed: 1500,
   speedAsDuration: true,
 })
+
+window.initialClientSideRenderingDone = false
+
+export const onInitialClientRender = () => {
+  window.initialClientSideRenderingDone = true
+}
