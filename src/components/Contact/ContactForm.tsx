@@ -1,4 +1,5 @@
 import { FORM_ERROR } from 'final-form'
+import { Link } from 'gatsby'
 import React, { FunctionComponent, useCallback } from 'react'
 import { Field, Form as FinalForm } from 'react-final-form'
 import {
@@ -6,7 +7,6 @@ import {
   Col,
   CustomInput,
   Form,
-  FormFeedback,
   FormGroup,
   Input,
   Label,
@@ -15,6 +15,7 @@ import {
 import request from 'superagent'
 
 import { usePathPrefix, useTranslations } from '../../utils/hooks'
+import { SafeExternalLink } from '../Link'
 import { SubmitButton } from './SubmitButton'
 import translations from './translations.json'
 
@@ -53,7 +54,7 @@ interface ContactFormProps {
 }
 
 export const ContactForm: FunctionComponent<ContactFormProps> = ({
-  initialValues = {},
+  initialValues,
   sendData,
 }) => {
   const [t] = useTranslations(translations)
@@ -165,22 +166,32 @@ export const ContactForm: FunctionComponent<ContactFormProps> = ({
               </FormGroup>
             )}
           </Field>
-          <Row form tag={FormGroup}>
-            <Col xs={12} md={8}>
-              <CustomInput
-                required
-                type="checkbox"
-                id="accept-privacy"
-                name="acceptPrivacy"
-              >
-                <Label>
-                  {t('acceptPrivacy1')}
-                  <a href={privacyLink}>{t('acceptPrivacy2')}</a>
-                  {t('acceptPrivacy3')}
-                </Label>
-              </CustomInput>
-            </Col>
-            <Col xs={12} md={4}>
+          <Row form>
+            <Field name="acceptPrivacy">
+              {({ input }) => (
+                <Col xs={12} tag={FormGroup}>
+                  <CustomInput
+                    {...input}
+                    checked={input.value}
+                    required
+                    type="checkbox"
+                    id="accept-privacy"
+                    label={
+                      <span>
+                        {t('acceptPrivacyBeginning')}
+                        <SafeExternalLink to={privacyLink}>
+                          {t('privacyPolicyLinkText')}
+                        </SafeExternalLink>
+                        {t('acceptPrivacyEnding')}
+                      </span>
+                    }
+                  />
+                </Col>
+              )}
+            </Field>
+          </Row>
+          <Row>
+            <Col xs={{ size: 6, offset: 6 }} md={{ size: 4, offset: 8 }}>
               <SubmitButton {...formRenderProps} />
             </Col>
             {formRenderProps.submitError ? (

@@ -1,7 +1,8 @@
 @import "./_bootstrap.scss";
 @import './vars';
 
-p {
+p,
+span {
   a {
     border-bottom: 1px dotted;
     transition: color 0.2s ease 0s, border-bottom-color 0.2s ease 0s;

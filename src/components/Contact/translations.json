@@ -6,9 +6,9 @@
     "phone": "Phone number",
     "email": "E-mail address",
     "message": "Your message",
-    "acceptPrivacy1": "I acknowledge and accept the ",
-    "acceptPrivacy2": "data privacy policy",
-    "acceptPrivacy3": "."
+    "acceptPrivacyBeginning": "I acknowledge and accept the ",
+    "privacyPolicyLinkText": "data privacy policy",
+    "acceptPrivacyEnding": "."
   },
   "de": {
     "submit": "Senden",
@@ -19,8 +19,8 @@
     "phone": "Telefonnummer",
     "email": "E-Mail-Adresse",
     "message": "Ihre Nachricht",
-    "acceptPrivacy1": "Ich habe die ",
-    "acceptPrivacy2": "Datenschutzerklärung",
-    "acceptPrivacy3": " gelesen und akzeptiert."
+    "acceptPrivacyBeginning": "Ich habe die ",
+    "privacyPolicyLinkText": "Datenschutzerklärung",
+    "acceptPrivacyEnding": " gelesen und akzeptiert."
   }
 }
