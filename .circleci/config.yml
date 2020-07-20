@@ -79,12 +79,15 @@ jobs:
           name: Build the storybook
           command: yarn build-storybook
   run-lighthouse:
-    <<: *defaults
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:12-browsers
+        user: node
     steps:
       - <<: *restore_prepared_repo
       - run:
           name: Run Lighthouse SEO checks
-          command: yarn lhci autorun
+          command: yarn lighthouse
 workflows:
   version: 2
   ci:
