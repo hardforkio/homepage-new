@@ -19,14 +19,14 @@ import PublicAPI from './publicApi.md'
 export const LexofficeComponent = () => {
   const [showPublicApi, setShowPublicAPI] = useState(true)
   const switchToPublicApi = useCallback(
-    e => {
+    (e) => {
       e.preventDefault()
       setShowPublicAPI(true)
     },
     [setShowPublicAPI],
   )
   const switchToPartnerApi = useCallback(
-    e => {
+    (e) => {
       e.preventDefault()
       setShowPublicAPI(false)
     },

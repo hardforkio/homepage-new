@@ -11,7 +11,7 @@ import { SubmitButton } from '.'
 const MockForm = () => (
   <Form<{ firstName: string }>
     onSubmit={() => wait(2000)}
-    render={formRenderProps => (
+    render={(formRenderProps) => (
       <form onSubmit={formRenderProps.handleSubmit}>
         <h2>Simple Default Input</h2>
         <Field name="firstName" component="input" placeholder="First Name" />

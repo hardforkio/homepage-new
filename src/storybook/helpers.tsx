@@ -11,7 +11,7 @@ export const DispatchActionLink: FunctionComponent<LinkProps> = ({
   <a
     className={className}
     href={to}
-    onClick={event => {
+    onClick={(event) => {
       event.preventDefault()
       action('Would open url')(to)
     }}

@@ -6,7 +6,7 @@ import { Locale, TranslationCollection } from './types'
 const EN: Locale = 'en'
 const DE: Locale = 'de'
 
-test('extractSingleTranslation selects the desired language version', test => {
+test('extractSingleTranslation selects the desired language version', (test) => {
   type Word = { word: string }
   const PET: TranslationCollection<Word> = {
     translations: [
@@ -20,7 +20,7 @@ test('extractSingleTranslation selects the desired language version', test => {
   test.deepEqual(extractSingleTranslation(EN)(PET), { word: 'dog' })
 })
 
-test('extractSingleTranslation returns some language version, when user asks for a language that does not exist', test => {
+test('extractSingleTranslation returns some language version, when user asks for a language that does not exist', (test) => {
   type Word = { word: string }
   const data: TranslationCollection<Word> = {
     translations: [{ locale: DE, value: { word: 'hund' } }],
@@ -30,7 +30,7 @@ test('extractSingleTranslation returns some language version, when user asks for
   test.deepEqual(extractSingleTranslation(EN)(data), { word: 'hund' })
 })
 
-test('filterByLocal on basic objects', test => {
+test('filterByLocal on basic objects', (test) => {
   test.deepEqual(filterByLocale(DE)({}), {}, 'empty dict')
   test.deepEqual(filterByLocale(DE)([]), [], 'empty list')
 
@@ -42,7 +42,7 @@ test('filterByLocal on basic objects', test => {
   test.end()
 })
 
-test('filterByLocal example: petstore', test => {
+test('filterByLocal example: petstore', (test) => {
   const pets = [
     {
       id: 'dog',

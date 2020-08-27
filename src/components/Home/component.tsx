@@ -13,9 +13,11 @@ import { PastProjectsComponent } from '../PastProjects/Section'
 import { Team } from '../Team'
 import styles from './Home.module.scss'
 
-export const HomePageComponent: FunctionComponent<HomeData & {
-  projects: ProjectData[]
-}> = ({
+export const HomePageComponent: FunctionComponent<
+  HomeData & {
+    projects: ProjectData[]
+  }
+> = ({
   heroHeadline,
   heroSubheadline,
   offerings,

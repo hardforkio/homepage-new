@@ -68,7 +68,7 @@ export const translate = (locales: Locale[]) => (node: any): any =>
     [isTranslationCollection, findTranslation(locales)],
     [
       R.either(R.is(Array), R.is(Object)),
-      R.map(node => translate(locales)(node)),
+      R.map((node) => translate(locales)(node)),
     ],
     [R.T, R.identity],
   ])(node)

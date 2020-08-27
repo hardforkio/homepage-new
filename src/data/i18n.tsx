@@ -24,12 +24,12 @@ export const filterByLocale: (locale: Locale) => (currentNode: any) => any = (
       R.pipe(
         extractSingleTranslation(locale),
         // Force lazy evaluation to avoid maximum call stack error
-        node => filterByLocale(locale)(node),
+        (node) => filterByLocale(locale)(node),
       ),
     ],
     [
       R.either(R.is(Array), R.is(Object)),
-      R.map(node => filterByLocale(locale)(node)),
+      R.map((node) => filterByLocale(locale)(node)),
     ],
     [R.T, R.identity],
   ])

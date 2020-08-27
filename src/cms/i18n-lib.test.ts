@@ -20,7 +20,7 @@ const cat: TranslationCollection<string> = [
   },
 ]
 
-test('isTranslationCollection', t => {
+test('isTranslationCollection', (t) => {
   t.false(isTranslationCollection([]), 'false for empty arrays')
   t.false(isTranslationCollection({}), 'false for empty objects')
   t.true(
@@ -42,7 +42,7 @@ test('isTranslationCollection', t => {
   t.end()
 })
 
-test('getTranslation', t => {
+test('getTranslation', (t) => {
   t.equals(getTranslation('en')(cat), 'cat', 'gets existing translation')
   t.equals(
     getTranslation('es')(cat),
@@ -52,7 +52,7 @@ test('getTranslation', t => {
   t.end()
 })
 
-test('uppendTranslation', t => {
+test('uppendTranslation', (t) => {
   t.deepEqual(
     uppendTranslation('de', 'Kater')(cat),
     [
@@ -98,7 +98,7 @@ test('uppendTranslation', t => {
   t.end()
 })
 
-test('findTranslation', t => {
+test('findTranslation', (t) => {
   t.deepEquals(
     findTranslation(['de', 'en'])(cat),
     'Katze',
@@ -117,7 +117,7 @@ test('findTranslation', t => {
   t.end()
 })
 
-test('translate', t => {
+test('translate', (t) => {
   t.deepEquals(
     translate(['en'])({ favoriteAnimal: cat }),
     { favoriteAnimal: 'cat' },

@@ -33,7 +33,6 @@ const mergeLinkProps: (data: NavbarData) => NavbarComponentProps = R.mergeLeft({
 
 const translator: (
   locale: Locale,
-) => (
-  data: TranslationCollection<NavbarData>,
-) => NavbarComponentProps = locale =>
-  R.pipe(filterByLocale(locale), mergeLinkProps)
+) => (data: TranslationCollection<NavbarData>) => NavbarComponentProps = (
+  locale,
+) => R.pipe(filterByLocale(locale), mergeLinkProps)

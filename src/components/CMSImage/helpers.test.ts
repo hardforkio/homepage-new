@@ -29,12 +29,12 @@ const queryData = {
   },
 }
 
-test('pluckImagesFromQueryData', t => {
+test('pluckImagesFromQueryData', (t) => {
   t.plan(1)
   t.equal(getImages(queryData).length, 2, 'should return list of images.')
 })
 
-test('getNodeByFileName', t => {
+test('getNodeByFileName', (t) => {
   t.plan(1)
   t.deepEqual(
     getNodeByFilename('coffee.png')(getImages(queryData)),

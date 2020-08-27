@@ -26,7 +26,7 @@ export const FooterPreview: FunctionComponent<PreviewProps> = ({ entry }) => (
 
 const mergeLinkProps: (
   locale: Locale,
-) => (data: FooterData) => ComponentProps<typeof FooterComponent> = locale =>
+) => (data: FooterData) => ComponentProps<typeof FooterComponent> = (locale) =>
   R.mergeLeft({
     ExternalLink: SafeExternalLink,
     InternalLink: SafeExternalLink,
