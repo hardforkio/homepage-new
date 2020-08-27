@@ -27,7 +27,7 @@
     "clean": "gatsby clean"
   },
   "engines": {
-    "node": "^12"
+    "node": "^10"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
