@@ -35,12 +35,12 @@
   },
   "offerings": [
     {
-      "id": "Software",
+      "id": "Full Stack Applications",
       "translations": [
         {
           "locale": "de",
           "value": {
-            "headline": "Software",
+            "headline": "Full Stack Applications",
             "image": "/img/pic01.jpg",
             "text": "Wir entwickeln für Sie Software-Applikationen nach Ihren Vorstellungen. Unser Team besitzt alle dafür notwendigen Kompetenzen vom Frontend mit komplexem Application State Management über Client zu Server Kommunikation und Backend-Entwicklung bis zum skalierbaren und sicheren Betrieb in der Cloud. Mit Hardfork bekommen Sie Ihren gesamten Stack aus einer Hand.\n\nWir nutzen unter anderem die Technologien bzw. Libraries React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (auch serverless) und AWS serverless."
           }
@@ -48,9 +48,30 @@
         {
           "locale": "en",
           "value": {
-            "headline": "Software",
+            "headline": "Full Stack Applications",
             "image": "/img/codeonscreen.jpg",
             "text": "We build software and web applications according to your needs. Our team  is proficient in all required technologies be it complex frontend application state management, client to server communication, backend development or reliable and scaling deployment and delivery from the cloud. With Hardfork you get your whole stack from one supplier.\n\nWe use the technologies and libraries that provide the most value for your project. Usually these include React, Redux, TypeScript, Apollo, GraphQL, Gatsby, Netlify, SQL (also serverless) and / or AWS serverless."
+          }
+        }
+      ]
+    },
+    {
+      "id": "Blockchain Applications",
+      "translations": [
+        {
+          "locale": "en",
+          "value": {
+            "headline": "Blockchain Applications",
+            "image": "/img/codeonscreen.jpg",
+            "text": "We have been working in the blockchain space since 2013 and are proud to have successfully implemented several decentralized applications for our clients since. In these projects we support our clients during the whole process from the first idea over feasibility studies and cost analysis to implementation and deployment including hosting.\n\nTechnologies we have used in production so far include Bitcoin, Stellar, Ethereum / Solidity, Truffle, Ganache and Metamask."
+          }
+        },
+        {
+          "locale": "de",
+          "value": {
+            "headline": "Blockchain Applications",
+            "image": "/img/blockchain.jpg",
+            "text": "Wir arbeiten seit 2013 mit Blockchain-Technologie und sind stolz darauf, seit dem bereits mehrere dezentrale Applikationen für unsere Kunden erfolgreich umgesetzt zu haben. Während dieser Projekte unterstützen wir unsere Kunden von der ersten Idee über Machbarkeitsstudien und Kosten-Nutzen-Rechnung bis zur Implementierung und schließlich dem Deployment und Hosting.\n\nDie von uns in Produktion verwendeten Technologien umfassen Bitcoin, Stellar, Ethereum / Solidity, Truffle, Metamask und Ganache."
           }
         }
       ]
