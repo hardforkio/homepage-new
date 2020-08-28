@@ -6,7 +6,7 @@
 defaults: &defaults
   working_directory: ~/repo
   docker:
-    - image: node:12
+    - image: node:10
       user: node
 restore_prepared_repo: &restore_prepared_repo
   - attach_workspace:
@@ -77,12 +77,25 @@ jobs:
       - <<: *restore_prepared_repo
       - run:
           name: Build the storybook
-          command: yarn build-storybook             
+          command: yarn build-storybook
+  run-lighthouse:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:10-browsers
+        user: node
+    steps:
+      - <<: *restore_prepared_repo
+      - run:
+          name: Run Lighthouse SEO checks
+          command: yarn lighthouse
 workflows:
   version: 2
   ci:
     jobs:
       - prepare
+      - run-lighthouse:
+          requires:
+            - prepare
       - lint-code:
           requires:
             - prepare

@@ -32,7 +32,7 @@ export const PastProjectsComponent: FunctionComponent<{
 
 const createProjectComponent: (
   linkTag: any,
-) => FunctionComponent<ProjectData> = linkTag => ({
+) => FunctionComponent<ProjectData> = (linkTag) => ({
   client,
   product,
   slug,

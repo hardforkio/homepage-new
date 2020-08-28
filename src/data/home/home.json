@@ -14,21 +14,21 @@
       "description": [
         {
           "locale": "en",
-          "value": "We develop software according to your needs in Berlin, Germany"
+          "value": "We develop software according to your needs in Berlin, Germany. Full stack web development, Static pages and content management systems (CMS), Native mobile apps or Blockchain and decentralized applications (DApps)"
         },
         {
           "locale": "de",
-          "value": "Wir entwickeln Software nach Ihren Wünschen in Berlin"
+          "value": "Wir entwickeln Software nach Ihren Wünschen in Berlin. Full-Stack Webentwicklung, Statische Seiten und Content-Management-Systeme (CMS), Native mobile Anwendungen oder Blockchain und dezentrale Anwendungen (DApps)"
         }
       ],
       "keywords": [
         {
           "locale": "en",
-          "value": "Software development"
+          "value": "Software development, web development, frontend, full stack, progressive, native, mobile, iOS, Android, blockchain, DApps, decentralized applications"
         },
         {
           "locale": "de",
-          "value": "Softwareentwicklung"
+          "value": "Softwareentwicklung, Webentwicklung, Frontend, Full-Stack, Progressive, Native, Mobile, iOS, Android, Blockchain, DApps, dezentralisierte Anwendungen"
         }
       ]
     }

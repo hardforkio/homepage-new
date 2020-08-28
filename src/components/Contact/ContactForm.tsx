@@ -82,7 +82,7 @@ export const ContactForm: FunctionComponent<ContactFormProps> = ({
           _captcha: false,
         } as FormValues
       }
-      render={formRenderProps => (
+      render={(formRenderProps) => (
         <Form onSubmit={formRenderProps.handleSubmit}>
           <Row form>
             <Field name="name">

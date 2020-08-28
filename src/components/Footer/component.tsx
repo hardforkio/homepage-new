@@ -29,12 +29,14 @@ const LegalItem: FunctionComponent = ({ children }) => (
   </div>
 )
 
-export const FooterComponent: FunctionComponent<{
-  ExternalLink: ComponentType<LinkProps>
-  InternalLink: ComponentType<LinkProps>
-  imprintLink: string
-  privacyLink: string
-} & FooterData> = ({
+export const FooterComponent: FunctionComponent<
+  {
+    ExternalLink: ComponentType<LinkProps>
+    InternalLink: ComponentType<LinkProps>
+    imprintLink: string
+    privacyLink: string
+  } & FooterData
+> = ({
   ExternalLink,
   InternalLink,
   githubLinkURL,

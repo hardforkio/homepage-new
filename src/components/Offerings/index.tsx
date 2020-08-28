@@ -5,6 +5,7 @@ import { Col, Row } from 'reactstrap'
 
 import { Offering } from '../../data/home/types'
 import { mapToComponent } from '../../utils/helpers'
+import { CMSImage } from '../CMSImage'
 import helperStyles from '../helper.module.scss'
 import styles from './Offering.module.scss'
 
@@ -23,7 +24,7 @@ export const OfferingComponent: FunctionComponent<{
 }> = ({ image, headline, text }) => (
   <Row noGutters className={cn(styles.offering, 'align-items-center ')}>
     <Col sm={12} md={{ size: 5 }}>
-      <img className="img-fluid" alt="" src={image} />
+      <CMSImage alt="" src={image} />
     </Col>
     <Col className="text-center text-md-left p-4" sm={12} md={{ size: 7 }}>
       <div className={'p-md-5'}>

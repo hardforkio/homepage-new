@@ -5,12 +5,12 @@ import { SoftwareComponent } from '../components/Software'
 import { LocaleProvider, NavbarStateProvider } from '../utils/hooks'
 
 const seo = {
-  title: 'Hardfork GmbH - Briefversand für lexoffice',
+  title: 'Hardfork GmbH - Sending letters with lexoffice',
   meta: {
     description:
-      'Browsererweiterung für das Versenden von Belegen aus Lexoffice als Brief.',
+      'Browser extension for sending documents as letters directly from Lexoffice.',
     keywords:
-      'Lexoffice, Software, Entwicklung, Extension, Brief, Versand, Beleg, Rechnung, Angebot, Auftragsbestätigung, Integration',
+      'lexoffice, software, development, extension, letter, invoice, send, mail, invoice, offer, order confirmation, integration',
   },
 }
 

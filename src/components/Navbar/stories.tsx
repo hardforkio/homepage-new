@@ -8,7 +8,7 @@ import { NavbarComponent } from './component'
 
 const Link = (props: any) => <ReachLink {...props}>{props.children}</ReachLink>
 
-const WithDarkBackground: DecoratorFn = storyFn => (
+const WithDarkBackground: DecoratorFn = (storyFn) => (
   <div style={{ backgroundColor: '#646263', height: '200px' }}>{storyFn()}</div>
 )
 

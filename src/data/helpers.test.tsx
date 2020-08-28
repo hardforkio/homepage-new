@@ -14,7 +14,7 @@ interface TestItem {
 const items: TestItem[] = [testItem1, testItem2]
 
 // TODO: Run this test in a headless browser
-test.skip('importAll', t => {
+test.skip('importAll', (t) => {
   const context = require.context('./testCollection/', true, /\.json$/)
   const imported = importAll<TestItem>(context)
 
@@ -22,7 +22,7 @@ test.skip('importAll', t => {
   t.end()
 })
 
-test('filterDataByUUid', t => {
+test('filterDataByUUid', (t) => {
   t.deepEqual(
     filterDataByUuid(['items', 'forSale'], items, {
       name: 'Schmidts Haushaltswaren',
@@ -42,7 +42,7 @@ test('filterDataByUUid', t => {
   t.end()
 })
 
-test('expandRelation', t => {
+test('expandRelation', (t) => {
   t.deepEqual(
     expandRelation(['books'], items, {
       name: 'Schmidts Haushaltswaren',

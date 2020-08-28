@@ -50,7 +50,7 @@ export const useLocation = () => {
   }
   const [state, setState] = useState(initialState)
   useEffect(() => {
-    const removeListener = globalHistory.listen(params => {
+    const removeListener = globalHistory.listen((params) => {
       const { location } = params
       const newState = Object.assign({}, initialState, { location })
       setState(newState)
@@ -65,7 +65,7 @@ export const useLocation = () => {
 
 export type UseTranslations = (translations: any) => [(key: string) => string]
 
-export const useTranslations: UseTranslations = translations => {
+export const useTranslations: UseTranslations = (translations) => {
   const locale = useLocale()
   return [(key: string) => R.path<any>([locale, key])(translations) || key]
 }
