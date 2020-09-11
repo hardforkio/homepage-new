@@ -8,15 +8,11 @@ import { getHome } from '../data/home'
 import { HomeData } from '../data/home/types'
 import { getImprint } from '../data/imprint'
 import { Imprint } from '../data/imprint/types'
-import { getNavbar } from '../data/navbar'
-import { Navbar } from '../data/navbar/types'
 import { getProjects } from '../data/project'
 import { ProjectData } from '../data/project/types'
 import { useLocale } from '../utils/hooks'
 
 export const useProjects: () => ProjectData[] = R.pipe(useLocale, getProjects)
-
-export const useNavbar: () => Navbar = R.pipe(useLocale, getNavbar)
 
 export const useImprint: () => Imprint = R.pipe(useLocale, getImprint)
 

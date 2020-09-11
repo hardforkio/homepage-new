@@ -54,6 +54,7 @@
     "gatsby-plugin-sharp": "^2.2.32",
     "gatsby-plugin-sitemap": "^2.2.19",
     "gatsby-source-filesystem": "^2.1.33",
+    "gatsby-transformer-json": "^2.4.11",
     "gatsby-transformer-sharp": "^2.3.0",
     "glob": "^7.1.6",
     "i18next": "^19.0.2",

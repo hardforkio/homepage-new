@@ -58,9 +58,16 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/data/navbar/`,
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    `gatsby-plugin-sitemap`,
+    'gatsby-transformer-json',
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
     {
       resolve: `gatsby-plugin-manifest`,
