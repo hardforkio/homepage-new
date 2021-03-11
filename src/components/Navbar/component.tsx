@@ -27,7 +27,6 @@ export const NavbarComponent: FunctionComponent<NavbarComponentProps> = ({
   isTransparent = true,
   linkTag,
   className,
-  softwareLinkText,
   showFAQ = false,
   contactLinkText,
   servicesLinkText,
@@ -55,7 +54,6 @@ export const NavbarComponent: FunctionComponent<NavbarComponentProps> = ({
           <MenuEntries
             linkTag={linkTag}
             showFAQ={showFAQ}
-            softwareLinkText={softwareLinkText}
             contactLinkText={contactLinkText}
             FAQLinkText={FAQLinkText}
             servicesLinkText={servicesLinkText}
