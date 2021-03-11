@@ -14,7 +14,6 @@ interface MenuEntriesProps extends NavbarData {
 export const MenuEntries: FunctionComponent<MenuEntriesProps> = ({
   linkTag,
   showFAQ,
-  softwareLinkText = 'SOFTWARE',
   contactLinkText = 'KONTAKT',
   FAQLinkText = 'FAQ',
   servicesLinkText = 'DIENSTLEISTUNGEN',
@@ -22,15 +21,11 @@ export const MenuEntries: FunctionComponent<MenuEntriesProps> = ({
   const FAQPath = usePathPrefix('/faq')
   const contactPath = usePathPrefix('/#contact')
   const servicesPath = usePathPrefix('/')
-  const softwarePath = usePathPrefix('/software')
   return (
     <>
       {[
         <NavItem key="services">
           <NavLink href={servicesPath}>{servicesLinkText}</NavLink>
-        </NavItem>,
-        <NavItem key="software">
-          <NavLink href={softwarePath}>{softwareLinkText}</NavLink>
         </NavItem>,
         <NavItem key="contact">
           <NavLink href={contactPath}>{contactLinkText}</NavLink>
