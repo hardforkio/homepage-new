@@ -7,7 +7,6 @@ import {
   Form as BootstrapForm,
   FormGroup,
   Input,
-  InputGroup,
   Row,
 } from 'reactstrap'
 

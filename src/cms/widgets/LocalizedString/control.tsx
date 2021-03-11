@@ -8,9 +8,7 @@ import { NetlifyWidgetProps } from '../utils'
 interface LocalizedStringWidgetProps extends NetlifyWidgetProps {}
 
 export const createLocalizedStringControl = (locales: Locale[]) => {
-  class LocalizedStringControl extends React.Component<
-    LocalizedStringWidgetProps
-  > {
+  class LocalizedStringControl extends React.Component<LocalizedStringWidgetProps> {
     ensureJS = (value: any = []) =>
       R.is(Array, value) ? value : (value as any).toJS()
 
