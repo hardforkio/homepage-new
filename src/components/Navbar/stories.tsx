@@ -20,7 +20,6 @@ storiesOf('Navbar', module)
       isTransparent={false}
       contactLinkText="KONTAKT"
       FAQLinkText="FAQ"
-      softwareLinkText="SOFTWARE"
       servicesLinkText="DIENSTLEISTUNGEN"
     />
   ))
@@ -30,7 +29,6 @@ storiesOf('Navbar', module)
       isTransparent={true}
       contactLinkText="KONTAKT"
       FAQLinkText="FAQ"
-      softwareLinkText="SOFTWARE"
       servicesLinkText="DIENSTLEISTUNGEN"
     />
   ))

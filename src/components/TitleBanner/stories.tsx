@@ -21,7 +21,6 @@ storiesOf('Title Banner', module)
         className="fixed-top"
         contactLinkText="CONTACT"
         FAQLinkText="FAQ"
-        softwareLinkText="SOFTWARE"
         servicesLinkText="SERVICES"
         showFAQ={true}
       />
