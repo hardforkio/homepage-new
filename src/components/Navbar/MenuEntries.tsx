@@ -20,7 +20,7 @@ export const MenuEntries: FunctionComponent<MenuEntriesProps> = ({
 }) => {
   const FAQPath = usePathPrefix('/faq')
   const contactPath = usePathPrefix('/#contact')
-  const servicesPath = usePathPrefix('/')
+  const servicesPath = usePathPrefix('/#offerings')
   return (
     <>
       {[
