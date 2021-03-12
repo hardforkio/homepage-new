@@ -1,5 +1,5 @@
 import * as R from 'ramda'
-import React, { Component, ComponentClass, ComponentType, FC } from 'react'
+import React, { ComponentClass, FC } from 'react'
 import { FormRenderProps } from 'react-final-form'
 import { Button, ButtonProps } from 'reactstrap'
 import {

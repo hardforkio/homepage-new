@@ -4,6 +4,7 @@ import React, {
   FunctionComponent,
   useContext,
   useEffect,
+  useMemo,
   useState,
 } from 'react'
 
@@ -44,10 +45,13 @@ export const usePathPrefix = (to: string): string => {
 }
 
 export const useLocation = () => {
-  const initialState = {
-    location: globalHistory.location,
-    navigate: globalHistory.navigate,
-  }
+  const initialState = useMemo(
+    () => ({
+      location: globalHistory.location,
+      navigate: globalHistory.navigate,
+    }),
+    [],
+  )
   const [state, setState] = useState(initialState)
   useEffect(() => {
     const removeListener = globalHistory.listen((params) => {

@@ -27,7 +27,7 @@
     "clean": "gatsby clean"
   },
   "engines": {
-    "node": "^10"
+    "node": "^12"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
@@ -159,5 +159,9 @@
     "ts-jest": "^26.1.4",
     "ts-node": "^8.5.4",
     "typescript": "^3.9.6"
+  },
+  "resolutions": {
+    "@types/react": "^16",
+    "mini-css-extract-plugin": "^0.11"
   }
 }

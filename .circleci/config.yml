@@ -6,7 +6,7 @@
 defaults: &defaults
   working_directory: ~/repo
   docker:
-    - image: node:10
+    - image: node:12
       user: node
 restore_prepared_repo: &restore_prepared_repo
   - attach_workspace:
@@ -81,7 +81,7 @@ jobs:
   run-lighthouse:
     working_directory: ~/repo
     docker:
-      - image: circleci/node:10-browsers
+      - image: circleci/node:12-browsers
         user: node
     steps:
       - <<: *restore_prepared_repo

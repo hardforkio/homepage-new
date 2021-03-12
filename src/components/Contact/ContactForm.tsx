@@ -1,5 +1,4 @@
 import { FORM_ERROR } from 'final-form'
-import { Link } from 'gatsby'
 import React, { FunctionComponent, useCallback } from 'react'
 import { Field, Form as FinalForm } from 'react-final-form'
 import {
