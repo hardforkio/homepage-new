@@ -127,3 +127,5 @@ jspm_packages/
 public/
 static/admin/*.bundle.*
 .DS_Store
+/.lighthouseci/
+/.vscode/
