@@ -7,7 +7,7 @@ import { TitleBanner } from '../components/TitleBanner'
 import { LocaleProvider, NavbarStateProvider } from '../utils/hooks'
 
 const banner = {
-  title: 'Dateschutzerklärung',
+  title: 'Datenschutzerklärung',
   subtitle: '',
 }
 
